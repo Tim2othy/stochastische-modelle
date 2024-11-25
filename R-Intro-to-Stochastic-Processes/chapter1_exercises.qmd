@@ -1,0 +1,60 @@
+# 1.32 R: Simulate flipping three fair coins and counting the number of heads X.
+
+## (a) Use your simulation to estimate P(X = 1) and E(X).
+
+```{r}
+flip3 <- function() {
+    sum(sample(0:1, 3, replace = TRUE))
+}
+```
+
+```{r}
+n <- 10000
+x <- replicate(n, flip3())
+
+```
+
+```{r}
+print(sum(x) / n)
+
+```
+
+```{r}
+is_1 <- (x == 1)
+print(sum(is_1) / n)
+```
+
+So $E[x]$ is around $1.5$. And $P(X=1)$ is around $0.377$.
+
+## (b) Modify the above to allow for a biased coin where P(Heads)=3∕4.
+
+```{r}
+flip3_bias <- function() {
+    naive <- sample(0:3, 3, replace = TRUE)
+    is_heads <- (naive != 0)
+    sum_heads <- sum(is_heads)
+    return(sum_heads)
+}
+```
+
+
+```{r}
+n <- 10000
+x <- replicate(n, flip3_bias())
+
+```
+
+```{r}
+print(sum(x) / n)
+
+```
+
+```{r}
+is_1 <- (x == 1)
+print(sum(is_1) / n)
+```
+
+
+
+
+So $E[x]$ is around $2.26$. And $P(X=1)$ is around $0.1368$.
