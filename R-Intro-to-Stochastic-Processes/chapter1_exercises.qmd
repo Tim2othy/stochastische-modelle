@@ -58,3 +58,12 @@ print(sum(is_1) / n)
 
 
 So $E[x]$ is around $2.26$. And $P(X=1)$ is around $0.1368$.
+
+
+
+
+# 1.35 R: See the script file gamblersruin.R. A gambler starts with a $60 initial stake.
+ (a) The gambler wins, and loses, each round with probability p = 0.50. Simu
+late the probability the gambler wins $100 before he loses everything.
+ (b) Thegamblerwinseachroundwithprobability p = 0.51.Simulatetheprob
+ability the gambler wins $100 before he loses everything.
