@@ -33,8 +33,6 @@ simulate_random_walk <- function(k, n) {
     for (i in 1:n) {
         i <- i + 1
 
-
-
         move <- sample(options, 1)[[1]]
         state_old <- state
         state <- state + move
@@ -57,6 +55,5 @@ n <- 5000
 
 simulate_random_walk(k, n)
 ```
-
 
 There is also a counter that will count how often the random walk returns to the origin.
