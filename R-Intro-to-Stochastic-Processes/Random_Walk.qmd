@@ -1,108 +1,79 @@
-R:Simulate 50 steps of the randomwalkonthegraphinFigure2.1.Repeatthe
-simulation10times.Howmanyofyoursimulationsendatvertexc?Compare
-withtheexactlong-termprobabilitythewalkvisitsc.
+# Random walk
 
 
+Creating random walk in Z Plane
 
-
-Modify this code so that it simulates a random walk on a 100 by 100 grid where you can always move l,r,u,d. The starting point is (50,50). Visualize the random walk.
+k: Initial state n: Number of steps
 
 
 
 ```{r}
-# gamblersruin.R
-# Example 1.11
-
-# gamble(k, n, p)
-#   k: Initial state
-#   n: Number of steps
-#   Function returns 1 if gambler is eventually ruined
-#                    returns 0 if gambler eventually wins $n
-
-
 options <- list(
+    c(0, 0),
     c(1, 0),
     c(0, 1),
     c(-1, 0),
-    c(0, -1)
+    c(0, -1),
+    c(1, 1),
+    c(-1, -1),
+    c(-1, 1),
+    c(1, -1)
 )
-
-
 
 simulate_random_walk <- function(k, n) {
     i <- 0
     state <- k
-    while (n >= i) {
+
+    plot(0, 0, xlim = c(-100, 100), ylim = c(-100, 100), col = "red", pch = 19)
+
+    for (i in 1:n) {
         i <- i + 1
 
         move <- sample(options, 1)[[1]]
-
+        state_old <- state
         state <- state + move
-        cat("for i = ", i, " the state = ", state, "\n")
+        lines(c(state[1], state_old[1]), c(state[2], state_old[2]), col = "red", pch = 19)
     }
 }
 
-
-
 ```
-
-
 
 ```{r}
 k <- c(0, 0)
-n <- 40
+n <- 5000
 
 simulate_random_walk(k, n)
 
 
+
+```
+
+## Visualizing the Random Walk
+
+```{r}
+
+library(ggplot2)
 ```
 
 
 
 ```{r}
-x <- list(
-    c(1, 0),
-    c(0, 1),
-    c(-1, 0),
-    c(0, -1)
-)
-x
-
-u <- c(0, 0)
 
 ```
 
 ```{r}
-result <- sample(x, 1)[[1]]
 
-
-result
 ```
 
 ```{r}
-typeof(new)
-
-
-new <- as.vector(x)
 
 ```
-
-
-
 
 ```{r}
 
-
-
-
 ```
 
-
-trials <- 1000
-simlist <- replicate(trials, gamble(k, n, p))
-mean(simlist) # Estimate of probability that gambler is ruined
-# For p = 0.5, exact probability is (n-k)/n
-
+trials \<- 1000 simlist \<- replicate(trials, gamble(k, n, p)) mean(simlist) \# Estimate of probability that gambler is ruined \# For p = 0.5, exact probability is (n-k)/n
 
 ```{r}
 # Statespace matrix
@@ -136,7 +107,6 @@ start_vertex <- 1 # Starting at vertex 'a'
 
 ```
 
-
 ```{r}
 
 
@@ -150,8 +120,6 @@ for (i in 1:num_simulations) {
 }
 
 ```
-
-
 
 ```{r}
 
