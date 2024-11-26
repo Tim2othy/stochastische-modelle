@@ -1,10 +1,15 @@
 # Random walk
 
-
 Creating random walk in Z Plane
-
 k: Initial state n: Number of steps
 
+Function for Random Walk
+
+preliminaries
+```{r}
+library(ggplot2)
+
+```
 
 
 ```{r}
@@ -32,110 +37,17 @@ simulate_random_walk <- function(k, n) {
         move <- sample(options, 1)[[1]]
         state_old <- state
         state <- state + move
-        lines(c(state[1], state_old[1]), c(state[2], state_old[2]), col = "red", pch = 19)
+        lines(c(state[1], state_old[1]), c(state[2], state_old[2]), col = "blue")
     }
 }
-
 ```
+
+
+Call Function, and adjust parameters
 
 ```{r}
 k <- c(0, 0)
 n <- 5000
 
 simulate_random_walk(k, n)
-
-
-
-```
-
-## Visualizing the Random Walk
-
-```{r}
-
-library(ggplot2)
-```
-
-
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-trials \<- 1000 simlist \<- replicate(trials, gamble(k, n, p)) mean(simlist) \# Estimate of probability that gambler is ruined \# For p = 0.5, exact probability is (n-k)/n
-
-```{r}
-# Statespace matrix
-state_matrix <- matrix(0, ncol = 10, nrow = 10)
-
-
-
-
-# Function to simulate a random walk
-simulate_random_walk <- function(start_vertex, steps) {
-    current_vertex <- start_vertex
-    for (step in 1:steps) {
-        # Sample the next vertex based on the current row of the transition matrix
-        current_vertex <- sample(1:6, size = 1, prob = transition_matrix[current_vertex, ])
-    }
-    return(current_vertex)
-}
-
-```
-
-Setting Parameters
-
-```{r}
-
-
-# Parameters for simulation
-num_simulations <- 10
-steps_per_walk <- 50
-start_vertex <- 1 # Starting at vertex 'a'
-
-
-```
-
-```{r}
-
-
-# Simulate the walks and count how many end at vertex 'c' (vertex 3)
-end_at_c <- 0
-for (i in 1:num_simulations) {
-    end_vertex <- simulate_random_walk(start_vertex, steps_per_walk)
-    if (end_vertex == 3) { # Vertex 'c' is 3
-        end_at_c <- end_at_c + 1
-    }
-}
-
-```
-
-```{r}
-
-
-# Output the results
-cat("Number of simulations ending at vertex 'c':", end_at_c, "out of", num_simulations, "\n")
-
-
-```
-
-```{r}
-
-
-# Calculate the stationary distribution of the Markov chain
-stationary_distribution <- eigen(t(transition_matrix))$vectors[, 1]
-stationary_distribution <- stationary_distribution / sum(stationary_distribution) # Normalize
-cat("Exact long-term probability of visiting vertex 'c':", stationary_distribution[3], "\n")
-
 ```
