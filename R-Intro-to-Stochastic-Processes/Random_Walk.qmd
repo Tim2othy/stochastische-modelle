@@ -26,17 +26,25 @@ options <- list(
 simulate_random_walk <- function(k, n) {
     i <- 0
     state <- k
+    counter <- 0
 
     plot(0, 0, xlim = c(-100, 100), ylim = c(-100, 100), col = "red", pch = 19)
 
     for (i in 1:n) {
         i <- i + 1
 
+
+
         move <- sample(options, 1)[[1]]
         state_old <- state
         state <- state + move
         lines(c(state[1], state_old[1]), c(state[2], state_old[2]), col = "blue")
+
+        if (state[1] == 0 & state[2] == 0) {
+            counter <- counter + 1
+        }
     }
+    print(counter)
 }
 ```
 
@@ -49,3 +57,6 @@ n <- 5000
 
 simulate_random_walk(k, n)
 ```
+
+
+There is also a counter that will count how often the random walk returns to the origin.
