@@ -27,16 +27,30 @@ simulate_random_walk <- function(k, n) {
     i <- 0
     state <- k
     counter <- 0
+    color <- "blue"
 
     plot(0, 0, xlim = c(-100, 100), ylim = c(-100, 100), col = "red", pch = 19)
 
     for (i in 1:n) {
         i <- i + 1
 
+        if (i == 0.2 * n) {
+            color <- "green"
+        }
+        if (i == 0.4 * n) {
+            color <- "yellow"
+        }
+        if (i == 0.6 * n) {
+            color <- "orange"
+        }
+        if (i == 0.8 * n) {
+            color <- "purple"
+        }
+
         move <- sample(options, 1)[[1]]
         state_old <- state
         state <- state + move
-        lines(c(state[1], state_old[1]), c(state[2], state_old[2]), col = "blue")
+        lines(c(state[1], state_old[1]), c(state[2], state_old[2]), col = color)
 
         if (state[1] == 0 & state[2] == 0) {
             counter <- counter + 1
