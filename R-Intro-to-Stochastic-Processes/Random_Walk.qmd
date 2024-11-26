@@ -71,3 +71,15 @@ simulate_random_walk(k, n)
 ```
 
 There is also a counter that will count how often the random walk returns to the origin.
+
+```{r}
+
+ggplot(data.frame(x = 1:100, y = 1:100), aes(x = x, y = y)) +
+    geom_point()
+
+ggsave(filename = "file_name_ggplt.png", width = 500, height = 500, units = "px")
+```
+
+
+
+```{r}
