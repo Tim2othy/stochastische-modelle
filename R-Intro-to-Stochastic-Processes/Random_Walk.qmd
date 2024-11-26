@@ -29,7 +29,7 @@ simulate_random_walk <- function(k, n) {
     counter <- 0
     color <- "blue"
 
-    plot(0, 0, xlim = c(-100, 100), ylim = c(-100, 100), col = "red", pch = 19)
+    plot(0, 0, xlim = c(-150, 150), ylim = c(-150, 150), col = "red", pch = 19)
 
     for (i in 1:n) {
         i <- i + 1
@@ -65,7 +65,7 @@ Call the Function, and adjust parameters
 
 ```{r}
 k <- c(0, 0)
-n <- 5000
+n <- 30000
 
 simulate_random_walk(k, n)
 ```
