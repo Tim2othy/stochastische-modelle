@@ -54,7 +54,11 @@ is_1 <- (x == 1)
 print(sum(is_1) / n)
 ```
 
+```{r}
 
+print("Test")
+
+```
 
 
 So $E[x]$ is around $2.26$. And $P(X=1)$ is around $0.1368$.

@@ -1,0 +1,173 @@
+R:Simulate 50 steps of the randomwalkonthegraphinFigure2.1.Repeatthe
+simulation10times.Howmanyofyoursimulationsendatvertexc?Compare
+withtheexactlong-termprobabilitythewalkvisitsc.
+
+
+
+
+Modify this code so that it simulates a random walk on a 100 by 100 grid where you can always move l,r,u,d. The starting point is (50,50). Visualize the random walk.
+
+
+
+```{r}
+# gamblersruin.R
+# Example 1.11
+
+# gamble(k, n, p)
+#   k: Initial state
+#   n: Number of steps
+#   Function returns 1 if gambler is eventually ruined
+#                    returns 0 if gambler eventually wins $n
+
+
+options <- list(
+    c(1, 0),
+    c(0, 1),
+    c(-1, 0),
+    c(0, -1)
+)
+
+
+
+simulate_random_walk <- function(k, n) {
+    i <- 0
+    state <- k
+    while (n >= i) {
+        i <- i + 1
+
+        move <- sample(options, 1)[[1]]
+
+        state <- state + move
+        cat("for i = ", i, " the state = ", state, "\n")
+    }
+}
+
+
+
+```
+
+
+
+```{r}
+k <- c(0, 0)
+n <- 40
+
+simulate_random_walk(k, n)
+
+
+```
+
+
+
+```{r}
+x <- list(
+    c(1, 0),
+    c(0, 1),
+    c(-1, 0),
+    c(0, -1)
+)
+x
+
+u <- c(0, 0)
+
+```
+
+```{r}
+result <- sample(x, 1)[[1]]
+
+
+result
+```
+
+```{r}
+typeof(new)
+
+
+new <- as.vector(x)
+
+```
+
+
+
+
+```{r}
+
+
+
+
+```
+
+
+trials <- 1000
+simlist <- replicate(trials, gamble(k, n, p))
+mean(simlist) # Estimate of probability that gambler is ruined
+# For p = 0.5, exact probability is (n-k)/n
+
+
+```{r}
+# Statespace matrix
+state_matrix <- matrix(0, ncol = 10, nrow = 10)
+
+
+
+
+# Function to simulate a random walk
+simulate_random_walk <- function(start_vertex, steps) {
+    current_vertex <- start_vertex
+    for (step in 1:steps) {
+        # Sample the next vertex based on the current row of the transition matrix
+        current_vertex <- sample(1:6, size = 1, prob = transition_matrix[current_vertex, ])
+    }
+    return(current_vertex)
+}
+
+```
+
+Setting Parameters
+
+```{r}
+
+
+# Parameters for simulation
+num_simulations <- 10
+steps_per_walk <- 50
+start_vertex <- 1 # Starting at vertex 'a'
+
+
+```
+
+
+```{r}
+
+
+# Simulate the walks and count how many end at vertex 'c' (vertex 3)
+end_at_c <- 0
+for (i in 1:num_simulations) {
+    end_vertex <- simulate_random_walk(start_vertex, steps_per_walk)
+    if (end_vertex == 3) { # Vertex 'c' is 3
+        end_at_c <- end_at_c + 1
+    }
+}
+
+```
+
+
+
+```{r}
+
+
+# Output the results
+cat("Number of simulations ending at vertex 'c':", end_at_c, "out of", num_simulations, "\n")
+
+
+```
+
+```{r}
+
+
+# Calculate the stationary distribution of the Markov chain
+stationary_distribution <- eigen(t(transition_matrix))$vectors[, 1]
+stationary_distribution <- stationary_distribution / sum(stationary_distribution) # Normalize
+cat("Exact long-term probability of visiting vertex 'c':", stationary_distribution[3], "\n")
+
+```

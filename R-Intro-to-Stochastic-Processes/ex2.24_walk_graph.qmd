@@ -1,0 +1,87 @@
+R:Simulate 50 steps of the randomwalkonthegraphinFigure2.1.Repeatthe
+simulation10times.Howmanyofyoursimulationsendatvertexc?Compare
+withtheexactlong-termprobabilitythewalkvisitsc.
+
+
+
+
+```{r}
+# Adjacency matrix for the graph
+adj_matrix <- matrix(c(
+    0, 1, 0, 0, 0, 0, # a
+    1, 0, 1, 1, 0, 0, # b
+    0, 1, 0, 1, 1, 0, # c
+    0, 1, 1, 0, 1, 0, # d
+    0, 0, 1, 1, 0, 1, # e
+    0, 0, 0, 0, 1, 0 # f
+), byrow = TRUE, nrow = 6)
+
+# Degrees of each vertex
+degrees <- rowSums(adj_matrix)
+
+# Transition matrix: Uniform probabilities across neighbors
+transition_matrix <- adj_matrix
+for (i in 1:nrow(adj_matrix)) {
+    transition_matrix[i, ] <- adj_matrix[i, ] / degrees[i]
+}
+
+# Function to simulate a random walk
+simulate_random_walk <- function(start_vertex, steps) {
+    current_vertex <- start_vertex
+    for (step in 1:steps) {
+        # Sample the next vertex based on the current row of the transition matrix
+        current_vertex <- sample(1:6, size = 1, prob = transition_matrix[current_vertex, ])
+    }
+    return(current_vertex)
+}
+
+```
+
+Setting Parameters
+
+```{r}
+
+
+# Parameters for simulation
+num_simulations <- 10
+steps_per_walk <- 50
+start_vertex <- 1 # Starting at vertex 'a'
+
+
+```
+
+
+```{r}
+
+
+# Simulate the walks and count how many end at vertex 'c' (vertex 3)
+end_at_c <- 0
+for (i in 1:num_simulations) {
+    end_vertex <- simulate_random_walk(start_vertex, steps_per_walk)
+    if (end_vertex == 3) { # Vertex 'c' is 3
+        end_at_c <- end_at_c + 1
+    }
+}
+
+```
+
+
+
+```{r}
+
+
+# Output the results
+cat("Number of simulations ending at vertex 'c':", end_at_c, "out of", num_simulations, "\n")
+
+
+```
+
+```{r}
+
+
+# Calculate the stationary distribution of the Markov chain
+stationary_distribution <- eigen(t(transition_matrix))$vectors[, 1]
+stationary_distribution <- stationary_distribution / sum(stationary_distribution) # Normalize
+cat("Exact long-term probability of visiting vertex 'c':", stationary_distribution[3], "\n")
+
+```
