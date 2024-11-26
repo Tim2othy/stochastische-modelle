@@ -69,35 +69,3 @@ simulate_random_walk(k, n)
 ```
 
 There is also a counter that will count how often the random walk returns to the origin.
-
-
-```{r}
-
-
-```
-```{r}
-
-
-```
-```{r}
-
-
-```
-
-
-```{r}
-
-
-```
-
-
-```{r}
-
-
-```
-
-
-```{r}
-
-
-```
