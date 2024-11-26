@@ -24,7 +24,6 @@ options <- list(
 )
 
 simulate_random_walk <- function(k, n) {
-    i <- 0
     state <- k
     counter <- 0
     color <- "blue"
@@ -32,7 +31,6 @@ simulate_random_walk <- function(k, n) {
     plot(0, 0, xlim = c(-150, 150), ylim = c(-150, 150), col = "red", pch = 19)
 
     for (i in 1:n) {
-        i <- i + 1
 
         if (i == 0.2 * n) {
             color <- "green"
@@ -56,7 +54,7 @@ simulate_random_walk <- function(k, n) {
             counter <- counter + 1
         }
     }
-    print(counter)
+    cat("Walked back home", counter ,"times")
 }
 ```
 
@@ -65,21 +63,62 @@ Call the Function, and adjust parameters
 
 ```{r}
 k <- c(0, 0)
-n <- 30000
+n <- 3000
 
 simulate_random_walk(k, n)
 ```
 
 There is also a counter that will count how often the random walk returns to the origin.
 
+
+
+
+
 ```{r}
+options <- list(
+    c(0, 0),
+    c(1, 0),
+    c(0, 1),
+    c(-1, 0),
+    c(0, -1),
+    c(1, 1),
+    c(-1, -1),
+    c(-1, 1),
+    c(1, -1)
+)
 
-ggplot(data.frame(x = 1:100, y = 1:100), aes(x = x, y = y)) +
-    geom_point()
+simulate_random_walk <- function(k, n) {
+    state <- k
+    counter <- 0
+    color <- "blue"
 
-ggsave(filename = "file_name_ggplt.png", width = 500, height = 500, units = "px")
+    plot(0, 0, xlim = c(-150, 150), ylim = c(-150, 150), col = "red", pch = 19)
+
+    for (i in 1:n) {
+
+        if (i == 0.2 * n) {
+            color <- "green"
+        }
+        if (i == 0.4 * n) {
+            color <- "yellow"
+        }
+        if (i == 0.6 * n) {
+            color <- "orange"
+        }
+        if (i == 0.8 * n) {
+            color <- "purple"
+        }
+
+        move <- sample(options, 1)[[1]]
+        state_old <- state
+        state <- state + move
+        lines(c(state[1], state_old[1]), c(state[2], state_old[2]), col = color)
+
+        if (state[1] == 0 & state[2] == 0) {
+            counter <- counter + 1
+        }
+    }
+    cat("Walked back home", counter ,"times")
+}
+
 ```
-
-
-
-```{r}

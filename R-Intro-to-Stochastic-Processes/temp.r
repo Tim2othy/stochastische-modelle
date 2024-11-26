@@ -10,9 +10,6 @@ options <- list(
   c(1, -1)
 )
 
-
-
-
 simulate_random_walk <- function(k, n) {
   hgd() # Start the httpgd graphics device
   state <- k
@@ -45,3 +42,14 @@ k <- c(0, 0)
 n <- 4000
 
 simulate_random_walk(k, n)
+
+
+
+
+```{r}
+
+ggplot(data.frame(x = 1:100, y = 1:100), aes(x = x, y = y)) +
+    geom_point()
+
+ggsave(filename = "file_name_ggplt.png", width = 500, height = 500, units = "px")
+```
