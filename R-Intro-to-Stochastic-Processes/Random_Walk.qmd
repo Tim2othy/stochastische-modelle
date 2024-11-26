@@ -3,14 +3,14 @@
 Creating random walk in Z Plane
 
 preliminaries
+
 ```{r}
 library(ggplot2)
 ```
 
 ## Basic implementation
 
-Function for Random Walk
-k: Initial state n: Number of steps
+Function for Random Walk k: Initial state n: Number of steps
 
 ```{r}
 options <- list(
