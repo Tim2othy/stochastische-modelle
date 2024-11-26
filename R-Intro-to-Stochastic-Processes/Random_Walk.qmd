@@ -1,16 +1,14 @@
 # Random walk
 
 Creating random walk in Z Plane
-k: Initial state n: Number of steps
-
-Function for Random Walk
 
 preliminaries
 ```{r}
 library(ggplot2)
-
 ```
 
+Function for Random Walk
+k: Initial state n: Number of steps
 
 ```{r}
 options <- list(
@@ -43,7 +41,7 @@ simulate_random_walk <- function(k, n) {
 ```
 
 
-Call Function, and adjust parameters
+Call the Function, and adjust parameters
 
 ```{r}
 k <- c(0, 0)
