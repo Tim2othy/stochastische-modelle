@@ -25,9 +25,9 @@ options <- list(
     c(1, -1)
 )
 
-plot(0, 0, xlim = c(-150, 150), ylim = c(-150, 150), col = "red", pch = 19)
 
 simulate_random_walk <- function(k, n) {
+    plot(0, 0, xlim = c(-150, 150), ylim = c(-150, 150), col = "red", pch = 19)
     state <- k
     counter <- 0
     color <- "blue"
