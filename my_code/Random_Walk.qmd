@@ -5,6 +5,7 @@ Creating random walk in Z Plane
 preliminaries
 
 ```{r}
+#| label: libraries
 library(ggplot2)
 ```
 
@@ -13,7 +14,8 @@ library(ggplot2)
 Function for Random Walk k: Initial state n: Number of steps
 
 ```{r}
-options <- list(
+#| label: rw directions
+d9 <- list(
     c(0, 0),
     c(1, 0),
     c(0, 1),
@@ -25,10 +27,22 @@ options <- list(
     c(1, -1)
 )
 
+d4 <- list(
+    c(1, 0),
+    c(0, 1),
+    c(-1, 0),
+    c(0, -1)
+)
+```
 
-simulate_random_walk <- function(k, n) {
+
+```{r}
+#| label: rw_function
+
+simulate_random_walk <- function(k, n, o) {
     plot(0, 0, xlim = c(-150, 150), ylim = c(-150, 150), col = "red", pch = 19)
     state <- k
+    options <- o
     counter <- 0
     color <- "blue"
 
@@ -59,13 +73,11 @@ simulate_random_walk <- function(k, n) {
 }
 ```
 
-Call the Function, and adjust parameters
 
 ```{r}
+#| label: rw parameters & start rw
 k <- c(0, 0)
-n <- 10000
+n <- 50000
 
-simulate_random_walk(k, n)
+simulate_random_walk(k, n, d4)
 ```
-
-There is also a counter that will count how often the random walk returns to the origin.
