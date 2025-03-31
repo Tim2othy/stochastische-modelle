@@ -10,15 +10,15 @@ $P (A) in [0 , 1]$ zuordnet. Es gilt:
 - $P (Omega) = 1$ (Normierung)
 
 - $P (A_1 union A_2 union...) = P (A_1) + P (A_2) +...$ falls
-  $(A_i sect A_j) = nothing$ für alle $i eq.not j$ ($sigma$-Additivität)
+  $(A_i inter A_j) = nothing$ für alle $i eq.not j$ ($sigma$-Additivität)
 
 Aus den Axiomen folgt
 
 - $P (A^C) = 1 - P (A)$
 
-- $P (A union B) = P (A) + P (B) - P (A sect B)$
+- $P (A union B) = P (A) + P (B) - P (A inter B)$
 
-- $P (B without A) = P (B) - P (A sect B)$
+- $P (B without A) = P (B) - P (A inter B)$
 
 Ist $A$ eine echte Teilmenge von $B$ ($A subset B$) gilt
 
@@ -35,8 +35,8 @@ $ lim_(n arrow.r oo) P (A_n) = P (A) = P (union.big_(n = 1)^oo A_n) $
 (b) Sind $A , A_1 , A_2 ,... subset Omega$ eine Folge von nicht
 disjunkten Ereignissen mit
 \$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$} ...\$
-und $sect.big_(n = 1)^oo A_n = A$, dann gilt
-$ lim_(n arrow.r oo) P (A_n) = P (A) = P (sect.big_(n = 1)^oo A_n) $ (a)
+und $inter.big_(n = 1)^oo A_n = A$, dann gilt
+$ lim_(n arrow.r oo) P (A_n) = P (A) = P (inter.big_(n = 1)^oo A_n) $ (a)
 lässt sich folgendermaßen zeigen: \
 Seien
 
@@ -66,7 +66,7 @@ folgt $A_1^C subset A_2^C subset... subset A_n^C$. Sei nun
 Mit der $sigma$-Additivität ist dann
 $ P (union.big_(n = 1)^oo A_n^C) = P (A^C) = P (union.big_(k = 1)^oo B_k) = sum_(k = 1)^oo P (B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P (B_k) lim_(n arrow.r oo) P (union.big_(k = 1)^n B_k) = lim_(n arrow.r oo) P (A_n^C) $
 und folglich
-$ lim_(n arrow.r oo) P (A_n) = 1 - lim_(n arrow.r oo) P (A_n^C) = 1 - P (union.big n = 1^oo A_n^C) = 1 - P ([sect.big_(n = 1)^oo A_n]^C) = P (sect.big_(n = 1)^oo A_n) = P (A) $
+$ lim_(n arrow.r oo) P (A_n) = 1 - lim_(n arrow.r oo) P (A_n^C) = 1 - P (union.big n = 1^oo A_n^C) = 1 - P ([inter.big_(n = 1)^oo A_n]^C) = P (inter.big_(n = 1)^oo A_n) = P (A) $
 
 == Zufallsvariablen
 <zufallsvariablen>
@@ -86,8 +86,8 @@ Ist ${ epsilon.alt_n }_(n = 1)^oo$ eine fallen Folge mit
 und $lim_(n arrow.r oo) epsilon.alt_n = 0$, dann gilt für die Ereignisse
 $A_n := { a - epsilon.alt_n < X < a }$
 \$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$}  ...\$
-und $sect.big_(n = 1)^oo A_n = { X = a } = A$ gemß Lemma 1b)
-$ P (Y = a) = P (sect.big_(n = 1)^oo A_n) = P (A) = lim_(n arrow.r oo) P (A_n) = lim_(n arrow.r oo) P (a - epsilon.alt_n < X lt.eq a) = F (a) - lim_(n arrow.r oo) F (a - epsilon.alt_n) $
+und $inter.big_(n = 1)^oo A_n = { X = a } = A$ gemß Lemma 1b)
+$ P (Y = a) = P (inter.big_(n = 1)^oo A_n) = P (A) = lim_(n arrow.r oo) P (A_n) = lim_(n arrow.r oo) P (a - epsilon.alt_n < X lt.eq a) = F (a) - lim_(n arrow.r oo) F (a - epsilon.alt_n) $
 Eine Zufallsvariable heißt diskret, falls ...
 
 - ... sie (un)endlich viele abzählbare Werte hat.
@@ -163,7 +163,7 @@ Es gilt
 <unabhängigkeit>
 Ereignisse $A_1 , A_2 ,...$ heißen unabhängig, falls für jede
 endliche Auswahl von verschiedenen Indizes $i_1 ,... , i_n$ gilt
-$ P (A_(i_1) sect... sect A_(i_n)) = P (A_(i_1)... P (A_(i_n))) $
+$ P (A_(i_1) inter... inter A_(i_n)) = P (A_(i_1)... P (A_(i_n))) $
 Sind $A_1 , A_2 ,...$ unabhängige Ereignisse und ist für jedes i
 $B_i = A_i$ oder $B_i = A_i^C$, dann sind auch $B_1 , B_2 ,...$
 unabhängig. \
@@ -205,7 +205,7 @@ $X_1 ,... , X_n$.
 == Bedingte Wahrscheinlichkeiten und Erwartungswerte
 <bedingte-wahrscheinlichkeiten-und-erwartungswerte>
 Für $A , B in Omega$ mit $P (B) > 0$ ist die bedingte Wahrscheinlichkeit
-von A gegeben B $ P (A \| B) = frac(P (A sect B), P (B)) $
+von A gegeben B $ P (A \| B) = frac(P (A inter B), P (B)) $
 
 - Bei festem $B in Omega$ mit $P (B) > 0$ ist $P (dot(\|) B)$ ein
   Wahrscheinlichkeitsmaß: $P (Omega \| B) = 1$ und für diesjungte
@@ -216,13 +216,13 @@ von A gegeben B $ P (A \| B) = frac(P (A sect B), P (B)) $
   $P (B) > 0$)
 
 - Bilden $A_1 , A_2 ,...$ eine Zerlegung von $Omega$, also
-  $A_i sect A_j = nothing$ für alle $i eq.not j$ und
+  $A_i inter A_j = nothing$ für alle $i eq.not j$ und
   $union.big_i A_i = Omega$, dann gilt ür jedes $A in Omega$
-  $ P (A) = sum_i P (A sect A_i) = sum_(i : P (A_i) > 0) P (A \| A_i) P (A_i) upright(" (Satz der totalen Warcheinlichkeit) ") $
+  $ P (A) = sum_i P (A inter A_i) = sum_(i : P (A_i) > 0) P (A \| A_i) P (A_i) upright(" (Satz der totalen Warcheinlichkeit) ") $
 
 - Für beliebige Ereignisse $A_1 ,... A_n$ gilt
-  $ P (A_1 sect A_2 sect...) = P (A_1) P (A_2 \| A_1) P (A_3 \| A_1 sect A_2)... P (A_n \| A_1 sect... sect A_(n - 1)) , $falls
-  $ P (A_1 sect... sect A_(n - 1)) > 0 upright(" (Multiplikationssatz für bedingte Wahrscheinlichkeiten) ") $
+  $ P (A_1 inter A_2 inter...) = P (A_1) P (A_2 \| A_1) P (A_3 \| A_1 inter A_2)... P (A_n \| A_1 inter... inter A_(n - 1)) , $falls
+  $ P (A_1 inter... inter A_(n - 1)) > 0 upright(" (Multiplikationssatz für bedingte Wahrscheinlichkeiten) ") $
 
 Für dieskrete Zufallsvariablen $X$ und $Y$ ist die bedingte
 Wahrscheinlichkeitsfunktion $f_(X \| Y) (x \| y)$ ($X$, gegeben $Y = y$)
