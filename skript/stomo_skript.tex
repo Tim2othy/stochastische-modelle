@@ -27,190 +27,190 @@
 
 
 \begin{document}
-	
+
 \maketitle
 \newpage
-	
+
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \tableofcontents
 \newpage
-	
+
 \section{Wahrscheinlichkeitstheorie}
 \subsection{Wahrscheinlichkeitsmaße}
-Bezeichne $\Omega$ die Menge aller möglichen Ergebnisse eines Zufallsexperiments und $A \in \Omega$ ein Ereignis. 
+Bezeichne $\Omega$ die Menge aller möglichen Ergebnisse eines Zufallsexperiments und $A \in \Omega$ ein Ereignis.
 Ein Wahrscheinlichkeitsmaß ist eine Abbildung, die jedem $A$ eine Zahl $P(A) \in [0,1]$ zuordnet. Es gilt:
 \begin{itemize}
-\item $P(\Omega) = 1 $ (Normierung)
-\item $P(A_1 \cup A_2 \cup ...) = P(A_1) + P(A_2) + ...$ falls $(A_i \cap A_j) = \emptyset$ für alle $i \neq j$ ($\sigma$-Additivität)
+	\item $P(\Omega) = 1 $ (Normierung)
+	\item $P(A_1 \cup A_2 \cup ...) = P(A_1) + P(A_2) + ...$ falls $(A_i \cap A_j) = \emptyset$ für alle $i \neq j$ ($\sigma$-Additivität)
 \end{itemize}
 Aus den Axiomen folgt
 \begin{itemize}
-    \item $P(A^C) = 1- P(A)$
-    \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
-    \item $P(B \backslash A) = P(B) - P(A\cap B)$
+	\item $P(A^C) = 1- P(A)$
+	\item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+	\item $P(B \backslash A) = P(B) - P(A\cap B)$
 \end{itemize}
 Ist $A$ eine echte Teilmenge von $B$ ($A \subset B$) gilt
 \begin{itemize}
-    \item $P(B \backslash A)= P(B) - P(A)$ 
-    \item $P(A) \subseteq P(B)$
+	\item $P(B \backslash A)= P(B) - P(A)$
+	\item $P(A) \subseteq P(B)$
 \end{itemize}
 Für Ereginisse $A_1, ..., A_n$ gilt
 $$
-P \left( \bigcup_{i=1}^nA_i \right) \leq \sum_{i=1}^{n}P(A_i)
-.$$
+	P \left( \bigcup_{i=1}^nA_i \right) \leq \sum_{i=1}^{n}P(A_i)
+	.$$
 (a) Sind $A, A_1, A_2, ... \supset \Omega$ eine Folge von nicht disjunkten Ereginissen mit $A_1 \subset A_2 \subset ... \subset A$ und $\bigcup_{n=1}^\infty A_n = A$, dann ist
 $$
-\lim_{n \to \infty} P(A_n) = P(A) = P \left(  \bigcup_{n=1}^\infty A_n \right)
+	\lim_{n \to \infty} P(A_n) = P(A) = P \left(  \bigcup_{n=1}^\infty A_n \right)
 $$
-(b) Sind $A, A_1, A_2, ... \subset \Omega$ eine Folge von nicht disjunkten Ereignissen mit $A_1 \reflectbox{$\subset$} A_2 \reflectbox{$\subset$} ...$ und $\bigcap_{n=1}^\infty A_n = A$, dann gilt 
+(b) Sind $A, A_1, A_2, ... \subset \Omega$ eine Folge von nicht disjunkten Ereignissen mit $A_1 \reflectbox{$\subset$} A_2 \reflectbox{$\subset$} ...$ und $\bigcap_{n=1}^\infty A_n = A$, dann gilt
 $$
-\lim_{n \to \infty} P(A_n) = P(A) = P \left(  \bigcap_{n=1}^\infty A_n \right)
+	\lim_{n \to \infty} P(A_n) = P(A) = P \left(  \bigcap_{n=1}^\infty A_n \right)
 $$
 (a) lässt sich folgendermaßen zeigen:\\
 Seien
 \begin{itemize}
-    \item $B_1:= A_1$
-    \item $B_2:= A_2 \backslash A_1$
-    \item \dots
-    \item $B_n:= A_n \backslash A_{n-1}$
+	\item $B_1:= A_1$
+	\item $B_2:= A_2 \backslash A_1$
+	\item \dots
+	\item $B_n:= A_n \backslash A_{n-1}$
 \end{itemize}
-Mit der $\sigma$-Additivität ist dann 
+Mit der $\sigma$-Additivität ist dann
 $$
-P(A) = P \left( \bigcup_{k=1}^\infty B_k \right) = \sum_{k=1}^{\infty} P(B_k) = \lim_{n \to \infty} \sum_{i=1}^{n} P(B_k) = \lim_{n \to \infty} P \left( \bigcup_{k=1}^n B_k \right) = \lim_{n \to \infty} P(A_n)
+	P(A) = P \left( \bigcup_{k=1}^\infty B_k \right) = \sum_{k=1}^{\infty} P(B_k) = \lim_{n \to \infty} \sum_{i=1}^{n} P(B_k) = \lim_{n \to \infty} P \left( \bigcup_{k=1}^n B_k \right) = \lim_{n \to \infty} P(A_n)
 $$
 (b) lässt sich folgendermaßen zeigen:\\
 Aus $ A_1 \reflectbox{$\subset$} A_2 \reflectbox{$\subset$} ... \reflectbox{$\subset$} A_n $ folgt $A_1^C \subset A_2^C \subset ... \subset A_n^C $. Sei nun
 \begin{itemize}
-    \item $B_1:= A_1^C$
-    \item $B_2:= A_2^C \backslash A_1^C$
-    \item \dots
-    \item $A_n^C \backslash A_{n-1}^C$
+	\item $B_1:= A_1^C$
+	\item $B_2:= A_2^C \backslash A_1^C$
+	\item \dots
+	\item $A_n^C \backslash A_{n-1}^C$
 \end{itemize}
 Mit der $\sigma$-Additivität ist dann
 $$
-P \left(\bigcup_{n=1}^\infty A_n^C\right) = P(A^C) = P \left( \bigcup_{k=1}^\infty B_k \right) = \sum_{k=1}^{\infty} P(B_k) = \lim_{n \to \infty} \sum_{i=1}^{n} P(B_k) \lim_{n \to \infty} P \left( \bigcup_{k=1}^n B_k \right) = \lim_{n \to \infty} P(A_n^C)
+	P \left(\bigcup_{n=1}^\infty A_n^C\right) = P(A^C) = P \left( \bigcup_{k=1}^\infty B_k \right) = \sum_{k=1}^{\infty} P(B_k) = \lim_{n \to \infty} \sum_{i=1}^{n} P(B_k) \lim_{n \to \infty} P \left( \bigcup_{k=1}^n B_k \right) = \lim_{n \to \infty} P(A_n^C)
 $$
-und folglich 
+und folglich
 $$
-\lim_{n \to \infty}P(A_n) = 1 - \lim_{n \to \infty}P(A_n^C) = 1 - P \left( \bigcup{n=1}^\infty A_n^C \right) = 1 - P \left( \left[\bigcap_{n=1}^\infty A_n  \right]^C \right) = P \left(\bigcap_{n=1}^\infty A_n \right) = P(A)
+	\lim_{n \to \infty}P(A_n) = 1 - \lim_{n \to \infty}P(A_n^C) = 1 - P \left( \bigcup{n=1}^\infty A_n^C \right) = 1 - P \left( \left[\bigcap_{n=1}^\infty A_n  \right]^C \right) = P \left(\bigcap_{n=1}^\infty A_n \right) = P(A)
 $$
 
 \subsection{Zufallsvariablen}
-Eine Zufallsvariable ist eine Abbildung $X: \Omega \to \mathbb{R}$. Für $ A \subset \mathbb{R} $ gilt 
+Eine Zufallsvariable ist eine Abbildung $X: \Omega \to \mathbb{R}$. Für $ A \subset \mathbb{R} $ gilt
 $$ \{ X \in A \} = \{ \omega \in \Omega : X(\omega) \in A \} $$
-und 
+und
 $$ P(X \in A) = P \left( \{ \omega \in \Omega : X(\omega) \in A \} \right). $$
-Für $a \in \mathbb{R}$ ist 
+Für $a \in \mathbb{R}$ ist
 $$
-\{ X=a \} = \{ \omega \in \Omega: X(\omega) = a \}
-$$
-und 
-$$
-P(X=a) = P \left( \{\omega \in \Omega: X(\omega) = a \} \right)
-.$$
-Die Verteilungsfunktion $F=F_X$ der Zufallsvariablen $X$ ist definiert durch $F(x) = P(X\in x)$ mit $x \in \mathbb{R}$ und 
-$$
-P(X \in (a,b]) = P(a < X \leq b) = F(b) - F(a) \text{ für alle } a<b
-.$$
-Zudem gilt 
-$$
-P(Y=a) =F(a) - F(b_-) =F(a) - \lim_{\epsilon \to 0}F(a-\epsilon)
-.$$
-Ist $\{\epsilon_n \}_{n=1}^\infty$ eine fallen Folge mit $\epsilon_1 \reflectbox{$\subset$} \epsilon_2 \reflectbox{$\subset$} ... \reflectbox{$\subset$} 0$ und $\lim_{n \to \infty}\epsilon_n = 0$, dann gilt für die Ereignisse $A_n:= \{ a- \epsilon_n < X < a\}$
-$A_1 \reflectbox{$\subset$} A_2 \reflectbox{$\subset$}  ...$ und $\bigcap_{n=1}^\infty A_n = \{X=a\} = A$ gemß Lemma 1b)
-$$
-P(Y=a) = P\left( \bigcap_{n=1}^\infty A_n   \right) = P(A) = \lim_{n \to \infty} P(A_n) = \lim_{n \to \infty} P(a - \epsilon_n < X \leq a)  = F(a) - \lim_{n \to \infty}F(a-\epsilon_n)
-$$
-Eine Zufallsvariable heißt diskret, falls ...  
-\begin{itemize}
-    \item ... sie (un)endlich viele abzählbare Werte hat.
-    \item ... $f(x) = P(X=x)$ gilt (Wahrscheinlichkeitsfunktion).
-    \item ... für $A \in \mathbb{R}$ $P(X \in A) = \sum_{X \in A}f(x)$ gilt.
-\end{itemize}
-Eine Zufallsvariable heißt stetig, falls es eine nicht negative Funktion f gibt, sodass
-$$
-P(a \leq X \leq b) = \int_{a}^{b}f(x) \,dx \text{ für alle } a < b
-$$
-f heißt Dichte von X. Die Verteilungsfunktion ist dann
-$$
-F(x) = \int_{- \infty}^{x} f(t) \,dt
-$$
-Die gemeinsame Verteilungsfunktion $F=F_{X_1, ..., X_n}$ von $n$ Zufallsvariablen $X_1, ..., X_n$ ist definiert durch
-$$
-F(x_1, ..., x_n) = P(X_1 \leq x_1, ..., X_n \leq x_n) \text{ für alle } x_1, ..., x_n \in \mathbb{R}
-$$
-Für die Randverteilungsfunktion $F_{X_1}, ..., F_{X_n}$ gilt 
-$$
-F_{X_i}(x_i) = \lim_{x_j \to \infty} F(x_1, ..., x_n) \text{ für } i \neq j
-$$
-Sund $X_1, ..., X_n$ diskrete Zufallsvariabeln, so ist ihre gemeinsame Wahrscheinlichkeitsfunktion gegeben durch
-$$
-f(x_1, ..., x_n) = P(X_1=x_1, ..., X_n=x_n)
-.$$
-$X_1, ..., X_n$ sind gemeinsam stetig verteilt, falls es eine gemeinsame Dichte $f(x_1, ...,x_n) \geq 0$ gibt, sodass
-$$
-F(x_1, ..., x_n) = \int_{-\infty}^{x_1} \dots \int_{-\infty}^{x_n}f(t_1, ..., t_n) \,dt_n \dots \,dt_1 \text{ für alle } x_1, ..., x_n \in \mathbb{R}
-$$
-Für $B_1, ..., B_n \in \mathbb{R}$ gilt dann
-$$
-P(X_1 \in B_1, ..., X_n \in B_n) = \int_{B_1} ... \int_{B_n} f(t_1, ..., t_n) \, dt_n ... \, dt_1
-$$
-Für $B \in \mathbb{R}^n$ ist
-$$
-P \left(  \{X_1, ..., X_n\} \in B   \right) = \underset{B}{\int \dots \int} f(t_1, ..., t_n) \, dt_n ... \, dt_1
-$$
-und die Randdichte ist 
-$$
-f_{X_i} = \int_{-\infty}^{\infty} ...\int_{-\infty}^{\infty} f(x_1, ..., x_n) \,dx_1 ... \, dx_{i-1} \, dx_{i+1} ... \, dx_n
-$$
-Ist zum Beispiel $f$ eine gemeinsame Dichte von $X$ und $Y$, dann gilt
-$$
-P(X < Y) = \int_{-\infty}^{\infty} \int_{x}^{\infty} f(x,y) \, dy \, dx
+	\{ X=a \} = \{ \omega \in \Omega: X(\omega) = a \}
 $$
 und
 $$
-f_Y(y) = \int_{-\infty}^{\infty} f(x,y) dx
-.$$
+	P(X=a) = P \left( \{\omega \in \Omega: X(\omega) = a \} \right)
+	.$$
+Die Verteilungsfunktion $F=F_X$ der Zufallsvariablen $X$ ist definiert durch $F(x) = P(X\in x)$ mit $x \in \mathbb{R}$ und
+$$
+	P(X \in (a,b]) = P(a < X \leq b) = F(b) - F(a) \text{ für alle } a<b
+	.$$
+Zudem gilt
+$$
+	P(Y=a) =F(a) - F(b_-) =F(a) - \lim_{\epsilon \to 0}F(a-\epsilon)
+	.$$
+Ist $\{\epsilon_n \}_{n=1}^\infty$ eine fallen Folge mit $\epsilon_1 \reflectbox{$\subset$} \epsilon_2 \reflectbox{$\subset$} ... \reflectbox{$\subset$} 0$ und $\lim_{n \to \infty}\epsilon_n = 0$, dann gilt für die Ereignisse $A_n:= \{ a- \epsilon_n < X < a\}$
+$A_1 \reflectbox{$\subset$} A_2 \reflectbox{$\subset$}  ...$ und $\bigcap_{n=1}^\infty A_n = \{X=a\} = A$ gemß Lemma 1b)
+$$
+	P(Y=a) = P\left( \bigcap_{n=1}^\infty A_n   \right) = P(A) = \lim_{n \to \infty} P(A_n) = \lim_{n \to \infty} P(a - \epsilon_n < X \leq a)  = F(a) - \lim_{n \to \infty}F(a-\epsilon_n)
+$$
+Eine Zufallsvariable heißt diskret, falls ...
+\begin{itemize}
+	\item ... sie (un)endlich viele abzählbare Werte hat.
+	\item ... $f(x) = P(X=x)$ gilt (Wahrscheinlichkeitsfunktion).
+	\item ... für $A \in \mathbb{R}$ $P(X \in A) = \sum_{X \in A}f(x)$ gilt.
+\end{itemize}
+Eine Zufallsvariable heißt stetig, falls es eine nicht negative Funktion f gibt, sodass
+$$
+	P(a \leq X \leq b) = \int_{a}^{b}f(x) \,dx \text{ für alle } a < b
+$$
+f heißt Dichte von X. Die Verteilungsfunktion ist dann
+$$
+	F(x) = \int_{- \infty}^{x} f(t) \,dt
+$$
+Die gemeinsame Verteilungsfunktion $F=F_{X_1, ..., X_n}$ von $n$ Zufallsvariablen $X_1, ..., X_n$ ist definiert durch
+$$
+	F(x_1, ..., x_n) = P(X_1 \leq x_1, ..., X_n \leq x_n) \text{ für alle } x_1, ..., x_n \in \mathbb{R}
+$$
+Für die Randverteilungsfunktion $F_{X_1}, ..., F_{X_n}$ gilt
+$$
+	F_{X_i}(x_i) = \lim_{x_j \to \infty} F(x_1, ..., x_n) \text{ für } i \neq j
+$$
+Sund $X_1, ..., X_n$ diskrete Zufallsvariabeln, so ist ihre gemeinsame Wahrscheinlichkeitsfunktion gegeben durch
+$$
+	f(x_1, ..., x_n) = P(X_1=x_1, ..., X_n=x_n)
+	.$$
+$X_1, ..., X_n$ sind gemeinsam stetig verteilt, falls es eine gemeinsame Dichte $f(x_1, ...,x_n) \geq 0$ gibt, sodass
+$$
+	F(x_1, ..., x_n) = \int_{-\infty}^{x_1} \dots \int_{-\infty}^{x_n}f(t_1, ..., t_n) \,dt_n \dots \,dt_1 \text{ für alle } x_1, ..., x_n \in \mathbb{R}
+$$
+Für $B_1, ..., B_n \in \mathbb{R}$ gilt dann
+$$
+	P(X_1 \in B_1, ..., X_n \in B_n) = \int_{B_1} ... \int_{B_n} f(t_1, ..., t_n) \, dt_n ... \, dt_1
+$$
+Für $B \in \mathbb{R}^n$ ist
+$$
+	P \left(  \{X_1, ..., X_n\} \in B   \right) = \underset{B}{\int \dots \int} f(t_1, ..., t_n) \, dt_n ... \, dt_1
+$$
+und die Randdichte ist
+$$
+	f_{X_i} = \int_{-\infty}^{\infty} ...\int_{-\infty}^{\infty} f(x_1, ..., x_n) \,dx_1 ... \, dx_{i-1} \, dx_{i+1} ... \, dx_n
+$$
+Ist zum Beispiel $f$ eine gemeinsame Dichte von $X$ und $Y$, dann gilt
+$$
+	P(X < Y) = \int_{-\infty}^{\infty} \int_{x}^{\infty} f(x,y) \, dy \, dx
+$$
+und
+$$
+	f_Y(y) = \int_{-\infty}^{\infty} f(x,y) dx
+	.$$
 
 \subsection{Erwartungswert und Varianz}
-Ist $X$ eine diskrete Zufallsvariable und $g: \mathbb{R} \to \mathbb{R}$, so ist 
+Ist $X$ eine diskrete Zufallsvariable und $g: \mathbb{R} \to \mathbb{R}$, so ist
 $$
-E[g(X)] = \sum_{X} g(x)P(X=x)
+	E[g(X)] = \sum_{X} g(x)P(X=x)
 $$
 wobei die Summe über alle $X$ mit $P(X=x) > 0$ läuft.\\
 Nimmt X nur Werte in $\{ 0, 1, 2, ...    \}$ an, dann gilt
 $$
-E[X] = \sum_{n=0}^{\infty}P(X>n) \text{, }
+	E[X] = \sum_{n=0}^{\infty}P(X>n) \text{, }
 $$
 denn
 \begin{align*}
-	E[X] &= \sum_{n=0}^{\infty} n P(X=n) = \\
-	& P(X=1) + \\
-	& P(X=2) + P(X=2) + \\
-	& P(X=3) + P(X=3) + P(X=3) + \\
-	& \dots \\
-	& P(X=n) + P(X=n) + P(X=n) + \dots \\
-	&= P(X>0) + P(X > 1) + P(X>2) + \dots + P(X>n)
+	E[X] & = \sum_{n=0}^{\infty} n P(X=n) =              \\
+	     & P(X=1) +                                      \\
+	     & P(X=2) + P(X=2) +                             \\
+	     & P(X=3) + P(X=3) + P(X=3) +                    \\
+	     & \dots                                         \\
+	     & P(X=n) + P(X=n) + P(X=n) + \dots              \\
+	     & = P(X>0) + P(X > 1) + P(X>2) + \dots + P(X>n)
 \end{align*}
 Hat $X$ eine Dichte $f$, so ist
 $$
-E[g(X)] = \int_{-\infty}^{\infty}g(x)f(x) \,dx
+	E[g(X)] = \int_{-\infty}^{\infty}g(x)f(x) \,dx
 $$
 Für jede nichtnegative ZUfallsvariable $X$ gilt
 $$
-E[X] = \int_{0}^{\infty}P(X>x) \, dx = \int_{0}^{\infty}P( X\geq x) \, dx
+	E[X] = \int_{0}^{\infty}P(X>x) \, dx = \int_{0}^{\infty}P( X\geq x) \, dx
 $$
 Allgemein gilt
 $$
-E[aX + bY] = aE[X] + bE[Y] \text{ für } a,b \in \mathbb{R}
+	E[aX + bY] = aE[X] + bE[Y] \text{ für } a,b \in \mathbb{R}
 $$
 Die Varianz der Zufallsvariable $X$ ist
 $$
-Var[X] = E \left[ (X- E[X])^2     \right] = E\left[ X^2 \right] - E[X]^2
+	Var[X] = E \left[ (X- E[X])^2     \right] = E\left[ X^2 \right] - E[X]^2
 $$
 Die Kovarianz von Zufallsvariablen X und Y ist
 $$
-Cov[X,Y] = E \left[ (X-E[X])(Y-E[Y])    \right] = E[XY] - E[X]E[Y]
+	Cov[X,Y] = E \left[ (X-E[X])(Y-E[Y])    \right] = E[XY] - E[X]E[Y]
 $$
 Es gilt
 \begin{enumerate}
@@ -223,12 +223,12 @@ Es gilt
 \subsection{Unabhängigkeit}
 Ereignisse $A_1, A_2, ...$ heißen unabhängig, falls für jede endliche Auswahl von verschiedenen Indizes $i_1, ..., i_n$ gilt
 $$
-P(A_{i_1} \cap ... \cap A_{i_n}) = P(A_{i_1}...P(A_{i_n}))
+	P(A_{i_1} \cap ... \cap A_{i_n}) = P(A_{i_1}...P(A_{i_n}))
 $$
 Sind $A_1, A_2, ...$ unabhängige Ereignisse und ist für jedes i $B_i = A_i$ oder $B_i = A_i^C$, dann sind auch $B_1, B_2, ...$ unabhängig.\\
-Zufallsvariablen $X_1, ..., X_n$ heißen unabhängig, falls für alle $x_1, ..., x_n \in \mathbb{R}$ 
+Zufallsvariablen $X_1, ..., X_n$ heißen unabhängig, falls für alle $x_1, ..., x_n \in \mathbb{R}$
 $$
-F_{X_1, ..., X_n}(x_1, ..., x_n) = F_{X_1}(x_1)F_{X_2}(x_2)...F_{X_n}(x_n)
+	F_{X_1, ..., X_n}(x_1, ..., x_n) = F_{X_1}(x_1)F_{X_2}(x_2)...F_{X_n}(x_n)
 $$
 Für eine unendliche Folge von Zufallsvariablen $X_1, X_2, ...$ bedeutet Unabhängigkeit, dass für jedes $n$ $X_1, ..., X_n$ unabhängig sind.\\
 Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
@@ -237,81 +237,81 @@ Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
 	\item $E \left[\prod_{i=1  }^{n}X_i    \right] = \prod_{i=1}^{n}E[X_i]$
 	\item $Cov[X_i,X_j] = 0$ für alle $i \neq j$ $\rightarrow Var[X_1, ..., X_n] = \sum_{i=1}^{n} Var[X_i]$
 	\item $h_1(X_1, ..., X_{n_1}), h_2(X_{n_1+1}, ... X_{n_2}), ..., h_n(X_{n_{k-1}+1}, ... X_{n_k})$ sind unabhängige Zufallsvariablen, wobei $0 = n_0 < n_1 < ... < n_k \leq n$, wobei $h_i: \mathbb{R}^{n_i - n_{i-1}} \to \mathbb{R}$\\
-	$\{(X_1, ..., X_{n_1}) \in B_1     \}$, \\
-	$\{(X_{n_1+1}, ..., X_{n_2}) \in B_2     \}$, \\
-	... \\
-	$\{(X_{n_{k-1}+1}, ..., X_{n_k}) \in B_k     \}$, \\
-	sind somit unabhängige Ereignisse für alle $B_1, ..., B_k$.
+	      $\{(X_1, ..., X_{n_1}) \in B_1     \}$, \\
+	      $\{(X_{n_1+1}, ..., X_{n_2}) \in B_2     \}$, \\
+	      ... \\
+	      $\{(X_{n_{k-1}+1}, ..., X_{n_k}) \in B_k     \}$, \\
+	      sind somit unabhängige Ereignisse für alle $B_1, ..., B_k$.
 \end{enumerate}
-Für den Spezielfall diskreter Zufallsvariablen $X_1, ..., X_n$ gilt 
+Für den Spezielfall diskreter Zufallsvariablen $X_1, ..., X_n$ gilt
 $$
-X_1, ..., X_n \text{ unabhängig } \Leftrightarrow P(X_1 =x_1, ..., X_n=x_n) = P(X_1=x_1)...P(X_n=x_n) \text{ für alle} x_1, ..., x_n \in \mathbb{R}
+	X_1, ..., X_n \text{ unabhängig } \Leftrightarrow P(X_1 =x_1, ..., X_n=x_n) = P(X_1=x_1)...P(X_n=x_n) \text{ für alle} x_1, ..., x_n \in \mathbb{R}
 $$
 Sind $X_1, ..., X_n$ stetige Zufallsvariablen mit gemeinsamer Dichte f und $$f(x_1, ..., x_n) = f_{X_1}(x_1)...f_(X_n)(x_n) \text{ für alle } x_1, ..., x_n \in \mathbb{R},$$
-dann sind $X_1, ..., X_n$ unabhängig. In diesem Fall ist 
+dann sind $X_1, ..., X_n$ unabhängig. In diesem Fall ist
 $$
-f_{X_1}(x_1)...f_{X_n}(x_n)
+	f_{X_1}(x_1)...f_{X_n}(x_n)
 $$
 eine gemeinsame Dichte von $X_1, ..., X_n$.
 
 \subsection{Bedingte Wahrscheinlichkeiten und Erwartungswerte}
 Für $A,B \in \Omega $ mit $P(B)>0$ ist die bedingte Wahrscheinlichkeit von A gegeben B
 $$
-P(A|B) = \frac{P(A \cap B)}{P(B)}
+	P(A|B) = \frac{P(A \cap B)}{P(B)}
 $$
 \begin{itemize}
 	\item Bei festem $B\in \Omega$ mit $P(B)>0$ ist $P(\dot|B)$ ein Wahrscheinlichkeitsmaß: $P(\Omega | B) = 1$ und für diesjungte Ereignisse $A_1, A_2, ...$ ist $P(A_1 \cup A_2 \cup ... | B) = \sum_{i}P(A_i|B)$
 	\item Sind A und B unabhängig, dann ist $P(A|B) = P(A)$ (falls $P(B)>0$)
 	\item Bilden $A_1, A_2, ...$ eine Zerlegung von $\Omega$, also $A_i \cap A_j = \emptyset$ für alle $i \neq j$ und $\bigcup_iA_i = \Omega$, dann gilt ür jedes $A \in \Omega$
-	$$P(A) = \sum_{i}P(A \cap A_i) = \sum_{i: P(A_i) > 0}P(A|A_i)P(A_i) \text{ (Satz der totalen Warcheinlichkeit) } $$
-	\item Für beliebige Ereignisse $A_1, ... A_n$ gilt 
-	$$
-	P(A_1 \cap A_2 \cap ...) = P(A_1)P(A_2|A_1)P(A_3|A_1\cap A_2)...P(A_n | A_1 \cap ... \cap A_{n-1}), $$falls  $$ P(A_1 \cap ... \cap A_{n-1}) > 0 \text{ (Multiplikationssatz für bedingte Wahrscheinlichkeiten) }
-	$$
+	      $$P(A) = \sum_{i}P(A \cap A_i) = \sum_{i: P(A_i) > 0}P(A|A_i)P(A_i) \text{ (Satz der totalen Warcheinlichkeit) } $$
+	\item Für beliebige Ereignisse $A_1, ... A_n$ gilt
+	      $$
+		      P(A_1 \cap A_2 \cap ...) = P(A_1)P(A_2|A_1)P(A_3|A_1\cap A_2)...P(A_n | A_1 \cap ... \cap A_{n-1}), $$falls  $$ P(A_1 \cap ... \cap A_{n-1}) > 0 \text{ (Multiplikationssatz für bedingte Wahrscheinlichkeiten) }
+	      $$
 \end{itemize}
 Für dieskrete Zufallsvariablen $X$ und $Y$ ist die bedingte Wahrscheinlichkeitsfunktion $f_{X|Y}(x|y)$ ($X$, gegeben $Y=y$) definiert durch
 $$
-f_{X|Y} = P(X=x|Y=y) \text{, falls } P(Y=y) > 0 
+	f_{X|Y} = P(X=x|Y=y) \text{, falls } P(Y=y) > 0
 $$
 Nach dem Satz der totalen Wahrscheinlichkeit ist dann
 $$
-P(X=x) = \sum_{Y: P(Y=y)>0} f_{X|Y}(x|y)P(Y=y)
+	P(X=x) = \sum_{Y: P(Y=y)>0} f_{X|Y}(x|y)P(Y=y)
 $$
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 1]
 	$X$ und $Y$ seien diskrete Zufallsvariablen mit Wahrscheinlichkeitsfunktionen $f_X$ und $f_Y$. Für die Wahrscheinlichkeitsfunktion $f_{X+Y}$ von $X+Y$ gilt
 	$$
-	f_{X+Y}(z) = P(X+Y = z) = \sum_{Y: f_Y(y)>0}P(X+Y=z|Y=y)f_Y(y) $$ $$ = \sum_{Y} f_{X|Y}(z-y|y)f_Y(y)
+		f_{X+Y}(z) = P(X+Y = z) = \sum_{Y: f_Y(y)>0}P(X+Y=z|Y=y)f_Y(y) $$ $$ = \sum_{Y} f_{X|Y}(z-y|y)f_Y(y)
 	$$
 \end{tcolorbox}
-Seien $X$ und $Y$ unabhängige diskrete Zufallsvariablen, dann gilt 
+Seien $X$ und $Y$ unabhängige diskrete Zufallsvariablen, dann gilt
 $
-f_{X|Y}(x|y) = f_X(x)
-$ und 
+	f_{X|Y}(x|y) = f_X(x)
+$ und
 $$
-f_{X+Y}(z) = \sum_{Y} f_{X}(z-y)f_Y(y)
-.$$
+	f_{X+Y}(z) = \sum_{Y} f_{X}(z-y)f_Y(y)
+	.$$
 Diese Funktion heßt Faltung von $f_X$ und $f_Y$.\\
 Analog ist für unabhängige stetige Zufallsvariablen $X$ und $Y$ mit zugehörigen Dichten $f_X(x)$ und $f_Y(y)$ die Dichte von $X+Y$ gegeben durch die Faltung
 $$
-f_{X+Y}(z) = \int_{-\infty}^{\infty} f_{X}(z-y)f_Y(y) \, dy,
+	f_{X+Y}(z) = \int_{-\infty}^{\infty} f_{X}(z-y)f_Y(y) \, dy,
 $$
 denn für alle $t \in \mathbb{R}$ ist
 $$
-P(X+Y+t) = \int_{-\infty}^{\infty} \int_{-y}^{t-y}f_X(x)f_Y(y) \,dx \,dy =  $$ $$\int_{-\infty}^{\infty} \int_{-\infty}^{t}f_{X}(z-y)f_Y(y) \, dz \,dy = \int_{-\infty}^{t}\int_{-\infty}^{\infty}f_X(z-y)f_Y(y) \, dy \, dz
+	P(X+Y+t) = \int_{-\infty}^{\infty} \int_{-y}^{t-y}f_X(x)f_Y(y) \,dx \,dy =  $$ $$\int_{-\infty}^{\infty} \int_{-\infty}^{t}f_{X}(z-y)f_Y(y) \, dz \,dy = \int_{-\infty}^{t}\int_{-\infty}^{\infty}f_X(z-y)f_Y(y) \, dy \, dz
 $$
-Seien $X$ und $Y$ diskrete ZUfallsvariablen und gilt $g: \mathbb{R} \to \mathbb{R}$. Der bedingte Erwartungswert von $g(X)$ gegeben $Y=y$ ist 
+Seien $X$ und $Y$ diskrete ZUfallsvariablen und gilt $g: \mathbb{R} \to \mathbb{R}$. Der bedingte Erwartungswert von $g(X)$ gegeben $Y=y$ ist
 $$
-E[g(X)|Y=y] = \sum_{X}g(x)f_{X|Y}(x|y) \text{ ,falls } P(Y=y) > 0
+	E[g(X)|Y=y] = \sum_{X}g(x)f_{X|Y}(x|y) \text{ ,falls } P(Y=y) > 0
 $$
 Zudem gilt
 $$
-E[g(X)] = \sum_{Y:P(Y=y)>0}E[g(X)|Y=y]P(Y=y) \text{, denn }
+	E[g(X)] = \sum_{Y:P(Y=y)>0}E[g(X)|Y=y]P(Y=y) \text{, denn }
 $$
 $$
-E[g(X)] = \sum_{X}g(x)P(X=x) = \sum_{X}g(x) \sum_{Y}f_{X|Y}(x|y)P(Y=y) 
+	E[g(X)] = \sum_{X}g(x)P(X=x) = \sum_{X}g(x) \sum_{Y}f_{X|Y}(x|y)P(Y=y)
 $$
 $$
-= \sum_{Y}P(Y=y)\sum_{X}g(x)f_{X|Y}(x|y)
+	= \sum_{Y}P(Y=y)\sum_{X}g(x)f_{X|Y}(x|y)
 $$
 Im Falle diskreter Zufallsvariablen $X, X_1, X_2, Y$ und $y \in \mathbb{R}$ gelten folgene Rechenregeln für bedingte Erwartungswerte:
 \begin{enumerate}
@@ -322,39 +322,39 @@ Im Falle diskreter Zufallsvariablen $X, X_1, X_2, Y$ und $y \in \mathbb{R}$ gelt
 \end{enumerate}
 Ist Y diskret und X stetig mit bedinter Dichte $f_{X|Y}(x|y)$, also
 $$
-P(a < X < b | Y=y) = \int_{a}^{b}f_{X|Y}(x|y) \text{ für alle } a < b \text{ und } P(Y=y)>0
-,$$
+	P(a < X < b | Y=y) = \int_{a}^{b}f_{X|Y}(x|y) \text{ für alle } a < b \text{ und } P(Y=y)>0
+	,$$
 dann gilt für die Randdichte $f_X(x)$ von $X$
 $$
-f_X(x) = \sum_{Y:P(Y=y)>0}f_{X|Y}(x|y)P(Y=y)
+	f_X(x) = \sum_{Y:P(Y=y)>0}f_{X|Y}(x|y)P(Y=y)
 $$
 und für $g: \mathbb{R} \to \mathbb{R}$
 $$
-E[g(X)|Y=y]:= \int g(x)f_{X|Y}(x|y) \, dx \text{ falls } P(Y=y) > 0
+	E[g(X)|Y=y]:= \int g(x)f_{X|Y}(x|y) \, dx \text{ falls } P(Y=y) > 0
 $$
 Die Rechenregeln für bedingte Erwartungswerte gelten wie im diskreten Fall, wie zum Beispiel
 $$
-E[g(X)] = \sum_{Y:P(Y=y)>0}E[g(X)|Y=y]P(Y=y)
-.$$
+	E[g(X)] = \sum_{Y:P(Y=y)>0}E[g(X)|Y=y]P(Y=y)
+	.$$
 
 \section{Markovketten}
 \subsection{Markov-Eigenschaft}
 Ein stochastischer Prozess ist eine Familie von Zufallsvariablen $X_t$, wobei der Parameter $t$ eine Indexmenge $T$ durchläuft.
 Oft ist $T \in [o,\infty )$ oder $T= \{0,1,2, ...\}$ und $t \in T$ wird als Zeitpunkt interpretiert.\\
-Der Zustandsraum eines stochastischen Prozesses $\{ X_t: t \in T   \}$ ist die Menge aller möglichen Werte der $X_t$. 
+Der Zustandsraum eines stochastischen Prozesses $\{ X_t: t \in T   \}$ ist die Menge aller möglichen Werte der $X_t$.
 Man sagt der Prozess ist zur Zeit $t$ in Zustand $x$, falls $X_t =x$.\\
 Eines diskrete Markov-Kette ist ein stochastischer Prozess mit diskreter Zeit und diskretem Zustandsraum, sodass zu jeder Zeit die Verteilung des nächsten Zustands nur vom aktuellen Zustand abhängt aber nicht von den vorherigen.
 Formal bedeutet dies:\\
-Sei $S \neq \emptyset  $ eine endliche oder abzählbar unendliche Menge. Sei $(P_{ij})_{i,j \in S}$ eine stochstische Matrix, also 
+Sei $S \neq \emptyset  $ eine endliche oder abzählbar unendliche Menge. Sei $(P_{ij})_{i,j \in S}$ eine stochstische Matrix, also
 $p_{ij} \geq 0$ für alle $i,j \in S$ und $\sum_{j\in S}p_{ij} = 1$ für alle $i \in S$.\\
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 5]
-Eine Folge $\{X_n: n \in \mathbb{N}   \}$ von Zufallsvariablen mit Werten in $S$ heißt Markovkette mit Zustandraum $S$ und Übergangsmatrix $(P_{ij})_{i,j \in S})$, falls 
-für alle $n \geq 0$ und alle möglichen $i_0, i_1, ..., i_{n+1} \in S$ gilt
-$$
-(\star) P(X_{n+1}=i_{n+1} | X_0 = i_{0}, ... , X_n = i_n) = p_{i_ni_{n+1}}
-,$$
-sofern $P(X_0 = i_o, ..., X_n = i_n) > 0$. Die Verteilung von $X_0$ heißt Anfangsverteilung der Markov-Kette.\\
+	Eine Folge $\{X_n: n \in \mathbb{N}   \}$ von Zufallsvariablen mit Werten in $S$ heißt Markovkette mit Zustandraum $S$ und Übergangsmatrix $(P_{ij})_{i,j \in S})$, falls
+	für alle $n \geq 0$ und alle möglichen $i_0, i_1, ..., i_{n+1} \in S$ gilt
+	$$
+		(\star) P(X_{n+1}=i_{n+1} | X_0 = i_{0}, ... , X_n = i_n) = p_{i_ni_{n+1}}
+		,$$
+	sofern $P(X_0 = i_o, ..., X_n = i_n) > 0$. Die Verteilung von $X_0$ heißt Anfangsverteilung der Markov-Kette.\\
 \end{tcolorbox}
 
 $(\star)$ beinhaltet zwei Aussagen:
@@ -365,55 +365,55 @@ $(\star)$ beinhaltet zwei Aussagen:
 Die i-te Zeile der Übergangsmatrix beschreibt die bedingte Verteilung des nächsten Zustands $X_{n+1}$ gegeben $X_n=i$ (und $X_0=i_0, ...$).
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 2]
-	Seien $X_0, X_1, ...$ unabhängige und identisch verteilte $\mathbb{N}_0$-wertige Zufalssvariablen mit $P(X_0 = i) = a_i$, $ i = 0, 1, ...$. Dann ist 
+	Seien $X_0, X_1, ...$ unabhängige und identisch verteilte $\mathbb{N}_0$-wertige Zufalssvariablen mit $P(X_0 = i) = a_i$, $ i = 0, 1, ...$. Dann ist
 	$
-	\{ X_n: n \in \mathbb{N}   \}
+		\{ X_n: n \in \mathbb{N}   \}
 	$
 	eine Markov-Kette mit Zusstandraum $\mathbb{N}_0$ und Übergangsmatrix $(P_{ij})_{i,j \in \mathbb{N}_0}$ mit $p_{ij} = a_j$ für alle $i,j \in \mathbb{N}_0$.
 	$$
-	\left( P_{ij} \right)^a_{i,j = 0} = 
-	\begin{pmatrix}
-		a_0 & a_1 & a_2 & \cdots \\
-		a_0 & a_1 & a_2 & \cdots \\
-		a_0 & a_1 & a_2 & \cdots \\
-		\vdots & \vdots & \vdots & \ddots \\
-	\end{pmatrix}
+		\left( P_{ij} \right)^a_{i,j = 0} =
+		\begin{pmatrix}
+			a_0    & a_1    & a_2    & \cdots \\
+			a_0    & a_1    & a_2    & \cdots \\
+			a_0    & a_1    & a_2    & \cdots \\
+			\vdots & \vdots & \vdots & \ddots \\
+		\end{pmatrix}
 	$$
 	Denn für alle $n \geq 0$ und alle $i_0, ..., i_{n+1} \in \mathbb{N}_0$ mit $P(X_0 = i_0, ..., X_n=i_n) > 0$ gilt:
 	$$
-	P(X_{n+1} = i_{n+1}| X_0 = i_0, ..., X_n = i_n) = P(X_{n+1} = i_{n+1}) = a_{i_{n+1}} = p_{i_ni_{n+1}}
+		P(X_{n+1} = i_{n+1}| X_0 = i_0, ..., X_n = i_n) = P(X_{n+1} = i_{n+1}) = a_{i_{n+1}} = p_{i_ni_{n+1}}
 	$$
 	In Worten: Die Wahrscheinlichkeit von Zustand $i$ in Zustand $j$ zu gehen wird nur durch die Wahrscheinlichkeit in Zustand
-	$j$ zu sein bestimmt, oder anders gesagt $X_{n+1}$ und $X_n$ sind unabhängig. 
+	$j$ zu sein bestimmt, oder anders gesagt $X_{n+1}$ und $X_n$ sind unabhängig.
 \end{tcolorbox}
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 3]
 	\textbf{Irrfahrt auf $\mathbb{Z}$}\\
-	
+
 	Seien $Y_1, Y_2, \dots$ unabhängige, identisch verteilte $\mathbb{Z}$-wertige Zufallsvariablen mit $P(Y_1 = i)$, $i \in \mathbb{Z}$.
-	Sei $X_{0i} := 0$ und $X_n := Y_1 + \dots + Y_n$, $n \in \mathbb{N}$. 
+	Sei $X_{0i} := 0$ und $X_n := Y_1 + \dots + Y_n$, $n \in \mathbb{N}$.
 	In Worten: $X_n$ springt zufällig von $X_{n-1} = i_{n-1} = i_{n-2} + Y_{n-1}$ zu $i_n = i_{n-1} + Y_n$ auf den ganzen Zahlen $\mathbb{Z}$.
 	Damit gilt offensichtlich für jedes $n \geq 1$, dass $X_n = i_{n-1} + Y_{n} \Leftrightarrow Y_n = i_n - i_{n-1}$.\\
 	Für alle $n \geq 0$ und alle $i_0, \dots, i_{n+1} \in \mathbb{Z}$ mit $P(X_0 = i_0, \dots, X_n = i_n) > 0$ ist
 	\begin{align*}
-		&  P(X_{n+1} = i_{n+1} | X_0 = i_0, \dots, X_n = i_n) \\
-		=&  P(X_n + Y_{n+1} = i_{n+1} | X_0 = i_0, \dots, X_n = i_n) \\
-		= & P(i_n + Y_{n+1} = i_{n+1} | X_0 = i_0, \dots, X_n = i_n) \\
-		=&  P(Y_{n+1} = i_{n+1} - i_n | X_0 = i_0, \dots, X_n = i_n) \\
-		=&  P(Y_{n+1} = i_{n+1} - i_n | Y_1 = i_1, Y_2 = i_2 - i_1, \dots, Y_n = i_n - i_{n-1}) \\
-		=&  P(Y_{n+1} = i_{n+1} - i_n) = a_{i_{n+1} - i_n}.
+		  & P(X_{n+1} = i_{n+1} | X_0 = i_0, \dots, X_n = i_n)                                  \\
+		= & P(X_n + Y_{n+1} = i_{n+1} | X_0 = i_0, \dots, X_n = i_n)                            \\
+		= & P(i_n + Y_{n+1} = i_{n+1} | X_0 = i_0, \dots, X_n = i_n)                            \\
+		= & P(Y_{n+1} = i_{n+1} - i_n | X_0 = i_0, \dots, X_n = i_n)                            \\
+		= & P(Y_{n+1} = i_{n+1} - i_n | Y_1 = i_1, Y_2 = i_2 - i_1, \dots, Y_n = i_n - i_{n-1}) \\
+		= & P(Y_{n+1} = i_{n+1} - i_n) = a_{i_{n+1} - i_n}.
 	\end{align*}
 	$\Rightarrow \{X_n: n\in \mathbb{N}\}$ ist eine Markov-Kette mit Zustandsraum $\mathbb{Z}$ und Übergangswahrscheinlichkeit $p_{ij} =a_{j-1}$, $i,j \in \mathbb{Z}$.
 	$$
-	\left( P_{ij} \right) = 
-	\begin{pmatrix}
-		\dots & a_{-2} & a_{-1} & a_0 & a_1 & a_2 & \dots \\
-		\dots & a_{-3} & a_{-2} & a_{-1} & a_0 & a_1 & \dots \\
-		\dots & a_{-4} & a_{-3} & a_{-2} & a_{-1} & a_0 & \dots \\
-		\dots & a_{-5} & a_{-4} & a_{-3} & a_{-2} & a_{-1} & \dots \\
-		\dots & a_{-6} & a_{-5} & a_{-4} & a_{-3} & a_{-2} & \dots \\
-		\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
-	\end{pmatrix}
+		\left( P_{ij} \right) =
+		\begin{pmatrix}
+			\dots  & a_{-2} & a_{-1} & a_0    & a_1    & a_2    & \dots  \\
+			\dots  & a_{-3} & a_{-2} & a_{-1} & a_0    & a_1    & \dots  \\
+			\dots  & a_{-4} & a_{-3} & a_{-2} & a_{-1} & a_0    & \dots  \\
+			\dots  & a_{-5} & a_{-4} & a_{-3} & a_{-2} & a_{-1} & \dots  \\
+			\dots  & a_{-6} & a_{-5} & a_{-4} & a_{-3} & a_{-2} & \dots  \\
+			\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+		\end{pmatrix}
 	$$
 	Ein Spezielafall wäre die einfache Irrfahrt auf $\mathbb{Z}$ bei der $P(Y_n =1) = p$ und $P(Y_n = -1) = 1-p$ für alle $n \in \mathbb{N}$.
 	Interpretation: Die Markov-Kette beschreibt die Position eines Teilchens, das sich auf $\mathbb{Z}$ bewegt. Es startet im Ursprung $X_0 = 0$ und springt zu jedem Zeitpunkt $1,2, ...$ zufällig eine Einheit nach links oder rechts.
@@ -425,50 +425,50 @@ Die i-te Zeile der Übergangsmatrix beschreibt die bedingte Verteilung des näch
 	In Worten: Die Kette nimmt zu jeden Zeitpuntk $n$ den größten zufälligen Wert aus $\{0,Y_1, ..., Y_n\}$, bzw. wegen der sukzessiven Natur des Prozesses
 	aus $\{i_{n-1},Y_n\}$, an.\\
 	Für alle $n \geq 0$ und alle $i_0, ..., i_{n+1} \in \mathbb{N}_0$ mit $P(X_0 = i_0, ..., X_n = i_n) > 0$ ist
-\begin{align*}
-	& P(X_{n+1} = i_{n+1} | X_0 = i_0, \dots, X_n = i_n) \\
-	&=  P(\max(Y_1, \dots, Y_{n+1}) = i_{n+1} \mid X_0 = i_0, \dots, X_n = i_n) \\
-	&=  P(\max(X_n, Y_{n+1}) = i_{n+1} \mid X_0 = i_0, \dots, X_n = i_n) \\
-	&=  P(\max(i_n, Y_{n+1}) = i_{n+1} \mid X_0 = i_0, \dots, X_n = i_n) \\
-	&=  P(\max(i_n, Y_{n+1}) = i_{n+1} \mid Y_1 = i_1, \max(Y_1, Y_2) = i_2, \dots, \max(Y_1, \dots, Y_n) = i_n) \\
-	&=  P(\max(i_n, Y_{n+1}) = i_{n+1})
-\end{align*}
-Diese Wahrscheinlichkeit hängt nun vom Verhältnis von $i_n$ zu $i_{n+1}$ ab. Per Konstruktion kann $i_{n+1}$ nicht kleiner sein als $i_n$.
-Ist $i_{n+1} < i_n$, dann ist $Y_{n+1}$ das Maximum und folglich auch $P(\max(i_n, Y_{n+1}) = i_{n+1}) =P(Y_{n+1}= i_{n+1})= a_{i_{n+1}}$. Für den Fall, 
-dass $i_{n+1} = i_n$ ist, betrachten wir sowohl die Fälle, für die $Y_{n+1} < i_n$ ist als auch den Fall $Y_{n+1} = i_n$. Daraus folgt 
-$P(\max(i_n, Y_{n+1}) = i_{n+1}) = P(Y_{n+1} \leq i_n) = \sum_{k=0}^{n}a_k $.
+	\begin{align*}
+		 & P(X_{n+1} = i_{n+1} | X_0 = i_0, \dots, X_n = i_n)                                                          \\
+		 & =  P(\max(Y_1, \dots, Y_{n+1}) = i_{n+1} \mid X_0 = i_0, \dots, X_n = i_n)                                  \\
+		 & =  P(\max(X_n, Y_{n+1}) = i_{n+1} \mid X_0 = i_0, \dots, X_n = i_n)                                         \\
+		 & =  P(\max(i_n, Y_{n+1}) = i_{n+1} \mid X_0 = i_0, \dots, X_n = i_n)                                         \\
+		 & =  P(\max(i_n, Y_{n+1}) = i_{n+1} \mid Y_1 = i_1, \max(Y_1, Y_2) = i_2, \dots, \max(Y_1, \dots, Y_n) = i_n) \\
+		 & =  P(\max(i_n, Y_{n+1}) = i_{n+1})
+	\end{align*}
+	Diese Wahrscheinlichkeit hängt nun vom Verhältnis von $i_n$ zu $i_{n+1}$ ab. Per Konstruktion kann $i_{n+1}$ nicht kleiner sein als $i_n$.
+	Ist $i_{n+1} < i_n$, dann ist $Y_{n+1}$ das Maximum und folglich auch $P(\max(i_n, Y_{n+1}) = i_{n+1}) =P(Y_{n+1}= i_{n+1})= a_{i_{n+1}}$. Für den Fall,
+	dass $i_{n+1} = i_n$ ist, betrachten wir sowohl die Fälle, für die $Y_{n+1} < i_n$ ist als auch den Fall $Y_{n+1} = i_n$. Daraus folgt
+	$P(\max(i_n, Y_{n+1}) = i_{n+1}) = P(Y_{n+1} \leq i_n) = \sum_{k=0}^{n}a_k $.
 	$$
-	P(\max(i_n, Y_{n+1}) = i_{n+1})= \begin{cases}
-		P(Y_{n+1}=i_{n+1}) = a_{i_{n+1}} & \text{, falls } i_{n+1} > i_n \\
-		P(Y_{n+1} \leq i_n) = \sum_{k=o}^{n}a_k & \text{, falls } i_{n+1} = i_n \\
-		0 & \text{, falls } i_{n+1} < i_n
-	\end{cases}
+		P(\max(i_n, Y_{n+1}) = i_{n+1})= \begin{cases}
+			P(Y_{n+1}=i_{n+1}) = a_{i_{n+1}}        & \text{, falls } i_{n+1} > i_n \\
+			P(Y_{n+1} \leq i_n) = \sum_{k=o}^{n}a_k & \text{, falls } i_{n+1} = i_n \\
+			0                                       & \text{, falls } i_{n+1} < i_n
+		\end{cases}
 	$$
 	$\Rightarrow \{X_n: n \in N_0 \}$ ist eine Markovkette mit Zustandsraum $\mathbb{N}_0$ und Übergangsmatrix
 	$$
-	p_{ij} = \begin{cases}
-		a_j & \text{, falls } j>i\\
-		\sum_{k=0}^{i}a_k & \text{, falls } j=i \\
-		0 & \text{, falls } j<i
-	\end{cases}
+		p_{ij} = \begin{cases}
+			a_j               & \text{, falls } j>i \\
+			\sum_{k=0}^{i}a_k & \text{, falls } j=i \\
+			0                 & \text{, falls } j<i
+		\end{cases}
 	$$
 \end{tcolorbox}
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 5]
 	\textbf{Rekursive Darstellung einer Markovkette mittelszufälliger Funktionen}
-	Sei $X_0$ eine $S$-wertige Zufallsvariable und $S$ endlich oder abzählbar unendlich. Setze für $n \geq 0$ rekursiv 
+	Sei $X_0$ eine $S$-wertige Zufallsvariable und $S$ endlich oder abzählbar unendlich. Setze für $n \geq 0$ rekursiv
 	$$
-	X_{n+1} = f(X_n,Y_{n+1})
+		X_{n+1} = f(X_n,Y_{n+1})
 	$$
 	Dabei sei $ f: S \times \mathbb{R} \to S$, $Y_1, ..., Y_n$ seien identisch verteilte Zufallsvariablen und $Y_0, Y_1, ...$ seien unabhängig.\\
 	$\Rightarrow \{X_n: n \in  \mathbb{N}_0\}$ ist eine Markovkette mit Übergangswahrscheinlichkeiten $p_{ij}=P(f(i,Y_1)=j)$, denn für $n \geq 1$ und $i_0, ..., i_{n+1} \in S$ mit $P(X_0 = i_0, ..., X_n = i_n)>0$ gilt
 	\begin{align*}
-		& P(X_{n+1}=i_{n+1}|X_0 = i_0, ..., X_n = i_n) \\
-		&=  P(f(X_n, Y_{n+1})=i_{n+1}|X_0 = i_0, ..., X_n = i_n) \\
-		&=  P(f(i_n, Y_{n+1})=i_{n+1}|X_0 = i_0, ..., X_n = i_n) \\
-		& \overset{\star}{=}  P(f(i_n, Y_{n+1})=i_{n+1}) \\
-		&\overset{\star \star}{=}   P(f(i_n, Y_1)=i_{n+1}) \\
-		&=  p_{i_ni_{n+1}}
+		 & P(X_{n+1}=i_{n+1}|X_0 = i_0, ..., X_n = i_n)            \\
+		 & =  P(f(X_n, Y_{n+1})=i_{n+1}|X_0 = i_0, ..., X_n = i_n) \\
+		 & =  P(f(i_n, Y_{n+1})=i_{n+1}|X_0 = i_0, ..., X_n = i_n) \\
+		 & \overset{\star}{=}  P(f(i_n, Y_{n+1})=i_{n+1})          \\
+		 & \overset{\star \star}{=}   P(f(i_n, Y_1)=i_{n+1})       \\
+		 & =  p_{i_ni_{n+1}}
 	\end{align*}
 	$\star$ Hinweis: Das Ereignis $\{X_{n+1} =f(i_n,Y_{n+1})Ii_{n+1}\}$ hängt von einem festen Wert $i_n$ und der Zufallsvariablen $Y_{n+1}$ ab.
 	Das gleiche gilt natürlich auch für $X_0, ..., X_n$. Deswegen leigt hier Unabhängigkeit vor.\\
@@ -480,82 +480,82 @@ Bemerkung zum Beispiel: In Beispiel 3 war $f(x,y) = x+y$ und in Beispiel 4 war $
 
 
 \subsection{Mehrschritt-Übergangswahrscheinlichkeiten}
-Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandsraum S, Übergangsmatrix $(P_{ij})_{i,j \in S}$ und 
+Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandsraum S, Übergangsmatrix $(P_{ij})_{i,j \in S}$ und
 Anfangsverteilung $p_i = P(X_0 = i)$ ($i \in S$).
 Bestimme die gemeinsame Verteilung von $X_0, ..., X_n$:\\
- Für $n \geq 1$ und $i_0, ..., i_n \in S$ gilt
+Für $n \geq 1$ und $i_0, ..., i_n \in S$ gilt
 \begin{align*}
-&  P(X_0 = i_0, X_1 = i_1, ..., X_n = i_n)\\
-=&   P(X_0 = i_0, ..., X_{n-1}=i_{n-1})p_{i_{n-1}i_n}\\
-=&  P(X_0 = i_0, ..., X_{n-2} = i_{n-2})p_{i_{n-2}i_{n-1}}p_{i_{n-1}i_n}\\
-=&   \dots \\
-=&   P(X_0 = i_0)p_{i_0i_1}...p_{i_{n-2}i_{n-1}}p_{i_{n-1}i_n}
+	  & P(X_0 = i_0, X_1 = i_1, ..., X_n = i_n)                              \\
+	= & P(X_0 = i_0, ..., X_{n-1}=i_{n-1})p_{i_{n-1}i_n}                     \\
+	= & P(X_0 = i_0, ..., X_{n-2} = i_{n-2})p_{i_{n-2}i_{n-1}}p_{i_{n-1}i_n} \\
+	= & \dots                                                                \\
+	= & P(X_0 = i_0)p_{i_0i_1}...p_{i_{n-2}i_{n-1}}p_{i_{n-1}i_n}
 \end{align*}
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 6]
-Für jede Folge von Zuständen $i_0, ..., i_n \in S$ gilt:
-$$
-P(X_0 = i_0, ..., X_n = i_n) = p_{i_0i_1}...p_{i_{n-1}i_n}
-$$
-Insbesondere ist für jedes $n$ die Verteilung von $X_0, ...,X_n$ durch die Anfangsverteilung ($p_i$) und die 
-Übergangsmatrix $(P_{ij})_{i,j \in S}$ eindeutig festgelegt.
+	Für jede Folge von Zuständen $i_0, ..., i_n \in S$ gilt:
+	$$
+		P(X_0 = i_0, ..., X_n = i_n) = p_{i_0i_1}...p_{i_{n-1}i_n}
+	$$
+	Insbesondere ist für jedes $n$ die Verteilung von $X_0, ...,X_n$ durch die Anfangsverteilung ($p_i$) und die
+	Übergangsmatrix $(P_{ij})_{i,j \in S}$ eindeutig festgelegt.
 \end{tcolorbox}
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 7]
-Betrachte eine Markovkette $\{ X_n: n \in \mathbb{N}_0\}$ mit Zustandraum $S = \{0,1,2,3,4\}$, $X_0: = 0$, also $p_0 = P(X_0 = 0)=1$.\\
-Sei $X_n = max(Y_1, ..., Y_n)$, $n \in \mathbb{N}$, wobei $Y_1, ..., Y_n$ unabhängig und gleichverteilt ($P(Y_n = j) = \frac{1}{5}$ für alle $j \in S$ und $n \in \mathbb{N}_0$).\\
-In Worten: Die Markovkette nimmt zu jedem Zeitpunkt $n$ das Maximum aus dem bisherigen Maximum $i_{n-1}$ und dem zufälligen Wert $Y_n$ an,
-welcher mit gleicher Wahrscheinlichkeit Werte zwischen 0 und 4 annimmt. Aus Beispiel 4 folgt diese Übergansmatrix:
-$$
-(P_{ij})_{i,j = 0}^n =
-\begin{pmatrix}
-\frac{1}{5} & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} \\
-0 & \frac{2}{5} & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} \\
-0 & 0 & \frac{3}{5} & \frac{1}{5} & \frac{1}{5}\\
-0 & 0& 0 & \frac{4}{5} & \frac{1}{5} \\
-0 & 0 & 0 & 0 & 1 \\
-\end{pmatrix}
-$$
-Was wäre die Wahrscheinlichkeit, dass $X_0 = 0$, $X_1 = 2$ und $X_3 = 4$?
-\begin{align*}
-&  P(X_0 = 0, X_1 = 2, X_2 = 2, X_3 = 4)\\
-& =  p_0p_{02}p_{22}p_{24} \\
-& =  1 \cdot \frac{1}{5} \cdot \frac{3}{5} \cdot \frac{1}{5} = \frac{3}{125}
-\end{align*}
-Was wäre die Wahrscheinlichkeit, dass $X_1 \geq 2$ und $X_2 \leq X_1$?\\
-Da es nicht möglich ist, dass $i_{n+1} < i_n$, können wir auf 3 mögliche Pfade mit $X_1 = X_2 = 2$, $X_1 = X_2 = 3$ und $X_1 = X_2 = 4$ schließen. 
-\begin{align*}
-&  P(X_1 \geq 2, X_2 \leq X_1) \\
-& =  P(X_1 \geq 2, X_1 = X_2) \\
-& =  P(X_0 = 0, X_1 = 2, X_2 = 2) + P(X_0 = 0, X_1 = 3, X_2 = 3) + \dots \\
-& = \frac{12}{25}
-\end{align*}
+	Betrachte eine Markovkette $\{ X_n: n \in \mathbb{N}_0\}$ mit Zustandraum $S = \{0,1,2,3,4\}$, $X_0: = 0$, also $p_0 = P(X_0 = 0)=1$.\\
+	Sei $X_n = max(Y_1, ..., Y_n)$, $n \in \mathbb{N}$, wobei $Y_1, ..., Y_n$ unabhängig und gleichverteilt ($P(Y_n = j) = \frac{1}{5}$ für alle $j \in S$ und $n \in \mathbb{N}_0$).\\
+	In Worten: Die Markovkette nimmt zu jedem Zeitpunkt $n$ das Maximum aus dem bisherigen Maximum $i_{n-1}$ und dem zufälligen Wert $Y_n$ an,
+	welcher mit gleicher Wahrscheinlichkeit Werte zwischen 0 und 4 annimmt. Aus Beispiel 4 folgt diese Übergansmatrix:
+	$$
+		(P_{ij})_{i,j = 0}^n =
+		\begin{pmatrix}
+			\frac{1}{5} & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} \\
+			0           & \frac{2}{5} & \frac{1}{5} & \frac{1}{5} & \frac{1}{5} \\
+			0           & 0           & \frac{3}{5} & \frac{1}{5} & \frac{1}{5} \\
+			0           & 0           & 0           & \frac{4}{5} & \frac{1}{5} \\
+			0           & 0           & 0           & 0           & 1           \\
+		\end{pmatrix}
+	$$
+	Was wäre die Wahrscheinlichkeit, dass $X_0 = 0$, $X_1 = 2$ und $X_3 = 4$?
+	\begin{align*}
+		 & P(X_0 = 0, X_1 = 2, X_2 = 2, X_3 = 4)                                      \\
+		 & =  p_0p_{02}p_{22}p_{24}                                                   \\
+		 & =  1 \cdot \frac{1}{5} \cdot \frac{3}{5} \cdot \frac{1}{5} = \frac{3}{125}
+	\end{align*}
+	Was wäre die Wahrscheinlichkeit, dass $X_1 \geq 2$ und $X_2 \leq X_1$?\\
+	Da es nicht möglich ist, dass $i_{n+1} < i_n$, können wir auf 3 mögliche Pfade mit $X_1 = X_2 = 2$, $X_1 = X_2 = 3$ und $X_1 = X_2 = 4$ schließen.
+	\begin{align*}
+		 & P(X_1 \geq 2, X_2 \leq X_1)                                            \\
+		 & =  P(X_1 \geq 2, X_1 = X_2)                                            \\
+		 & =  P(X_0 = 0, X_1 = 2, X_2 = 2) + P(X_0 = 0, X_1 = 3, X_2 = 3) + \dots \\
+		 & = \frac{12}{25}
+	\end{align*}
 \end{tcolorbox}
 
 Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Vergangenheit erweitern: \\
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 7]
-Für alle $n, m \geq 1$, $Z \subset S^m$, $V \subset S^n$, $i \in S$ mit $P((X_0, ..., X_{n-1})\in V,X_n = i) > 0$ gilt
-$$
-P((X_{n+1}, ..., X_{n+m})\in Z | (X_0, ..., X_{n-1}) \in V, X_n = i) = \sum_{j_1, ..., j_m \in Z} p_{ij_1}p_{j_1j_2}...p_{j_{m-1}j_m}
-$$
-In Worten: Die Wahrscheinlichkeit, dass $\{X_n+1 = i_{n+1}, ..., X_{n+m}=i_{n+m}\} \in Z$, hängt nur von $X_n = i$ und nicht von 
-$\{X_0, ..., X_{n-1}\} \in V$. Die Wahrscheinlichkeit $P(\{X_n+1 = i_{n+1}, ..., X_{n+m}=i_{n+m}\} \in Z | X_n = i)$ ist dann die Summe
-über alle (disjunkten) Pfad-Wahrscheinlichkeiten in $Z$ (mit Start in $X_n = i$ und daraus resultierender Anfangsverteilung $p_i$).\\
-Sofern $P(X_0 = i) > 0$ können wir die aufgrund der Zeithomogenität der Markovkette auch folgen:
-$$
-P((X_{n+1}, ..., X_{n+1})\in Z | (X_0, ..., X_{n-1})\in V, X_n = i) = P((X_1, ..., X_m)\in Z | X_0 = i)
-$$
+	Für alle $n, m \geq 1$, $Z \subset S^m$, $V \subset S^n$, $i \in S$ mit $P((X_0, ..., X_{n-1})\in V,X_n = i) > 0$ gilt
+	$$
+		P((X_{n+1}, ..., X_{n+m})\in Z | (X_0, ..., X_{n-1}) \in V, X_n = i) = \sum_{j_1, ..., j_m \in Z} p_{ij_1}p_{j_1j_2}...p_{j_{m-1}j_m}
+	$$
+	In Worten: Die Wahrscheinlichkeit, dass $\{X_n+1 = i_{n+1}, ..., X_{n+m}=i_{n+m}\} \in Z$, hängt nur von $X_n = i$ und nicht von
+	$\{X_0, ..., X_{n-1}\} \in V$. Die Wahrscheinlichkeit $P(\{X_n+1 = i_{n+1}, ..., X_{n+m}=i_{n+m}\} \in Z | X_n = i)$ ist dann die Summe
+	über alle (disjunkten) Pfad-Wahrscheinlichkeiten in $Z$ (mit Start in $X_n = i$ und daraus resultierender Anfangsverteilung $p_i$).\\
+	Sofern $P(X_0 = i) > 0$ können wir die aufgrund der Zeithomogenität der Markovkette auch folgen:
+	$$
+		P((X_{n+1}, ..., X_{n+1})\in Z | (X_0, ..., X_{n-1})\in V, X_n = i) = P((X_1, ..., X_m)\in Z | X_0 = i)
+	$$
 \end{tcolorbox}
 
 \textbf{Beweis von Satz 7}\\
 Für alle $(j_1, ..., j_m) \in Z$ und $(i_0, ..., i_{n-1}) \in V$ mit
 $P(X_0 = i_0, ..., X_{n-1}=i_{n-1}, X_n = i) > 0$ gilt
 \begin{align*}
-&P((X_{n+1}, ..., X_{n+m}) = (j_1, ..., j_m) | (X_0, ..., X_{n-1}) = (i_0, ..., i_{n-1}), X_n = i) \\
-=& \frac{P((X_{n+1}, ..., X_{n+m}) = (j_1, ..., j_m), (X_0, ..., X_{n-1}) = (i_0, ..., i_{n-1}), X_n = i)}{P((X_0, ..., X_{n-1}) = (i_0, ..., i_{n-1}), X_n = i)}\\
-=&\frac{p_{i_0}p_{i_0i_1}...p_{i_{n-1}i}p_{ij_1}...p_{j_{m-1}j_m}}{p_{i_0}p_{i_0i_1}...p_{i_{n-1}i}} \\
- =& p_{ij_1}p_{j_1j_2}...p_{j_{m-1}j_m}
+	  & P((X_{n+1}, ..., X_{n+m}) = (j_1, ..., j_m) | (X_0, ..., X_{n-1}) = (i_0, ..., i_{n-1}), X_n = i)                                                              \\
+	= & \frac{P((X_{n+1}, ..., X_{n+m}) = (j_1, ..., j_m), (X_0, ..., X_{n-1}) = (i_0, ..., i_{n-1}), X_n = i)}{P((X_0, ..., X_{n-1}) = (i_0, ..., i_{n-1}), X_n = i)} \\
+	= & \frac{p_{i_0}p_{i_0i_1}...p_{i_{n-1}i}p_{ij_1}...p_{j_{m-1}j_m}}{p_{i_0}p_{i_0i_1}...p_{i_{n-1}i}}                                                             \\
+	= & p_{ij_1}p_{j_1j_2}...p_{j_{m-1}j_m}
 \end{align*}
 
 
@@ -563,148 +563,148 @@ $P(X_0 = i_0, ..., X_{n-1}=i_{n-1}, X_n = i) > 0$ gilt
 
 Oft werden für eine Markovkette $\{X_n\}$ bei fester Übergangsmatrix $(P_{ij})$ verschiedene Anfangszustände betrachtet.
 Bezeichne mit $p_i(\cdot)$ die bedingte Verteilung $P(X_n = j | X_0 = i)$ und mit $E_i(\cdot)$ den Erwartungswert für  den Anfangszustand $i$, das heißt $P_i(X_0 = i) = 1$.
-Dann gilt 
+Dann gilt
 \begin{align*}
-&  P((X_{n+1}, ..., X_{n+m})\in Z | (X_0, ..., X_{n-1})\in V, X_n = i) \\
-&= P((X_1, ..., X_m)\in Z | X_0 = i) \\
-&	= P_i((X_1, ..., X_m) \in Z)	
+	 & P((X_{n+1}, ..., X_{n+m})\in Z | (X_0, ..., X_{n-1})\in V, X_n = i) \\
+	 & = P((X_1, ..., X_m)\in Z | X_0 = i)                                 \\
+	 & = P_i((X_1, ..., X_m) \in Z)
 \end{align*}
 und für $f: f^m \to \mathbb{R}$
 \begin{align*}
-& E[f(X_{n+1, ..., X_{n+m}})| (X_0, ..., X_{n-1})\in V, X_n = i]\\ 
-&=   E[f(X_{n+1}, ..., X_{n+m})| X_0 = i] \\
-&=   E_i[f(X_1, ..., X_m)]
+	 & E[f(X_{n+1, ..., X_{n+m}})| (X_0, ..., X_{n-1})\in V, X_n = i] \\
+	 & =   E[f(X_{n+1}, ..., X_{n+m})| X_0 = i]                       \\
+	 & =   E_i[f(X_1, ..., X_m)]
 \end{align*}
 Beide Größen hängen vom gegenwärtigen Zustand $i$ ab und weder von $V$ noch von $n$.\\
 Die Aussagen lassen sich mit einem unendlichen Zeithorizont erweitern:\\
 Für die Menge $Z \subset S^\infty$ und $f: S^\infty \to \mathbb{R}$ gilt
 $$
-P((X_{n+1}, X_{n+2}, ...) \in Z | (X_0, ..., X_{n-1}\in V), X_n = i) = P_i((X_1, ...)\in Z)
+	P((X_{n+1}, X_{n+2}, ...) \in Z | (X_0, ..., X_{n-1}\in V), X_n = i) = P_i((X_1, ...)\in Z)
 $$
 und
 $$
-E[f(X_{n+1}, X_{n+2}, ...)|(X_0, ..., X_{n-1} \in V, X_n = i)] = E_i[f(X_{n+1}, X_{n+2}, ...)]
+	E[f(X_{n+1}, X_{n+2}, ...)|(X_0, ..., X_{n-1} \in V, X_n = i)] = E_i[f(X_{n+1}, X_{n+2}, ...)]
 $$
-Die $n$-Schritt Übergangswahrscheinlichkeit ist 
+Die $n$-Schritt Übergangswahrscheinlichkeit ist
 $$
-p_{ij}^n : = P(X_{n+m} = j|X_m = i)
+	p_{ij}^n : = P(X_{n+m} = j|X_m = i)
 $$
 mit $i,j \in S$, $n \geq 0$, $P(X_m = i) > 0$. Diese Wahrscheinlichkeit hängt nicht von $m$ ab (Zeithomogenität).\\
 Es gilt
 $$
-p_{ij}^0 = P(X_m = j | X_m = i) = \begin{cases}
-1 & \text{ , falls } i = j\\
-0 &\text{ , falls } i \neq j  
-\end{cases}
+	p_{ij}^0 = P(X_m = j | X_m = i) = \begin{cases}
+		1 & \text{ , falls } i = j    \\
+		0 & \text{ , falls } i \neq j
+	\end{cases}
 $$
 und
 $$
-P_{ij}^1 = P(X_{m+1} = j | X_m = i) = p_{ij}
+	P_{ij}^1 = P(X_{m+1} = j | X_m = i) = p_{ij}
 $$
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 8]
-Satz von Chapman-Kolmogorow: Für alle $i,j \in S$ und $m,n \in \mathbb{N}_0$ ist die Wahrscheinlichkeit, von Zustand $i$ in $m+n$ Schritten zu Stustand $j$ zu gelangen gegeben durch:
-$$
-p_{ij}^{(m+n)} = \sum_{k \in S} p_{ik}^{(m)}p_{kj}^{(n)}
-$$
+	Satz von Chapman-Kolmogorow: Für alle $i,j \in S$ und $m,n \in \mathbb{N}_0$ ist die Wahrscheinlichkeit, von Zustand $i$ in $m+n$ Schritten zu Stustand $j$ zu gelangen gegeben durch:
+	$$
+		p_{ij}^{(m+n)} = \sum_{k \in S} p_{ik}^{(m)}p_{kj}^{(n)}
+	$$
 \end{tcolorbox}
 \textbf{Beweis von Satz 8:}
 Die Behauptung ist für $m=0$, $n=0$ oder $n=m=0$ klar, da
 $$
-p_{ij}^{(n)} = \sum_{k \in S} p_{ik}^{0}p_{kj}^{(n)} = p_{ij}^{(n)}
+	p_{ij}^{(n)} = \sum_{k \in S} p_{ik}^{0}p_{kj}^{(n)} = p_{ij}^{(n)}
 $$
 
 $$
-p_{ij}^{(m)} = \sum_{k \in S} p_{ik}^{(m)}p_{kj}^{0} = p_{ij}^{(m)}
+	p_{ij}^{(m)} = \sum_{k \in S} p_{ik}^{(m)}p_{kj}^{0} = p_{ij}^{(m)}
 $$
 
 $$
-p_{ij}^{0} = \sum_{k \in S} p_{ik}^{0}p_{kj}^{0} = \begin{cases}
-	1 & \text{ , falls } i = j\\
-	0 &\text{ , falls } i \neq j \end{cases}
+	p_{ij}^{0} = \sum_{k \in S} p_{ik}^{0}p_{kj}^{0} = \begin{cases}
+		1 & \text{ , falls } i = j    \\
+		0 & \text{ , falls } i \neq j\end{cases}
 $$
 Für $m,n \geq 1$ und $P(X_0 = 1) > 0$ ist
 \begin{align*}
-& p_{ij}^{m+n} = P(X_{m+n} = j | X_0 = i) \\
-=& \sum_{k \in S} P(X_{m+n} = j, X_m = k | X_0 = i) \\
-=& \sum_{k \in S} \frac{P(X_{m+n} = j, X_m = k , X_0 = i)}{P(X_0 = i)} \times \frac{P(X_m = k, X_0 = i)}{P(X_m = k, X_0 = i)}\\
-=& \sum_{k \in S} P(X_{m+n}=j | X_m = k, X_0 = i)P(X_m = k|X_0 = i) \\
-=& \sum_{k \in S}P(X_m = k | X_0 = i)P(X_{m+n} = j |X_m = k) \\
-=& \sum_{k \in S}p_{ik}^{m}p_{kj}^{n}
+	  & p_{ij}^{m+n} = P(X_{m+n} = j | X_0 = i)                                                                                    \\
+	= & \sum_{k \in S} P(X_{m+n} = j, X_m = k | X_0 = i)                                                                           \\
+	= & \sum_{k \in S} \frac{P(X_{m+n} = j, X_m = k , X_0 = i)}{P(X_0 = i)} \times \frac{P(X_m = k, X_0 = i)}{P(X_m = k, X_0 = i)} \\
+	= & \sum_{k \in S} P(X_{m+n}=j | X_m = k, X_0 = i)P(X_m = k|X_0 = i)                                                           \\
+	= & \sum_{k \in S}P(X_m = k | X_0 = i)P(X_{m+n} = j |X_m = k)                                                                  \\
+	= & \sum_{k \in S}p_{ik}^{m}p_{kj}^{n}
 \end{align*}
 Für einen Übergang von $i$ nach $j$ in $m+n$ Schritten muss die Markovkette in $m$ Schritten von $i$ zu einem beliebigen Zustand $k$ gehen und dann von $k$ in $n$ Schritten zu $j$.\\
-Die $n$-Schritt Übergangsmatrix ist definiert als 
+Die $n$-Schritt Übergangsmatrix ist definiert als
 $$
-\Pi^{(n)}: = (P_{ij})^{(n)}
+	\Pi^{(n)}: = (P_{ij})^{(n)}
 $$
-mit 
+mit
 $$
-\Pi = \Pi^{(1)}: = (P_{ij})^{(1)}_{i,j \in S} = (P_{ij})_{i,j \in S}
+	\Pi = \Pi^{(1)}: = (P_{ij})^{(1)}_{i,j \in S} = (P_{ij})_{i,j \in S}
 $$
 Die $n$-Schritt Übergangsmatrix $\Pi^{(n)}$ ist die $n$-te Potenz der Übergangsmatrix $\Pi^{(1)}$.\\
 Somit besagt der Satz von Chapman-Kolmogorow, dass
 $$
-\Pi^{m+n} = \Pi^{m}\Pi^{n}
+	\Pi^{m+n} = \Pi^{m}\Pi^{n}
 $$
 Alternativ kann auch für einen Start bei $X_n = i$ mit korrespondierender Verteilung, welche dem
 Zeilenvektor
 $$
-(p_i^{(n)})_{i \in S}
+	(p_i^{(n)})_{i \in S}
 $$
 der Übergangsmatrix mit $p_i^{(n)} = P(X_n = i)$ und $n \in \mathbb{N}_0$ entspricht,
 die Wahrscheinlichkeit in weiteren $m \in \mathbb{N}_0$ Schritten ein beliebiges $j \in S$ zu erreichen folgendermaßen
-erfasst werden: 
+erfasst werden:
 $$
-p_{j}^{(n+m)} = P(X_{n+m}=j) = \sum_{i \in S}P(X_{n+m} = j | X_n = i)P(X_n = i) = \sum_{i \in S}p_i^{(n)}p_{ij}^{(m)}
+	p_{j}^{(n+m)} = P(X_{n+m}=j) = \sum_{i \in S}P(X_{n+m} = j | X_n = i)P(X_n = i) = \sum_{i \in S}p_i^{(n)}p_{ij}^{(m)}
 $$
 Daraus folgt wiederum:
 $$
-p^{(n+m)} = p^{(n)} \Pi^m 
+	p^{(n+m)} = p^{(n)} \Pi^m
 $$
 Letzteres kann genutzt werden, um die Verteilung $X_n$ zu jeden Zeitpunkt zu berechnen:
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 9]
-Die Verteilung von $X_n$ zu einem beliebigen Zeitpunkt $n \geq 0$ ergibt sich aus dem Produkt der Anfangsverteilung
-und der $n$-ten Potenz der Übergangsmatrix.
-$$
-p^{(n)} = p^{(0)} \Pi^n
-$$
+	Die Verteilung von $X_n$ zu einem beliebigen Zeitpunkt $n \geq 0$ ergibt sich aus dem Produkt der Anfangsverteilung
+	und der $n$-ten Potenz der Übergangsmatrix.
+	$$
+		p^{(n)} = p^{(0)} \Pi^n
+	$$
 \end{tcolorbox}
 
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 8]
-Betrachte eine Markovkette ${X_n: n \in \mathbb{N}_0}$ mit $S= \{1, 2, 3\}$, Übergangsmatrix
-$$
-\Pi = \frac{1}{3}\begin{pmatrix}
-1 & 0 & 2 \\
-0 & 2 & 1 \\
-1 & 1 & 1
-\end{pmatrix}
-$$
-und Anfangsverteilung $p^{(0)} = P(X_0 = i) = \left(\frac{1}{4}, \frac{1}{2}, \frac{1}{4}\right)$.\\
-Berechne die bedingte Verteilung von $X_2$ gegeben $X_0 = 3$.
-$$
-\Pi^2 = \Pi\Pi = \frac{1}{9} \begin{pmatrix}
-3 & 2 & 4 \\
-1 & 5 & 3 \\
-2 & 3 & 4
-\end{pmatrix}
-$$
-$$
-\Pi^4 = \Pi^2\Pi^2 = \frac{1}{81} \begin{pmatrix}
-19 & 28 & 34 \\
-14 & 36 & 31 \\
-17 & 31 & 33
-\end{pmatrix}
-$$
-\begin{itemize}
-	\item $P(X_2 = 1 | X_0 = 3) = p_{31}^{(2)} = \frac{2}{9}$
-	\item $P(X_2 = 2 | X_0 = 3) = p_{32}^{(2)} = \frac{1}{3}$
-	\item $P(X_2 = 3 | X_0 = 3) = p_{33}^{(2)} = \frac{4}{9}$
-\end{itemize}
-Berechne zudem die Verteilung von $X_4$.
-$$
-p^{(4)} = p^{(0)}\Pi^{(4)} = \left(P(X_4 = 1), P(X_4 = 2), P(X_4 = 3)\right)=  \left(\frac{16}{81}, \frac{131}{324}, \frac{43}{108}\right)
-$$
+	Betrachte eine Markovkette ${X_n: n \in \mathbb{N}_0}$ mit $S= \{1, 2, 3\}$, Übergangsmatrix
+	$$
+		\Pi = \frac{1}{3}\begin{pmatrix}
+			1 & 0 & 2 \\
+			0 & 2 & 1 \\
+			1 & 1 & 1
+		\end{pmatrix}
+	$$
+	und Anfangsverteilung $p^{(0)} = P(X_0 = i) = \left(\frac{1}{4}, \frac{1}{2}, \frac{1}{4}\right)$.\\
+	Berechne die bedingte Verteilung von $X_2$ gegeben $X_0 = 3$.
+	$$
+		\Pi^2 = \Pi\Pi = \frac{1}{9} \begin{pmatrix}
+			3 & 2 & 4 \\
+			1 & 5 & 3 \\
+			2 & 3 & 4
+		\end{pmatrix}
+	$$
+	$$
+		\Pi^4 = \Pi^2\Pi^2 = \frac{1}{81} \begin{pmatrix}
+			19 & 28 & 34 \\
+			14 & 36 & 31 \\
+			17 & 31 & 33
+		\end{pmatrix}
+	$$
+	\begin{itemize}
+		\item $P(X_2 = 1 | X_0 = 3) = p_{31}^{(2)} = \frac{2}{9}$
+		\item $P(X_2 = 2 | X_0 = 3) = p_{32}^{(2)} = \frac{1}{3}$
+		\item $P(X_2 = 3 | X_0 = 3) = p_{33}^{(2)} = \frac{4}{9}$
+	\end{itemize}
+	Berechne zudem die Verteilung von $X_4$.
+	$$
+		p^{(4)} = p^{(0)}\Pi^{(4)} = \left(P(X_4 = 1), P(X_4 = 2), P(X_4 = 3)\right)=  \left(\frac{16}{81}, \frac{131}{324}, \frac{43}{108}\right)
+	$$
 \end{tcolorbox}
 
 
@@ -715,7 +715,7 @@ Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandsraum S und Überg
 Sei $A \subset S$, $A \neq \emptyset$. Setze $T_i = \inf \{n \in \mathbb{N}_0: X_n \in A\}$, wobei $\inf \emptyset = \infty$. $T$ ist die Eintrittszeit in $A$, also der zufällige Zeitpunkt des ersten Besuchs der Menge $A$, falls es einen gibt.\\
 Ziel: Berechne für jeden Anfangszustand $i$ die Wahrscheinlichkeit, dass $A$ in endlicher Zeit erreicht wird.
 $$
-P(T < \infty | X_0 = i) = P(\bigcup_{n = 0}^{\infty}\{X_n \in A\}| X_0 = i) = p_i(T < \infty)
+	P(T < \infty | X_0 = i) = P(\bigcup_{n = 0}^{\infty}\{X_n \in A\}| X_0 = i) = p_i(T < \infty)
 $$
 Ein Zustand $z \in S$ heißt absorbierend, falls $p_{zz} = 1$.
 In dem Spezialfall, dass $A$ nur aus absorbierenden Zuständen besteht, heißt $p_i(T < \infty)$
@@ -725,18 +725,18 @@ Absorbtionswahrscheinlichkeit bei Start in $i \in S$ und $T$ heißt Absorbtionsz
 Folgender Satz gilt für beliebige $A$:\\
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 10]
-Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_{ij})$. 
-Sei $A \subset S$, $A \neq \emptyset$ und
-$$
-T_i = \inf \{n \in \mathbb{N}_0: X_n \in A\}
-$$
-$$
-h_i = P(T < \infty | X_0 = i)
-$$
-$$
-\Rightarrow h_i = 1 \text{ für alle } i \in A \text{ und } 
-h_i = \sum_{j \in S}p_{ij}h_j \text{ für alle } i \in S \backslash A
-$$
+	Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_{ij})$.
+	Sei $A \subset S$, $A \neq \emptyset$ und
+	$$
+		T_i = \inf \{n \in \mathbb{N}_0: X_n \in A\}
+	$$
+	$$
+		h_i = P(T < \infty | X_0 = i)
+	$$
+	$$
+		\Rightarrow h_i = 1 \text{ für alle } i \in A \text{ und }
+		h_i = \sum_{j \in S}p_{ij}h_j \text{ für alle } i \in S \backslash A
+	$$
 \end{tcolorbox}
 
 \textbf{Beweis Satz 10}\\
@@ -744,510 +744,510 @@ Für $i \in A$ gilt $P(T=0|X_0 = i) = 1$, also $h_1 = 0$.\\
 Sei nun $i \in S \backslash A$. Der Beweisansatz ist die Einschritt-Analyse:
 Zerlege die gesuchte Wahrscheinlichkeit $h_i$ mit dem Satz der totalen Wahrscheinlichkeit danach, was im ersten Schritt der Markov-Kette passiert ist.
 \begin{align*}
-	h_i & = P(T<\infty|X_0 = i) \\
-	&= \sum_{j \in S} P(T < \infty, X_1 = j | X_0 = i) \\
-	& = \sum_{j \in S} \overbrace{P(X_1 = j|X_0 = i)}^{p_{ij}}P(T < \infty | X_1 = j, X_0 = i)\\
-\end{align*} 
+	h_i & = P(T<\infty|X_0 = i)                                                                    \\
+	    & = \sum_{j \in S} P(T < \infty, X_1 = j | X_0 = i)                                        \\
+	    & = \sum_{j \in S} \overbrace{P(X_1 = j|X_0 = i)}^{p_{ij}}P(T < \infty | X_1 = j, X_0 = i) \\
+\end{align*}
 Für $j \in A$ ist
 $$
-P(T<\infty|X_1 = j, X_0 = i) = 1,
+	P(T<\infty|X_1 = j, X_0 = i) = 1,
 $$
 und für $j \in S \backslash A$
 \begin{align*}
-P(T< \infty | X_1 = j, X_0 = i) =& P\left(\bigcup_{n=2}^\infty \{X_n \in A\}| X_1 = j, X_0 = i\right)\\
-=& \lim_{N \to \infty} P\left(\bigcup_{n=2}^N \{X_n \in A\}| X_1 = j, X_0 = i\right)\\
-=&  \lim_{N \to \infty} P \left(\bigcup_{n=1}^{N-1} \{X_n \in A\}| X_o = j\right) \\
-=&  P\left(\bigcup_{n=1}^\infty \{X_n \in A\}| X_0 = j\right) \\
-=&  P(T < \infty | X_0 = j) \\
-=&  h_j
+	P(T< \infty | X_1 = j, X_0 = i) = & P\left(\bigcup_{n=2}^\infty \{X_n \in A\}| X_1 = j, X_0 = i\right)                \\
+	=                                 & \lim_{N \to \infty} P\left(\bigcup_{n=2}^N \{X_n \in A\}| X_1 = j, X_0 = i\right) \\
+	=                                 & \lim_{N \to \infty} P \left(\bigcup_{n=1}^{N-1} \{X_n \in A\}| X_o = j\right)     \\
+	=                                 & P\left(\bigcup_{n=1}^\infty \{X_n \in A\}| X_0 = j\right)                         \\
+	=                                 & P(T < \infty | X_0 = j)                                                           \\
+	=                                 & h_j
 \end{align*}
 Damit folgt: $$h_i = \sum_{j \in S}p_{ij}h_j$$
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 9]
-\textbf{Ruinproblem}\\
-In jeder Runde eines Spiels gewinnt eine Spieler 1€ mit Wahrscheinlichkeit $p \in (0,1)$ und verliert 1€ mit Wahrscheinlichkeit $(1-p)$.
-Sein Anfangskapital sei i€. Er spielt so lange, bis er M€ hat $(M \geq i)$ oder ruiniert ist (0€).\\
-Berechne die Ruinwahrscheinlichkeit.\\
-Betrachte hiefür die Markovkette $\{X_n: n \in \mathbb{N}_0\}$ mit Zustandsraum $S = \{0, 1, 2, ..., M\}$ und Übergangswahrscheinlichkeiten
-$$
-p_{ij} = \begin{cases}
-1 & \text{, falls } i=0 \text{ und } j=0\\
-p & \text{, falls } i \in \{1, ..., M-1\} \text{ und } j = i+1\\
-1-p & \text{, falls } i \in \{1, ..., M-1\} \text{ und } j = i-1\\
-1 & \text{, falls } i = M \text{ und } j = M\\
-0 & \text{, sonst} 
-\end{cases}
-$$
-Gesucht sind die Absorbtionswahrscheinlichkeiten
-$$
-h_i = P(T<\infty|X_0 = i)
-$$
-mit $i = 0, ..., M$ und $T = \inf\{n \in \mathbb{N}_0: X_n = 0\}$.\\
-Es ist $h_0 = 1$ (sofort ruiniert), $h_M = 0$ (sofort Ende des Spiels wegen maximalem Gewinn) und nach Satz 10
-ist die Wahrscheinlichkeit jemals ruiniert zu sein beim Start in Periode $i$ eine Gewichtung der Ruinwahrscheinlichkeit
-nach einer Aufwärtsbewegung (also ab $i+1$) und einer Abwäwärtsbewegung (also ab $i-1$). 
-\begin{align*}
-h_i &= ph_{i+1} + (1-p)h_{i-1} \text{ für } i = 1, ..., M-1 \\
-\Leftrightarrow h_{i+1} - h_i &= \frac{1-p}{p}(h_i - h_{i-1})
-\end{align*}
-Falls es sich um ein faires Spiel handelt, also $p =  \frac{1}{2}$, dann ist $h_{i+1} - h_i = h_i - h_{i-1}$ für $i=1, ..., M-1$. 
-Die Änderung in der Ruinwahrscheinlichkeit ist also konstant für jedes der $i$, man kann $h_i$ also als lineare Funktion betrachten:
-$$
-h_i = h_0 + a \times i
-$$
-Da $h_0 = 1$
-$$
-h_i = 1 + a \times i
-$$
-und $h_M = 0$ folgt für das $a$ aus der Gleichung
-\begin{align*}
-0 & = 1 + a \times M \\
-\Leftrightarrow a & = - \frac{1}{M}
-\end{align*}
-und somit für die Ruinwahrscheinlichkeit $h_i$:
-$$
-h_i = 1 - \frac{i}{M}
-$$
-Sei nun $p \neq \frac{1}{2}$ und setze $\Theta = \frac{1-p}{p}$. Durch rekursives Einsetzen erhält man
-\begin{align*}
-h_2 - h_1 & = \Theta (h_1 - h_0) = \Theta (h_1 - 1) \\
-h_3 - h_2 & = \Theta (h_2 - h_1) = \Theta^2 (h_1 - 1)\\
-\vdots & \\
-h_{i+1} - h_i & = \Theta^{i}(h_1 - 1) \text{ für alle } i = 0, ..., M-1
-\end{align*}
-Zunächst bildet man die Summe über $i=0, ..., j-1$ (über alle $j \in S$) und nutzt die Eigenschaft der Teleskopsumme und der geometrischen Reihe aus:
-\begin{align*}
-\sum_{i=0}^{j-1} h_{i+1} - h_i & = \sum_{i=0}^{j-1}\Theta^{i}(h_1 - 1) \\
-\Leftrightarrow\sum_{i=0}^{j-1} h_i - h_{i+1} & = \sum_{i=0}^{j-1}\Theta^{i}(1 - h_1) \\
-\Leftrightarrow   h_0 - h_{j} & =  \sum_{i=0}^{j-1}\Theta^{i}(1 - h_1) \\
-\Leftrightarrow 1 - h_{j} & =  (1 - h_1)\sum_{i=0}^{j-1}\Theta^{i} \\
-\Leftrightarrow 1 - h_{j} & =  (1 - h_1)\frac{1-\Theta^{j}}{1- \Theta}  \\
-\Leftrightarrow h_{j} & =  ( h_1 - 1)\frac{1-\Theta^{j}}{1- \Theta} +1  \text{ für } j = 1, ..., M
-\end{align*}
-Da diese Gleichung für alle $j$ gilt, gilt sie auch für $j=M$ und da $h_M = 0$ ist, ist 
-\begin{align*}
-0 & = ( h_1 - 1)\frac{1-\Theta^{M}}{1- \Theta} +1 \\
-\Leftrightarrow 1- h_1 &= \frac{1- \Theta}{1- \Theta^M}
-\end{align*}
-Damit ist 
-$$
-1 - h_j = \frac{1- \Theta}{1- \Theta^M} \times \frac{1- \Theta^j}{1- \Theta}
-$$
-und  folglich
-$$
-\Rightarrow h_j = 1 - \frac{1 - \Theta^{j}}{1-\Theta^{M}} \text{ für } j = 0, ..., M
-$$
+	\textbf{Ruinproblem}\\
+	In jeder Runde eines Spiels gewinnt eine Spieler 1€ mit Wahrscheinlichkeit $p \in (0,1)$ und verliert 1€ mit Wahrscheinlichkeit $(1-p)$.
+	Sein Anfangskapital sei i€. Er spielt so lange, bis er M€ hat $(M \geq i)$ oder ruiniert ist (0€).\\
+	Berechne die Ruinwahrscheinlichkeit.\\
+	Betrachte hiefür die Markovkette $\{X_n: n \in \mathbb{N}_0\}$ mit Zustandsraum $S = \{0, 1, 2, ..., M\}$ und Übergangswahrscheinlichkeiten
+	$$
+		p_{ij} = \begin{cases}
+			1   & \text{, falls } i=0 \text{ und } j=0                       \\
+			p   & \text{, falls } i \in \{1, ..., M-1\} \text{ und } j = i+1 \\
+			1-p & \text{, falls } i \in \{1, ..., M-1\} \text{ und } j = i-1 \\
+			1   & \text{, falls } i = M \text{ und } j = M                   \\
+			0   & \text{, sonst}
+		\end{cases}
+	$$
+	Gesucht sind die Absorbtionswahrscheinlichkeiten
+	$$
+		h_i = P(T<\infty|X_0 = i)
+	$$
+	mit $i = 0, ..., M$ und $T = \inf\{n \in \mathbb{N}_0: X_n = 0\}$.\\
+	Es ist $h_0 = 1$ (sofort ruiniert), $h_M = 0$ (sofort Ende des Spiels wegen maximalem Gewinn) und nach Satz 10
+	ist die Wahrscheinlichkeit jemals ruiniert zu sein beim Start in Periode $i$ eine Gewichtung der Ruinwahrscheinlichkeit
+	nach einer Aufwärtsbewegung (also ab $i+1$) und einer Abwäwärtsbewegung (also ab $i-1$).
+	\begin{align*}
+		h_i                           & = ph_{i+1} + (1-p)h_{i-1} \text{ für } i = 1, ..., M-1 \\
+		\Leftrightarrow h_{i+1} - h_i & = \frac{1-p}{p}(h_i - h_{i-1})
+	\end{align*}
+	Falls es sich um ein faires Spiel handelt, also $p =  \frac{1}{2}$, dann ist $h_{i+1} - h_i = h_i - h_{i-1}$ für $i=1, ..., M-1$.
+	Die Änderung in der Ruinwahrscheinlichkeit ist also konstant für jedes der $i$, man kann $h_i$ also als lineare Funktion betrachten:
+	$$
+		h_i = h_0 + a \times i
+	$$
+	Da $h_0 = 1$
+	$$
+		h_i = 1 + a \times i
+	$$
+	und $h_M = 0$ folgt für das $a$ aus der Gleichung
+	\begin{align*}
+		0                 & = 1 + a \times M \\
+		\Leftrightarrow a & = - \frac{1}{M}
+	\end{align*}
+	und somit für die Ruinwahrscheinlichkeit $h_i$:
+	$$
+		h_i = 1 - \frac{i}{M}
+	$$
+	Sei nun $p \neq \frac{1}{2}$ und setze $\Theta = \frac{1-p}{p}$. Durch rekursives Einsetzen erhält man
+	\begin{align*}
+		h_2 - h_1     & = \Theta (h_1 - h_0) = \Theta (h_1 - 1)                 \\
+		h_3 - h_2     & = \Theta (h_2 - h_1) = \Theta^2 (h_1 - 1)               \\
+		\vdots        &                                                         \\
+		h_{i+1} - h_i & = \Theta^{i}(h_1 - 1) \text{ für alle } i = 0, ..., M-1
+	\end{align*}
+	Zunächst bildet man die Summe über $i=0, ..., j-1$ (über alle $j \in S$) und nutzt die Eigenschaft der Teleskopsumme und der geometrischen Reihe aus:
+	\begin{align*}
+		\sum_{i=0}^{j-1} h_{i+1} - h_i                & = \sum_{i=0}^{j-1}\Theta^{i}(h_1 - 1)                                      \\
+		\Leftrightarrow\sum_{i=0}^{j-1} h_i - h_{i+1} & = \sum_{i=0}^{j-1}\Theta^{i}(1 - h_1)                                      \\
+		\Leftrightarrow   h_0 - h_{j}                 & =  \sum_{i=0}^{j-1}\Theta^{i}(1 - h_1)                                     \\
+		\Leftrightarrow 1 - h_{j}                     & =  (1 - h_1)\sum_{i=0}^{j-1}\Theta^{i}                                     \\
+		\Leftrightarrow 1 - h_{j}                     & =  (1 - h_1)\frac{1-\Theta^{j}}{1- \Theta}                                 \\
+		\Leftrightarrow h_{j}                         & =  ( h_1 - 1)\frac{1-\Theta^{j}}{1- \Theta} +1  \text{ für } j = 1, ..., M
+	\end{align*}
+	Da diese Gleichung für alle $j$ gilt, gilt sie auch für $j=M$ und da $h_M = 0$ ist, ist
+	\begin{align*}
+		0                      & = ( h_1 - 1)\frac{1-\Theta^{M}}{1- \Theta} +1 \\
+		\Leftrightarrow 1- h_1 & = \frac{1- \Theta}{1- \Theta^M}
+	\end{align*}
+	Damit ist
+	$$
+		1 - h_j = \frac{1- \Theta}{1- \Theta^M} \times \frac{1- \Theta^j}{1- \Theta}
+	$$
+	und  folglich
+	$$
+		\Rightarrow h_j = 1 - \frac{1 - \Theta^{j}}{1-\Theta^{M}} \text{ für } j = 0, ..., M
+	$$
 \end{tcolorbox}
 
 
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 10]
-\textbf{Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke}\\
-Betrachte die Markovkette $\{X_n:n \in \mathbb{N}_0\}$ mit Zustandsraum $S = \mathbb{N}_0$ und 
-$$
-p_{ij} = \begin{cases}
-1 & \text{, falls }i = 0 \text{ und } j=0 \\
-p & \text{, falls } i \in \mathbb{N}_0 \text{ und } j = i+1\\
-1-p & \text{, falls } i \in \mathbb{N}_0 \text{ und } j = i-1 \\
-0 & \text{, sonst }
-\end{cases}
-$$
-Berechne die Absorbtionswahrscheinlichkeiten.\\
-$h_i = P(T < \infty | X_0 = i)$ mit $i \in S$ und $T = \inf\{n \in \mathbb{N}_0: X_n = 0\}$.\\
-Es gilt $h_0 = 1$ und Nach Satz 10
-$$
-h_i = ph_{i+1} + (1-p)h_{i-1} \text{ für } i=1, 2, ... 
-$$
-Mit $\Theta = \frac{1-p}{p}$ gilt somit (siehe Bsp. 9)
-$$
-h_{i+1} - h_i = \Theta(h_i - h_{i-1}) \text{ für }	i=1, 2, ...
-$$
-und daher
-$$
-h_{i+1} - h_i = \Theta^{i}(h_1 - h_0) = \Theta^{i}(h_1 - 1) \text{ für } i = 0, 1, ...  \text{ } (\star)
-$$
-Sei nun $p \leq \frac{1}{2}$, also $\Theta \geq 1$.\\
-Dann gilt 
-$$
-h_i - h_{i+1} \overset{(\star)}{=} \Theta^{i}(1- h_1) \geq 1-h_1
-$$
-also 
-$$
-h_{i+1} \leq h_i - (1-h_1) \text{ für } i = 0,1, ...
-$$
-Angenommen $h_1 < 1$, dann würde daraus folgen, dass $h_{i+1}  - h_i \leq 0$ und damit wäre 
-$\lim_{i \to \infty}h_i = - \infty$. Dies wäre offensichtlich ein Widerspruch!\\
+	\textbf{Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke}\\
+	Betrachte die Markovkette $\{X_n:n \in \mathbb{N}_0\}$ mit Zustandsraum $S = \mathbb{N}_0$ und
+	$$
+		p_{ij} = \begin{cases}
+			1   & \text{, falls }i = 0 \text{ und } j=0                   \\
+			p   & \text{, falls } i \in \mathbb{N}_0 \text{ und } j = i+1 \\
+			1-p & \text{, falls } i \in \mathbb{N}_0 \text{ und } j = i-1 \\
+			0   & \text{, sonst }
+		\end{cases}
+	$$
+	Berechne die Absorbtionswahrscheinlichkeiten.\\
+	$h_i = P(T < \infty | X_0 = i)$ mit $i \in S$ und $T = \inf\{n \in \mathbb{N}_0: X_n = 0\}$.\\
+	Es gilt $h_0 = 1$ und Nach Satz 10
+	$$
+		h_i = ph_{i+1} + (1-p)h_{i-1} \text{ für } i=1, 2, ...
+	$$
+	Mit $\Theta = \frac{1-p}{p}$ gilt somit (siehe Bsp. 9)
+	$$
+		h_{i+1} - h_i = \Theta(h_i - h_{i-1}) \text{ für }	i=1, 2, ...
+	$$
+	und daher
+	$$
+		h_{i+1} - h_i = \Theta^{i}(h_1 - h_0) = \Theta^{i}(h_1 - 1) \text{ für } i = 0, 1, ...  \text{ } (\star)
+	$$
+	Sei nun $p \leq \frac{1}{2}$, also $\Theta \geq 1$.\\
+	Dann gilt
+	$$
+		h_i - h_{i+1} \overset{(\star)}{=} \Theta^{i}(1- h_1) \geq 1-h_1
+	$$
+	also
+	$$
+		h_{i+1} \leq h_i - (1-h_1) \text{ für } i = 0,1, ...
+	$$
+	Angenommen $h_1 < 1$, dann würde daraus folgen, dass $h_{i+1}  - h_i \leq 0$ und damit wäre
+	$\lim_{i \to \infty}h_i = - \infty$. Dies wäre offensichtlich ein Widerspruch!\\
 
 
-Also muss $h_1 = 1$ sein.
-$$
-\overset{(\star)}{\Rightarrow} h_{i+1} - h_i = 0 \text{ für } i = 0, 1, ... 
-$$
-$$
-\Rightarrow h_i = 1 \text{ für alle } i = 0, 1, ... \text{, falls } p \leq \frac{1}{2}
-$$
-Insbesondere ist auch bei einem fairen Spiel ($p = \frac{1}{2}$) die Ruinwahrscheinlichkeit $h_i = 1$ für jedes Anfangskapital $i$.\\
+	Also muss $h_1 = 1$ sein.
+	$$
+		\overset{(\star)}{\Rightarrow} h_{i+1} - h_i = 0 \text{ für } i = 0, 1, ...
+	$$
+	$$
+		\Rightarrow h_i = 1 \text{ für alle } i = 0, 1, ... \text{, falls } p \leq \frac{1}{2}
+	$$
+	Insbesondere ist auch bei einem fairen Spiel ($p = \frac{1}{2}$) die Ruinwahrscheinlichkeit $h_i = 1$ für jedes Anfangskapital $i$.\\
 
 
-Sei nun $p > \frac{1}{2}$ (nicht-faires Spiel mit höherer Wahrscheinlichkeit Geld zu verlieren), also $\Theta < 1$.
-Aus $(\star)$ folgt durch Summation (wie in Bsp. 9)
-\begin{align*}
-\sum_{i=0}^{j-1}(h_{i+1} - h_i) & = h_j - h_0 \\
-& = h_j - 1 \\
-& = (h_1-1)\sum_{i=0}^{j-1}\Theta^{i}\\
-& = (h_1 - 1)\frac{1- \Theta^{j}}{1- \Theta}
-\end{align*}
-$$
-\Rightarrow h_i = 1 + (h_1 - 1)\frac{1- \Theta^{j}}{1- \Theta} \text{ für } j = 0, 1, ...
-$$
-Für jedes $h_1 \in [0,1]$ erfüllt diese Gleichung die Gleichung $(\star)$.\\
-Wegen $0 \leq \lim_{j \to \infty}h_i = 1 + \frac{(h_1 - 1)}{1 - \Theta}$ 
-\begin{align*}
-0 &\leq 1+ \frac{h_1 - 1}{1- \Theta}\\
-\Theta - 1 & \leq h_1 - 1 \\
-h_1 &\geq \Theta
-\end{align*}
+	Sei nun $p > \frac{1}{2}$ (nicht-faires Spiel mit höherer Wahrscheinlichkeit Geld zu verlieren), also $\Theta < 1$.
+	Aus $(\star)$ folgt durch Summation (wie in Bsp. 9)
+	\begin{align*}
+		\sum_{i=0}^{j-1}(h_{i+1} - h_i) & = h_j - h_0                                \\
+		                                & = h_j - 1                                  \\
+		                                & = (h_1-1)\sum_{i=0}^{j-1}\Theta^{i}        \\
+		                                & = (h_1 - 1)\frac{1- \Theta^{j}}{1- \Theta}
+	\end{align*}
+	$$
+		\Rightarrow h_i = 1 + (h_1 - 1)\frac{1- \Theta^{j}}{1- \Theta} \text{ für } j = 0, 1, ...
+	$$
+	Für jedes $h_1 \in [0,1]$ erfüllt diese Gleichung die Gleichung $(\star)$.\\
+	Wegen $0 \leq \lim_{j \to \infty}h_i = 1 + \frac{(h_1 - 1)}{1 - \Theta}$
+	\begin{align*}
+		0          & \leq 1+ \frac{h_1 - 1}{1- \Theta} \\
+		\Theta - 1 & \leq h_1 - 1                      \\
+		h_1        & \geq \Theta
+	\end{align*}
 
 
-Welches $h_1 \in [\Theta, 1]$ liefert die gesuchten Wahrscheinlichkeiten?\\
+	Welches $h_1 \in [\Theta, 1]$ liefert die gesuchten Wahrscheinlichkeiten?\\
 
-Hinweis: Hier gibt es keine zweite Randbedingung, wie in Bsp. 9!
+	Hinweis: Hier gibt es keine zweite Randbedingung, wie in Bsp. 9!
 \end{tcolorbox}
 
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 11]
-Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_{ij})$.
-Sei zudem $A \subset S$ mit $A \neq \emptyset$. Seo $T_i = inf\{n \in N: X_n \in A\}$ und
-$h_i = P(T_i < \infty | X_0 = i)$.  Dann ist $(h_i)_{i \in S}$ die \textbf{komponentenweise kleinste nicht-negative Lösung} 
-des Gleichungssystems
-\begin{align*}
-	&x_i = 1 \text{ für alle } i \in A\\
-	&x_i = \sum_{j \in S}p_{ij}x_j \text{ für alle } i \in S \backslash A
-\end{align*}
-Das heißt
-\begin{enumerate}
-	\item $(x_i) = (h_i)$ ist eine nicht-negative Lösung.
-	\item Für jede Lösung $(x_i)$ mit $x_i \geq 0$, $i \in S$ gilt $h_i \leq x_i$.
-\end{enumerate}
+	Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_{ij})$.
+	Sei zudem $A \subset S$ mit $A \neq \emptyset$. Seo $T_i = inf\{n \in N: X_n \in A\}$ und
+	$h_i = P(T_i < \infty | X_0 = i)$.  Dann ist $(h_i)_{i \in S}$ die \textbf{komponentenweise kleinste nicht-negative Lösung}
+	des Gleichungssystems
+	\begin{align*}
+		 & x_i = 1 \text{ für alle } i \in A                                    \\
+		 & x_i = \sum_{j \in S}p_{ij}x_j \text{ für alle } i \in S \backslash A
+	\end{align*}
+	Das heißt
+	\begin{enumerate}
+		\item $(x_i) = (h_i)$ ist eine nicht-negative Lösung.
+		\item Für jede Lösung $(x_i)$ mit $x_i \geq 0$, $i \in S$ gilt $h_i \leq x_i$.
+	\end{enumerate}
 \end{tcolorbox}
 
 \textbf{Beweis von Satz 11}\\
 Die Behauptung ist klar, wenn $A = S$. Deswegen sei $A \neq S$:
 \begin{enumerate}
-\item $(h_i)$ ist eine nichtnegative Lösung nach Satz 10.
-\item Sei $(x_i)$ eine Lösung mit $X_i \geq 0$, $i \in S$.
-$$
-\Rightarrow x_i = \overbrace{\sum_{j \in A}p_{ij} }^{:= r_i}\times 1 + \overbrace{\sum_{j \in A^c}p_{ij}}^{:= Q}x_j \text{, } i \in A^c
-$$
-Für die Spaltenvektoren $x = (x_i)_{i \in A^c}$, $r = (r_i)_{i \in A^c}$ und die Teilmatrix $Q = (p_{ij})_{i,j \in A^c}$ gilt
-durch iteratives Einsetzen
-\begin{align*}
-x & = r + Qx\\
-& = r + Q(r + Qx)\\
-& = r + Qr + Q^2x \\
-& = r + Qr + Q^2(r + Qx)\\
-& \vdots \\
-x & = r + \sum_{k=1}^{n}Q^kr + Q^{n+1}x \text{, } n \geq 1
-\end{align*}
+	\item $(h_i)$ ist eine nichtnegative Lösung nach Satz 10.
+	\item Sei $(x_i)$ eine Lösung mit $X_i \geq 0$, $i \in S$.
+	      $$
+		      \Rightarrow x_i = \overbrace{\sum_{j \in A}p_{ij} }^{:= r_i}\times 1 + \overbrace{\sum_{j \in A^c}p_{ij}}^{:= Q}x_j \text{, } i \in A^c
+	      $$
+	      Für die Spaltenvektoren $x = (x_i)_{i \in A^c}$, $r = (r_i)_{i \in A^c}$ und die Teilmatrix $Q = (p_{ij})_{i,j \in A^c}$ gilt
+	      durch iteratives Einsetzen
+	      \begin{align*}
+		      x & = r + Qx                                               \\
+		        & = r + Q(r + Qx)                                        \\
+		        & = r + Qr + Q^2x                                        \\
+		        & = r + Qr + Q^2(r + Qx)                                 \\
+		        & \vdots                                                 \\
+		      x & = r + \sum_{k=1}^{n}Q^kr + Q^{n+1}x \text{, } n \geq 1
+	      \end{align*}
 \end{enumerate}
 Daraus folgt also für alle $i \in A^c$, $j \in A$ und $n \geq 1$ durch Einsetzen, wobei $Q^kr = p_{ij_k}^{k}p_{j_kj}$ und $Q^{n+1}x$ als
 strikt positiver Wert für die untere Schranke ausgelassen werden kann, folgendes:
 \begin{align*}
-x_i & \geq p_{ij} + \sum_{k=1}^{n}\sum_{j_1, ..., j_k \in A^c, j \in A}p_{ij_1}p_{j_1j_2}...p_{j_kj} \\
-\Leftrightarrow x_i & \geq P_i(X_1 \in A) + \sum_{k=1}^{n}P(X_1 \in A^c, ..., X_k \in A^c, X_{k+1}\in A)\\
-\Leftrightarrow x_i & \geq P_i(T \leq n+1)\\
-\Rightarrow x_i & \geq \lim_{n \to \infty}P_i(T \leq n+1) = \lim_{n \to \infty}P_i(T \leq n) = h_i \text{, } i \in A^c
+	x_i                 & \geq p_{ij} + \sum_{k=1}^{n}\sum_{j_1, ..., j_k \in A^c, j \in A}p_{ij_1}p_{j_1j_2}...p_{j_kj}       \\
+	\Leftrightarrow x_i & \geq P_i(X_1 \in A) + \sum_{k=1}^{n}P(X_1 \in A^c, ..., X_k \in A^c, X_{k+1}\in A)                   \\
+	\Leftrightarrow x_i & \geq P_i(T \leq n+1)                                                                                 \\
+	\Rightarrow x_i     & \geq \lim_{n \to \infty}P_i(T \leq n+1) = \lim_{n \to \infty}P_i(T \leq n) = h_i \text{, } i \in A^c
 \end{align*}
 
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 10 (Fortsetzung)]
-Im Fall von $p>\frac{1}{2}$ wurde gezeigt, dass die nichtnegativen Lösungen des Gleichungssystems (wie in Satz 11)
-charakterisiert sind durch
-$$
-x_i = 1 + (x_1 - 1)\frac{1- \Theta^i}{1- \Theta}
-$$
-mit $x_1 \in [\Theta,1]$.\\
-Aus Satz 11 lässt sich nun folgern, dass die Komponentenweise kleinste Lösung gegeben ist bei $x_1 = \Theta$ und damit
-$$
-h_i = 1+ (\Theta - 1)\frac{1- \Theta^i}{1- \Theta} = \Theta^i = \left(\frac{1-p}{p}\right)^i
-$$
+	Im Fall von $p>\frac{1}{2}$ wurde gezeigt, dass die nichtnegativen Lösungen des Gleichungssystems (wie in Satz 11)
+	charakterisiert sind durch
+	$$
+		x_i = 1 + (x_1 - 1)\frac{1- \Theta^i}{1- \Theta}
+	$$
+	mit $x_1 \in [\Theta,1]$.\\
+	Aus Satz 11 lässt sich nun folgern, dass die Komponentenweise kleinste Lösung gegeben ist bei $x_1 = \Theta$ und damit
+	$$
+		h_i = 1+ (\Theta - 1)\frac{1- \Theta^i}{1- \Theta} = \Theta^i = \left(\frac{1-p}{p}\right)^i
+	$$
 \end{tcolorbox}
 
 
 Für die folgenden Schritte werden folgende Rechenregeln für $\bar{\mathbb{R}} = \mathbb{R} \cup \{-\infty, \infty\}$ benötigt:
 \begin{itemize}
-\item $-\infty < a < \infty \quad \forall  a \in \mathbb{R}$
-\item $a + \infty = \infty + a = \infty \quad \forall a \in \mathbb{R}\cup \{\infty\}$
-\item $a - \infty = -\infty + a = - \infty \quad \forall a \in \mathbb{R}\cup \{-\infty\}$
-\item $a\times \infty = \infty \times a = \infty \quad \forall a \in \bar{\mathbb{R}}^+$
-\item $a\times \infty = \infty \times a = - \infty \quad \forall a \in \bar{\mathbb{R}}^-$
-\item $a \times (-\infty) = (-\infty) \times a = -\infty \quad \forall a \in \bar{\mathbb{R}}^+$
-\item $a \times (-\infty) = (-\infty) \times a = \infty \quad \forall a \in \bar{\mathbb{R}}^-$
-\item $0 \times \infty = \infty \times 0 = 0$ (spezielle Konnotation in diesem Kontext)
-\item Nicht definiert sind: $\infty -\infty$ und $-\infty + \infty$.
+	\item $-\infty < a < \infty \quad \forall  a \in \mathbb{R}$
+	\item $a + \infty = \infty + a = \infty \quad \forall a \in \mathbb{R}\cup \{\infty\}$
+	\item $a - \infty = -\infty + a = - \infty \quad \forall a \in \mathbb{R}\cup \{-\infty\}$
+	\item $a\times \infty = \infty \times a = \infty \quad \forall a \in \bar{\mathbb{R}}^+$
+	\item $a\times \infty = \infty \times a = - \infty \quad \forall a \in \bar{\mathbb{R}}^-$
+	\item $a \times (-\infty) = (-\infty) \times a = -\infty \quad \forall a \in \bar{\mathbb{R}}^+$
+	\item $a \times (-\infty) = (-\infty) \times a = \infty \quad \forall a \in \bar{\mathbb{R}}^-$
+	\item $0 \times \infty = \infty \times 0 = 0$ (spezielle Konnotation in diesem Kontext)
+	\item Nicht definiert sind: $\infty -\infty$ und $-\infty + \infty$.
 \end{itemize}
 Ist $X$ eine Zufallsvariable mit Werten in $\mathbb{N}_0\cup\{\infty\}$, dann ist
 \begin{align*}
-E[X] & = \sum_{n=0}^{\infty}nP(X = n) \\
-& = \sum_{n=0}^{\infty}P(X > n)\\
-& = \sum_{n=1}^{n}P(X \geq n)
+	E[X] & = \sum_{n=0}^{\infty}nP(X = n) \\
+	     & = \sum_{n=0}^{\infty}P(X > n)  \\
+	     & = \sum_{n=1}^{n}P(X \geq n)
 \end{align*}
 Insbesondere ist also falls $P(X = \infty) > 0$ auch $E[X] = \infty$.
 
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 12]
-Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_{ij})$.
-Sei $A \in S$ und $A \neq \emptyset$. Für $i \in S$ sei
-\begin{align*}
-T &:= inf\{n \in \mathbb{N}_0: X_n \in A\} \\
-k_i &:= E[T|X_0 = i]
-\end{align*}
-$(k_i)_{i \in S}$ ist die \textbf{komponentenweise kleinst enichtnegative Lösung} des Gleichungssystems $(\star)$
+	Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_{ij})$.
+	Sei $A \in S$ und $A \neq \emptyset$. Für $i \in S$ sei
+	\begin{align*}
+		T   & := inf\{n \in \mathbb{N}_0: X_n \in A\} \\
+		k_i & := E[T|X_0 = i]
+	\end{align*}
+	$(k_i)_{i \in S}$ ist die \textbf{komponentenweise kleinst enichtnegative Lösung} des Gleichungssystems $(\star)$
 
-\begin{align*}
-k_i & = 0 \text{, } i \in A \\
-k_i & = 1 + \sum_{j \in S \backslash A}p_{ij}k_j \text{, für alle } i \in S \backslash A
-\end{align*}
+	\begin{align*}
+		k_i & = 0 \text{, } i \in A                                                              \\
+		k_i & = 1 + \sum_{j \in S \backslash A}p_{ij}k_j \text{, für alle } i \in S \backslash A
+	\end{align*}
 
-mit $k_i \in [0, \infty]$.
+	mit $k_i \in [0, \infty]$.
 \end{tcolorbox}
 \textbf{Beweis von Satz 12}\\
 Die Behauptung ist klar für $A=S$. Sei also $A \neq S$.
 \begin{itemize}
-\item Für $(k_i)_{i \in S}$ gilt 
-\begin{align*}
-&k_i \in [0,\infty] \quad \forall i \in S \\
-&k_i = 0 \quad \forall i \in A 
-\end{align*}
-Für $i \in S \backslash A$ gilt
-\begin{align*}
-k_i & = \sum_{j \in S}E[T|X_0 = i, X_1 = j]p_{ij}\\
- & = \sum_{j \in S}(1+E[T|Y_0 = j])p_{ij} \text{ (siehe Aufgaben)}\\
- & = 1 + \sum_{j \in S \backslash A}p_{ij}k_j
-\end{align*}
-$\Rightarrow (k_i)$ löst $(\star)$.
-\item Sie nun $(x_i)_{i \in S}$ eine Lösung von $(\star)$ mit $x_i \in [0,\infty]$. Zu zeigen ist, dass $x_i \geq k_i \quad \forall i$.
-Für $i \in A$ gilt $x_i = k_i = 0$. Für die Spaltenvektoren
-$$
-x = (x_i)_{i \in A^c} \text{ und } e = \begin{pmatrix}1 \\  \vdots \\ 1 \end{pmatrix}
-$$
-und
-$$
-Q = (p_{ij})_{i,j \in A^c}
-$$
-gilt (siehe auch Beweis Satz 11)
-\begin{align*}
-x & = e + Qx \\
-& \vdots \\
-& = e + \sum_{k=1}^{n}Q^ke + Q^{n+1}x \text{, für } n \geq 1
-\end{align*}
+	\item Für $(k_i)_{i \in S}$ gilt
+	      \begin{align*}
+		       & k_i \in [0,\infty] \quad \forall i \in S \\
+		       & k_i = 0 \quad \forall i \in A
+	      \end{align*}
+	      Für $i \in S \backslash A$ gilt
+	      \begin{align*}
+		      k_i & = \sum_{j \in S}E[T|X_0 = i, X_1 = j]p_{ij}                     \\
+		          & = \sum_{j \in S}(1+E[T|Y_0 = j])p_{ij} \text{ (siehe Aufgaben)} \\
+		          & = 1 + \sum_{j \in S \backslash A}p_{ij}k_j
+	      \end{align*}
+	      $\Rightarrow (k_i)$ löst $(\star)$.
+	\item Sie nun $(x_i)_{i \in S}$ eine Lösung von $(\star)$ mit $x_i \in [0,\infty]$. Zu zeigen ist, dass $x_i \geq k_i \quad \forall i$.
+	      Für $i \in A$ gilt $x_i = k_i = 0$. Für die Spaltenvektoren
+	      $$
+		      x = (x_i)_{i \in A^c} \text{ und } e = \begin{pmatrix}1 \\  \vdots \\ 1 \end{pmatrix}
+	      $$
+	      und
+	      $$
+		      Q = (p_{ij})_{i,j \in A^c}
+	      $$
+	      gilt (siehe auch Beweis Satz 11)
+	      \begin{align*}
+		      x & = e + Qx                                                   \\
+		        & \vdots                                                     \\
+		        & = e + \sum_{k=1}^{n}Q^ke + Q^{n+1}x \text{, für } n \geq 1
+	      \end{align*}
 
-und somit für alle $i \in A^c$ und $n \geq 2$, wobei ... und 
-$Q^{n+1}x$ als strikt positiver Wert für die untere Schranke ausgelassen werden kann,
+	      und somit für alle $i \in A^c$ und $n \geq 2$, wobei ... und
+	      $Q^{n+1}x$ als strikt positiver Wert für die untere Schranke ausgelassen werden kann,
 
-\begin{align*}
-x_i &\geq 1 + \sum_{j \in A^c}p_{ij} + \sum_{k=2}^{n}\sum_{j_1, ..., j_k \in A^c}p_{ij_1}...p_{j_{k-1}j_k} \\
-\Leftrightarrow x_i & \geq P_i(T >0) + P_i(X_1 \in A^c) + \sum_{k=2}^{n}P-i(X_1 \in A^c, X_2 \in A^c, ..., X_k \in A^c)\\
-\Leftrightarrow x_i & \geq P_i(T>0) + P_i(T>1) + \sum_{k=2}^{n}P_i(T>k) \\
-\Leftrightarrow x_i & \geq \sum_{k=0}^{n}P_i(T>k) \\
-\Rightarrow x_i & \geq \sum_{k=0}^{\infty}P_i(T>k) = E_i[T] = k_i
-\end{align*}
+	      \begin{align*}
+		      x_i                 & \geq 1 + \sum_{j \in A^c}p_{ij} + \sum_{k=2}^{n}\sum_{j_1, ..., j_k \in A^c}p_{ij_1}...p_{j_{k-1}j_k} \\
+		      \Leftrightarrow x_i & \geq P_i(T >0) + P_i(X_1 \in A^c) + \sum_{k=2}^{n}P-i(X_1 \in A^c, X_2 \in A^c, ..., X_k \in A^c)     \\
+		      \Leftrightarrow x_i & \geq P_i(T>0) + P_i(T>1) + \sum_{k=2}^{n}P_i(T>k)                                                     \\
+		      \Leftrightarrow x_i & \geq \sum_{k=0}^{n}P_i(T>k)                                                                           \\
+		      \Rightarrow x_i     & \geq \sum_{k=0}^{\infty}P_i(T>k) = E_i[T] = k_i
+	      \end{align*}
 
 \end{itemize}
 
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 9 (Fortsetzung)]
-Nun ist die erwartete Arbsorbtionszeit $k_i =E_i[T]$ mit gesucht.\\
-Offensichtlich ist $k_0 = 0$ und $k_M = 0$. Aus Satz 12 folgt hier
-$$
-(\star) \quad k_i = 1+ (1-p)k_{i-1} + pk_{i+1} 
-$$
-Sei zunächst $p = \frac{1}{2}$.
-\begin{align*}
-k_i & = 1 + \frac{k_{i-1}}{2} + \frac{k_{i+1}}{2} \\
-\Leftrightarrow k_{i+1} - k_i &= k_i - k_{i-1} -2 
-\end{align*}
+	Nun ist die erwartete Arbsorbtionszeit $k_i =E_i[T]$ mit gesucht.\\
+	Offensichtlich ist $k_0 = 0$ und $k_M = 0$. Aus Satz 12 folgt hier
+	$$
+		(\star) \quad k_i = 1+ (1-p)k_{i-1} + pk_{i+1}
+	$$
+	Sei zunächst $p = \frac{1}{2}$.
+	\begin{align*}
+		k_i                           & = 1 + \frac{k_{i-1}}{2} + \frac{k_{i+1}}{2} \\
+		\Leftrightarrow k_{i+1} - k_i & = k_i - k_{i-1} -2
+	\end{align*}
 
-Für steigende i fällt das das Wachstun von $k_i$ um den Faktor 2. 
-$$
-\Rightarrow k_{i+1} - k_i= k_1 - k_0 - 2i = k_1 - 2i \quad i = 0, ..., M-1
-$$
+	Für steigende i fällt das das Wachstun von $k_i$ um den Faktor 2.
+	$$
+		\Rightarrow k_{i+1} - k_i= k_1 - k_0 - 2i = k_1 - 2i \quad i = 0, ..., M-1
+	$$
 
-Für $j = 1, ..., M$ ist
-\begin{align*}
-k_j - k_0 = k_j &= \sum_{i=0}^{j-1}(k_{i+1}-k_i)\\
-& = jk_1 - 2\sum_{i=0}^{j-1}i \\
-& = jk_1 - (j-1)j 
-\end{align*}
+	Für $j = 1, ..., M$ ist
+	\begin{align*}
+		k_j - k_0 = k_j & = \sum_{i=0}^{j-1}(k_{i+1}-k_i) \\
+		                & = jk_1 - 2\sum_{i=0}^{j-1}i     \\
+		                & = jk_1 - (j-1)j
+	\end{align*}
 
-Wegen $k_M = 0$ folg aus dieser GLeichung (durch einsetzen) $k_1 = M-1$ und somit
-$$
-E[T|X_0 = j] = k_j = j(M-j) \text{, } j= 0,..., M
-$$
+	Wegen $k_M = 0$ folg aus dieser GLeichung (durch einsetzen) $k_1 = M-1$ und somit
+	$$
+		E[T|X_0 = j] = k_j = j(M-j) \text{, } j= 0,..., M
+	$$
 
-Sei nun $p \neq \frac{1}{2}$.\\
-In diesem Fall lässt sich zeigen, dass $k_i$ als Lösung von $(\star)$ die Form
-$$
-k_i = \frac{i}{1-2p}+ \alpha + \beta \times \left(\frac{1-p}{p}\right)^i \text{ für } i=0,...,M 
-$$
-haben muss für gewisse $\alpha, \beta \in \mathbb{R}$.
-Mit $k_0 = k_m = 0$ folgt
-\begin{align*}
-0 & = \alpha + \beta \\
-0 & = \frac{M}{1-2p} + \alpha + \beta \times \left(\frac{1-p}{p}\right)^M\\
-\Rightarrow \alpha & =- \beta = \frac{-\frac{M}{1-2p}}{1- \left(\frac{1-p}{p}\right)^M}\\
-\Rightarrow E[T|X_0 = i] & = \frac{i}{1-2p} - \frac{M}{1-2p} \times \frac{1 - \left(\frac{1-p}{p}\right)^i}{1 - \left(\frac{1-p}{p}\right)^M} \text{ , } i = 0, ..., M
-\end{align*}
+	Sei nun $p \neq \frac{1}{2}$.\\
+	In diesem Fall lässt sich zeigen, dass $k_i$ als Lösung von $(\star)$ die Form
+	$$
+		k_i = \frac{i}{1-2p}+ \alpha + \beta \times \left(\frac{1-p}{p}\right)^i \text{ für } i=0,...,M
+	$$
+	haben muss für gewisse $\alpha, \beta \in \mathbb{R}$.
+	Mit $k_0 = k_m = 0$ folgt
+	\begin{align*}
+		0                        & = \alpha + \beta                                                                                                                            \\
+		0                        & = \frac{M}{1-2p} + \alpha + \beta \times \left(\frac{1-p}{p}\right)^M                                                                       \\
+		\Rightarrow \alpha       & =- \beta = \frac{-\frac{M}{1-2p}}{1- \left(\frac{1-p}{p}\right)^M}                                                                          \\
+		\Rightarrow E[T|X_0 = i] & = \frac{i}{1-2p} - \frac{M}{1-2p} \times \frac{1 - \left(\frac{1-p}{p}\right)^i}{1 - \left(\frac{1-p}{p}\right)^M} \text{ , } i = 0, ..., M
+	\end{align*}
 \end{tcolorbox}
 
 \subsection{Konvergenzsätze}
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 13]
-Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandraum $S$ und Übergangsmatrix $(P_{ij})$.\\
-Die stationäre Verteilung der Markovkette  $(\pi_i)$ mit 
-\begin{itemize}
-\item $\pi_i \geq 0 \quad \forall i \in S$
-\item $\sum_{i \in S}\pi_i = 1$
-\end{itemize}
-ist definiert durch
-$$
-\pi_j = \sum_{i \in S}\pi_i p_{ij}
-$$
-oder ausgedrückt in Matrix Schreibweise
-\begin{align*}
-&\pi = \pi(P_{ij}) \\
-\Leftrightarrow &\pi((P_{ij}) - I) = 0
-\end{align*}
+	Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandraum $S$ und Übergangsmatrix $(P_{ij})$.\\
+	Die stationäre Verteilung der Markovkette  $(\pi_i)$ mit
+	\begin{itemize}
+		\item $\pi_i \geq 0 \quad \forall i \in S$
+		\item $\sum_{i \in S}\pi_i = 1$
+	\end{itemize}
+	ist definiert durch
+	$$
+		\pi_j = \sum_{i \in S}\pi_i p_{ij}
+	$$
+	oder ausgedrückt in Matrix Schreibweise
+	\begin{align*}
+		                & \pi = \pi(P_{ij})     \\
+		\Leftrightarrow & \pi((P_{ij}) - I) = 0
+	\end{align*}
 \end{tcolorbox}
 
 \textbf{Bemerkung zu Satz 13}\\
 \begin{itemize}
-\item Für jede Markovkette mit endlichem Zustandsraum existiert eine stationäre Verteilung (s. Aufgaben).
-\item Bezeichnet $p^{(n)} = (P_i^{(n)})_{i \in S}$, $P_i^{(n)} = P(X_n = i)$ die Anfangsverteilung
-von $X_n$ und ist die Anfangsverteilung stationär, dann gilt 
-$$
-P^{(n)} = P^{(0)}\Pi^n = p^{(0)}\Pi\Pi^{n-1} = ... = P^{(0)},
-$$
-d.h. $P(X_n = i) = P(X_0 = i) \quad \forall n \geq 0 \text{ und } i \in S$.
-\item Ist der Zustandsraum endlich und existiert für jedes $j \in S$ der Grenzwert
-$$
-\pi_j = \lim_{n \to \infty}P(X_n = j),
-$$
-dann muss $(\pi_i)$ eine stationäre Verteilung sein, denn
-\begin{align*}
-&\pi_i \geq 0 \quad \forall i \in S \\
-& \sum_{i \in S} \pi_i = \lim_{n \to \infty}\sum_{i \in S}P(X_n = i) = 1
-\end{align*}
-und
-\begin{align*}
-\pi_j & = \lim_{n \to \infty}P(X_{n+1} = j)\\
-& = \lim_{n \to \infty} \sum_{i \in S}P(X_n = i)p_{ij} \\
-& = \sum_{i \in S}\lim_{n \to \infty}P(X_n = i)p_{ij} \\
-& = \sum_{i \in S}\pi_i p_{ij} \quad \forall j \in S
-\end{align*}
+	\item Für jede Markovkette mit endlichem Zustandsraum existiert eine stationäre Verteilung (s. Aufgaben).
+	\item Bezeichnet $p^{(n)} = (P_i^{(n)})_{i \in S}$, $P_i^{(n)} = P(X_n = i)$ die Anfangsverteilung
+	      von $X_n$ und ist die Anfangsverteilung stationär, dann gilt
+	      $$
+		      P^{(n)} = P^{(0)}\Pi^n = p^{(0)}\Pi\Pi^{n-1} = ... = P^{(0)},
+	      $$
+	      d.h. $P(X_n = i) = P(X_0 = i) \quad \forall n \geq 0 \text{ und } i \in S$.
+	\item Ist der Zustandsraum endlich und existiert für jedes $j \in S$ der Grenzwert
+	      $$
+		      \pi_j = \lim_{n \to \infty}P(X_n = j),
+	      $$
+	      dann muss $(\pi_i)$ eine stationäre Verteilung sein, denn
+	      \begin{align*}
+		       & \pi_i \geq 0 \quad \forall i \in S                                     \\
+		       & \sum_{i \in S} \pi_i = \lim_{n \to \infty}\sum_{i \in S}P(X_n = i) = 1
+	      \end{align*}
+	      und
+	      \begin{align*}
+		      \pi_j & = \lim_{n \to \infty}P(X_{n+1} = j)                  \\
+		            & = \lim_{n \to \infty} \sum_{i \in S}P(X_n = i)p_{ij} \\
+		            & = \sum_{i \in S}\lim_{n \to \infty}P(X_n = i)p_{ij}  \\
+		            & = \sum_{i \in S}\pi_i p_{ij} \quad \forall j \in S
+	      \end{align*}
 \end{itemize}
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 11]
-Gegeben sei eine Markovkette $\{X_n: n \in \mathbb{N}_0\}$ mit Zustandsraum 
-$S = \{1,2\}$ und Übergangsmatrix $\Pi = \begin{pmatrix} (1-a) & a \\ b & (1-b) \end{pmatrix}$ ($a,b \in (0,1)$)
-Es gilt
-$$
-\Pi^{(n)} = \frac{1}{a+b}\begin{pmatrix} 
-b + (1-a-b)^na & a-(1-a-b)^na \\
-b - (1-a-b)^nb & b + (1-a-b)^nb
-\end{pmatrix}
-$$
-und da $\lim_{n \to \infty}(1-a-b)^n = 0$ folgt
-$$
-\lim_{n \to \infty}\Pi^{(n)} = \frac{1}{a+b} \begin{pmatrix}b & a \\ b & a \end{pmatrix}
-$$
-Damit ist für $i \in S$
-$$
-\lim_{n \to \infty}P_{i1}^{(n)} = \frac{b}{a+b}
-$$
-und
-$$
-\lim_{n \to \infty}P_{i2}^{(n)} = \frac{a}{a+b}
-$$
-Für jede Anfangsverteilung $\begin{pmatrix}p_1 & p_2 \end{pmatrix} = (P(X_0 = 1), P(X_0 = 2))$ gilt
-\begin{align*}
-\lim_{n \to \infty} (P(X_n = 1), P(X_n = 2)) & = \lim_{n \to \infty}\begin{pmatrix}p_1 & p_2 \end{pmatrix}\Pi^n \\
-& = \frac{1}{a+b}\begin{pmatrix}p_1 & 1-p_1 \end{pmatrix} \begin{pmatrix} b & a \\ b & a \end{pmatrix} \\
-& = \begin{pmatrix}frac{b}{a+b} & \frac{a}{a+b} \end{pmatrix}
-\end{align*}
-Die Grenzverteilung ist also unabhängig von der Anfangsverteilung.\\
-Ist die Anfangsverteilung gleich der Grenzverteilung, also
-$p_1 = \frac{b}{a+b}$ und $p_2 = \frac{a}{a+b}$, dann gilt 
-$$
-\begin{pmatrix}p_1 & p_2 \end{pmatrix}  \Pi = \frac{1}{a+b} \begin{pmatrix}b & a   \end{pmatrix}\begin{pmatrix}1-a & a \\ b & 1-b \end{pmatrix} =\frac{1}{a+b}\begin{pmatrix}b & a   \end{pmatrix} = \begin{pmatrix}p_1 & p_2 \end{pmatrix} 
-$$
-und daher $\begin{pmatrix}p_1 & p_2 \end{pmatrix}  \Pi^n = \begin{pmatrix}p_1 & p_2 \end{pmatrix} $.
+	Gegeben sei eine Markovkette $\{X_n: n \in \mathbb{N}_0\}$ mit Zustandsraum
+	$S = \{1,2\}$ und Übergangsmatrix $\Pi = \begin{pmatrix} (1-a) & a \\ b & (1-b) \end{pmatrix}$ ($a,b \in (0,1)$)
+	Es gilt
+	$$
+		\Pi^{(n)} = \frac{1}{a+b}\begin{pmatrix}
+			b + (1-a-b)^na & a-(1-a-b)^na   \\
+			b - (1-a-b)^nb & b + (1-a-b)^nb
+		\end{pmatrix}
+	$$
+	und da $\lim_{n \to \infty}(1-a-b)^n = 0$ folgt
+	$$
+		\lim_{n \to \infty}\Pi^{(n)} = \frac{1}{a+b} \begin{pmatrix}b & a \\ b & a \end{pmatrix}
+	$$
+	Damit ist für $i \in S$
+	$$
+		\lim_{n \to \infty}P_{i1}^{(n)} = \frac{b}{a+b}
+	$$
+	und
+	$$
+		\lim_{n \to \infty}P_{i2}^{(n)} = \frac{a}{a+b}
+	$$
+	Für jede Anfangsverteilung $\begin{pmatrix}p_1 & p_2 \end{pmatrix} = (P(X_0 = 1), P(X_0 = 2))$ gilt
+	\begin{align*}
+		\lim_{n \to \infty} (P(X_n = 1), P(X_n = 2)) & = \lim_{n \to \infty}\begin{pmatrix}p_1 & p_2 \end{pmatrix}\Pi^n                                     \\
+		                                             & = \frac{1}{a+b}\begin{pmatrix}p_1 & 1-p_1 \end{pmatrix} \begin{pmatrix} b & a \\ b & a \end{pmatrix} \\
+		                                             & = \begin{pmatrix}frac{b}{a+b} & \frac{a}{a+b} \end{pmatrix}
+	\end{align*}
+	Die Grenzverteilung ist also unabhängig von der Anfangsverteilung.\\
+	Ist die Anfangsverteilung gleich der Grenzverteilung, also
+	$p_1 = \frac{b}{a+b}$ und $p_2 = \frac{a}{a+b}$, dann gilt
+	$$
+		\begin{pmatrix}p_1 & p_2 \end{pmatrix}  \Pi = \frac{1}{a+b} \begin{pmatrix}b & a   \end{pmatrix}\begin{pmatrix}1-a & a \\ b & 1-b \end{pmatrix} =\frac{1}{a+b}\begin{pmatrix}b & a   \end{pmatrix} = \begin{pmatrix}p_1 & p_2 \end{pmatrix}
+	$$
+	und daher $\begin{pmatrix}p_1 & p_2 \end{pmatrix}  \Pi^n = \begin{pmatrix}p_1 & p_2 \end{pmatrix} $.
 \end{tcolorbox}
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 14]
-Sei $\Pi = (P_{ij})$ die Übergangsmatrix einer Markovkette $\{X_n: n \in \mathbb{N}_0\}$
-mit stationäre Verteilung $\pi = \begin{pmatrix}\pi_1 & ... & \pi_S \end{pmatrix}$.\\
-$\exists \quad 0 < \epsilon < 1$, sodass
-\begin{align*}
-p_{ij} &\geq \epsilon \pi_j \quad \forall \quad i,j=1, ..., S\\
-\Rightarrow \sum_{j=1}^{S}|p_{ij}^n - \pi_j| &\leq 2(1-\epsilon)^n
-\end{align*}
+	Sei $\Pi = (P_{ij})$ die Übergangsmatrix einer Markovkette $\{X_n: n \in \mathbb{N}_0\}$
+	mit stationäre Verteilung $\pi = \begin{pmatrix}\pi_1 & ... & \pi_S \end{pmatrix}$.\\
+	$\exists \quad 0 < \epsilon < 1$, sodass
+	\begin{align*}
+		p_{ij}                                       & \geq \epsilon \pi_j \quad \forall \quad i,j=1, ..., S \\
+		\Rightarrow \sum_{j=1}^{S}|p_{ij}^n - \pi_j| & \leq 2(1-\epsilon)^n
+	\end{align*}
 \end{tcolorbox}
 Aus dem Satz folgt also, dass eine Markovkette für steigende $n$ exponentiell zur stationären Verteilung konvergiert.\\
 
 \textbf{Beweis Satz 14}\\
 Setze $M = \begin{pmatrix} \pi \\ \vdots \\pi \end{pmatrix} \in \mathbb{R}^{S \times S}$ und $Q: = \frac{1}{1-\epsilon}(\pi - \epsilon M)$.
-$M$ und $Q$ sind positive stochastische Matrizen und 
+$M$ und $Q$ sind positive stochastische Matrizen und
 $$
-\pi = (1-\epsilon)Q + \epsilon M
+	\pi = (1-\epsilon)Q + \epsilon M
 $$
 Mit $e = \begin{pmatrix} 1 \\ \vdots \\ 1 \end{pmatrix} \in \mathbb{R}^S$ ist $M = e \pi$ und
 \begin{align*}
-M^2 & = e   \overbrace{\pi e}^{1} \pi = M \\
-\Pi M & = \overbrace{\Pi e}^{e} \pi = e \pi = M \\
-M \Pi &= e \overbrace{\pi \Pi}^{\pi} = M \text{ ,}
+	M^2   & = e   \overbrace{\pi e}^{1} \pi = M         \\
+	\Pi M & = \overbrace{\Pi e}^{e} \pi = e \pi = M     \\
+	M \Pi & = e \overbrace{\pi \Pi}^{\pi} = M \text{ ,}
 \end{align*}
 da $\pi$ stationär ist.
 Daraus folgt also $QM = M$ und $MQ = M$.\\
 Das Produkt einer endlichen Folge von $Q$s und $M$s, die mindestens ein $M$ enthält, ist gleich $M$.\\
 Für jeden $n \in \mathbb{N}$ gilt:
 \begin{align*}
-\pi^n & = \left[(1-\epsilon)Q + \epsilon M\right]^n \\
-& = (1-\epsilon)^nQ^n + \sum_{l=0}^{n-1}\begin{pmatrix}n \\ l \end{pmatrix}(1-\epsilon)^l\epsilon^{n-l}M \\
-& = (1-\epsilon)^nQ^n + (1-(1-\epsilon)^n)M \\
-\Rightarrow \pi^n - M &= (1-\epsilon)^n(Q^n - M) \quad \forall \quad n \in \mathbb{N}_0 
+	\pi^n                 & = \left[(1-\epsilon)Q + \epsilon M\right]^n                                                            \\
+	                      & = (1-\epsilon)^nQ^n + \sum_{l=0}^{n-1}\begin{pmatrix}n \\ l \end{pmatrix}(1-\epsilon)^l\epsilon^{n-l}M \\
+	                      & = (1-\epsilon)^nQ^n + (1-(1-\epsilon)^n)M                                                              \\
+	\Rightarrow \pi^n - M & = (1-\epsilon)^n(Q^n - M) \quad \forall \quad n \in \mathbb{N}_0
 \end{align*}
 Für jede Zeile $i=1, ..., S$ folgt damit (unter Verwendung der Dreiecksungleichung):
 \begin{align*}
-\sum_{j=1}^{S}|p_{ij}^n - \pi_j| &= (1-\epsilon)^n \sum_{j=1}^{S}|\{Q_{ij}^n\} - \pi_j   | \\
-& \leq (1-\epsilon)^n\sum_{j=1}^{S}\left(\{Q_{ij}^n\} + \pi_j\right) = 2(1- \epsilon)^n
+	\sum_{j=1}^{S}|p_{ij}^n - \pi_j| & = (1-\epsilon)^n \sum_{j=1}^{S}|\{Q_{ij}^n\} - \pi_j   |                              \\
+	                                 & \leq (1-\epsilon)^n\sum_{j=1}^{S}\left(\{Q_{ij}^n\} + \pi_j\right) = 2(1- \epsilon)^n
 \end{align*}
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 15]
-Sei $\Pi = (P_{ij})$ die Übergangsmatrix einer Markovkette mit Zustandsraum $\{1, ..., S\}$ und
-stationärer Verteilung $\pi = \begin{pmatrix} \pi_1 & ... & \pi_S  \end{pmatrix}$.\\
-Es existiere $k \in \mathbb{N}$, $\epsilon \in (0,1)$, sodass
-\begin{align*}
-p_{ij}^k &\geq \epsilon \pi_j \quad \forall \quad i,j = 1, ..., S\\
-\Rightarrow \sum_{j=1}^{S} |p_{ij}^n - \pi_j   | \leq 2(1-\epsilon)^{\lfloor\frac{n}{k} \rfloor}
-\end{align*}
+	Sei $\Pi = (P_{ij})$ die Übergangsmatrix einer Markovkette mit Zustandsraum $\{1, ..., S\}$ und
+	stationärer Verteilung $\pi = \begin{pmatrix} \pi_1 & ... & \pi_S  \end{pmatrix}$.\\
+	Es existiere $k \in \mathbb{N}$, $\epsilon \in (0,1)$, sodass
+	\begin{align*}
+		p_{ij}^k & \geq \epsilon \pi_j \quad \forall \quad i,j = 1, ..., S \\
+		\Rightarrow \sum_{j=1}^{S} |p_{ij}^n - \pi_j   | \leq 2(1-\epsilon)^{\lfloor\frac{n}{k} \rfloor}
+	\end{align*}
 \end{tcolorbox}
 
 \textbf{Beweis Satz 15}\\
 Wende hier Satz 14 auf $\Pi^k$ an.\\
-$\pi$ ist auch eine stationäre Verteilung für $\Pi^k$ und 
+$\pi$ ist auch eine stationäre Verteilung für $\Pi^k$ und
 $$
-(\Pi^k)^m = \Pi^{km} = (P_{ij}^{km})
+	(\Pi^k)^m = \Pi^{km} = (P_{ij}^{km})
 $$
 Damit liefer Satz 14:
 $$
-\sum_{j=1}^{S} |   P_{ij}^{km} - \pi_j | \leq 2(1-\epsilon)^m \quad \forall \quad i = 1, ..., S \text{ und } m = 1, 2, 3, ... 
+	\sum_{j=1}^{S} |   P_{ij}^{km} - \pi_j | \leq 2(1-\epsilon)^m \quad \forall \quad i = 1, ..., S \text{ und } m = 1, 2, 3, ...
 $$
 Sei $n \in \mathbb{N}_0$, $m = \lfloor \frac{n}{k} \rfloor$, $r = n - km \geq 0$.
 \begin{align*}
-\Rightarrow \sum_{j=1}^{S} | p_{ij}^n - \pi_j   | & = \sum_{j=1}^{S} | \sum_{l=1}^{S}p_{il}^{r}(p_{lj}^{km} - \pi_j)    |\\
-& \leq \sum_{l=1}^{S}p_{il}^r \sum_{j=1}^{S}|p_{lj}^{km} - \pi_j   | \\
-& \leq 2(1-\epsilon)^m = 2(1-\epsilon)^{\lfloor\frac{n}{k} \rfloor}
+	\Rightarrow \sum_{j=1}^{S} | p_{ij}^n - \pi_j   | & = \sum_{j=1}^{S} | \sum_{l=1}^{S}p_{il}^{r}(p_{lj}^{km} - \pi_j)    | \\
+	                                                  & \leq \sum_{l=1}^{S}p_{il}^r \sum_{j=1}^{S}|p_{lj}^{km} - \pi_j   |    \\
+	                                                  & \leq 2(1-\epsilon)^m = 2(1-\epsilon)^{\lfloor\frac{n}{k} \rfloor}
 \end{align*}
 
 
@@ -1262,135 +1262,134 @@ $\lim_{n \to \infty}P_{ij}^n$
 
 Ist $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Übergangsmatrix $(P_{ij})$, dann
 \begin{align*}
-\sum_{j=1}^{S} | P(x_n = j) - \pi_j   | & = \sum_{j=1}^{S} | (\sum_{i=1}^{S}P(X_0 ) i)p_{ij}^n - \pi_j   | \\
-& = \sum_{j=1}^{S}|\sum_{i=1}^{S} P(X_0 = i)(p_{ij}^n - \pi_j)  | \\
-& \leq \sum_{i=1}^{S}P(X_0 = i)\sum_{j=1}^{S} |p_{ij}^n - \pi_j   | \\
-& \leq 2(1-\epsilon)^{\lfloor\frac{n}{k} \rfloor} \\
-\Rightarrow \lim_{n \to \infty}P(X_n = j) & = \pi_j
+	\sum_{j=1}^{S} | P(x_n = j) - \pi_j   |   & = \sum_{j=1}^{S} | (\sum_{i=1}^{S}P(X_0 ) i)p_{ij}^n - \pi_j   |  \\
+	                                          & = \sum_{j=1}^{S}|\sum_{i=1}^{S} P(X_0 = i)(p_{ij}^n - \pi_j)  |   \\
+	                                          & \leq \sum_{i=1}^{S}P(X_0 = i)\sum_{j=1}^{S} |p_{ij}^n - \pi_j   | \\
+	                                          & \leq 2(1-\epsilon)^{\lfloor\frac{n}{k} \rfloor}                   \\
+	\Rightarrow \lim_{n \to \infty}P(X_n = j) & = \pi_j
 \end{align*}
 
 
 Sind alle Einträge von $\Pi^n$ positiv, dann ist die Voraussetzung $p_{ij^n} \geq \epsilon \pi_j$ ($i,j = 1, ..., S$)
-mit $\epsilon: = \underset{i,j}{min} \quad p_{ij}^n$ erfüllt. 
+mit $\epsilon: = \underset{i,j}{min} \quad p_{ij}^n$ erfüllt.
 
 
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 11 (Fortsetzung)]
-Sei nun $a = b = 1$, also 
-$$
-\Pi = \begin{pmatrix} 
-0 & 1 \\ 
-1 & 0
-\end{pmatrix}
-$$
-dann gilt
-$$
-\Pi^n =
-\begin{cases}
-\begin{pmatrix}1 & 0 \\ 0 & 1 \end{pmatrix} & \text{ für $n$ gerade} \\
-\begin{pmatrix}0 & 1 \\ 1 & 0 \end{pmatrix} & \text{ für $n$ ungerade} \\
-\end{cases}
-$$
-$\lim_{n \to \infty}P_{ij}^n$ existiert also nicht!\\
-Die Markovkette zeigt periodisches Verhalten. 
+	Sei nun $a = b = 1$, also
+	$$
+		\Pi = \begin{pmatrix}
+			0 & 1 \\
+			1 & 0
+		\end{pmatrix}
+	$$
+	dann gilt
+	$$
+		\Pi^n =
+		\begin{cases}
+			\begin{pmatrix}1 & 0 \\ 0 & 1 \end{pmatrix} & \text{ für $n$ gerade}   \\
+			\begin{pmatrix}0 & 1 \\ 1 & 0 \end{pmatrix} & \text{ für $n$ ungerade} \\
+		\end{cases}
+	$$
+	$\lim_{n \to \infty}P_{ij}^n$ existiert also nicht!\\
+	Die Markovkette zeigt periodisches Verhalten.
 \end{tcolorbox}
 
 
-Die Periode $d_i$ eines Zustands $i$ einer Markovkette ist 
+Die Periode $d_i$ eines Zustands $i$ einer Markovkette ist
 die größte ganze Zahl, die alle $n \in \mathbb{N}$ mit $P_{ii}^n > 0$ teilt:
 $$
-d_i = ggT\left(\{n \in \mathbb{N}.: P_{ii}^n >0\}\right)
+	d_i = ggT\left(\{n \in \mathbb{N}.: P_{ii}^n >0\}\right)
 $$
 $$
-d_i = \infty \text{ , falls } P_{ii}^n = 0 \quad \forall \quad n \in \mathbb{N}
+	d_i = \infty \text{ , falls } P_{ii}^n = 0 \quad \forall \quad n \in \mathbb{N}
 $$
 Ein Zustandsraum mit Periode 1 heißt \textbf{aperiodisch}. Die Markovkette heißt aperiodisch,
 falls alle ihre Zustände aperiodisch sind.
 
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 12]
-\begin{itemize}
+	\begin{itemize}
 
-\item Für $S = \{1,2\}$ und $\Pi = \begin{pmatrix}  0 & 1 \\ 1 & 0 \end{pmatrix}$ gilt
-\begin{align*}
-&d_1 = ggt\left(\{2,4,6,...\}\right) = 2 \\
-&d_2 = 2
-\end{align*}
-\item Jeder Zustand $i$ mit $p_{ii} > 0$ ist aperiodisch.
-\item Für die einfache Irrfahrt auf $\mathbb{Z}$ mit $p \in (0,1)$ gilt
-$$
-d_i = 2 \quad \forall \quad i \in \mathbb{Z}
-$$
-\end{itemize}
+		\item Für $S = \{1,2\}$ und $\Pi = \begin{pmatrix}  0 & 1 \\ 1 & 0 \end{pmatrix}$ gilt
+		      \begin{align*}
+			       & d_1 = ggt\left(\{2,4,6,...\}\right) = 2 \\
+			       & d_2 = 2
+		      \end{align*}
+		\item Jeder Zustand $i$ mit $p_{ii} > 0$ ist aperiodisch.
+		\item Für die einfache Irrfahrt auf $\mathbb{Z}$ mit $p \in (0,1)$ gilt
+		      $$
+			      d_i = 2 \quad \forall \quad i \in \mathbb{Z}
+		      $$
+	\end{itemize}
 \end{tcolorbox}
 
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 16]
-Für jeden aperiodischen Zustand $i$ existiert $n_0(i) \in \mathbb{N}$, sodass
-$$
-p_{ii}^n > 0 \quad  \forall \quad n \geq n_o(i)
-$$
+	Für jeden aperiodischen Zustand $i$ existiert $n_0(i) \in \mathbb{N}$, sodass
+	$$
+		p_{ii}^n > 0 \quad  \forall \quad n \geq n_o(i)
+	$$
 \end{tcolorbox}
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 13]
-Sei 
-$$
-\Pi = \begin{pmatrix}
-		0 & 1 & 0 \\
-		0 & 0 & 1\\
-		\frac{1}{2} & 0 & \frac{1}{2}
-
-\end{pmatrix}
-$$
-$P_{11}^1 = 0$, $P_{11}^2= 0$.Für $n \geq 3$ ist aber
-$$
-p_{11}^n \geq p_{12}p_{23}p_{33}^{n-3}p_{31} = \left(\frac{1}{2}\right)^{n-2} > 0
-$$
-$\Rightarrow$ Zustand 1 ist aperiodisch. Es gilt nicht, dass $P_{11}^n > 0$ für alle $n \in \mathbb{N}$, aber für $n \geq 3 = n_0(1)$.
+	Sei
+	$$
+		\Pi = \begin{pmatrix}
+			0           & 1 & 0           \\
+			0           & 0 & 1           \\
+			\frac{1}{2} & 0 & \frac{1}{2}
+		\end{pmatrix}
+	$$
+	$P_{11}^1 = 0$, $P_{11}^2= 0$.Für $n \geq 3$ ist aber
+	$$
+		p_{11}^n \geq p_{12}p_{23}p_{33}^{n-3}p_{31} = \left(\frac{1}{2}\right)^{n-2} > 0
+	$$
+	$\Rightarrow$ Zustand 1 ist aperiodisch. Es gilt nicht, dass $P_{11}^n > 0$ für alle $n \in \mathbb{N}$, aber für $n \geq 3 = n_0(1)$.
 \end{tcolorbox}
 
 \textbf{Beweis Satz 16}\\
 Zunächst ist für den Beweis folgendes Lemma notwendig:\\
 Ist $N \subset \mathbb{N}$, $N \neq \emptyset$ abgeschlossen unter Addition,
-d.h. $n+m \in N \quad \forall \quad n,m \in N$ und ist $ggT(N)=1$, dann existiert 
+d.h. $n+m \in N \quad \forall \quad n,m \in N$ und ist $ggT(N)=1$, dann existiert
 $n_0 \in \mathbb{N}$, sodass $n \in N \quad \forall n \geq n_0$.\\
 Um auch dies zu beweisen, muss zunächst gezeigt werden, dass $N$ zwei aufeinander folgende Zahlen $n_1$, $n_{1}+1$ enthält. Setze dazu
 $$
-M: = \{n- n': n,n' \in N, n'<n\}
+	M: = \{n- n': n,n' \in N, n'<n\}
 $$
 $$
-m:= min(M)
+	m:= min(M)
 $$
 und sei $n_1, n_2 \in N$, sodass $m = n_2 - n_1$. Zeige $m=1$. Nehme dafür zunächst an, dass $m \neq 1$.\\
 $\Rightarrow m > 1$ und somit $m > ggt(N)$. $m$ teilt nicht alle Elemente von $N$.\\
-$\Rightarrow$ Es gibt $n \in N$ und $k \in \mathbb{N}_0$ mit 
-$$km < n < (k+1)m \text{ ,}$$ 
-also 
-$$0 < n-km < m$$ 
-und 
+$\Rightarrow$ Es gibt $n \in N$ und $k \in \mathbb{N}_0$ mit
+$$km < n < (k+1)m \text{ ,}$$
+also
+$$0 < n-km < m$$
+und
 \begin{align*}
-n - km & = n-k(n_2 - n_1) \\
-& = \overbrace{n+kn_1 + n_2}^{\in N} - \overbrace{(k+1)m_2}^{\in N} \quad \in M
+	n - km & = n-k(n_2 - n_1)                                                              \\
+	       & = \overbrace{n+kn_1 + n_2}^{\in N} - \overbrace{(k+1)m_2}^{\in N} \quad \in M
 \end{align*}
 Widerpruch zur Definition von $m$! Also muss $m=1$ und $n_1, n_1 + 1 \in N$.\\
 Jede natürliche Zahl $n \in \mathbb{N}$ lässt sich schreiben als
 \begin{align*}
-n & = qn_1 + r \text{ mit } q \in \mathbb{N}_0 \text{ und } r < n_1 \\
-\Rightarrow n & = q n_1 + r(n_1 + 1 - n_1) \\
-& = r(n_1 + 1) + (q-r)n_1
+	n             & = qn_1 + r \text{ mit } q \in \mathbb{N}_0 \text{ und } r < n_1 \\
+	\Rightarrow n & = q n_1 + r(n_1 + 1 - n_1)                                      \\
+	              & = r(n_1 + 1) + (q-r)n_1
 \end{align*}
-Für $m \geq n_1^2$ ist $q \geq n_1$, also $q-r>0 $ und es folgt $n \in N$. 
+Für $m \geq n_1^2$ ist $q \geq n_1$, also $q-r>0 $ und es folgt $n \in N$.
 Es folgt also die Behauptung mit $n_0 = n_1^2$.\\
 
 Nun zum Beweis von Satz 16:
-Sei $i$ ein aperiodischer Zustand, für 
+Sei $i$ ein aperiodischer Zustand, für
 $$
-N_i: = \{n \in \mathbb{N}: P_{ii}^n > 0\}
+	N_i: = \{n \in \mathbb{N}: P_{ii}^n > 0\}
 $$
 gelte also $ggt(N_i) = 1$, insbesondere $N_i \neq \emptyset$.\\
-$N_i $ ist abgeschlossen unter Addition, denn für $n,m \in N$ gilt 
+$N_i $ ist abgeschlossen unter Addition, denn für $n,m \in N$ gilt
 $$
-P_{ii}^{n+m} = \sum_{j}p_{ij}^np_{ji}m \geq p_{ii}^np_{ii}^m > 0
+	P_{ii}^{n+m} = \sum_{j}p_{ij}^np_{ji}m \geq p_{ii}^np_{ii}^m > 0
 $$
 $\Rightarrow$ Es gibt $n_0(i)$ mit $P_{ii}^n>0$ $\forall n \geq n_0(i)$.\\
 
@@ -1398,22 +1397,22 @@ $\Rightarrow$ Es gibt $n_0(i)$ mit $P_{ii}^n>0$ $\forall n \geq n_0(i)$.\\
 Eine Markovkette und ihre Übergangsmatrix heißen \textbf{irreduzibel}, falls es für alle $i, j \in S$ ein $n \geq 0$ gibt
 mit $p_{ij}^n>0$.
 \begin{itemize}
-	\item $(P_{ij})$ ist genau dann irreduzibel, wenn es für alle $i,j \in S$ mit $i \neq j$ eine Folge von Zuständen 
-	$i_0, ..., i_n \in S$ gibt, mit $i_0 = i, ..., i_n = j$ und $p_{i_0i_1}>0, ..., p_{i_{n-1}i_n}> 0$.
+	\item $(P_{ij})$ ist genau dann irreduzibel, wenn es für alle $i,j \in S$ mit $i \neq j$ eine Folge von Zuständen
+	      $i_0, ..., i_n \in S$ gibt, mit $i_0 = i, ..., i_n = j$ und $p_{i_0i_1}>0, ..., p_{i_{n-1}i_n}> 0$.
 	\item Jede irreduzibel Markovkette mit endlichem Zustandraum $S$ hat eine eindeutige stationäre Verteilung $(\pi_i)_{i \in S}$.
 \end{itemize}
 Positivität:\\
 Es existiert ein $i_0 \in S$ mit $\pi_{i_0}>0$. Für kedes $j \in S$ existiert $n \in \mathbb{N}_0$ mit $P_{i_0j}^n$ und daher
 $$
-\pi_j = \sum_{i \in S}\pi_ip_{ij}^n \geq \pi_{i_0}p_{i_0j}^n > 0
+	\pi_j = \sum_{i \in S}\pi_ip_{ij}^n \geq \pi_{i_0}p_{i_0j}^n > 0
 $$
 Endeutigkeit:\\
 Sei $(\tilde{\pi}_i)_{i \in S}$ eine weitere stationäre Verteilung.
 Sei $k \in S$ so, dass$$
-\frac{\tilde{\pi}_k}{\pi_k} \leq \frac{\tilde{\pi}_i}{\pi_i} \quad \forall i \in S
+	\frac{\tilde{\pi}_k}{\pi_k} \leq \frac{\tilde{\pi}_i}{\pi_i} \quad \forall i \in S
 $$
 $$
-\Rightarrow \tilde{\pi}_k = \sum_{j \in S}\tilde{\pi}_ip_{ik}^n \geq \frac{\tilde{\pi}_k}{\pi_k} \overbrace{\sum_{i \in S}\pi_ip_{ik}^n}^{\pi_k} = \tilde{\pi}_k \quad \forall n \geq 0
+	\Rightarrow \tilde{\pi}_k = \sum_{j \in S}\tilde{\pi}_ip_{ik}^n \geq \frac{\tilde{\pi}_k}{\pi_k} \overbrace{\sum_{i \in S}\pi_ip_{ik}^n}^{\pi_k} = \tilde{\pi}_k \quad \forall n \geq 0
 $$
 $\Rightarrow$ Für $n \geq 0$ und $i \in S$ gilt
 $$
@@ -1421,41 +1420,41 @@ $$
 $$
 Wähle $n$ mit $P_{ik}^n > 0$
 $$
-\Rightarrow \tilde{\pi}_i = \frac{\tilde{\pi}_k}{\pi_k}\pi_i \text{ ,}
+	\Rightarrow \tilde{\pi}_i = \frac{\tilde{\pi}_k}{\pi_k}\pi_i \text{ ,}
 $$
 d.h. $(\tilde{\pi}_i)$ ist proportional zu $(\pi_i)$.
 Und da $\sum \tilde{\pi}_i = \sum \pi_i$
 $$
-\Rightarrow \tilde{\pi}_i = \pi_i \quad \forall \quad i \in S
+	\Rightarrow \tilde{\pi}_i = \pi_i \quad \forall \quad i \in S
 $$
 
 
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 17]
-Sei $(P_{ij})$ die Übergangsmatrix einer irreduziblen Markovkette mit Zustandsraum
-$S = \{1,...,s\}$ und mindestens einem aperiodischen Zustand.\\
-$\Rightarrow$ Es existiert eine einduetige stationäre Verteilung $(\pi_i)_{i \in S}$ und 
-$$
-\lim_{n \to \infty}P_{ij}^n = \pi_j > 0 \quad \forall \quad i,j \in S
-$$
+	Sei $(P_{ij})$ die Übergangsmatrix einer irreduziblen Markovkette mit Zustandsraum
+	$S = \{1,...,s\}$ und mindestens einem aperiodischen Zustand.\\
+	$\Rightarrow$ Es existiert eine einduetige stationäre Verteilung $(\pi_i)_{i \in S}$ und
+	$$
+		\lim_{n \to \infty}P_{ij}^n = \pi_j > 0 \quad \forall \quad i,j \in S
+	$$
 \end{tcolorbox}
 
 \textbf{Beweis Satz 17}\\
 Zeige: Es gibt ein $N \in \mathbb{N}$ (unabhängig von $i,j$), spdass
 $$
-P_{ij}^N > ß \quad \forall \quad i,j \in S
+	P_{ij}^N > ß \quad \forall \quad i,j \in S
 $$
 Sei $i_0 \in S$ aperiodisch.\\
-$\Rightarrow$ Es gibt ein $n_0 \in \mathbb{N}$, sodass 
+$\Rightarrow$ Es gibt ein $n_0 \in \mathbb{N}$, sodass
 $$
-P_{i_0i_0}^n > 0 \quad \forall n \geq n_0
+	P_{i_0i_0}^n > 0 \quad \forall n \geq n_0
 $$
-Da $(P_{ij})$ irreduzibel ist, gibt es für alle $i,j \in S$ ein 
+Da $(P_{ij})$ irreduzibel ist, gibt es für alle $i,j \in S$ ein
 $n_{ij}\in \mathbb{N}_0$ mit $P_{ij}^{n_{ij}}> 0$.\\
 Setze $N:= 2max \{n_{ij}: i,j \in S\} + n_0$.
 $$
-\Rightarrow p_{ij}^N \geq
-p_{ii_0}^{n_{ii_0}} p_{i_0i_0}^{    \overbrace{N - n_{ii_0} - n_{i_0j}^{\geq n_0}}}p_{i_0j}^{n_{i_0j}} > 0 \quad \forall \quad i,j \in S
+	\Rightarrow p_{ij}^N \geq
+	p_{ii_0}^{n_{ii_0}} p_{i_0i_0}^{    \overbrace{N - n_{ii_0} - n_{i_0j}^{\geq n_0}}}p_{i_0j}^{n_{i_0j}} > 0 \quad \forall \quad i,j \in S
 $$
 
 Bemerkung: Unter den Voraussetzungen von Satz 17 gibt es für jeden Zustand $i$ ein $n_0(i) \in \mathbb{N}$,
@@ -1463,31 +1462,31 @@ sodass $P_{ii}^n > 0 \quad \forall \quad n \geq n_0(i)$. Deher ist dann jeder Zu
 
 
 \textbf{Interpretation der Grenzverteilung}\\
-Es gelte 
+Es gelte
 $$
-\pi_j = \lim_{n \to \infty}P_{ij}^n = \lim_{n \to \infty}P(X_n = j | X_0 =i)
+	\pi_j = \lim_{n \to \infty}P_{ij}^n = \lim_{n \to \infty}P(X_n = j | X_0 =i)
 $$
 Ist $(a_n)_{n=1}^\infty$ eine Folge reeller Zahlen mit $\lim_{n \to \infty}a_n = a$, dann gilt auch
 $$
-\frac{1}{n}\sum_{k=0}^{n-1}a_k = a \text{ , }
+	\frac{1}{n}\sum_{k=0}^{n-1}a_k = a \text{ , }
 $$
 also hier
 $$
-\lim_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1}P_{ij}^k = \pi_j
+	\lim_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1}P_{ij}^k = \pi_j
 $$
 und dahier ist
 \begin{align*}
-\frac{1}{n}\sum_{k=0}^{n-1}P_{ij}^k & = \frac{1}{n}\sum_{k=0}^{n-1}P(X_k = j | X_0 =i)\\
-& = \frac{1}{n}\sum_{k=0}^{n-1} E \left[\textbf{1}_{\{X_k = j\}}|X_0 = i\right] \\
-& = E \left[\frac{1}{n}\sum_{k=0}^{n-1}  \textbf{1}_{\{X_k = j\}} | X_0 =i             \right]
+	\frac{1}{n}\sum_{k=0}^{n-1}P_{ij}^k & = \frac{1}{n}\sum_{k=0}^{n-1}P(X_k = j | X_0 =i)                                             \\
+	                                    & = \frac{1}{n}\sum_{k=0}^{n-1} E \left[\textbf{1}_{\{X_k = j\}}|X_0 = i\right]                \\
+	                                    & = E \left[\frac{1}{n}\sum_{k=0}^{n-1}  \textbf{1}_{\{X_k = j\}} | X_0 =i             \right]
 \end{align*}
 
-Das heißt $\pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovkette in Zustand j verbringt. 
+Das heißt $\pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovkette in Zustand j verbringt.
 
 
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 14]
-HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29
+	HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29
 \end{tcolorbox}
 
 
@@ -1495,66 +1494,66 @@ HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29
 Sei $\{X_n: n \in \mathbb{N}_0\}$ eine Markovkette mit Zustandsraum S.\\
 Für jedes $j \in S$ sei
 $$
-\tau_j := inf\{n  \geq 1: X_N = j\} \quad (inf \emptyset = \infty)
+	\tau_j := inf\{n  \geq 1: X_N = j\} \quad (inf \emptyset = \infty)
 $$
 In Worten: $\tau_j$ ist der erste Zeitpunkt $n \geq 1$, zu dem die Markovkette $j$ besucht, falls es einen gibt.\\
-Für $i,j \in S$ sei 
+Für $i,j \in S$ sei
 $$
-f_{ij} = P(\tau_j < \infty | X_0 = i)
+	f_{ij} = P(\tau_j < \infty | X_0 = i)
 $$
 In Worten: $f_{ij}$ ist die Wahrscheinlichkeit, dass $j$ in endlicher Zeit ($\geq 1$) erreicht wird bei Start in $i$.
 Insbesondere ist $f_{jj}$ die Wahrscheinlichkeit einer Rückkehr.\\
 
 
-Ein Zustand $j \in S$ heißt \textbf{rekurrent}, falls $f_{jj} = 1$. 
+Ein Zustand $j \in S$ heißt \textbf{rekurrent}, falls $f_{jj} = 1$.
 Er heißt \textbf{transient}, falls $f_{jj}<1$.
-Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette rekurennt oder transient. 
+Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette rekurennt oder transient.
 
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 15]
-Sei $S = \{1,2,3\}$ und 
-$$
-(P_{ij}) = \begin{pmatrix}
-0.5 & 0.5 & 0 \\
-0.5 & 0.5 & 0 \\
-\frac{1}{3} & \frac{1}{3} \frac{1}{3}
-\end{pmatrix}
-$$
-Dann ist
-\begin{align*}
-f_{11} &= \sum_{n=1}^{\infty}P(\tau_1 = n | X_0 = 1)\\
-& = \sum_{k=1}^{\infty}P(X_n = 1, X_k = 2 \text{ mit } 1 \leq k < n |X_0 = 1 )\\
-& = \sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n = 1
-\end{align*}
-Folglich ist 1 rekurrent. Ebenso auch 2.
-$$
-f_{33} = P(\tau < \infty |X_0 = 3) = P(X_1 = 3| X_0 = 3) =\frac{1}{3} < 1
-$$
-3 ist also transient und somit die Markovkette weder transient noch rekurrent.
+	Sei $S = \{1,2,3\}$ und
+	$$
+		(P_{ij}) = \begin{pmatrix}
+			0.5         & 0.5                     & 0 \\
+			0.5         & 0.5                     & 0 \\
+			\frac{1}{3} & \frac{1}{3} \frac{1}{3}
+		\end{pmatrix}
+	$$
+	Dann ist
+	\begin{align*}
+		f_{11} & = \sum_{n=1}^{\infty}P(\tau_1 = n | X_0 = 1)                                 \\
+		       & = \sum_{k=1}^{\infty}P(X_n = 1, X_k = 2 \text{ mit } 1 \leq k < n |X_0 = 1 ) \\
+		       & = \sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n = 1
+	\end{align*}
+	Folglich ist 1 rekurrent. Ebenso auch 2.
+	$$
+		f_{33} = P(\tau < \infty |X_0 = 3) = P(X_1 = 3| X_0 = 3) =\frac{1}{3} < 1
+	$$
+	3 ist also transient und somit die Markovkette weder transient noch rekurrent.
 
 \end{tcolorbox}
 
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 18]
-Für $j \in S$ sei 
-$$
-N_j = \sum_{n=1}^{\infty}\textbf{1}_{\{X_n = j\}}
-$$
-die Anzahl der Zeitpunkte $\geq 1$ zu denen Zustand $j$ besucht wird.\\
-\begin{itemize}
-\item Ist $j$ rekurrent, dann gilt für alle $i \in S$
-$$
-P(N_j = \infty | X_0 = i) = f_{ij} \text{ , } P(N_j = 0 |X_0 = i) = 1 - f_{ij}
-$$
-und insbesondere
-$$
-P(N_j = \infty | X_0 = j) = f_{jj} = 1 \text{ und } E[N_j|X_0 = j] = \infty
-$$
-\item Ist $j$ transient, dann gilt für alle $i \in S$
-$$
-P(N_j <  \infty| X_0 = i) = 1 \text{ und } E[N_j|X_0 = i] = \frac{f_{ij}}{1 - f_{jj}} < \infty
-$$
-\end{itemize}
+	Für $j \in S$ sei
+	$$
+		N_j = \sum_{n=1}^{\infty}\textbf{1}_{\{X_n = j\}}
+	$$
+	die Anzahl der Zeitpunkte $\geq 1$ zu denen Zustand $j$ besucht wird.\\
+	\begin{itemize}
+		\item Ist $j$ rekurrent, dann gilt für alle $i \in S$
+		      $$
+			      P(N_j = \infty | X_0 = i) = f_{ij} \text{ , } P(N_j = 0 |X_0 = i) = 1 - f_{ij}
+		      $$
+		      und insbesondere
+		      $$
+			      P(N_j = \infty | X_0 = j) = f_{jj} = 1 \text{ und } E[N_j|X_0 = j] = \infty
+		      $$
+		\item Ist $j$ transient, dann gilt für alle $i \in S$
+		      $$
+			      P(N_j <  \infty| X_0 = i) = 1 \text{ und } E[N_j|X_0 = i] = \frac{f_{ij}}{1 - f_{jj}} < \infty
+		      $$
+	\end{itemize}
 \end{tcolorbox}
 
 \textbf{Beweis Satz 18}\\
@@ -1562,244 +1561,244 @@ Setze $\sigma_j = sup\{n \geq 1: X_n = j\}$, wobei $sup \emptyset = \infty$.
 Ist $\sigma_j$ endlich, dann ist $\sigma_j$ der Zeitpunkt des letzten Aufenthalts in $j$.
 Für jedes $n \in \mathbb{N}$ gilt
 \begin{align*}
-P(\sigma_j = n | X_0 = i) & = P(X_n = j, X_m \neq j \text{ für alle } m>n | X_0 = i) \\
-& = P(X_M \neq j \text{ für alle } m>n | X_n = j, X_0 = i)P(X_n = j | X_0 = i) \\
-& = \lim_{n \to \infty}P(X_{n+1}\neq j, ..., X_{n+m \neq j}|X_n = j, X_0 = i)P_{ij}^n \\
-& = \lim_{m \to \infty}P(X_1 \neq j, ..., X_m \neq j| X_0 = j)P_{ij}^n \\
-& = (1-f_{jj})P_{ij}^n
+	P(\sigma_j = n | X_0 = i) & = P(X_n = j, X_m \neq j \text{ für alle } m>n | X_0 = i)                            \\
+	                          & = P(X_M \neq j \text{ für alle } m>n | X_n = j, X_0 = i)P(X_n = j | X_0 = i)        \\
+	                          & = \lim_{n \to \infty}P(X_{n+1}\neq j, ..., X_{n+m \neq j}|X_n = j, X_0 = i)P_{ij}^n \\
+	                          & = \lim_{m \to \infty}P(X_1 \neq j, ..., X_m \neq j| X_0 = j)P_{ij}^n                \\
+	                          & = (1-f_{jj})P_{ij}^n
 \end{align*}
 \begin{align*}
-P(1 \leq \sigma_j < \infty | X_0 = i) & = \sum_{n=1}^{\infty}P(\sigma_j = n | X_0 = i) \\
-& = (1-f{jj})\sum_{n=1}^{\infty}P_{ij}^n \\
-& = (1-f_{jj}) \sum_{n=1}^{\infty}E\left[\textbf{1}_{X_n = j}|X_0 = i\right] \\
-& = (1-f_{jj})E \left[N_j|X_0 = i\right]
+	P(1 \leq \sigma_j < \infty | X_0 = i) & = \sum_{n=1}^{\infty}P(\sigma_j = n | X_0 = i)                             \\
+	                                      & = (1-f{jj})\sum_{n=1}^{\infty}P_{ij}^n                                     \\
+	                                      & = (1-f_{jj}) \sum_{n=1}^{\infty}E\left[\textbf{1}_{X_n = j}|X_0 = i\right] \\
+	                                      & = (1-f_{jj})E \left[N_j|X_0 = i\right]
 \end{align*}
 \begin{itemize}
-\item Sei $j$ rekurrent, also $f_{jj} = 1$.\\
-$\Rightarrow P(\sigma_j = n | X_0 = i) = 0$ für alle $n \in \mathbb{N}$.\\
-$\Rightarrow P(\sigma_j \in \{- \infty, \infty\}) = 1$, also $P(N_j \in \{0,\infty\}|X_0 = i) = 1$.\\
-Es ist $P(N_j = 0 | X_0 = i) = 1- f_{ij}$ und es folt $P(N_j = \infty | X_0 = i) = f_{ij}$.
-\item Sei $j$ transient, also $f_{jj} < 1$.
-$$
-(1-f_{jj})E \left[N_j|X_0 = i\right] = P(1 \leq \sigma_j < \infty | X_0 = i) \leq 1
-$$
-$\Rightarrow E \left[N_j | X_0 = i\right] < \infty$ und daher ist $P(N_j < \infty | X_0 = i) = 1$.
-\begin{align*}
-\Rightarrow P(1 \leq \sigma_j < \infty| X_0 = i) & = P(1 \leq \sigma_j)\\
-& = P(\tau_j < \infty | X_0 = i)\\
-& = f_{ij}
-\end{align*}
-$\Rightarrow E[N_j | X_0 = i] = \frac{f_{ij}}{1-{f_jj}}$.
+	\item Sei $j$ rekurrent, also $f_{jj} = 1$.\\
+	      $\Rightarrow P(\sigma_j = n | X_0 = i) = 0$ für alle $n \in \mathbb{N}$.\\
+	      $\Rightarrow P(\sigma_j \in \{- \infty, \infty\}) = 1$, also $P(N_j \in \{0,\infty\}|X_0 = i) = 1$.\\
+	      Es ist $P(N_j = 0 | X_0 = i) = 1- f_{ij}$ und es folt $P(N_j = \infty | X_0 = i) = f_{ij}$.
+	\item Sei $j$ transient, also $f_{jj} < 1$.
+	      $$
+		      (1-f_{jj})E \left[N_j|X_0 = i\right] = P(1 \leq \sigma_j < \infty | X_0 = i) \leq 1
+	      $$
+	      $\Rightarrow E \left[N_j | X_0 = i\right] < \infty$ und daher ist $P(N_j < \infty | X_0 = i) = 1$.
+	      \begin{align*}
+		      \Rightarrow P(1 \leq \sigma_j < \infty| X_0 = i) & = P(1 \leq \sigma_j)           \\
+		                                                       & = P(\tau_j < \infty | X_0 = i) \\
+		                                                       & = f_{ij}
+	      \end{align*}
+	      $\Rightarrow E[N_j | X_0 = i] = \frac{f_{ij}}{1-{f_jj}}$.
 \end{itemize}
 
 \textbf{Bemerkung zu Satz 18}\\
 \begin{itemize}
-\item Wegen $E[N_j| X_0 = j ] = \sum_{n=1}^{\infty} P_{jj}^n$ liefert der Satz ein einfacheres Rekurrenzkriterium
-$$
-j \text{ ist rekurrent } \Leftrightarrow \sum_{n=1}^{\infty} P_{jj}^n = \infty
-$$
-\item Im Allgemeinen kann eine Markovkette sowohl rekurrente als auch transiente Zustände haben.\\
-Ist $\{X_n\}$ irreduziebl, dann isn entweder alle Zustände rekurent oder alle sind transient.\\
-Denn: Falls es einen rekurrenten zustand $j$ gibt, dann gibt es für jedes $i \in S$ $n_1,n_2 \geq 0$ mit $P_{ij}^{n_1} < 0$, $P_{ji}^{n_2}> 0$ und daher
-$$
-\sum_{n=1}^{\infty}P_{ii}^n \geq \sum_{n=1}^{\infty}P_{ij}^{n_1}P_{jj}^nP_{ji}^{n_2}
-= \overbrace{P_{ij}^{n_1}P_{ji}^{n_2}}^{>0}\sum_{n=}^{	\infty}P_{jj}^n = \infty
-$$
-$\Rightarrow \quad i$ ist ebenfalls rekurrent.
-\item Ist $j$ transient, dann gilt $\lim_{n \to \infty}P_{ij}^n = 0 \quad \forall \quad i \in S$, denn
-$$
-\sum_{n=1}^{\infty}P_{ij}^n = E\left[N_j |X_0 = i\right] = \frac{f_{ij}}{1-f_{jj}} < \infty
-$$
-\item Jede Markovkette mit endlichem Zustandraum $S = \{1, ..., s\}$ hat mindestens einen rekurrenten Zustand, denn sonst wäre
-$$
-1 = \lim_{n \to \infty}\sum_{j=1}^{s}P_{ij}^n = \sum_{j=1}^{s} \lim_{n \to \infty} P_{ij}^n = 0 \text{ Widerspruch!}
-$$
-\item Jede irreduzible Markovkette mit endlichem Zustandsraum ist rekkurent.
-Außerdem gilt für solche Markovketten
-$$
-E[\tau_j | X_0 = i] < \infty
-$$
-und daher ist 
-$$
-P(N_j = \infty | X_0 = i) = f_{ij} = 1 \quad \forall \quad i,j \in S
-$$
+	\item Wegen $E[N_j| X_0 = j ] = \sum_{n=1}^{\infty} P_{jj}^n$ liefert der Satz ein einfacheres Rekurrenzkriterium
+	      $$
+		      j \text{ ist rekurrent } \Leftrightarrow \sum_{n=1}^{\infty} P_{jj}^n = \infty
+	      $$
+	\item Im Allgemeinen kann eine Markovkette sowohl rekurrente als auch transiente Zustände haben.\\
+	      Ist $\{X_n\}$ irreduziebl, dann isn entweder alle Zustände rekurent oder alle sind transient.\\
+	      Denn: Falls es einen rekurrenten zustand $j$ gibt, dann gibt es für jedes $i \in S$ $n_1,n_2 \geq 0$ mit $P_{ij}^{n_1} < 0$, $P_{ji}^{n_2}> 0$ und daher
+	      $$
+		      \sum_{n=1}^{\infty}P_{ii}^n \geq \sum_{n=1}^{\infty}P_{ij}^{n_1}P_{jj}^nP_{ji}^{n_2}
+		      = \overbrace{P_{ij}^{n_1}P_{ji}^{n_2}}^{>0}\sum_{n=}^{	\infty}P_{jj}^n = \infty
+	      $$
+	      $\Rightarrow \quad i$ ist ebenfalls rekurrent.
+	\item Ist $j$ transient, dann gilt $\lim_{n \to \infty}P_{ij}^n = 0 \quad \forall \quad i \in S$, denn
+	      $$
+		      \sum_{n=1}^{\infty}P_{ij}^n = E\left[N_j |X_0 = i\right] = \frac{f_{ij}}{1-f_{jj}} < \infty
+	      $$
+	\item Jede Markovkette mit endlichem Zustandraum $S = \{1, ..., s\}$ hat mindestens einen rekurrenten Zustand, denn sonst wäre
+	      $$
+		      1 = \lim_{n \to \infty}\sum_{j=1}^{s}P_{ij}^n = \sum_{j=1}^{s} \lim_{n \to \infty} P_{ij}^n = 0 \text{ Widerspruch!}
+	      $$
+	\item Jede irreduzible Markovkette mit endlichem Zustandsraum ist rekkurent.
+	      Außerdem gilt für solche Markovketten
+	      $$
+		      E[\tau_j | X_0 = i] < \infty
+	      $$
+	      und daher ist
+	      $$
+		      P(N_j = \infty | X_0 = i) = f_{ij} = 1 \quad \forall \quad i,j \in S
+	      $$
 \end{itemize}
 
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 16]
-Wie betrachten wieder die einfachre Irrfahrt auf $\mathbb{Z}$.\\
-Da eine Rückkehr zum Zustand $i$ immer nur in 2 Schritten möglich ist, ist die Periode $d_i = 2$.\\
-$$
-P_{ii}^{2n} = \begin{pmatrix}2n \\ n \end{pmatrix}p^n(1-p)^{2n - n}
-$$
-Wegen
-$$
-\frac{
-\begin{pmatrix} 2(n+1) \\ n+1 \end{pmatrix}
-}{
-2n \\n
-} = \frac{(2n+2)(2n+1)}{(n+1)^2} \leq 4 
-$$
-und $\begin{pmatrix}2 \\ 1 \end{pmatrix} = 2$ gilt
-$$
-\begin{pmatrix}2n \\ n \end{pmatrix} \leq 4^n
-$$
-Für $p \neq \frac{1}{2}$ ist $p(1-p)<\frac{1}{4}$ und daher (unter Nutzung geom. Reihe)
-$$
-\sum_{n=1}^{\infty}P_{ii}^n = \sum_{n=1}^{\infty} P_{ii}^{2n} = \sum_{n=1}^{\infty} 
-\begin{pmatrix}2n \\ n \end{pmatrix} [p(1-p)]^n
-\leq \sum_{n=1}^{\infty}[4p(1-p)]^n
-< \infty
-$$
-$\Rightarrow$ Für $p \neq \frac{1}{2}$ ist die einfache Irrfahrt transient.\\
+	Wie betrachten wieder die einfachre Irrfahrt auf $\mathbb{Z}$.\\
+	Da eine Rückkehr zum Zustand $i$ immer nur in 2 Schritten möglich ist, ist die Periode $d_i = 2$.\\
+	$$
+		P_{ii}^{2n} = \begin{pmatrix}2n \\ n \end{pmatrix}p^n(1-p)^{2n - n}
+	$$
+	Wegen
+	$$
+		\frac{
+			\begin{pmatrix} 2(n+1) \\ n+1 \end{pmatrix}
+		}{
+			2n \\n
+		} = \frac{(2n+2)(2n+1)}{(n+1)^2} \leq 4
+	$$
+	und $\begin{pmatrix}2 \\ 1 \end{pmatrix} = 2$ gilt
+	$$
+		\begin{pmatrix}2n \\ n \end{pmatrix} \leq 4^n
+	$$
+	Für $p \neq \frac{1}{2}$ ist $p(1-p)<\frac{1}{4}$ und daher (unter Nutzung geom. Reihe)
+	$$
+		\sum_{n=1}^{\infty}P_{ii}^n = \sum_{n=1}^{\infty} P_{ii}^{2n} = \sum_{n=1}^{\infty}
+		\begin{pmatrix}2n \\ n \end{pmatrix} [p(1-p)]^n
+		\leq \sum_{n=1}^{\infty}[4p(1-p)]^n
+		< \infty
+	$$
+	$\Rightarrow$ Für $p \neq \frac{1}{2}$ ist die einfache Irrfahrt transient.\\
 
 
-Andererseits gilt $\begin{pmatrix}2n \\ n \end{pmatrix} \geq \frac{4^n}{2 \sqrt{n}}$ (Beweis durch vollst. Induktion hier ausgelassen).\\
-Für $p = \frac{1}{2}$ gilt daher
-$$
-\sum_{n=1}^{	\infty} P_{ii}^n = \sum_{n=1}^{\infty} \begin{pmatrix}2n \\ n \end{pmatrix} [p(1-p)]^n \geq \sum_{n=1}^{\infty}
-\frac{4^n}{2 \sqrt{n}}\left(\frac{1}{4}\right)^n = \frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}} = \infty
-$$
-$\Rightarrow$ für $p = \frac{1}{2}$ ist die einfache Irrfahrt rekurrent. 
+	Andererseits gilt $\begin{pmatrix}2n \\ n \end{pmatrix} \geq \frac{4^n}{2 \sqrt{n}}$ (Beweis durch vollst. Induktion hier ausgelassen).\\
+	Für $p = \frac{1}{2}$ gilt daher
+	$$
+		\sum_{n=1}^{	\infty} P_{ii}^n = \sum_{n=1}^{\infty} \begin{pmatrix}2n \\ n \end{pmatrix} [p(1-p)]^n \geq \sum_{n=1}^{\infty}
+		\frac{4^n}{2 \sqrt{n}}\left(\frac{1}{4}\right)^n = \frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}} = \infty
+	$$
+	$\Rightarrow$ für $p = \frac{1}{2}$ ist die einfache Irrfahrt rekurrent.
 \end{tcolorbox}
 
 Ein Zustand $j$ heißt positiv rekurrent, falls $E_j[T_j] < \infty$ und er heißt nullrekurrent, falls
-$E_j[T_j] = \infty$. Ist der Zustandsraumm der Markovkette endlich, folgt aus 
+$E_j[T_j] = \infty$. Ist der Zustandsraumm der Markovkette endlich, folgt aus
 Irreduzibilität bereits positive Rekurrenz und die Existenz einer eindeutigen stationären Verteilung.
 Die Konvergenz zu einer eindeutigen stationären Verteilung (unabhängig von der Anfangsverteilung) hingegen basiert (s. Satz 17) darauf,
-dass mindestens ein Zustand aperiodisch ist. 
+dass mindestens ein Zustand aperiodisch ist.
 
 
 \section{Erneuerungsprozesse}
 Eine Erneuerung ist ein Ereignis, das zu zufälligen Zeitpunkten auftritt.
 Ein Erneuerungsprozess ist ein stochastischer Prozess, der die Anzahl der Erneuerungen bis
 zu einem Zeitpuntk $t$ beschreibt. Seien $Y_1, Y_2, ...$ i.i.d die Wartezeiten, also die
-Zeiten zwischen aufeinanderfolgenden Erneuerungen, mit $E[Y_i] = \mu \quad \in (0,\infty)$ und 
+Zeiten zwischen aufeinanderfolgenden Erneuerungen, mit $E[Y_i] = \mu \quad \in (0,\infty)$ und
 $Var[Y_i] = \sigma^2$. Die Zeitpunkte der Erneuerungen seien definiert als
 $$
-T_n = Y_1 + Y_2 + ... + Y_n
+	T_n = Y_1 + Y_2 + ... + Y_n
 $$
 Sei $N(t)$ die Anzahl der Erneuerungen bis zu einem Zeitpunkt $t$:
 $$
-N(t) = max\{n \in \mathbb{N}_0: T_n \leq t\}
+	N(t) = max\{n \in \mathbb{N}_0: T_n \leq t\}
 $$
 In Worten: $N(t)$ ist die maximale Anzahl an Erneuerungen, deren Gesamtdauer
 $T_n$ nicht über $t$ hinausgeht. \\
 Für jeden Zeitpunkt $t$ gilt
 $$
-T_{N(t)} \leq t < T_{N(t)+1} \quad (\star)
+	T_{N(t)} \leq t < T_{N(t)+1} \quad (\star)
 $$
 
 Nach dem starken Gesetz der großen Zahlen gilt mit Wahrscheinlichkeit 1, dass
 $$
-\lim_{n \to \infty}\frac{T_n}{n} = 
-\lim_{n \to \infty}\frac{Y_1 + ... + Y_n}{n} =
-\lim_{n  \to \infty} \frac{1}{n}\sum_{i=1}^{n}Y_i =
-\mu \quad (\star \star)
+	\lim_{n \to \infty}\frac{T_n}{n} =
+	\lim_{n \to \infty}\frac{Y_1 + ... + Y_n}{n} =
+	\lim_{n  \to \infty} \frac{1}{n}\sum_{i=1}^{n}Y_i =
+	\mu \quad (\star \star)
 $$
 
-Es gilt zudem 
+Es gilt zudem
 $$
-\lim_{t \to \infty} N(t) = \infty
+	\lim_{t \to \infty} N(t) = \infty
 $$
 Um zu zeigen, dass dies gilt, sei anzunehmen, dass
 $N(t) \leq M \quad \forall t$ mit $N(t^*) = M$.Das wiederum impliziert
 $T_{M+1}>t \quad \forall t > t^*$. Das wiederum impliziert
 $$
-T_{M+1} = \overbrace{Y_1 + Y_2 + Y_M}^{= t^* < \infty} + Y_{M+1} = \infty
+	T_{M+1} = \overbrace{Y_1 + Y_2 + Y_M}^{= t^* < \infty} + Y_{M+1} = \infty
 $$
-und damit $Y_{M+1} = \infty$. Das wäre ein Widerspruch, da dies 
-$P(Y = \infty) > 0$ voraussetzen würde, was gemäß $E[Y]< \infty$ nicht 
-der Fall ist. 
+und damit $Y_{M+1} = \infty$. Das wäre ein Widerspruch, da dies
+$P(Y = \infty) > 0$ voraussetzen würde, was gemäß $E[Y]< \infty$ nicht
+der Fall ist.
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 19]
-Sei $0 < \mu = E[Y_1] < \infty$. Mit wahrscheinlichkeit 1 gilt
-$$
-\lim_{t \to \infty}\frac{N(t)}{t} = \frac{1}{\mu}
-$$
+	Sei $0 < \mu = E[Y_1] < \infty$. Mit wahrscheinlichkeit 1 gilt
+	$$
+		\lim_{t \to \infty}\frac{N(t)}{t} = \frac{1}{\mu}
+	$$
 \end{tcolorbox}
 \textbf{Beweis Satz 19}\\
 Mit $(\star)$ und $(\star \star)$ folgt
 $$
-\Rightarrow \frac{T_{N(t)}}{N(t)} \leq \frac{t}{N(t)} < 
-\frac{T_{N(t)+1}}{N(t)+1} \frac{N(t)+1}{N(t)} 
+	\Rightarrow \frac{T_{N(t)}}{N(t)} \leq \frac{t}{N(t)} <
+	\frac{T_{N(t)+1}}{N(t)+1} \frac{N(t)+1}{N(t)}
 $$
-und 
+und
 \begin{align*}
-\Rightarrow & \lim_{t \to \infty} \frac{T_{N(t)}}{N(t)} = \mu \\
-& \lim_{t \to \infty} \frac{T_{N(t)+1}}{N(t)+1} = \mu \\
-&\lim_{t \to \infty} \frac{N(t)+1}{N(t)} = 1 \\
-\Rightarrow & \lim_{t \to \infty} \frac{t}{N(t)} = \mu
+	\Rightarrow & \lim_{t \to \infty} \frac{T_{N(t)}}{N(t)} = \mu     \\
+	            & \lim_{t \to \infty} \frac{T_{N(t)+1}}{N(t)+1} = \mu \\
+	            & \lim_{t \to \infty} \frac{N(t)+1}{N(t)} = 1         \\
+	\Rightarrow & \lim_{t \to \infty} \frac{t}{N(t)} = \mu
 \end{align*}
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 17]
-Zu betrachten sei ein Erneuerungsprozess $\{N(t): t \in \mathbb{N}_0\}$, bei dem
-$Y_1, Y_2, ...$ i.i.d die Wartezeit bis zum Ausfall einer Glühbirne in einer Lampe
-mit einer Glühbirne beschreibt. Folglich ist $T_n$ die Zeit, bis die n-te Glühbirne
-ausgefallen ist, bzw. ausgetauscht werden musste.\\
-Nehmen wir an, wir beobachten in Tagen $Y_1 = 100$, $Y_2 = 150$, $Y_3 = 125$, $Y_4 = 110$ 
-und wir interessieren uns für $N(270)$. 
-$$
-N(270) = max\{n \in \mathbb{N}_0: T_n \leq 270\} = 2
-$$
-Angenommen, wir beobachten an Tag 1000, dass die 7. Glühbirne ausgetauscht wird, was 
-ist dann die erwartete Lebensdauert einer Glühbirne?
-Nach Satz 19 ist für einen unendlichen Zeithorizont
-\begin{align*}
-&\frac{\text{Anzahl ausgetauschter Glübirnen bis Zeitpunkt t}}{t}\\
- &\to \frac{1}{\text{Erwartete Lebensdauer einer Glübirne}}
-\end{align*}
-Also ist $\mu \approx \frac{1000}{7} = 143$
+	Zu betrachten sei ein Erneuerungsprozess $\{N(t): t \in \mathbb{N}_0\}$, bei dem
+	$Y_1, Y_2, ...$ i.i.d die Wartezeit bis zum Ausfall einer Glühbirne in einer Lampe
+	mit einer Glühbirne beschreibt. Folglich ist $T_n$ die Zeit, bis die n-te Glühbirne
+	ausgefallen ist, bzw. ausgetauscht werden musste.\\
+	Nehmen wir an, wir beobachten in Tagen $Y_1 = 100$, $Y_2 = 150$, $Y_3 = 125$, $Y_4 = 110$
+	und wir interessieren uns für $N(270)$.
+	$$
+		N(270) = max\{n \in \mathbb{N}_0: T_n \leq 270\} = 2
+	$$
+	Angenommen, wir beobachten an Tag 1000, dass die 7. Glühbirne ausgetauscht wird, was
+	ist dann die erwartete Lebensdauert einer Glühbirne?
+	Nach Satz 19 ist für einen unendlichen Zeithorizont
+	\begin{align*}
+		 & \frac{\text{Anzahl ausgetauschter Glübirnen bis Zeitpunkt t}}{t} \\
+		 & \to \frac{1}{\text{Erwartete Lebensdauer einer Glübirne}}
+	\end{align*}
+	Also ist $\mu \approx \frac{1000}{7} = 143$
 
 \end{tcolorbox}
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 18]
-Zu betrachten sei ein Erneuerungsprozess $\{N(t): t \in \mathbb{N}_0\}$, bei dem
-$Y_1, Y_2, ...$ i.i.d. die Zeitabstände zwischen Schadensfällen ist. Folglich ist
-$T_n$ die Zeit, bis die n-te Schadensmeldung eingegangen ist.\\
-Wenn die Frage nach dem erwarteten Zeitabends zwischen zwei Meldungen ist, könnte nach Satz 19 wieder
-$$
-\mu \approx \frac{t}{\text{ Anzahl Meldungen bis Zeit t}}
-$$
-berechnet werden.\\
-Nun erhalte die Versicherung zu den Zeiten $T_1, T_2, ...$ Schadensforderungen in Höhe von
-$X_1, X_2, ...$ i.i.d mit $E{X_i}< \infty.$. Über die Gesamte Zeit häufen sich also
-$$
-X(t) = \sum_{i=1}^{N(t)}X_i
-$$
-an. Berechne $\lim_{t \to \infty}\frac{X(t)}{t}$.\\
-Da gilt 
-$$
-\lim_{t \to \infty}\frac{N(t)}{t} = \frac{1}{E[Y_1]}
-$$
-und
-$$
-\lim_{n \to \infty}\frac{1}{n}\sum_{i=1}^{n}X_i = E[X_i]
-$$
-folgt mit $\lim_{t \to \infty}N(t)= \infty$
-$$
-\Rightarrow \lim_{n \to \infty} \frac{1}{N(t)}\sum_{i=1}^{N(t)}X_i = E[X_i]
-$$
-Mittels Satz 19 erhalten wir
-$$
-\lim_{t \to \infty} \frac{X(t)}{t} =\lim_{t \to \infty} \left(\frac{1}{N(t)}\sum_{i=1}^{N(t)}\right)\frac{N(t)}{t} =
-\frac{E[X_1]}{E[Y_1]}
-$$
+	Zu betrachten sei ein Erneuerungsprozess $\{N(t): t \in \mathbb{N}_0\}$, bei dem
+	$Y_1, Y_2, ...$ i.i.d. die Zeitabstände zwischen Schadensfällen ist. Folglich ist
+	$T_n$ die Zeit, bis die n-te Schadensmeldung eingegangen ist.\\
+	Wenn die Frage nach dem erwarteten Zeitabends zwischen zwei Meldungen ist, könnte nach Satz 19 wieder
+	$$
+		\mu \approx \frac{t}{\text{ Anzahl Meldungen bis Zeit t}}
+	$$
+	berechnet werden.\\
+	Nun erhalte die Versicherung zu den Zeiten $T_1, T_2, ...$ Schadensforderungen in Höhe von
+	$X_1, X_2, ...$ i.i.d mit $E{X_i}< \infty.$. Über die Gesamte Zeit häufen sich also
+	$$
+		X(t) = \sum_{i=1}^{N(t)}X_i
+	$$
+	an. Berechne $\lim_{t \to \infty}\frac{X(t)}{t}$.\\
+	Da gilt
+	$$
+		\lim_{t \to \infty}\frac{N(t)}{t} = \frac{1}{E[Y_1]}
+	$$
+	und
+	$$
+		\lim_{n \to \infty}\frac{1}{n}\sum_{i=1}^{n}X_i = E[X_i]
+	$$
+	folgt mit $\lim_{t \to \infty}N(t)= \infty$
+	$$
+		\Rightarrow \lim_{n \to \infty} \frac{1}{N(t)}\sum_{i=1}^{N(t)}X_i = E[X_i]
+	$$
+	Mittels Satz 19 erhalten wir
+	$$
+		\lim_{t \to \infty} \frac{X(t)}{t} =\lim_{t \to \infty} \left(\frac{1}{N(t)}\sum_{i=1}^{N(t)}\right)\frac{N(t)}{t} =
+		\frac{E[X_1]}{E[Y_1]}
+	$$
 \end{tcolorbox}
 
 
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 20]
-Sei $\mu := E[Y_1]$, $\sigma^2 := Var[Y_1]$ mit $0 < \mu < \infty$ und $0 < \sigma < \infty$.\\
-$\Rightarrow$ Für $t \to \infty$ ist $N(t)$ asymptotisch normalverteilt mit Parametern
-$$
-\frac{t}{\mu} \text{ und } \frac{t \sigma^2}{\mu^3} \text{, }
-$$
-das heißt 
-$$
-\lim_{t \to \infty} P  \left(  
-\frac{N(t) - \frac{t}{\mu}}{\sqrt{\frac{t\sigma^2}{\mu^3}}} <y
-     \right) = \Phi(y) \quad \forall y \in \mathbb{R}
-$$
+	Sei $\mu := E[Y_1]$, $\sigma^2 := Var[Y_1]$ mit $0 < \mu < \infty$ und $0 < \sigma < \infty$.\\
+	$\Rightarrow$ Für $t \to \infty$ ist $N(t)$ asymptotisch normalverteilt mit Parametern
+	$$
+		\frac{t}{\mu} \text{ und } \frac{t \sigma^2}{\mu^3} \text{, }
+	$$
+	das heißt
+	$$
+		\lim_{t \to \infty} P  \left(
+		\frac{N(t) - \frac{t}{\mu}}{\sqrt{\frac{t\sigma^2}{\mu^3}}} <y
+		\right) = \Phi(y) \quad \forall y \in \mathbb{R}
+	$$
 \end{tcolorbox}
 \textbf{Beweis Satz 20}\\
 Der Beweis nutzt $P(N(t)< n) = P(T_n > t)$, den zentralen Grenzwertsatz und folgendes Lemma:
@@ -1807,36 +1806,36 @@ Seien $X_1, X_2, ...$ ZUfallsvariablen, sodass $lim_{n \to \infty}P(X_n > x) = G
 wobei $G$ stetig ist.
 $\Rightarrow$ Für alle $x,x_1,x_2, ... \in \mathbb{R}$ mit $\lim_{n \to \infty}X_n = x$ gilt
 $$
-\lim_{n \to \infty} P(X_n > x_n) = G(x)
+	\lim_{n \to \infty} P(X_n > x_n) = G(x)
 $$
 Sei nun $y \in \mathbb{R}$. Für alle $t>0$ gilt
 \begin{align*}
-	P  \left(  
-		\frac{N(t) - \frac{t}{\mu}}{\sqrt{\frac{t\sigma^2}{\mu^3}}} <y
-			 \right) & =
-P \left(N(t) < \frac{t}{\mu} + y \sigma \sqrt{\frac{t}{\mu^3}}  \right) \\
-& = P(N(t)<n_t)
+	P  \left(
+	\frac{N(t) - \frac{t}{\mu}}{\sqrt{\frac{t\sigma^2}{\mu^3}}} <y
+	\right) & =
+	P \left(N(t) < \frac{t}{\mu} + y \sigma \sqrt{\frac{t}{\mu^3}}  \right) \\
+	        & = P(N(t)<n_t)
 \end{align*}
 mit $n_t = \lceil \frac{t}{\mu} + y \sigma \sqrt{\frac{t}{\mu^3}} \rceil $.\\
 Sei $t>0$ so groß, dass $n_t \geq 1$. Dann gilt
 \begin{align*}
-P(N(t)<n_t) & = P(T_{n_t}>t) \\
-& = P  \left(
-\frac{T_{n_t} - n_t \mu}{\sigma \sqrt{n_t}} >
-\frac{t - n_t \mu}{\sigma \sqrt{n_t}}
-\right)
+	P(N(t)<n_t) & = P(T_{n_t}>t) \\
+	            & = P  \left(
+	\frac{T_{n_t} - n_t \mu}{\sigma \sqrt{n_t}} >
+	\frac{t - n_t \mu}{\sigma \sqrt{n_t}}
+	\right)
 \end{align*}
 Und mit $\lim_{t \to \infty} \frac{n_t}{t} = \frac{1}{\mu}$ ist
 \begin{align*}
-\lim_{t \to \infty}
-\frac{t - n_t \mu}{\sigma \sqrt{n_t}} & = 
-\lim_{t \to \infty} \frac{t- (\frac{t}{\mu} + y \sigma \sqrt{\frac{t}{\mu^3}})\mu}{\sigma \sqrt{n_t}} \\
-& = \lim_{t \to \infty} \frac{-y \sqrt{\frac{t}{\mu}}}{\sqrt{n_t}} \\
-& = -y
+	\lim_{t \to \infty}
+	\frac{t - n_t \mu}{\sigma \sqrt{n_t}} & =
+	\lim_{t \to \infty} \frac{t- (\frac{t}{\mu} + y \sigma \sqrt{\frac{t}{\mu^3}})\mu}{\sigma \sqrt{n_t}}    \\
+	                                      & = \lim_{t \to \infty} \frac{-y \sqrt{\frac{t}{\mu}}}{\sqrt{n_t}} \\
+	                                      & = -y
 \end{align*}
-Mit dem zentralen Grenzwertsatz und dem Lemma folgt also 
+Mit dem zentralen Grenzwertsatz und dem Lemma folgt also
 $$
-\lim_{t \to \infty} P(N(t) < n_t) = 1- \Phi(-y) = \Phi(y)
+	\lim_{t \to \infty} P(N(t) < n_t) = 1- \Phi(-y) = \Phi(y)
 $$
 
 
@@ -1845,113 +1844,113 @@ $$
 \section{Poisson-Prozesse}
 Eine Zufallsvariable X heißt exponentialverteilt mit Parameter $\lambda > 0$ ($X \sim EXP(\lambda)$), falls $X$ die Dichte
 $$
-f(x) = 
-\begin{cases}
-\lambda e ^{-\lambda x} & \text{, falls } x > 0\\
-0 & \text{, sonst}
-\end{cases}
+	f(x) =
+	\begin{cases}
+		\lambda e ^{-\lambda x} & \text{, falls } x > 0 \\
+		0                       & \text{, sonst}
+	\end{cases}
 $$
 hat.\\
 Sei $\lambda$ eine Konstante $>0$. Seien $Y_1, Y_2, ...$ i.i.d. exponentialverteilte Zufallsvariablen für alle $n=1,2,...$.\\
 Setze
 \begin{align*}
-&T_0:= 0 \\
-&T_n:= Y_1 + ... + Y_n \\
-&N(t): = max\{n \in \mathbb{N}_0:T_n \leq t\} \text{, } t \geq 0
+	 & T_0:= 0                                                         \\
+	 & T_n:= Y_1 + ... + Y_n                                           \\
+	 & N(t): = max\{n \in \mathbb{N}_0:T_n \leq t\} \text{, } t \geq 0
 \end{align*}
 Dann heißt $\{N(t):t \geq 0\}$ Poisson-Prozess mit Intensität $\lambda$.\\
-Ein stochastischer Prozess $\{N(t): t \geq 0\}$ heißt ein Prozess mit unabhängigen 
+Ein stochastischer Prozess $\{N(t): t \geq 0\}$ heißt ein Prozess mit unabhängigen
 Zuwächsen, falls für je endlich viele Zeitpunkte
 $
-0 = t_0 < t_1 < ... < t_k
+	0 = t_0 < t_1 < ... < t_k
 $ die Zufallsvariablen
 \begin{align*}
-&N(t_0), \\
-& N(t_1) - N(t_0), \\
-& \vdots \\
-& N(t_k) - N(t_{k-1})
+	 & N(t_0),             \\
+	 & N(t_1) - N(t_0),    \\
+	 & \vdots              \\
+	 & N(t_k) - N(t_{k-1})
 \end{align*}
 unabhängig sind.\\
 \begin{tcolorbox}[breakable, colframe=green, colback=white, title=Satz 21]
-Sei $\{N(t):t \geq 0\}$ ein Poisson-Prozess mit Intensität $\lambda > 0$.\\
-$\Rightarrow \{N(t):t \geq 0\}$ hat unabhängige Zuwächse und für 
-$0 \leq s < t$ gilt 
-$$
-N(t) - N(s) \sim POI(\lambda(t-s)) \text{ ,}
-$$
-$$
-P(N(t) - N(s) = n) = e^{-\lambda(t-s)} \frac{[\lambda(t-s)]^n}{n!} \text{ für } n=0,1,...
-$$
+	Sei $\{N(t):t \geq 0\}$ ein Poisson-Prozess mit Intensität $\lambda > 0$.\\
+	$\Rightarrow \{N(t):t \geq 0\}$ hat unabhängige Zuwächse und für
+	$0 \leq s < t$ gilt
+	$$
+		N(t) - N(s) \sim POI(\lambda(t-s)) \text{ ,}
+	$$
+	$$
+		P(N(t) - N(s) = n) = e^{-\lambda(t-s)} \frac{[\lambda(t-s)]^n}{n!} \text{ für } n=0,1,...
+	$$
 \end{tcolorbox}
 \textbf{Beweis Satz 21}\\
 Seien $Y_i$, $T_n$, $N(t)$ wie in der Definition eines Poisson-Prozesses.\\
 Sei $k \geq 2$, $0 = t_0 < t_1 < ..., t_k$,
 $n_1, ..., n_k \in \mathbb{N}$ beliebig fest.
 $$
-\Rightarrow P(N(t_i) - N(t_{i-1}) = n_i, i=1, ..., k) = P((T_1, ..., T_{m+1}) \in B \times (t_k, \infty)),
+	\Rightarrow P(N(t_i) - N(t_{i-1}) = n_i, i=1, ..., k) = P((T_1, ..., T_{m+1}) \in B \times (t_k, \infty)),
 $$
-wobei 
+wobei
 $m = n_1 + ... + n_k$ und $B = \{(s_1, ..., s_m)\in \mathbb{R}^m:
-0 < s_1 < ... < s_m, |\{j:t_{i-1}<s_j\leq t_i\}     | = n_i, 
-i=1, ..., k
-\}$. $(T_1, ..., T_{m+1})$ hat die Dichte
+	0 < s_1 < ... < s_m, |\{j:t_{i-1}<s_j\leq t_i\}     | = n_i,
+	i=1, ..., k
+	\}$. $(T_1, ..., T_{m+1})$ hat die Dichte
 $$
-f(s_1, ..., s_{m+1}) = 
-\begin{cases}
-\lambda^{m+1}e^{-\lambda s_{m+1}} & \text{, falls } 0 < s_1 < ... < s_{m+1}\\
-0 & \text{, sonst}
-\end{cases}
+	f(s_1, ..., s_{m+1}) =
+	\begin{cases}
+		\lambda^{m+1}e^{-\lambda s_{m+1}} & \text{, falls } 0 < s_1 < ... < s_{m+1} \\
+		0                                 & \text{, sonst}
+	\end{cases}
 $$
 \begin{align*}
-P(N(t_i) - N(t_{i-1}) = n_i , i = 1, ..., k) & =
-\int_{B \times (t_k, \infty)}f(s_1, ..., s_{m+1}) \, d(s_1, ..., S_{m+1}) \\
-& = \lambda^{m+1}\left(
-\int_{B}1 \, d(s_1, ..., s_m)\right)\int_{tk}^{\infty}e^{-\lambda s_{m+1}} \, d s_{m+1}
+	P(N(t_i) - N(t_{i-1}) = n_i , i = 1, ..., k) & =
+	\int_{B \times (t_k, \infty)}f(s_1, ..., s_{m+1}) \, d(s_1, ..., S_{m+1}) \\
+	                                             & = \lambda^{m+1}\left(
+	\int_{B}1 \, d(s_1, ..., s_m)\right)\int_{tk}^{\infty}e^{-\lambda s_{m+1}} \, d s_{m+1}
 \end{align*}
 An dieser Stelle ist zu nutzen, dass
 \begin{align*}
-\int_{B} 1 \, d(s_1, ..., s_m) & = \int_{B_1}1 \, d(x_1, ..., x_{n_1}) \int_{B_2}1 \, d(x_1, ..., x_{n_2}) ... \int_{B_k}1 \, d(x_1, ..., x_{n_k})\\
-& = \prod_{i=1}^{k}\frac{(t_i - t_{i-1})^{n_i}}{n_i!}  
+	\int_{B} 1 \, d(s_1, ..., s_m) & = \int_{B_1}1 \, d(x_1, ..., x_{n_1}) \int_{B_2}1 \, d(x_1, ..., x_{n_2}) ... \int_{B_k}1 \, d(x_1, ..., x_{n_k}) \\
+	                               & = \prod_{i=1}^{k}\frac{(t_i - t_{i-1})^{n_i}}{n_i!}
 \end{align*}
 und
 $$
-\int_{t_k}^{\infty}e^{-\lambda s_{m+1}} \, d s_{m+1} = \frac{e^{-\lambda t_k}}{\lambda}
+	\int_{t_k}^{\infty}e^{-\lambda s_{m+1}} \, d s_{m+1} = \frac{e^{-\lambda t_k}}{\lambda}
 $$
 Deswegen gilt
 \begin{align*}
-P(N(t_i) - N(t_{i-1}) = n_i , i = 1, ..., k) & = 
-\lambda^{1 + \sum_{i=1}^{k}n_i}\left(  \prod_{i=1}^{k}\frac{(t_i - t_{i-1})^{n_i}}{n_i!}     \right) \frac{e^{-\lambda t_k}}{\lambda} \\
-& =  \prod_{i=1}^{k}\frac{(t_i - t_{i-1})^{n_i}}{n_i!} e^{t_i - t_{i-1}}
+	P(N(t_i) - N(t_{i-1}) = n_i , i = 1, ..., k) & =
+	\lambda^{1 + \sum_{i=1}^{k}n_i}\left(  \prod_{i=1}^{k}\frac{(t_i - t_{i-1})^{n_i}}{n_i!}     \right) \frac{e^{-\lambda t_k}}{\lambda} \\
+	                                             & =  \prod_{i=1}^{k}\frac{(t_i - t_{i-1})^{n_i}}{n_i!} e^{t_i - t_{i-1}}
 \end{align*}
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 19]
-Sei $\{N(t):t \geq 0\}$ ein Poisson-Prozess mit Intensität $\lambda > 0$.
-Berechne $P(N(1)= 1. N(3) = 5)$.
-\begin{align*}
-P(N(1) = 1, N(3)=5) & = P(N(1) = 1, N(3) - N(1) = 4) \\
-& = P (  \overbrace{N(1)=1}^{\sim POI(\lambda)}   )P (  \overbrace{N(3)-N(1)=4}^{\sim POI(2\lambda)}   )\\
-& = \frac{e^{-\lambda}\lambda}{1!} \frac{e^{-2\lambda}(2\lambda)^4}{4!} \\
-& = \frac{2}{3}e^{-3 \lambda}\lambda^5
-\end{align*}
+	Sei $\{N(t):t \geq 0\}$ ein Poisson-Prozess mit Intensität $\lambda > 0$.
+	Berechne $P(N(1)= 1. N(3) = 5)$.
+	\begin{align*}
+		P(N(1) = 1, N(3)=5) & = P(N(1) = 1, N(3) - N(1) = 4)                                                                         \\
+		                    & = P (  \overbrace{N(1)=1}^{\sim POI(\lambda)}   )P (  \overbrace{N(3)-N(1)=4}^{\sim POI(2\lambda)}   ) \\
+		                    & = \frac{e^{-\lambda}\lambda}{1!} \frac{e^{-2\lambda}(2\lambda)^4}{4!}                                  \\
+		                    & = \frac{2}{3}e^{-3 \lambda}\lambda^5
+	\end{align*}
 \end{tcolorbox}
 
 \begin{tcolorbox}[breakable, colframe=blue, colback=white, title=Beispiel 20]
-Ab 09:00 erfolgen Anrufe gemäß eines Poisson-Prozesses. Gegeben, dass bis 09:30
-genau ein Anruf eingeht, wie groß ist die bedingte Wahrscheinlichkeit, dass er vor 09:20
-eingeht, wenn $t$ in Stunden gemessen wird?
-\begin{align*}
-P(T_1 < \frac{1}{3}| N\left(\frac{1}{2}\right) = 1)
-& = \frac{P \left(T_1 < \frac{1}{3}, N\left(\frac{1}{2}\right)=1\right) }{P\left( N\left(\frac{1}{2}\right)=1\right)}\\
-& = \frac{P \left(T_1 < \frac{1}{3}, N\left(\frac{1}{2}\right) - N\left(\frac{1}{3}\right)=0\right) }{P\left( N\left(\frac{1}{2}\right)=1\right)}\\
-& = \frac{P \left(T_1 < \frac{1}{3}\right) P\left(N\left(\frac{1}{2}\right) - N\left(\frac{1}{3}\right)=0\right) }{P\left( N\left(\frac{1}{2}\right)=1\right)}\\
-& = \frac{
-\frac{e^{-\lambda \frac{1}{3}}}{1!}\left(\frac{\lambda}{3}\right)^1 
-\frac{e^{-\lambda \left(\frac{1}{2} - \frac{1}{3}\right)}}{0!}\left(\lambda\left(\frac{1}{2} - \frac{1}{3}\right) \right)^0	
-}
-{\frac{e^{-\lambda \frac{1}{2}}}{1!}\left(\frac{\lambda}{2}\right)^{1}} \\
-& = \frac{2}{3}
-\end{align*}
-Das entspricht genau $\frac{2}{3}$ der Zeit!
+	Ab 09:00 erfolgen Anrufe gemäß eines Poisson-Prozesses. Gegeben, dass bis 09:30
+	genau ein Anruf eingeht, wie groß ist die bedingte Wahrscheinlichkeit, dass er vor 09:20
+	eingeht, wenn $t$ in Stunden gemessen wird?
+	\begin{align*}
+		P(T_1 < \frac{1}{3}| N\left(\frac{1}{2}\right) = 1)
+		 & = \frac{P \left(T_1 < \frac{1}{3}, N\left(\frac{1}{2}\right)=1\right) }{P\left( N\left(\frac{1}{2}\right)=1\right)}                                          \\
+		 & = \frac{P \left(T_1 < \frac{1}{3}, N\left(\frac{1}{2}\right) - N\left(\frac{1}{3}\right)=0\right) }{P\left( N\left(\frac{1}{2}\right)=1\right)}              \\
+		 & = \frac{P \left(T_1 < \frac{1}{3}\right) P\left(N\left(\frac{1}{2}\right) - N\left(\frac{1}{3}\right)=0\right) }{P\left( N\left(\frac{1}{2}\right)=1\right)} \\
+		 & = \frac{
+			\frac{e^{-\lambda \frac{1}{3}}}{1!}\left(\frac{\lambda}{3}\right)^1
+			\frac{e^{-\lambda \left(\frac{1}{2} - \frac{1}{3}\right)}}{0!}\left(\lambda\left(\frac{1}{2} - \frac{1}{3}\right) \right)^0
+		}
+		{\frac{e^{-\lambda \frac{1}{2}}}{1!}\left(\frac{\lambda}{2}\right)^{1}}                                                                                         \\
+		 & = \frac{2}{3}
+	\end{align*}
+	Das entspricht genau $\frac{2}{3}$ der Zeit!
 \end{tcolorbox}
 
 \end{document}
