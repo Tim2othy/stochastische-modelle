@@ -641,7 +641,7 @@ Wahrscheinlichkeit $p in (0 , 1)$ und verliert 1€ mit Wahrscheinlichkeit
 $(1 - p)$. Sein Anfangskapital sei i€. Er spielt so lange, bis er M€ hat
 $(M gt.eq i)$ oder ruiniert ist (0€). \
 Berechne die Ruinwahrscheinlichkeit. \
-Betrachte hiefür die Markovkette ${ X_n : n in bb(N)_0 }$ mit
+Betrachte hier für die Markovkette ${ X_n : n in bb(N)_0 }$ mit
 Zustandsraum $S = { 0 , 1 , 2 ,... , M }$ und
 Übergangswahrscheinlichkeiten
 $ p_(i j) = cases(delim: "{", 1 & upright(", falls ") i = 0 upright(" und ") j = 0, p & upright(", falls ") i in { 1 ,... , M - 1 } upright(" und ") j = i + 1, 1 - p & upright(", falls ") i in { 1 ,... , M - 1 } upright(" und ") j = i - 1, 1 & upright(", falls ") i = M upright(" und ") j = M, 0 & upright(", sonst")) $
