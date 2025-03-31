@@ -5,38 +5,38 @@
 Bezeichne $Omega$ die Menge aller möglichen Ergebnisse eines
 Zufallsexperiments und $A in Omega$ ein Ereignis. Ein
 Wahrscheinlichkeitsmaß ist eine Abbildung, die jedem $A$ eine Zahl
-$P (A) in [0 , 1]$ zuordnet. Es gilt:
+$P(A) in [0 , 1]$ zuordnet. Es gilt:
 
-- $P (Omega) = 1$ (Normierung)
+- $P(Omega) = 1$ (Normierung)
 
-- $P (A_1 union A_2 union...) = P (A_1) + P (A_2) +...$ falls
+- $P(A_1 union A_2 union...) = P(A_1) + P(A_2) +...$ falls
   $(A_i inter A_j) = nothing$ für alle $i eq.not j$ ($sigma$-Additivität)
 
 Aus den Axiomen folgt
 
-- $P (A^C) = 1 - P (A)$
+- $P(A^C) = 1 - P(A)$
 
-- $P (A union B) = P (A) + P (B) - P (A inter B)$
+- $P(A union B) = P(A) + P(B) - P(A inter B)$
 
-- $P (B without A) = P (B) - P (A inter B)$
+- $P(B without A) = P(B) - P(A inter B)$
 
 Ist $A$ eine echte Teilmenge von $B$ ($A subset B$) gilt
 
-- $P (B without A) = P (B) - P (A)$
+- $P(B without A) = P(B) - P(A)$
 
-- $P (A) subset.eq P (B)$
+- $P(A) subset.eq P(B)$
 
 Für Ereginisse $A_1 ,... , A_n$ gilt
-$ P (union.big_(i = 1)^n A_i) lt.eq sum_(i = 1)^n P (A_i) . $ (a) Sind
+$ P(union.big_(i = 1)^n A_i) lt.eq sum_(i = 1)^n P(A_i) . $ (a) Sind
 $A , A_1 , A_2 ,... supset Omega$ eine Folge von nicht disjunkten
 Ereginissen mit $A_1 subset A_2 subset... subset A$ und
 $union.big_(n = 1)^oo A_n = A$, dann ist
-$ lim_(n arrow.r oo) P (A_n) = P (A) = P (union.big_(n = 1)^oo A_n) $
+$ lim_(n arrow.r oo) P(A_n) = P(A) = P(union.big_(n = 1)^oo A_n) $
 (b) Sind $A , A_1 , A_2 ,... subset Omega$ eine Folge von nicht
 disjunkten Ereignissen mit
 \$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$} ...\$
 und $inter.big_(n = 1)^oo A_n = A$, dann gilt
-$ lim_(n arrow.r oo) P (A_n) = P (A) = P (inter.big_(n = 1)^oo A_n) $ (a)
+$ lim_(n arrow.r oo) P(A_n) = P(A) = P(inter.big_(n = 1)^oo A_n) $ (a)
 lässt sich folgendermaßen zeigen: \
 Seien
 
@@ -49,7 +49,7 @@ Seien
 - $B_n := A_n without A_(n - 1)$
 
 Mit der $sigma$-Additivität ist dann
-$ P (A) = P (union.big_(k = 1)^oo B_k) = sum_(k = 1)^oo P (B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P (B_k) = lim_(n arrow.r oo) P (union.big_(k = 1)^n B_k) = lim_(n arrow.r oo) P (A_n) $
+$ P(A) = P(union.big_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P(B_k) = lim_(n arrow.r oo) P(union.big_(k = 1)^n B_k) = lim_(n arrow.r oo) P(A_n) $
 (b) lässt sich folgendermaßen zeigen: \
 Aus
 \$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$} ... \\reflectbox{\$\\subset\$} A\_n\$
@@ -64,82 +64,82 @@ folgt $A_1^C subset A_2^C subset... subset A_n^C$. Sei nun
 - $A_n^C without A_(n - 1)^C$
 
 Mit der $sigma$-Additivität ist dann
-$ P (union.big_(n = 1)^oo A_n^C) = P (A^C) = P (union.big_(k = 1)^oo B_k) = sum_(k = 1)^oo P (B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P (B_k) lim_(n arrow.r oo) P (union.big_(k = 1)^n B_k) = lim_(n arrow.r oo) P (A_n^C) $
+$ P(union.big_(n = 1)^oo A_n^C) = P(A^C) = P(union.big_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P(B_k) lim_(n arrow.r oo) P(union.big_(k = 1)^n B_k) = lim_(n arrow.r oo) P(A_n^C) $
 und folglich
-$ lim_(n arrow.r oo) P (A_n) = 1 - lim_(n arrow.r oo) P (A_n^C) = 1 - P (union.big n = 1^oo A_n^C) = 1 - P ([inter.big_(n = 1)^oo A_n]^C) = P (inter.big_(n = 1)^oo A_n) = P (A) $
+$ lim_(n arrow.r oo) P(A_n) = 1 - lim_(n arrow.r oo) P(A_n^C) = 1 - P(union.big n = 1^oo A_n^C) = 1 - P([inter.big_(n = 1)^oo A_n]^C) = P(inter.big_(n = 1)^oo A_n) = P(A) $
 
 == Zufallsvariablen
 <zufallsvariablen>
 Eine Zufallsvariable ist eine Abbildung $X : Omega arrow.r bb(R)$. Für
 $A subset bb(R)$ gilt
 $ { X in A } = { omega in Omega : X (omega) in A } $ und
-$ P (X in A) = P ({ omega in Omega : X (omega) in A }) . $ Für
+$ P(X in A) = P({ omega in Omega : X (omega) in A }) . $ Für
 $a in bb(R)$ ist $ { X = a } = { omega in Omega : X (omega) = a } $ und
-$ P (X = a) = P ({ omega in Omega : X (omega) = a }) . $ Die
+$ P(X = a) = P({ omega in Omega : X (omega) = a }) . $ Die
 Verteilungsfunktion $F = F_X$ der Zufallsvariablen $X$ ist definiert
-durch $F (x) = P (X in x)$ mit $x in bb(R)$ und
-$ P \( X in (a , b \]) = P (a < X lt.eq b) = F (b) - F (a) upright(" für alle ") a < b . $
+durch $F (x) = P(X in x)$ mit $x in bb(R)$ und
+$ P \( X in (a , b \]) = P(a < X lt.eq b) = F (b) - F (a) upright(" für alle ") a < b . $
 Zudem gilt
-$ P (Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon.alt arrow.r 0) F (a - epsilon.alt) . $
+$ P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon.alt arrow.r 0) F (a - epsilon.alt) . $
 Ist ${ epsilon.alt_n }_(n = 1)^oo$ eine fallen Folge mit
 \$\\epsilon\_1 \\reflectbox{\$\\subset\$} \\epsilon\_2 \\reflectbox{\$\\subset\$} ... \\reflectbox{\$\\subset\$} 0\$
 und $lim_(n arrow.r oo) epsilon.alt_n = 0$, dann gilt für die Ereignisse
 $A_n := { a - epsilon.alt_n < X < a }$
 \$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$}  ...\$
 und $inter.big_(n = 1)^oo A_n = { X = a } = A$ gemß Lemma 1b)
-$ P (Y = a) = P (inter.big_(n = 1)^oo A_n) = P (A) = lim_(n arrow.r oo) P (A_n) = lim_(n arrow.r oo) P (a - epsilon.alt_n < X lt.eq a) = F (a) - lim_(n arrow.r oo) F (a - epsilon.alt_n) $
+$ P(Y = a) = P(inter.big_(n = 1)^oo A_n) = P(A) = lim_(n arrow.r oo) P(A_n) = lim_(n arrow.r oo) P(a - epsilon.alt_n < X lt.eq a) = F (a) - lim_(n arrow.r oo) F (a - epsilon.alt_n) $
 Eine Zufallsvariable heißt diskret, falls ...
 
 - ... sie (un)endlich viele abzählbare Werte hat.
 
-- ... $f (x) = P (X = x)$ gilt (Wahrscheinlichkeitsfunktion).
+- ... $f (x) = P(X = x)$ gilt (Wahrscheinlichkeitsfunktion).
 
-- ... für $A in bb(R)$ $P (X in A) = sum_(X in A) f (x)$ gilt.
+- ... für $A in bb(R)$ $P(X in A) = sum_(X in A) f (x)$ gilt.
 
 Eine Zufallsvariable heißt stetig, falls es eine nicht negative Funktion
 f gibt, sodass
-$ P (a lt.eq X lt.eq b) = integral_a^b f (x) thin d x upright(" für alle ") a < b $
+$ P(a lt.eq X lt.eq b) = integral_a^b f (x) thin d x upright(" für alle ") a < b $
 f heißt Dichte von X. Die Verteilungsfunktion ist dann
 $ F (x) = integral_(- oo)^x f (t) thin d t $ Die gemeinsame
 Verteilungsfunktion $F = F_(X_1 ,... , X_n)$ von $n$ Zufallsvariablen
 $X_1 ,... , X_n$ ist definiert durch
-$ F (x_1 ,... , x_n) = P (X_1 lt.eq x_1 ,... , X_n lt.eq x_n) upright(" für alle ") x_1 ,... , x_n in bb(R) $
+$ F (x_1 ,... , x_n) = P(X_1 lt.eq x_1 ,... , X_n lt.eq x_n) upright(" für alle ") x_1 ,... , x_n in bb(R) $
 Für die Randverteilungsfunktion $F_(X_1) ,... , F_(X_n)$ gilt
 $ F_(X_i) (x_i) = lim_(x_j arrow.r oo) F (x_1 ,... , x_n) upright(" für ") i eq.not j $
 Sund $X_1 ,... , X_n$ diskrete Zufallsvariabeln, so ist ihre
 gemeinsame Wahrscheinlichkeitsfunktion gegeben durch
-$ f (x_1 ,... , x_n) = P (X_1 = x_1 ,... , X_n = x_n) . $
+$ f (x_1 ,... , x_n) = P(X_1 = x_1 ,... , X_n = x_n) . $
 $X_1 ,... , X_n$ sind gemeinsam stetig verteilt, falls es eine
 gemeinsame Dichte $f (x_1 ,... , x_n) gt.eq 0$ gibt, sodass
 $ F (x_1 ,... , x_n) = integral_(- oo)^(x_1) dots.h integral_(- oo)^(x_n) f (t_1 ,... , t_n) thin d t_n dots.h thin d t_1 upright(" für alle ") x_1 ,... , x_n in bb(R) $
 Für $B_1 ,... , B_n in bb(R)$ gilt dann
-$ P (X_1 in B_1 ,... , X_n in B_n) = integral_(B_1)... integral_(B_n) f (t_1 ,... , t_n) thin d t_n... thin d t_1 $
+$ P(X_1 in B_1 ,... , X_n in B_n) = integral_(B_1)... integral_(B_n) f (t_1 ,... , t_n) thin d t_n... thin d t_1 $
 Für $B in bb(R)^n$ ist
-$ P ({ X_1 ,... , X_n } in B) = integral dots.h integral_B f (t_1 ,... , t_n) thin d t_n... thin d t_1 $
+$ P({ X_1 ,... , X_n } in B) = integral dots.h integral_B f (t_1 ,... , t_n) thin d t_n... thin d t_1 $
 und die Randdichte ist
 $ f_(X_i) = integral_(- oo)^oo... integral_(- oo)^oo f (x_1 ,... , x_n) thin d x_1... thin d x_(i - 1) thin d x_(i + 1)... thin d x_n $
 Ist zum Beispiel $f$ eine gemeinsame Dichte von $X$ und $Y$, dann gilt
-$ P (X < Y) = integral_(- oo)^oo integral_x^oo f (x , y) thin d y thin d x $
+$ P(X < Y) = integral_(- oo)^oo integral_x^oo f (x , y) thin d y thin d x $
 und $ f_Y (y) = integral_(- oo)^oo f (x , y) d x . $
 
 == Erwartungswert und Varianz
 <erwartungswert-und-varianz>
 Ist $X$ eine diskrete Zufallsvariable und $g : bb(R) arrow.r bb(R)$, so
-ist $ E [g (X)] = sum_X g (x) P (X = x) $ wobei die Summe über alle $X$
-mit $P (X = x) > 0$ läuft. \
+ist $ E [g (X)] = sum_X g (x) P(X = x) $ wobei die Summe über alle $X$
+mit $P(X = x) > 0$ läuft. \
 Nimmt X nur Werte in ${ 0 , 1 , 2 ,... }$ an, dann gilt
-$ E [X] = sum_(n = 0)^oo P (X > n) upright(", ") $ denn
-$ E [X] & = sum_(n = 0)^oo n P (X = n) =\
- & P (X = 1) +\
- & P (X = 2) + P (X = 2) +\
- & P (X = 3) + P (X = 3) + P (X = 3) +\
+$ E [X] = sum_(n = 0)^oo P(X > n) upright(", ") $ denn
+$ E [X] & = sum_(n = 0)^oo n P(X = n) =\
+ & P(X = 1) +\
+ & P(X = 2) + P(X = 2) +\
+ & P(X = 3) + P(X = 3) + P(X = 3) +\
  & dots.h\
- & P (X = n) + P (X = n) + P (X = n) + dots.h\
- & = P (X > 0) + P (X > 1) + P (X > 2) + dots.h + P (X > n) $ Hat $X$
+ & P(X = n) + P(X = n) + P(X = n) + dots.h\
+ & = P(X > 0) + P(X > 1) + P(X > 2) + dots.h + P(X > n) $ Hat $X$
 eine Dichte $f$, so ist
 $ E [g (X)] = integral_(- oo)^oo g (x) f (x) thin d x $ Für jede
 nichtnegative ZUfallsvariable $X$ gilt
-$ E [X] = integral_0^oo P (X > x) thin d x = integral_0^oo P (X gt.eq x) thin d x $
+$ E [X] = integral_0^oo P(X > x) thin d x = integral_0^oo P(X gt.eq x) thin d x $
 Allgemein gilt
 $ E [a X + b Y] = a E [X] + b E [Y] upright(" für ") a , b in bb(R) $
 Die Varianz der Zufallsvariable $X$ ist
@@ -163,7 +163,7 @@ Es gilt
 <unabhängigkeit>
 Ereignisse $A_1 , A_2 ,...$ heißen unabhängig, falls für jede
 endliche Auswahl von verschiedenen Indizes $i_1 ,... , i_n$ gilt
-$ P (A_(i_1) inter... inter A_(i_n)) = P (A_(i_1)... P (A_(i_n))) $
+$ P(A_(i_1) inter... inter A_(i_n)) = P(A_(i_1)... P(A_(i_n))) $
 Sind $A_1 , A_2 ,...$ unabhängige Ereignisse und ist für jedes i
 $B_i = A_i$ oder $B_i = A_i^C$, dann sind auch $B_1 , B_2 ,...$
 unabhängig. \
@@ -194,7 +194,7 @@ Für unabhängige Zufallsvariablen $X_1 ,... , X_n$ gilt
   sind somit unabhängige Ereignisse für alle $B_1 ,... , B_k$.
 
 Für den Spezielfall diskreter Zufallsvariablen $X_1 ,... , X_n$ gilt
-$ X_1 ,... , X_n upright(" unabhängig ") arrow.l.r.double P (X_1 = x_1 ,... , X_n = x_n) = P (X_1 = x_1)... P (X_n = x_n) upright(" für alle") x_1 ,... , x_n in bb(R) $
+$ X_1 ,... , X_n upright(" unabhängig ") arrow.l.r.double P(X_1 = x_1 ,... , X_n = x_n) = P(X_1 = x_1)... P(X_n = x_n) upright(" für alle") x_1 ,... , x_n in bb(R) $
 Sind $X_1 ,... , X_n$ stetige Zufallsvariablen mit gemeinsamer Dichte
 f und
 $ f (x_1 ,... , x_n) = f_(X_1) (x_1)... f_((X_n)) (x_n) upright(" für alle ") x_1 ,... , x_n in bb(R) , $
@@ -204,38 +204,38 @@ $X_1 ,... , X_n$.
 
 == Bedingte Wahrscheinlichkeiten und Erwartungswerte
 <bedingte-wahrscheinlichkeiten-und-erwartungswerte>
-Für $A , B in Omega$ mit $P (B) > 0$ ist die bedingte Wahrscheinlichkeit
-von A gegeben B $ P (A \| B) = frac(P (A inter B), P (B)) $
+Für $A , B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit
+von A gegeben B $ P(A \| B) = frac(P(A inter B), P(B)) $
 
-- Bei festem $B in Omega$ mit $P (B) > 0$ ist $P (dot(\|) B)$ ein
-  Wahrscheinlichkeitsmaß: $P (Omega \| B) = 1$ und für diesjungte
+- Bei festem $B in Omega$ mit $P(B) > 0$ ist $P(dot(\|) B)$ ein
+  Wahrscheinlichkeitsmaß: $P(Omega \| B) = 1$ und für diesjungte
   Ereignisse $A_1 , A_2 ,...$ ist
-  $P (A_1 union A_2 union... \| B) = sum_i P (A_i \| B)$
+  $P(A_1 union A_2 union... \| B) = sum_i P(A_i \| B)$
 
-- Sind A und B unabhängig, dann ist $P (A \| B) = P (A)$ (falls
-  $P (B) > 0$)
+- Sind A und B unabhängig, dann ist $P(A \| B) = P(A)$ (falls
+  $P(B) > 0$)
 
 - Bilden $A_1 , A_2 ,...$ eine Zerlegung von $Omega$, also
   $A_i inter A_j = nothing$ für alle $i eq.not j$ und
   $union.big_i A_i = Omega$, dann gilt ür jedes $A in Omega$
-  $ P (A) = sum_i P (A inter A_i) = sum_(i : P (A_i) > 0) P (A \| A_i) P (A_i) upright(" (Satz der totalen Warcheinlichkeit) ") $
+  $ P(A) = sum_i P(A inter A_i) = sum_(i : P(A_i) > 0) P(A \| A_i) P(A_i) upright(" (Satz der totalen Warcheinlichkeit) ") $
 
 - Für beliebige Ereignisse $A_1 ,... A_n$ gilt
-  $ P (A_1 inter A_2 inter...) = P (A_1) P (A_2 \| A_1) P (A_3 \| A_1 inter A_2)... P (A_n \| A_1 inter... inter A_(n - 1)) , $falls
-  $ P (A_1 inter... inter A_(n - 1)) > 0 upright(" (Multiplikationssatz für bedingte Wahrscheinlichkeiten) ") $
+  $ P(A_1 inter A_2 inter...) = P(A_1) P(A_2 \| A_1) P(A_3 \| A_1 inter A_2)... P(A_n \| A_1 inter... inter A_(n - 1)) , $falls
+  $ P(A_1 inter... inter A_(n - 1)) > 0 upright(" (Multiplikationssatz für bedingte Wahrscheinlichkeiten) ") $
 
 Für dieskrete Zufallsvariablen $X$ und $Y$ ist die bedingte
 Wahrscheinlichkeitsfunktion $f_(X \| Y) (x \| y)$ ($X$, gegeben $Y = y$)
 definiert durch
-$ f_(X \| Y) = P (X = x \| Y = y) upright(", falls ") P (Y = y) > 0 $
+$ f_(X \| Y) = P(X = x \| Y = y) upright(", falls ") P(Y = y) > 0 $
 Nach dem Satz der totalen Wahrscheinlichkeit ist dann
-$ P (X = x) = sum_(Y : P (Y = y) > 0) f_(X \| Y) (x \| y) P (Y = y) $
+$ P(X = x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y) $
 
 #block[
 $X$ und $Y$ seien diskrete Zufallsvariablen mit
 Wahrscheinlichkeitsfunktionen $f_X$ und $f_Y$. Für die
 Wahrscheinlichkeitsfunktion $f_(X + Y)$ von $X + Y$ gilt
-$ f_(X + Y) (z) = P (X + Y = z) = sum_(Y : f_Y (y) > 0) P (X + Y = z \| Y = y) f_Y (y) $
+$ f_(X + Y) (z) = P(X + Y = z) = sum_(Y : f_Y (y) > 0) P(X + Y = z \| Y = y) f_Y (y) $
 $ = sum_Y f_(X \| Y) (z - y \| y) f_Y (y) $
 
 ]
@@ -248,16 +248,16 @@ zugehörigen Dichten $f_X (x)$ und $f_Y (y)$ die Dichte von $X + Y$
 gegeben durch die Faltung
 $ f_(X + Y) (z) = integral_(- oo)^oo f_X (z - y) f_Y (y) thin d y , $
 denn für alle $t in bb(R)$ ist
-$ P (X + Y + t) = integral_(- oo)^oo integral_(- y)^(t - y) f_X (x) f_Y (y) thin d x thin d y = $
+$ P(X + Y + t) = integral_(- oo)^oo integral_(- y)^(t - y) f_X (x) f_Y (y) thin d x thin d y = $
 $ integral_(- oo)^oo integral_(- oo)^t f_X (z - y) f_Y (y) thin d z thin d y = integral_(- oo)^t integral_(- oo)^oo f_X (z - y) f_Y (y) thin d y thin d z $
 Seien $X$ und $Y$ diskrete ZUfallsvariablen und gilt
 $g : bb(R) arrow.r bb(R)$. Der bedingte Erwartungswert von $g (X)$
 gegeben $Y = y$ ist
-$ E [g (X) \| Y = y] = sum_X g (x) f_(X \| Y) (x \| y) upright(" ,falls ") P (Y = y) > 0 $
+$ E [g (X) \| Y = y] = sum_X g (x) f_(X \| Y) (x \| y) upright(" ,falls ") P(Y = y) > 0 $
 Zudem gilt
-$ E [g (X)] = sum_(Y : P (Y = y) > 0) E [g (X) \| Y = y] P (Y = y) upright(", denn ") $
-$ E [g (X)] = sum_X g (x) P (X = x) = sum_X g (x) sum_Y f_(X \| Y) (x \| y) P (Y = y) $
-$ = sum_Y P (Y = y) sum_X g (x) f_(X \| Y) (x \| y) $ Im Falle diskreter
+$ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) upright(", denn ") $
+$ E [g (X)] = sum_X g (x) P(X = x) = sum_X g (x) sum_Y f_(X \| Y) (x \| y) P(Y = y) $
+$ = sum_Y P(Y = y) sum_X g (x) f_(X \| Y) (x \| y) $ Im Falle diskreter
 Zufallsvariablen $X , X_1 , X_2 , Y$ und $y in bb(R)$ gelten folgene
 Rechenregeln für bedingte Erwartungswerte:
 
@@ -273,14 +273,14 @@ Rechenregeln für bedingte Erwartungswerte:
 
 Ist Y diskret und X stetig mit bedinter Dichte $f_(X \| Y) (x \| y)$,
 also
-$ P (a < X < b \| Y = y) = integral_a^b f_(X \| Y) (x \| y) upright(" für alle ") a < b upright(" und ") P (Y = y) > 0 , $
+$ P(a < X < b \| Y = y) = integral_a^b f_(X \| Y) (x \| y) upright(" für alle ") a < b upright(" und ") P(Y = y) > 0 , $
 dann gilt für die Randdichte $f_X (x)$ von $X$
-$ f_X (x) = sum_(Y : P (Y = y) > 0) f_(X \| Y) (x \| y) P (Y = y) $ und
+$ f_X (x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y) $ und
 für $g : bb(R) arrow.r bb(R)$
-$ E [g (X) \| Y = y] := integral g (x) f_(X \| Y) (x \| y) thin d x upright(" falls ") P (Y = y) > 0 $
+$ E [g (X) \| Y = y] := integral g (x) f_(X \| Y) (x \| y) thin d x upright(" falls ") P(Y = y) > 0 $
 Die Rechenregeln für bedingte Erwartungswerte gelten wie im diskreten
 Fall, wie zum Beispiel
-$ E [g (X)] = sum_(Y : P (Y = y) > 0) E [g (X) \| Y = y] P (Y = y) . $
+$ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) . $
 
 = Markovketten
 <markovketten>
@@ -307,8 +307,8 @@ Eine Folge ${ X_n : n in bb(N) }$ von Zufallsvariablen mit Werten in $S$
 heißt Markovkette mit Zustandraum $S$ und Übergangsmatrix
 $(P_(i j))_(i , j in S) \)$, falls für alle $n gt.eq 0$ und alle
 möglichen $i_0 , i_1 ,... , i_(n + 1) in S$ gilt
-$ (star.op) P (X_(n + 1) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n) = p_(i_n i_(n + 1)) , $
-sofern $P (X_0 = i_o ,... , X_n = i_n) > 0$. Die Verteilung von $X_0$
+$ (star.op) P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n) = p_(i_n i_(n + 1)) , $
+sofern $P(X_0 = i_o ,... , X_n = i_n) > 0$. Die Verteilung von $X_0$
 heißt Anfangsverteilung der Markov-Kette. \
 
 ]
@@ -327,15 +327,15 @@ $X_0 = i_0 ,...$).
 
 #block[
 Seien $X_0 , X_1 ,...$ unabhängige und identisch verteilte
-$bb(N)_0$-wertige Zufalssvariablen mit $P (X_0 = i) = a_i$,
+$bb(N)_0$-wertige Zufalssvariablen mit $P(X_0 = i) = a_i$,
 $i = 0 , 1 ,...$. Dann ist ${ X_n : n in bb(N) }$ eine Markov-Kette
 mit Zusstandraum $bb(N)_0$ und Übergangsmatrix
 $(P_(i j))_(i , j in bb(N)_0)$ mit $p_(i j) = a_j$ für alle
 $i , j in bb(N)_0$.
 $ (P_(i j))_(i , j = 0)^a = mat(delim: "(", a_0, a_1, a_2, dots.h.c; a_0, a_1, a_2, dots.h.c; a_0, a_1, a_2, dots.h.c; dots.v, dots.v, dots.v, dots.down; #none) $
 Denn für alle $n gt.eq 0$ und alle $i_0 ,... , i_(n + 1) in bb(N)_0$
-mit $P (X_0 = i_0 ,... , X_n = i_n) > 0$ gilt:
-$ P (X_(n + 1) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n) = P (X_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) = p_(i_n i_(n + 1)) $
+mit $P(X_0 = i_0 ,... , X_n = i_n) > 0$ gilt:
+$ P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n) = P(X_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) = p_(i_n i_(n + 1)) $
 In Worten: Die Wahrscheinlichkeit von Zustand $i$ in Zustand $j$ zu
 gehen wird nur durch die Wahrscheinlichkeit in Zustand $j$ zu sein
 bestimmt, oder anders gesagt $X_(n + 1)$ und $X_n$ sind unabhängig.
@@ -344,7 +344,7 @@ bestimmt, oder anders gesagt $X_(n + 1)$ und $X_n$ sind unabhängig.
 #block[
 #strong[Irrfahrt auf $bb(Z)$] \
 Seien $Y_1 , Y_2 , dots.h$ unabhängige, identisch verteilte
-$bb(Z)$-wertige Zufallsvariablen mit $P (Y_1 = i)$, $i in bb(Z)$. Sei
+$bb(Z)$-wertige Zufallsvariablen mit $P(Y_1 = i)$, $i in bb(Z)$. Sei
 $X_(0 i) := 0$ und $X_n := Y_1 + dots.h + Y_n$, $n in bb(N)$. In Worten:
 $X_n$ springt zufällig von
 $X_(n - 1) = i_(n - 1) = i_(n - 2) + Y_(n - 1)$ zu
@@ -352,19 +352,19 @@ $i_n = i_(n - 1) + Y_n$ auf den ganzen Zahlen $bb(Z)$. Damit gilt
 offensichtlich für jedes $n gt.eq 1$, dass
 $X_n = i_(n - 1) + Y_n arrow.l.r.double Y_n = i_n - i_(n - 1)$. \
 Für alle $n gt.eq 0$ und alle $i_0 , dots.h , i_(n + 1) in bb(Z)$ mit
-$P (X_0 = i_0 , dots.h , X_n = i_n) > 0$ ist
-$  & P (X_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
-= & P (X_n + Y_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
-= & P (i_n + Y_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
-= & P (Y_(n + 1) = i_(n + 1) - i_n \| X_0 = i_0 , dots.h , X_n = i_n)\
-= & P (Y_(n + 1) = i_(n + 1) - i_n \| Y_1 = i_1 , Y_2 = i_2 - i_1 , dots.h , Y_n = i_n - i_(n - 1))\
-= & P (Y_(n + 1) = i_(n + 1) - i_n) = a_(i_(n + 1) - i_n) . $
+$P(X_0 = i_0 , dots.h , X_n = i_n) > 0$ ist
+$  & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
+= & P(X_n + Y_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
+= & P(i_n + Y_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
+= & P(Y_(n + 1) = i_(n + 1) - i_n \| X_0 = i_0 , dots.h , X_n = i_n)\
+= & P(Y_(n + 1) = i_(n + 1) - i_n \| Y_1 = i_1 , Y_2 = i_2 - i_1 , dots.h , Y_n = i_n - i_(n - 1))\
+= & P(Y_(n + 1) = i_(n + 1) - i_n) = a_(i_(n + 1) - i_n) . $
 $arrow.r.double { X_n : n in bb(N) }$ ist eine Markov-Kette mit
 Zustandsraum $bb(Z)$ und Übergangswahrscheinlichkeit
 $p_(i j) = a_(j - 1)$, $i , j in bb(Z)$.
 $ (P_(i j)) = mat(delim: "(", dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h; dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h; dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h; dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h; dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h; dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down; #none) $
 Ein Spezielafall wäre die einfache Irrfahrt auf $bb(Z)$ bei der
-$P (Y_n = 1) = p$ und $P (Y_n = - 1) = 1 - p$ für alle $n in bb(N)$.
+$P(Y_n = 1) = p$ und $P(Y_n = - 1) = 1 - p$ für alle $n in bb(N)$.
 Interpretation: Die Markov-Kette beschreibt die Position eines
 Teilchens, das sich auf $bb(Z)$ bewegt. Es startet im Ursprung $X_0 = 0$
 und springt zu jedem Zeitpunkt $1 , 2 ,...$ zufällig eine Einheit
@@ -374,28 +374,28 @@ nach links oder rechts.
 #block[
 #strong[Sukzessive Maxima] \
 Seien $Y_1 , Y_2 ,...$ unabhängig und identisch verteilte
-$bb(N)_0$-wertige Zufallsvariablen mit $P (Y_1 = c) = a_i$, $i in N_0$,
+$bb(N)_0$-wertige Zufallsvariablen mit $P(Y_1 = c) = a_i$, $i in N_0$,
 $X_0 : = 0$ und $X_n : = m a x (Y_1 ,... , Y_n)$. In Worten: Die
 Kette nimmt zu jeden Zeitpuntk $n$ den größten zufälligen Wert aus
 ${ 0 , Y_1 ,... , Y_n }$, bzw. wegen der sukzessiven Natur des
 Prozesses aus ${ i_(n - 1) , Y_n }$, an. \
 Für alle $n gt.eq 0$ und alle $i_0 ,... , i_(n + 1) in bb(N)_0$ mit
-$P (X_0 = i_0 ,... , X_n = i_n) > 0$ ist
-$  & P (X_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
- & = P (max (Y_1 , dots.h , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
- & = P (max (X_n , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
- & = P (max (i_n , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
- & = P (max (i_n , Y_(n + 1)) = i_(n + 1) divides Y_1 = i_1 , max (Y_1 , Y_2) = i_2 , dots.h , max (Y_1 , dots.h , Y_n) = i_n)\
- & = P (max (i_n , Y_(n + 1)) = i_(n + 1)) $ Diese Wahrscheinlichkeit
+$P(X_0 = i_0 ,... , X_n = i_n) > 0$ ist
+$  & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
+ & = P(max (Y_1 , dots.h , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
+ & = P(max (X_n , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
+ & = P(max (i_n , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
+ & = P(max (i_n , Y_(n + 1)) = i_(n + 1) divides Y_1 = i_1 , max (Y_1 , Y_2) = i_2 , dots.h , max (Y_1 , dots.h , Y_n) = i_n)\
+ & = P(max (i_n , Y_(n + 1)) = i_(n + 1)) $ Diese Wahrscheinlichkeit
 hängt nun vom Verhältnis von $i_n$ zu $i_(n + 1)$ ab. Per Konstruktion
 kann $i_(n + 1)$ nicht kleiner sein als $i_n$. Ist $i_(n + 1) < i_n$,
 dann ist $Y_(n + 1)$ das Maximum und folglich auch
-$P (max (i_n , Y_(n + 1)) = i_(n + 1)) = P (Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1))$.
+$P(max (i_n , Y_(n + 1)) = i_(n + 1)) = P(Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1))$.
 Für den Fall, dass $i_(n + 1) = i_n$ ist, betrachten wir sowohl die
 Fälle, für die $Y_(n + 1) < i_n$ ist als auch den Fall
 $Y_(n + 1) = i_n$. Daraus folgt
-$P (max (i_n , Y_(n + 1)) = i_(n + 1)) = P (Y_(n + 1) lt.eq i_n) = sum_(k = 0)^n a_k$.
-$ P (max (i_n , Y_(n + 1)) = i_(n + 1)) = cases(delim: "{", P (Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) & upright(", falls ") i_(n + 1) > i_n, P (Y_(n + 1) lt.eq i_n) = sum_(k = o)^n a_k & upright(", falls ") i_(n + 1) = i_n, 0 & upright(", falls ") i_(n + 1) < i_n) $
+$P(max (i_n , Y_(n + 1)) = i_(n + 1)) = P(Y_(n + 1) lt.eq i_n) = sum_(k = 0)^n a_k$.
+$ P(max (i_n , Y_(n + 1)) = i_(n + 1)) = cases(delim: "{", P(Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) & upright(", falls ") i_(n + 1) > i_n, P(Y_(n + 1) lt.eq i_n) = sum_(k = o)^n a_k & upright(", falls ") i_(n + 1) = i_n, 0 & upright(", falls ") i_(n + 1) < i_n) $
 $arrow.r.double { X_n : n in N_0 }$ ist eine Markovkette mit
 Zustandsraum $bb(N)_0$ und Übergangsmatrix
 $ p_(i j) = cases(delim: "{", a_j & upright(", falls ") j > i, sum_(k = 0)^i a_k & upright(", falls ") j = i, 0 & upright(", falls ") j < i) $
@@ -409,14 +409,14 @@ $ X_(n + 1) = f (X_n , Y_(n + 1)) $ Dabei sei
 $f : S times bb(R) arrow.r S$, $Y_1 ,... , Y_n$ seien identisch
 verteilte Zufallsvariablen und $Y_0 , Y_1 ,...$ seien unabhängig. \
 $arrow.r.double { X_n : n in bb(N)_0 }$ ist eine Markovkette mit
-Übergangswahrscheinlichkeiten $p_(i j) = P (f (i , Y_1) = j)$, denn für
+Übergangswahrscheinlichkeiten $p_(i j) = P(f (i , Y_1) = j)$, denn für
 $n gt.eq 1$ und $i_0 ,... , i_(n + 1) in S$ mit
-$P (X_0 = i_0 ,... , X_n = i_n) > 0$ gilt
-$  & P (X_(n + 1) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
- & = P (f (X_n , Y_(n + 1)) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
- & = P (f (i_n , Y_(n + 1)) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
- & =^star.op P (f (i_n , Y_(n + 1)) = i_(n + 1))\
- & =^(star.op star.op) P (f (i_n , Y_1) = i_(n + 1))\
+$P(X_0 = i_0 ,... , X_n = i_n) > 0$ gilt
+$  & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
+ & = P(f (X_n , Y_(n + 1)) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
+ & = P(f (i_n , Y_(n + 1)) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
+ & =^star.op P(f (i_n , Y_(n + 1)) = i_(n + 1))\
+ & =^(star.op star.op) P(f (i_n , Y_1) = i_(n + 1))\
  & = p_(i_n i_(n + 1)) $ $star.op$ Hinweis: Das Ereignis
 ${ X_(n + 1) = f (i_n , Y_(n + 1)) I i_(n + 1) }$ hängt von einem festen
 Wert $i_n$ und der Zufallsvariablen $Y_(n + 1)$ ab. Das gleiche gilt
@@ -432,18 +432,18 @@ Beispiel 4 war $f (x , y) = m a x (x , y)$.
 <mehrschritt-übergangswahrscheinlichkeiten>
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum S,
 Übergangsmatrix $(P_(i j))_(i , j in S)$ und Anfangsverteilung
-$p_i = P (X_0 = i)$ ($i in S$). Bestimme die gemeinsame Verteilung von
+$p_i = P(X_0 = i)$ ($i in S$). Bestimme die gemeinsame Verteilung von
 $X_0 ,... , X_n$: \
 Für $n gt.eq 1$ und $i_0 ,... , i_n in S$ gilt
-$  & P (X_0 = i_0 , X_1 = i_1 ,... , X_n = i_n)\
-= & P (X_0 = i_0 ,... , X_(n - 1) = i_(n - 1)) p_(i_(n - 1) i_n)\
-= & P (X_0 = i_0 ,... , X_(n - 2) = i_(n - 2)) p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n)\
+$  & P(X_0 = i_0 , X_1 = i_1 ,... , X_n = i_n)\
+= & P(X_0 = i_0 ,... , X_(n - 1) = i_(n - 1)) p_(i_(n - 1) i_n)\
+= & P(X_0 = i_0 ,... , X_(n - 2) = i_(n - 2)) p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n)\
 = & dots.h\
-= & P (X_0 = i_0) p_(i_0 i_1)... p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n) $
+= & P(X_0 = i_0) p_(i_0 i_1)... p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n) $
 
 #block[
 Für jede Folge von Zuständen $i_0 ,... , i_n in S$ gilt:
-$ P (X_0 = i_0 ,... , X_n = i_n) = p_(i_0 i_1)... p_(i_(n - 1) i_n) $
+$ P(X_0 = i_0 ,... , X_n = i_n) = p_(i_0 i_1)... p_(i_(n - 1) i_n) $
 Insbesondere ist für jedes $n$ die Verteilung von $X_0 ,... , X_n$
 durch die Anfangsverteilung ($p_i$) und die Übergangsmatrix
 $(P_(i j))_(i , j in S)$ eindeutig festgelegt.
@@ -451,10 +451,10 @@ $(P_(i j))_(i , j in S)$ eindeutig festgelegt.
 ]
 #block[
 Betrachte eine Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandraum
-$S = { 0 , 1 , 2 , 3 , 4 }$, $X_0 : = 0$, also $p_0 = P (X_0 = 0) = 1$.
+$S = { 0 , 1 , 2 , 3 , 4 }$, $X_0 : = 0$, also $p_0 = P(X_0 = 0) = 1$.
 \
 Sei $X_n = m a x (Y_1 ,... , Y_n)$, $n in bb(N)$, wobei
-$Y_1 ,... , Y_n$ unabhängig und gleichverteilt ($P (Y_n = j) = 1 / 5$
+$Y_1 ,... , Y_n$ unabhängig und gleichverteilt ($P(Y_n = j) = 1 / 5$
 für alle $j in S$ und $n in bb(N)_0$). \
 In Worten: Die Markovkette nimmt zu jedem Zeitpunkt $n$ das Maximum aus
 dem bisherigen Maximum $i_(n - 1)$ und dem zufälligen Wert $Y_n$ an,
@@ -462,15 +462,15 @@ welcher mit gleicher Wahrscheinlichkeit Werte zwischen 0 und 4 annimmt.
 Aus Beispiel 4 folgt diese Übergansmatrix:
 $ (P_(i j))_(i , j = 0)^n = mat(delim: "(", 1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5; 0, 2 / 5, 1 / 5, 1 / 5, 1 / 5; 0, 0, 3 / 5, 1 / 5, 1 / 5; 0, 0, 0, 4 / 5, 1 / 5; 0, 0, 0, 0, 1; #none) $
 Was wäre die Wahrscheinlichkeit, dass $X_0 = 0$, $X_1 = 2$ und
-$X_3 = 4$? $  & P (X_0 = 0 , X_1 = 2 , X_2 = 2 , X_3 = 4)\
+$X_3 = 4$? $  & P(X_0 = 0 , X_1 = 2 , X_2 = 2 , X_3 = 4)\
  & = p_0 p_02 p_22 p_24\
  & = 1 dot.op 1 / 5 dot.op 3 / 5 dot.op 1 / 5 = 3 / 125 $ Was wäre die
 Wahrscheinlichkeit, dass $X_1 gt.eq 2$ und $X_2 lt.eq X_1$? \
 Da es nicht möglich ist, dass $i_(n + 1) < i_n$, können wir auf 3
 mögliche Pfade mit $X_1 = X_2 = 2$, $X_1 = X_2 = 3$ und $X_1 = X_2 = 4$
-schließen. $  & P (X_1 gt.eq 2 , X_2 lt.eq X_1)\
- & = P (X_1 gt.eq 2 , X_1 = X_2)\
- & = P (X_0 = 0 , X_1 = 2 , X_2 = 2) + P (X_0 = 0 , X_1 = 3 , X_2 = 3) + dots.h\
+schließen. $  & P(X_1 gt.eq 2 , X_2 lt.eq X_1)\
+ & = P(X_1 gt.eq 2 , X_1 = X_2)\
+ & = P(X_0 = 0 , X_1 = 2 , X_2 = 2) + P(X_0 = 0 , X_1 = 3 , X_2 = 3) + dots.h\
  & = 12 / 25 $
 
 ]
@@ -479,36 +479,36 @@ und Vergangenheit erweitern: \
 
 #block[
 Für alle $n , m gt.eq 1$, $Z subset S^m$, $V subset S^n$, $i in S$ mit
-$P ((X_0 ,... , X_(n - 1)) in V , X_n = i) > 0$ gilt
-$ P ((X_(n + 1) ,... , X_(n + m)) in Z \| (X_0 ,... , X_(n - 1)) in V , X_n = i) = sum_(j_1 ,... , j_m in Z) p_(i j_1) p_(j_1 j_2)... p_(j_(m - 1) j_m) $
+$P((X_0 ,... , X_(n - 1)) in V , X_n = i) > 0$ gilt
+$ P((X_(n + 1) ,... , X_(n + m)) in Z \| (X_0 ,... , X_(n - 1)) in V , X_n = i) = sum_(j_1 ,... , j_m in Z) p_(i j_1) p_(j_1 j_2)... p_(j_(m - 1) j_m) $
 In Worten: Die Wahrscheinlichkeit, dass
 ${ X_n + 1 = i_(n + 1) ,... , X_(n + m) = i_(n + m) } in Z$, hängt
 nur von $X_n = i$ und nicht von ${ X_0 ,... , X_(n - 1) } in V$. Die
 Wahrscheinlichkeit
-$P ({ X_n + 1 = i_(n + 1) ,... , X_(n + m) = i_(n + m) } in Z \| X_n = i)$
+$P({ X_n + 1 = i_(n + 1) ,... , X_(n + m) = i_(n + m) } in Z \| X_n = i)$
 ist dann die Summe über alle (disjunkten) Pfad-Wahrscheinlichkeiten in
 $Z$ (mit Start in $X_n = i$ und daraus resultierender Anfangsverteilung
 $p_i$). \
-Sofern $P (X_0 = i) > 0$ können wir die aufgrund der Zeithomogenität der
+Sofern $P(X_0 = i) > 0$ können wir die aufgrund der Zeithomogenität der
 Markovkette auch folgen:
-$ P ((X_(n + 1) ,... , X_(n + 1)) in Z \| (X_0 ,... , X_(n - 1)) in V , X_n = i) = P ((X_1 ,... , X_m) in Z \| X_0 = i) $
+$ P((X_(n + 1) ,... , X_(n + 1)) in Z \| (X_0 ,... , X_(n - 1)) in V , X_n = i) = P((X_1 ,... , X_m) in Z \| X_0 = i) $
 
 ]
 #strong[Beweis von Satz 7] \
 Für alle $(j_1 ,... , j_m) in Z$ und $(i_0 ,... , i_(n - 1)) in V$
-mit $P (X_0 = i_0 ,... , X_(n - 1) = i_(n - 1) , X_n = i) > 0$ gilt
-$  & P ((X_(n + 1) ,... , X_(n + m)) = (j_1 ,... , j_m) \| (X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i)\
-= & frac(P ((X_(n + 1) ,... , X_(n + m)) = (j_1 ,... , j_m) , (X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i), P ((X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i))\
+mit $P(X_0 = i_0 ,... , X_(n - 1) = i_(n - 1) , X_n = i) > 0$ gilt
+$  & P((X_(n + 1) ,... , X_(n + m)) = (j_1 ,... , j_m) \| (X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i)\
+= & frac(P((X_(n + 1) ,... , X_(n + m)) = (j_1 ,... , j_m) , (X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i), P((X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i))\
 = & frac(p_(i_0) p_(i_0 i_1)... p_(i_(n - 1) i) p_(i j_1)... p_(j_(m - 1) j_m), p_(i_0) p_(i_0 i_1)... p_(i_(n - 1) i))\
 = & p_(i j_1) p_(j_1 j_2)... p_(j_(m - 1) j_m) $
 
 Oft werden für eine Markovkette ${ X_n }$ bei fester Übergangsmatrix
 $(P_(i j))$ verschiedene Anfangszustände betrachtet. Bezeichne mit
-$p_i (dot.op)$ die bedingte Verteilung $P (X_n = j \| X_0 = i)$ und mit
+$p_i (dot.op)$ die bedingte Verteilung $P(X_n = j \| X_0 = i)$ und mit
 $E_i (dot.op)$ den Erwartungswert für den Anfangszustand $i$, das heißt
 $P_i (X_0 = i) = 1$. Dann gilt
-$  & P ((X_(n + 1) ,... , X_(n + m)) in Z \| (X_0 ,... , X_(n - 1)) in V , X_n = i)\
- & = P ((X_1 ,... , X_m) in Z \| X_0 = i)\
+$  & P((X_(n + 1) ,... , X_(n + m)) in Z \| (X_0 ,... , X_(n - 1)) in V , X_n = i)\
+ & = P((X_1 ,... , X_m) in Z \| X_0 = i)\
  & = P_i ((X_1 ,... , X_m) in Z) $ und für $f : f^m arrow.r bb(R)$
 $  & E [f (X_(n + 1 ,... , X_(n + m))) \| (X_0 ,... , X_(n - 1)) in V , X_n = i]\
  & = E [f (X_(n + 1) ,... , X_(n + m)) \| X_0 = i]\
@@ -516,16 +516,16 @@ $  & E [f (X_(n + 1 ,... , X_(n + m))) \| (X_0 ,... , X_(n - 1)) in V , X_n = i]
 Zustand $i$ ab und weder von $V$ noch von $n$. \
 Die Aussagen lassen sich mit einem unendlichen Zeithorizont erweitern: \
 Für die Menge $Z subset S^oo$ und $f : S^oo arrow.r bb(R)$ gilt
-$ P ((X_(n + 1) , X_(n + 2) ,...) in Z \| (X_0 ,... , X_(n - 1) in V) , X_n = i) = P_i ((X_1 ,...) in Z) $
+$ P((X_(n + 1) , X_(n + 2) ,...) in Z \| (X_0 ,... , X_(n - 1) in V) , X_n = i) = P_i ((X_1 ,...) in Z) $
 und
 $ E [f (X_(n + 1) , X_(n + 2) ,...) \| (X_0 ,... , X_(n - 1) in V , X_n = i)] = E_i [f (X_(n + 1) , X_(n + 2) ,...)] $
 Die $n$-Schritt Übergangswahrscheinlichkeit ist
-$ p_(i j)^n : = P (X_(n + m) = j \| X_m = i) $ mit $i , j in S$,
-$n gt.eq 0$, $P (X_m = i) > 0$. Diese Wahrscheinlichkeit hängt nicht von
+$ p_(i j)^n : = P(X_(n + m) = j \| X_m = i) $ mit $i , j in S$,
+$n gt.eq 0$, $P(X_m = i) > 0$. Diese Wahrscheinlichkeit hängt nicht von
 $m$ ab (Zeithomogenität). \
 Es gilt
-$ p_(i j)^0 = P (X_m = j \| X_m = i) = cases(delim: "{", 1 & upright(" , falls ") i = j, 0 & upright(" , falls ") i eq.not j) $
-und $ P_(i j)^1 = P (X_(m + 1) = j \| X_m = i) = p_(i j) $
+$ p_(i j)^0 = P(X_m = j \| X_m = i) = cases(delim: "{", 1 & upright(" , falls ") i = j, 0 & upright(" , falls ") i eq.not j) $
+und $ P_(i j)^1 = P(X_(m + 1) = j \| X_m = i) = p_(i j) $
 
 #block[
 Satz von Chapman-Kolmogorow: Für alle $i , j in S$ und
@@ -541,12 +541,12 @@ $ p_(i j)^((n)) = sum_(k in S) p_(i k)^0 p_(k j)^((n)) = p_(i j)^((n)) $
 $ p_(i j)^((m)) = sum_(k in S) p_(i k)^((m)) p_(k j)^0 = p_(i j)^((m)) $
 
 $ p_(i j)^0 = sum_(k in S) p_(i k)^0 p_(k j)^0 = cases(delim: "{", 1 & upright(" , falls ") i = j, 0 & upright(" , falls ") i eq.not j) $
-Für $m , n gt.eq 1$ und $P (X_0 = 1) > 0$ ist
-$  & p_(i j)^(m + n) = P (X_(m + n) = j \| X_0 = i)\
-= & sum_(k in S) P (X_(m + n) = j , X_m = k \| X_0 = i)\
-= & sum_(k in S) frac(P (X_(m + n) = j , X_m = k , X_0 = i), P (X_0 = i)) times frac(P (X_m = k , X_0 = i), P (X_m = k , X_0 = i))\
-= & sum_(k in S) P (X_(m + n) = j \| X_m = k , X_0 = i) P (X_m = k \| X_0 = i)\
-= & sum_(k in S) P (X_m = k \| X_0 = i) P (X_(m + n) = j \| X_m = k)\
+Für $m , n gt.eq 1$ und $P(X_0 = 1) > 0$ ist
+$  & p_(i j)^(m + n) = P(X_(m + n) = j \| X_0 = i)\
+= & sum_(k in S) P(X_(m + n) = j , X_m = k \| X_0 = i)\
+= & sum_(k in S) frac(P(X_(m + n) = j , X_m = k , X_0 = i), P(X_0 = i)) times frac(P(X_m = k , X_0 = i), P(X_m = k , X_0 = i))\
+= & sum_(k in S) P(X_(m + n) = j \| X_m = k , X_0 = i) P(X_m = k \| X_0 = i)\
+= & sum_(k in S) P(X_m = k \| X_0 = i) P(X_(m + n) = j \| X_m = k)\
 = & sum_(k in S) p_(i k)^m p_(k j)^n $ Für einen Übergang von $i$ nach
 $j$ in $m + n$ Schritten muss die Markovkette in $m$ Schritten von $i$
 zu einem beliebigen Zustand $k$ gehen und dann von $k$ in $n$ Schritten
@@ -560,10 +560,10 @@ Somit besagt der Satz von Chapman-Kolmogorow, dass
 $ Pi^(m + n) = Pi^m Pi^n $ Alternativ kann auch für einen Start bei
 $X_n = i$ mit korrespondierender Verteilung, welche dem Zeilenvektor
 $ (p_i^((n)))_(i in S) $ der Übergangsmatrix mit
-$p_i^((n)) = P (X_n = i)$ und $n in bb(N)_0$ entspricht, die
+$p_i^((n)) = P(X_n = i)$ und $n in bb(N)_0$ entspricht, die
 Wahrscheinlichkeit in weiteren $m in bb(N)_0$ Schritten ein beliebiges
 $j in S$ zu erreichen folgendermaßen erfasst werden:
-$ p_j^((n + m)) = P (X_(n + m) = j) = sum_(i in S) P (X_(n + m) = j \| X_n = i) P (X_n = i) = sum_(i in S) p_i^((n)) p_(i j)^((m)) $
+$ p_j^((n + m)) = P(X_(n + m) = j) = sum_(i in S) P(X_(n + m) = j \| X_n = i) P(X_n = i) = sum_(i in S) p_i^((n)) p_(i j)^((m)) $
 Daraus folgt wiederum: $ p^((n + m)) = p^((n)) Pi^m $ Letzteres kann
 genutzt werden, um die Verteilung $X_n$ zu jeden Zeitpunkt zu berechnen:
 
@@ -577,19 +577,19 @@ der Übergangsmatrix. $ p^((n)) = p^((0)) Pi^n $
 Betrachte eine Markovkette $X_n : n in bb(N)_0$ mit $S = { 1 , 2 , 3 }$,
 Übergangsmatrix
 $ Pi = 1 / 3 mat(delim: "(", 1, 0, 2; 0, 2, 1; 1, 1, 1) $ und
-Anfangsverteilung $p^((0)) = P (X_0 = i) = (1 / 4 , 1 / 2 , 1 / 4)$. \
+Anfangsverteilung $p^((0)) = P(X_0 = i) = (1 / 4 , 1 / 2 , 1 / 4)$. \
 Berechne die bedingte Verteilung von $X_2$ gegeben $X_0 = 3$.
 $ Pi^2 = Pi Pi = 1 / 9 mat(delim: "(", 3, 2, 4; 1, 5, 3; 2, 3, 4) $
 $ Pi^4 = Pi^2 Pi^2 = 1 / 81 mat(delim: "(", 19, 28, 34; 14, 36, 31; 17, 31, 33) $
 
-- $P (X_2 = 1 \| X_0 = 3) = p_31^((2)) = 2 / 9$
+- $P(X_2 = 1 \| X_0 = 3) = p_31^((2)) = 2 / 9$
 
-- $P (X_2 = 2 \| X_0 = 3) = p_32^((2)) = 1 / 3$
+- $P(X_2 = 2 \| X_0 = 3) = p_32^((2)) = 1 / 3$
 
-- $P (X_2 = 3 \| X_0 = 3) = p_33^((2)) = 4 / 9$
+- $P(X_2 = 3 \| X_0 = 3) = p_33^((2)) = 4 / 9$
 
 Berechne zudem die Verteilung von $X_4$.
-$ p^((4)) = p^((0)) Pi^((4)) = (P (X_4 = 1) , P (X_4 = 2) , P (X_4 = 3)) = (16 / 81 , 131 / 324 , 43 / 108) $
+$ p^((4)) = p^((0)) Pi^((4)) = (P(X_4 = 1) , P(X_4 = 2) , P(X_4 = 3)) = (16 / 81 , 131 / 324 , 43 / 108) $
 
 ]
 == Absorbtionswahrscheinlichkeiten und -zeiten
@@ -602,7 +602,7 @@ ist die Eintrittszeit in $A$, also der zufällige Zeitpunkt des ersten
 Besuchs der Menge $A$, falls es einen gibt. \
 Ziel: Berechne für jeden Anfangszustand $i$ die Wahrscheinlichkeit, dass
 $A$ in endlicher Zeit erreicht wird.
-$ P (T < oo \| X_0 = i) = P (union.big_(n = 0)^oo { X_n in A } \| X_0 = i) = p_i (T < oo) $
+$ P(T < oo \| X_0 = i) = P(union.big_(n = 0)^oo { X_n in A } \| X_0 = i) = p_i (T < oo) $
 Ein Zustand $z in S$ heißt absorbierend, falls $p_(z z) = 1$. In dem
 Spezialfall, dass $A$ nur aus absorbierenden Zuständen besteht, heißt
 $p_i (T < oo)$ Absorbtionswahrscheinlichkeit bei Start in $i in S$ und
@@ -613,25 +613,25 @@ Folgender Satz gilt für beliebige $A$: \
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und
 Übergangsmatrix $(P_(i j))$. Sei $A subset S$, $A eq.not nothing$ und
 $ T_i = inf { n in bb(N)_0 : X_n in A } $
-$ h_i = P (T < oo \| X_0 = i) $
+$ h_i = P(T < oo \| X_0 = i) $
 $ arrow.r.double h_i = 1 upright(" für alle ") i in A upright(" und ") h_i = sum_(j in S) p_(i j) h_j upright(" für alle ") i in S without A $
 
 ]
 #strong[Beweis Satz 10] \
-Für $i in A$ gilt $P (T = 0 \| X_0 = i) = 1$, also $h_1 = 0$. \
+Für $i in A$ gilt $P(T = 0 \| X_0 = i) = 1$, also $h_1 = 0$. \
 Sei nun $i in S without A$. Der Beweisansatz ist die Einschritt-Analyse:
 Zerlege die gesuchte Wahrscheinlichkeit $h_i$ mit dem Satz der totalen
 Wahrscheinlichkeit danach, was im ersten Schritt der Markov-Kette
-passiert ist. $ h_i & = P (T < oo \| X_0 = i)\
- & = sum_(j in S) P (T < oo , X_1 = j \| X_0 = i)\
- & = sum_(j in S) overbrace(P (X_1 = j \| X_0 = i), p_(i j)) P (T < oo \| X_1 = j , X_0 = i)\
- $ Für $j in A$ ist $ P (T < oo \| X_1 = j , X_0 = i) = 1 , $ und für
+passiert ist. $ h_i & = P(T < oo \| X_0 = i)\
+ & = sum_(j in S) P(T < oo , X_1 = j \| X_0 = i)\
+ & = sum_(j in S) overbrace(P(X_1 = j \| X_0 = i), p_(i j)) P(T < oo \| X_1 = j , X_0 = i)\
+ $ Für $j in A$ ist $ P(T < oo \| X_1 = j , X_0 = i) = 1 , $ und für
 $j in S without A$
-$ P (T < oo \| X_1 = j , X_0 = i) = & P (union.big_(n = 2)^oo { X_n in A } \| X_1 = j , X_0 = i)\
-= & lim_(N arrow.r oo) P (union.big_(n = 2)^N { X_n in A } \| X_1 = j , X_0 = i)\
-= & lim_(N arrow.r oo) P (union.big_(n = 1)^(N - 1) { X_n in A } \| X_o = j)\
-= & P (union.big_(n = 1)^oo { X_n in A } \| X_0 = j)\
-= & P (T < oo \| X_0 = j)\
+$ P(T < oo \| X_1 = j , X_0 = i) = & P(union.big_(n = 2)^oo { X_n in A } \| X_1 = j , X_0 = i)\
+= & lim_(N arrow.r oo) P(union.big_(n = 2)^N { X_n in A } \| X_1 = j , X_0 = i)\
+= & lim_(N arrow.r oo) P(union.big_(n = 1)^(N - 1) { X_n in A } \| X_o = j)\
+= & P(union.big_(n = 1)^oo { X_n in A } \| X_0 = j)\
+= & P(T < oo \| X_0 = j)\
 = & h_j $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
 
 #block[
@@ -646,7 +646,7 @@ Zustandsraum $S = { 0 , 1 , 2 ,... , M }$ und
 Übergangswahrscheinlichkeiten
 $ p_(i j) = cases(delim: "{", 1 & upright(", falls ") i = 0 upright(" und ") j = 0, p & upright(", falls ") i in { 1 ,... , M - 1 } upright(" und ") j = i + 1, 1 - p & upright(", falls ") i in { 1 ,... , M - 1 } upright(" und ") j = i - 1, 1 & upright(", falls ") i = M upright(" und ") j = M, 0 & upright(", sonst")) $
 Gesucht sind die Absorbtionswahrscheinlichkeiten
-$ h_i = P (T < oo \| X_0 = i) $ mit $i = 0 ,... , M$ und
+$ h_i = P(T < oo \| X_0 = i) $ mit $i = 0 ,... , M$ und
 $T = inf { n in bb(N)_0 : X_n = 0 }$. \
 Es ist $h_0 = 1$ (sofort ruiniert), $h_M = 0$ (sofort Ende des Spiels
 wegen maximalem Gewinn) und nach Satz 10 ist die Wahrscheinlichkeit
@@ -693,7 +693,7 @@ Betrachte die Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandsraum
 $S = bb(N)_0$ und
 $ p_(i j) = cases(delim: "{", 1 & upright(", falls ") i = 0 upright(" und ") j = 0, p & upright(", falls ") i in bb(N)_0 upright(" und ") j = i + 1, 1 - p & upright(", falls ") i in bb(N)_0 upright(" und ") j = i - 1, 0 & upright(", sonst ")) $
 Berechne die Absorbtionswahrscheinlichkeiten. \
-$h_i = P (T < oo \| X_0 = i)$ mit $i in S$ und
+$h_i = P(T < oo \| X_0 = i)$ mit $i in S$ und
 $T = inf { n in bb(N)_0 : X_n = 0 }$. \
 Es gilt $h_0 = 1$ und Nach Satz 10
 $ h_i = p h_(i + 1) + (1 - p) h_(i - 1) upright(" für ") i = 1 , 2 ,... $
@@ -738,7 +738,7 @@ Hinweis: Hier gibt es keine zweite Randbedingung, wie in Bsp. 9!
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und
 Übergangsmatrix $(P_(i j))$. Sei zudem $A subset S$ mit
 $A eq.not nothing$. Seo $T_i = i n f { n in N : X_n in A }$ und
-$h_i = P (T_i < oo \| X_0 = i)$. Dann ist $(h_i)_(i in S)$ die
+$h_i = P(T_i < oo \| X_0 = i)$. Dann ist $(h_i)_(i in S)$ die
 #strong[komponentenweise kleinste nicht-negative Lösung] des
 Gleichungssystems $  & x_i = 1 upright(" für alle ") i in A\
  & x_i = sum_(j in S) p_(i j) x_j upright(" für alle ") i in S without A $
@@ -771,7 +771,7 @@ Einsetzen, wobei $Q^k r = p_(i j_k)^k p_(j_k j)$ und $Q^(n + 1) x$ als
 strikt positiver Wert für die untere Schranke ausgelassen werden kann,
 folgendes:
 $ x_i & gt.eq p_(i j) + sum_(k = 1)^n sum_(j_1 ,... , j_k in A^c , j in A) p_(i j_1) p_(j_1 j_2)... p_(j_k j)\
-arrow.l.r.double x_i & gt.eq P_i (X_1 in A) + sum_(k = 1)^n P (X_1 in A^c ,... , X_k in A^c , X_(k + 1) in A)\
+arrow.l.r.double x_i & gt.eq P_i (X_1 in A) + sum_(k = 1)^n P(X_1 in A^c ,... , X_k in A^c , X_(k + 1) in A)\
 arrow.l.r.double x_i & gt.eq P_i (T lt.eq n + 1)\
 arrow.r.double x_i & gt.eq lim_(n arrow.r oo) P_i (T lt.eq n + 1) = lim_(n arrow.r oo) P_i (T lt.eq n) = h_i upright(", ") i in A^c $
 
@@ -808,10 +808,10 @@ $bb(R)^(‾) = bb(R) union { - oo , oo }$ benötigt:
 - Nicht definiert sind: $oo - oo$ und $- oo + oo$.
 
 Ist $X$ eine Zufallsvariable mit Werten in $bb(N)_0 union { oo }$, dann
-ist $ E [X] & = sum_(n = 0)^oo n P (X = n)\
- & = sum_(n = 0)^oo P (X > n)\
- & = sum_(n = 1)^n P (X gt.eq n) $ Insbesondere ist also falls
-$P (X = oo) > 0$ auch $E [X] = oo$.
+ist $ E [X] & = sum_(n = 0)^oo n P(X = n)\
+ & = sum_(n = 0)^oo P(X > n)\
+ & = sum_(n = 1)^n P(X gt.eq n) $ Insbesondere ist also falls
+$P(X = oo) > 0$ auch $E [X] = oo$.
 
 #block[
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und
@@ -907,21 +907,21 @@ arrow.l.r.double & pi ((P_(i j)) - I) = 0 $
 - Für jede Markovkette mit endlichem Zustandsraum existiert eine
   stationäre Verteilung (s. Aufgaben).
 
-- Bezeichnet $p^((n)) = (P_i^((n)))_(i in S)$, $P_i^((n)) = P (X_n = i)$
+- Bezeichnet $p^((n)) = (P_i^((n)))_(i in S)$, $P_i^((n)) = P(X_n = i)$
   die Anfangsverteilung von $X_n$ und ist die Anfangsverteilung
   stationär, dann gilt
   $ P^((n)) = P^((0)) Pi^n = p^((0)) Pi Pi^(n - 1) =... = P^((0)) , $
   d.h.
-  $P (X_n = i) = P (X_0 = i) quad forall n gt.eq 0 upright(" und ") i in S$.
+  $P(X_n = i) = P(X_0 = i) quad forall n gt.eq 0 upright(" und ") i in S$.
 
 - Ist der Zustandsraum endlich und existiert für jedes $j in S$ der
-  Grenzwert $ pi_j = lim_(n arrow.r oo) P (X_n = j) , $ dann muss
+  Grenzwert $ pi_j = lim_(n arrow.r oo) P(X_n = j) , $ dann muss
   $(pi_i)$ eine stationäre Verteilung sein, denn
   $  & pi_i gt.eq 0 quad forall i in S\
-   & sum_(i in S) pi_i = lim_(n arrow.r oo) sum_(i in S) P (X_n = i) = 1 $
-  und $ pi_j & = lim_(n arrow.r oo) P (X_(n + 1) = j)\
-   & = lim_(n arrow.r oo) sum_(i in S) P (X_n = i) p_(i j)\
-   & = sum_(i in S) lim_(n arrow.r oo) P (X_n = i) p_(i j)\
+   & sum_(i in S) pi_i = lim_(n arrow.r oo) sum_(i in S) P(X_n = i) = 1 $
+  und $ pi_j & = lim_(n arrow.r oo) P(X_(n + 1) = j)\
+   & = lim_(n arrow.r oo) sum_(i in S) P(X_n = i) p_(i j)\
+   & = sum_(i in S) lim_(n arrow.r oo) P(X_n = i) p_(i j)\
    & = sum_(i in S) pi_i p_(i j) quad forall j in S $
 
 #block[
@@ -936,8 +936,8 @@ Damit ist für $i in S$
 $ lim_(n arrow.r oo) P_(i 1)^((n)) = frac(b, a + b) $ und
 $ lim_(n arrow.r oo) P_(i 2)^((n)) = frac(a, a + b) $ Für jede
 Anfangsverteilung
-$mat(delim: "(", p_1, p_2) = (P (X_0 = 1) , P (X_0 = 2))$ gilt
-$ lim_(n arrow.r oo) (P (X_n = 1) , P (X_n = 2)) & = lim_(n arrow.r oo) mat(delim: "(", p_1, p_2) Pi^n\
+$mat(delim: "(", p_1, p_2) = (P(X_0 = 1) , P(X_0 = 2))$ gilt
+$ lim_(n arrow.r oo) (P(X_n = 1) , P(X_n = 2)) & = lim_(n arrow.r oo) mat(delim: "(", p_1, p_2) Pi^n\
  & = frac(1, a + b) mat(delim: "(", p_1, 1 - p_1) mat(delim: "(", b, a; b, a)\
  & = mat(delim: "(", f r a c b a + b, frac(a, a + b)) $ Die
 Grenzverteilung ist also unabhängig von der Anfangsverteilung. \
@@ -1010,11 +1010,11 @@ $lim_(n arrow.r oo) P_(i j)^n$
 
 Ist ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Übergangsmatrix
 $(P_(i j))$, dann
-$ sum_(j = 1)^S lr(|P (x_n = j) - pi_j|) & = sum_(j = 1)^S lr(|(sum_(i = 1)^S P (X_0) i) p_(i j)^n - pi_j|)\
- & = sum_(j = 1)^S lr(|sum_(i = 1)^S P (X_0 = i) (p_(i j)^n - pi_j)|)\
- & lt.eq sum_(i = 1)^S P (X_0 = i) sum_(j = 1)^S lr(|p_(i j)^n - pi_j|)\
+$ sum_(j = 1)^S lr(|P(x_n = j) - pi_j|) & = sum_(j = 1)^S lr(|(sum_(i = 1)^S P(X_0) i) p_(i j)^n - pi_j|)\
+ & = sum_(j = 1)^S lr(|sum_(i = 1)^S P(X_0 = i) (p_(i j)^n - pi_j)|)\
+ & lt.eq sum_(i = 1)^S P(X_0 = i) sum_(j = 1)^S lr(|p_(i j)^n - pi_j|)\
  & lt.eq 2 (1 - epsilon.alt)^(⌊ n / k ⌋)\
-arrow.r.double lim_(n arrow.r oo) P (X_n = j) & = pi_j $
+arrow.r.double lim_(n arrow.r oo) P(X_n = j) & = pi_j $
 
 Sind alle Einträge von $Pi^n$ positiv, dann ist die Voraussetzung
 $p_(i j^n) gt.eq epsilon.alt pi_j$ ($i , j = 1 ,... , S$) mit
@@ -1146,13 +1146,13 @@ Zustand aperiodisch.
 
 #strong[Interpretation der Grenzverteilung] \
 Es gelte
-$ pi_j = lim_(n arrow.r oo) P_(i j)^n = lim_(n arrow.r oo) P (X_n = j \| X_0 = i) $
+$ pi_j = lim_(n arrow.r oo) P_(i j)^n = lim_(n arrow.r oo) P(X_n = j \| X_0 = i) $
 Ist $(a_n)_(n = 1)^oo$ eine Folge reeller Zahlen mit
 $lim_(n arrow.r oo) a_n = a$, dann gilt auch
 $ 1 / n sum_(k = 0)^(n - 1) a_k = a upright(" , ") $ also hier
 $ lim_(n arrow.r oo) 1 / n sum_(k = 0)^(n - 1) P_(i j)^k = pi_j $ und
 dahier ist
-$ 1 / n sum_(k = 0)^(n - 1) P_(i j)^k & = 1 / n sum_(k = 0)^(n - 1) P (X_k = j \| X_0 = i)\
+$ 1 / n sum_(k = 0)^(n - 1) P_(i j)^k & = 1 / n sum_(k = 0)^(n - 1) P(X_k = j \| X_0 = i)\
  & = 1 / n sum_(k = 0)^(n - 1) E [bold("1")_({ X_k = j }) \| X_0 = i]\
  & = E [1 / n sum_(k = 0)^(n - 1) bold("1")_({ X_k = j }) \| X_0 = i] $
 
@@ -1170,7 +1170,7 @@ Für jedes $j in S$ sei
 $ tau_j := i n f { n gt.eq 1 : X_N = j } quad (i n f nothing = oo) $ In
 Worten: $tau_j$ ist der erste Zeitpunkt $n gt.eq 1$, zu dem die
 Markovkette $j$ besucht, falls es einen gibt. \
-Für $i , j in S$ sei $ f_(i j) = P (tau_j < oo \| X_0 = i) $ In Worten:
+Für $i , j in S$ sei $ f_(i j) = P(tau_j < oo \| X_0 = i) $ In Worten:
 $f_(i j)$ ist die Wahrscheinlichkeit, dass $j$ in endlicher Zeit
 ($gt.eq 1$) erreicht wird bei Start in $i$. Insbesondere ist $f_(j j)$
 die Wahrscheinlichkeit einer Rückkehr. \
@@ -1182,11 +1182,11 @@ transient.
 #block[
 Sei $S = { 1 , 2 , 3 }$ und
 $ (P_(i j)) = mat(delim: "(", 0.5, 0.5, 0; 0.5, 0.5, 0; 1 / 3, 1 / 3 1 / 3) $
-Dann ist $ f_11 & = sum_(n = 1)^oo P (tau_1 = n \| X_0 = 1)\
- & = sum_(k = 1)^oo P (X_n = 1 , X_k = 2 upright(" mit ") 1 lt.eq k < n \| X_0 = 1)\
+Dann ist $ f_11 & = sum_(n = 1)^oo P(tau_1 = n \| X_0 = 1)\
+ & = sum_(k = 1)^oo P(X_n = 1 , X_k = 2 upright(" mit ") 1 lt.eq k < n \| X_0 = 1)\
  & = sum_(n = 1)^oo (1 / 2)^n = 1 $ Folglich ist 1 rekurrent. Ebenso
 auch 2.
-$ f_33 = P (tau < oo \| X_0 = 3) = P (X_1 = 3 \| X_0 = 3) = 1 / 3 < 1 $
+$ f_33 = P(tau < oo \| X_0 = 3) = P(X_1 = 3 \| X_0 = 3) = 1 / 3 < 1 $
 3 ist also transient und somit die Markovkette weder transient noch
 rekurrent.
 
@@ -1196,42 +1196,42 @@ Für $j in S$ sei $ N_j = sum_(n = 1)^oo bold("1")_({ X_n = j }) $ die
 Anzahl der Zeitpunkte $gt.eq 1$ zu denen Zustand $j$ besucht wird. \
 
 - Ist $j$ rekurrent, dann gilt für alle $i in S$
-  $ P (N_j = oo \| X_0 = i) = f_(i j) upright(" , ") P (N_j = 0 \| X_0 = i) = 1 - f_(i j) $
+  $ P(N_j = oo \| X_0 = i) = f_(i j) upright(" , ") P(N_j = 0 \| X_0 = i) = 1 - f_(i j) $
   und insbesondere
-  $ P (N_j = oo \| X_0 = j) = f_(j j) = 1 upright(" und ") E [N_j \| X_0 = j] = oo $
+  $ P(N_j = oo \| X_0 = j) = f_(j j) = 1 upright(" und ") E [N_j \| X_0 = j] = oo $
 
 - Ist $j$ transient, dann gilt für alle $i in S$
-  $ P (N_j < oo \| X_0 = i) = 1 upright(" und ") E [N_j \| X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo $
+  $ P(N_j < oo \| X_0 = i) = 1 upright(" und ") E [N_j \| X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo $
 
 ]
 #strong[Beweis Satz 18] \
 Setze $sigma_j = s u p { n gt.eq 1 : X_n = j }$, wobei
 $s u p nothing = oo$. Ist $sigma_j$ endlich, dann ist $sigma_j$ der
 Zeitpunkt des letzten Aufenthalts in $j$. Für jedes $n in bb(N)$ gilt
-$ P (sigma_j = n \| X_0 = i) & = P (X_n = j , X_m eq.not j upright(" für alle ") m > n \| X_0 = i)\
- & = P (X_M eq.not j upright(" für alle ") m > n \| X_n = j , X_0 = i) P (X_n = j \| X_0 = i)\
- & = lim_(n arrow.r oo) P (X_(n + 1) eq.not j ,... , X_(n + m eq.not j) \| X_n = j , X_0 = i) P_(i j)^n\
- & = lim_(m arrow.r oo) P (X_1 eq.not j ,... , X_m eq.not j \| X_0 = j) P_(i j)^n\
+$ P(sigma_j = n \| X_0 = i) & = P(X_n = j , X_m eq.not j upright(" für alle ") m > n \| X_0 = i)\
+ & = P(X_M eq.not j upright(" für alle ") m > n \| X_n = j , X_0 = i) P(X_n = j \| X_0 = i)\
+ & = lim_(n arrow.r oo) P(X_(n + 1) eq.not j ,... , X_(n + m eq.not j) \| X_n = j , X_0 = i) P_(i j)^n\
+ & = lim_(m arrow.r oo) P(X_1 eq.not j ,... , X_m eq.not j \| X_0 = j) P_(i j)^n\
  & = (1 - f_(j j)) P_(i j)^n $
-$ P (1 lt.eq sigma_j < oo \| X_0 = i) & = sum_(n = 1)^oo P (sigma_j = n \| X_0 = i)\
+$ P(1 lt.eq sigma_j < oo \| X_0 = i) & = sum_(n = 1)^oo P(sigma_j = n \| X_0 = i)\
  & = (1 - f j j) sum_(n = 1)^oo P_(i j)^n\
  & = (1 - f_(j j)) sum_(n = 1)^oo E [bold("1")_(X_n = j) \| X_0 = i]\
  & = (1 - f_(j j)) E [N_j \| X_0 = i] $
 
 - Sei $j$ rekurrent, also $f_(j j) = 1$. \
-  $arrow.r.double P (sigma_j = n \| X_0 = i) = 0$ für alle $n in bb(N)$.
+  $arrow.r.double P(sigma_j = n \| X_0 = i) = 0$ für alle $n in bb(N)$.
   \
-  $arrow.r.double P (sigma_j in { - oo , oo }) = 1$, also
-  $P (N_j in { 0 , oo } \| X_0 = i) = 1$. \
-  Es ist $P (N_j = 0 \| X_0 = i) = 1 - f_(i j)$ und es folt
-  $P (N_j = oo \| X_0 = i) = f_(i j)$.
+  $arrow.r.double P(sigma_j in { - oo , oo }) = 1$, also
+  $P(N_j in { 0 , oo } \| X_0 = i) = 1$. \
+  Es ist $P(N_j = 0 \| X_0 = i) = 1 - f_(i j)$ und es folt
+  $P(N_j = oo \| X_0 = i) = f_(i j)$.
 
 - Sei $j$ transient, also $f_(j j) < 1$.
-  $ (1 - f_(j j)) E [N_j \| X_0 = i] = P (1 lt.eq sigma_j < oo \| X_0 = i) lt.eq 1 $
+  $ (1 - f_(j j)) E [N_j \| X_0 = i] = P(1 lt.eq sigma_j < oo \| X_0 = i) lt.eq 1 $
   $arrow.r.double E [N_j \| X_0 = i] < oo$ und daher ist
-  $P (N_j < oo \| X_0 = i) = 1$.
-  $ arrow.r.double P (1 lt.eq sigma_j < oo \| X_0 = i) & = P (1 lt.eq sigma_j)\
-   & = P (tau_j < oo \| X_0 = i)\
+  $P(N_j < oo \| X_0 = i) = 1$.
+  $ arrow.r.double P(1 lt.eq sigma_j < oo \| X_0 = i) & = P(1 lt.eq sigma_j)\
+   & = P(tau_j < oo \| X_0 = i)\
    & = f_(i j) $
   $arrow.r.double E [N_j \| X_0 = i] = frac(f_(i j), 1 - f_j j)$.
 
@@ -1262,7 +1262,7 @@ $ P (1 lt.eq sigma_j < oo \| X_0 = i) & = sum_(n = 1)^oo P (sigma_j = n \| X_0 =
 - Jede irreduzible Markovkette mit endlichem Zustandsraum ist rekkurent.
   Außerdem gilt für solche Markovketten $ E [tau_j \| X_0 = i] < oo $
   und daher ist
-  $ P (N_j = oo \| X_0 = i) = f_(i j) = 1 quad forall quad i , j in S $
+  $ P(N_j = oo \| X_0 = i) = f_(i j) = 1 quad forall quad i , j in S $
 
 #block[
 Wie betrachten wieder die einfachre Irrfahrt auf $bb(Z)$. \
@@ -1274,14 +1274,14 @@ $ P_(i i)^(2 n) = vec(2 n, n) p^n (1 - p)^(2 n - n) $ Wegen \$\$\\frac{
             2n \\\\n
         } = \\frac{(2n+2)(2n+1)}{(n+1)^2} \\leq 4\$\$ und
 $vec(2, 1) = 2$ gilt $ vec(2 n, n) lt.eq 4^n $ Für $p eq.not 1 / 2$ ist
-$p (1 - p) < 1 / 4$ und daher (unter Nutzung geom. Reihe)
-$ sum_(n = 1)^oo P_(i i)^n = sum_(n = 1)^oo P_(i i)^(2 n) = sum_(n = 1)^oo vec(2 n, n) [p (1 - p)]^n lt.eq sum_(n = 1)^oo [4 p (1 - p)]^n < oo $
+$P(1 - p) < 1 / 4$ und daher (unter Nutzung geom. Reihe)
+$ sum_(n = 1)^oo P_(i i)^n = sum_(n = 1)^oo P_(i i)^(2 n) = sum_(n = 1)^oo vec(2 n, n) [P(1 - p)]^n lt.eq sum_(n = 1)^oo [4 P(1 - p)]^n < oo $
 $arrow.r.double$ Für $p eq.not 1 / 2$ ist die einfache Irrfahrt
 transient. \
 Andererseits gilt $vec(2 n, n) gt.eq frac(4^n, 2 sqrt(n))$ (Beweis durch
 vollst. Induktion hier ausgelassen). \
 Für $p = 1 / 2$ gilt daher
-$ sum_(n = 1)^oo P_(i i)^n = sum_(n = 1)^oo vec(2 n, n) [p (1 - p)]^n gt.eq sum_(n = 1)^oo frac(4^n, 2 sqrt(n)) (1 / 4)^n = 1 / 2 sum_(n = 1)^oo 1 / sqrt(n) = oo $
+$ sum_(n = 1)^oo P_(i i)^n = sum_(n = 1)^oo vec(2 n, n) [P(1 - p)]^n gt.eq sum_(n = 1)^oo frac(4^n, 2 sqrt(n)) (1 / 4)^n = 1 / 2 sum_(n = 1)^oo 1 / sqrt(n) = oo $
 $arrow.r.double$ für $p = 1 / 2$ ist die einfache Irrfahrt rekurrent.
 
 ]
@@ -1319,7 +1319,7 @@ $N (t^(\*)) = M$.Das wiederum impliziert
 $T_(M + 1) > t quad forall t > t^(\*)$. Das wiederum impliziert
 $ T_(M + 1) = overbrace(Y_1 + Y_2 + Y_M, = t^(\*) < oo) + Y_(M + 1) = oo $
 und damit $Y_(M + 1) = oo$. Das wäre ein Widerspruch, da dies
-$P (Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der
+$P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der
 Fall ist.
 
 #block[
@@ -1381,34 +1381,34 @@ $arrow.r.double$ Für $t arrow.r oo$ ist $N (t)$ asymptotisch
 normalverteilt mit Parametern
 $ t / mu upright(" und ") frac(t sigma^2, mu^3) upright(", ") $ das
 heißt
-$ lim_(t arrow.r oo) P (frac(N (t) - t / mu, sqrt(frac(t sigma^2, mu^3))) < y) = Phi (y) quad forall y in bb(R) $
+$ lim_(t arrow.r oo) P(frac(N (t) - t / mu, sqrt(frac(t sigma^2, mu^3))) < y) = Phi (y) quad forall y in bb(R) $
 
 ]
 #strong[Beweis Satz 20] \
-Der Beweis nutzt $P (N (t) < n) = P (T_n > t)$, den zentralen
+Der Beweis nutzt $P(N (t) < n) = P(T_n > t)$, den zentralen
 Grenzwertsatz und folgendes Lemma: Seien $X_1 , X_2 ,...$
 ZUfallsvariablen, sodass
-$l i m_(n arrow.r oo) P (X_n > x) = G (x) quad forall x in bb(R)$, wobei
+$l i m_(n arrow.r oo) P(X_n > x) = G (x) quad forall x in bb(R)$, wobei
 $G$ stetig ist. $arrow.r.double$ Für alle
 $x , x_1 , x_2 ,... in bb(R)$ mit $lim_(n arrow.r oo) X_n = x$ gilt
-$ lim_(n arrow.r oo) P (X_n > x_n) = G (x) $ Sei nun $y in bb(R)$. Für
+$ lim_(n arrow.r oo) P(X_n > x_n) = G (x) $ Sei nun $y in bb(R)$. Für
 alle $t > 0$ gilt
-$ P (frac(N (t) - t / mu, sqrt(frac(t sigma^2, mu^3))) < y) & = P (N (t) < t / mu + y sigma sqrt(t / mu^3))\
- & = P (N (t) < n_t) $ mit $n_t = ⌈ t / mu + y sigma sqrt(t / mu^3) ⌉$.
+$ P(frac(N (t) - t / mu, sqrt(frac(t sigma^2, mu^3))) < y) & = P(N (t) < t / mu + y sigma sqrt(t / mu^3))\
+ & = P(N (t) < n_t) $ mit $n_t = ⌈ t / mu + y sigma sqrt(t / mu^3) ⌉$.
 \
 Sei $t > 0$ so groß, dass $n_t gt.eq 1$. Dann gilt
-$ P (N (t) < n_t) & = P (T_(n_t) > t)\
- & = P (frac(T_(n_t) - n_t mu, sigma sqrt(n_t)) > frac(t - n_t mu, sigma sqrt(n_t))) $
+$ P(N (t) < n_t) & = P(T_(n_t) > t)\
+ & = P(frac(T_(n_t) - n_t mu, sigma sqrt(n_t)) > frac(t - n_t mu, sigma sqrt(n_t))) $
 Und mit $lim_(t arrow.r oo) n_t / t = 1 / mu$ ist
 $ lim_(t arrow.r oo) frac(t - n_t mu, sigma sqrt(n_t)) & = lim_(t arrow.r oo) frac(t - (t / mu + y sigma sqrt(t / mu^3)) mu, sigma sqrt(n_t))\
  & = lim_(t arrow.r oo) frac(- y sqrt(t / mu), sqrt(n_t))\
  & = - y $ Mit dem zentralen Grenzwertsatz und dem Lemma folgt also
-$ lim_(t arrow.r oo) P (N (t) < n_t) = 1 - Phi (- y) = Phi (y) $
+$ lim_(t arrow.r oo) P(N (t) < n_t) = 1 - Phi (- y) = Phi (y) $
 
 = Poisson-Prozesse
 <poisson-prozesse>
 Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
-$lambda > 0$ ($X tilde.op E X P (lambda)$), falls $X$ die Dichte
+$lambda > 0$ ($X tilde.op E X P(lambda)$), falls $X$ die Dichte
 $ f (x) = cases(delim: "{", lambda e^(- lambda x) & upright(", falls ") x > 0, 0 & upright(", sonst")) $
 hat. \
 Sei $lambda$ eine Konstante $> 0$. Seien $Y_1 , Y_2 ,...$ i.i.d.
@@ -1431,7 +1431,7 @@ $lambda > 0$. \
 $arrow.r.double { N (t) : t gt.eq 0 }$ hat unabhängige Zuwächse und für
 $0 lt.eq s < t$ gilt
 $ N (t) - N (s) tilde.op P O I (lambda (t - s)) upright(" ,") $
-$ P (N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) upright(" für ") n = 0 , 1 ,... $
+$ P(N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) upright(" für ") n = 0 , 1 ,... $
 
 ]
 #strong[Beweis Satz 21] \
@@ -1439,26 +1439,26 @@ Seien $Y_i$, $T_n$, $N (t)$ wie in der Definition eines
 Poisson-Prozesses. \
 Sei $k gt.eq 2$, $0 = t_0 < t_1 <... , t_k$,
 $n_1 ,... , n_k in bb(N)$ beliebig fest.
-$ arrow.r.double P (N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) = P ((T_1 ,... , T_(m + 1)) in B times (t_k , oo)) , $
+$ arrow.r.double P(N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) = P((T_1 ,... , T_(m + 1)) in B times (t_k , oo)) , $
 wobei $m = n_1 +... + n_k$ und
 $B = { (s_1 ,... , s_m) in bb(R)^m : 0 < s_1 <... < s_m , lr(|{ j : t_(i - 1) < s_j lt.eq t_i }|) = n_i , i = 1 ,... , k }$.
 $(T_1 ,... , T_(m + 1))$ hat die Dichte
 $ f (s_1 ,... , s_(m + 1)) = cases(delim: "{", lambda^(m + 1) e^(- lambda s_(m + 1)) & upright(", falls ") 0 < s_1 <... < s_(m + 1), 0 & upright(", sonst")) $
-$ P (N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) & = integral_(B times (t_k , oo)) f (s_1 ,... , s_(m + 1)) thin d (s_1 ,... , S_(m + 1))\
+$ P(N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) & = integral_(B times (t_k , oo)) f (s_1 ,... , s_(m + 1)) thin d (s_1 ,... , S_(m + 1))\
  & = lambda^(m + 1) (integral_B 1 thin d (s_1 ,... , s_m)) integral_(t k)^oo e^(- lambda s_(m + 1)) thin d s_(m + 1) $
 An dieser Stelle ist zu nutzen, dass
 $ integral_B 1 thin d (s_1 ,... , s_m) & = integral_(B_1) 1 thin d (x_1 ,... , x_(n_1)) integral_(B_2) 1 thin d (x_1 ,... , x_(n_2))... integral_(B_k) 1 thin d (x_1 ,... , x_(n_k))\
  & = product_(i = 1)^k frac((t_i - t_(i - 1))^(n_i), n_i !) $ und
 $ integral_(t_k)^oo e^(- lambda s_(m + 1)) thin d s_(m + 1) = e^(- lambda t_k) / lambda $
 Deswegen gilt
-$ P (N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) & = lambda^(1 + sum_(i = 1)^k n_i) (product_(i = 1)^k frac((t_i - t_(i - 1))^(n_i), n_i !)) e^(- lambda t_k) / lambda\
+$ P(N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) & = lambda^(1 + sum_(i = 1)^k n_i) (product_(i = 1)^k frac((t_i - t_(i - 1))^(n_i), n_i !)) e^(- lambda t_k) / lambda\
  & = product_(i = 1)^k frac((t_i - t_(i - 1))^(n_i), n_i !) e^(t_i - t_(i - 1)) $
 
 #block[
 Sei ${ N (t) : t gt.eq 0 }$ ein Poisson-Prozess mit Intensität
-$lambda > 0$. Berechne $P (N (1) = 1 . N (3) = 5)$.
-$ P (N (1) = 1 , N (3) = 5) & = P (N (1) = 1 , N (3) - N (1) = 4)\
- & = P (overbrace(N (1) = 1, tilde.op P O I (lambda))) P (overbrace(N (3) - N (1) = 4, tilde.op P O I (2 lambda)))\
+$lambda > 0$. Berechne $P(N (1) = 1 . N (3) = 5)$.
+$ P(N (1) = 1 , N (3) = 5) & = P(N (1) = 1 , N (3) - N (1) = 4)\
+ & = P(overbrace(N (1) = 1, tilde.op P O I (lambda))) P(overbrace(N (3) - N (1) = 4, tilde.op P O I (2 lambda)))\
  & = frac(e^(- lambda) lambda, 1 !) frac(e^(- 2 lambda) (2 lambda)^4, 4 !)\
  & = 2 / 3 e^(- 3 lambda) lambda^5 $
 
@@ -1468,9 +1468,9 @@ Ab 09:00 erfolgen Anrufe gemäß eines Poisson-Prozesses. Gegeben, dass
 bis 09:30 genau ein Anruf eingeht, wie groß ist die bedingte
 Wahrscheinlichkeit, dass er vor 09:20 eingeht, wenn $t$ in Stunden
 gemessen wird?
-$ P (T_1 < 1 / 3 \| N (1 / 2) = 1) & = frac(P (T_1 < 1 / 3 , N (1 / 2) = 1), P (N (1 / 2) = 1))\
- & = frac(P (T_1 < 1 / 3 , N (1 / 2) - N (1 / 3) = 0), P (N (1 / 2) = 1))\
- & = frac(P (T_1 < 1 / 3) P (N (1 / 2) - N (1 / 3) = 0), P (N (1 / 2) = 1))\
+$ P(T_1 < 1 / 3 \| N (1 / 2) = 1) & = frac(P(T_1 < 1 / 3 , N (1 / 2) = 1), P(N (1 / 2) = 1))\
+ & = frac(P(T_1 < 1 / 3 , N (1 / 2) - N (1 / 3) = 0), P(N (1 / 2) = 1))\
+ & = frac(P(T_1 < 1 / 3) P(N (1 / 2) - N (1 / 3) = 0), P(N (1 / 2) = 1))\
  & = frac(frac(e^(- lambda 1 / 3), 1 !) (lambda / 3)^1 frac(e^(- lambda (1 / 2 - 1 / 3)), 0 !) (lambda (1 / 2 - 1 / 3))^0, frac(e^(- lambda 1 / 2), 1 !) (lambda / 2)^1)\
  & = 2 / 3 $ Das entspricht genau $2 / 3$ der Zeit!
 
