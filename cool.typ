@@ -1,3 +1,14 @@
+#set text(
+  font: "New Computer Modern",
+)
+
+#set page(
+  paper: "a4",
+  margin: (x: 1.5cm, y: 3.5cm),
+  numbering: "1",
+)
+
+
 = Wahrscheinlichkeitstheorie
 <wahrscheinlichkeitstheorie>
 == Wahrscheinlichkeitsmaße
