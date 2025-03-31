@@ -48,12 +48,12 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 Für Ereginisse $A_1 ,... , A_n$ gilt
 $ P(⋃_(i = 1)^n A_i) lt.eq sum_(i = 1)^n P(A_i) . $ (a) Sind
 $A , A_1 , A_2 ,... ⊃ Omega$ eine Folge von nicht disjunkten
-Ereginissen mit $A_1 ⊂ A_2 ⊂... ⊂ A$ und
-$⋃_(n = 1)^oo A_n = A$, dann ist
+Ereginissen mit $A_1 ⊂ A_2 ⊂... ⊂ A$ //TODO Maybe the last A should be A_n
+und $⋃_(n = 1)^oo A_n = A$, dann ist
 $ lim_(n arrow.r oo) P(A_n) = P(A) = P(⋃_(n = 1)^oo A_n). $
 (b) Sind $A , A_1 , A_2 ,... ⊂ Omega$ eine Folge von nicht
 disjunkten Ereignissen mit
-\$A\_1 \\reflectbox{\$\\⊂\$} A\_2 \\reflectbox{\$\\⊂\$} ...\$
+$A_1 ⊃ A_2 ⊃ ... ⊃ A$ //TODO Maybe the last A should be A_n
 und $⋂_(n = 1)^oo A_n = A$, dann gilt
 $ lim_(n arrow.r oo) P(A_n) = P(A) = P(⋂_(n = 1)^oo A_n). $
 
@@ -71,9 +71,7 @@ Seien
 Mit der $sigma$-Additivität ist dann
 $ P(A) = P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P(B_k) = lim_(n arrow.r oo) P(⋃_(k = 1)^n B_k) = lim_(n arrow.r oo) P(A_n) $
 (b) lässt sich folgendermaßen zeigen: \
-Aus
-\$A\_1 \\reflectbox{\$\\⊂\$} A\_2 \\reflectbox{\$\\⊂\$} ... \\reflectbox{\$\\⊂\$} A\_n\$
-folgt $A_1^C ⊂ A_2^C ⊂... ⊂ A_n^C$. Sei nun
+Aus $A_1 ⊃ A_2 ⊃ ... ⊃ A_n$ folgt $A_1^C ⊂ A_2^C ⊂... ⊂ A_n^C$. Sei nun
 
 - $B_1 := A_1^C$
 
@@ -101,15 +99,8 @@ durch $F (x) = P(X in x)$ mit $x in bb(R)$ und
 $ P \( X in (a , b \]) = P(a < X lt.eq b) = F (b) - F (a) upright(" für alle ") a < b . $
 Zudem gilt
 $ P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon arrow.r 0) F (a - epsilon) . $
-Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $ epsilon$
-
-
-
-\$\\epsilon\_1 \\reflectbox{\$\\⊂\$} \\epsilon\_2 \\reflectbox{\$\\⊂\$} ... \\reflectbox{\$\\⊂\$} 0\$
-und $lim_(n arrow.r oo) epsilon_n = 0$, dann gilt für die Ereignisse
-$A_n := { a - epsilon_n < X < a }$
-\$A\_1 \\reflectbox{\$\\⊂\$} A\_2 \\reflectbox{\$\\⊂\$}  ...\$
-und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemß Lemma 1b)
+Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $epsilon_1 ⊃ epsilon_2 ⊃ ... ⊃ 0$ und $lim_(n arrow.r oo) epsilon_n = 0$, dann gilt für die Ereignisse
+$A_n := { a - epsilon_n < X < a }$ $A_1 ⊃ A_2 ⊃ ...$ und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemß Lemma 1b)
 $ P(Y = a) = P(⋂_(n = 1)^oo A_n) = P(A) = lim_(n arrow.r oo) P(A_n) = lim_(n arrow.r oo) P(a - epsilon_n < X lt.eq a) = F (a) - lim_(n arrow.r oo) F (a - epsilon_n) $
 Eine Zufallsvariable heißt diskret, falls ...
 
@@ -1288,7 +1279,7 @@ $ P(1 lt.eq sigma_j < oo \| X_0 = i) & = sum_(n = 1)^oo P(sigma_j = n \| X_0 = i
   $ P(N_j = oo \| X_0 = i) = f_(i j) = 1 quad forall quad i , j in S $
 
 #block[
-Wie betrachten wieder die einfachre Irrfahrt auf $bb(Z)$. \
+Wie betrachten wieder die einfache Irrfahrt auf $bb(Z)$. \
 Da eine Rückkehr zum Zustand $i$ immer nur in 2 Schritten möglich ist,
 ist die Periode $d_i = 2$. \
 $ P_(i i)^(2 n) = vec(2 n, n) p^n (1 - p)^(2 n - n) $ Wegen \$\$\\frac{
