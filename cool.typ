@@ -9,16 +9,16 @@ $P(A) in [0 , 1]$ zuordnet. Es gilt:
 
 - $P(Omega) = 1$ (Normierung)
 
-- $P(A_1 union A_2 union...) = P(A_1) + P(A_2) +...$ falls
-  $(A_i inter A_j) = nothing$ für alle $i eq.not j$ ($sigma$-Additivität)
+- $P(A_1 ∪ A_2 ∪...) = P(A_1) + P(A_2) +...$ falls
+  $(A_i ∩ A_j) = nothing$ für alle $i eq.not j$ ($sigma$-Additivität)
 
 Aus den Axiomen folgt
 
 - $P(A^C) = 1 - P(A)$
 
-- $P(A union B) = P(A) + P(B) - P(A inter B)$
+- $P(A ∪ B) = P(A) + P(B) - P(A ∩ B)$
 
-- $P(B without A) = P(B) - P(A inter B)$
+- $P(B without A) = P(B) - P(A ∩ B)$
 
 Ist $A$ eine echte Teilmenge von $B$ ($A subset B$) gilt
 
@@ -27,16 +27,16 @@ Ist $A$ eine echte Teilmenge von $B$ ($A subset B$) gilt
 - $P(A) subset.eq P(B)$
 
 Für Ereginisse $A_1 ,... , A_n$ gilt
-$ P(union.big_(i = 1)^n A_i) lt.eq sum_(i = 1)^n P(A_i) . $ (a) Sind
+$ P(⋃_(i = 1)^n A_i) lt.eq sum_(i = 1)^n P(A_i) . $ (a) Sind
 $A , A_1 , A_2 ,... supset Omega$ eine Folge von nicht disjunkten
 Ereginissen mit $A_1 subset A_2 subset... subset A$ und
-$union.big_(n = 1)^oo A_n = A$, dann ist
-$ lim_(n arrow.r oo) P(A_n) = P(A) = P(union.big_(n = 1)^oo A_n) $
+$⋃_(n = 1)^oo A_n = A$, dann ist
+$ lim_(n arrow.r oo) P(A_n) = P(A) = P(⋃_(n = 1)^oo A_n) $
 (b) Sind $A , A_1 , A_2 ,... subset Omega$ eine Folge von nicht
 disjunkten Ereignissen mit
 \$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$} ...\$
-und $inter.big_(n = 1)^oo A_n = A$, dann gilt
-$ lim_(n arrow.r oo) P(A_n) = P(A) = P(inter.big_(n = 1)^oo A_n) $ (a)
+und $⋂_(n = 1)^oo A_n = A$, dann gilt
+$ lim_(n arrow.r oo) P(A_n) = P(A) = P(⋂_(n = 1)^oo A_n) $ (a)
 lässt sich folgendermaßen zeigen: \
 Seien
 
@@ -49,7 +49,7 @@ Seien
 - $B_n := A_n without A_(n - 1)$
 
 Mit der $sigma$-Additivität ist dann
-$ P(A) = P(union.big_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P(B_k) = lim_(n arrow.r oo) P(union.big_(k = 1)^n B_k) = lim_(n arrow.r oo) P(A_n) $
+$ P(A) = P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P(B_k) = lim_(n arrow.r oo) P(⋃_(k = 1)^n B_k) = lim_(n arrow.r oo) P(A_n) $
 (b) lässt sich folgendermaßen zeigen: \
 Aus
 \$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$} ... \\reflectbox{\$\\subset\$} A\_n\$
@@ -64,9 +64,9 @@ folgt $A_1^C subset A_2^C subset... subset A_n^C$. Sei nun
 - $A_n^C without A_(n - 1)^C$
 
 Mit der $sigma$-Additivität ist dann
-$ P(union.big_(n = 1)^oo A_n^C) = P(A^C) = P(union.big_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P(B_k) lim_(n arrow.r oo) P(union.big_(k = 1)^n B_k) = lim_(n arrow.r oo) P(A_n^C) $
+$ P(⋃_(n = 1)^oo A_n^C) = P(A^C) = P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P(B_k) lim_(n arrow.r oo) P(⋃_(k = 1)^n B_k) = lim_(n arrow.r oo) P(A_n^C) $
 und folglich
-$ lim_(n arrow.r oo) P(A_n) = 1 - lim_(n arrow.r oo) P(A_n^C) = 1 - P(union.big n = 1^oo A_n^C) = 1 - P([inter.big_(n = 1)^oo A_n]^C) = P(inter.big_(n = 1)^oo A_n) = P(A) $
+$ lim_(n arrow.r oo) P(A_n) = 1 - lim_(n arrow.r oo) P(A_n^C) = 1 - P(⋃ n = 1^oo A_n^C) = 1 - P([⋂_(n = 1)^oo A_n]^C) = P(⋂_(n = 1)^oo A_n) = P(A) $
 
 == Zufallsvariablen
 <zufallsvariablen>
@@ -86,8 +86,8 @@ Ist ${ epsilon.alt_n }_(n = 1)^oo$ eine fallen Folge mit
 und $lim_(n arrow.r oo) epsilon.alt_n = 0$, dann gilt für die Ereignisse
 $A_n := { a - epsilon.alt_n < X < a }$
 \$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$}  ...\$
-und $inter.big_(n = 1)^oo A_n = { X = a } = A$ gemß Lemma 1b)
-$ P(Y = a) = P(inter.big_(n = 1)^oo A_n) = P(A) = lim_(n arrow.r oo) P(A_n) = lim_(n arrow.r oo) P(a - epsilon.alt_n < X lt.eq a) = F (a) - lim_(n arrow.r oo) F (a - epsilon.alt_n) $
+und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemß Lemma 1b)
+$ P(Y = a) = P(⋂_(n = 1)^oo A_n) = P(A) = lim_(n arrow.r oo) P(A_n) = lim_(n arrow.r oo) P(a - epsilon.alt_n < X lt.eq a) = F (a) - lim_(n arrow.r oo) F (a - epsilon.alt_n) $
 Eine Zufallsvariable heißt diskret, falls ...
 
 - ... sie (un)endlich viele abzählbare Werte hat.
@@ -163,7 +163,7 @@ Es gilt
 <unabhängigkeit>
 Ereignisse $A_1 , A_2 ,...$ heißen unabhängig, falls für jede
 endliche Auswahl von verschiedenen Indizes $i_1 ,... , i_n$ gilt
-$ P(A_(i_1) inter... inter A_(i_n)) = P(A_(i_1)... P(A_(i_n))) $
+$ P(A_(i_1) ∩... ∩ A_(i_n)) = P(A_(i_1)... P(A_(i_n))) $
 Sind $A_1 , A_2 ,...$ unabhängige Ereignisse und ist für jedes i
 $B_i = A_i$ oder $B_i = A_i^C$, dann sind auch $B_1 , B_2 ,...$
 unabhängig. \
@@ -205,24 +205,24 @@ $X_1 ,... , X_n$.
 == Bedingte Wahrscheinlichkeiten und Erwartungswerte
 <bedingte-wahrscheinlichkeiten-und-erwartungswerte>
 Für $A , B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit
-von A gegeben B $ P(A \| B) = frac(P(A inter B), P(B)) $
+von A gegeben B $ P(A \| B) = frac(P(A ∩ B), P(B)) $
 
 - Bei festem $B in Omega$ mit $P(B) > 0$ ist $P(dot(\|) B)$ ein
   Wahrscheinlichkeitsmaß: $P(Omega \| B) = 1$ und für diesjungte
   Ereignisse $A_1 , A_2 ,...$ ist
-  $P(A_1 union A_2 union... \| B) = sum_i P(A_i \| B)$
+  $P(A_1 ∪ A_2 ∪... \| B) = sum_i P(A_i \| B)$
 
 - Sind A und B unabhängig, dann ist $P(A \| B) = P(A)$ (falls
   $P(B) > 0$)
 
 - Bilden $A_1 , A_2 ,...$ eine Zerlegung von $Omega$, also
-  $A_i inter A_j = nothing$ für alle $i eq.not j$ und
-  $union.big_i A_i = Omega$, dann gilt ür jedes $A in Omega$
-  $ P(A) = sum_i P(A inter A_i) = sum_(i : P(A_i) > 0) P(A \| A_i) P(A_i) upright(" (Satz der totalen Warcheinlichkeit) ") $
+  $A_i ∩ A_j = nothing$ für alle $i eq.not j$ und
+  $⋃_i A_i = Omega$, dann gilt ür jedes $A in Omega$
+  $ P(A) = sum_i P(A ∩ A_i) = sum_(i : P(A_i) > 0) P(A \| A_i) P(A_i) upright(" (Satz der totalen Warcheinlichkeit) ") $
 
 - Für beliebige Ereignisse $A_1 ,... A_n$ gilt
-  $ P(A_1 inter A_2 inter...) = P(A_1) P(A_2 \| A_1) P(A_3 \| A_1 inter A_2)... P(A_n \| A_1 inter... inter A_(n - 1)) , $falls
-  $ P(A_1 inter... inter A_(n - 1)) > 0 upright(" (Multiplikationssatz für bedingte Wahrscheinlichkeiten) ") $
+  $ P(A_1 ∩ A_2 ∩...) = P(A_1) P(A_2 \| A_1) P(A_3 \| A_1 ∩ A_2)... P(A_n \| A_1 ∩... ∩ A_(n - 1)) , $falls
+  $ P(A_1 ∩... ∩ A_(n - 1)) > 0 upright(" (Multiplikationssatz für bedingte Wahrscheinlichkeiten) ") $
 
 Für dieskrete Zufallsvariablen $X$ und $Y$ ist die bedingte
 Wahrscheinlichkeitsfunktion $f_(X \| Y) (x \| y)$ ($X$, gegeben $Y = y$)
@@ -602,7 +602,7 @@ ist die Eintrittszeit in $A$, also der zufällige Zeitpunkt des ersten
 Besuchs der Menge $A$, falls es einen gibt. \
 Ziel: Berechne für jeden Anfangszustand $i$ die Wahrscheinlichkeit, dass
 $A$ in endlicher Zeit erreicht wird.
-$ P(T < oo \| X_0 = i) = P(union.big_(n = 0)^oo { X_n in A } \| X_0 = i) = p_i (T < oo) $
+$ P(T < oo \| X_0 = i) = P(⋃_(n = 0)^oo { X_n in A } \| X_0 = i) = p_i (T < oo) $
 Ein Zustand $z in S$ heißt absorbierend, falls $p_(z z) = 1$. In dem
 Spezialfall, dass $A$ nur aus absorbierenden Zuständen besteht, heißt
 $p_i (T < oo)$ Absorbtionswahrscheinlichkeit bei Start in $i in S$ und
@@ -627,10 +627,10 @@ passiert ist. $ h_i & = P(T < oo \| X_0 = i)\
  & = sum_(j in S) overbrace(P(X_1 = j \| X_0 = i), p_(i j)) P(T < oo \| X_1 = j , X_0 = i)\
  $ Für $j in A$ ist $ P(T < oo \| X_1 = j , X_0 = i) = 1 , $ und für
 $j in S without A$
-$ P(T < oo \| X_1 = j , X_0 = i) = & P(union.big_(n = 2)^oo { X_n in A } \| X_1 = j , X_0 = i)\
-= & lim_(N arrow.r oo) P(union.big_(n = 2)^N { X_n in A } \| X_1 = j , X_0 = i)\
-= & lim_(N arrow.r oo) P(union.big_(n = 1)^(N - 1) { X_n in A } \| X_o = j)\
-= & P(union.big_(n = 1)^oo { X_n in A } \| X_0 = j)\
+$ P(T < oo \| X_1 = j , X_0 = i) = & P(⋃_(n = 2)^oo { X_n in A } \| X_1 = j , X_0 = i)\
+= & lim_(N arrow.r oo) P(⋃_(n = 2)^N { X_n in A } \| X_1 = j , X_0 = i)\
+= & lim_(N arrow.r oo) P(⋃_(n = 1)^(N - 1) { X_n in A } \| X_o = j)\
+= & P(⋃_(n = 1)^oo { X_n in A } \| X_0 = j)\
 = & P(T < oo \| X_0 = j)\
 = & h_j $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
 
@@ -786,13 +786,13 @@ $ h_i = 1 + (Theta - 1) frac(1 - Theta^i, 1 - Theta) = Theta^i = (frac(1 - p, p)
 
 ]
 Für die folgenden Schritte werden folgende Rechenregeln für
-$bb(R)^(‾) = bb(R) union { - oo , oo }$ benötigt:
+$bb(R)^(‾) = bb(R) ∪ { - oo , oo }$ benötigt:
 
 - $- oo < a < oo quad forall a in bb(R)$
 
-- $a + oo = oo + a = oo quad forall a in bb(R) union { oo }$
+- $a + oo = oo + a = oo quad forall a in bb(R) ∪ { oo }$
 
-- $a - oo = - oo + a = - oo quad forall a in bb(R) union { - oo }$
+- $a - oo = - oo + a = - oo quad forall a in bb(R) ∪ { - oo }$
 
 - $a times oo = oo times a = oo quad forall a in bb(R)^(‾)^(+)$
 
@@ -807,7 +807,7 @@ $bb(R)^(‾) = bb(R) union { - oo , oo }$ benötigt:
 
 - Nicht definiert sind: $oo - oo$ und $- oo + oo$.
 
-Ist $X$ eine Zufallsvariable mit Werten in $bb(N)_0 union { oo }$, dann
+Ist $X$ eine Zufallsvariable mit Werten in $bb(N)_0 ∪ { oo }$, dann
 ist $ E [X] & = sum_(n = 0)^oo n P(X = n)\
  & = sum_(n = 0)^oo P(X > n)\
  & = sum_(n = 1)^n P(X gt.eq n) $ Insbesondere ist also falls
