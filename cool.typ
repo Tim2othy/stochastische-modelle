@@ -39,21 +39,21 @@ Aus den Axiomen folgt
 
 - $P(B without A) = P(B) - P(A ∩ B)$
 
-Ist $A$ eine echte Teilmenge von $B$ ($A subset B$) gilt
+Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 
 - $P(B without A) = P(B) - P(A)$
 
-- $P(A) subset.eq P(B)$
+- $P(A) ⊂.eq P(B)$
 
 Für Ereginisse $A_1 ,... , A_n$ gilt
 $ P(⋃_(i = 1)^n A_i) lt.eq sum_(i = 1)^n P(A_i) . $ (a) Sind
-$A , A_1 , A_2 ,... supset Omega$ eine Folge von nicht disjunkten
-Ereginissen mit $A_1 subset A_2 subset... subset A$ und
+$A , A_1 , A_2 ,... ⊃ Omega$ eine Folge von nicht disjunkten
+Ereginissen mit $A_1 ⊂ A_2 ⊂... ⊂ A$ und
 $⋃_(n = 1)^oo A_n = A$, dann ist
 $ lim_(n arrow.r oo) P(A_n) = P(A) = P(⋃_(n = 1)^oo A_n). $
-(b) Sind $A , A_1 , A_2 ,... subset Omega$ eine Folge von nicht
+(b) Sind $A , A_1 , A_2 ,... ⊂ Omega$ eine Folge von nicht
 disjunkten Ereignissen mit
-\$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$} ...\$
+\$A\_1 \\reflectbox{\$\\⊂\$} A\_2 \\reflectbox{\$\\⊂\$} ...\$
 und $⋂_(n = 1)^oo A_n = A$, dann gilt
 $ lim_(n arrow.r oo) P(A_n) = P(A) = P(⋂_(n = 1)^oo A_n). $
 
@@ -72,8 +72,8 @@ Mit der $sigma$-Additivität ist dann
 $ P(A) = P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n arrow.r oo) sum_(i = 1)^n P(B_k) = lim_(n arrow.r oo) P(⋃_(k = 1)^n B_k) = lim_(n arrow.r oo) P(A_n) $
 (b) lässt sich folgendermaßen zeigen: \
 Aus
-\$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$} ... \\reflectbox{\$\\subset\$} A\_n\$
-folgt $A_1^C subset A_2^C subset... subset A_n^C$. Sei nun
+\$A\_1 \\reflectbox{\$\\⊂\$} A\_2 \\reflectbox{\$\\⊂\$} ... \\reflectbox{\$\\⊂\$} A\_n\$
+folgt $A_1^C ⊂ A_2^C ⊂... ⊂ A_n^C$. Sei nun
 
 - $B_1 := A_1^C$
 
@@ -91,7 +91,7 @@ $ lim_(n arrow.r oo) P(A_n) = 1 - lim_(n arrow.r oo) P(A_n^C) = 1 - P(⋃ n = 1^
 == Zufallsvariablen
 <zufallsvariablen>
 Eine Zufallsvariable ist eine Abbildung $X : Omega arrow.r bb(R)$. Für
-$A subset bb(R)$ gilt
+$A ⊂ bb(R)$ gilt
 $ { X in A } = { omega in Omega : X (omega) in A } $ und
 $ P(X in A) = P({ omega in Omega : X (omega) in A }) . $ Für
 $a in bb(R)$ ist $ { X = a } = { omega in Omega : X (omega) = a } $ und
@@ -105,10 +105,10 @@ Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $ epsilon$
 
 
 
-\$\\epsilon\_1 \\reflectbox{\$\\subset\$} \\epsilon\_2 \\reflectbox{\$\\subset\$} ... \\reflectbox{\$\\subset\$} 0\$
+\$\\epsilon\_1 \\reflectbox{\$\\⊂\$} \\epsilon\_2 \\reflectbox{\$\\⊂\$} ... \\reflectbox{\$\\⊂\$} 0\$
 und $lim_(n arrow.r oo) epsilon_n = 0$, dann gilt für die Ereignisse
 $A_n := { a - epsilon_n < X < a }$
-\$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$}  ...\$
+\$A\_1 \\reflectbox{\$\\⊂\$} A\_2 \\reflectbox{\$\\⊂\$}  ...\$
 und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemß Lemma 1b)
 $ P(Y = a) = P(⋂_(n = 1)^oo A_n) = P(A) = lim_(n arrow.r oo) P(A_n) = lim_(n arrow.r oo) P(a - epsilon_n < X lt.eq a) = F (a) - lim_(n arrow.r oo) F (a - epsilon_n) $
 Eine Zufallsvariable heißt diskret, falls ...
@@ -501,7 +501,7 @@ Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft
 und Vergangenheit erweitern: \
 
 #block[
-Für alle $n , m gt.eq 1$, $Z subset S^m$, $V subset S^n$, $i in S$ mit
+Für alle $n , m gt.eq 1$, $Z ⊂ S^m$, $V ⊂ S^n$, $i in S$ mit
 $P((X_0 ,... , X_(n - 1)) in V , X_n = i) > 0$ gilt
 $ P((X_(n + 1) ,... , X_(n + m)) in Z \| (X_0 ,... , X_(n - 1)) in V , X_n = i) = sum_(j_1 ,... , j_m in Z) p_(i j_1) p_(j_1 j_2)... p_(j_(m - 1) j_m) $
 In Worten: Die Wahrscheinlichkeit, dass
@@ -538,7 +538,7 @@ $  & E [f (X_(n + 1 ,... , X_(n + m))) \| (X_0 ,... , X_(n - 1)) in V , X_n = i]
  & = E_i [f (X_1 ,... , X_m)] $ Beide Größen hängen vom gegenwärtigen
 Zustand $i$ ab und weder von $V$ noch von $n$. \
 Die Aussagen lassen sich mit einem unendlichen Zeithorizont erweitern: \
-Für die Menge $Z subset S^oo$ und $f : S^oo arrow.r bb(R)$ gilt
+Für die Menge $Z ⊂ S^oo$ und $f : S^oo arrow.r bb(R)$ gilt
 $ P((X_(n + 1) , X_(n + 2) ,...) in Z \| (X_0 ,... , X_(n - 1) in V) , X_n = i) = P_i ((X_1 ,...) in Z) $
 und
 $ E [f (X_(n + 1) , X_(n + 2) ,...) \| (X_0 ,... , X_(n - 1) in V , X_n = i)] = E_i [f (X_(n + 1) , X_(n + 2) ,...)] $
@@ -619,7 +619,7 @@ $ p^((4)) = p^((0)) Pi^((4)) = (P(X_4 = 1) , P(X_4 = 2) , P(X_4 = 3)) = (16 / 81
 <absorbtionswahrscheinlichkeiten-und--zeiten>
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum S und
 Übergangsmatrix $(P_(i j))$. \
-Sei $A subset S$, $A eq.not nothing$. Setze
+Sei $A ⊂ S$, $A eq.not nothing$. Setze
 $T_i = inf { n in bb(N)_0 : X_n in A }$, wobei $inf nothing = oo$. $T$
 ist die Eintrittszeit in $A$, also der zufällige Zeitpunkt des ersten
 Besuchs der Menge $A$, falls es einen gibt. \
@@ -634,7 +634,7 @@ Folgender Satz gilt für beliebige $A$: \
 
 #block[
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und
-Übergangsmatrix $(P_(i j))$. Sei $A subset S$, $A eq.not nothing$ und
+Übergangsmatrix $(P_(i j))$. Sei $A ⊂ S$, $A eq.not nothing$ und
 $ T_i = inf { n in bb(N)_0 : X_n in A } $
 $ h_i = P(T < oo \| X_0 = i) $
 $ arrow.r.double h_i = 1 upright(" für alle ") i in A upright(" und ") h_i = sum_(j in S) p_(i j) h_j upright(" für alle ") i in S without A $
@@ -759,7 +759,7 @@ Hinweis: Hier gibt es keine zweite Randbedingung, wie in Bsp. 9!
 ]
 #block[
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und
-Übergangsmatrix $(P_(i j))$. Sei zudem $A subset S$ mit
+Übergangsmatrix $(P_(i j))$. Sei zudem $A ⊂ S$ mit
 $A eq.not nothing$. Seo $T_i = i n f { n in N : X_n in A }$ und
 $h_i = P(T_i < oo \| X_0 = i)$. Dann ist $(h_i)_(i in S)$ die
 #strong[komponentenweise kleinste nicht-negative Lösung] des
@@ -1084,7 +1084,7 @@ $P_11^n > 0$ für alle $n in bb(N)$, aber für $n gt.eq 3 = n_0 (1)$.
 ]
 #strong[Beweis Satz 16] \
 Zunächst ist für den Beweis folgendes Lemma notwendig: \
-Ist $N subset bb(N)$, $N eq.not nothing$ abgeschlossen unter Addition,
+Ist $N ⊂ bb(N)$, $N eq.not nothing$ abgeschlossen unter Addition,
 d.h. $n + m in N quad forall quad n , m in N$ und ist $g g T (N) = 1$,
 dann existiert $n_0 in bb(N)$, sodass $n in N quad forall n gt.eq n_0$.
 \
