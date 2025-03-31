@@ -1,5 +1,6 @@
 #set text(
   font: "New Computer Modern",
+  lang: "DE"
 )
 
 #set page(
@@ -7,7 +8,14 @@
   margin: (x: 1.5cm, y: 3.5cm),
   numbering: "1",
 )
+#show outline.entry.where(
+  level: 1
+): set block(above: 1.2em)
 
+#set heading(numbering: "1.1")
+
+#outline()
+#pagebreak()
 
 = Wahrscheinlichkeitstheorie
 <wahrscheinlichkeitstheorie>
