@@ -50,13 +50,14 @@ $ P(⋃_(i = 1)^n A_i) lt.eq sum_(i = 1)^n P(A_i) . $ (a) Sind
 $A , A_1 , A_2 ,... supset Omega$ eine Folge von nicht disjunkten
 Ereginissen mit $A_1 subset A_2 subset... subset A$ und
 $⋃_(n = 1)^oo A_n = A$, dann ist
-$ lim_(n arrow.r oo) P(A_n) = P(A) = P(⋃_(n = 1)^oo A_n) $
+$ lim_(n arrow.r oo) P(A_n) = P(A) = P(⋃_(n = 1)^oo A_n). $
 (b) Sind $A , A_1 , A_2 ,... subset Omega$ eine Folge von nicht
 disjunkten Ereignissen mit
 \$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$} ...\$
 und $⋂_(n = 1)^oo A_n = A$, dann gilt
-$ lim_(n arrow.r oo) P(A_n) = P(A) = P(⋂_(n = 1)^oo A_n) $ (a)
-lässt sich folgendermaßen zeigen: \
+$ lim_(n arrow.r oo) P(A_n) = P(A) = P(⋂_(n = 1)^oo A_n). $
+
+(a) lässt sich folgendermaßen zeigen: \
 Seien
 
 - $B_1 := A_1$
@@ -99,14 +100,17 @@ Verteilungsfunktion $F = F_X$ der Zufallsvariablen $X$ ist definiert
 durch $F (x) = P(X in x)$ mit $x in bb(R)$ und
 $ P \( X in (a , b \]) = P(a < X lt.eq b) = F (b) - F (a) upright(" für alle ") a < b . $
 Zudem gilt
-$ P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon.alt arrow.r 0) F (a - epsilon.alt) . $
-Ist ${ epsilon.alt_n }_(n = 1)^oo$ eine fallen Folge mit
+$ P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon arrow.r 0) F (a - epsilon) . $
+Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $ epsilon$
+
+
+
 \$\\epsilon\_1 \\reflectbox{\$\\subset\$} \\epsilon\_2 \\reflectbox{\$\\subset\$} ... \\reflectbox{\$\\subset\$} 0\$
-und $lim_(n arrow.r oo) epsilon.alt_n = 0$, dann gilt für die Ereignisse
-$A_n := { a - epsilon.alt_n < X < a }$
+und $lim_(n arrow.r oo) epsilon_n = 0$, dann gilt für die Ereignisse
+$A_n := { a - epsilon_n < X < a }$
 \$A\_1 \\reflectbox{\$\\subset\$} A\_2 \\reflectbox{\$\\subset\$}  ...\$
 und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemß Lemma 1b)
-$ P(Y = a) = P(⋂_(n = 1)^oo A_n) = P(A) = lim_(n arrow.r oo) P(A_n) = lim_(n arrow.r oo) P(a - epsilon.alt_n < X lt.eq a) = F (a) - lim_(n arrow.r oo) F (a - epsilon.alt_n) $
+$ P(Y = a) = P(⋂_(n = 1)^oo A_n) = P(A) = lim_(n arrow.r oo) P(A_n) = lim_(n arrow.r oo) P(a - epsilon_n < X lt.eq a) = F (a) - lim_(n arrow.r oo) F (a - epsilon_n) $
 Eine Zufallsvariable heißt diskret, falls ...
 
 - ... sie (un)endlich viele abzählbare Werte hat.
@@ -970,18 +974,18 @@ und daher $mat(delim: "(", p_1, p_2) Pi^n = mat(delim: "(", p_1, p_2)$.
 Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette
 ${ X_n : n in bb(N)_0 }$ mit stationäre Verteilung
 $pi = mat(delim: "(", pi_1,..., pi_S)$. \
-$exists quad 0 < epsilon.alt < 1$, sodass
-$ p_(i j) & gt.eq epsilon.alt pi_j quad forall quad i , j = 1 ,... , S\
-arrow.r.double sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & lt.eq 2 (1 - epsilon.alt)^n $
+$exists quad 0 < epsilon < 1$, sodass
+$ p_(i j) & gt.eq epsilon pi_j quad forall quad i , j = 1 ,... , S\
+arrow.r.double sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & lt.eq 2 (1 - epsilon)^n $
 
 ]
 Aus dem Satz folgt also, dass eine Markovkette für steigende $n$
 exponentiell zur stationären Verteilung konvergiert. \
 #strong[Beweis Satz 14] \
 Setze $M = vec(pi, dots.v, p i) in bb(R)^(S times S)$ und
-$Q : = frac(1, 1 - epsilon.alt) (pi - epsilon.alt M)$. $M$ und $Q$ sind
+$Q : = frac(1, 1 - epsilon) (pi - epsilon M)$. $M$ und $Q$ sind
 positive stochastische Matrizen und
-$ pi = (1 - epsilon.alt) Q + epsilon.alt M $ Mit
+$ pi = (1 - epsilon) Q + epsilon M $ Mit
 $e = vec(1, dots.v, 1) in bb(R)^S$ ist $M = e pi$ und
 $ M^2 & = e overbrace(pi e, 1) pi = M\
 Pi M & = overbrace(Pi e, e) pi = e pi = M\
@@ -990,33 +994,33 @@ ist. Daraus folgt also $Q M = M$ und $M Q = M$. \
 Das Produkt einer endlichen Folge von $Q$s und $M$s, die mindestens ein
 $M$ enthält, ist gleich $M$. \
 Für jeden $n in bb(N)$ gilt:
-$ pi^n & = [(1 - epsilon.alt) Q + epsilon.alt M]^n\
- & = (1 - epsilon.alt)^n Q^n + sum_(l = 0)^(n - 1) vec(n, l) (1 - epsilon.alt)^l epsilon.alt^(n - l) M\
- & = (1 - epsilon.alt)^n Q^n + (1 - (1 - epsilon.alt)^n) M\
-arrow.r.double pi^n - M & = (1 - epsilon.alt)^n (Q^n - M) quad forall quad n in bb(N)_0 $
+$ pi^n & = [(1 - epsilon) Q + epsilon M]^n\
+ & = (1 - epsilon)^n Q^n + sum_(l = 0)^(n - 1) vec(n, l) (1 - epsilon)^l epsilon^(n - l) M\
+ & = (1 - epsilon)^n Q^n + (1 - (1 - epsilon)^n) M\
+arrow.r.double pi^n - M & = (1 - epsilon)^n (Q^n - M) quad forall quad n in bb(N)_0 $
 Für jede Zeile $i = 1 ,... , S$ folgt damit (unter Verwendung der
 Dreiecksungleichung):
-$ sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & = (1 - epsilon.alt)^n sum_(j = 1)^S lr(|{ Q_(i j)^n } - pi_j|)\
- & lt.eq (1 - epsilon.alt)^n sum_(j = 1)^S ({ Q_(i j)^n } + pi_j) = 2 (1 - epsilon.alt)^n $
+$ sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & = (1 - epsilon)^n sum_(j = 1)^S lr(|{ Q_(i j)^n } - pi_j|)\
+ & lt.eq (1 - epsilon)^n sum_(j = 1)^S ({ Q_(i j)^n } + pi_j) = 2 (1 - epsilon)^n $
 
 #block[
 Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette mit
 Zustandsraum ${ 1 ,... , S }$ und stationärer Verteilung
 $pi = mat(delim: "(", pi_1,..., pi_S)$. \
-Es existiere $k in bb(N)$, $epsilon.alt in (0 , 1)$, sodass
-$ p_(i j)^k & gt.eq epsilon.alt pi_j quad forall quad i , j = 1 ,... , S\
-arrow.r.double sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) lt.eq 2 (1 - epsilon.alt)^(⌊ n / k ⌋) $
+Es existiere $k in bb(N)$, $epsilon in (0 , 1)$, sodass
+$ p_(i j)^k & gt.eq epsilon pi_j quad forall quad i , j = 1 ,... , S\
+arrow.r.double sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) lt.eq 2 (1 - epsilon)^(⌊ n / k ⌋) $
 
 ]
 #strong[Beweis Satz 15] \
 Wende hier Satz 14 auf $Pi^k$ an. \
 $pi$ ist auch eine stationäre Verteilung für $Pi^k$ und
 $ (Pi^k)^m = Pi^(k m) = (P_(i j)^(k m)) $ Damit liefer Satz 14:
-$ sum_(j = 1)^S lr(|P_(i j)^(k m) - pi_j|) lt.eq 2 (1 - epsilon.alt)^m quad forall quad i = 1 ,... , S upright(" und ") m = 1 , 2 , 3 ,... $
+$ sum_(j = 1)^S lr(|P_(i j)^(k m) - pi_j|) lt.eq 2 (1 - epsilon)^m quad forall quad i = 1 ,... , S upright(" und ") m = 1 , 2 , 3 ,... $
 Sei $n in bb(N)_0$, $m = ⌊ n / k ⌋$, $r = n - k m gt.eq 0$.
 $ arrow.r.double sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & = sum_(j = 1)^S lr(|sum_(l = 1)^S p_(i l)^r (p_(l j)^(k m) - pi_j)|)\
  & lt.eq sum_(l = 1)^S p_(i l)^r sum_(j = 1)^S lr(|p_(l j)^(k m) - pi_j|)\
- & lt.eq 2 (1 - epsilon.alt)^m = 2 (1 - epsilon.alt)^(⌊ n / k ⌋) $
+ & lt.eq 2 (1 - epsilon)^m = 2 (1 - epsilon)^(⌊ n / k ⌋) $
 
 Unter den Voraussatzungen von Satz 15 gilt: \
 $lim_(n arrow.r oo) P_(i j)^n$
@@ -1032,12 +1036,12 @@ $(P_(i j))$, dann
 $ sum_(j = 1)^S lr(|P(x_n = j) - pi_j|) & = sum_(j = 1)^S lr(|(sum_(i = 1)^S P(X_0) i) p_(i j)^n - pi_j|)\
  & = sum_(j = 1)^S lr(|sum_(i = 1)^S P(X_0 = i) (p_(i j)^n - pi_j)|)\
  & lt.eq sum_(i = 1)^S P(X_0 = i) sum_(j = 1)^S lr(|p_(i j)^n - pi_j|)\
- & lt.eq 2 (1 - epsilon.alt)^(⌊ n / k ⌋)\
+ & lt.eq 2 (1 - epsilon)^(⌊ n / k ⌋)\
 arrow.r.double lim_(n arrow.r oo) P(X_n = j) & = pi_j $
 
 Sind alle Einträge von $Pi^n$ positiv, dann ist die Voraussetzung
-$p_(i j^n) gt.eq epsilon.alt pi_j$ ($i , j = 1 ,... , S$) mit
-$epsilon.alt : = m i n_(i , j) quad p_(i j)^n$ erfüllt.
+$p_(i j^n) gt.eq epsilon pi_j$ ($i , j = 1 ,... , S$) mit
+$epsilon : = m i n_(i , j) quad p_(i j)^n$ erfüllt.
 
 #block[
 Sei nun $a = b = 1$, also $ Pi = mat(delim: "(", 0, 1; 1, 0) $ dann gilt
