@@ -96,7 +96,7 @@ $a in bb(R)$ ist $ { X = a } = { omega in Omega : X (omega) = a } $ und
 $ P(X = a) = P({ omega in Omega : X (omega) = a }) . $ Die
 Verteilungsfunktion $F = F_X$ der Zufallsvariablen $X$ ist definiert
 durch $F (x) = P(X in x)$ mit $x in bb(R)$ und
-$ P \( X in (a , b \]) = P(a < X lt.eq b) = F (b) - F (a) upright(" für alle ") a < b . $
+$ P \( X in (a , b \]) = P(a < X lt.eq b) = F (b) - F (a) text(" für alle ") a < b . $
 Zudem gilt
 $ P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon -> 0) F (a - epsilon) . $
 Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $epsilon_1 ⊃ epsilon_2 ⊃ ... ⊃ 0$ und $lim_(n -> oo) epsilon_n = 0$, dann gilt für die Ereignisse
@@ -111,12 +111,12 @@ Eine Zufallsvariable heißt diskret, falls ...
 - ... für $A in bb(R)$ $P(X in A) = sum_(X in A) f (x)$ gilt.
 
 Eine Zufallsvariable heißt stetig, falls es eine nicht negative Funktion $f$ gibt, sodass
-$ P(a lt.eq X lt.eq b) = integral_a^b f (x) thin d x upright(" für alle ") a < b $
+$ P(a lt.eq X lt.eq b) = integral_a^b f (x) thin d x text(" für alle ") a < b $
 $f$ heißt Dichte von $X$. Die Verteilungsfunktion ist dann
 $ F (x) = integral_(- oo)^x f (t) thin d t $ Die gemeinsame
 Verteilungsfunktion $F = F_(X_1 ,... , X_n)$ von $n$ Zufallsvariablen
 $X_1 ,... , X_n$ ist definiert durch
-$ F (x_1 ,... , x_n) = P(X_1 lt.eq x_1 ,... , X_n lt.eq x_n) upright(" für alle ") x_1 ,... , x_n in bb(R) $
+$ F (x_1 ,... , x_n) = P(X_1 lt.eq x_1 ,... , X_n lt.eq x_n) text(" für alle ") x_1 ,... , x_n in bb(R) $
 Für die Randverteilungsfunktion $F_(X_1) ,... , F_(X_n)$ gilt
 $ F_(X_i) (x_i) = lim_(x_j -> oo) F (x_1 ,... , x_n) upright(" für ") i eq.not j $
 Sund $X_1 ,... , X_n$ diskrete Zufallsvariabeln, so ist ihre
@@ -1424,7 +1424,7 @@ Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
 $lambda > 0$ ($X tilde.op E X P(lambda)$), falls $X$ die Dichte
 $ f (x) = cases(delim: "{", lambda e^(- lambda x) & upright("falls ") x > 0, 0 & upright("sonst")) $
 hat. \
-Sei $lambda$ eine Konstante $> 0$. Seien $Y_1 , Y_2 ,...$ i.i.d.
+Sei $lambda$ eine Konstante $ > 0$. Seien $Y_1 , Y_2 ,...$ i.i.d.
 exponentialverteilte Zufallsvariablen für alle $n = 1 , 2 ,...$. \
 Setze $  & T_0 := 0\
  & T_n := Y_1 +... + Y_n\
@@ -1443,7 +1443,7 @@ Sei ${ N (t) : t gt.eq 0 }$ ein Poisson-Prozess mit Intensität
 $lambda > 0$. \
 $=> { N (t) : t gt.eq 0 }$ hat unabhängige Zuwächse und für
 $0 lt.eq s < t$ gilt
-$ N (t) - N (s) tilde.op P O I (lambda (t - s)) upright(" ,") $
+$ N (t) - N (s) tilde.op P O I (lambda (t - s)), $
 $ P(N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) upright(" für ") n = 0 , 1 ,... $
 
 ]
