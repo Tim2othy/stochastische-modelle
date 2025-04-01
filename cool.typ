@@ -750,7 +750,7 @@ Hinweis: Hier gibt es keine zweite Randbedingung, wie in Bsp. 9!
 #block[
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und
 Übergangsmatrix $(P_(i j))$. Sei zudem $A ⊂ S$ mit
-$A eq.not nothing$. Seo $T_i = i n f { n in N : X_n in A }$ und
+$A eq.not nothing$. Seo $T_i = inf { n in N : X_n in A }$ und
 $h_i = P(T_i < oo \| X_0 = i)$. Dann ist $(h_i)_(i in S)$ die
 #strong[komponentenweise kleinste nicht-negative Lösung] des
 Gleichungssystems $  & x_i = 1 text(" für alle ") i in A\
@@ -829,7 +829,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
 #block[
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und
 Übergangsmatrix $(P_(i j))$. Sei $A in S$ und $A eq.not nothing$. Für
-$i in S$ sei $ T & := i n f { n in bb(N)_0 : X_n in A }\
+$i in S$ sei $ T & := inf { n in bb(N)_0 : X_n in A }\
 k_i & := E [T \| X_0 = i] $ $(k_i)_(i in S)$ ist die
 #strong[komponentenweise kleinst enichtnegative Lösung] des
 Gleichungssystems $(star)$
@@ -1180,7 +1180,7 @@ HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29
 
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum S. \
 Für jedes $j in S$ sei
-$ tau_j := i n f { n gt.eq 1 : X_N = j } quad (i n f nothing = oo) $ In
+$ tau_j := inf { n gt.eq 1 : X_N = j } quad (inf nothing = oo) $ In
 Worten: $tau_j$ ist der erste Zeitpunkt $n gt.eq 1$, zu dem die
 Markovkette $j$ besucht, falls es einen gibt. \
 Für $i , j in S$ sei $ f_(i j) = P(tau_j < oo \| X_0 = i) $ In Worten:
@@ -1218,8 +1218,8 @@ Anzahl der Zeitpunkte $gt.eq 1$ zu denen Zustand $j$ besucht wird. \
 
 ]
 #strong[Beweis Satz 18] \
-Setze $sigma_j = s u p { n gt.eq 1 : X_n = j }$, wobei
-$s u p nothing = oo$. Ist $sigma_j$ endlich, dann ist $sigma_j$ der
+Setze $sigma_j = sup { n gt.eq 1 : X_n = j }$, wobei
+$sup nothing = oo$. Ist $sigma_j$ endlich, dann ist $sigma_j$ der
 Zeitpunkt des letzten Aufenthalts in $j$. Für jedes $n in bb(N)$ gilt
 $ P(sigma_j = n \| X_0 = i) & = P(X_n = j , X_m eq.not j text(" für alle ") m > n \| X_0 = i)\
  & = P(X_M eq.not j text(" für alle ") m > n \| X_n = j , X_0 = i) P(X_n = j \| X_0 = i)\
