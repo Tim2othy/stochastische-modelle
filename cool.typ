@@ -207,7 +207,7 @@ Für unabhängige Zufallsvariablen $X_1 ,... , X_n$ gilt
   sind somit unabhängige Ereignisse für alle $B_1 ,... , B_k$.
 
 Für den Spezielfall diskreter Zufallsvariablen $X_1 ,... , X_n$ gilt
-$ X_1 ,... , X_n upright(" unabhängig ") arrow.l.r.double P(X_1 = x_1 ,... , X_n = x_n) = P(X_1 = x_1)... P(X_n = x_n) upright(" für alle") x_1 ,... , x_n in bb(R) $
+$ X_1 ,... , X_n upright(" unabhängig ") <=> P(X_1 = x_1 ,... , X_n = x_n) = P(X_1 = x_1)... P(X_n = x_n) upright(" für alle") x_1 ,... , x_n in bb(R) $
 Sind $X_1 ,... , X_n$ stetige Zufallsvariablen mit gemeinsamer Dichte
 f und
 $ f (x_1 ,... , x_n) = f_(X_1) (x_1)... f_((X_n)) (x_n) upright(" für alle ") x_1 ,... , x_n in bb(R) , $
@@ -363,7 +363,7 @@ $X_n$ springt zufällig von
 $X_(n - 1) = i_(n - 1) = i_(n - 2) + Y_(n - 1)$ zu
 $i_n = i_(n - 1) + Y_n$ auf den ganzen Zahlen $bb(Z)$. Damit gilt
 offensichtlich für jedes $n gt.eq 1$, dass
-$X_n = i_(n - 1) + Y_n arrow.l.r.double Y_n = i_n - i_(n - 1)$. \
+$X_n = i_(n - 1) + Y_n <=> Y_n = i_n - i_(n - 1)$. \
 Für alle $n gt.eq 0$ und alle $i_0 , dots.h , i_(n + 1) in bb(Z)$ mit
 $P(X_0 = i_0 , dots.h , X_n = i_n) > 0$ ist
 $  & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
@@ -667,14 +667,14 @@ jemals ruiniert zu sein beim Start in Periode $i$ eine Gewichtung der
 Ruinwahrscheinlichkeit nach einer Aufwärtsbewegung (also ab $i + 1$) und
 einer Abwäwärtsbewegung (also ab $i - 1$).
 $ h_i & = p h_(i + 1) + (1 - p) h_(i - 1) upright(" für ") i = 1 ,... , M - 1\
-arrow.l.r.double h_(i + 1) - h_i & = frac(1 - p, p) (h_i - h_(i - 1)) $
+<=> h_(i + 1) - h_i & = frac(1 - p, p) (h_i - h_(i - 1)) $
 Falls es sich um ein faires Spiel handelt, also $p = 1 / 2$, dann ist
 $h_(i + 1) - h_i = h_i - h_(i - 1)$ für $i = 1 ,... , M - 1$. Die
 Änderung in der Ruinwahrscheinlichkeit ist also konstant für jedes der
 $i$, man kann $h_i$ also als lineare Funktion betrachten:
 $ h_i = h_0 + a times i $ Da $h_0 = 1$ $ h_i = 1 + a times i $ und
 $h_M = 0$ folgt für das $a$ aus der Gleichung $ 0 & = 1 + a times M\
-arrow.l.r.double a & = - 1 / M $ und somit für die
+<=> a & = - 1 / M $ und somit für die
 Ruinwahrscheinlichkeit $h_i$: $ h_i = 1 - i / M $ Sei nun
 $p eq.not 1 / 2$ und setze $Theta = frac(1 - p, p)$. Durch rekursives
 Einsetzen erhält man
@@ -686,14 +686,14 @@ Zunächst bildet man die Summe über $i = 0 ,... , j - 1$ (über alle
 $j in S$) und nutzt die Eigenschaft der Teleskopsumme und der
 geometrischen Reihe aus:
 $ sum_(i = 0)^(j - 1) h_(i + 1) - h_i & = sum_(i = 0)^(j - 1) Theta^i (h_1 - 1)\
-arrow.l.r.double sum_(i = 0)^(j - 1) h_i - h_(i + 1) & = sum_(i = 0)^(j - 1) Theta^i (1 - h_1)\
-arrow.l.r.double h_0 - h_j & = sum_(i = 0)^(j - 1) Theta^i (1 - h_1)\
-arrow.l.r.double 1 - h_j & = (1 - h_1) sum_(i = 0)^(j - 1) Theta^i\
-arrow.l.r.double 1 - h_j & = (1 - h_1) frac(1 - Theta^j, 1 - Theta)\
-arrow.l.r.double h_j & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta) + 1 upright(" für ") j = 1 ,... , M $
+<=> sum_(i = 0)^(j - 1) h_i - h_(i + 1) & = sum_(i = 0)^(j - 1) Theta^i (1 - h_1)\
+<=> h_0 - h_j & = sum_(i = 0)^(j - 1) Theta^i (1 - h_1)\
+<=> 1 - h_j & = (1 - h_1) sum_(i = 0)^(j - 1) Theta^i\
+<=> 1 - h_j & = (1 - h_1) frac(1 - Theta^j, 1 - Theta)\
+<=> h_j & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta) + 1 upright(" für ") j = 1 ,... , M $
 Da diese Gleichung für alle $j$ gilt, gilt sie auch für $j = M$ und da
 $h_M = 0$ ist, ist $ 0 & = (h_1 - 1) frac(1 - Theta^M, 1 - Theta) + 1\
-arrow.l.r.double 1 - h_1 & = frac(1 - Theta, 1 - Theta^M) $ Damit ist
+<=> 1 - h_1 & = frac(1 - Theta, 1 - Theta^M) $ Damit ist
 $ 1 - h_j = frac(1 - Theta, 1 - Theta^M) times frac(1 - Theta^j, 1 - Theta) $
 und folglich
 $ => h_j = 1 - frac(1 - Theta^j, 1 - Theta^M) upright(" für ") j = 0 ,... , M $
@@ -784,8 +784,8 @@ Einsetzen, wobei $Q^k r = p_(i j_k)^k p_(j_k j)$ und $Q^(n + 1) x$ als
 strikt positiver Wert für die untere Schranke ausgelassen werden kann,
 folgendes:
 $ x_i & gt.eq p_(i j) + sum_(k = 1)^n sum_(j_1 ,... , j_k in A^c , j in A) p_(i j_1) p_(j_1 j_2)... p_(j_k j)\
-arrow.l.r.double x_i & gt.eq P_i (X_1 in A) + sum_(k = 1)^n P(X_1 in A^c ,... , X_k in A^c , X_(k + 1) in A)\
-arrow.l.r.double x_i & gt.eq P_i (T lt.eq n + 1)\
+<=> x_i & gt.eq P_i (X_1 in A) + sum_(k = 1)^n P(X_1 in A^c ,... , X_k in A^c , X_(k + 1) in A)\
+<=> x_i & gt.eq P_i (T lt.eq n + 1)\
 => x_i & gt.eq lim_(n -> oo) P_i (T lt.eq n + 1) = lim_(n -> oo) P_i (T lt.eq n) = h_i upright(", ") i in A^c $
 
 #block[
@@ -864,9 +864,9 @@ Die Behauptung ist klar für $A = S$. Sei also $A eq.not S$.
   ausgelassen werden kann,
 
   $ x_i & gt.eq 1 + sum_(j in A^c) p_(i j) + sum_(k = 2)^n sum_(j_1 ,... , j_k in A^c) p_(i j_1)... p_(j_(k - 1) j_k)\
-  arrow.l.r.double x_i & gt.eq P_i (T > 0) + P_i (X_1 in A^c) + sum_(k = 2)^n P - i (X_1 in A^c , X_2 in A^c ,... , X_k in A^c)\
-  arrow.l.r.double x_i & gt.eq P_i (T > 0) + P_i (T > 1) + sum_(k = 2)^n P_i (T > k)\
-  arrow.l.r.double x_i & gt.eq sum_(k = 0)^n P_i (T > k)\
+  <=> x_i & gt.eq P_i (T > 0) + P_i (X_1 in A^c) + sum_(k = 2)^n P - i (X_1 in A^c , X_2 in A^c ,... , X_k in A^c)\
+  <=> x_i & gt.eq P_i (T > 0) + P_i (T > 1) + sum_(k = 2)^n P_i (T > k)\
+  <=> x_i & gt.eq sum_(k = 0)^n P_i (T > k)\
   => x_i & gt.eq sum_(k = 0)^oo P_i (T > k) = E_i [T] = k_i $
 
 #block[
@@ -874,7 +874,7 @@ Nun ist die erwartete Arbsorbtionszeit $k_i = E_i [T]$ mit gesucht. \
 Offensichtlich ist $k_0 = 0$ und $k_M = 0$. Aus Satz 12 folgt hier
 $ (star.op) quad k_i = 1 + (1 - p) k_(i - 1) + p k_(i + 1) $ Sei
 zunächst $p = 1 / 2$. $ k_i & = 1 + k_(i - 1) / 2 + k_(i + 1) / 2\
-arrow.l.r.double k_(i + 1) - k_i & = k_i - k_(i - 1) - 2 $
+<=> k_(i + 1) - k_i & = k_i - k_(i - 1) - 2 $
 
 Für steigende i fällt das das Wachstun von $k_i$ um den Faktor 2.
 $ => k_(i + 1) - k_i = k_1 - k_0 - 2 i = k_1 - 2 i quad i = 0 ,... , M - 1 $
@@ -912,7 +912,7 @@ Die stationäre Verteilung der Markovkette $(pi_i)$ mit
 
 ist definiert durch $ pi_j = sum_(i in S) pi_i p_(i j) $ oder
 ausgedrückt in Matrix Schreibweise $  & pi = pi (P_(i j))\
-arrow.l.r.double & pi ((P_(i j)) - I) = 0 $
+<=> & pi ((P_(i j)) - I) = 0 $
 
 ]
 #strong[Bemerkung zu Satz 13] \
@@ -1252,7 +1252,7 @@ $ P(1 lt.eq sigma_j < oo \| X_0 = i) & = sum_(n = 1)^oo P(sigma_j = n \| X_0 = i
 
 - Wegen $E [N_j \| X_0 = j] = sum_(n = 1)^oo P_(j j)^n$ liefert der Satz
   ein einfacheres Rekurrenzkriterium
-  $ j upright(" ist rekurrent ") arrow.l.r.double sum_(n = 1)^oo P_(j j)^n = oo $
+  $ j upright(" ist rekurrent ") <=> sum_(n = 1)^oo P_(j j)^n = oo $
 
 - Im Allgemeinen kann eine Markovkette sowohl rekurrente als auch
   transiente Zustände haben. \
