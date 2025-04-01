@@ -657,7 +657,7 @@ Berechne die Ruinwahrscheinlichkeit. \
 Betrachte hier für die Markovkette ${ X_n : n in bb(N)_0 }$ mit
 Zustandsraum $S = { 0 , 1 , 2 ,... , M }$ und
 Übergangswahrscheinlichkeiten
-$ p_(i j) = cases(delim: "{", 1 & upright(", falls ") i = 0 upright(" und ") j = 0, p & upright(", falls ") i in { 1 ,... , M - 1 } upright(" und ") j = i + 1, 1 - p & upright(", falls ") i in { 1 ,... , M - 1 } upright(" und ") j = i - 1, 1 & upright(", falls ") i = M upright(" und ") j = M, 0 & upright(", sonst")) $
+$ p_(i j) = cases(delim: "{", 1 & upright("falls ") i = 0 upright(" und ") j = 0, p & upright("falls ") i in { 1 ,... , M - 1 } upright(" und ") j = i + 1, 1 - p & upright("falls ") i in { 1 ,... , M - 1 } upright(" und ") j = i - 1, 1 & upright("falls ") i = M upright(" und ") j = M, 0 & upright("sonst")) $
 Gesucht sind die Absorbtionswahrscheinlichkeiten
 $ h_i = P(T < oo \| X_0 = i) $ mit $i = 0 ,... , M$ und
 $T = inf { n in bb(N)_0 : X_n = 0 }$. \
@@ -704,7 +704,7 @@ $ => h_j = 1 - frac(1 - Theta^j, 1 - Theta^M) upright(" für ") j = 0 ,... , M $
 absorbierender Schranke] \
 Betrachte die Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandsraum
 $S = bb(N)_0$ und
-$ p_(i j) = cases(delim: "{", 1 & upright(", falls ") i = 0 upright(" und ") j = 0, p & upright(", falls ") i in bb(N)_0 upright(" und ") j = i + 1, 1 - p & upright(", falls ") i in bb(N)_0 upright(" und ") j = i - 1, 0 & upright(", sonst ")) $
+$ p_(i j) = cases(delim: "{", 1 & upright("falls ") i = 0 upright(" und ") j = 0, p & upright("falls ") i in bb(N)_0 upright(" und ") j = i + 1, 1 - p & upright("falls ") i in bb(N)_0 upright(" und ") j = i - 1, 0 & upright("sonst ")) $
 Berechne die Absorbtionswahrscheinlichkeiten. \
 $h_i = P(T < oo \| X_0 = i)$ mit $i in S$ und
 $T = inf { n in bb(N)_0 : X_n = 0 }$. \
@@ -1422,7 +1422,7 @@ $ lim_(t -> oo) P(N (t) < n_t) = 1 - Phi (- y) = Phi (y) $
 <poisson-prozesse>
 Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
 $lambda > 0$ ($X tilde.op E X P(lambda)$), falls $X$ die Dichte
-$ f (x) = cases(delim: "{", lambda e^(- lambda x) & upright(", falls ") x > 0, 0 & upright(", sonst")) $
+$ f (x) = cases(delim: "{", lambda e^(- lambda x) & upright("falls ") x > 0, 0 & upright("sonst")) $
 hat. \
 Sei $lambda$ eine Konstante $> 0$. Seien $Y_1 , Y_2 ,...$ i.i.d.
 exponentialverteilte Zufallsvariablen für alle $n = 1 , 2 ,...$. \
@@ -1456,7 +1456,7 @@ $ => P(N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) = P((T_1 ,... , T_(m + 1)
 wobei $m = n_1 +... + n_k$ und
 $B = { (s_1 ,... , s_m) in bb(R)^m : 0 < s_1 <... < s_m , lr(|{ j : t_(i - 1) < s_j lt.eq t_i }|) = n_i , i = 1 ,... , k }$.
 $(T_1 ,... , T_(m + 1))$ hat die Dichte
-$ f (s_1 ,... , s_(m + 1)) = cases(delim: "{", lambda^(m + 1) e^(- lambda s_(m + 1)) & upright(", falls ") 0 < s_1 <... < s_(m + 1), 0 & upright(", sonst")) $
+$ f (s_1 ,... , s_(m + 1)) = cases(delim: "{", lambda^(m + 1) e^(- lambda s_(m + 1)) & upright("falls ") 0 < s_1 <... < s_(m + 1), 0 & upright("sonst")) $
 $ P(N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) & = integral_(B times (t_k , oo)) f (s_1 ,... , s_(m + 1)) thin d (s_1 ,... , S_(m + 1))\
  & = lambda^(m + 1) (integral_B 1 thin d (s_1 ,... , s_m)) integral_(t k)^oo e^(- lambda s_(m + 1)) thin d s_(m + 1) $
 An dieser Stelle ist zu nutzen, dass
