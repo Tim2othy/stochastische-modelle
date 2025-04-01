@@ -18,9 +18,9 @@
 #pagebreak()
 
 = Wahrscheinlichkeitstheorie
-<wahrscheinlichkeitstheorie>
+
 == Wahrscheinlichkeitsmaße
-<wahrscheinlichkeitsmaße>
+
 Bezeichne $Omega$ die Menge aller möglichen Ergebnisse eines
 Zufallsexperiments und $A in Omega$ ein Ereignis. Ein
 Wahrscheinlichkeitsmaß ist eine Abbildung, die jedem $A$ eine Zahl
@@ -87,7 +87,7 @@ und folglich
 $ lim_(n -> oo) P(A_n) = 1 - lim_(n -> oo) P(A_n^C) = 1 - P(⋃ n = 1^oo A_n^C) = 1 - P([⋂_(n = 1)^oo A_n]^C) = P(⋂_(n = 1)^oo A_n) = P(A) $
 
 == Zufallsvariablen
-<zufallsvariablen>
+
 Eine Zufallsvariable ist eine Abbildung $X : Omega -> bb(R)$. Für
 $A ⊂ bb(R)$ gilt
 $ { X in A } = { omega in Omega : X (omega) in A } $ und
@@ -136,7 +136,7 @@ $ P(X < Y) = integral_(- oo)^oo integral_x^oo f (x , y) thin d y thin d x $
 und $ f_Y (y) = integral_(- oo)^oo f (x , y) d x . $
 
 == Erwartungswert und Varianz
-<erwartungswert-und-varianz>
+
 Ist $X$ eine diskrete Zufallsvariable und $g : bb(R) -> bb(R)$, so
 ist $ E [g (X)] = sum_X g (x) P(X = x) $ wobei die Summe über alle $X$
 mit $P(X = x) > 0$ läuft. \
@@ -173,7 +173,7 @@ Es gilt
 + $C o v [sum_(i = 1)^n X_i , sum_(j = 1)^m Y_j] = sum_(i = 1)^n sum_(j = 1)^m C o v [X_i , Y_j]$
 
 == Unabhängigkeit
-<unabhängigkeit>
+
 Ereignisse $A_1 , A_2 ,...$ heißen unabhängig, falls für jede
 endliche Auswahl von verschiedenen Indizes $i_1 ,... , i_n$ gilt
 $ P(A_(i_1) ∩... ∩ A_(i_n)) = P(A_(i_1)... P(A_(i_n))) $
@@ -216,7 +216,7 @@ $ f_(X_1) (x_1)... f_(X_n) (x_n) $ eine gemeinsame Dichte von
 $X_1 ,... , X_n$.
 
 == Bedingte Wahrscheinlichkeiten und Erwartungswerte
-<bedingte-wahrscheinlichkeiten-und-erwartungswerte>
+
 Für $A , B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit
 von A gegeben B $ P(A \| B) = frac(P(A ∩ B), P(B)) $
 
@@ -296,9 +296,9 @@ Fall, wie zum Beispiel
 $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) . $
 
 = Markovketten
-<markovketten>
+
 == Markov-Eigenschaft
-<markov-eigenschaft>
+
 Ein stochastischer Prozess ist eine Familie von Zufallsvariablen $X_t$,
 wobei der Parameter $t$ eine Indexmenge $T$ durchläuft. Oft ist
 $T in \[ o , oo \)$ oder $T = { 0 , 1 , 2 ,... }$ und $t in T$ wird
@@ -442,7 +442,7 @@ Bemerkung zum Beispiel: In Beispiel 3 war $f (x , y) = x + y$ und in
 Beispiel 4 war $f (x , y) = m a x (x , y)$.
 
 == Mehrschritt-Übergangswahrscheinlichkeiten
-<mehrschritt-übergangswahrscheinlichkeiten>
+
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum S,
 Übergangsmatrix $(P_(i j))_(i , j in S)$ und Anfangsverteilung
 $p_i = P(X_0 = i)$ ($i in S$). Bestimme die gemeinsame Verteilung von
@@ -606,7 +606,7 @@ $ p^((4)) = p^((0)) Pi^((4)) = (P(X_4 = 1) , P(X_4 = 2) , P(X_4 = 3)) = (16 / 81
 
 ]
 == Absorbtionswahrscheinlichkeiten und -zeiten
-<absorbtionswahrscheinlichkeiten-und--zeiten>
+
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum S und
 Übergangsmatrix $(P_(i j))$. \
 Sei $A ⊂ S$, $A eq.not nothing$. Setze
@@ -900,7 +900,7 @@ folgt $ 0 & = alpha + beta\
 
 ]
 == Konvergenzsätze
-<konvergenzsätze>
+
 #block[
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandraum $S$ und
 Übergangsmatrix $(P_(i j))$. \
@@ -1177,7 +1177,7 @@ HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29
 
 ]
 == Rekurrenz und Transienz
-<rekurrenz-und-transienz>
+
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum S. \
 Für jedes $j in S$ sei
 $ tau_j := i n f { n gt.eq 1 : X_N = j } quad (i n f nothing = oo) $ In
@@ -1307,7 +1307,7 @@ der Anfangsverteilung) hingegen basiert (s. Satz 17) darauf, dass
 mindestens ein Zustand aperiodisch ist.
 
 = Erneuerungsprozesse
-<erneuerungsprozesse>
+
 Eine Erneuerung ist ein Ereignis, das zu zufälligen Zeitpunkten
 auftritt. Ein Erneuerungsprozess ist ein stochastischer Prozess, der die
 Anzahl der Erneuerungen bis zu einem Zeitpuntk $t$ beschreibt. Seien
@@ -1419,7 +1419,7 @@ $ lim_(t -> oo) frac(t - n_t mu, sigma sqrt(n_t)) & = lim_(t -> oo) frac(t - (t 
 $ lim_(t -> oo) P(N (t) < n_t) = 1 - Phi (- y) = Phi (y) $
 
 = Poisson-Prozesse
-<poisson-prozesse>
+
 Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
 $lambda > 0$ ($X tilde.op E X P(lambda)$), falls $X$ die Dichte
 $ f (x) = cases(delim: "{", lambda e^(- lambda x) & text("falls ") x > 0, 0 & text("sonst")) $
