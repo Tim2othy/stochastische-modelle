@@ -1281,11 +1281,12 @@ $ P(1 <= sigma_j < oo \| X_0 = i) & = sum_(n = 1)^oo P(sigma_j = n \| X_0 = i)\
 Wie betrachten wieder die einfache Irrfahrt auf $bb(Z)$. \
 Da eine Rückkehr zum Zustand $i$ immer nur in 2 Schritten möglich ist,
 ist die Periode $d_i = 2$. \
-$ P_(i i)^(2 n) = vec(2 n, n) p^n (1 - p)^(2 n - n) $ Wegen \$\$\\frac{
-            \\begin{pmatrix} 2(n+1) \\\\ n+1 \\end{pmatrix}
-        }{
-            2n \\\\n
-        } = \\frac{(2n+2)(2n+1)}{(n+1)^2} \\leq 4\$\$ und
+$ P_(i i)^(2 n) = vec(2 n, n) p^n (1 - p)^(2 n - n) $
+
+Wegen
+
+$ (vec(2 (n + 1), n + 1))/(2 n) = ((2n + 2)(2n +1))/((n+1)^2 ) <= 4 $ //TODO is the denominator of (2 n) right?
+und
 $vec(2, 1) = 2$ gilt $ vec(2 n, n) <= 4^n $ Für $p != 1 / 2$ ist
 $P(1 - p) < 1 / 4$ und daher (unter Nutzung geom. Reihe)
 $ sum_(n = 1)^oo P_(i i)^n = sum_(n = 1)^oo P_(i i)^(2 n) = sum_(n = 1)^oo vec(2 n, n) [P(1 - p)]^n <= sum_(n = 1)^oo [4 P(1 - p)]^n < oo $
