@@ -557,7 +557,7 @@ $ p_(i j)^0 = sum_(k in S) p_(i k)^0 p_(k j)^0 = cases(delim: "{", 1 & upright("
 Für $m , n gt.eq 1$ und $P(X_0 = 1) > 0$ ist
 $  & p_(i j)^(m + n) = P(X_(m + n) = j \| X_0 = i)\
 = & sum_(k in S) P(X_(m + n) = j , X_m = k \| X_0 = i)\
-= & sum_(k in S) frac(P(X_(m + n) = j , X_m = k , X_0 = i), P(X_0 = i)) times frac(P(X_m = k , X_0 = i), P(X_m = k , X_0 = i))\
+= & sum_(k in S) frac(P(X_(m + n) = j , X_m = k , X_0 = i), P(X_0 = i)) dot frac(P(X_m = k , X_0 = i), P(X_m = k , X_0 = i))\
 = & sum_(k in S) P(X_(m + n) = j \| X_m = k , X_0 = i) P(X_m = k \| X_0 = i)\
 = & sum_(k in S) P(X_m = k \| X_0 = i) P(X_(m + n) = j \| X_m = k)\
 = & sum_(k in S) p_(i k)^m p_(k j)^n $ Für einen Übergang von $i$ nach
@@ -665,15 +665,15 @@ Es ist $h_0 = 1$ (sofort ruiniert), $h_M = 0$ (sofort Ende des Spiels
 wegen maximalem Gewinn) und nach Satz 10 ist die Wahrscheinlichkeit
 jemals ruiniert zu sein beim Start in Periode $i$ eine Gewichtung der
 Ruinwahrscheinlichkeit nach einer Aufwärtsbewegung (also ab $i + 1$) und
-einer Abwäwärtsbewegung (also ab $i - 1$).
+einer Abwärtsbewegung (also ab $i - 1$).
 $ h_i & = p h_(i + 1) + (1 - p) h_(i - 1) upright(" für ") i = 1 ,... , M - 1\
 <=> h_(i + 1) - h_i & = frac(1 - p, p) (h_i - h_(i - 1)) $
 Falls es sich um ein faires Spiel handelt, also $p = 1 / 2$, dann ist
 $h_(i + 1) - h_i = h_i - h_(i - 1)$ für $i = 1 ,... , M - 1$. Die
 Änderung in der Ruinwahrscheinlichkeit ist also konstant für jedes der
 $i$, man kann $h_i$ also als lineare Funktion betrachten:
-$ h_i = h_0 + a times i $ Da $h_0 = 1$ $ h_i = 1 + a times i $ und
-$h_M = 0$ folgt für das $a$ aus der Gleichung $ 0 & = 1 + a times M\
+$ h_i = h_0 + a dot i $ Da $h_0 = 1$ $ h_i = 1 + a dot i $ und
+$h_M = 0$ folgt für das $a$ aus der Gleichung $ 0 & = 1 + a dot M\
 <=> a & = - 1 / M $ und somit für die
 Ruinwahrscheinlichkeit $h_i$: $ h_i = 1 - i / M $ Sei nun
 $p eq.not 1 / 2$ und setze $Theta = frac(1 - p, p)$. Durch rekursives
@@ -694,7 +694,7 @@ $ sum_(i = 0)^(j - 1) h_(i + 1) - h_i & = sum_(i = 0)^(j - 1) Theta^i (h_1 - 1)\
 Da diese Gleichung für alle $j$ gilt, gilt sie auch für $j = M$ und da
 $h_M = 0$ ist, ist $ 0 & = (h_1 - 1) frac(1 - Theta^M, 1 - Theta) + 1\
 <=> 1 - h_1 & = frac(1 - Theta, 1 - Theta^M) $ Damit ist
-$ 1 - h_j = frac(1 - Theta, 1 - Theta^M) times frac(1 - Theta^j, 1 - Theta) $
+$ 1 - h_j = frac(1 - Theta, 1 - Theta^M) dot frac(1 - Theta^j, 1 - Theta) $
 und folglich
 $ => h_j = 1 - frac(1 - Theta^j, 1 - Theta^M) upright(" für ") j = 0 ,... , M $
 
@@ -769,7 +769,7 @@ Die Behauptung ist klar, wenn $A = S$. Deswegen sei $A eq.not S$:
 + $(h_i)$ ist eine nichtnegative Lösung nach Satz 10.
 
 + Sei $(x_i)$ eine Lösung mit $X_i gt.eq 0$, $i in S$.
-  $ => x_i = overbrace(sum_(j in A) p_(i j), := r_i) times 1 + overbrace(sum_(j in A^c) p_(i j), := Q) x_j upright(", ") i in A^c $
+  $ => x_i = overbrace(sum_(j in A) p_(i j), := r_i) dot 1 + overbrace(sum_(j in A^c) p_(i j), := Q) x_j upright(", ") i in A^c $
   Für die Spaltenvektoren $x = (x_i)_(i in A^c)$, $r = (r_i)_(i in A^c)$
   und die Teilmatrix $Q = (p_(i j))_(i , j in A^c)$ gilt durch
   iteratives Einsetzen $ x & = r + Q x\
@@ -807,15 +807,15 @@ $bb(R)^(‾) = bb(R) ∪ { - oo , oo }$ benötigt:
 
 - $a - oo = - oo + a = - oo quad forall a in bb(R) ∪ { - oo }$
 
-- $a times oo = oo times a = oo quad forall a in bb(R)^(‾)^(+)$
+- $a dot oo = oo dot a = oo quad forall a in bb(R)^(‾)^(+)$
 
-- $a times oo = oo times a = - oo quad forall a in bb(R)^(‾)^(-)$
+- $a dot oo = oo dot a = - oo quad forall a in bb(R)^(‾)^(-)$
 
-- $a times (- oo) = (- oo) times a = - oo quad forall a in bb(R)^(‾)^(+)$
+- $a dot (- oo) = (- oo) dot a = - oo quad forall a in bb(R)^(‾)^(+)$
 
-- $a times (- oo) = (- oo) times a = oo quad forall a in bb(R)^(‾)^(-)$
+- $a dot (- oo) = (- oo) dot a = oo quad forall a in bb(R)^(‾)^(-)$
 
-- $0 times oo = oo times 0 = 0$ (spezielle Konnotation in diesem
+- $0 dot oo = oo dot 0 = 0$ (spezielle Konnotation in diesem
   Kontext)
 
 - Nicht definiert sind: $oo - oo$ und $- oo + oo$.
@@ -891,12 +891,12 @@ $ E [T \| X_0 = j] = k_j = j (M - j) upright(", ") j = 0 ,... , M $
 Sei nun $p eq.not 1 / 2$. \
 In diesem Fall lässt sich zeigen, dass $k_i$ als Lösung von $(star.op)$
 die Form
-$ k_i = frac(i, 1 - 2 p) + alpha + beta times (frac(1 - p, p))^i upright(" für ") i = 0 ,... , M $
+$ k_i = frac(i, 1 - 2 p) + alpha + beta dot (frac(1 - p, p))^i upright(" für ") i = 0 ,... , M $
 haben muss für gewisse $alpha , beta in bb(R)$. Mit $k_0 = k_m = 0$
 folgt $ 0 & = alpha + beta\
-0 & = frac(M, 1 - 2 p) + alpha + beta times (frac(1 - p, p))^M\
+0 & = frac(M, 1 - 2 p) + alpha + beta dot (frac(1 - p, p))^M\
 => alpha & = - beta = frac(- frac(M, 1 - 2 p), 1 - (frac(1 - p, p))^M)\
-=> E [T \| X_0 = i] & = frac(i, 1 - 2 p) - frac(M, 1 - 2 p) times frac(1 - (frac(1 - p, p))^i, 1 - (frac(1 - p, p))^M) upright(" , ") i = 0 ,... , M $
+=> E [T \| X_0 = i] & = frac(i, 1 - 2 p) - frac(M, 1 - 2 p) dot frac(1 - (frac(1 - p, p))^i, 1 - (frac(1 - p, p))^M) upright(" , ") i = 0 ,... , M $
 
 ]
 == Konvergenzsätze
