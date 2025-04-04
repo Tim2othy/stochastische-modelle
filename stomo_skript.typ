@@ -345,19 +345,20 @@ $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) . $
 
 == Markov-Eigenschaft
 
-Ein stochastischer Prozess ist eine Familie von Zufallsvariablen $X_t$, wobei der Parameter $t$ eine Indexmenge $T$ durchläuft.
-Oft ist
-$T in \[ o, oo \)$ oder $T = { 0, 1, 2, ... }$ und $t in T$ wird als Zeitpunkt interpretiert.\
-Der Zustandsraum eines stochastischen Prozesses ${ X_t : t in T }$ ist die Menge aller möglichen Werte der $X_t$. Man
-sagt der Prozess ist zur Zeit $t$ in Zustand $x$, falls $X_t = x$.\
-Eines diskrete Markov-Kette ist ein stochastischer Prozess mit diskreter Zeit und diskretem Zustandsraum, sodass zu
-jeder Zeit die Verteilung des nächsten Zustands nur vom aktuellen Zustand abhängt aber nicht von den vorherigen. Formal
-bedeutet dies:\
-Sei $S != nothing$ eine endliche oder abzählbar unendliche Menge. Sei $(P_(i j))_(i, j in S)$ eine stochstische Matrix,
-also
-$p_(i j) >= 0$ für alle $i, j in S$ und $sum_(j in S) p_(i j) = 1$
-für alle $i in S$.\
-
+#definition[
+  Ein stochastischer Prozess ist eine Familie von Zufallsvariablen $X_t$, wobei der Parameter $t$ eine Indexmenge $T$ durchläuft.
+  Oft ist
+  $T in \[ o, oo \)$ oder $T = { 0, 1, 2, ... }$ und $t in T$ wird als Zeitpunkt interpretiert.\
+  Der Zustandsraum eines stochastischen Prozesses ${ X_t : t in T }$ ist die Menge aller möglichen Werte der $X_t$. Man
+  sagt der Prozess ist zur Zeit $t$ in Zustand $x$, falls $X_t = x$.\
+  Eines diskrete Markov-Kette ist ein stochastischer Prozess mit diskreter Zeit und diskretem Zustandsraum, sodass zu
+  jeder Zeit die Verteilung des nächsten Zustands nur vom aktuellen Zustand abhängt aber nicht von den vorherigen. Formal
+  bedeutet dies:\
+  Sei $S != nothing$ eine endliche oder abzählbar unendliche Menge. Sei $(P_(i j))_(i, j in S)$ eine stochstische Matrix,
+  also
+  $p_(i j) >= 0$ für alle $i, j in S$ und $sum_(j in S) p_(i j) = 1$
+  für alle $i in S$.\
+]
 #theorem[
 
   Eine Folge ${ X_n : n in bb(N) }$ von Zufallsvariablen mit Werten in $S$
@@ -1331,10 +1332,14 @@ Das heißt $pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovke
   HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29
 ]
 == Rekurrenz und Transienz
+#definition[
+  Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum S.
 
-Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum S.\
-Für jedes $j in S$ sei
-$ tau_j := inf { n >= 1 : X_N = j } quad (inf nothing = oo) $ In Worten: $tau_j$ ist der erste Zeitpunkt $n >= 1$, zu
+  Für jedes $j in S$ sei
+  $ tau_j := inf { n >= 1 : X_N = j } quad (inf nothing = oo). $
+]
+
+In Worten: $tau_j$ ist der erste Zeitpunkt $n >= 1$, zu
 dem die Markovkette $j$ besucht, falls es einen gibt.\
 Für $i, j in S$ sei $ f_(i j) = P(tau_j < oo \| X_0 = i) $ In Worten:
 $f_(i j)$ ist die Wahrscheinlichkeit, dass $j$ in endlicher Zeit ($>= 1$) erreicht wird bei Start in $i$. Insbesondere
@@ -1543,6 +1548,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist
 ] <thm:renewal_distribution>
 
 #proof(title: [Beweis @thm:renewal_distribution])[
+
   Der Beweis nutzt $P(N (t) < n) = P(T_n > t)$, den zentralen Grenzwertsatz und folgendes Lemma: Seien $X_1, X_2, ...$
   ZUfallsvariablen, sodass
   $l i m_(n -> oo) P(X_n > x) = G (x) quad forall x in bb(R)$, wobei
@@ -1568,23 +1574,27 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist
 ]
 = Poisson-Prozesse
 
-Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
-$lambda > 0$ ($X tilde.op E X P(lambda)$), falls $X$ die Dichte
-$ f (x) = cases(delim: "{", lambda e^(- lambda x) & "falls" x > 0, 0 & "sonst") $
-hat.\
-Sei $lambda$ eine Konstante $ > 0$. Seien $Y_1, Y_2, ...$ i.i.d. exponentialverteilte Zufallsvariablen für alle $n = 1, 2, ...$.\
-Setze $   & T_0 := 0\
+#definition[
+
+  Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
+  $lambda > 0$ ($X tilde.op E X P(lambda)$), falls $X$ die Dichte
+  $ f (x) = cases(delim: "{", lambda e^(- lambda x) & "falls" x > 0, 0 & "sonst") $
+  hat.]
+
+#definition[
+  Sei $lambda$ eine Konstante $ > 0$. Seien $Y_1, Y_2, ...$ i.i.d. exponentialverteilte Zufallsvariablen für alle $n = 1, 2, ...$.\
+  Setze $   & T_0 := 0\
   & T_n := Y_1 +... + Y_n\
   & N (t) : = m a x { n in bb(N)_0 : T_n <= t }, t >= 0 $
-Dann heißt ${ N (t) : t >= 0 }$ Poisson-Prozess mit Intensität
-$lambda$.\
-Ein stochastischer Prozess ${ N (t) : t >= 0 }$ heißt ein Prozess mit unabhängigen Zuwächsen, falls für je endlich viele
-Zeitpunkte
-$0 = t_0 < t_1 <... < t_k$ die Zufallsvariablen $   & N (t_0),\
+  Dann heißt ${ N (t) : t >= 0 }$ Poisson-Prozess mit Intensität
+  $lambda$.\
+  Ein stochastischer Prozess ${ N (t) : t >= 0 }$ heißt ein Prozess mit unabhängigen Zuwächsen, falls für je endlich viele
+  Zeitpunkte
+  $0 = t_0 < t_1 <... < t_k$ die Zufallsvariablen $   & N (t_0),\
   & N (t_1) - N (t_0),\
   & dots.v\
   & N (t_k) - N (t_(k - 1)) $ unabhängig sind.\
-
+]
 #theorem[
   Sei ${ N (t) : t >= 0 }$ ein Poisson-Prozess mit Intensität
   $lambda > 0$. \
