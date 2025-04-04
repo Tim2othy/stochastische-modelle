@@ -350,7 +350,7 @@ $X_0 = i_0 ,...$).
   $
     (P_(i j))_(i , j = 0)^a = mat(
       delim: "(",
-      a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;dots.v, dots.v, dots.v, dots.down;#none, , , ,
+      a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;dots.v, dots.v, dots.v, dots.down;#none,
 
     )
   $
@@ -387,7 +387,7 @@ $X_0 = i_0 ,...$).
   $
     (P_(i j)) = mat(
       delim: "(",
-      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down;#none, , , ,
+      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down;#none,
 
     )
   $
@@ -503,8 +503,7 @@ $
   $
     (P_(i j))_(i , j = 0)^n = mat(
       delim: "(",
-      1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5;0, 2 / 5, 1 / 5, 1 / 5, 1 / 5;0, 0, 3 / 5, 1 / 5, 1 / 5;0, 0, 0, 4 / 5, 1 / 5;0, 0, 0, 0, 1;#none, , , ,
-
+      1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5;0, 2 / 5, 1 / 5, 1 / 5, 1 / 5;0, 0, 3 / 5, 1 / 5, 1 / 5;0, 0, 0, 4 / 5, 1 / 5;0, 0, 0, 0, 1;#none,
     )
   $
   Was wäre die Wahrscheinlichkeit, dass $X_0 = 0$, $X_1 = 2$ und
