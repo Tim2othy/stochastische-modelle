@@ -699,7 +699,7 @@ $p_i (T < oo)$ Absorbtionswahrscheinlichkeit bei Start in $i in S$ und
 $T$ heißt Absorbtionszeit.\
 Folgender Satz gilt für beliebige $A$:\
 
-#block[
+#theorem[
   Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei $A ⊂ S$, $A != nothing$ und
   $ T_i = inf { n in bb(N)_0 : X_n in A } $
   $ h_i = P(T < oo \| X_0 = i) $
@@ -708,23 +708,30 @@ Folgender Satz gilt für beliebige $A$:\
   $
 
 ]
-#strong[Beweis Satz 10] \
-Für $i in A$ gilt $P(T = 0 \| X_0 = i) = 1$, also $h_1 = 0$.\
-Sei nun $i in S without A$. Der Beweisansatz ist die Einschritt-Analyse: Zerlege die gesuchte Wahrscheinlichkeit $h_i$ mit
-dem Satz der totalen Wahrscheinlichkeit danach, was im ersten Schritt der Markov-Kette passiert ist. $ h_i & = P(T < oo \| X_0 = i)\
-    & = sum_(j in S) P(T < oo , X_1 = j \| X_0 = i)\
-    & = sum_(j in S) overbrace(P(X_1 = j \| X_0 = i), p_(i j)) P(T < oo \| X_1 = j , X_0 = i)\ $ Für $j in A$ ist $ P(T < oo \| X_1 = j , X_0 = i) = 1 , $ und
-für
-$j in S without A$
-$
-  P(T < oo \| X_1 = j , X_0 = i) = & P(⋃_(n = 2)^oo { X_n in A } \| X_1 = j , X_0 = i)\
-  = & lim_(N -> oo) P(⋃_(n = 2)^N { X_n in A } \| X_1 = j , X_0 = i)\
-  = & lim_(N -> oo) P(⋃_(n = 1)^(N - 1) { X_n in A } \| X_o = j)\
-  = & P(⋃_(n = 1)^oo { X_n in A } \| X_0 = j)\
-  = & P(T < oo \| X_0 = j)\
-  = & h_j
-$ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
+#proof(title: [Beweis Satz 10])[
 
+  Für $i in A$ gilt $P(T = 0 \| X_0 = i) = 1$, also $h_1 = 0$.\
+  Sei nun $i in S without A$. Der Beweisansatz ist die Einschritt-Analyse: Zerlege die gesuchte Wahrscheinlichkeit $h_i$ mit
+  dem Satz der totalen Wahrscheinlichkeit danach, was im ersten Schritt der Markov-Kette passiert ist.
+  $
+    h_i & = P(T < oo \| X_0 = i)\
+    & = sum_(j in S) P(T < oo , X_1 = j \| X_0 = i)\
+    & = sum_(j in S) overbrace(P(X_1 = j \| X_0 = i), p_(i j)) P(T < oo \| X_1 = j , X_0 = i)\
+  $
+  Für $j in A$ ist
+  $
+    P(T < oo \| X_1 = j , X_0 = i) = 1 ,
+  $
+  und für $j in S without A$
+  $
+    P(T < oo \| X_1 = j , X_0 = i) = & P(⋃_(n = 2)^oo { X_n in A } \| X_1 = j , X_0 = i)\
+    = & lim_(N -> oo) P(⋃_(n = 2)^N { X_n in A } \| X_1 = j , X_0 = i)\
+    = & lim_(N -> oo) P(⋃_(n = 1)^(N - 1) { X_n in A } \| X_o = j)\
+    = & P(⋃_(n = 1)^oo { X_n in A } \| X_0 = j)\
+    = & P(T < oo \| X_0 = j)\
+    = & h_j
+  $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
+]
 #example(title: [Ruinproblem])[
 
   In jeder Runde eines Spiels gewinnt eine Spieler 1€ mit Wahrscheinlichkeit $p in (0 , 1)$ und verliert 1€ mit
@@ -787,8 +794,8 @@ $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
   $ => h_j = 1 - frac(1 - Theta^j, 1 - Theta^M) text(" für ") j = 0 ,... , M $
 
 ]
-#example[
-  #strong[Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke] \
+#example(title: [Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke])[
+
   Betrachte die Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandsraum
   $S = bb(N)_0$ und
   $
@@ -844,7 +851,7 @@ $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
   Hinweis: Hier gibt es keine zweite Randbedingung, wie in Bsp. 9!
 
 ]
-#block[
+#theorem[
   Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei zudem $A ⊂ S$ mit
   $A != nothing$. Seo $T_i = inf { n in N : X_n in A }$ und
   $h_i = P(T_i < oo \| X_0 = i)$. Dann ist $(h_i)_(i in S)$ die
@@ -919,7 +926,7 @@ Ist $X$ eine Zufallsvariable mit Werten in $bb(N)_0 ∪ { oo }$, dann ist $ E [X
       & = sum_(n = 1)^n P(X >= n) $ Insbesondere ist also falls
 $P(X = oo) > 0$ auch $E [X] = oo$.
 
-#block[
+#theorem[
   Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei $A in S$ und $A != nothing$.
   Für
   $i in S$ sei $ T   & := inf { n in bb(N)_0 : X_n in A }\
@@ -1003,7 +1010,7 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
 ]
 == Konvergenzsätze
 
-#block[
+#theorem[
   Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandraum $S$ und Übergangsmatrix $(P_(i j))$. \
   Die stationäre Verteilung der Markovkette $(pi_i)$ mit
 
@@ -1063,14 +1070,14 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
   und daher $mat(delim: "(", p_1, p_2) Pi^n = mat(delim: "(", p_1, p_2)$.
 
 ]
-#block[
+#theorem[
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette
   ${ X_n : n in bb(N)_0 }$ mit stationäre Verteilung
   $pi = mat(delim: "(", pi_1, ..., pi_S)$. \
   $exists quad 0 < epsilon < 1$, sodass
   $
     p_(i j) & >= epsilon pi_j quad forall quad i , j = 1 ,... , S\
-    => sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & <= 2 (1 - epsilon)^n
+    => sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & <= 2 (1 - epsilon)^n.
   $
 
 ]
@@ -1101,7 +1108,7 @@ $
   & <= (1 - epsilon)^n sum_(j = 1)^S ({ Q_(i j)^n } + pi_j) = 2 (1 - epsilon)^n
 $
 
-#block[
+#theorem[
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette mit Zustandsraum ${ 1 ,... , S }$ und stationärer Verteilung
   $pi = mat(delim: "(", pi_1, ..., pi_S)$. \
   Es existiere $k in bb(N)$, $epsilon in (0 , 1)$, sodass
@@ -1181,7 +1188,7 @@ aperiodisch sind.
     $ d_i = 2 quad forall quad i in bb(Z) $
 
 ]
-#block[
+#theorem[
   Für jeden aperiodischen Zustand $i$ existiert $n_0 (i) in bb(N)$, sodass
   $ p_(i i)^n > 0 quad forall quad n >= n_o (i) $
 
@@ -1252,7 +1259,7 @@ d.h. $(tilde(pi)_i)$ ist proportional zu $(pi_i)$. Und da
 $sum tilde(pi)_i = sum pi_i$
 $ => tilde(pi)_i = pi_i quad forall quad i in S $
 
-#block[
+#theorem[
   Sei $(P_(i j))$ die Übergangsmatrix einer irreduziblen Markovkette mit Zustandsraum $S = { 1 ,... , s }$ und mindestens
   einem aperiodischen Zustand. \
   $=>$ Es existiert eine einduetige stationäre Verteilung
@@ -1319,7 +1326,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   3 ist also transient und somit die Markovkette weder transient noch rekurrent.
 
 ]
-#block[
+#theorem[
   Für $j in S$ sei $ N_j = sum_(n = 1)^oo bold("1")_({ X_n = j }) $ die Anzahl der Zeitpunkte $>= 1$ zu denen Zustand $j$ besucht
   wird. \
 
@@ -1446,7 +1453,7 @@ $ T_(M + 1) = overbrace(Y_1 + Y_2 + Y_M, = t^(\*) < oo) + Y_(M + 1) = oo $
 und damit $Y_(M + 1) = oo$. Das wäre ein Widerspruch, da dies
 $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist.
 
-#block[
+#theorem[
   Sei $0 < mu = E [Y_1] < oo$. Mit wahrscheinlichkeit 1 gilt
   $ lim_(t -> oo) frac(N (t), t) = 1 / mu $
 
@@ -1494,7 +1501,7 @@ und $ => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu\
   $
 
 ]
-#block[
+#theorem[
   Sei $mu := E [Y_1]$, $sigma^2 := V a r [Y_1]$ mit $0 < mu < oo$ und
   $0 < sigma < oo$. \
   $=>$ Für $t -> oo$ ist $N (t)$ asymptotisch normalverteilt mit Parametern
@@ -1545,13 +1552,13 @@ $0 = t_0 < t_1 <... < t_k$ die Zufallsvariablen $   & N (t_0) ,\
   & dots.v\
   & N (t_k) - N (t_(k - 1)) $ unabhängig sind.\
 
-#block[
+#theorem[
   Sei ${ N (t) : t >= 0 }$ ein Poisson-Prozess mit Intensität
   $lambda > 0$. \
   $=> { N (t) : t >= 0 }$ hat unabhängige Zuwächse und für
   $0 <= s < t$ gilt
   $ N (t) - N (s) tilde.op P O I (lambda (t - s)), $
-  $ P(N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) text(" für ") n = 0 , 1 ,... $
+  $ P(N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) "für" n = 0 , 1 ,... $
 
 ]
 #strong[Beweis Satz 21] \
