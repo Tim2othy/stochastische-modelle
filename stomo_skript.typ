@@ -17,6 +17,16 @@
   render: render-fn.with(fill: blue.lighten(85%)),
 )
 
+#let proof(
+  title: theorion-i18n-map.at("proof"),
+  qed: auto,
+  body,
+) = context if get-result(here()) == "noanswer" { none } else {
+  let qed-symbol = if qed == auto { get-qed-symbol(here()) } else { qed }
+  [#emph(strong(theorion-i18n(title))).#sym.space#body#box(width: 0em)#h(1fr)#sym.wj#sym.space.nobreak$#qed-symbol$]
+}
+
+
 // Normal Settings
 #set text(font: "New Computer Modern", lang: "DE")
 #set heading(numbering: "1.1")
