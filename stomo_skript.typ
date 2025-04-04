@@ -443,7 +443,12 @@ $X_0 = i_0, ...$).
   $
     (P_(i j)) = mat(
 
-      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down;#none,
+      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;
+      dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;
+      dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;
+      dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;
+      dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;
+      dots.up, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down
 
     )
   $
@@ -1124,6 +1129,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
 
 ]
 #theorem[
+
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette
   ${ X_n : n in bb(N)_0 }$ mit stationäre Verteilung
   $pi = mat( pi_1, ..., pi_S)$. \
@@ -1164,6 +1170,7 @@ exponentiell zur stationären Verteilung konvergiert.\
   $
 ]
 #theorem[
+
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette mit Zustandsraum ${ 1, ..., S }$ und stationärer Verteilung
   $pi = mat( pi_1, ..., pi_S)$. \
   Es existiere $k in bb(N)$, $epsilon in (0, 1)$, sodass
@@ -1247,6 +1254,7 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
 
 ]
 #theorem[
+
   Für jeden aperiodischen Zustand $i$ existiert $n_0 (i) in bb(N)$, sodass
   $ p_(i i)^n > 0 quad forall quad n >= n_o (i) $
 
@@ -1322,6 +1330,7 @@ $sum tilde(pi)_i = sum pi_i$
 $ => tilde(pi)_i = pi_i quad forall quad i in S $
 
 #theorem[
+
   Sei $(P_(i j))$ die Übergangsmatrix einer irreduziblen Markovkette mit Zustandsraum $S = { 1, ..., s }$ und mindestens
   einem aperiodischen Zustand. \
   $=>$ Es existiert eine einduetige stationäre Verteilung
@@ -1383,7 +1392,12 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
 
 #example[
   Sei $S = { 1, 2, 3 }$ und
-  $ (P_(i j)) = mat( 0.5, 0.5, 0;0.5, 0.5, 0;1 / 3, 1 / 3 1 / 3) $
+  $
+    (P_(i j)) = mat(
+    0.5, 0.5, 0;
+    0.5, 0.5, 0;
+    1 / 3, 1 / 3, 1 / 3)
+  $
   Dann ist $ f_11 & = sum_(n = 1)^oo P(tau_1 = n \| X_0 = 1)\
        & = sum_(k = 1)^oo P(X_n = 1, X_k = 2 "mit" 1 <= k < n \| X_0 = 1)\
        & = sum_(n = 1)^oo (1 / 2)^n = 1 $ Folglich ist 1 rekurrent. Ebenso auch 2.
@@ -1392,6 +1406,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
 
 ]
 #theorem[
+
   Für $j in S$ sei $ N_j = sum_(n = 1)^oo bold("1")_({ X_n = j }) $ die Anzahl der Zeitpunkte $>= 1$ zu denen Zustand $j$ besucht
   wird. \
 
@@ -1523,6 +1538,7 @@ und damit $Y_(M + 1) = oo$. Das wäre ein Widerspruch, da dies
 $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist.
 
 #theorem[
+
   Sei $0 < mu = E [Y_1] < oo$. Mit wahrscheinlichkeit 1 gilt
   $ lim_(t -> oo) frac(N (t), t) = 1 / mu $
 ] <thm:renewal_mean>
