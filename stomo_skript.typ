@@ -10,8 +10,7 @@
   render: render-fn.with(fill: blue.lighten(85%)),
 )
 
-
-
+#set-inherited-levels(0)
 
 #set text(font: "New Computer Modern", lang: "DE")
 
