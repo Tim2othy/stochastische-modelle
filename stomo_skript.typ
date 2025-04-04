@@ -6,7 +6,7 @@
 #let (example-counter, example-box, example, show-example) = make-frame(
   "definition",
   theorion-i18n-map.at("example"),
-  counter: theorem-counter,
+  counter: none,
   render: render-fn.with(fill: blue.lighten(85%)),
 )
 
