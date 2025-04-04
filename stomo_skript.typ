@@ -458,6 +458,9 @@ $X_0 = i_0 ,...$).
   $star star$ Hinweis: $Y_1 , Y_2 ,...$ i.i.d
 
 ]
+
+#example[Placeholder so numbering matches up]
+
 Bemerkung zum Beispiel: In Beispiel 3 war $f (x , y) = x + y$ und in Beispiel 4 war $f (x , y) = m a x (x , y)$.
 
 == Mehrschritt-Übergangswahrscheinlichkeiten
