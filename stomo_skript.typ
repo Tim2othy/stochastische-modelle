@@ -1,11 +1,18 @@
 #import "@preview/theorion:0.3.3": *
-#import cosmos.fancy: *
 #import cosmos.clouds: *
 #show: show-theorion
-#let theorem = theorem.with(fill: olive.lighten(85%))
+
+
+#let (theorem-counter, theorem-box, theorem, show-theorem) = make-frame(
+  "theorem",
+  "Satz",
+  counter: none,
+  render: render-fn.with(fill: olive.lighten(85%)),
+)
+
 #let (example-counter, example-box, example, show-example) = make-frame(
   "definition",
-  theorion-i18n-map.at("example"),
+  "Beispiel",
   counter: none,
   render: render-fn.with(fill: blue.lighten(85%)),
 )
