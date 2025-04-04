@@ -3,7 +3,15 @@
 #import cosmos.clouds: *
 #show: show-theorion
 #let theorem = theorem.with(fill: green.lighten(85%))
-#let example = theorem.with(fill: blue.lighten(85%))
+#let (example-counter, example-box, example, show-example) = make-frame(
+  "definition",
+  theorion-i18n-map.at("example"),
+  counter: theorem-counter,
+  render: render-fn.with(fill: blue.lighten(85%)),
+)
+
+
+
 
 #set text(font: "New Computer Modern", lang: "DE")
 
