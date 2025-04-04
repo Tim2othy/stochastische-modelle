@@ -2,7 +2,7 @@
 #import cosmos.fancy: *
 #import cosmos.clouds: *
 #show: show-theorion
-#let theorem = theorem.with(fill: green.lighten(85%))
+#let theorem = theorem.with(fill: olive.lighten(85%))
 #let (example-counter, example-box, example, show-example) = make-frame(
   "definition",
   theorion-i18n-map.at("example"),
