@@ -48,10 +48,6 @@
 #set page(paper: "a4", margin: (x: 1.5cm, y: 3.5cm), numbering: "1")
 #show outline.entry.where(level: 1): set block(above: 1.2em)
 
-// Maybe use something like this?
-//#outline(title: none, target: figure.where(kind: "theorem"))
-
-
 #align(
   center,
   text(2em)[*#title*],
@@ -363,13 +359,18 @@ $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) . $
 
 == Markov-Eigenschaft
 
-#definition[
+#definition(title: "Stochastischer Prozess")[
+
   Ein stochastischer Prozess ist eine Familie von Zufallsvariablen $X_t$, wobei der Parameter $t$ eine Indexmenge $T$ durchläuft.
   Oft ist
   $T in \[ o, oo \)$ oder $T = { 0, 1, 2, ... }$ und $t in T$ wird als Zeitpunkt interpretiert.\
   Der Zustandsraum eines stochastischen Prozesses ${ X_t : t in T }$ ist die Menge aller möglichen Werte der $X_t$. Man
-  sagt der Prozess ist zur Zeit $t$ in Zustand $x$, falls $X_t = x$.\
-  Eines diskrete Markov-Kette ist ein stochastischer Prozess mit diskreter Zeit und diskretem Zustandsraum, sodass zu
+  sagt der Prozess ist zur Zeit $t$ in Zustand $x$, falls $X_t = x$.
+]
+
+#definition(title: "Markov-Kette")[
+
+  Eine diskrete Markov-Kette ist ein stochastischer Prozess mit diskreter Zeit und diskretem Zustandsraum, sodass zu
   jeder Zeit die Verteilung des nächsten Zustands nur vom aktuellen Zustand abhängt aber nicht von den vorherigen. Formal
   bedeutet dies:\
   Sei $S != nothing$ eine endliche oder abzählbar unendliche Menge. Sei $(P_(i j))_(i, j in S)$ eine stochstische Matrix,
@@ -478,7 +479,6 @@ $X_0 = i_0, ...$).
   $P(max (i_n, Y_(n + 1)) = i_(n + 1)) = P(Y_(n + 1) <= i_n) = sum_(k = 0)^n a_k$.
   $
     P(max (i_n, Y_(n + 1)) = i_(n + 1)) = cases(
-      delim: "{",
       P(Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) & text(", falls ") i_(n + 1) > i_n,
       P(Y_(n + 1) <= i_n) = sum_(k = o)^n a_k & text(", falls ") i_(n  + 1) = i_n,
       0 & text(", falls ") i_(n + 1) < i_n,
@@ -488,7 +488,6 @@ $X_0 = i_0, ...$).
   $=> { X_n : n in N_0 }$ ist eine Markovkette mit Zustandsraum $bb(N)_0$ und Übergangsmatrix
   $
     p_(i j) = cases(
-      delim: "{",
       a_j & text(", falls ") j > i,
       sum_(k = 0)^i a_k & text(", falls ") j = i,
       0 & text(", falls ") j < i,
@@ -560,9 +559,14 @@ $
   zufälligen Wert $Y_n$ an, welcher mit gleicher Wahrscheinlichkeit Werte zwischen 0 und 4 annimmt. Aus Beispiel 4 folgt
   diese Übergansmatrix:
   $
-    (P_(i j))_(i, j = 0)^n = mat(
-      delim: "(",
-      1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5;0, 2 / 5, 1 / 5, 1 / 5, 1 / 5;0, 0, 3 / 5, 1 / 5, 1 / 5;0, 0, 0, 4 / 5, 1 / 5;0, 0, 0, 0, 1;#none,
+    (P_(i j))_(i, j = 0)^n =
+    mat(
+      1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5;
+      0, 2 / 5, 1 / 5, 1 / 5, 1 / 5;
+      0, 0, 3 / 5, 1 / 5, 1 / 5;
+      0, 0, 0, 4 / 5, 1 / 5;
+      0, 0, 0, 0, 1;
+
     )
   $
   Was wäre die Wahrscheinlichkeit, dass $X_0 = 0$, $X_1 = 2$ und
@@ -640,7 +644,7 @@ $ p_(i j)^n : = P(X_(n + m) = j \| X_m = i) $ mit $i, j in S$,
 $n >= 0$, $P(X_m = i) > 0$. Diese Wahrscheinlichkeit hängt nicht von
 $m$ ab (Zeithomogenität).\
 Es gilt
-$ p_(i j)^0 = P(X_m = j \| X_m = i) = cases(delim: "{", 1 & ", falls" i = j, 0 & ", falls" i != j) $
+$ p_(i j)^0 = P(X_m = j \| X_m = i) = , 1 & ", falls" i = j, 0 & ", falls" i != j) $
 und $ P_(i j)^1 = P(X_(m + 1) = j \| X_m = i) = p_(i j) $
 
 #theorem(title: [Satz von Chapman-Kolmogorow])[
@@ -660,7 +664,8 @@ und $ P_(i j)^1 = P(X_(m + 1) = j \| X_m = i) = p_(i j) $
   $ p_(i j)^((m)) = sum_(k in S) p_(i k)^((m)) p_(k j)^0 = p_(i j)^((m)) $
 
   $
-    p_(i j)^0 = sum_(k in S) p_(i k)^0 p_(k j)^0 = cases(delim: "{", 1 & ", falls" i = j, 0 & ", falls" i != j)
+    p_(i j)^0 = sum_(k in S) p_(i k)^0 p_(k j)^0 =
+    cases(1 & ", falls" i = j, 0 & ", falls" i != j)
   $
   Für $m, n >= 1$ und $P(X_0 = 1) > 0$ ist
   $
@@ -701,12 +706,27 @@ Zeitpunkt zu berechnen:
 
   Betrachte eine Markovkette $X_n : n in bb(N)_0$ mit $S = { 1, 2, 3 }$, Übergangsmatrix
   $
-    Pi = 1 / 3 mat(delim: "(", 1, 0, 2;0, 2, 1;1, 1, 1)
+    Pi = 1 / 3 mat(
+      1, 0, 2;
+      0, 2, 1;
+      1, 1, 1
+      )
   $ und Anfangsverteilung $p^((0)) = P(X_0 = i) = (1 / 4, 1 / 2, 1 / 4)$.
   \
   Berechne die bedingte Verteilung von $X_2$ gegeben $X_0 = 3$.
-  $ Pi^2 = Pi Pi = 1 / 9 mat(delim: "(", 3, 2, 4;1, 5, 3;2, 3, 4) $
-  $ Pi^4 = Pi^2 Pi^2 = 1 / 81 mat(delim: "(", 19, 28, 34;14, 36, 31;17, 31, 33) $
+  $
+    Pi^2 = Pi Pi = 1 / 9 mat(
+    3, 2, 4;
+    1, 5, 3;
+    2, 3, 4)
+  $
+
+  $
+    Pi^4 = Pi^2 Pi^2 = 1 / 81 mat(
+    19, 28, 34;
+    14, 36, 31;
+    17, 31, 33)
+  $
 
   - $P(X_2 = 1 \| X_0 = 3) = p_31^((2)) = 2 / 9$
 
@@ -777,7 +797,6 @@ Folgender Satz gilt für beliebige $A$:\
   Übergangswahrscheinlichkeiten
   $
     p_(i j) = cases(
-      delim: "{",
       1 & "falls" i = 0 "und" j = 0,
       p & "falls" i in { 1, ..., M - 1 } "und" j = i + 1,
       1 - p & "falls" i in { 1, ..., M - 1 } "und" j = i - 1,
@@ -834,7 +853,6 @@ Folgender Satz gilt für beliebige $A$:\
   $S = bb(N)_0$ und
   $
     p_(i j) = cases(
-      delim: "{",
       1 & "falls" i = 0 "und" j = 0,
       p & "falls" i in bb(N)_0 "und" j = i + 1,
       1 - p & "falls" i in bb(N)_0 "und" j = i - 1,
@@ -1200,7 +1218,6 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
   Sei nun $a = b = 1$, also $ Pi = mat(delim: "(", 0, 1;1, 0) $ dann gilt
   $
     Pi^n = cases(
-      delim: "{",
       mat(delim: "(", 1, 0;0, 1) & "für" n "gerade",
       mat(delim: "(", 0, 1;1, 0) & "für" n "ungerade",
 
@@ -1596,7 +1613,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist
 
   Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
   $lambda > 0$ ($X tilde.op E X P(lambda)$), falls $X$ die Dichte
-  $ f (x) = cases(delim: "{", lambda e^(- lambda x) & "falls" x > 0, 0 & "sonst") $
+  $ f (x) = cases(lambda e^(- lambda x) & "falls" x > 0, 0 & "sonst") $
   hat.]
 
 #definition[
@@ -1631,7 +1648,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist
   $B = { (s_1, ..., s_m) in bb(R)^m : 0 < s_1 <... < s_m, lr(|{ j : t_(i - 1) < s_j <= t_i }|) = n_i, i = 1, ..., k }$.
   $(T_1, ..., T_(m + 1))$ hat die Dichte
   $
-    f (s_1, ..., s_(m + 1)) = cases(delim: "{", lambda^(m + 1) e^(- lambda s_(m + 1)) & "falls" 0 < s_1 <... < s_(m + 1), 0 & "sonst")
+    f (s_1, ..., s_(m + 1)) = cases(lambda^(m + 1) e^(- lambda s_(m + 1)) & "falls" 0 < s_1 <... < s_(m + 1), 0 & "sonst")
   $
   $
     P(N (t_i) - N (t_(i - 1)) = n_i, i = 1, ..., k) & = integral_(B times (t_k, oo)) f (s_1, ..., s_(m + 1)) thin d (s_1, ..., S_(m + 1))\
