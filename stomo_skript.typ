@@ -44,6 +44,11 @@
 
 == Wahrscheinlichkeitsmaße
 
+#theorem[Placeholder]
+#theorem[Placeholder]
+#theorem[Placeholder]
+#theorem[Placeholder]
+
 Bezeichne $Omega$ die Menge aller möglichen Ergebnisse eines Zufallsexperiments und $A in Omega$ ein Ereignis. Ein
 Wahrscheinlichkeitsmaß ist eine Abbildung, die jedem $A$ eine Zahl
 $P(A) in [0 , 1]$ zuordnet. Es gilt:
@@ -338,6 +343,7 @@ $p_(i j) >= 0$ für alle $i , j in S$ und $sum_(j in S) p_(i j) = 1$
 für alle $i in S$.\
 
 #theorem[
+
   Eine Folge ${ X_n : n in bb(N) }$ von Zufallsvariablen mit Werten in $S$
   heißt Markovkette mit Zustandraum $S$ und Übergangsmatrix
   $(P_(i j))_(i , j in S) \)$, falls für alle $n >= 0$ und alle möglichen $i_0 , i_1 ,... , i_(n + 1) in S$ gilt
@@ -413,8 +419,8 @@ $X_0 = i_0 ,...$).
   und springt zu jedem Zeitpunkt $1 , 2 ,...$ zufällig eine Einheit nach links oder rechts.
 
 ]
-#example[
-  #strong[Sukzessive Maxima] \
+#example(title: [Sukzessive Maxima])[
+
   Seien $Y_1 , Y_2 ,...$ unabhängig und identisch verteilte
   $bb(N)_0$-wertige Zufallsvariablen mit $P(Y_1 = c) = a_i$, $i in N_0$,
   $X_0 : = 0$ und $X_n : = m a x (Y_1 ,... , Y_n)$. In Worten: Die Kette nimmt zu jeden Zeitpuntk $n$ den größten
@@ -456,8 +462,9 @@ $X_0 = i_0 ,...$).
   $
 
 ]
-#example[
-  #strong[Rekursive Darstellung einer Markovkette mittelszufälliger Funktionen] Sei $X_0$ eine $S$-wertige Zufallsvariable
+#example(title: [Rekursive Darstellung einer Markovkette mittelszufälliger Funktionen])[
+
+  Sei $X_0$ eine $S$-wertige Zufallsvariable
   und $S$ endlich oder abzählbar unendlich. Setze für $n >= 0$ rekursiv
   $ X_(n + 1) = f (X_n , Y_(n + 1)) $ Dabei sei
   $f : S times bb(R) -> S$, $Y_1 ,... , Y_n$ seien identisch verteilte Zufallsvariablen und $Y_0 , Y_1 ,...$ seien
@@ -508,6 +515,7 @@ $
 
 ]
 #example[
+
   Betrachte eine Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandraum
   $S = { 0 , 1 , 2 , 3 , 4 }$, $X_0 : = 0$, also $p_0 = P(X_0 = 0) = 1$. \
   Sei $X_n = m a x (Y_1 ,... , Y_n)$, $n in bb(N)$, wobei
@@ -537,6 +545,7 @@ $
 Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Vergangenheit erweitern:\
 
 #theorem[
+
   Für alle $n , m >= 1$, $Z ⊂ S^m$, $V ⊂ S^n$, $i in S$ mit
   $P((X_0 ,... , X_(n - 1)) in V , X_n = i) > 0$ gilt
   $
@@ -555,19 +564,21 @@ Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Ve
   $
 
 ]
-#strong[Beweis von Satz 7] \
-Für alle $(j_1 ,... , j_m) in Z$ und $(i_0 ,... , i_(n - 1)) in V$
-mit $P(X_0 = i_0 ,... , X_(n - 1) = i_(n - 1) , X_n = i) > 0$ gilt
-$
-  & P((X_(n + 1) ,... , X_(n + m)) = (j_1 ,... , j_m) \| (X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i)\
-  = & frac(
+#proof(title: "Beweis von Satz 7")[
+
+  Für alle $(j_1 ,... , j_m) in Z$ und $(i_0 ,... , i_(n - 1)) in V$
+  mit $P(X_0 = i_0 ,... , X_(n - 1) = i_(n - 1) , X_n = i) > 0$ gilt
+  $
+    & P((X_(n + 1) ,... , X_(n + m)) = (j_1 ,... , j_m) \| (X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i)\
+    = & frac(
     P((X_(n + 1) ,... , X_(n + m)) = (j_1 ,... , j_m) , (X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i),
     P((X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i),
 
   )\
-  = & frac(p_(i_0) p_(i_0 i_1)... p_(i_(n - 1) i) p_(i j_1)... p_(j_(m - 1) j_m), p_(i_0) p_(i_0 i_1)... p_(i_(n - 1) i))\
-  = & p_(i j_1) p_(j_1 j_2)... p_(j_(m - 1) j_m)
-$
+    = & frac(p_(i_0) p_(i_0 i_1)... p_(i_(n - 1) i) p_(i j_1)... p_(j_(m - 1) j_m), p_(i_0) p_(i_0 i_1)... p_(i_(n - 1) i))\
+    = & p_(i j_1) p_(j_1 j_2)... p_(j_(m - 1) j_m)
+  $
+]
 
 Oft werden für eine Markovkette ${ X_n }$ bei fester Übergangsmatrix
 $(P_(i j))$ verschiedene Anfangszustände betrachtet. Bezeichne mit
@@ -582,13 +593,14 @@ $ und für $f : f^m -> bb(R)$
 $
   & E [f (X_(n + 1 ,... , X_(n + m))) \| (X_0 ,... , X_(n - 1)) in V , X_n = i]\
   & = E [f (X_(n + 1) ,... , X_(n + m)) \| X_0 = i]\
-  & = E_i [f (X_1 ,... , X_m)]
+  & = E_i [f (X_1 ,... , X_m)] .
 $ Beide Größen hängen vom gegenwärtigen Zustand $i$ ab und weder von $V$ noch von $n$.\
 Die Aussagen lassen sich mit einem unendlichen Zeithorizont erweitern:\
 Für die Menge $Z ⊂ S^oo$ und $f : S^oo -> bb(R)$ gilt
 $ P((X_(n + 1) , X_(n + 2) ,...) in Z \| (X_0 ,... , X_(n - 1) in V) , X_n = i) = P_i ((X_1 ,...) in Z) $
 und
-$ E [f (X_(n + 1) , X_(n + 2) ,...) \| (X_0 ,... , X_(n - 1) in V , X_n = i)] = E_i [f (X_(n + 1) , X_(n + 2) ,...)] $
+$ E [f (X_(n + 1) , X_(n + 2) ,...) \| (X_0 ,... , X_(n - 1) in V , X_n = i)] = E_i [f (X_(n + 1) , X_(n + 2) ,...)] . $
+
 Die $n$-Schritt Übergangswahrscheinlichkeit ist
 $ p_(i j)^n : = P(X_(n + m) = j \| X_m = i) $ mit $i , j in S$,
 $n >= 0$, $P(X_m = i) > 0$. Diese Wahrscheinlichkeit hängt nicht von
@@ -597,31 +609,36 @@ Es gilt
 $ p_(i j)^0 = P(X_m = j \| X_m = i) = cases(delim: "{", 1 & text(" , falls ") i = j, 0 & text(" , falls ") i != j) $
 und $ P_(i j)^1 = P(X_(m + 1) = j \| X_m = i) = p_(i j) $
 
-#theorem[
-  Satz von Chapman-Kolmogorow: Für alle $i , j in S$ und
+#theorem(title: [Satz von Chapman-Kolmogorow])[
+
+  Für alle $i , j in S$ und
   $m , n in bb(N)_0$ ist die Wahrscheinlichkeit, von Zustand $i$ in
   $m + n$ Schritten zu Zustand $j$ zu gelangen gegeben durch:
   $ p_(i j)^((m + n)) = sum_(k in S) p_(i k)^((m)) p_(k j)^((n)) $
 
 ]
-#strong[Beweis von Satz 8:] Die Behauptung ist für $m = 0$, $n = 0$ oder
-$n = m = 0$ klar, da
-$ p_(i j)^((n)) = sum_(k in S) p_(i k)^0 p_(k j)^((n)) = p_(i j)^((n)) $
+#proof(title: [Beweis von Satz 8:])[
 
-$ p_(i j)^((m)) = sum_(k in S) p_(i k)^((m)) p_(k j)^0 = p_(i j)^((m)) $
+  Die Behauptung ist für $m = 0$, $n = 0$ oder
+  $n = m = 0$ klar, da
+  $ p_(i j)^((n)) = sum_(k in S) p_(i k)^0 p_(k j)^((n)) = p_(i j)^((n)) $
 
-$
-  p_(i j)^0 = sum_(k in S) p_(i k)^0 p_(k j)^0 = cases(delim: "{", 1 & text(" , falls ") i = j, 0 & text(" , falls ") i != j)
-$
-Für $m , n >= 1$ und $P(X_0 = 1) > 0$ ist
-$
-  & p_(i j)^(m + n) = P(X_(m + n) = j \| X_0 = i)\
-  = & sum_(k in S) P(X_(m + n) = j , X_m = k \| X_0 = i)\
-  = & sum_(k in S) frac(P(X_(m + n) = j , X_m = k , X_0 = i), P(X_0 = i)) dot frac(P(X_m = k , X_0 = i), P(X_m = k , X_0 = i))\
-  = & sum_(k in S) P(X_(m + n) = j \| X_m = k , X_0 = i) P(X_m = k \| X_0 = i)\
-  = & sum_(k in S) P(X_m = k \| X_0 = i) P(X_(m + n) = j \| X_m = k)\
-  = & sum_(k in S) p_(i k)^m p_(k j)^n
-$ Für einen Übergang von $i$ nach
+  $ p_(i j)^((m)) = sum_(k in S) p_(i k)^((m)) p_(k j)^0 = p_(i j)^((m)) $
+
+  $
+    p_(i j)^0 = sum_(k in S) p_(i k)^0 p_(k j)^0 = cases(delim: "{", 1 & text(" , falls ") i = j, 0 & text(" , falls ") i != j)
+  $
+  Für $m , n >= 1$ und $P(X_0 = 1) > 0$ ist
+  $
+    & p_(i j)^(m + n) = P(X_(m + n) = j \| X_0 = i)\
+    = & sum_(k in S) P(X_(m + n) = j , X_m = k \| X_0 = i)\
+    = & sum_(k in S) frac(P(X_(m + n) = j , X_m = k , X_0 = i), P(X_0 = i)) dot frac(P(X_m = k , X_0 = i), P(X_m = k , X_0 = i))\
+    = & sum_(k in S) P(X_(m + n) = j \| X_m = k , X_0 = i) P(X_m = k \| X_0 = i)\
+    = & sum_(k in S) P(X_m = k \| X_0 = i) P(X_(m + n) = j \| X_m = k)\
+    = & sum_(k in S) p_(i k)^m p_(k j)^n
+  $]
+
+Für einen Übergang von $i$ nach
 $j$ in $m + n$ Schritten muss die Markovkette in $m$ Schritten von $i$
 zu einem beliebigen Zustand $k$ gehen und dann von $k$ in $n$ Schritten zu $j$.\
 Die $n$-Schritt Übergangsmatrix ist definiert als
@@ -642,11 +659,12 @@ Daraus folgt wiederum: $ p^((n + m)) = p^((n)) Pi^m $ Letzteres kann genutzt wer
 Zeitpunkt zu berechnen:
 
 #theorem[
+
   Die Verteilung von $X_n$ zu einem beliebigen Zeitpunkt $n >= 0$
   ergibt sich aus dem Produkt der Anfangsverteilung und der $n$-ten Potenz der Übergangsmatrix. $ p^((n)) = p^((0)) Pi^n $
-
 ]
 #example[
+
   Betrachte eine Markovkette $X_n : n in bb(N)_0$ mit $S = { 1 , 2 , 3 }$, Übergangsmatrix
   $
     Pi = 1 / 3 mat(delim: "(", 1, 0, 2;0, 2, 1;1, 1, 1)
