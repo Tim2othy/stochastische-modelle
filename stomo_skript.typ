@@ -3,13 +3,13 @@
 #import "settings.typ": make-frame
 #show: show-theorion
 
+// Theorion Settings
 #let (theorem-counter, theorem-box, theorem, show-theorem) = make-frame(
   "theorem",
   "Satz",
   counter: none,
   render: render-fn.with(fill: olive.lighten(85%)),
 )
-
 #let (example-counter, example-box, example, show-example) = make-frame(
   "definition",
   "Beispiel",
@@ -17,16 +17,15 @@
   render: render-fn.with(fill: blue.lighten(85%)),
 )
 
-#set-inherited-levels(0)
-
+// Normal Settings
 #set text(font: "New Computer Modern", lang: "DE")
-
+#set heading(numbering: "1.1")
 #set page(paper: "a4", margin: (x: 1.5cm, y: 3.5cm), numbering: "1")
 #show outline.entry.where(level: 1): set block(above: 1.2em)
+
 // Maybe use something like this?
 //#outline(title: none, target: figure.where(kind: "theorem"))
 
-#set heading(numbering: "1.1")
 
 #outline()
 #pagebreak()
