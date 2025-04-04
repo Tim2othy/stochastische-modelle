@@ -3,12 +3,7 @@
 #import cosmos.clouds: *
 #show: show-theorion
 #let theorem = theorem.with(fill: olive.lighten(85%))
-#let (example-counter, example-box, example, show-example) = make-frame(
-  "definition",
-  theorion-i18n-map.at("example"),
-  counter: none,
-  render: render-fn.with(fill: blue.lighten(85%)),
-)
+#let (example-counter, example-box, example, show-example) = make-frame("definition", theorion-i18n-map.at("example"), counter: none, render: render-fn.with(fill: blue.lighten(85%)))
 
 #set-inherited-levels(0)
 
@@ -253,7 +248,7 @@ $ f_(X \| Y) = P(X = x \| Y = y) text(", falls ") P(Y = y) > 0 $
 Nach dem Satz der totalen Wahrscheinlichkeit ist dann
 $ P(X = x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y) $
 
-#example()[
+#example[
   $X$ und $Y$ seien diskrete Zufallsvariablen mit Wahrscheinlichkeitsfunktionen $f_X$ und $f_Y$. Für die
   Wahrscheinlichkeitsfunktion $f_(X + Y)$ von $X + Y$ gilt
   $ f_(X + Y) (z) = P(X + Y = z) = sum_(Y : f_Y (y) > 0) P(X + Y = z \| Y = y) f_Y (y) $
@@ -317,7 +312,7 @@ also
 $p_(i j) >= 0$ für alle $i , j in S$ und $sum_(j in S) p_(i j) = 1$
 für alle $i in S$.\
 
-#theorem()[
+#theorem[
   Eine Folge ${ X_n : n in bb(N) }$ von Zufallsvariablen mit Werten in $S$
   heißt Markovkette mit Zustandraum $S$ und Übergangsmatrix
   $(P_(i j))_(i , j in S) \)$, falls für alle $n >= 0$ und alle möglichen $i_0 , i_1 ,... , i_(n + 1) in S$ gilt
@@ -336,7 +331,8 @@ $(star)$ beinhaltet zwei Aussagen:
 Die i-te Zeile der Übergangsmatrix beschreibt die bedingte Verteilung des nächsten Zustands $X_(n + 1)$ gegeben $X_n = i$ (und
 $X_0 = i_0 ,...$).
 
-#block[
+#example[
+
   Seien $X_0 , X_1 ,...$ unabhängige und identisch verteilte
   $bb(N)_0$-wertige Zufalssvariablen mit $P(X_0 = i) = a_i$,
   $i = 0 , 1 ,...$. Dann ist ${ X_n : n in bb(N) }$ eine Markov-Kette mit Zusstandraum $bb(N)_0$ und Übergangsmatrix
@@ -345,7 +341,7 @@ $X_0 = i_0 ,...$).
   $
     (P_(i j))_(i , j = 0)^a = mat(
       delim: "(",
-      a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;dots.v, dots.v, dots.v, dots.down;#none, , ,
+      a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;dots.v, dots.v, dots.v, dots.down;#none, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,
 
     )
   $
@@ -358,7 +354,7 @@ $X_0 = i_0 ,...$).
   Zustand $j$ zu sein bestimmt, oder anders gesagt $X_(n + 1)$ und $X_n$ sind unabhängig.
 
 ]
-#block[
+#example[
   #strong[Irrfahrt auf $bb(Z)$] \
   Seien $Y_1 , Y_2 , dots.h$ unabhängige, identisch verteilte
   $bb(Z)$-wertige Zufallsvariablen mit $P(Y_1 = i)$, $i in bb(Z)$. Sei
@@ -382,7 +378,7 @@ $X_0 = i_0 ,...$).
   $
     (P_(i j)) = mat(
       delim: "(",
-      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down;#none, , ,
+      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down;#none, , , , ,
 
     )
   $
@@ -392,7 +388,7 @@ $X_0 = i_0 ,...$).
   und springt zu jedem Zeitpunkt $1 , 2 ,...$ zufällig eine Einheit nach links oder rechts.
 
 ]
-#block[
+#example[
   #strong[Sukzessive Maxima] \
   Seien $Y_1 , Y_2 ,...$ unabhängig und identisch verteilte
   $bb(N)_0$-wertige Zufallsvariablen mit $P(Y_1 = c) = a_i$, $i in N_0$,
@@ -435,7 +431,7 @@ $X_0 = i_0 ,...$).
   $
 
 ]
-#block[
+#example[
   #strong[Rekursive Darstellung einer Markovkette mittelszufälliger Funktionen] Sei $X_0$ eine $S$-wertige Zufallsvariable
   und $S$ endlich oder abzählbar unendlich. Setze für $n >= 0$ rekursiv
   $ X_(n + 1) = f (X_n , Y_(n + 1)) $ Dabei sei
@@ -478,7 +474,7 @@ $
   = & P(X_0 = i_0) p_(i_0 i_1)... p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n)
 $
 
-#theorem()[
+#theorem[
   Für jede Folge von Zuständen $i_0 ,... , i_n in S$ gilt:
   $ P(X_0 = i_0 ,... , X_n = i_n) = p_(i_0 i_1)... p_(i_(n - 1) i_n) $
   Insbesondere ist für jedes $n$ die Verteilung von $X_0 ,... , X_n$
@@ -486,7 +482,7 @@ $
   $(P_(i j))_(i , j in S)$ eindeutig festgelegt.
 
 ]
-#block[
+#example[
   Betrachte eine Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandraum
   $S = { 0 , 1 , 2 , 3 , 4 }$, $X_0 : = 0$, also $p_0 = P(X_0 = 0) = 1$. \
   Sei $X_n = m a x (Y_1 ,... , Y_n)$, $n in bb(N)$, wobei
@@ -498,7 +494,7 @@ $
   $
     (P_(i j))_(i , j = 0)^n = mat(
       delim: "(",
-      1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5;0, 2 / 5, 1 / 5, 1 / 5, 1 / 5;0, 0, 3 / 5, 1 / 5, 1 / 5;0, 0, 0, 4 / 5, 1 / 5;0, 0, 0, 0, 1;#none, , ,
+      1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5;0, 2 / 5, 1 / 5, 1 / 5, 1 / 5;0, 0, 3 / 5, 1 / 5, 1 / 5;0, 0, 0, 4 / 5, 1 / 5;0, 0, 0, 0, 1;#none, , , , ,
 
     )
   $
@@ -516,7 +512,7 @@ $
 ]
 Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Vergangenheit erweitern:\
 
-#block[
+#theorem[
   Für alle $n , m >= 1$, $Z ⊂ S^m$, $V ⊂ S^n$, $i in S$ mit
   $P((X_0 ,... , X_(n - 1)) in V , X_n = i) > 0$ gilt
   $
@@ -577,7 +573,7 @@ Es gilt
 $ p_(i j)^0 = P(X_m = j \| X_m = i) = cases(delim: "{", 1 & text(" , falls ") i = j, 0 & text(" , falls ") i != j) $
 und $ P_(i j)^1 = P(X_(m + 1) = j \| X_m = i) = p_(i j) $
 
-#block[
+#theorem[
   Satz von Chapman-Kolmogorow: Für alle $i , j in S$ und
   $m , n in bb(N)_0$ ist die Wahrscheinlichkeit, von Zustand $i$ in
   $m + n$ Schritten zu Zustand $j$ zu gelangen gegeben durch:
@@ -621,12 +617,12 @@ $
 Daraus folgt wiederum: $ p^((n + m)) = p^((n)) Pi^m $ Letzteres kann genutzt werden, um die Verteilung $X_n$ zu jeden
 Zeitpunkt zu berechnen:
 
-#block[
+#theorem[
   Die Verteilung von $X_n$ zu einem beliebigen Zeitpunkt $n >= 0$
   ergibt sich aus dem Produkt der Anfangsverteilung und der $n$-ten Potenz der Übergangsmatrix. $ p^((n)) = p^((0)) Pi^n $
 
 ]
-#block[
+#example[
   Betrachte eine Markovkette $X_n : n in bb(N)_0$ mit $S = { 1 , 2 , 3 }$, Übergangsmatrix
   $ Pi = 1 / 3 mat(delim: "(", 1, 0, 2;0, 2, 1;1, 1, 1) $ und Anfangsverteilung $p^((0)) = P(X_0 = i) = (1 / 4 , 1 / 2 , 1 / 4)$.
   \
@@ -685,7 +681,7 @@ $
   =                                & h_j
 $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
 
-#block[
+#example[
   #strong[Ruinproblem] \
   In jeder Runde eines Spiels gewinnt eine Spieler 1€ mit Wahrscheinlichkeit $p in (0 , 1)$ und verliert 1€ mit
   Wahrscheinlichkeit
@@ -747,7 +743,7 @@ $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
   $ => h_j = 1 - frac(1 - Theta^j, 1 - Theta^M) text(" für ") j = 0 ,... , M $
 
 ]
-#block[
+#example[
   #strong[Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke] \
   Betrachte die Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandsraum
   $S = bb(N)_0$ und
