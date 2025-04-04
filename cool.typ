@@ -2,7 +2,8 @@
 #import cosmos.fancy: *
 #import cosmos.clouds: *
 #show: show-theorion
-#let theorem = theorem.with(fill: blue.lighten(85%))
+#let theorem = theorem.with(fill: green.lighten(85%))
+#let example = theorem.with(fill: blue.lighten(85%))
 
 #set text(font: "New Computer Modern", lang: "DE")
 
@@ -245,7 +246,7 @@ $ f_(X \| Y) = P(X = x \| Y = y) text(", falls ") P(Y = y) > 0 $
 Nach dem Satz der totalen Wahrscheinlichkeit ist dann
 $ P(X = x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y) $
 
-#block[
+#example()[
   $X$ und $Y$ seien diskrete Zufallsvariablen mit Wahrscheinlichkeitsfunktionen $f_X$ und $f_Y$. Für die
   Wahrscheinlichkeitsfunktion $f_(X + Y)$ von $X + Y$ gilt
   $ f_(X + Y) (z) = P(X + Y = z) = sum_(Y : f_Y (y) > 0) P(X + Y = z \| Y = y) f_Y (y) $
@@ -467,7 +468,7 @@ $
   = & P(X_0 = i_0) p_(i_0 i_1)... p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n)
 $
 
-#block[
+#theorem()[
   Für jede Folge von Zuständen $i_0 ,... , i_n in S$ gilt:
   $ P(X_0 = i_0 ,... , X_n = i_n) = p_(i_0 i_1)... p_(i_(n - 1) i_n) $
   Insbesondere ist für jedes $n$ die Verteilung von $X_0 ,... , X_n$
