@@ -3,6 +3,10 @@
 #import "settings.typ": make-frame
 #show: show-theorion
 
+#let title = [Stochastische Modelle]
+#let subtitle = [Vorlesung]
+#let semester = [Wintersemester 2024/25]
+
 // Theorion Settings
 #let (theorem-counter, theorem-box, theorem, show-theorem) = make-frame(
   "theorem",
@@ -48,6 +52,20 @@
 //#outline(title: none, target: figure.where(kind: "theorem"))
 
 
+#align(
+  center,
+  text(2em)[*#title*],
+)
+#align(
+  center,
+  text(1.6em)[\- #subtitle -],
+)
+#align(
+  center,
+  text(1.4em)[#semester],
+)
+
+#pagebreak()
 #outline()
 #pagebreak()
 
