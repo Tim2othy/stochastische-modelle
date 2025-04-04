@@ -407,9 +407,7 @@ $X_0 = i_0, ...$).
   $i, j in bb(N)_0$.
   $
     (P_(i j))_(i, j = 0)^a = mat(
-      delim: "(",
-      a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;dots.v, dots.v, dots.v, dots.down;#none,
-
+      a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;dots.v, dots.v, dots.v, dots.down
     )
   $
   Denn für alle $n >= 0$ und alle $i_0, ..., i_(n + 1) in bb(N)_0$
@@ -444,7 +442,7 @@ $X_0 = i_0, ...$).
   $p_(i j) = a_(j - 1)$, $i, j in bb(Z)$.
   $
     (P_(i j)) = mat(
-      delim: "(",
+
       dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down;#none,
 
     )
@@ -1102,33 +1100,33 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
 #example[
   Gegeben sei eine Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandsraum
   $S = { 1, 2 }$ und Übergangsmatrix
-  $Pi = mat(delim: "(", (1 - a), a;b, (1 - b))$ ($a, b in (0, 1)$) Es gilt
+  $Pi = mat( (1 - a), a;b, (1 - b))$ ($a, b in (0, 1)$) Es gilt
   $
-    Pi^((n)) = frac(1, a + b) mat(delim: "(", b + (1 - a - b)^n a, a - (1 - a - b)^n a;b - (1 - a - b)^n b, b + (1 - a - b)^n b)
+    Pi^((n)) = frac(1, a + b) mat( b + (1 - a - b)^n a, a - (1 - a - b)^n a;b - (1 - a - b)^n b, b + (1 - a - b)^n b)
   $
   und da $lim_(n -> oo) (1 - a - b)^n = 0$ folgt
-  $ lim_(n -> oo) Pi^((n)) = frac(1, a + b) mat(delim: "(", b, a;b, a) $
+  $ lim_(n -> oo) Pi^((n)) = frac(1, a + b) mat( b, a;b, a) $
   Damit ist für $i in S$
   $ lim_(n -> oo) P_(i 1)^((n)) = frac(b, a + b) $ und
   $ lim_(n -> oo) P_(i 2)^((n)) = frac(a, a + b) $ Für jede Anfangsverteilung
-  $mat(delim: "(", p_1, p_2) = (P(X_0 = 1), P(X_0 = 2))$ gilt
+  $mat( p_1, p_2) = (P(X_0 = 1), P(X_0 = 2))$ gilt
   $
-    lim_(n -> oo) (P(X_n = 1), P(X_n = 2)) & = lim_(n -> oo) mat(delim: "(", p_1, p_2) Pi^n\
-    & = frac(1, a + b) mat(delim: "(", p_1, 1 - p_1) mat(delim: "(", b, a;b, a)\
-    & = mat(delim: "(", f r a c b a + b, frac(a, a + b)) //TODO correct this
+    lim_(n -> oo) (P(X_n = 1), P(X_n = 2)) & = lim_(n -> oo) mat( p_1, p_2) Pi^n\
+    & = frac(1, a + b) mat( p_1, 1 - p_1) mat( b, a;b, a)\
+    & = mat( f r a c b a + b, frac(a, a + b)) //TODO correct this
   $ Die Grenzverteilung ist also unabhängig von der Anfangsverteilung. \
   Ist die Anfangsverteilung gleich der Grenzverteilung, also
   $p_1 = frac(b, a + b)$ und $p_2 = frac(a, a + b)$, dann gilt
   $
-    mat(delim: "(", p_1, p_2) Pi = frac(1, a + b) mat(delim: "(", b, a) mat(delim: "(", 1 - a, a;b, 1 - b) = frac(1, a + b) mat(delim: "(", b, a) = mat(delim: "(", p_1, p_2)
+    mat( p_1, p_2) Pi = frac(1, a + b) mat( b, a) mat( 1 - a, a;b, 1 - b) = frac(1, a + b) mat( b, a) = mat( p_1, p_2)
   $
-  und daher $mat(delim: "(", p_1, p_2) Pi^n = mat(delim: "(", p_1, p_2)$.
+  und daher $mat( p_1, p_2) Pi^n = mat( p_1, p_2)$.
 
 ]
 #theorem[
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette
   ${ X_n : n in bb(N)_0 }$ mit stationäre Verteilung
-  $pi = mat(delim: "(", pi_1, ..., pi_S)$. \
+  $pi = mat( pi_1, ..., pi_S)$. \
   $exists quad 0 < epsilon < 1$, sodass
   $
     p_(i j) & >= epsilon pi_j quad forall quad i, j = 1, ..., S\
@@ -1167,7 +1165,7 @@ exponentiell zur stationären Verteilung konvergiert.\
 ]
 #theorem[
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette mit Zustandsraum ${ 1, ..., S }$ und stationärer Verteilung
-  $pi = mat(delim: "(", pi_1, ..., pi_S)$. \
+  $pi = mat( pi_1, ..., pi_S)$. \
   Es existiere $k in bb(N)$, $epsilon in (0, 1)$, sodass
   $
     p_(i j)^k & >= epsilon pi_j quad forall quad i, j = 1, ..., S\
@@ -1215,11 +1213,11 @@ $p_(i j^n) >= epsilon pi_j$ ($i, j = 1, ..., S$) mit
 $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
 
 #block[
-  Sei nun $a = b = 1$, also $ Pi = mat(delim: "(", 0, 1;1, 0) $ dann gilt
+  Sei nun $a = b = 1$, also $ Pi = mat( 0, 1;1, 0) $ dann gilt
   $
     Pi^n = cases(
-      mat(delim: "(", 1, 0;0, 1) & "für" n "gerade",
-      mat(delim: "(", 0, 1;1, 0) & "für" n "ungerade",
+      mat( 1, 0;0, 1) & "für" n "gerade",
+      mat( 0, 1;1, 0) & "für" n "ungerade",
 
     )
   $
@@ -1236,7 +1234,7 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
   aperiodisch sind.]
 
 #example[
-  - Für $S = { 1, 2 }$ und $Pi = mat(delim: "(", 0, 1;1, 0)$ gilt
+  - Für $S = { 1, 2 }$ und $Pi = mat( 0, 1;1, 0)$ gilt
     $
       & d_1 = g g t ({ 2, 4, 6, ... }) = 2\
       & d_2 = 2
@@ -1254,7 +1252,7 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
 
 ] <thm:periodic_markov>
 #example[
-  Sei $ Pi = mat(delim: "(", 0, 1, 0;0, 0, 1;1 / 2, 0, 1 / 2) $
+  Sei $ Pi = mat( 0, 1, 0;0, 0, 1;1 / 2, 0, 1 / 2) $
   $P_11^1 = 0$, $P_11^2 = 0$.Für $n >= 3$ ist aber
   $ p_11^n >= p_12 p_23 p_33^(n - 3) p_31 = (1 / 2)^(n - 2) > 0 $
   $=>$ Zustand 1 ist aperiodisch. Es gilt nicht, dass
@@ -1385,7 +1383,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
 
 #example[
   Sei $S = { 1, 2, 3 }$ und
-  $ (P_(i j)) = mat(delim: "(", 0.5, 0.5, 0;0.5, 0.5, 0;1 / 3, 1 / 3 1 / 3) $
+  $ (P_(i j)) = mat( 0.5, 0.5, 0;0.5, 0.5, 0;1 / 3, 1 / 3 1 / 3) $
   Dann ist $ f_11 & = sum_(n = 1)^oo P(tau_1 = n \| X_0 = 1)\
        & = sum_(k = 1)^oo P(X_n = 1, X_k = 2 "mit" 1 <= k < n \| X_0 = 1)\
        & = sum_(n = 1)^oo (1 / 2)^n = 1 $ Folglich ist 1 rekurrent. Ebenso auch 2.
