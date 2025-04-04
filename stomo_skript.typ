@@ -177,7 +177,7 @@ Ist $X$ eine diskrete Zufallsvariable und $g : bb(R) -> bb(R)$, so ist $ E [g (X
 Summe über alle $X$
 mit $P(X = x) > 0$ läuft.\
 Nimmt X nur Werte in ${ 0 , 1 , 2 ,... }$ an, dann gilt
-$ E [X] = sum_(n = 0)^oo P(X > n) text(", ") $ denn
+$ E [X] = sum_(n = 0)^oo P(X > n), $ denn
 $
   E [X] & = sum_(n = 0)^oo n P(X = n) =\
   & P(X = 1) +\
@@ -272,7 +272,7 @@ Für $A , B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A g
 
 Für dieskrete Zufallsvariablen $X$ und $Y$ ist die bedingte Wahrscheinlichkeitsfunktion $f_(X \| Y) (x \| y)$ ($X$,
 gegeben $Y = y$) definiert durch
-$ f_(X \| Y) = P(X = x \| Y = y) text(", falls ") P(Y = y) > 0 $
+$ f_(X \| Y) = P(X = x \| Y = y), "falls" P(Y = y) > 0 $
 Nach dem Satz der totalen Wahrscheinlichkeit ist dann
 $ P(X = x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y) $
 
@@ -298,9 +298,9 @@ $
 Seien $X$ und $Y$ diskrete ZUfallsvariablen und gilt
 $g : bb(R) -> bb(R)$. Der bedingte Erwartungswert von $g (X)$
 gegeben $Y = y$ ist
-$ E [g (X) \| Y = y] = sum_X g (x) f_(X \| Y) (x \| y) ",falls" P(Y = y) > 0 $
+$ E [g (X) \| Y = y] = sum_X g (x) f_(X \| Y) (x \| y), "falls" P(Y = y) > 0 $
 Zudem gilt
-$ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) text(", denn ") $
+$ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y), "denn" $
 $ E [g (X)] = sum_X g (x) P(X = x) = sum_X g (x) sum_Y f_(X \| Y) (x \| y) P(Y = y) $
 $
   = sum_Y P(Y = y) sum_X g (x) f_(X \| Y) (x \| y)
@@ -744,11 +744,11 @@ Folgender Satz gilt für beliebige $A$:\
   $
     p_(i j) = cases(
       delim: "{",
-      1 & text("falls ") i = 0 text(" und ") j = 0,
-      p & text("falls ") i in { 1 ,... , M - 1 } text(" und ") j = i + 1,
-      1 - p & text("falls ") i in { 1 ,... , M - 1 } text(" und ") j = i - 1,
-      1 & text("falls ") i = M text(" und ") j = M,
-      0 & text("sonst"),
+      1 & "falls" i = 0 "und" j = 0,
+      p & "falls" i in { 1 ,... , M - 1 } "und" j = i + 1,
+      1 - p & "falls" i in { 1 ,... , M - 1 } "und" j = i - 1,
+      1 & "falls" i = M "und" j = M,
+      0 & "sonst",
 
     )
   $
@@ -759,7 +759,7 @@ Folgender Satz gilt für beliebige $A$:\
   Wahrscheinlichkeit jemals ruiniert zu sein beim Start in Periode $i$ eine Gewichtung der Ruinwahrscheinlichkeit nach
   einer Aufwärtsbewegung (also ab $i + 1$) und einer Abwärtsbewegung (also ab $i - 1$).
   $
-    h_i & = p h_(i + 1) + (1 - p) h_(i - 1) text(" für ") i = 1 ,... , M - 1\
+    h_i & = p h_(i + 1) + (1 - p) h_(i - 1) "für" i = 1 ,... , M - 1\
     <=> h_(i + 1) - h_i & = frac(1 - p, p) (h_i - h_(i - 1))
   $
   Falls es sich um ein faires Spiel handelt, also $p = 1 / 2$, dann ist
@@ -774,7 +774,7 @@ Folgender Satz gilt für beliebige $A$:\
     h_2 - h_1 & = Theta (h_1 - h_0) = Theta (h_1 - 1)\
     h_3 - h_2 & = Theta (h_2 - h_1) = Theta^2 (h_1 - 1)\
     dots.v & \
-    h_(i + 1) - h_i & = Theta^i (h_1 - 1) text(" für alle ") i = 0 ,... , M - 1
+    h_(i + 1) - h_i & = Theta^i (h_1 - 1) "für alle" i = 0 ,... , M - 1
   $
   Zunächst bildet man die Summe über $i = 0 ,... , j - 1$ (über alle
   $j in S$) und nutzt die Eigenschaft der Teleskopsumme und der geometrischen Reihe aus:
@@ -784,14 +784,14 @@ Folgender Satz gilt für beliebige $A$:\
     <=> h_0 - h_j & = sum_(i = 0)^(j - 1) Theta^i (1 - h_1)\
     <=> 1 - h_j & = (1 - h_1) sum_(i = 0)^(j - 1) Theta^i\
     <=> 1 - h_j & = (1 - h_1) frac(1 - Theta^j, 1 - Theta)\
-    <=> h_j & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta) + 1 text(" für ") j = 1 ,... , M
+    <=> h_j & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta) + 1 "für" j = 1 ,... , M
   $
   Da diese Gleichung für alle $j$ gilt, gilt sie auch für $j = M$ und da
   $h_M = 0$ ist, ist $ 0           & = (h_1 - 1) frac(1 - Theta^M, 1 - Theta) + 1\
   <=> 1 - h_1 & = frac(1 - Theta, 1 - Theta^M) $ Damit ist
   $ 1 - h_j = frac(1 - Theta, 1 - Theta^M) dot frac(1 - Theta^j, 1 - Theta) $
   und folglich
-  $ => h_j = 1 - frac(1 - Theta^j, 1 - Theta^M) text(" für ") j = 0 ,... , M $
+  $ => h_j = 1 - frac(1 - Theta^j, 1 - Theta^M) "für" j = 0 ,... , M $
 
 ]
 #example(title: [Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke])[
@@ -801,10 +801,10 @@ Folgender Satz gilt für beliebige $A$:\
   $
     p_(i j) = cases(
       delim: "{",
-      1 & text("falls ") i = 0 text(" und ") j = 0,
-      p & text("falls ") i in bb(N)_0 text(" und ") j = i + 1,
-      1 - p & text("falls ") i in bb(N)_0 text(" und ") j = i - 1,
-      0 & text("sonst "),
+      1 & "falls" i = 0 "und" j = 0,
+      p & "falls" i in bb(N)_0 "und" j = i + 1,
+      1 - p & "falls" i in bb(N)_0 "und" j = i - 1,
+      0 & "sonst",
 
     )
   $
@@ -812,21 +812,21 @@ Folgender Satz gilt für beliebige $A$:\
   $h_i = P(T < oo \| X_0 = i)$ mit $i in S$ und
   $T = inf { n in bb(N)_0 : X_n = 0 }$. \
   Es gilt $h_0 = 1$ und Nach Satz 10
-  $ h_i = p h_(i + 1) + (1 - p) h_(i - 1) text(" für ") i = 1 , 2 ,... $
+  $ h_i = p h_(i + 1) + (1 - p) h_(i - 1) "für" i = 1 , 2 ,... $
   Mit $Theta = frac(1 - p, p)$ gilt somit (siehe Bsp. 9)
-  $ h_(i + 1) - h_i = Theta (h_i - h_(i - 1)) text(" für ") i = 1 , 2 ,... $
+  $ h_(i + 1) - h_i = Theta (h_i - h_(i - 1)) "für" i = 1 , 2 ,... $
   und daher
-  $ h_(i + 1) - h_i = Theta^i (h_1 - h_0) = Theta^i (h_1 - 1) text(" für ") i = 0 , 1 ,...space (star) $
+  $ h_(i + 1) - h_i = Theta^i (h_1 - h_0) = Theta^i (h_1 - 1) "für" i = 0 , 1 ,...space (star) $
   Sei nun $p <= 1 / 2$, also $Theta >= 1$. \
   Dann gilt
   $ h_i - h_(i + 1) =^((star)) Theta^i (1 - h_1) >= 1 - h_1 $ also
-  $ h_(i + 1) <= h_i - (1 - h_1) text(" für ") i = 0 , 1 ,... $
+  $ h_(i + 1) <= h_i - (1 - h_1) "für" i = 0 , 1 ,... $
   Angenommen $h_1 < 1$, dann würde daraus folgen, dass
   $h_(i + 1) - h_i <= 0$ und damit wäre
   $lim_(i -> oo) h_i = - oo$. Dies wäre offensichtlich ein Widerspruch! \
   Also muss $h_1 = 1$ sein.
-  $ =>^((star)) h_(i + 1) - h_i = 0 text(" für ") i = 0 , 1 ,... $
-  $ => h_i = 1 text(" für alle ") i = 0 , 1 ,... text(", falls ") p <= 1 / 2 $
+  $ =>^((star)) h_(i + 1) - h_i = 0 "für" i = 0 , 1 ,... $
+  $ => h_i = 1 "für alle" i = 0 , 1 ,..., "falls" p <= 1 / 2 $
   Insbesondere ist auch bei einem fairen Spiel ($p = 1 / 2$) die Ruinwahrscheinlichkeit $h_i = 1$ für jedes Anfangskapital $i$.
   \
   Sei nun $p > 1 / 2$ (nicht-faires Spiel mit höherer Wahrscheinlichkeit Geld zu verlieren), also $Theta < 1$. Aus $(star)$ folgt
@@ -837,7 +837,7 @@ Folgender Satz gilt für beliebige $A$:\
     & = (h_1 - 1) sum_(i = 0)^(j - 1) Theta^i\
     & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta)
   $
-  $ => h_i = 1 + (h_1 - 1) frac(1 - Theta^j, 1 - Theta) text(" für ") j = 0 , 1 ,... $
+  $ => h_i = 1 + (h_1 - 1) frac(1 - Theta^j, 1 - Theta) "für" j = 0 , 1 ,... $
   Für jedes $h_1 in [0 , 1]$ erfüllt diese Gleichung die Gleichung
   $(star)$. \
   Wegen $0 <= lim_(j -> oo) h_i = 1 + frac((h_1 - 1), 1 - Theta)$
@@ -855,8 +855,8 @@ Folgender Satz gilt für beliebige $A$:\
   Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei zudem $A ⊂ S$ mit
   $A != nothing$. Seo $T_i = inf { n in N : X_n in A }$ und
   $h_i = P(T_i < oo \| X_0 = i)$. Dann ist $(h_i)_(i in S)$ die
-  #strong[komponentenweise kleinste nicht-negative Lösung] des Gleichungssystems $   & x_i = 1 text(" für alle ") i in A\
-    & x_i = sum_(j in S) p_(i j) x_j text(" für alle ") i in S without A $
+  #strong[komponentenweise kleinste nicht-negative Lösung] des Gleichungssystems $   & x_i = 1 "für alle" i in A\
+    & x_i = sum_(j in S) p_(i j) x_j "für alle" i in S without A $
   Das heißt
 
   + $(x_i) = (h_i)$ ist eine nicht-negative Lösung.
@@ -872,7 +872,7 @@ Die Behauptung ist klar, wenn $A = S$. Deswegen sei $A != S$:
 
 + Sei $(x_i)$ eine Lösung mit $X_i >= 0$, $i in S$.
   $
-    => x_i = overbrace(sum_(j in A) p_(i j), := r_i) dot 1 + overbrace(sum_(j in A^c) p_(i j), := Q) x_j text(", ") i in A^c
+    => x_i = overbrace(sum_(j in A) p_(i j), := r_i) dot 1 + overbrace(sum_(j in A^c) p_(i j), := Q) x_j , i in A^c
   $
   Für die Spaltenvektoren $x = (x_i)_(i in A^c)$, $r = (r_i)_(i in A^c)$
   und die Teilmatrix $Q = (p_(i j))_(i , j in A^c)$ gilt durch iteratives Einsetzen $ x & = r + Q x\
@@ -880,7 +880,7 @@ Die Behauptung ist klar, wenn $A = S$. Deswegen sei $A != S$:
     & = r + Q r + Q^2 x\
     & = r + Q r + Q^2 (r + Q x)\
     & dots.v\
-  x & = r + sum_(k = 1)^n Q^k r + Q^(n + 1) x text(", ") n >= 1 $
+  x & = r + sum_(k = 1)^n Q^k r + Q^(n + 1) x , n >= 1 $
 
 Daraus folgt also für alle $i in A^c$, $j in A$ und $n >= 1$ durch Einsetzen, wobei $Q^k r = p_(i j_k)^k p_(j_k j)$ und $Q^(n + 1) x$ als
 strikt positiver Wert für die untere Schranke ausgelassen werden kann, folgendes:
@@ -888,7 +888,7 @@ $
   x_i & >= p_(i j) + sum_(k = 1)^n sum_(j_1 ,... , j_k in A^c , j in A) p_(i j_1) p_(j_1 j_2)... p_(j_k j)\
   <=> x_i & >= P_i (X_1 in A) + sum_(k = 1)^n P(X_1 in A^c ,... , X_k in A^c , X_(k + 1) in A)\
   <=> x_i & >= P_i (T <= n + 1)\
-  => x_i & >= lim_(n -> oo) P_i (T <= n + 1) = lim_(n -> oo) P_i (T <= n) = h_i text(", ") i in A^c
+  => x_i & >= lim_(n -> oo) P_i (T <= n + 1) = lim_(n -> oo) P_i (T <= n) = h_i , i in A^c
 $
 
 #block[
@@ -934,8 +934,8 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
   #strong[komponentenweise kleinst enichtnegative Lösung] des Gleichungssystems $(star)$
 
   $
-    k_i & = 0 text(", ") i in A\
-    k_i & = 1 + sum_(j in S without A) p_(i j) k_j text(", für alle ") i in S without A
+    k_i & = 0 , i in A\
+    k_i & = 1 + sum_(j in S without A) p_(i j) k_j, "für alle" i in S without A
   $
 
   mit $k_i in [0 , oo]$.
@@ -948,7 +948,7 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
     & k_i = 0 quad forall i in A $ Für $i in S without A$ gilt
   $
     k_i & = sum_(j in S) E [T \| X_0 = i , X_1 = j] p_(i j)\
-    & = sum_(j in S) (1 + E [T \| Y_0 = j]) p_(i j) text(" (siehe Aufgaben)")\
+    & = sum_(j in S) (1 + E [T \| Y_0 = j]) p_(i j) "(siehe Aufgaben)"\
     & = 1 + sum_(j in S without A) p_(i j) k_j
   $ $=> (k_i)$
   löst $(star)$.
@@ -956,12 +956,12 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
 - Sie nun $(x_i)_(i in S)$ eine Lösung von $(star)$ mit
   $x_i in [0 , oo]$. Zu zeigen ist, dass $x_i >= k_i quad forall i$. Für $i in A$ gilt $x_i = k_i = 0$. Für die
   Spaltenvektoren
-  $ x = (x_i)_(i in A^c) text(" und ") e = vec(1, dots.v, 1) $ und
+  $ x = (x_i)_(i in A^c) "und" e = vec(1, dots.v, 1) $ und
   $ Q = (p_(i j))_(i , j in A^c) $ gilt (siehe auch Beweis Satz 11)
   $
     x & = e + Q x\
     & dots.v\
-    & = e + sum_(k = 1)^n Q^k e + Q^(n + 1) x text(", für ") n >= 1
+    & = e + sum_(k = 1)^n Q^k e + Q^(n + 1) x, "für" n >= 1
   $
 
   und somit für alle $i in A^c$ und $n >= 2$, wobei ... und
@@ -995,17 +995,17 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
 
   Wegen $k_M = 0$ folg aus dieser GLeichung (durch einsetzen)
   $k_1 = M - 1$ und somit
-  $ E [T \| X_0 = j] = k_j = j (M - j) text(", ") j = 0 ,... , M $
+  $ E [T \| X_0 = j] = k_j = j (M - j) , j = 0 ,... , M $
 
   Sei nun $p != 1 / 2$. \
   In diesem Fall lässt sich zeigen, dass $k_i$ als Lösung von $(star)$
   die Form
-  $ k_i = frac(i, 1 - 2 p) + alpha + beta dot (frac(1 - p, p))^i text(" für ") i = 0 ,... , M $
+  $ k_i = frac(i, 1 - 2 p) + alpha + beta dot (frac(1 - p, p))^i "für" i = 0 ,... , M $
   haben muss für gewisse $alpha , beta in bb(R)$. Mit $k_0 = k_m = 0$
   folgt $ 0                   & = alpha + beta\
   0                   & = frac(M, 1 - 2 p) + alpha + beta dot (frac(1 - p, p))^M\
   => alpha            & = - beta = frac(- frac(M, 1 - 2 p), 1 - (frac(1 - p, p))^M)\
-  => E [T \| X_0 = i] & = frac(i, 1 - 2 p) - frac(M, 1 - 2 p) dot frac(1 - (frac(1 - p, p))^i, 1 - (frac(1 - p, p))^M) text(" , ") i = 0 ,... , M $
+  => E [T \| X_0 = i] & = frac(i, 1 - 2 p) - frac(M, 1 - 2 p) dot frac(1 - (frac(1 - p, p))^i, 1 - (frac(1 - p, p))^M) , i = 0 ,... , M $
 
 ]
 == Konvergenzsätze
@@ -1030,7 +1030,7 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
   die Anfangsverteilung von $X_n$ und ist die Anfangsverteilung stationär, dann gilt
   $ P^((n)) = P^((0)) Pi^n = p^((0)) Pi Pi^(n - 1) =... = P^((0)) , $
   d.h.
-  $P(X_n = i) = P(X_0 = i) quad forall n >= 0 text(" und ") i in S$.
+  $P(X_n = i) = P(X_0 = i) quad forall n >= 0 "und" i in S$.
 
 - Ist der Zustandsraum endlich und existiert für jedes $j in S$ der Grenzwert $ pi_j = lim_(n -> oo) P(X_n = j) , $ dann
   muss
@@ -1060,7 +1060,7 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
   $
     lim_(n -> oo) (P(X_n = 1) , P(X_n = 2)) & = lim_(n -> oo) mat(delim: "(", p_1, p_2) Pi^n\
     & = frac(1, a + b) mat(delim: "(", p_1, 1 - p_1) mat(delim: "(", b, a;b, a)\
-    & = mat(delim: "(", f r a c b a + b, frac(a, a + b))
+    & = mat(delim: "(", f r a c b a + b, frac(a, a + b)) //TODO correct this
   $ Die Grenzverteilung ist also unabhängig von der Anfangsverteilung. \
   Ist die Anfangsverteilung gleich der Grenzverteilung, also
   $p_1 = frac(b, a + b)$ und $p_2 = frac(a, a + b)$, dann gilt
@@ -1091,7 +1091,7 @@ $e = vec(1, dots.v, 1) in bb(R)^S$ ist $M = e pi$ und
 $
   M^2 & = e overbrace(pi e, 1) pi = M\
   Pi M & = overbrace(Pi e, e) pi = e pi = M\
-  M Pi & = e overbrace(pi Pi, pi) = M text(" ,")
+  M Pi & = e overbrace(pi Pi, pi) = M,
 $ da $pi$ stationär ist. Daraus folgt also $Q M = M$ und $M Q = M$.\
 Das Produkt einer endlichen Folge von $Q$s und $M$s, die mindestens ein
 $M$ enthält, ist gleich $M$.\
@@ -1123,7 +1123,7 @@ Wende hier Satz 14 auf $Pi^k$ an.\
 $pi$ ist auch eine stationäre Verteilung für $Pi^k$ und
 $ (Pi^k)^m = Pi^(k m) = (P_(i j)^(k m)) $ Damit liefer Satz 14:
 $
-  sum_(j = 1)^S lr(|P_(i j)^(k m) - pi_j|) <= 2 (1 - epsilon)^m quad forall quad i = 1 ,... , S text(" und ") m = 1 , 2 , 3 ,...
+  sum_(j = 1)^S lr(|P_(i j)^(k m) - pi_j|) <= 2 (1 - epsilon)^m quad forall quad i = 1 ,... , S "und" m = 1 , 2 , 3 ,...
 $
 Sei $n in bb(N)_0$, $m = ⌊ n / k ⌋$, $r = n - k m >= 0$.
 $
@@ -1160,8 +1160,8 @@ $epsilon : = m i n_(i , j) quad p_(i j)^n$ erfüllt.
   $
     Pi^n = cases(
       delim: "{",
-      mat(delim: "(", 1, 0;0, 1) & text(" für ") n text(" gerade"),
-      mat(delim: "(", 0, 1;1, 0) & text(" für ") n text(" ungerade"),
+      mat(delim: "(", 1, 0;0, 1) & "für" n "gerade",
+      mat(delim: "(", 0, 1;1, 0) & "für" n "ungerade",
 
     )
   $
@@ -1171,7 +1171,7 @@ $epsilon : = m i n_(i , j) quad p_(i j)^n$ erfüllt.
 ]
 Die Periode $d_i$ eines Zustands $i$ einer Markovkette ist die größte ganze Zahl, die alle $n in bb(N)$ mit $P_(i i)^n > 0$ teilt:
 $ d_i = g g T ({ n in bb(N) . : P_(i i)^n > 0 }) $
-$ d_i = oo text(" , falls ") P_(i i)^n = 0 quad forall quad n in bb(N) $
+$ d_i = oo, "falls" P_(i i)^n = 0 quad forall quad n in bb(N) $
 Ein Zustandsraum mit Periode 1 heißt #strong[aperiodisch];. Die Markovkette heißt aperiodisch, falls alle ihre Zustände
 aperiodisch sind.
 
@@ -1211,7 +1211,7 @@ $ M : = { n - n' : n , n' in N , n' < n } $ $ m := m i n (M) $ und sei
 $n_1 , n_2 in N$, sodass $m = n_2 - n_1$. Zeige $m = 1$. Nehme dafür zunächst an, dass $m != 1$.\
 $=> m > 1$ und somit $m > g g t (N)$. $m$ teilt nicht alle Elemente von $N$.\
 $=>$ Es gibt $n in N$ und $k in bb(N)_0$ mit
-$ k m < n < (k + 1) m text(" ,") $ also $ 0 < n - k m < m $ und
+$ k m < n < (k + 1) m , $ also $ 0 < n - k m < m $ und
 $
   n - k m & = n - k (n_2 - n_1)\
   & = overbrace(n + k n_1 + n_2, in N) - overbrace((k + 1) m_2, in N) quad in M
@@ -1220,7 +1220,7 @@ Widerpruch zur Definition von $m$! Also muss $m = 1$ und
 $n_1 , n_1 + 1 in N$.\
 Jede natürliche Zahl $n in bb(N)$ lässt sich schreiben als
 $
-  n & = q n_1 + r text(" mit ") q in bb(N)_0 text(" und ") r < n_1\
+  n & = q n_1 + r "mit" q in bb(N)_0 "und" r < n_1\
   => n & = q n_1 + r (n_1 + 1 - n_1)\
   & = r (n_1 + 1) + (q - r) n_1
 $ Für $m >= n_1^2$ ist $q >= n_1$, also $q - r > 0$ und es folgt $n in N$. Es folgt also die Behauptung mit
@@ -1254,7 +1254,7 @@ $
 $=>$ Für $n >= 0$ und $i in S$ gilt
 $ tilde(pi)_i p_(i k)^n = tilde(pi)_k / pi_k pi_i p_(i k)^n $ Wähle $n$
 mit $P_(i k)^n > 0$
-$ => tilde(pi)_i = tilde(pi)_k / pi_k pi_i text(" ,") $
+$ => tilde(pi)_i = tilde(pi)_k / pi_k pi_i , $
 d.h. $(tilde(pi)_i)$ ist proportional zu $(pi_i)$. Und da
 $sum tilde(pi)_i = sum pi_i$
 $ => tilde(pi)_i = pi_i quad forall quad i in S $
@@ -1289,7 +1289,7 @@ Es gelte
 $ pi_j = lim_(n -> oo) P_(i j)^n = lim_(n -> oo) P(X_n = j \| X_0 = i) $
 Ist $(a_n)_(n = 1)^oo$ eine Folge reeller Zahlen mit
 $lim_(n -> oo) a_n = a$, dann gilt auch
-$ 1 / n sum_(k = 0)^(n - 1) a_k = a text(" , ") $ also hier
+$ 1 / n sum_(k = 0)^(n - 1) a_k = a , $ also hier
 $ lim_(n -> oo) 1 / n sum_(k = 0)^(n - 1) P_(i j)^k = pi_j $ und dahier ist
 $
   1 / n sum_(k = 0)^(n - 1) P_(i j)^k & = 1 / n sum_(k = 0)^(n - 1) P(X_k = j \| X_0 = i)\
@@ -1320,7 +1320,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   Sei $S = { 1 , 2 , 3 }$ und
   $ (P_(i j)) = mat(delim: "(", 0.5, 0.5, 0;0.5, 0.5, 0;1 / 3, 1 / 3 1 / 3) $
   Dann ist $ f_11 & = sum_(n = 1)^oo P(tau_1 = n \| X_0 = 1)\
-       & = sum_(k = 1)^oo P(X_n = 1 , X_k = 2 text(" mit ") 1 <= k < n \| X_0 = 1)\
+       & = sum_(k = 1)^oo P(X_n = 1 , X_k = 2 "mit" 1 <= k < n \| X_0 = 1)\
        & = sum_(n = 1)^oo (1 / 2)^n = 1 $ Folglich ist 1 rekurrent. Ebenso auch 2.
   $ f_33 = P(tau < oo \| X_0 = 3) = P(X_1 = 3 \| X_0 = 3) = 1 / 3 < 1 $
   3 ist also transient und somit die Markovkette weder transient noch rekurrent.
@@ -1331,20 +1331,20 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   wird. \
 
   - Ist $j$ rekurrent, dann gilt für alle $i in S$
-    $ P(N_j = oo \| X_0 = i) = f_(i j) text(" , ") P(N_j = 0 \| X_0 = i) = 1 - f_(i j) $
+    $ P(N_j = oo \| X_0 = i) = f_(i j) , P(N_j = 0 \| X_0 = i) = 1 - f_(i j) $
     und insbesondere
-    $ P(N_j = oo \| X_0 = j) = f_(j j) = 1 text(" und ") E [N_j \| X_0 = j] = oo $
+    $ P(N_j = oo \| X_0 = j) = f_(j j) = 1 "und" E [N_j \| X_0 = j] = oo $
 
   - Ist $j$ transient, dann gilt für alle $i in S$
-    $ P(N_j < oo \| X_0 = i) = 1 text(" und ") E [N_j \| X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo $
+    $ P(N_j < oo \| X_0 = i) = 1 "und" E [N_j \| X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo $
 
 ]
 #strong[Beweis Satz 18] \
 Setze $sigma_j = sup { n >= 1 : X_n = j }$, wobei
 $sup nothing = oo$. Ist $sigma_j$ endlich, dann ist $sigma_j$ der Zeitpunkt des letzten Aufenthalts in $j$. Für jedes $n in bb(N)$ gilt
 $
-  P(sigma_j = n \| X_0 = i) & = P(X_n = j , X_m != j text(" für alle ") m > n \| X_0 = i)\
-  & = P(X_M != j text(" für alle ") m > n \| X_n = j , X_0 = i) P(X_n = j \| X_0 = i)\
+  P(sigma_j = n \| X_0 = i) & = P(X_n = j , X_m != j "für alle" m > n \| X_0 = i)\
+  & = P(X_M != j "für alle" m > n \| X_n = j , X_0 = i) P(X_n = j \| X_0 = i)\
   & = lim_(n -> oo) P(X_(n + 1) != j ,... , X_(n + m != j) \| X_n = j , X_0 = i) P_(i j)^n\
   & = lim_(m -> oo) P(X_1 != j ,... , X_m != j \| X_0 = j) P_(i j)^n\
   & = (1 - f_(j j)) P_(i j)^n
@@ -1377,7 +1377,7 @@ $
 #strong[Bemerkung zu Satz 18] \
 
 - Wegen $E [N_j \| X_0 = j] = sum_(n = 1)^oo P_(j j)^n$ liefert der Satz ein einfacheres Rekurrenzkriterium
-  $ j text(" ist rekurrent ") <=> sum_(n = 1)^oo P_(j j)^n = oo $
+  $ j "ist rekurrent" <=> sum_(n = 1)^oo P_(j j)^n = oo $
 
 - Im Allgemeinen kann eine Markovkette sowohl rekurrente als auch transiente Zustände haben.\
   Ist ${ X_n }$ irreduziebl, dann isn entweder alle Zustände rekurent oder alle sind transient.\
@@ -1394,7 +1394,7 @@ $
 
 - Jede Markovkette mit endlichem Zustandraum $S = { 1 ,... , s }$ hat mindestens einen rekurrenten Zustand, denn sonst
   wäre
-  $ 1 = lim_(n -> oo) sum_(j = 1)^s P_(i j)^n = sum_(j = 1)^s lim_(n -> oo) P_(i j)^n = 0 text(" Widerspruch!") $
+  $ 1 = lim_(n -> oo) sum_(j = 1)^s P_(i j)^n = sum_(j = 1)^s lim_(n -> oo) P_(i j)^n = 0 "Widerspruch!" $
 
 - Jede irreduzible Markovkette mit endlichem Zustandsraum ist rekkurent. Außerdem gilt für solche Markovketten $ E [tau_j \| X_0 = i] < oo $
   und daher ist
@@ -1476,8 +1476,8 @@ und $ => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu\
   ausgetauscht wird, was ist dann die erwartete Lebensdauert einer Glühbirne? Nach Satz 19 ist für einen unendlichen
   Zeithorizont
   $
-    & text("Anzahl ausgetauschter Glübirnen bis Zeitpunkt t") / t\
-    & -> 1 / text("Erwartete Lebensdauer einer Glübirne")
+    & "Anzahl ausgetauschter Glübirnen bis Zeitpunkt t" / t\
+    & -> 1 / "Erwartete Lebensdauer einer Glübirne"
   $ Also ist $mu approx 1000 / 7 = 143$
 
 ]
@@ -1485,7 +1485,7 @@ und $ => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu\
   Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in bb(N)_0 }$, bei dem $Y_1 , Y_2 ,...$ i.i.d. die Zeitabstände
   zwischen Schadensfällen ist. Folglich ist $T_n$ die Zeit, bis die n-te Schadensmeldung eingegangen ist. \
   Wenn die Frage nach dem erwarteten Zeitabends zwischen zwei Meldungen ist, könnte nach Satz 19 wieder
-  $ mu approx t / text(" Anzahl Meldungen bis Zeit t") $ berechnet werden. \
+  $ mu approx t / "Anzahl Meldungen bis Zeit t" $ berechnet werden. \
   Nun erhalte die Versicherung zu den Zeiten $T_1 , T_2 ,...$
   Schadensforderungen in Höhe von $X_1 , X_2 ,...$ i.i.d mit
   $E X_i < oo .$. Über die Gesamte Zeit häufen sich also
@@ -1505,7 +1505,7 @@ und $ => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu\
   Sei $mu := E [Y_1]$, $sigma^2 := V a r [Y_1]$ mit $0 < mu < oo$ und
   $0 < sigma < oo$. \
   $=>$ Für $t -> oo$ ist $N (t)$ asymptotisch normalverteilt mit Parametern
-  $ t / mu text(" und ") frac(t sigma^2, mu^3) text(", ") $ das heißt
+  $ t / mu "und" frac(t sigma^2, mu^3) , $ das heißt
   $ lim_(t -> oo) P(frac(N (t) - t / mu, sqrt(frac(t sigma^2, mu^3))) < y) = Phi (y) quad forall y in bb(R) $
 
 ]
@@ -1537,12 +1537,12 @@ $ lim_(t -> oo) P(N (t) < n_t) = 1 - Phi (- y) = Phi (y) $
 
 Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
 $lambda > 0$ ($X tilde.op E X P(lambda)$), falls $X$ die Dichte
-$ f (x) = cases(delim: "{", lambda e^(- lambda x) & text("falls ") x > 0, 0 & text("sonst")) $
+$ f (x) = cases(delim: "{", lambda e^(- lambda x) & "falls" x > 0, 0 & "sonst") $
 hat.\
 Sei $lambda$ eine Konstante $ > 0$. Seien $Y_1 , Y_2 ,...$ i.i.d. exponentialverteilte Zufallsvariablen für alle $n = 1 , 2 ,...$.\
 Setze $   & T_0 := 0\
   & T_n := Y_1 +... + Y_n\
-  & N (t) : = m a x { n in bb(N)_0 : T_n <= t } text(", ") t >= 0 $
+  & N (t) : = m a x { n in bb(N)_0 : T_n <= t } , t >= 0 $
 Dann heißt ${ N (t) : t >= 0 }$ Poisson-Prozess mit Intensität
 $lambda$.\
 Ein stochastischer Prozess ${ N (t) : t >= 0 }$ heißt ein Prozess mit unabhängigen Zuwächsen, falls für je endlich viele
@@ -1570,7 +1570,7 @@ wobei $m = n_1 +... + n_k$ und
 $B = { (s_1 ,... , s_m) in bb(R)^m : 0 < s_1 <... < s_m , lr(|{ j : t_(i - 1) < s_j <= t_i }|) = n_i , i = 1 ,... , k }$.
 $(T_1 ,... , T_(m + 1))$ hat die Dichte
 $
-  f (s_1 ,... , s_(m + 1)) = cases(delim: "{", lambda^(m + 1) e^(- lambda s_(m + 1)) & text("falls ") 0 < s_1 <... < s_(m + 1), 0 & text("sonst"))
+  f (s_1 ,... , s_(m + 1)) = cases(delim: "{", lambda^(m + 1) e^(- lambda s_(m + 1)) & "falls" 0 < s_1 <... < s_(m + 1), 0 & "sonst")
 $
 $
   P(N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) & = integral_(B times (t_k , oo)) f (s_1 ,... , s_(m + 1)) thin d (s_1 ,... , S_(m + 1))\
