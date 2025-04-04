@@ -363,8 +363,8 @@ $X_0 = i_0 ,...$).
   Zustand $j$ zu sein bestimmt, oder anders gesagt $X_(n + 1)$ und $X_n$ sind unabhängig.
 
 ]
-#example[
-  #strong[Irrfahrt auf $bb(Z)$] \
+#example(title: [Irrfahrt auf $bb(Z)$])[
+
   Seien $Y_1 , Y_2 , dots.h$ unabhängige, identisch verteilte
   $bb(Z)$-wertige Zufallsvariablen mit $P(Y_1 = i)$, $i in bb(Z)$. Sei
   $X_(0 i) := 0$ und $X_n := Y_1 + dots.h + Y_n$, $n in bb(N)$. In Worten:
@@ -691,8 +691,8 @@ $
   = & h_j
 $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
 
-#example[
-  #strong[Ruinproblem] \
+#example(title: [Ruinproblem])[
+
   In jeder Runde eines Spiels gewinnt eine Spieler 1€ mit Wahrscheinlichkeit $p in (0 , 1)$ und verliert 1€ mit
   Wahrscheinlichkeit
   $(1 - p)$. Sein Anfangskapital sei i€. Er spielt so lange, bis er M€ hat
