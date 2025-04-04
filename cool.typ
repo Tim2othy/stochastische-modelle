@@ -114,7 +114,7 @@ $X_1 ,... , X_n$ ist definiert durch
 $ F (x_1 ,... , x_n) = P(X_1 <= x_1 ,... , X_n <= x_n) text(" für alle ") x_1 ,... , x_n in bb(R) $
 Für die Randverteilungsfunktion $F_(X_1) ,... , F_(X_n)$ gilt
 $ F_(X_i) (x_i) = lim_(x_j -> oo) F (x_1 ,... , x_n) text(" für ") i != j $
-Sund $X_1 ,... , X_n$ diskrete Zufallsvariabeln, so ist ihre gemeinsame Wahrscheinlichkeitsfunktion gegeben durch
+Sind $X_1 ,... , X_n$ diskrete Zufallsvariabeln, so ist ihre gemeinsame Wahrscheinlichkeitsfunktion gegeben durch
 $ f (x_1 ,... , x_n) = P(X_1 = x_1 ,... , X_n = x_n) . $
 $X_1 ,... , X_n$ sind gemeinsam stetig verteilt, falls es eine gemeinsame Dichte $f (x_1 ,... , x_n) >= 0$ gibt, sodass
 $
@@ -329,7 +329,7 @@ $X_0 = i_0 ,...$).
   $
     (P_(i j))_(i , j = 0)^a = mat(
       delim: "(",
-      a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;dots.v, dots.v, dots.v, dots.down;#none, ,
+      a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;dots.v, dots.v, dots.v, dots.down;#none, , ,
 
     )
   $
@@ -366,7 +366,7 @@ $X_0 = i_0 ,...$).
   $
     (P_(i j)) = mat(
       delim: "(",
-      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down;#none, ,
+      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down;#none, , ,
 
     )
   $
@@ -479,7 +479,7 @@ $
   $
     (P_(i j))_(i , j = 0)^n = mat(
       delim: "(",
-      1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5;0, 2 / 5, 1 / 5, 1 / 5, 1 / 5;0, 0, 3 / 5, 1 / 5, 1 / 5;0, 0, 0, 4 / 5, 1 / 5;0, 0, 0, 0, 1;#none, ,
+      1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5;0, 2 / 5, 1 / 5, 1 / 5, 1 / 5;0, 0, 3 / 5, 1 / 5, 1 / 5;0, 0, 0, 4 / 5, 1 / 5;0, 0, 0, 0, 1;#none, , ,
 
     )
   $
