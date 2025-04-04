@@ -3,7 +3,12 @@
 #import cosmos.clouds: *
 #show: show-theorion
 #let theorem = theorem.with(fill: olive.lighten(85%))
-#let (example-counter, example-box, example, show-example) = make-frame("definition", theorion-i18n-map.at("example"), counter: none, render: render-fn.with(fill: blue.lighten(85%)))
+#let (example-counter, example-box, example, show-example) = make-frame(
+  "definition",
+  theorion-i18n-map.at("example"),
+  counter: none,
+  render: render-fn.with(fill: blue.lighten(85%)),
+)
 
 #set-inherited-levels(0)
 
@@ -120,7 +125,9 @@ Eine Zufallsvariable heißt diskret, falls ...
 Eine Zufallsvariable heißt stetig, falls es eine nicht negative Funktion $f$ gibt, sodass
 $ P(a <= X <= b) = integral_a^b f (x) thin d x text(" für alle ") a < b $
 $f$ heißt Dichte von $X$. Die Verteilungsfunktion ist dann
-$ F (x) = integral_(- oo)^x f (t) thin d t $ Die gemeinsame Verteilungsfunktion $F = F_(X_1 ,... , X_n)$ von $n$ Zufallsvariablen
+$
+  F (x) = integral_(- oo)^x f (t) thin d t
+$ Die gemeinsame Verteilungsfunktion $F = F_(X_1 ,... , X_n)$ von $n$ Zufallsvariablen
 $X_1 ,... , X_n$ ist definiert durch
 $ F (x_1 ,... , x_n) = P(X_1 <= x_1 ,... , X_n <= x_n) text(" für alle ") x_1 ,... , x_n in bb(R) $
 Für die Randverteilungsfunktion $F_(X_1) ,... , F_(X_n)$ gilt
@@ -152,12 +159,12 @@ Nimmt X nur Werte in ${ 0 , 1 , 2 ,... }$ an, dann gilt
 $ E [X] = sum_(n = 0)^oo P(X > n) text(", ") $ denn
 $
   E [X] & = sum_(n = 0)^oo n P(X = n) =\
-        & P(X = 1) +\
-        & P(X = 2) + P(X = 2) +\
-        & P(X = 3) + P(X = 3) + P(X = 3) +\
-        & dots.h\
-        & P(X = n) + P(X = n) + P(X = n) + dots.h\
-        & = P(X > 0) + P(X > 1) + P(X > 2) + dots.h + P(X > n)
+  & P(X = 1) +\
+  & P(X = 2) + P(X = 2) +\
+  & P(X = 3) + P(X = 3) + P(X = 3) +\
+  & dots.h\
+  & P(X = n) + P(X = n) + P(X = n) + dots.h\
+  & = P(X > 0) + P(X > 1) + P(X > 2) + dots.h + P(X > n)
 $ Hat $X$
 eine Dichte $f$, so ist
 $ E [g (X)] = integral_(- oo)^oo g (x) f (x) thin d x $ Für jede nichtnegative ZUfallsvariable $X$ gilt
@@ -274,7 +281,9 @@ $ E [g (X) \| Y = y] = sum_X g (x) f_(X \| Y) (x \| y) text(" ,falls ") P(Y = y)
 Zudem gilt
 $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) text(", denn ") $
 $ E [g (X)] = sum_X g (x) P(X = x) = sum_X g (x) sum_Y f_(X \| Y) (x \| y) P(Y = y) $
-$ = sum_Y P(Y = y) sum_X g (x) f_(X \| Y) (x \| y) $ Im Falle diskreter Zufallsvariablen $X , X_1 , X_2 , Y$ und $y in bb(R)$ gelten
+$
+  = sum_Y P(Y = y) sum_X g (x) f_(X \| Y) (x \| y)
+$ Im Falle diskreter Zufallsvariablen $X , X_1 , X_2 , Y$ und $y in bb(R)$ gelten
 folgene Rechenregeln für bedingte Erwartungswerte:
 
 + $E [a X_1 + b X_2 \| Y = y] = a E [X_1 \| Y = y] + b E [X_2 \| Y = y]$
@@ -341,7 +350,7 @@ $X_0 = i_0 ,...$).
   $
     (P_(i j))_(i , j = 0)^a = mat(
       delim: "(",
-      a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;dots.v, dots.v, dots.v, dots.down;#none, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,
+      a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;a_0, a_1, a_2, dots.h.c;dots.v, dots.v, dots.v, dots.down;#none, , , ,
 
     )
   $
@@ -366,7 +375,7 @@ $X_0 = i_0 ,...$).
   Für alle $n >= 0$ und alle $i_0 , dots.h , i_(n + 1) in bb(Z)$ mit
   $P(X_0 = i_0 , dots.h , X_n = i_n) > 0$ ist
   $
-        & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
+    & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
     = & P(X_n + Y_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
     = & P(i_n + Y_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
     = & P(Y_(n + 1) = i_(n + 1) - i_n \| X_0 = i_0 , dots.h , X_n = i_n)\
@@ -378,7 +387,7 @@ $X_0 = i_0 ,...$).
   $
     (P_(i j)) = mat(
       delim: "(",
-      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down;#none, , , , ,
+      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;dots.v, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down;#none, , , ,
 
     )
   $
@@ -398,12 +407,12 @@ $X_0 = i_0 ,...$).
   Für alle $n >= 0$ und alle $i_0 ,... , i_(n + 1) in bb(N)_0$ mit
   $P(X_0 = i_0 ,... , X_n = i_n) > 0$ ist
   $
-      & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
-      & = P(max (Y_1 , dots.h , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
-      & = P(max (X_n , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
-      & = P(max (i_n , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
-      & = P(max (i_n , Y_(n + 1)) = i_(n + 1) divides Y_1 = i_1 , max (Y_1 , Y_2) = i_2 , dots.h , max (Y_1 , dots.h , Y_n) = i_n)\
-      & = P(max (i_n , Y_(n + 1)) = i_(n + 1))
+    & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 , dots.h , X_n = i_n)\
+    & = P(max (Y_1 , dots.h , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
+    & = P(max (X_n , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
+    & = P(max (i_n , Y_(n + 1)) = i_(n + 1) divides X_0 = i_0 , dots.h , X_n = i_n)\
+    & = P(max (i_n , Y_(n + 1)) = i_(n + 1) divides Y_1 = i_1 , max (Y_1 , Y_2) = i_2 , dots.h , max (Y_1 , dots.h , Y_n) = i_n)\
+    & = P(max (i_n , Y_(n + 1)) = i_(n + 1))
   $ Diese Wahrscheinlichkeit hängt nun vom Verhältnis von $i_n$ zu $i_(n + 1)$ ab. Per Konstruktion kann $i_(n + 1)$ nicht
   kleiner sein als $i_n$. Ist $i_(n + 1) < i_n$, dann ist $Y_(n + 1)$ das Maximum und folglich auch
   $P(max (i_n , Y_(n + 1)) = i_(n + 1)) = P(Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1))$. Für den Fall, dass $i_(n + 1) = i_n$ ist,
@@ -442,12 +451,12 @@ $X_0 = i_0 ,...$).
   $n >= 1$ und $i_0 ,... , i_(n + 1) in S$ mit
   $P(X_0 = i_0 ,... , X_n = i_n) > 0$ gilt
   $
-      & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
-      & = P(f (X_n , Y_(n + 1)) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
-      & = P(f (i_n , Y_(n + 1)) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
-      & =^star P(f (i_n , Y_(n + 1)) = i_(n + 1))\
-      & =^(star star) P(f (i_n , Y_1) = i_(n + 1))\
-      & = p_(i_n i_(n + 1))
+    & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
+    & = P(f (X_n , Y_(n + 1)) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
+    & = P(f (i_n , Y_(n + 1)) = i_(n + 1) \| X_0 = i_0 ,... , X_n = i_n)\
+    & =^star P(f (i_n , Y_(n + 1)) = i_(n + 1))\
+    & =^(star star) P(f (i_n , Y_1) = i_(n + 1))\
+    & = p_(i_n i_(n + 1))
   $ $star$ Hinweis: Das Ereignis
   ${ X_(n + 1) = f (i_n , Y_(n + 1)) I i_(n + 1) }$ hängt von einem festen Wert $i_n$ und der Zufallsvariablen $Y_(n + 1)$ ab.
   Das gleiche gilt natürlich auch für $X_0 ,... , X_n$. Deswegen leigt hier Unabhängigkeit vor. \
@@ -467,7 +476,7 @@ $p_i = P(X_0 = i)$ ($i in S$). Bestimme die gemeinsame Verteilung von
 $X_0 ,... , X_n$:\
 Für $n >= 1$ und $i_0 ,... , i_n in S$ gilt
 $
-      & P(X_0 = i_0 , X_1 = i_1 ,... , X_n = i_n)\
+  & P(X_0 = i_0 , X_1 = i_1 ,... , X_n = i_n)\
   = & P(X_0 = i_0 ,... , X_(n - 1) = i_(n - 1)) p_(i_(n - 1) i_n)\
   = & P(X_0 = i_0 ,... , X_(n - 2) = i_(n - 2)) p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n)\
   = & dots.h\
@@ -494,7 +503,7 @@ $
   $
     (P_(i j))_(i , j = 0)^n = mat(
       delim: "(",
-      1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5;0, 2 / 5, 1 / 5, 1 / 5, 1 / 5;0, 0, 3 / 5, 1 / 5, 1 / 5;0, 0, 0, 4 / 5, 1 / 5;0, 0, 0, 0, 1;#none, , , , ,
+      1 / 5, 1 / 5, 1 / 5, 1 / 5, 1 / 5;0, 2 / 5, 1 / 5, 1 / 5, 1 / 5;0, 0, 3 / 5, 1 / 5, 1 / 5;0, 0, 0, 4 / 5, 1 / 5;0, 0, 0, 0, 1;#none, , , ,
 
     )
   $
@@ -535,7 +544,7 @@ Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Ve
 Für alle $(j_1 ,... , j_m) in Z$ und $(i_0 ,... , i_(n - 1)) in V$
 mit $P(X_0 = i_0 ,... , X_(n - 1) = i_(n - 1) , X_n = i) > 0$ gilt
 $
-      & P((X_(n + 1) ,... , X_(n + m)) = (j_1 ,... , j_m) \| (X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i)\
+  & P((X_(n + 1) ,... , X_(n + m)) = (j_1 ,... , j_m) \| (X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i)\
   = & frac(
     P((X_(n + 1) ,... , X_(n + m)) = (j_1 ,... , j_m) , (X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i),
     P((X_0 ,... , X_(n - 1)) = (i_0 ,... , i_(n - 1)) , X_n = i),
@@ -551,14 +560,14 @@ $p_i (dot.op)$ die bedingte Verteilung $P(X_n = j \| X_0 = i)$ und mit
 $E_i (dot.op)$ den Erwartungswert für den Anfangszustand $i$, das heißt
 $P_i (X_0 = i) = 1$. Dann gilt
 $
-    & P((X_(n + 1) ,... , X_(n + m)) in Z \| (X_0 ,... , X_(n - 1)) in V , X_n = i)\
-    & = P((X_1 ,... , X_m) in Z \| X_0 = i)\
-    & = P_i ((X_1 ,... , X_m) in Z)
+  & P((X_(n + 1) ,... , X_(n + m)) in Z \| (X_0 ,... , X_(n - 1)) in V , X_n = i)\
+  & = P((X_1 ,... , X_m) in Z \| X_0 = i)\
+  & = P_i ((X_1 ,... , X_m) in Z)
 $ und für $f : f^m -> bb(R)$
 $
-    & E [f (X_(n + 1 ,... , X_(n + m))) \| (X_0 ,... , X_(n - 1)) in V , X_n = i]\
-    & = E [f (X_(n + 1) ,... , X_(n + m)) \| X_0 = i]\
-    & = E_i [f (X_1 ,... , X_m)]
+  & E [f (X_(n + 1 ,... , X_(n + m))) \| (X_0 ,... , X_(n - 1)) in V , X_n = i]\
+  & = E [f (X_(n + 1) ,... , X_(n + m)) \| X_0 = i]\
+  & = E_i [f (X_1 ,... , X_m)]
 $ Beide Größen hängen vom gegenwärtigen Zustand $i$ ab und weder von $V$ noch von $n$.\
 Die Aussagen lassen sich mit einem unendlichen Zeithorizont erweitern:\
 Für die Menge $Z ⊂ S^oo$ und $f : S^oo -> bb(R)$ gilt
@@ -591,7 +600,7 @@ $
 $
 Für $m , n >= 1$ und $P(X_0 = 1) > 0$ ist
 $
-      & p_(i j)^(m + n) = P(X_(m + n) = j \| X_0 = i)\
+  & p_(i j)^(m + n) = P(X_(m + n) = j \| X_0 = i)\
   = & sum_(k in S) P(X_(m + n) = j , X_m = k \| X_0 = i)\
   = & sum_(k in S) frac(P(X_(m + n) = j , X_m = k , X_0 = i), P(X_0 = i)) dot frac(P(X_m = k , X_0 = i), P(X_m = k , X_0 = i))\
   = & sum_(k in S) P(X_(m + n) = j \| X_m = k , X_0 = i) P(X_m = k \| X_0 = i)\
@@ -624,7 +633,9 @@ Zeitpunkt zu berechnen:
 ]
 #example[
   Betrachte eine Markovkette $X_n : n in bb(N)_0$ mit $S = { 1 , 2 , 3 }$, Übergangsmatrix
-  $ Pi = 1 / 3 mat(delim: "(", 1, 0, 2;0, 2, 1;1, 1, 1) $ und Anfangsverteilung $p^((0)) = P(X_0 = i) = (1 / 4 , 1 / 2 , 1 / 4)$.
+  $
+    Pi = 1 / 3 mat(delim: "(", 1, 0, 2;0, 2, 1;1, 1, 1)
+  $ und Anfangsverteilung $p^((0)) = P(X_0 = i) = (1 / 4 , 1 / 2 , 1 / 4)$.
   \
   Berechne die bedingte Verteilung von $X_2$ gegeben $X_0 = 3$.
   $ Pi^2 = Pi Pi = 1 / 9 mat(delim: "(", 3, 2, 4;1, 5, 3;2, 3, 4) $
@@ -674,11 +685,11 @@ für
 $j in S without A$
 $
   P(T < oo \| X_1 = j , X_0 = i) = & P(⋃_(n = 2)^oo { X_n in A } \| X_1 = j , X_0 = i)\
-  =                                & lim_(N -> oo) P(⋃_(n = 2)^N { X_n in A } \| X_1 = j , X_0 = i)\
-  =                                & lim_(N -> oo) P(⋃_(n = 1)^(N - 1) { X_n in A } \| X_o = j)\
-  =                                & P(⋃_(n = 1)^oo { X_n in A } \| X_0 = j)\
-  =                                & P(T < oo \| X_0 = j)\
-  =                                & h_j
+  = & lim_(N -> oo) P(⋃_(n = 2)^N { X_n in A } \| X_1 = j , X_0 = i)\
+  = & lim_(N -> oo) P(⋃_(n = 1)^(N - 1) { X_n in A } \| X_o = j)\
+  = & P(⋃_(n = 1)^oo { X_n in A } \| X_0 = j)\
+  = & P(T < oo \| X_0 = j)\
+  = & h_j
 $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
 
 #example[
@@ -708,7 +719,7 @@ $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
   Wahrscheinlichkeit jemals ruiniert zu sein beim Start in Periode $i$ eine Gewichtung der Ruinwahrscheinlichkeit nach
   einer Aufwärtsbewegung (also ab $i + 1$) und einer Abwärtsbewegung (also ab $i - 1$).
   $
-    h_i                 & = p h_(i + 1) + (1 - p) h_(i - 1) text(" für ") i = 1 ,... , M - 1\
+    h_i & = p h_(i + 1) + (1 - p) h_(i - 1) text(" für ") i = 1 ,... , M - 1\
     <=> h_(i + 1) - h_i & = frac(1 - p, p) (h_i - h_(i - 1))
   $
   Falls es sich um ein faires Spiel handelt, also $p = 1 / 2$, dann ist
@@ -720,20 +731,20 @@ $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
   <=> a & = - 1 / M $ und somit für die Ruinwahrscheinlichkeit $h_i$: $ h_i = 1 - i / M $ Sei nun
   $p != 1 / 2$ und setze $Theta = frac(1 - p, p)$. Durch rekursives Einsetzen erhält man
   $
-    h_2 - h_1       & = Theta (h_1 - h_0) = Theta (h_1 - 1)\
-    h_3 - h_2       & = Theta (h_2 - h_1) = Theta^2 (h_1 - 1)\
-    dots.v          & \
+    h_2 - h_1 & = Theta (h_1 - h_0) = Theta (h_1 - 1)\
+    h_3 - h_2 & = Theta (h_2 - h_1) = Theta^2 (h_1 - 1)\
+    dots.v & \
     h_(i + 1) - h_i & = Theta^i (h_1 - 1) text(" für alle ") i = 0 ,... , M - 1
   $
   Zunächst bildet man die Summe über $i = 0 ,... , j - 1$ (über alle
   $j in S$) und nutzt die Eigenschaft der Teleskopsumme und der geometrischen Reihe aus:
   $
-    sum_(i = 0)^(j - 1) h_(i + 1) - h_i     & = sum_(i = 0)^(j - 1) Theta^i (h_1 - 1)\
+    sum_(i = 0)^(j - 1) h_(i + 1) - h_i & = sum_(i = 0)^(j - 1) Theta^i (h_1 - 1)\
     <=> sum_(i = 0)^(j - 1) h_i - h_(i + 1) & = sum_(i = 0)^(j - 1) Theta^i (1 - h_1)\
-    <=> h_0 - h_j                           & = sum_(i = 0)^(j - 1) Theta^i (1 - h_1)\
-    <=> 1 - h_j                             & = (1 - h_1) sum_(i = 0)^(j - 1) Theta^i\
-    <=> 1 - h_j                             & = (1 - h_1) frac(1 - Theta^j, 1 - Theta)\
-    <=> h_j                                 & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta) + 1 text(" für ") j = 1 ,... , M
+    <=> h_0 - h_j & = sum_(i = 0)^(j - 1) Theta^i (1 - h_1)\
+    <=> 1 - h_j & = (1 - h_1) sum_(i = 0)^(j - 1) Theta^i\
+    <=> 1 - h_j & = (1 - h_1) frac(1 - Theta^j, 1 - Theta)\
+    <=> h_j & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta) + 1 text(" für ") j = 1 ,... , M
   $
   Da diese Gleichung für alle $j$ gilt, gilt sie auch für $j = M$ und da
   $h_M = 0$ ist, ist $ 0           & = (h_1 - 1) frac(1 - Theta^M, 1 - Theta) + 1\
@@ -782,18 +793,18 @@ $ Damit folgt: $ h_i = sum_(j in S) p_(i j) h_j $
   durch Summation (wie in Bsp. 9)
   $
     sum_(i = 0)^(j - 1) (h_(i + 1) - h_i) & = h_j - h_0\
-                                          & = h_j - 1\
-                                          & = (h_1 - 1) sum_(i = 0)^(j - 1) Theta^i\
-                                          & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta)
+    & = h_j - 1\
+    & = (h_1 - 1) sum_(i = 0)^(j - 1) Theta^i\
+    & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta)
   $
   $ => h_i = 1 + (h_1 - 1) frac(1 - Theta^j, 1 - Theta) text(" für ") j = 0 , 1 ,... $
   Für jedes $h_1 in [0 , 1]$ erfüllt diese Gleichung die Gleichung
   $(star)$. \
   Wegen $0 <= lim_(j -> oo) h_i = 1 + frac((h_1 - 1), 1 - Theta)$
   $
-    0         & <= 1 + frac(h_1 - 1, 1 - Theta)\
+    0 & <= 1 + frac(h_1 - 1, 1 - Theta)\
     Theta - 1 & <= h_1 - 1\
-    h_1       & >= Theta
+    h_1 & >= Theta
   $
 
   Welches $h_1 in [Theta , 1]$ liefert die gesuchten Wahrscheinlichkeiten? \
@@ -834,10 +845,10 @@ Die Behauptung ist klar, wenn $A = S$. Deswegen sei $A != S$:
 Daraus folgt also für alle $i in A^c$, $j in A$ und $n >= 1$ durch Einsetzen, wobei $Q^k r = p_(i j_k)^k p_(j_k j)$ und $Q^(n + 1) x$ als
 strikt positiver Wert für die untere Schranke ausgelassen werden kann, folgendes:
 $
-  x_i     & >= p_(i j) + sum_(k = 1)^n sum_(j_1 ,... , j_k in A^c , j in A) p_(i j_1) p_(j_1 j_2)... p_(j_k j)\
+  x_i & >= p_(i j) + sum_(k = 1)^n sum_(j_1 ,... , j_k in A^c , j in A) p_(i j_1) p_(j_1 j_2)... p_(j_k j)\
   <=> x_i & >= P_i (X_1 in A) + sum_(k = 1)^n P(X_1 in A^c ,... , X_k in A^c , X_(k + 1) in A)\
   <=> x_i & >= P_i (T <= n + 1)\
-  => x_i  & >= lim_(n -> oo) P_i (T <= n + 1) = lim_(n -> oo) P_i (T <= n) = h_i text(", ") i in A^c
+  => x_i & >= lim_(n -> oo) P_i (T <= n + 1) = lim_(n -> oo) P_i (T <= n) = h_i text(", ") i in A^c
 $
 
 #block[
@@ -897,8 +908,8 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
     & k_i = 0 quad forall i in A $ Für $i in S without A$ gilt
   $
     k_i & = sum_(j in S) E [T \| X_0 = i , X_1 = j] p_(i j)\
-        & = sum_(j in S) (1 + E [T \| Y_0 = j]) p_(i j) text(" (siehe Aufgaben)")\
-        & = 1 + sum_(j in S without A) p_(i j) k_j
+    & = sum_(j in S) (1 + E [T \| Y_0 = j]) p_(i j) text(" (siehe Aufgaben)")\
+    & = 1 + sum_(j in S without A) p_(i j) k_j
   $ $=> (k_i)$
   löst $(star)$.
 
@@ -909,25 +920,27 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
   $ Q = (p_(i j))_(i , j in A^c) $ gilt (siehe auch Beweis Satz 11)
   $
     x & = e + Q x\
-      & dots.v\
-      & = e + sum_(k = 1)^n Q^k e + Q^(n + 1) x text(", für ") n >= 1
+    & dots.v\
+    & = e + sum_(k = 1)^n Q^k e + Q^(n + 1) x text(", für ") n >= 1
   $
 
   und somit für alle $i in A^c$ und $n >= 2$, wobei ... und
   $Q^(n + 1) x$ als strikt positiver Wert für die untere Schranke ausgelassen werden kann,
 
   $
-    x_i     & >= 1 + sum_(j in A^c) p_(i j) + sum_(k = 2)^n sum_(j_1 ,... , j_k in A^c) p_(i j_1)... p_(j_(k - 1) j_k)\
+    x_i & >= 1 + sum_(j in A^c) p_(i j) + sum_(k = 2)^n sum_(j_1 ,... , j_k in A^c) p_(i j_1)... p_(j_(k - 1) j_k)\
     <=> x_i & >= P_i (T > 0) + P_i (X_1 in A^c) + sum_(k = 2)^n P - i (X_1 in A^c , X_2 in A^c ,... , X_k in A^c)\
     <=> x_i & >= P_i (T > 0) + P_i (T > 1) + sum_(k = 2)^n P_i (T > k)\
     <=> x_i & >= sum_(k = 0)^n P_i (T > k)\
-    => x_i  & >= sum_(k = 0)^oo P_i (T > k) = E_i [T] = k_i
+    => x_i & >= sum_(k = 0)^oo P_i (T > k) = E_i [T] = k_i
   $
 
 #block[
   Nun ist die erwartete Arbsorbtionszeit $k_i = E_i [T]$ mit gesucht. \
   Offensichtlich ist $k_0 = 0$ und $k_M = 0$. Aus Satz 12 folgt hier
-  $ (star) quad k_i = 1 + (1 - p) k_(i - 1) + p k_(i + 1) $ Sei zunächst $p = 1 / 2$. $ k_i                 & = 1 + k_(i - 1) / 2 + k_(i + 1) / 2\
+  $
+    (star) quad k_i = 1 + (1 - p) k_(i - 1) + p k_(i + 1)
+  $ Sei zunächst $p = 1 / 2$. $ k_i                 & = 1 + k_(i - 1) / 2 + k_(i + 1) / 2\
   <=> k_(i + 1) - k_i & = k_i - k_(i - 1) - 2 $
 
   Für steigende i fällt das das Wachstun von $k_i$ um den Faktor 2.
@@ -936,8 +949,8 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
   Für $j = 1 ,... , M$ ist
   $
     k_j - k_0 = k_j & = sum_(i = 0)^(j - 1) (k_(i + 1) - k_i)\
-                    & = j k_1 - 2 sum_(i = 0)^(j - 1) i\
-                    & = j k_1 - (j - 1) j
+    & = j k_1 - 2 sum_(i = 0)^(j - 1) i\
+    & = j k_1 - (j - 1) j
   $
 
   Wegen $k_M = 0$ folg aus dieser GLeichung (durch einsetzen)
@@ -983,8 +996,8 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
   muss
   $(pi_i)$ eine stationäre Verteilung sein, denn
   $
-      & pi_i >= 0 quad forall i in S\
-      & sum_(i in S) pi_i = lim_(n -> oo) sum_(i in S) P(X_n = i) = 1
+    & pi_i >= 0 quad forall i in S\
+    & sum_(i in S) pi_i = lim_(n -> oo) sum_(i in S) P(X_n = i) = 1
   $
   und $ pi_j & = lim_(n -> oo) P(X_(n + 1) = j)\
        & = lim_(n -> oo) sum_(i in S) P(X_n = i) p_(i j)\
@@ -1006,8 +1019,8 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
   $mat(delim: "(", p_1, p_2) = (P(X_0 = 1) , P(X_0 = 2))$ gilt
   $
     lim_(n -> oo) (P(X_n = 1) , P(X_n = 2)) & = lim_(n -> oo) mat(delim: "(", p_1, p_2) Pi^n\
-                                            & = frac(1, a + b) mat(delim: "(", p_1, 1 - p_1) mat(delim: "(", b, a;b, a)\
-                                            & = mat(delim: "(", f r a c b a + b, frac(a, a + b))
+    & = frac(1, a + b) mat(delim: "(", p_1, 1 - p_1) mat(delim: "(", b, a;b, a)\
+    & = mat(delim: "(", f r a c b a + b, frac(a, a + b))
   $ Die Grenzverteilung ist also unabhängig von der Anfangsverteilung. \
   Ist die Anfangsverteilung gleich der Grenzverteilung, also
   $p_1 = frac(b, a + b)$ und $p_2 = frac(a, a + b)$, dann gilt
@@ -1023,7 +1036,7 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
   $pi = mat(delim: "(", pi_1, ..., pi_S)$. \
   $exists quad 0 < epsilon < 1$, sodass
   $
-    p_(i j)                                 & >= epsilon pi_j quad forall quad i , j = 1 ,... , S\
+    p_(i j) & >= epsilon pi_j quad forall quad i , j = 1 ,... , S\
     => sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & <= 2 (1 - epsilon)^n
   $
 
@@ -1036,7 +1049,7 @@ $Q : = frac(1, 1 - epsilon) (pi - epsilon M)$. $M$ und $Q$ sind positive stochas
 $ pi = (1 - epsilon) Q + epsilon M $ Mit
 $e = vec(1, dots.v, 1) in bb(R)^S$ ist $M = e pi$ und
 $
-  M^2  & = e overbrace(pi e, 1) pi = M\
+  M^2 & = e overbrace(pi e, 1) pi = M\
   Pi M & = overbrace(Pi e, e) pi = e pi = M\
   M Pi & = e overbrace(pi Pi, pi) = M text(" ,")
 $ da $pi$ stationär ist. Daraus folgt also $Q M = M$ und $M Q = M$.\
@@ -1044,15 +1057,15 @@ Das Produkt einer endlichen Folge von $Q$s und $M$s, die mindestens ein
 $M$ enthält, ist gleich $M$.\
 Für jeden $n in bb(N)$ gilt:
 $
-  pi^n        & = [(1 - epsilon) Q + epsilon M]^n\
-              & = (1 - epsilon)^n Q^n + sum_(l = 0)^(n - 1) vec(n, l) (1 - epsilon)^l epsilon^(n - l) M\
-              & = (1 - epsilon)^n Q^n + (1 - (1 - epsilon)^n) M\
+  pi^n & = [(1 - epsilon) Q + epsilon M]^n\
+  & = (1 - epsilon)^n Q^n + sum_(l = 0)^(n - 1) vec(n, l) (1 - epsilon)^l epsilon^(n - l) M\
+  & = (1 - epsilon)^n Q^n + (1 - (1 - epsilon)^n) M\
   => pi^n - M & = (1 - epsilon)^n (Q^n - M) quad forall quad n in bb(N)_0
 $
 Für jede Zeile $i = 1 ,... , S$ folgt damit (unter Verwendung der Dreiecksungleichung):
 $
   sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & = (1 - epsilon)^n sum_(j = 1)^S lr(|{ Q_(i j)^n } - pi_j|)\
-                                       & <= (1 - epsilon)^n sum_(j = 1)^S ({ Q_(i j)^n } + pi_j) = 2 (1 - epsilon)^n
+  & <= (1 - epsilon)^n sum_(j = 1)^S ({ Q_(i j)^n } + pi_j) = 2 (1 - epsilon)^n
 $
 
 #block[
@@ -1075,8 +1088,8 @@ $
 Sei $n in bb(N)_0$, $m = ⌊ n / k ⌋$, $r = n - k m >= 0$.
 $
   => sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & = sum_(j = 1)^S lr(|sum_(l = 1)^S p_(i l)^r (p_(l j)^(k m) - pi_j)|)\
-                                          & <= sum_(l = 1)^S p_(i l)^r sum_(j = 1)^S lr(|p_(l j)^(k m) - pi_j|)\
-                                          & <= 2 (1 - epsilon)^m = 2 (1 - epsilon)^(⌊ n / k ⌋)
+  & <= sum_(l = 1)^S p_(i l)^r sum_(j = 1)^S lr(|p_(l j)^(k m) - pi_j|)\
+  & <= 2 (1 - epsilon)^m = 2 (1 - epsilon)^(⌊ n / k ⌋)
 $
 
 Unter den Voraussatzungen von Satz 15 gilt:\
@@ -1092,10 +1105,10 @@ Ist ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Übergangsmatrix
 $(P_(i j))$, dann
 $
   sum_(j = 1)^S lr(|P(x_n = j) - pi_j|) & = sum_(j = 1)^S lr(|(sum_(i = 1)^S P(X_0) i) p_(i j)^n - pi_j|)\
-                                        & = sum_(j = 1)^S lr(|sum_(i = 1)^S P(X_0 = i) (p_(i j)^n - pi_j)|)\
-                                        & <= sum_(i = 1)^S P(X_0 = i) sum_(j = 1)^S lr(|p_(i j)^n - pi_j|)\
-                                        & <= 2 (1 - epsilon)^(⌊ n / k ⌋)\
-  => lim_(n -> oo) P(X_n = j)           & = pi_j
+  & = sum_(j = 1)^S lr(|sum_(i = 1)^S P(X_0 = i) (p_(i j)^n - pi_j)|)\
+  & <= sum_(i = 1)^S P(X_0 = i) sum_(j = 1)^S lr(|p_(i j)^n - pi_j|)\
+  & <= 2 (1 - epsilon)^(⌊ n / k ⌋)\
+  => lim_(n -> oo) P(X_n = j) & = pi_j
 $
 
 Sind alle Einträge von $Pi^n$ positiv, dann ist die Voraussetzung
@@ -1125,8 +1138,8 @@ aperiodisch sind.
 #block[
   - Für $S = { 1 , 2 }$ und $Pi = mat(delim: "(", 0, 1;1, 0)$ gilt
     $
-        & d_1 = g g t ({ 2 , 4 , 6 ,... }) = 2\
-        & d_2 = 2
+      & d_1 = g g t ({ 2 , 4 , 6 ,... }) = 2\
+      & d_2 = 2
     $
 
   - Jeder Zustand $i$ mit $p_(i i) > 0$ ist aperiodisch.
@@ -1161,15 +1174,15 @@ $=>$ Es gibt $n in N$ und $k in bb(N)_0$ mit
 $ k m < n < (k + 1) m text(" ,") $ also $ 0 < n - k m < m $ und
 $
   n - k m & = n - k (n_2 - n_1)\
-          & = overbrace(n + k n_1 + n_2, in N) - overbrace((k + 1) m_2, in N) quad in M
+  & = overbrace(n + k n_1 + n_2, in N) - overbrace((k + 1) m_2, in N) quad in M
 $
 Widerpruch zur Definition von $m$! Also muss $m = 1$ und
 $n_1 , n_1 + 1 in N$.\
 Jede natürliche Zahl $n in bb(N)$ lässt sich schreiben als
 $
-  n    & = q n_1 + r text(" mit ") q in bb(N)_0 text(" und ") r < n_1\
+  n & = q n_1 + r text(" mit ") q in bb(N)_0 text(" und ") r < n_1\
   => n & = q n_1 + r (n_1 + 1 - n_1)\
-       & = r (n_1 + 1) + (q - r) n_1
+  & = r (n_1 + 1) + (q - r) n_1
 $ Für $m >= n_1^2$ ist $q >= n_1$, also $q - r > 0$ und es folgt $n in N$. Es folgt also die Behauptung mit
 $n_0 = n_1^2$.\
 Nun zum Beweis von Satz 16: Sei $i$ ein aperiodischer Zustand, für
@@ -1219,7 +1232,9 @@ Zeige: Es gibt ein $N in bb(N)$ (unabhängig von $i , j$), spdass
 $ P_(i j)^N > ß quad forall quad i , j in S $ Sei $i_0 in S$
 aperiodisch.\
 $=>$ Es gibt ein $n_0 in bb(N)$, sodass
-$ P_(i_0 i_0)^n > 0 quad forall n >= n_0 $ Da $(P_(i j))$ irreduzibel ist, gibt es für alle $i , j in S$ ein $n_(i j) in bb(N)_0$ mit
+$
+  P_(i_0 i_0)^n > 0 quad forall n >= n_0
+$ Da $(P_(i j))$ irreduzibel ist, gibt es für alle $i , j in S$ ein $n_(i j) in bb(N)_0$ mit
 $P_(i j)^(n_(i j)) > 0$.\
 Setze $N := 2 m a x { n_(i j) : i , j in S } + n_0$.
 $
@@ -1238,8 +1253,8 @@ $ 1 / n sum_(k = 0)^(n - 1) a_k = a text(" , ") $ also hier
 $ lim_(n -> oo) 1 / n sum_(k = 0)^(n - 1) P_(i j)^k = pi_j $ und dahier ist
 $
   1 / n sum_(k = 0)^(n - 1) P_(i j)^k & = 1 / n sum_(k = 0)^(n - 1) P(X_k = j \| X_0 = i)\
-                                      & = 1 / n sum_(k = 0)^(n - 1) E [bold("1")_({ X_k = j }) \| X_0 = i]\
-                                      & = E [1 / n sum_(k = 0)^(n - 1) bold("1")_({ X_k = j }) \| X_0 = i]
+  & = 1 / n sum_(k = 0)^(n - 1) E [bold("1")_({ X_k = j }) \| X_0 = i]\
+  & = E [1 / n sum_(k = 0)^(n - 1) bold("1")_({ X_k = j }) \| X_0 = i]
 $
 
 Das heißt $pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovkette in Zustand j verbringt.
@@ -1289,16 +1304,16 @@ Setze $sigma_j = sup { n >= 1 : X_n = j }$, wobei
 $sup nothing = oo$. Ist $sigma_j$ endlich, dann ist $sigma_j$ der Zeitpunkt des letzten Aufenthalts in $j$. Für jedes $n in bb(N)$ gilt
 $
   P(sigma_j = n \| X_0 = i) & = P(X_n = j , X_m != j text(" für alle ") m > n \| X_0 = i)\
-                            & = P(X_M != j text(" für alle ") m > n \| X_n = j , X_0 = i) P(X_n = j \| X_0 = i)\
-                            & = lim_(n -> oo) P(X_(n + 1) != j ,... , X_(n + m != j) \| X_n = j , X_0 = i) P_(i j)^n\
-                            & = lim_(m -> oo) P(X_1 != j ,... , X_m != j \| X_0 = j) P_(i j)^n\
-                            & = (1 - f_(j j)) P_(i j)^n
+  & = P(X_M != j text(" für alle ") m > n \| X_n = j , X_0 = i) P(X_n = j \| X_0 = i)\
+  & = lim_(n -> oo) P(X_(n + 1) != j ,... , X_(n + m != j) \| X_n = j , X_0 = i) P_(i j)^n\
+  & = lim_(m -> oo) P(X_1 != j ,... , X_m != j \| X_0 = j) P_(i j)^n\
+  & = (1 - f_(j j)) P_(i j)^n
 $
 $
   P(1 <= sigma_j < oo \| X_0 = i) & = sum_(n = 1)^oo P(sigma_j = n \| X_0 = i)\
-                                  & = (1 - f j j) sum_(n = 1)^oo P_(i j)^n\
-                                  & = (1 - f_(j j)) sum_(n = 1)^oo E [bold("1")_(X_n = j) \| X_0 = i]\
-                                  & = (1 - f_(j j)) E [N_j \| X_0 = i]
+  & = (1 - f j j) sum_(n = 1)^oo P_(i j)^n\
+  & = (1 - f_(j j)) sum_(n = 1)^oo E [bold("1")_(X_n = j) \| X_0 = i]\
+  & = (1 - f_(j j)) E [N_j \| X_0 = i]
 $
 
 - Sei $j$ rekurrent, also $f_(j j) = 1$.\
@@ -1314,8 +1329,8 @@ $
   $P(N_j < oo \| X_0 = i) = 1$.
   $
     => P(1 <= sigma_j < oo \| X_0 = i) & = P(1 <= sigma_j)\
-                                       & = P(tau_j < oo \| X_0 = i)\
-                                       & = f_(i j)
+    & = P(tau_j < oo \| X_0 = i)\
+    & = f_(i j)
   $
   $=> E [N_j \| X_0 = i] = frac(f_(i j), 1 - f_j j)$.
 
@@ -1421,8 +1436,8 @@ und $ => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu\
   ausgetauscht wird, was ist dann die erwartete Lebensdauert einer Glühbirne? Nach Satz 19 ist für einen unendlichen
   Zeithorizont
   $
-      & text("Anzahl ausgetauschter Glübirnen bis Zeitpunkt t") / t\
-      & -> 1 / text("Erwartete Lebensdauer einer Glübirne")
+    & text("Anzahl ausgetauschter Glübirnen bis Zeitpunkt t") / t\
+    & -> 1 / text("Erwartete Lebensdauer einer Glübirne")
   $ Also ist $mu approx 1000 / 7 = 143$
 
 ]
@@ -1463,18 +1478,18 @@ $x , x_1 , x_2 ,... in bb(R)$ mit $lim_(n -> oo) X_n = x$ gilt
 $ lim_(n -> oo) P(X_n > x_n) = G (x) $ Sei nun $y in bb(R)$. Für alle $t > 0$ gilt
 $
   P(frac(N (t) - t / mu, sqrt(frac(t sigma^2, mu^3))) < y) & = P(N (t) < t / mu + y sigma sqrt(t / mu^3))\
-                                                           & = P(N (t) < n_t)
+  & = P(N (t) < n_t)
 $ mit $n_t = ⌈ t / mu + y sigma sqrt(t / mu^3) ⌉$.\
 Sei $t > 0$ so groß, dass $n_t >= 1$. Dann gilt
 $
   P(N (t) < n_t) & = P(T_(n_t) > t)\
-                 & = P(frac(T_(n_t) - n_t mu, sigma sqrt(n_t)) > frac(t - n_t mu, sigma sqrt(n_t)))
+  & = P(frac(T_(n_t) - n_t mu, sigma sqrt(n_t)) > frac(t - n_t mu, sigma sqrt(n_t)))
 $
 Und mit $lim_(t -> oo) n_t / t = 1 / mu$ ist
 $
   lim_(t -> oo) frac(t - n_t mu, sigma sqrt(n_t)) & = lim_(t -> oo) frac(t - (t / mu + y sigma sqrt(t / mu^3)) mu, sigma sqrt(n_t))\
-                                                  & = lim_(t -> oo) frac(- y sqrt(t / mu), sqrt(n_t))\
-                                                  & = - y
+  & = lim_(t -> oo) frac(- y sqrt(t / mu), sqrt(n_t))\
+  & = - y
 $ Mit dem zentralen Grenzwertsatz und dem Lemma folgt also
 $ lim_(t -> oo) P(N (t) < n_t) = 1 - Phi (- y) = Phi (y) $
 
@@ -1519,18 +1534,18 @@ $
 $
 $
   P(N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) & = integral_(B times (t_k , oo)) f (s_1 ,... , s_(m + 1)) thin d (s_1 ,... , S_(m + 1))\
-                                                    & = lambda^(m + 1) (integral_B 1 thin d (s_1 ,... , s_m)) integral_(t k)^oo e^(- lambda s_(m + 1)) thin d s_(m + 1)
+  & = lambda^(m + 1) (integral_B 1 thin d (s_1 ,... , s_m)) integral_(t k)^oo e^(- lambda s_(m + 1)) thin d s_(m + 1)
 $
 An dieser Stelle ist zu nutzen, dass
 $
   integral_B 1 thin d (s_1 ,... , s_m) & = integral_(B_1) 1 thin d (x_1 ,... , x_(n_1)) integral_(B_2) 1 thin d (x_1 ,... , x_(n_2))... integral_(B_k) 1 thin d (x_1 ,... , x_(n_k))\
-                                       & = product_(i = 1)^k frac((t_i - t_(i - 1))^(n_i), n_i !)
+  & = product_(i = 1)^k frac((t_i - t_(i - 1))^(n_i), n_i !)
 $ und
 $ integral_(t_k)^oo e^(- lambda s_(m + 1)) thin d s_(m + 1) = e^(- lambda t_k) / lambda $
 Deswegen gilt
 $
   P(N (t_i) - N (t_(i - 1)) = n_i , i = 1 ,... , k) & = lambda^(1 + sum_(i = 1)^k n_i) (product_(i = 1)^k frac((t_i - t_(i - 1))^(n_i), n_i !)) e^(- lambda t_k) / lambda\
-                                                    & = product_(i = 1)^k frac((t_i - t_(i - 1))^(n_i), n_i !) e^(t_i - t_(i - 1))
+  & = product_(i = 1)^k frac((t_i - t_(i - 1))^(n_i), n_i !) e^(t_i - t_(i - 1))
 $
 
 #block[
@@ -1538,9 +1553,9 @@ $
   $lambda > 0$. Berechne $P(N (1) = 1, N (3) = 5)$.
   $
     P(N (1) = 1 , N (3) = 5) & = P(N (1) = 1 , N (3) - N (1) = 4)\
-                             & = P(overbrace(N (1) = 1, tilde.op P O I (lambda))) P(overbrace(N (3) - N (1) = 4, tilde.op P O I (2 lambda)))\
-                             & = frac(e^(- lambda) lambda, 1 !) frac(e^(- 2 lambda) (2 lambda)^4, 4 !)\
-                             & = 2 / 3 e^(- 3 lambda) lambda^5
+    & = P(overbrace(N (1) = 1, tilde.op P O I (lambda))) P(overbrace(N (3) - N (1) = 4, tilde.op P O I (2 lambda)))\
+    & = frac(e^(- lambda) lambda, 1 !) frac(e^(- 2 lambda) (2 lambda)^4, 4 !)\
+    & = 2 / 3 e^(- 3 lambda) lambda^5
   $
 
 ]
@@ -1549,14 +1564,14 @@ $
   die bedingte Wahrscheinlichkeit, dass er vor 09:20 eingeht, wenn $t$ in Stunden gemessen wird?
   $
     P(T_1 < 1 / 3 \| N (1 / 2) = 1) & = frac(P(T_1 < 1 / 3 , N (1 / 2) = 1), P(N (1 / 2) = 1))\
-                                    & = frac(P(T_1 < 1 / 3 , N (1 / 2) - N (1 / 3) = 0), P(N (1 / 2) = 1))\
-                                    & = frac(P(T_1 < 1 / 3) P(N (1 / 2) - N (1 / 3) = 0), P(N (1 / 2) = 1))\
-                                    & = frac(
+    & = frac(P(T_1 < 1 / 3 , N (1 / 2) - N (1 / 3) = 0), P(N (1 / 2) = 1))\
+    & = frac(P(T_1 < 1 / 3) P(N (1 / 2) - N (1 / 3) = 0), P(N (1 / 2) = 1))\
+    & = frac(
       frac(e^(- lambda 1 / 3), 1 !) (lambda / 3)^1 frac(e^(- lambda (1 / 2 - 1 / 3)), 0 !) (lambda (1 / 2 - 1 / 3))^0,
       frac(e^(- lambda 1 / 2), 1 !) (lambda / 2)^1,
 
     )\
-                                    & = 2 / 3
+    & = 2 / 3
   $ Das entspricht genau $2 / 3$ der Zeit!
 
 ]
