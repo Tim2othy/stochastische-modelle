@@ -2,6 +2,8 @@
 
 #set page(paper: "a4", margin: (x: 1.5cm, y: 3.5cm), numbering: "1")
 #show outline.entry.where(level: 1): set block(above: 1.2em)
+// Maybe use something like this?
+//#outline(title: none, target: figure.where(kind: "theorem"))
 
 #set heading(numbering: "1.1")
 
