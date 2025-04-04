@@ -74,10 +74,10 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 
 Für Ereginisse $A_1, ..., A_n$ gilt
 $ P(⋃_(i = 1)^n A_i) <= sum_(i = 1)^n P(A_i) . $ (a) Sind
-$A, A_1, A_2,... ⊃ Omega$ eine Folge von nicht disjunkten Ereginissen mit $A_1 ⊂ A_2 ⊂... ⊂ A$ //TODO Maybe the last A should be A_n
+$A, A_1, A_2, ... ⊃ Omega$ eine Folge von nicht disjunkten Ereginissen mit $A_1 ⊂ A_2 ⊂... ⊂ A$ //TODO Maybe the last A should be A_n
 und $⋃_(n = 1)^oo A_n = A$, dann ist
 $ lim_(n -> oo) P(A_n) = P(A) = P(⋃_(n = 1)^oo A_n). $
-(b) Sind $A, A_1, A_2,... ⊂ Omega$ eine Folge von nicht disjunkten Ereignissen mit
+(b) Sind $A, A_1, A_2, ... ⊂ Omega$ eine Folge von nicht disjunkten Ereignissen mit
 $A_1 ⊃ A_2 ⊃ ... ⊃ A$ //TODO Maybe the last A should be A_n
 und $⋂_(n = 1)^oo A_n = A$, dann gilt
 $ lim_(n -> oo) P(A_n) = P(A) = P(⋂_(n = 1)^oo A_n). $
@@ -176,7 +176,7 @@ und $ f_Y (y) = integral_(- oo)^oo f (x, y) d x . $
 Ist $X$ eine diskrete Zufallsvariable und $g : bb(R) -> bb(R)$, so ist $ E [g (X)] = sum_X g (x) P(X = x) $ wobei die
 Summe über alle $X$
 mit $P(X = x) > 0$ läuft.\
-Nimmt X nur Werte in ${ 0, 1, 2,... }$ an, dann gilt
+Nimmt X nur Werte in ${ 0, 1, 2, ... }$ an, dann gilt
 $ E [X] = sum_(n = 0)^oo P(X > n), $ denn
 $
   E [X] & = sum_(n = 0)^oo n P(X = n) =\
@@ -210,15 +210,15 @@ Es gilt
 
 == Unabhängigkeit
 
-Ereignisse $A_1, A_2,...$ heißen unabhängig, falls für jede endliche Auswahl von verschiedenen Indizes $i_1, ..., i_n$ gilt
+Ereignisse $A_1, A_2, ...$ heißen unabhängig, falls für jede endliche Auswahl von verschiedenen Indizes $i_1, ..., i_n$ gilt
 $ P(A_(i_1) ∩... ∩ A_(i_n)) = P(A_(i_1)... P(A_(i_n))) $
-Sind $A_1, A_2,...$ unabhängige Ereignisse und ist für jedes i
-$B_i = A_i$ oder $B_i = A_i^C$, dann sind auch $B_1, B_2,...$
+Sind $A_1, A_2, ...$ unabhängige Ereignisse und ist für jedes i
+$B_i = A_i$ oder $B_i = A_i^C$, dann sind auch $B_1, B_2, ...$
 unabhängig.\
 Zufallsvariablen $X_1, ..., X_n$ heißen unabhängig, falls für alle
 $x_1, ..., x_n in bb(R)$
 $ F_(X_1, ..., X_n) (x_1, ..., x_n) = F_(X_1) (x_1) F_(X_2) (x_2)... F_(X_n) (x_n) $
-Für eine unendliche Folge von Zufallsvariablen $X_1, X_2,...$
+Für eine unendliche Folge von Zufallsvariablen $X_1, X_2, ...$
 bedeutet Unabhängigkeit, dass für jedes $n$ $X_1, ..., X_n$
 unabhängig sind.\
 Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
@@ -230,7 +230,7 @@ Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
 + $C o v [X_i, X_j] = 0$ für alle $i != j$
   $-> V a r [X_1, ..., X_n] = sum_(i = 1)^n V a r [X_i]$
 
-+ $h_1 (X_1, ..., X_(n_1)), h_2 (X_(n_1 + 1),... X_(n_2)), ..., h_n (X_(n_(k - 1) + 1),... X_(n_k))$
++ $h_1 (X_1, ..., X_(n_1)), h_2 (X_(n_1 + 1), ... X_(n_2)), ..., h_n (X_(n_(k - 1) + 1), ... X_(n_k))$
   sind unabhängige Zufallsvariablen, wobei
   $0 = n_0 < n_1 <... < n_k <= n$, wobei
   $h_i : bb(R)^(n_i - n_(i - 1)) -> bb(R)$ \
@@ -255,18 +255,18 @@ $X_1, ..., X_n$.
 Für $A, B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A gegeben B $ P(A \| B) = frac(P(A ∩ B), P(B)) $
 
 - Bei festem $B in Omega$ mit $P(B) > 0$ ist $P(dot(\|) B)$ ein Wahrscheinlichkeitsmaß: $P(Omega \| B) = 1$ und für
-  diesjungte Ereignisse $A_1, A_2,...$ ist
+  diesjungte Ereignisse $A_1, A_2, ...$ ist
   $P(A_1 ∪ A_2 ∪... \| B) = sum_i P(A_i \| B)$
 
 - Sind A und B unabhängig, dann ist $P(A \| B) = P(A)$ (falls
   $P(B) > 0$)
 
-- Bilden $A_1, A_2,...$ eine Zerlegung von $Omega$, also
+- Bilden $A_1, A_2, ...$ eine Zerlegung von $Omega$, also
   $A_i ∩ A_j = nothing$ für alle $i != j$ und
   $⋃_i A_i = Omega$, dann gilt ür jedes $A in Omega$
   $ P(A) = sum_i P(A ∩ A_i) = sum_(i : P(A_i) > 0) P(A \| A_i) P(A_i) "(Satz der totalen Wahrscheinlichkeit)" $
 
-- Für beliebige Ereignisse $A_1,... A_n$ gilt
+- Für beliebige Ereignisse $A_1, ... A_n$ gilt
   $ P(A_1 ∩ A_2 ∩...) = P(A_1) P(A_2 \| A_1) P(A_3 \| A_1 ∩ A_2)... P(A_n \| A_1 ∩... ∩ A_(n - 1)), $falls
   $ P(A_1 ∩... ∩ A_(n - 1)) > 0 "(Multiplikationssatz für bedingte Wahrscheinlichkeiten)" $
 
@@ -331,7 +331,7 @@ $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) . $
 
 Ein stochastischer Prozess ist eine Familie von Zufallsvariablen $X_t$, wobei der Parameter $t$ eine Indexmenge $T$ durchläuft.
 Oft ist
-$T in \[ o, oo \)$ oder $T = { 0, 1, 2,... }$ und $t in T$ wird als Zeitpunkt interpretiert.\
+$T in \[ o, oo \)$ oder $T = { 0, 1, 2, ... }$ und $t in T$ wird als Zeitpunkt interpretiert.\
 Der Zustandsraum eines stochastischen Prozesses ${ X_t : t in T }$ ist die Menge aller möglichen Werte der $X_t$. Man
 sagt der Prozess ist zur Zeit $t$ in Zustand $x$, falls $X_t = x$.\
 Eines diskrete Markov-Kette ist ein stochastischer Prozess mit diskreter Zeit und diskretem Zustandsraum, sodass zu
@@ -360,13 +360,13 @@ $(star)$ beinhaltet zwei Aussagen:
 + Die bedingte Verteilung hängt nicht vom Zeitpunkt $n$ ab. Die Übergangswahrscheinlichkeiten sind stationär.
 
 Die i-te Zeile der Übergangsmatrix beschreibt die bedingte Verteilung des nächsten Zustands $X_(n + 1)$ gegeben $X_n = i$ (und
-$X_0 = i_0,...$).
+$X_0 = i_0, ...$).
 
 #example[
 
-  Seien $X_0, X_1,...$ unabhängige und identisch verteilte
+  Seien $X_0, X_1, ...$ unabhängige und identisch verteilte
   $bb(N)_0$-wertige Zufalssvariablen mit $P(X_0 = i) = a_i$,
-  $i = 0, 1,...$. Dann ist ${ X_n : n in bb(N) }$ eine Markov-Kette mit Zusstandraum $bb(N)_0$ und Übergangsmatrix
+  $i = 0, 1, ...$. Dann ist ${ X_n : n in bb(N) }$ eine Markov-Kette mit Zusstandraum $bb(N)_0$ und Übergangsmatrix
   $(P_(i j))_(i, j in bb(N)_0)$ mit $p_(i j) = a_j$ für alle
   $i, j in bb(N)_0$.
   $
@@ -416,12 +416,12 @@ $X_0 = i_0,...$).
   Ein Spezielafall wäre die einfache Irrfahrt auf $bb(Z)$ bei der
   $P(Y_n = 1) = p$ und $P(Y_n = - 1) = 1 - p$ für alle $n in bb(N)$. Interpretation: Die Markov-Kette beschreibt die
   Position eines Teilchens, das sich auf $bb(Z)$ bewegt. Es startet im Ursprung $X_0 = 0$
-  und springt zu jedem Zeitpunkt $1, 2,...$ zufällig eine Einheit nach links oder rechts.
+  und springt zu jedem Zeitpunkt $1, 2, ...$ zufällig eine Einheit nach links oder rechts.
 
 ]
 #example(title: [Sukzessive Maxima])[
 
-  Seien $Y_1, Y_2,...$ unabhängig und identisch verteilte
+  Seien $Y_1, Y_2, ...$ unabhängig und identisch verteilte
   $bb(N)_0$-wertige Zufallsvariablen mit $P(Y_1 = c) = a_i$, $i in N_0$,
   $X_0 : = 0$ und $X_n : = m a x (Y_1, ..., Y_n)$. In Worten: Die Kette nimmt zu jeden Zeitpuntk $n$ den größten
   zufälligen Wert aus
@@ -445,7 +445,7 @@ $X_0 = i_0,...$).
     P(max (i_n, Y_(n + 1)) = i_(n + 1)) = cases(
       delim: "{",
       P(Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) & text(", falls ") i_(n + 1) > i_n,
-      P(Y_(n + 1) <= i_n) = sum_(k = o)^n a_k & text(", falls ") i_(n + 1) = i_n,
+      P(Y_(n + 1) <= i_n) = sum_(k = o)^n a_k & text(", falls ") i_(n  + 1) = i_n,
       0 & text(", falls ") i_(n + 1) < i_n,
 
     )
@@ -467,7 +467,7 @@ $X_0 = i_0,...$).
   Sei $X_0$ eine $S$-wertige Zufallsvariable
   und $S$ endlich oder abzählbar unendlich. Setze für $n >= 0$ rekursiv
   $ X_(n + 1) = f (X_n, Y_(n + 1)) $ Dabei sei
-  $f : S times bb(R) -> S$, $Y_1, ..., Y_n$ seien identisch verteilte Zufallsvariablen und $Y_0, Y_1,...$ seien
+  $f : S times bb(R) -> S$, $Y_1, ..., Y_n$ seien identisch verteilte Zufallsvariablen und $Y_0, Y_1, ...$ seien
   unabhängig. \
   $=> { X_n : n in bb(N)_0 }$ ist eine Markovkette mit Übergangswahrscheinlichkeiten $p_(i j) = P(f (i, Y_1) = j)$, denn
   für
@@ -483,7 +483,7 @@ $X_0 = i_0,...$).
   $ $star$ Hinweis: Das Ereignis
   ${ X_(n + 1) = f (i_n, Y_(n + 1)) I i_(n + 1) }$ hängt von einem festen Wert $i_n$ und der Zufallsvariablen $Y_(n + 1)$ ab.
   Das gleiche gilt natürlich auch für $X_0, ..., X_n$. Deswegen leigt hier Unabhängigkeit vor. \
-  $star star$ Hinweis: $Y_1, Y_2,...$ i.i.d
+  $star star$ Hinweis: $Y_1, Y_2, ...$ i.i.d
 
 ]
 
@@ -597,9 +597,9 @@ $
 $ Beide Größen hängen vom gegenwärtigen Zustand $i$ ab und weder von $V$ noch von $n$.\
 Die Aussagen lassen sich mit einem unendlichen Zeithorizont erweitern:\
 Für die Menge $Z ⊂ S^oo$ und $f : S^oo -> bb(R)$ gilt
-$ P((X_(n + 1), X_(n + 2),...) in Z \| (X_0, ..., X_(n - 1) in V), X_n = i) = P_i ((X_1,...) in Z) $
+$ P((X_(n + 1), X_(n + 2), ...) in Z \| (X_0, ..., X_(n - 1) in V), X_n = i) = P_i ((X_1, ...) in Z) $
 und
-$ E [f (X_(n + 1), X_(n + 2),...) \| (X_0, ..., X_(n - 1) in V, X_n = i)] = E_i [f (X_(n + 1), X_(n + 2),...)] . $
+$ E [f (X_(n + 1), X_(n + 2), ...) \| (X_0, ..., X_(n - 1) in V, X_n = i)] = E_i [f (X_(n + 1), X_(n + 2), ...)] . $
 
 Die $n$-Schritt Übergangswahrscheinlichkeit ist
 $ p_(i j)^n : = P(X_(n + m) = j \| X_m = i) $ mit $i, j in S$,
@@ -812,20 +812,20 @@ Folgender Satz gilt für beliebige $A$:\
   $h_i = P(T < oo \| X_0 = i)$ mit $i in S$ und
   $T = inf { n in bb(N)_0 : X_n = 0 }$. \
   Es gilt $h_0 = 1$ und Nach Satz 10
-  $ h_i = p h_(i + 1) + (1 - p) h_(i - 1) "für" i = 1, 2,... $
+  $ h_i = p h_(i + 1) + (1 - p) h_(i - 1) "für" i = 1, 2, ... $
   Mit $Theta = frac(1 - p, p)$ gilt somit (siehe Bsp. 9)
-  $ h_(i + 1) - h_i = Theta (h_i - h_(i - 1)) "für" i = 1, 2,... $
+  $ h_(i + 1) - h_i = Theta (h_i - h_(i - 1)) "für" i = 1, 2, ... $
   und daher
-  $ h_(i + 1) - h_i = Theta^i (h_1 - h_0) = Theta^i (h_1 - 1) "für" i = 0, 1,...space (star) $
+  $ h_(i + 1) - h_i = Theta^i (h_1 - h_0) = Theta^i (h_1 - 1) "für" i = 0, 1, ...space (star) $
   Sei nun $p <= 1 / 2$, also $Theta >= 1$. \
   Dann gilt
   $ h_i - h_(i + 1) =^((star)) Theta^i (1 - h_1) >= 1 - h_1 $ also
-  $ h_(i + 1) <= h_i - (1 - h_1) "für" i = 0, 1,... $
+  $ h_(i + 1) <= h_i - (1 - h_1) "für" i = 0, 1, ... $
   Angenommen $h_1 < 1$, dann würde daraus folgen, dass
   $h_(i + 1) - h_i <= 0$ und damit wäre
   $lim_(i -> oo) h_i = - oo$. Dies wäre offensichtlich ein Widerspruch! \
   Also muss $h_1 = 1$ sein.
-  $ =>^((star)) h_(i + 1) - h_i = 0 "für" i = 0, 1,... $
+  $ =>^((star)) h_(i + 1) - h_i = 0 "für" i = 0, 1, ... $
   $ => h_i = 1 "für alle" i = 0, 1, ..., "falls" p <= 1 / 2 $
   Insbesondere ist auch bei einem fairen Spiel ($p = 1 / 2$) die Ruinwahrscheinlichkeit $h_i = 1$ für jedes Anfangskapital $i$.
   \
@@ -837,7 +837,7 @@ Folgender Satz gilt für beliebige $A$:\
     & = (h_1 - 1) sum_(i = 0)^(j - 1) Theta^i\
     & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta)
   $
-  $ => h_i = 1 + (h_1 - 1) frac(1 - Theta^j, 1 - Theta) "für" j = 0, 1,... $
+  $ => h_i = 1 + (h_1 - 1) frac(1 - Theta^j, 1 - Theta) "für" j = 0, 1, ... $
   Für jedes $h_1 in [0, 1]$ erfüllt diese Gleichung die Gleichung
   $(star)$. \
   Wegen $0 <= lim_(j -> oo) h_i = 1 + frac((h_1 - 1), 1 - Theta)$
@@ -1123,7 +1123,7 @@ Wende hier Satz 14 auf $Pi^k$ an.\
 $pi$ ist auch eine stationäre Verteilung für $Pi^k$ und
 $ (Pi^k)^m = Pi^(k m) = (P_(i j)^(k m)) $ Damit liefer Satz 14:
 $
-  sum_(j = 1)^S lr(|P_(i j)^(k m) - pi_j|) <= 2 (1 - epsilon)^m quad forall quad i = 1, ..., S "und" m = 1, 2, 3,...
+  sum_(j = 1)^S lr(|P_(i j)^(k m) - pi_j|) <= 2 (1 - epsilon)^m quad forall quad i = 1, ..., S "und" m = 1, 2, 3, ...
 $
 Sei $n in bb(N)_0$, $m = ⌊ n / k ⌋$, $r = n - k m >= 0$.
 $
@@ -1178,7 +1178,7 @@ aperiodisch sind.
 #block[
   - Für $S = { 1, 2 }$ und $Pi = mat(delim: "(", 0, 1;1, 0)$ gilt
     $
-      & d_1 = g g t ({ 2, 4, 6,... }) = 2\
+      & d_1 = g g t ({ 2, 4, 6, ... }) = 2\
       & d_2 = 2
     $
 
@@ -1432,7 +1432,7 @@ Anfangsverteilung) hingegen basiert (s. Satz 17) darauf, dass mindestens ein Zus
 
 Eine Erneuerung ist ein Ereignis, das zu zufälligen Zeitpunkten auftritt. Ein Erneuerungsprozess ist ein stochastischer
 Prozess, der die Anzahl der Erneuerungen bis zu einem Zeitpuntk $t$ beschreibt. Seien
-$Y_1, Y_2,...$ i.i.d die Wartezeiten, also die Zeiten zwischen aufeinanderfolgenden Erneuerungen, mit $E [Y_i] = mu quad in (0, oo)$
+$Y_1, Y_2, ...$ i.i.d die Wartezeiten, also die Zeiten zwischen aufeinanderfolgenden Erneuerungen, mit $E [Y_i] = mu quad in (0, oo)$
 und $V a r [Y_i] = sigma^2$. Die Zeitpunkte der Erneuerungen seien definiert als $ T_n = Y_1 + Y_2 +... + Y_n $ Sei $N (t)$ die
 Anzahl der Erneuerungen bis zu einem Zeitpunkt $t$:
 $ N (t) = m a x { n in bb(N)_0 : T_n <= t } $ In Worten: $N (t)$ ist die maximale Anzahl an Erneuerungen, deren
@@ -1467,7 +1467,7 @@ und $ => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu\
 => & lim_(t -> oo) frac(t, N (t)) = mu $
 
 #block[
-  Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in bb(N)_0 }$, bei dem $Y_1, Y_2,...$ i.i.d die Wartezeit bis
+  Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in bb(N)_0 }$, bei dem $Y_1, Y_2, ...$ i.i.d die Wartezeit bis
   zum Ausfall einer Glühbirne in einer Lampe mit einer Glühbirne beschreibt. Folglich ist
   $T_n$ die Zeit, bis die n-te Glühbirne ausgefallen ist, bzw. ausgetauscht werden musste. \
   Nehmen wir an, wir beobachten in Tagen $Y_1 = 100$, $Y_2 = 150$,
@@ -1482,12 +1482,12 @@ und $ => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu\
 
 ]
 #block[
-  Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in bb(N)_0 }$, bei dem $Y_1, Y_2,...$ i.i.d. die Zeitabstände
+  Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in bb(N)_0 }$, bei dem $Y_1, Y_2, ...$ i.i.d. die Zeitabstände
   zwischen Schadensfällen ist. Folglich ist $T_n$ die Zeit, bis die n-te Schadensmeldung eingegangen ist. \
   Wenn die Frage nach dem erwarteten Zeitabends zwischen zwei Meldungen ist, könnte nach Satz 19 wieder
   $ mu approx t / "Anzahl Meldungen bis Zeit t" $ berechnet werden. \
-  Nun erhalte die Versicherung zu den Zeiten $T_1, T_2,...$
-  Schadensforderungen in Höhe von $X_1, X_2,...$ i.i.d mit
+  Nun erhalte die Versicherung zu den Zeiten $T_1, T_2, ...$
+  Schadensforderungen in Höhe von $X_1, X_2, ...$ i.i.d mit
   $E X_i < oo .$. Über die Gesamte Zeit häufen sich also
   $ X (t) = sum_(i = 1)^(N (t)) X_i $ an. Berechne
   $lim_(t -> oo) frac(X (t), t)$. \
@@ -1510,11 +1510,11 @@ und $ => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu\
 
 ]
 #strong[Beweis Satz 20] \
-Der Beweis nutzt $P(N (t) < n) = P(T_n > t)$, den zentralen Grenzwertsatz und folgendes Lemma: Seien $X_1, X_2,...$
+Der Beweis nutzt $P(N (t) < n) = P(T_n > t)$, den zentralen Grenzwertsatz und folgendes Lemma: Seien $X_1, X_2, ...$
 ZUfallsvariablen, sodass
 $l i m_(n -> oo) P(X_n > x) = G (x) quad forall x in bb(R)$, wobei
 $G$ stetig ist. $=>$ Für alle
-$x, x_1, x_2,... in bb(R)$ mit $lim_(n -> oo) X_n = x$ gilt
+$x, x_1, x_2, ... in bb(R)$ mit $lim_(n -> oo) X_n = x$ gilt
 $ lim_(n -> oo) P(X_n > x_n) = G (x) $ Sei nun $y in bb(R)$. Für alle $t > 0$ gilt
 $
   P(frac(N (t) - t / mu, sqrt(frac(t sigma^2, mu^3))) < y) & = P(N (t) < t / mu + y sigma sqrt(t / mu^3))\
@@ -1539,7 +1539,7 @@ Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
 $lambda > 0$ ($X tilde.op E X P(lambda)$), falls $X$ die Dichte
 $ f (x) = cases(delim: "{", lambda e^(- lambda x) & "falls" x > 0, 0 & "sonst") $
 hat.\
-Sei $lambda$ eine Konstante $ > 0$. Seien $Y_1, Y_2,...$ i.i.d. exponentialverteilte Zufallsvariablen für alle $n = 1, 2,...$.\
+Sei $lambda$ eine Konstante $ > 0$. Seien $Y_1, Y_2, ...$ i.i.d. exponentialverteilte Zufallsvariablen für alle $n = 1, 2, ...$.\
 Setze $   & T_0 := 0\
   & T_n := Y_1 +... + Y_n\
   & N (t) : = m a x { n in bb(N)_0 : T_n <= t }, t >= 0 $
@@ -1558,7 +1558,7 @@ $0 = t_0 < t_1 <... < t_k$ die Zufallsvariablen $   & N (t_0),\
   $=> { N (t) : t >= 0 }$ hat unabhängige Zuwächse und für
   $0 <= s < t$ gilt
   $ N (t) - N (s) tilde.op P O I (lambda (t - s)), $
-  $ P(N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) "für") n = 0, 1,... $
+  $ P(N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) "für") n = 0, 1, ... $
 
 ]
 #strong[Beweis Satz 21] \
