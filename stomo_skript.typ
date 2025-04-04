@@ -1044,7 +1044,7 @@ Die Behauptung ist klar für $A = S$. Sei also $A != S$.
        & = sum_(i in S) lim_(n -> oo) P(X_n = i) p_(i j)\
        & = sum_(i in S) pi_i p_(i j) quad forall j in S $
 
-#block[
+#example[
   Gegeben sei eine Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandsraum
   $S = { 1, 2 }$ und Übergangsmatrix
   $Pi = mat(delim: "(", (1 - a), a;b, (1 - b))$ ($a, b in (0, 1)$) Es gilt
@@ -1175,7 +1175,7 @@ $ d_i = oo, "falls" P_(i i)^n = 0 quad forall quad n in bb(N) $
 Ein Zustandsraum mit Periode 1 heißt #strong[aperiodisch];. Die Markovkette heißt aperiodisch, falls alle ihre Zustände
 aperiodisch sind.
 
-#block[
+#example[
   - Für $S = { 1, 2 }$ und $Pi = mat(delim: "(", 0, 1;1, 0)$ gilt
     $
       & d_1 = g g t ({ 2, 4, 6, ... }) = 2\
@@ -1193,7 +1193,7 @@ aperiodisch sind.
   $ p_(i i)^n > 0 quad forall quad n >= n_o (i) $
 
 ]
-#block[
+#example[
   Sei $ Pi = mat(delim: "(", 0, 1, 0;0, 0, 1;1 / 2, 0, 1 / 2) $
   $P_11^1 = 0$, $P_11^2 = 0$.Für $n >= 3$ ist aber
   $ p_11^n >= p_12 p_23 p_33^(n - 3) p_31 = (1 / 2)^(n - 2) > 0 $
@@ -1299,9 +1299,8 @@ $
 
 Das heißt $pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovkette in Zustand j verbringt.
 
-#block[
+#example[
   HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29
-
 ]
 == Rekurrenz und Transienz
 
@@ -1316,7 +1315,7 @@ die Wahrscheinlichkeit einer Rückkehr.\
 Ein Zustand $j in S$ heißt #strong[rekurrent];, falls $f_(j j) = 1$. Er heißt #strong[transient];, falls $f_(j j) < 1$.
 Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette rekurennt oder transient.
 
-#block[
+#example[
   Sei $S = { 1, 2, 3 }$ und
   $ (P_(i j)) = mat(delim: "(", 0.5, 0.5, 0;0.5, 0.5, 0;1 / 3, 1 / 3 1 / 3) $
   Dann ist $ f_11 & = sum_(n = 1)^oo P(tau_1 = n \| X_0 = 1)\
@@ -1400,7 +1399,7 @@ $
   und daher ist
   $ P(N_j = oo \| X_0 = i) = f_(i j) = 1 quad forall quad i, j in S $
 
-#block[
+#example[
   Wie betrachten wieder die einfache Irrfahrt auf $bb(Z)$. \
   Da eine Rückkehr zum Zustand $i$ immer nur in 2 Schritten möglich ist, ist die Periode $d_i = 2$. \
   $ P_(i i)^(2 n) = vec(2 n, n) p^n (1 - p)^(2 n - n) $
@@ -1466,7 +1465,7 @@ und $ => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu\
    & lim_(t -> oo) frac(N (t) + 1, N (t)) = 1\
 => & lim_(t -> oo) frac(t, N (t)) = mu $
 
-#block[
+#example[
   Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in bb(N)_0 }$, bei dem $Y_1, Y_2, ...$ i.i.d die Wartezeit bis
   zum Ausfall einer Glühbirne in einer Lampe mit einer Glühbirne beschreibt. Folglich ist
   $T_n$ die Zeit, bis die n-te Glühbirne ausgefallen ist, bzw. ausgetauscht werden musste. \
@@ -1481,7 +1480,7 @@ und $ => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu\
   $ Also ist $mu approx 1000 / 7 = 143$
 
 ]
-#block[
+#example[
   Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in bb(N)_0 }$, bei dem $Y_1, Y_2, ...$ i.i.d. die Zeitabstände
   zwischen Schadensfällen ist. Folglich ist $T_n$ die Zeit, bis die n-te Schadensmeldung eingegangen ist. \
   Wenn die Frage nach dem erwarteten Zeitabends zwischen zwei Meldungen ist, könnte nach Satz 19 wieder
@@ -1588,7 +1587,7 @@ $
   & = product_(i = 1)^k frac((t_i - t_(i - 1))^(n_i), n_i !) e^(t_i - t_(i - 1))
 $
 
-#block[
+#example[
   Sei ${ N (t) : t >= 0 }$ ein Poisson-Prozess mit Intensität
   $lambda > 0$. Berechne $P(N (1) = 1, N (3) = 5)$.
   $
@@ -1599,7 +1598,7 @@ $
   $
 
 ]
-#block[
+#example[
   Ab 09:00 erfolgen Anrufe gemäß eines Poisson-Prozesses. Gegeben, dass bis 09:30 genau ein Anruf eingeht, wie groß ist
   die bedingte Wahrscheinlichkeit, dass er vor 09:20 eingeht, wenn $t$ in Stunden gemessen wird?
   $
