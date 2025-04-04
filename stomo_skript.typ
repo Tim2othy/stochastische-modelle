@@ -126,7 +126,7 @@ $ P(X in A) = P({ omega in Omega : X (omega) in A }) . $ Für
 $a in bb(R)$ ist $ { X = a } = { omega in Omega : X (omega) = a } $ und
 $ P(X = a) = P({ omega in Omega : X (omega) = a }) . $ Die Verteilungsfunktion $F = F_X$ der Zufallsvariablen $X$ ist
 definiert durch $F (x) = P(X in x)$ mit $x in bb(R)$ und
-$ P \( X in (a , b \]) = P(a < X <= b) = F (b) - F (a) text(" für alle ") a < b . $
+$ P \( X in (a , b \]) = P(a < X <= b) = F (b) - F (a) "für alle" a < b . $
 Zudem gilt
 $ P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon -> 0) F (a - epsilon) . $
 Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $epsilon_1 ⊃ epsilon_2 ⊃ ... ⊃ 0$ und $lim_(n -> oo) epsilon_n = 0$,
@@ -144,20 +144,20 @@ Eine Zufallsvariable heißt diskret, falls ...
 - ... für $A in bb(R)$ $P(X in A) = sum_(X in A) f (x)$ gilt.
 
 Eine Zufallsvariable heißt stetig, falls es eine nicht negative Funktion $f$ gibt, sodass
-$ P(a <= X <= b) = integral_a^b f (x) thin d x text(" für alle ") a < b $
+$ P(a <= X <= b) = integral_a^b f (x) thin d x "für alle" a < b $
 $f$ heißt Dichte von $X$. Die Verteilungsfunktion ist dann
 $
   F (x) = integral_(- oo)^x f (t) thin d t
 $ Die gemeinsame Verteilungsfunktion $F = F_(X_1 ,... , X_n)$ von $n$ Zufallsvariablen
 $X_1 ,... , X_n$ ist definiert durch
-$ F (x_1 ,... , x_n) = P(X_1 <= x_1 ,... , X_n <= x_n) text(" für alle ") x_1 ,... , x_n in bb(R) $
+$ F (x_1 ,... , x_n) = P(X_1 <= x_1 ,... , X_n <= x_n) "für alle" x_1 ,... , x_n in bb(R) $
 Für die Randverteilungsfunktion $F_(X_1) ,... , F_(X_n)$ gilt
-$ F_(X_i) (x_i) = lim_(x_j -> oo) F (x_1 ,... , x_n) text(" für ") i != j $
+$ F_(X_i) (x_i) = lim_(x_j -> oo) F (x_1 ,... , x_n) "für" i != j $
 Sind $X_1 ,... , X_n$ diskrete Zufallsvariabeln, so ist ihre gemeinsame Wahrscheinlichkeitsfunktion gegeben durch
 $ f (x_1 ,... , x_n) = P(X_1 = x_1 ,... , X_n = x_n) . $
 $X_1 ,... , X_n$ sind gemeinsam stetig verteilt, falls es eine gemeinsame Dichte $f (x_1 ,... , x_n) >= 0$ gibt, sodass
 $
-  F (x_1 ,... , x_n) = integral_(- oo)^(x_1) dots.h integral_(- oo)^(x_n) f (t_1 ,... , t_n) thin d t_n dots.h thin d t_1 text(" für alle ") x_1 ,... , x_n in bb(R)
+  F (x_1 ,... , x_n) = integral_(- oo)^(x_1) dots.h integral_(- oo)^(x_n) f (t_1 ,... , t_n) thin d t_n dots.h thin d t_1 "für alle" x_1 ,... , x_n in bb(R)
 $
 Für $B_1 ,... , B_n in bb(R)$ gilt dann
 $ P(X_1 in B_1 ,... , X_n in B_n) = integral_(B_1)... integral_(B_n) f (t_1 ,... , t_n) thin d t_n... thin d t_1 $
@@ -191,7 +191,7 @@ eine Dichte $f$, so ist
 $ E [g (X)] = integral_(- oo)^oo g (x) f (x) thin d x $ Für jede nichtnegative ZUfallsvariable $X$ gilt
 $ E [X] = integral_0^oo P(X > x) thin d x = integral_0^oo P(X >= x) thin d x $
 Allgemein gilt
-$ E [a X + b Y] = a E [X] + b E [Y] text(" für ") a , b in bb(R) $
+$ E [a X + b Y] = a E [X] + b E [Y] "für" a , b in bb(R) $
 Die Varianz der Zufallsvariable $X$ ist
 $ V a r [X] = E [(X - E [X])^2] = E [X^2] - E [X]^2 $ Die Kovarianz von Zufallsvariablen X und Y ist
 $ C o v [X , Y] = E [(X - E [X]) (Y - E [Y])] = E [X Y] - E [X] E [Y] $
@@ -242,10 +242,10 @@ Für unabhängige Zufallsvariablen $X_1 ,... , X_n$ gilt
 
 Für den Spezielfall diskreter Zufallsvariablen $X_1 ,... , X_n$ gilt
 $
-  X_1 ,... , X_n text(" unabhängig ") <=> P(X_1 = x_1 ,... , X_n = x_n) = P(X_1 = x_1)... P(X_n = x_n) text(" für alle") x_1 ,... , x_n in bb(R)
+  X_1 ,... , X_n "unabhängig" <=> P(X_1 = x_1 ,... , X_n = x_n) = P(X_1 = x_1)... P(X_n = x_n) "für alle" x_1 ,... , x_n in bb(R)
 $
 Sind $X_1 ,... , X_n$ stetige Zufallsvariablen mit gemeinsamer Dichte f und
-$ f (x_1 ,... , x_n) = f_(X_1) (x_1)... f_((X_n)) (x_n) text(" für alle ") x_1 ,... , x_n in bb(R) , $
+$ f (x_1 ,... , x_n) = f_(X_1) (x_1)... f_((X_n)) (x_n) "für alle" x_1 ,... , x_n in bb(R) , $
 dann sind $X_1 ,... , X_n$ unabhängig. In diesem Fall ist
 $ f_(X_1) (x_1)... f_(X_n) (x_n) $ eine gemeinsame Dichte von
 $X_1 ,... , X_n$.
@@ -264,11 +264,11 @@ Für $A , B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A g
 - Bilden $A_1 , A_2 ,...$ eine Zerlegung von $Omega$, also
   $A_i ∩ A_j = nothing$ für alle $i != j$ und
   $⋃_i A_i = Omega$, dann gilt ür jedes $A in Omega$
-  $ P(A) = sum_i P(A ∩ A_i) = sum_(i : P(A_i) > 0) P(A \| A_i) P(A_i) text(" (Satz der totalen Warcheinlichkeit) ") $
+  $ P(A) = sum_i P(A ∩ A_i) = sum_(i : P(A_i) > 0) P(A \| A_i) P(A_i) "(Satz der totalen Wahrscheinlichkeit)" $
 
 - Für beliebige Ereignisse $A_1 ,... A_n$ gilt
   $ P(A_1 ∩ A_2 ∩...) = P(A_1) P(A_2 \| A_1) P(A_3 \| A_1 ∩ A_2)... P(A_n \| A_1 ∩... ∩ A_(n - 1)) , $falls
-  $ P(A_1 ∩... ∩ A_(n - 1)) > 0 text(" (Multiplikationssatz für bedingte Wahrscheinlichkeiten) ") $
+  $ P(A_1 ∩... ∩ A_(n - 1)) > 0 "(Multiplikationssatz für bedingte Wahrscheinlichkeiten)" $
 
 Für dieskrete Zufallsvariablen $X$ und $Y$ ist die bedingte Wahrscheinlichkeitsfunktion $f_(X \| Y) (x \| y)$ ($X$,
 gegeben $Y = y$) definiert durch
@@ -298,7 +298,7 @@ $
 Seien $X$ und $Y$ diskrete ZUfallsvariablen und gilt
 $g : bb(R) -> bb(R)$. Der bedingte Erwartungswert von $g (X)$
 gegeben $Y = y$ ist
-$ E [g (X) \| Y = y] = sum_X g (x) f_(X \| Y) (x \| y) text(" ,falls ") P(Y = y) > 0 $
+$ E [g (X) \| Y = y] = sum_X g (x) f_(X \| Y) (x \| y) ",falls" P(Y = y) > 0 $
 Zudem gilt
 $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) text(", denn ") $
 $ E [g (X)] = sum_X g (x) P(X = x) = sum_X g (x) sum_Y f_(X \| Y) (x \| y) P(Y = y) $
@@ -318,10 +318,10 @@ folgene Rechenregeln für bedingte Erwartungswerte:
   $h : bb(R) -> bb(R)$
 
 Ist Y diskret und X stetig mit bedinter Dichte $f_(X \| Y) (x \| y)$, also
-$ P(a < X < b \| Y = y) = integral_a^b f_(X \| Y) (x \| y) text(" für alle ") a < b text(" und ") P(Y = y) > 0 , $
+$ P(a < X < b \| Y = y) = integral_a^b f_(X \| Y) (x \| y) "für alle" a < b "und" P(Y = y) > 0 , $
 dann gilt für die Randdichte $f_X (x)$ von $X$
 $ f_X (x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y) $ und für $g : bb(R) -> bb(R)$
-$ E [g (X) \| Y = y] := integral g (x) f_(X \| Y) (x \| y) thin d x text(" falls ") P(Y = y) > 0 $
+$ E [g (X) \| Y = y] := integral g (x) f_(X \| Y) (x \| y) thin d x "falls" P(Y = y) > 0 $
 Die Rechenregeln für bedingte Erwartungswerte gelten wie im diskreten Fall, wie zum Beispiel
 $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) . $
 
@@ -606,7 +606,7 @@ $ p_(i j)^n : = P(X_(n + m) = j \| X_m = i) $ mit $i , j in S$,
 $n >= 0$, $P(X_m = i) > 0$. Diese Wahrscheinlichkeit hängt nicht von
 $m$ ab (Zeithomogenität).\
 Es gilt
-$ p_(i j)^0 = P(X_m = j \| X_m = i) = cases(delim: "{", 1 & text(" , falls ") i = j, 0 & text(" , falls ") i != j) $
+$ p_(i j)^0 = P(X_m = j \| X_m = i) = cases(delim: "{", 1 & ", falls" i = j, 0 & ", falls" i != j) $
 und $ P_(i j)^1 = P(X_(m + 1) = j \| X_m = i) = p_(i j) $
 
 #theorem(title: [Satz von Chapman-Kolmogorow])[
@@ -626,7 +626,7 @@ und $ P_(i j)^1 = P(X_(m + 1) = j \| X_m = i) = p_(i j) $
   $ p_(i j)^((m)) = sum_(k in S) p_(i k)^((m)) p_(k j)^0 = p_(i j)^((m)) $
 
   $
-    p_(i j)^0 = sum_(k in S) p_(i k)^0 p_(k j)^0 = cases(delim: "{", 1 & text(" , falls ") i = j, 0 & text(" , falls ") i != j)
+    p_(i j)^0 = sum_(k in S) p_(i k)^0 p_(k j)^0 = cases(delim: "{", 1 & ", falls" i = j, 0 & ", falls" i != j)
   $
   Für $m , n >= 1$ und $P(X_0 = 1) > 0$ ist
   $
@@ -704,7 +704,7 @@ Folgender Satz gilt für beliebige $A$:\
   $ T_i = inf { n in bb(N)_0 : X_n in A } $
   $ h_i = P(T < oo \| X_0 = i) $
   $
-    => h_i = 1 text(" für alle ") i in A text(" und ") h_i = sum_(j in S) p_(i j) h_j text(" für alle ") i in S without A
+    => h_i = 1 "für alle" i in A "und" h_i = sum_(j in S) p_(i j) h_j "für alle" i in S without A
   $
 
 ]
@@ -1558,7 +1558,7 @@ $0 = t_0 < t_1 <... < t_k$ die Zufallsvariablen $   & N (t_0) ,\
   $=> { N (t) : t >= 0 }$ hat unabhängige Zuwächse und für
   $0 <= s < t$ gilt
   $ N (t) - N (s) tilde.op P O I (lambda (t - s)), $
-  $ P(N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) "für" n = 0 , 1 ,... $
+  $ P(N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) "für") n = 0 , 1 ,... $
 
 ]
 #strong[Beweis Satz 21] \
