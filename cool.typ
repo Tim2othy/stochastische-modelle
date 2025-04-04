@@ -1,3 +1,9 @@
+#import "@preview/theorion:0.3.3": *
+#import cosmos.fancy: *
+#import cosmos.clouds: *
+#show: show-theorion
+#let theorem = theorem.with(fill: blue.lighten(85%))
+
 #set text(font: "New Computer Modern", lang: "DE")
 
 #set page(paper: "a4", margin: (x: 1.5cm, y: 3.5cm), numbering: "1")
@@ -303,7 +309,7 @@ also
 $p_(i j) >= 0$ für alle $i , j in S$ und $sum_(j in S) p_(i j) = 1$
 für alle $i in S$.\
 
-#block[
+#theorem()[
   Eine Folge ${ X_n : n in bb(N) }$ von Zufallsvariablen mit Werten in $S$
   heißt Markovkette mit Zustandraum $S$ und Übergangsmatrix
   $(P_(i j))_(i , j in S) \)$, falls für alle $n >= 0$ und alle möglichen $i_0 , i_1 ,... , i_(n + 1) in S$ gilt
