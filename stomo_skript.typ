@@ -43,9 +43,9 @@
 )
 
 // Normal Settings
-#set text(font: "New Computer Modern", lang: "DE")
+#set text(font: "New Computer Modern", lang: "DE", size: 13pt)
 #set heading(numbering: "1.1")
-#set page(paper: "a4", margin: (x: 1.5cm, y: 3.5cm), numbering: "1")
+#set page(margin: (x: 2.5cm, y: 3cm), numbering: "1")
 #show outline.entry.where(level: 1): set block(above: 1.2em)
 
 #align(
