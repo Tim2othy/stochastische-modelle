@@ -315,7 +315,7 @@ $ P(X = x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y) $
 ]
 Seien $X$ und $Y$ unabhängige diskrete Zufallsvariablen, dann gilt
 $f_(X \| Y) (x \| y) = f_X (x)$ und
-$ f_(X + Y) (z) = sum_Y f_X (z - y) f_Y (y) . $ Diese Funktion heßt Faltung von $f_X$ und $f_Y$.\
+$ f_(X + Y) (z) = sum_Y f_X (z - y) f_Y (y) . $ Diese Funktion heißt Faltung von $f_X$ und $f_Y$.\
 Analog ist für unabhängige stetige Zufallsvariablen $X$ und $Y$ mit zugehörigen Dichten $f_X (x)$ und $f_Y (y)$ die
 Dichte von $X + Y$
 gegeben durch die Faltung
