@@ -34,7 +34,6 @@
   let qed-symbol = if qed == auto { get-qed-symbol(here()) } else { qed }
   [#emph(strong(theorion-i18n(title)))#sym.space#body#box(width: 0em)#h(1fr)#sym.wj#sym.space.nobreak$#qed-symbol$]
 }
-
 #let (lemma-counter, lemma-box, lemma, show-lemma) = make-frame(
   "lemma",
   "Lemma",
@@ -387,7 +386,7 @@ $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) . $
   sofern $P(X_0 = i_o, ..., X_n = i_n) > 0$. Die Verteilung von $X_0$
   heißt Anfangsverteilung der Markov-Kette. \
 
-]
+]<thm:markov-kette>
 $(star)$ beinhaltet zwei Aussagen:
 
 + Die Bedingte Verteilung von $X_(n + 1)$ für eine gegebene Vorgeschichte $i_0, i_1, ..., i_n$ hängt nur von der
@@ -550,7 +549,7 @@ $
   durch die Anfangsverteilung ($p_i$) und die Übergangsmatrix
   $(P_(i j))_(i, j in S)$ eindeutig festgelegt.
 
-]
+]<thm:markov-trans>
 #example[
 
   Betrachte eine Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandsraum
@@ -591,7 +590,8 @@ Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Ve
   Für alle $n, m >= 1$, $Z ⊂ S^m$, $V ⊂ S^n$, $i in S$ mit
   $P((X_0, ..., X_(n - 1)) in V, X_n = i) > 0$ gilt
   $
-    P((X_(n + 1), ..., X_(n + m)) in Z \| (X_0, ..., X_(n - 1)) in V, X_n = i) = sum_(j_1, ..., j_m in Z) p_(i j_1) p_(j_1 j_2)... p_(j_(m - 1) j_m)
+    P((X_(n + 1), ..., X_(n + m)) in Z \| (X_0, ..., X_(n - 1)) in V, X_n = i) = \
+    sum_(j_1, ..., j_m in Z) p_(i j_1) p_(j_1 j_2)... p_(j_(m - 1) j_m)
   $
   In Worten: Die Wahrscheinlichkeit, dass
   ${ X_n + 1 = i_(n + 1), ..., X_(n + m) = i_(n + m) } in Z$, hängt nur von $X_n = i$ und nicht von ${ X_0, ..., X_(n - 1) } in V$.
@@ -602,7 +602,7 @@ Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Ve
   $p_i$). \
   Sofern $P(X_0 = i) > 0$ können wir die aufgrund der Zeithomogenität der Markovkette auch folgen:
   $
-    P((X_(n + 1), ..., X_(n + 1)) in Z \| (X_0, ..., X_(n - 1)) in V, X_n = i) = P((X_1, ..., X_m) in Z \| X_0 = i)
+    P((X_(n + 1), ..., X_(n + 1)) in Z \| (X_0, ..., X_(n - 1)) in V, X_n = i) = \ P((X_1, ..., X_m) in Z \| X_0 = i)
   $
 ] <thm:med_markov>
 #proof(title: [Beweis von @thm:med_markov])[
@@ -657,7 +657,7 @@ und $ P_(i j)^1 = P(X_(m + 1) = j \| X_m = i) = p_(i j) $
   $m + n$ Schritten zu Zustand $j$ zu gelangen gegeben durch:
   $ p_(i j)^((m + n)) = sum_(k in S) p_(i k)^((m)) p_(k j)^((n)) $
 
-]
+]<thm:chapman-kolmogorow>
 #proof(title: [Beweis von Satz 8:])[
 
   Die Behauptung ist für $m = 0$, $n = 0$ oder
@@ -704,7 +704,7 @@ Zeitpunkt zu berechnen:
 
   Die Verteilung von $X_n$ zu einem beliebigen Zeitpunkt $n >= 0$
   ergibt sich aus dem Produkt der Anfangsverteilung und der $n$-ten Potenz der Übergangsmatrix. $ p^((n)) = p^((0)) Pi^n $
-]
+]<thm:markov-trans-matrix>
 #example[
 
   Betrachte eine Markovkette $X_n : n in bb(N)_0$ mit $S = { 1, 2, 3 }$, Übergangsmatrix
@@ -764,7 +764,7 @@ Folgender Satz gilt für beliebige $A$:\
     => h_i = 1 "für alle" i in A "und" h_i = sum_(j in S) p_(i j) h_j "für alle" i in S without A
   $
 
-]
+]<thm:markov-absorption>
 #proof(title: [Beweis Satz 10])[
 
   Für $i in A$ gilt $P(T = 0 \| X_0 = i) = 1$, also $h_1 = 0$.\
@@ -1079,7 +1079,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
   ist definiert durch $ pi_j = sum_(i in S) pi_i p_(i j) $ oder ausgedrückt in Matrix Schreibweise $       & pi = pi (P_(i j))\
   <=> & pi ((P_(i j)) - I) = 0 $
 
-]
+] <thm:markov-stationär>
 #remark(title: [Bemerkung zu Satz 13])[
 
   - Für jede Markovkette mit endlichem Zustandsraum existiert eine stationäre Verteilung (s. Aufgaben).
