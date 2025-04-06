@@ -95,9 +95,9 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 
 #theorem[
 
-  Für Ereginisse $A_1, ..., A_n$ gilt
+  Für Ereignisse $A_1, ..., A_n$ gilt
   $ P(⋃_(i = 1)^n A_i) <= sum_(i = 1)^n P(A_i) . $ (a) Sind
-  $A, A_1, A_2, ... ⊃ Omega$ eine Folge von nicht disjunkten Ereginissen mit $A_1 ⊂ A_2 ⊂... ⊂ A$ //TODO Maybe the last A should be A_n
+  $A, A_1, A_2, ... ⊃ Omega$ eine Folge von nicht disjunkten Ereignissen mit $A_1 ⊂ A_2 ⊂... ⊂ A$ //TODO Maybe the last A should be A_n
   und $⋃_(n = 1)^oo A_n = A$, dann ist
   $ lim_(n -> oo) P(A_n) = P(A) = P(⋃_(n = 1)^oo A_n). $
   (b) Sind $A, A_1, A_2, ... ⊂ Omega$ eine Folge von nicht disjunkten Ereignissen mit
@@ -156,7 +156,7 @@ Zudem gilt
 $ P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon -> 0) F (a - epsilon) . $
 Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $epsilon_1 ⊃ epsilon_2 ⊃ ... ⊃ 0$ und $lim_(n -> oo) epsilon_n = 0$,
 dann gilt für die Ereignisse
-$A_n := { a - epsilon_n < X < a }$ $A_1 ⊃ A_2 ⊃ ...$ und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemß Lemma 1b)
+$A_n := { a - epsilon_n < X < a }$ $A_1 ⊃ A_2 ⊃ ...$ und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemäß Lemma 1b)
 $
   P(Y = a) = P(⋂_(n = 1)^oo A_n) = P(A) = lim_(n -> oo) P(A_n) = lim_(n -> oo) P(a - epsilon_n < X <= a) = F (a) - lim_(n -> oo) F (a - epsilon_n)
 $
@@ -178,7 +178,7 @@ $X_1, ..., X_n$ ist definiert durch
 $ F (x_1, ..., x_n) = P(X_1 <= x_1, ..., X_n <= x_n) "für alle" x_1, ..., x_n in bb(R) $
 Für die Randverteilungsfunktion $F_(X_1), ..., F_(X_n)$ gilt
 $ F_(X_i) (x_i) = lim_(x_j -> oo) F (x_1, ..., x_n) "für" i != j $
-Sind $X_1, ..., X_n$ diskrete Zufallsvariabeln, so ist ihre gemeinsame Wahrscheinlichkeitsfunktion gegeben durch
+Sind $X_1, ..., X_n$ diskrete Zufallsvariablen, so ist ihre gemeinsame Wahrscheinlichkeitsfunktion gegeben durch
 $ f (x_1, ..., x_n) = P(X_1 = x_1, ..., X_n = x_n) . $
 $X_1, ..., X_n$ sind gemeinsam stetig verteilt, falls es eine gemeinsame Dichte $f (x_1, ..., x_n) >= 0$ gibt, sodass
 $
@@ -270,7 +270,7 @@ Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
   ${ (X_(n_(k - 1) + 1), ..., X_(n_k)) in B_k }$,\
   sind somit unabhängige Ereignisse für alle $B_1, ..., B_k$.
 
-Für den Spezielfall diskreter Zufallsvariablen $X_1, ..., X_n$ gilt
+Für den Spezialfall diskreter Zufallsvariablen $X_1, ..., X_n$ gilt
 $
   X_1, ..., X_n "unabhängig" <=> P(X_1 = x_1, ..., X_n = x_n) = P(X_1 = x_1)... P(X_n = x_n) "für alle" x_1, ..., x_n in bb(R)
 $
@@ -285,7 +285,7 @@ $X_1, ..., X_n$.
 Für $A, B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A gegeben B $ P(A \| B) = frac(P(A ∩ B), P(B)) $
 
 - Bei festem $B in Omega$ mit $P(B) > 0$ ist $P(dot(\|) B)$ ein Wahrscheinlichkeitsmaß: $P(Omega \| B) = 1$ und für
-  diesjungte Ereignisse $A_1, A_2, ...$ ist
+  disjunkte Ereignisse $A_1, A_2, ...$ ist
   $P(A_1 ∪ A_2 ∪... \| B) = sum_i P(A_i \| B)$
 
 - Sind A und B unabhängig, dann ist $P(A \| B) = P(A)$ (falls
@@ -300,7 +300,7 @@ Für $A, B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A ge
   $ P(A_1 ∩ A_2 ∩...) = P(A_1) P(A_2 \| A_1) P(A_3 \| A_1 ∩ A_2)... P(A_n \| A_1 ∩... ∩ A_(n - 1)), $falls
   $ P(A_1 ∩... ∩ A_(n - 1)) > 0 "(Multiplikationssatz für bedingte Wahrscheinlichkeiten)" $
 
-Für dieskrete Zufallsvariablen $X$ und $Y$ ist die bedingte Wahrscheinlichkeitsfunktion $f_(X \| Y) (x \| y)$ ($X$,
+Für diskrete Zufallsvariablen $X$ und $Y$ ist die bedingte Wahrscheinlichkeitsfunktion $f_(X \| Y) (x \| y)$ ($X$,
 gegeben $Y = y$) definiert durch
 $ f_(X \| Y) = P(X = x \| Y = y), "falls" P(Y = y) > 0 $
 Nach dem Satz der totalen Wahrscheinlichkeit ist dann
@@ -335,7 +335,7 @@ $ E [g (X)] = sum_X g (x) P(X = x) = sum_X g (x) sum_Y f_(X \| Y) (x \| y) P(Y =
 $
   = sum_Y P(Y = y) sum_X g (x) f_(X \| Y) (x \| y)
 $ Im Falle diskreter Zufallsvariablen $X, X_1, X_2, Y$ und $y in bb(R)$ gelten
-folgene Rechenregeln für bedingte Erwartungswerte:
+folgende Rechenregeln für bedingte Erwartungswerte:
 
 + $E [a X_1 + b X_2 \| Y = y] = a E [X_1 \| Y = y] + b E [X_2 \| Y = y]$
 
@@ -347,7 +347,7 @@ folgene Rechenregeln für bedingte Erwartungswerte:
 + $E [g (X) h (Y) \| Y = y] = h (y) E [g (X) \| Y = y]$ für
   $h : bb(R) -> bb(R)$
 
-Ist Y diskret und X stetig mit bedinter Dichte $f_(X \| Y) (x \| y)$, also
+Ist Y diskret und X stetig mit bedingter Dichte $f_(X \| Y) (x \| y)$, also
 $ P(a < X < b \| Y = y) = integral_a^b f_(X \| Y) (x \| y) "für alle" a < b "und" P(Y = y) > 0, $
 dann gilt für die Randdichte $f_X (x)$ von $X$
 $ f_X (x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y) $ und für $g : bb(R) -> bb(R)$
@@ -373,7 +373,7 @@ $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) . $
   Eine diskrete Markov-Kette ist ein stochastischer Prozess mit diskreter Zeit und diskretem Zustandsraum, sodass zu
   jeder Zeit die Verteilung des nächsten Zustands nur vom aktuellen Zustand abhängt aber nicht von den vorherigen. Formal
   bedeutet dies:\
-  Sei $S != nothing$ eine endliche oder abzählbar unendliche Menge. Sei $(P_(i j))_(i, j in S)$ eine stochstische Matrix,
+  Sei $S != nothing$ eine endliche oder abzählbar unendliche Menge. Sei $(P_(i j))_(i, j in S)$ eine stochastische Matrix,
   also
   $p_(i j) >= 0$ für alle $i, j in S$ und $sum_(j in S) p_(i j) = 1$
   für alle $i in S$.\
@@ -381,7 +381,7 @@ $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) \| Y = y] P(Y = y) . $
 #theorem[
 
   Eine Folge ${ X_n : n in bb(N) }$ von Zufallsvariablen mit Werten in $S$
-  heißt Markovkette mit Zustandraum $S$ und Übergangsmatrix
+  heißt Markovkette mit Zustandsraum $S$ und Übergangsmatrix
   $(P_(i j))_(i, j in S) \)$, falls für alle $n >= 0$ und alle möglichen $i_0, i_1, ..., i_(n + 1) in S$ gilt
   $ (star) P(X_(n + 1) = i_(n + 1) \| X_0 = i_0, ..., X_n = i_n) = p_(i_n i_(n + 1)), $
   sofern $P(X_0 = i_o, ..., X_n = i_n) > 0$. Die Verteilung von $X_0$
@@ -401,8 +401,8 @@ $X_0 = i_0, ...$).
 #example[
 
   Seien $X_0, X_1, ...$ unabhängige und identisch verteilte
-  $bb(N)_0$-wertige Zufalssvariablen mit $P(X_0 = i) = a_i$,
-  $i = 0, 1, ...$. Dann ist ${ X_n : n in bb(N) }$ eine Markov-Kette mit Zusstandraum $bb(N)_0$ und Übergangsmatrix
+  $bb(N)_0$-wertige Zufallsvariablen mit $P(X_0 = i) = a_i$,
+  $i = 0, 1, ...$. Dann ist ${ X_n : n in bb(N) }$ eine Markov-Kette mit Zustandsraum $bb(N)_0$ und Übergangsmatrix
   $(P_(i j))_(i, j in bb(N)_0)$ mit $p_(i j) = a_j$ für alle
   $i, j in bb(N)_0$.
   $
@@ -452,7 +452,7 @@ $X_0 = i_0, ...$).
 
     )
   $
-  Ein Spezielafall wäre die einfache Irrfahrt auf $bb(Z)$ bei der
+  Ein Spezialfall wäre die einfache Irrfahrt auf $bb(Z)$ bei der
   $P(Y_n = 1) = p$ und $P(Y_n = - 1) = 1 - p$ für alle $n in bb(N)$. Interpretation: Die Markov-Kette beschreibt die
   Position eines Teilchens, das sich auf $bb(Z)$ bewegt. Es startet im Ursprung $X_0 = 0$
   und springt zu jedem Zeitpunkt $1, 2, ...$ zufällig eine Einheit nach links oder rechts.
@@ -462,7 +462,7 @@ $X_0 = i_0, ...$).
 
   Seien $Y_1, Y_2, ...$ unabhängig und identisch verteilte
   $bb(N)_0$-wertige Zufallsvariablen mit $P(Y_1 = c) = a_i$, $i in N_0$,
-  $X_0 : = 0$ und $X_n : = m a x (Y_1, ..., Y_n)$. In Worten: Die Kette nimmt zu jeden Zeitpuntk $n$ den größten
+  $X_0 : = 0$ und $X_n : = m a x (Y_1, ..., Y_n)$. In Worten: Die Kette nimmt zu jeden Zeitpunkt $n$ den größten
   zufälligen Wert aus
   ${ 0, Y_1, ..., Y_n }$, bzw. wegen der sukzessiven Natur des Prozesses aus ${ i_(n - 1), Y_n }$, an. \
   Für alle $n >= 0$ und alle $i_0, ..., i_(n + 1) in bb(N)_0$ mit
@@ -499,7 +499,7 @@ $X_0 = i_0, ...$).
   $
 
 ]
-#example(title: [Rekursive Darstellung einer Markovkette mittelszufälliger Funktionen])[
+#example(title: [Rekursive Darstellung einer Markovkette mittels zufälliger Funktionen])[
 
   Sei $X_0$ eine $S$-wertige Zufallsvariable
   und $S$ endlich oder abzählbar unendlich. Setze für $n >= 0$ rekursiv
@@ -519,7 +519,7 @@ $X_0 = i_0, ...$).
     & = p_(i_n i_(n + 1))
   $ $star$ Hinweis: Das Ereignis
   ${ X_(n + 1) = f (i_n, Y_(n + 1)) I i_(n + 1) }$ hängt von einem festen Wert $i_n$ und der Zufallsvariablen $Y_(n + 1)$ ab.
-  Das gleiche gilt natürlich auch für $X_0, ..., X_n$. Deswegen leigt hier Unabhängigkeit vor. \
+  Das gleiche gilt natürlich auch für $X_0, ..., X_n$. Deswegen liegt hier Unabhängigkeit vor. \
   $star star$ Hinweis: $Y_1, Y_2, ...$ i.i.d
 
 ]
@@ -553,14 +553,14 @@ $
 ]
 #example[
 
-  Betrachte eine Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandraum
+  Betrachte eine Markovkette ${ X_n : n in bb(N)_0 }$ mit Zustandsraum
   $S = { 0, 1, 2, 3, 4 }$, $X_0 : = 0$, also $p_0 = P(X_0 = 0) = 1$. \
   Sei $X_n = m a x (Y_1, ..., Y_n)$, $n in bb(N)$, wobei
   $Y_1, ..., Y_n$ unabhängig und gleichverteilt ($P(Y_n = j) = 1 / 5$
   für alle $j in S$ und $n in bb(N)_0$). \
   In Worten: Die Markovkette nimmt zu jedem Zeitpunkt $n$ das Maximum aus dem bisherigen Maximum $i_(n - 1)$ und dem
   zufälligen Wert $Y_n$ an, welcher mit gleicher Wahrscheinlichkeit Werte zwischen 0 und 4 annimmt. Aus Beispiel 4 folgt
-  diese Übergansmatrix:
+  diese Übergangsmatrix:
   $
     (P_(i j))_(i, j = 0)^n =
     mat(
@@ -741,7 +741,7 @@ Zeitpunkt zu berechnen:
   $ p^((4)) = p^((0)) Pi^((4)) = (P(X_4 = 1), P(X_4 = 2), P(X_4 = 3)) = (16 / 81, 131 / 324, 43 / 108) $
 
 ]
-== Absorbtionswahrscheinlichkeiten und -zeiten
+== Absorptionswahrscheinlichkeiten und -zeiten
 
 Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum S und Übergangsmatrix $(P_(i j))$.\
 Sei $A ⊂ S$, $A != nothing$. Setze
@@ -752,8 +752,8 @@ $A$ in endlicher Zeit erreicht wird.
 $ P(T < oo \| X_0 = i) = P(⋃_(n = 0)^oo { X_n in A } \| X_0 = i) = p_i (T < oo) $
 Ein Zustand $z in S$ heißt absorbierend, falls $p_(z z) = 1$. In dem Spezialfall, dass $A$ nur aus absorbierenden
 Zuständen besteht, heißt
-$p_i (T < oo)$ Absorbtionswahrscheinlichkeit bei Start in $i in S$ und
-$T$ heißt Absorbtionszeit.\
+$p_i (T < oo)$ Absorptionswahrscheinlichkeit bei Start in $i in S$ und
+$T$ heißt Absorptionszeit.\
 Folgender Satz gilt für beliebige $A$:\
 
 #theorem[
@@ -808,7 +808,7 @@ Folgender Satz gilt für beliebige $A$:\
 
     )
   $
-  Gesucht sind die Absorbtionswahrscheinlichkeiten
+  Gesucht sind die Absorptionswahrscheinlichkeiten
   $ h_i = P(T < oo \| X_0 = i) $ mit $i = 0, ..., M$ und
   $T = inf { n in bb(N)_0 : X_n = 0 }$. \
   Es ist $h_0 = 1$ (sofort ruiniert), $h_M = 0$ (sofort Ende des Spiels wegen maximalem Gewinn) und nach Satz 10 ist die
@@ -863,7 +863,7 @@ Folgender Satz gilt für beliebige $A$:\
 
     )
   $
-  Berechne die Absorbtionswahrscheinlichkeiten. \
+  Berechne die Absorptionswahrscheinlichkeiten. \
   $h_i = P(T < oo \| X_0 = i)$ mit $i in S$ und
   $T = inf { n in bb(N)_0 : X_n = 0 }$. \
   Es gilt $h_0 = 1$ und Nach Satz 10
@@ -988,7 +988,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
   Für
   $i in S$ sei $ T   & := inf { n in bb(N)_0 : X_n in A }\
   k_i & := E [T \| X_0 = i] $ $(k_i)_(i in S)$ ist die
-  #strong[komponentenweise kleinst enichtnegative Lösung] des Gleichungssystems $(star)$
+  #strong[komponentenweise kleinste nichtnegative Lösung] des Gleichungssystems $(star)$
 
   $
     k_i & = 0, i in A\
@@ -1034,7 +1034,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
     $
 ]
 #block[
-  Nun ist die erwartete Arbsorbtionszeit $k_i = E_i [T]$ mit gesucht. \
+  Nun ist die erwartete Absorptionszeit $k_i = E_i [T]$ mit gesucht. \
   Offensichtlich ist $k_0 = 0$ und $k_M = 0$. Aus Satz 12 folgt hier
   $
     (star) quad k_i = 1 + (1 - p) k_(i - 1) + p k_(i + 1)
@@ -1051,7 +1051,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
     & = j k_1 - (j - 1) j
   $
 
-  Wegen $k_M = 0$ folg aus dieser GLeichung (durch einsetzen)
+  Wegen $k_M = 0$ folgt aus dieser Gleichung (durch einsetzen)
   $k_1 = M - 1$ und somit
   $ E [T \| X_0 = j] = k_j = j (M - j), j = 0, ..., M $
 
@@ -1069,7 +1069,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
 == Konvergenzsätze
 
 #theorem[
-  Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandraum $S$ und Übergangsmatrix $(P_(i j))$. \
+  Sei ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. \
   Die stationäre Verteilung der Markovkette $(pi_i)$ mit
 
   - $pi_i >= 0 quad forall i in S$
@@ -1196,14 +1196,14 @@ exponentiell zur stationären Verteilung konvergiert.\
   $
 ]
 
-Unter den Voraussatzungen von Satz 15 gilt:\
+Unter den Voraussetzungen von Satz 15 gilt:\
 $lim_(n -> oo) P_(i j)^n$
 
 - existiert für alle $i, j in S$,
 
 - ist unabhängig von $i$,
 
-- und ist gegben durch die stationäre Verteilung.
+- und ist gegeben durch die stationäre Verteilung.
 
 Ist ${ X_n : n in bb(N)_0 }$ eine Markovkette mit Übergangsmatrix
 $(P_(i j))$, dann
@@ -1284,7 +1284,7 @@ dann existiert $n_0 in bb(N)$, sodass $n in N quad forall n >= n_0$.\
     n - k m & = n - k (n_2 - n_1)\
     & = overbrace(n + k n_1 + n_2, in N) - overbrace((k + 1) m_2, in N) quad in M
   $
-  Widerpruch zur Definition von $m$! Also muss $m = 1$ und
+  Widerspruch zur Definition von $m$! Also muss $m = 1$ und
   $n_1, n_1 + 1 in N$.\
   Jede natürliche Zahl $n in bb(N)$ lässt sich schreiben als
   $
@@ -1309,13 +1309,13 @@ mit $p_(i j)^n > 0$.
   gibt, mit $i_0 = i, ..., i_n = j$ und
   $p_(i_0 i_1) > 0, ..., p_(i_(n - 1) i_n) > 0$.
 
-- Jede irreduzibel Markovkette mit endlichem Zustandraum $S$ hat eine eindeutige stationäre Verteilung $(pi_i)_(i in S)$.
+- Jede irreduzibel Markovkette mit endlichem Zustandsraum $S$ hat eine eindeutige stationäre Verteilung $(pi_i)_(i in S)$.
 
 Positivität:\
-Es existiert ein $i_0 in S$ mit $pi_(i_0) > 0$. Für kedes $j in S$
+Es existiert ein $i_0 in S$ mit $pi_(i_0) > 0$. Für jedes $j in S$
 existiert $n in bb(N)_0$ mit $P_(i_0 j)^n$ und daher
 $ pi_j = sum_(i in S) pi_i p_(i j)^n >= pi_(i_0) p_(i_0 j)^n > 0 $
-Endeutigkeit:\
+Eindeutigkeit:\
 Sei $(tilde(pi)_i)_(i in S)$ eine weitere stationäre Verteilung. Sei
 $k in S$ so, dass$ tilde(pi)_k / pi_k <= tilde(pi)_i / pi_i quad forall i in S $
 $
@@ -1333,13 +1333,13 @@ $ => tilde(pi)_i = pi_i quad forall quad i in S $
 
   Sei $(P_(i j))$ die Übergangsmatrix einer irreduziblen Markovkette mit Zustandsraum $S = { 1, ..., s }$ und mindestens
   einem aperiodischen Zustand. \
-  $=>$ Es existiert eine einduetige stationäre Verteilung
+  $=>$ Es existiert eine eindeutige stationäre Verteilung
   $(pi_i)_(i in S)$ und
   $ lim_(n -> oo) P_(i j)^n = pi_j > 0 quad forall quad i, j in S $
 ] <thm:stationary_markov>
 #proof(title: [Beweis @thm:stationary_markov])[
 
-  Zeige: Es gibt ein $N in bb(N)$ (unabhängig von $i, j$), spdass
+  Zeige: Es gibt ein $N in bb(N)$ (unabhängig von $i, j$), sodass
   $ P_(i j)^N > ß quad forall quad i, j in S $ Sei $i_0 in S$
   aperiodisch.\
   $=>$ Es gibt ein $n_0 in bb(N)$, sodass
@@ -1353,7 +1353,7 @@ $ => tilde(pi)_i = pi_i quad forall quad i in S $
   $
 
   Bemerkung: Unter den Voraussetzungen von @thm:stationary_markov gibt es für jeden Zustand $i$ ein $n_0 (i) in bb(N)$, sodass
-  $P_(i i)^n > 0 quad forall quad n >= n_0 (i)$. Deher ist dann jeder Zustand aperiodisch.]
+  $P_(i i)^n > 0 quad forall quad n >= n_0 (i)$. Daher ist dann jeder Zustand aperiodisch.]
 
 #strong[Interpretation der Grenzverteilung] \
 Es gelte
@@ -1388,7 +1388,7 @@ $f_(i j)$ ist die Wahrscheinlichkeit, dass $j$ in endlicher Zeit ($>= 1$) erreic
 ist $f_(j j)$
 die Wahrscheinlichkeit einer Rückkehr.\
 Ein Zustand $j in S$ heißt #strong[rekurrent];, falls $f_(j j) = 1$. Er heißt #strong[transient];, falls $f_(j j) < 1$.
-Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette rekurennt oder transient.
+Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette rekurrent oder transient.
 
 #example[
   Sei $S = { 1, 2, 3 }$ und
@@ -1439,7 +1439,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
     $=> P(sigma_j = n \| X_0 = i) = 0$ für alle $n in bb(N)$.\
     $=> P(sigma_j in { - oo, oo }) = 1$, also
     $P(N_j in { 0, oo } \| X_0 = i) = 1$.\
-    Es ist $P(N_j = 0 \| X_0 = i) = 1 - f_(i j)$ und es folt
+    Es ist $P(N_j = 0 \| X_0 = i) = 1 - f_(i j)$ und es folgt
     $P(N_j = oo \| X_0 = i) = f_(i j)$.
 
   - Sei $j$ transient, also $f_(j j) < 1$.
@@ -1460,7 +1460,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
     $ j "ist rekurrent" <=> sum_(n = 1)^oo P_(j j)^n = oo $
 
   - Im Allgemeinen kann eine Markovkette sowohl rekurrente als auch transiente Zustände haben.\
-    Ist ${ X_n }$ irreduziebl, dann isn entweder alle Zustände rekurent oder alle sind transient.\
+    Ist ${ X_n }$ irreduzibel, dann isn entweder alle Zustände rekurrent oder alle sind transient.\
     Denn: Falls es einen rekurrenten zustand $j$ gibt, dann gibt es für jedes $i in S$ $n_1, n_2 >= 0$ mit $P_(i j)^(n_1) < 0$,
     $P_(j i)^(n_2) > 0$ und daher
     $
@@ -1472,11 +1472,11 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
     $lim_(n -> oo) P_(i j)^n = 0 quad forall quad i in S$, denn
     $ sum_(n = 1)^oo P_(i j)^n = E [N_j \| X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo $
 
-  - Jede Markovkette mit endlichem Zustandraum $S = { 1, ..., s }$ hat mindestens einen rekurrenten Zustand, denn sonst
+  - Jede Markovkette mit endlichem Zustandsraum $S = { 1, ..., s }$ hat mindestens einen rekurrenten Zustand, denn sonst
     wäre
     $ 1 = lim_(n -> oo) sum_(j = 1)^s P_(i j)^n = sum_(j = 1)^s lim_(n -> oo) P_(i j)^n = 0 "Widerspruch!" $
 
-  - Jede irreduzible Markovkette mit endlichem Zustandsraum ist rekkurent. Außerdem gilt für solche Markovketten $ E [tau_j \| X_0 = i] < oo $
+  - Jede irreduzible Markovkette mit endlichem Zustandsraum ist rekurrent. Außerdem gilt für solche Markovketten $ E [tau_j \| X_0 = i] < oo $
     und daher ist
     $ P(N_j = oo \| X_0 = i) = f_(i j) = 1 quad forall quad i, j in S $
 ]
@@ -1504,7 +1504,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
 
 ]
 Ein Zustand $j$ heißt positiv rekurrent, falls $E_j [T_j] < oo$ und er heißt nullrekurrent, falls $E_j [T_j] = oo$. Ist
-der Zustandsraumm der Markovkette endlich, folgt aus Irreduzibilität bereits positive Rekurrenz und die Existenz einer
+der Zustandsraum der Markovkette endlich, folgt aus Irreduzibilität bereits positive Rekurrenz und die Existenz einer
 eindeutigen stationären Verteilung. Die Konvergenz zu einer eindeutigen stationären Verteilung (unabhängig von der
 Anfangsverteilung) hingegen basiert (s. @thm:stationary_markov ) darauf, dass mindestens ein Zustand aperiodisch ist.
 
@@ -1512,7 +1512,7 @@ Anfangsverteilung) hingegen basiert (s. @thm:stationary_markov ) darauf, dass mi
 
 #definition[
   Eine Erneuerung ist ein Ereignis, das zu zufälligen Zeitpunkten auftritt. Ein Erneuerungsprozess ist ein stochastischer
-  Prozess, der die Anzahl der Erneuerungen bis zu einem Zeitpuntk $t$ beschreibt. Seien
+  Prozess, der die Anzahl der Erneuerungen bis zu einem Zeitpunkt $t$ beschreibt. Seien
   $Y_1, Y_2, ...$ i.i.d die Wartezeiten, also die Zeiten zwischen aufeinanderfolgenden Erneuerungen, mit $E [Y_i] = mu quad in (0, oo)$
   und $V a r [Y_i] = sigma^2$. Die Zeitpunkte der Erneuerungen seien definiert als $ T_n = Y_1 + Y_2 +... + Y_n $ Sei $N (t)$ die
   Anzahl der Erneuerungen bis zu einem Zeitpunkt $t$:
@@ -1539,7 +1539,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist
 
 #theorem[
 
-  Sei $0 < mu = E [Y_1] < oo$. Mit wahrscheinlichkeit 1 gilt
+  Sei $0 < mu = E [Y_1] < oo$. Mit Wahrscheinlichkeit 1 gilt
   $ lim_(t -> oo) frac(N (t), t) = 1 / mu $
 ] <thm:renewal_mean>
 #proof(title: [Beweis @thm:renewal_mean])[
@@ -1559,11 +1559,11 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist
   Nehmen wir an, wir beobachten in Tagen $Y_1 = 100$, $Y_2 = 150$,
   $Y_3 = 125$, $Y_4 = 110$ und wir interessieren uns für $N (270)$.
   $ N (270) = m a x { n in bb(N)_0 : T_n <= 270 } = 2 $ Angenommen, wir beobachten an Tag 1000, dass die 7. Glühbirne
-  ausgetauscht wird, was ist dann die erwartete Lebensdauert einer Glühbirne? Nach @thm:renewal_mean ist für einen unendlichen
+  ausgetauscht wird, was ist dann die erwartete Lebensdauer einer Glühbirne? Nach @thm:renewal_mean ist für einen unendlichen
   Zeithorizont
   $
-    & "Anzahl ausgetauschter Glübirnen bis Zeitpunkt t" / t\
-    & -> 1 / "Erwartete Lebensdauer einer Glübirne"
+    & "Anzahl ausgetauschter Glühbirnen bis Zeitpunkt t" / t\
+    & -> 1 / "Erwartete Lebensdauer einer Glühbirne"
   $ Also ist $mu approx 1000 / 7 = 143$
 
 ]
