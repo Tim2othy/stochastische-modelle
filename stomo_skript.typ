@@ -254,32 +254,28 @@ $B_i = A_i$ oder $B_i = A_i^C$, dann sind auch $B_1, B_2, ...$
 unabhängig.\
 Zufallsvariablen $X_1, ..., X_n$ heißen unabhängig, falls für alle
 $x_1, ..., x_n in bb(R)$
-$ F_(X_1, ..., X_n) (x_1, ..., x_n) = F_(X_1) (x_1) F_(X_2) (x_2)... F_(X_n) (x_n) $
+$ F_(X_1, ..., X_n) (x_1, ..., x_n) = F_(X_1) (x_1) F_(X_2) (x_2)... F_(X_n) (x_n) $ gilt.
+
 Für eine unendliche Folge von Zufallsvariablen $X_1, X_2, ...$
 bedeutet Unabhängigkeit, dass für jedes $n$ $X_1, ..., X_n$
-unabhängig sind.\
-Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
+unabhängig sind.
+#set enum(numbering: "1.")
 
+Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
 + ${ X_1 in B_1 }, ..., { X_n in B_n }$ sind unabhängige Ereignisse für alle $B_1, ..., B_n in bb(R)$
 
 + $E [product_(i = 1)^n X_i] = product_(i = 1)^n E [X_i]$
 
-+ $C o v [X_i, X_j] = 0$ für alle $i != j$
-  $-> V a r [X_1, ..., X_n] = sum_(i = 1)^n V a r [X_i]$
++ $"Cov"[X_i, X_j] = 0$ für alle $i != j ==> V a r [X_1, ..., X_n] = sum_(i = 1)^n V a r [X_i]$
 
 + $h_1 (X_1, ..., X_(n_1)), h_2 (X_(n_1 + 1), ... X_(n_2)), ..., h_n (X_(n_(k - 1) + 1), ... X_(n_k))$
-  sind unabhängige Zufallsvariablen, wobei
-  $0 = n_0 < n_1 <... < n_k <= n$, wobei
-  $h_i : bb(R)^(n_i - n_(i - 1)) -> bb(R)$ \
-  ${ (X_1, ..., X_(n_1)) in B_1 }$,\
-  ${ (X_(n_1 + 1), ..., X_(n_2)) in B_2 }$,\
-  ... \
-  ${ (X_(n_(k - 1) + 1), ..., X_(n_k)) in B_k }$,\
-  sind somit unabhängige Ereignisse für alle $B_1, ..., B_k$.
+  sind unabhängige Zufallsvariablen, wobei $0 = n_0 < n_1 <... < n_k <= n$ und $h_i : bb(R)^(n_i - n_(i - 1)) -> bb(R)$.
+
+  ${ (X_1, ..., X_(n_1)) in B_1 }, { (X_(n_1 + 1), ..., X_(n_2)) in B_2 }, ..., { (X_(n_(k - 1) + 1), ..., X_(n_k)) in B_k }$ sind somit unabhängige Ereignisse für alle $B_1, ..., B_k$.
 
 Für den Spezialfall diskreter Zufallsvariablen $X_1, ..., X_n$ gilt
 $
-  X_1, ..., X_n "unabhängig" <=> P(X_1 = x_1, ..., X_n = x_n) = P(X_1 = x_1)... P(X_n = x_n) "für alle" x_1, ..., x_n in bb(R)
+  X_1, ..., X_n "unabhängig" <==> P(X_1 = x_1, ..., X_n = x_n) = P(X_1 = x_1)... P(X_n = x_n)\ "für alle" x_1, ..., x_n in bb(R).
 $
 Sind $X_1, ..., X_n$ stetige Zufallsvariablen mit gemeinsamer Dichte f und
 $ f (x_1, ..., x_n) = f_(X_1) (x_1)... f_((X_n)) (x_n) "für alle" x_1, ..., x_n in bb(R), $
@@ -291,7 +287,7 @@ $X_1, ..., X_n$.
 
 Für $A, B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A gegeben B $ P(A \| B) = frac(P(A ∩ B), P(B)) $
 
-- Bei festem $B in Omega$ mit $P(B) > 0$ ist $P(dot(\|) B)$ ein Wahrscheinlichkeitsmaß: $P(Omega \| B) = 1$ und für
+- Bei festem $B in Omega$ mit $P(B) > 0$ ist $P(A| B)$ ein Wahrscheinlichkeitsmaß: $P(Omega \| B) = 1$ und für
   disjunkte Ereignisse $A_1, A_2, ...$ ist
   $P(A_1 ∪ A_2 ∪... \| B) = sum_i P(A_i \| B)$
 
@@ -300,18 +296,21 @@ Für $A, B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A ge
 
 - Bilden $A_1, A_2, ...$ eine Zerlegung von $Omega$, also
   $A_i ∩ A_j = nothing$ für alle $i != j$ und
-  $⋃_i A_i = Omega$, dann gilt ür jedes $A in Omega$
-  $ P(A) = sum_i P(A ∩ A_i) = sum_(i : P(A_i) > 0) P(A \| A_i) P(A_i) "(Satz der totalen Wahrscheinlichkeit)" $
+  $⋃_i A_i = Omega$, dann gilt für jedes $A in Omega$
+  $
+    P(A) &= sum_i P(A ∩ A_i) \
+    &= sum_(i : P(A_i) > 0) P(A \| A_i) P(A_i) "(Satz der totalen Wahrscheinlichkeit)"
+  $
 
 - Für beliebige Ereignisse $A_1, ... A_n$ gilt
-  $ P(A_1 ∩ A_2 ∩...) = P(A_1) P(A_2 \| A_1) P(A_3 \| A_1 ∩ A_2)... P(A_n \| A_1 ∩... ∩ A_(n - 1)), $falls
+  $ P(A_1 ∩ A_2 ∩...) = P(A_1) P(A_2 \| A_1) P(A_3 \| A_1 ∩ A_2)... P(A_n \| A_1 ∩... ∩ A_(n - 1)), $ falls
   $ P(A_1 ∩... ∩ A_(n - 1)) > 0 "(Multiplikationssatz für bedingte Wahrscheinlichkeiten)" $
 
 Für diskrete Zufallsvariablen $X$ und $Y$ ist die bedingte Wahrscheinlichkeitsfunktion $f_(X \| Y) (x \| y)$ ($X$,
 gegeben $Y = y$) definiert durch
 $ f_(X \| Y) = P(X = x \| Y = y), "falls" P(Y = y) > 0 $
 Nach dem Satz der totalen Wahrscheinlichkeit ist dann
-$ P(X = x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y) $
+$ P(X = x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y). $
 
 #example[
   $X$ und $Y$ seien diskrete Zufallsvariablen mit Wahrscheinlichkeitsfunktionen $f_X$ und $f_Y$. Für die
@@ -332,7 +331,7 @@ $ P(X + Y + t) = integral_(- oo)^oo integral_(- y)^(t - y) f_X (x) f_Y (y) thin 
 $
   integral_(- oo)^oo integral_(- oo)^t f_X (z - y) f_Y (y) thin d z thin d y = integral_(- oo)^t integral_(- oo)^oo f_X (z - y) f_Y (y) thin d y thin d z
 $
-Seien $X$ und $Y$ diskrete ZUfallsvariablen und gilt
+Seien $X$ und $Y$ diskrete Zufallsvariablen und gilt
 $g : bb(R) -> bb(R)$. Der bedingte Erwartungswert von $g (X)$
 gegeben $Y = y$ ist
 $ E [g (X) \| Y = y] = sum_X g (x) f_(X \| Y) (x \| y), "falls" P(Y = y) > 0 $
@@ -402,7 +401,7 @@ $(star)$ beinhaltet zwei Aussagen:
 
 + Die bedingte Verteilung hängt nicht vom Zeitpunkt $n$ ab. Die Übergangswahrscheinlichkeiten sind stationär.
 
-Die i-te Zeile der Übergangsmatrix beschreibt die bedingte Verteilung des nächsten Zustands $X_(n + 1)$ gegeben $X_n = i$ (und
+Die $i$-te Zeile der Übergangsmatrix beschreibt die bedingte Verteilung des nächsten Zustands $X_(n + 1)$ gegeben $X_n = i$ (und
 $X_0 = i_0, ...$).
 
 #example[
