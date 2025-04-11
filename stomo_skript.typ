@@ -44,6 +44,7 @@
 // Normal Settings
 #set text(font: "New Computer Modern", lang: "DE", size: 12pt)
 #set heading(numbering: "1.1")
+#set enum(numbering: "(a)")
 #set page(margin: (x: 2.5cm, y: 3cm), numbering: "1")
 #show outline.entry.where(level: 1): set block(above: 1.2em)
 
@@ -92,54 +93,59 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 
 - $P(A) subset.eq P(B)$
 
-#theorem[
+#lemma[
 
   Für Ereignisse $A_1, ..., A_n$ gilt
-  $ P(⋃_(i = 1)^n A_i) <= sum_(i = 1)^n P(A_i) . $ (a) Sind
-  $A, A_1, A_2, ... ⊃ Omega$ eine Folge von nicht disjunkten Ereignissen mit $A_1 ⊂ A_2 ⊂... ⊂ A$ //TODO Maybe the last A should be A_n
-  und $⋃_(n = 1)^oo A_n = A$, dann ist
-  $ lim_(n -> oo) P(A_n) = P(A) = P(⋃_(n = 1)^oo A_n). $
-  (b) Sind $A, A_1, A_2, ... ⊂ Omega$ eine Folge von nicht disjunkten Ereignissen mit
-  $A_1 ⊃ A_2 ⊃ ... ⊃ A$ //TODO Maybe the last A should be A_n
-  und $⋂_(n = 1)^oo A_n = A$, dann gilt
-  $ lim_(n -> oo) P(A_n) = P(A) = P(⋂_(n = 1)^oo A_n). $
-] <thm:lim-sets>
-#proof(title: [Beweis von @thm:lim-sets])[
+  $ P(⋃_(i = 1)^n A_i) <= sum_(i = 1)^n P(A_i) . $
 
-  (a) lässt sich folgendermaßen zeigen:\
-  Seien
+  + Sind $A, A_1, A_2, ... ⊃ Omega$ eine Folge von nicht disjunkten Ereignissen mit $A_1 ⊂ A_2 ⊂... ⊂ A$ //TODO Maybe the last A should be A_n
+    und $⋃_(n = 1)^oo A_n = A$, dann ist $ lim_(n -> oo) P(A_n) = P(A) = P(⋃_(n = 1)^oo A_n). $
+  + Sind $A, A_1, A_2, ... ⊂ Omega$ eine Folge von nicht disjunkten Ereignissen mit
+    $A_1 ⊃ A_2 ⊃ ... ⊃ A$ //TODO Maybe the last A should be A_n
+    und $⋂_(n = 1)^oo A_n = A$, dann gilt
+    $ lim_(n -> oo) P(A_n) = P(A) = P(⋂_(n = 1)^oo A_n). $
+] <lma:lim-sets>
+#proof(title: [Beweis von @lma:lim-sets])[
 
-  - $B_1 := A_1$
+  + lässt sich folgendermaßen zeigen:\
+    Seien
 
-  - $B_2 := A_2 without A_1$
+    - $B_1 := A_1$
 
-  - …
+    - $B_2 := A_2 without A_1$
 
-  - $B_n := A_n without A_(n - 1)$
+    - …
 
-  Mit der $sigma$-Additivität ist dann
-  $
-    P(A) = P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n -> oo) sum_(i = 1)^n P(B_k) = lim_(n -> oo) P(⋃_(k = 1)^n B_k) = lim_(n -> oo) P(A_n)
-  $
-  (b) lässt sich folgendermaßen zeigen:\
-  Aus $A_1 ⊃ A_2 ⊃ ... ⊃ A_n$ folgt $A_1^C ⊂ A_2^C ⊂... ⊂ A_n^C$. Sei nun
+    - $B_n := A_n without A_(n - 1)$
 
-  - $B_1 := A_1^C$
+    Mit der $sigma$-Additivität ist dann
+    $
+      P(A) &= P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n -> oo) sum_(i = 1)^n P(B_k) = lim_(n -> oo) P(⋃_(k = 1)^n B_k) \ &= lim_(n -> oo) P(A_n).
+    $
 
-  - $B_2 := A_2^C without A_1^C$
+  + lässt sich folgendermaßen zeigen:\
+    Aus $A_1 ⊃ A_2 ⊃ ... ⊃ A_n$ folgt $A_1^C ⊂ A_2^C ⊂... ⊂ A_n^C$. Sei nun
 
-  - …
+    - $B_1 := A_1^C$
 
-  - $A_n^C without A_(n - 1)^C$
+    - $B_2 := A_2^C without A_1^C$
 
-  Mit der $sigma$-Additivität ist dann
-  $
-    P(⋃_(n = 1)^oo A_n^C) = P(A^C) = P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n -> oo) sum_(i = 1)^n P(B_k) lim_(n -> oo) P(⋃_(k = 1)^n B_k) = lim_(n -> oo) P(A_n^C)
-  $
-  und folglich
-  $
-    lim_(n -> oo) P(A_n) = 1 - lim_(n -> oo) P(A_n^C) = 1 - P(⋃ n = 1^oo A_n^C) = 1 - P([⋂_(n = 1)^oo A_n]^C) = P(⋂_(n = 1)^oo A_n) = P(A)
-  $
+    - …
+
+    - $A_n^C without A_(n - 1)^C$
+
+    Mit der $sigma$-Additivität ist dann
+    $
+      P(⋃_(n = 1)^oo A_n^C) &= P(A^C) = P(⋃_(k = 1)^oo B_k) \
+      &= sum_(k = 1)^oo P(B_k) \
+      &= lim_(n -> oo) sum_(i = 1)^n P(B_k) lim_(n -> oo) P(⋃_(k = 1)^n B_k) \
+      &= lim_(n -> oo) P(A_n^C)
+    $
+    und folglich
+    $
+      lim_(n -> oo) P(A_n) &= 1 - lim_(n -> oo) P(A_n^C) \ &= 1 - P(⋃ n = 1^oo A_n^C) \
+      &= 1 - P([⋂_(n = 1)^oo A_n]^C) = P(⋂_(n = 1)^oo A_n) = P(A)
+    $
 ]
 == Zufallsvariablen
 
@@ -155,9 +161,11 @@ Zudem gilt
 $ P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon -> 0) F (a - epsilon) . $
 Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $epsilon_1 ⊃ epsilon_2 ⊃ ... ⊃ 0$ und $lim_(n -> oo) epsilon_n = 0$,
 dann gilt für die Ereignisse
-$A_n := { a - epsilon_n < X < a }$ $A_1 ⊃ A_2 ⊃ ...$ und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemäß Lemma 1b)
+$A_n := { a - epsilon_n < X < a }$ $A_1 ⊃ A_2 ⊃ ...$ und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemäß @lma:lim-sets (b)
 $
-  P(Y = a) = P(⋂_(n = 1)^oo A_n) = P(A) = lim_(n -> oo) P(A_n) = lim_(n -> oo) P(a - epsilon_n < X <= a) = F (a) - lim_(n -> oo) F (a - epsilon_n)
+  P(Y = a) &= P(⋂_(n = 1)^oo A_n) = P(A) = lim_(n -> oo) P(A_n) \
+  &= lim_(n -> oo) P(a - epsilon_n < X <= a) \
+  &= F (a) - lim_(n -> oo) F (a - epsilon_n).
 $
 Eine Zufallsvariable heißt diskret, falls ...
 
@@ -195,7 +203,7 @@ Ist zum Beispiel $f$ eine gemeinsame Dichte von $X$ und $Y$, dann gilt
 $ P(X < Y) = integral_(- oo)^oo integral_x^oo f (x, y) thin d y thin d x $
 und $ f_Y (y) = integral_(- oo)^oo f (x, y) d x . $
 
-
+#theorem[Placeholder]
 #theorem[Placeholder]
 #theorem[Placeholder]
 #theorem[Placeholder]
