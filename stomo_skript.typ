@@ -189,12 +189,12 @@ Sind $X_1, ..., X_n$ diskrete Zufallsvariablen, so ist ihre gemeinsame Wahrschei
 $ f (x_1, ..., x_n) = P(X_1 = x_1, ..., X_n = x_n) . $
 $X_1, ..., X_n$ sind gemeinsam stetig verteilt, falls es eine gemeinsame Dichte $f (x_1, ..., x_n) >= 0$ gibt, sodass
 $
-  F (x_1, ..., x_n) = integral_(- oo)^(x_1) dots.h integral_(- oo)^(x_n) f (t_1, ..., t_n) thin d t_n dots.h thin d t_1 "für alle" x_1, ..., x_n in bb(R)
+  F (x_1, ..., x_n) = integral_(- oo)^(x_1) ... integral_(- oo)^(x_n) f (t_1, ..., t_n) thin d t_n ... thin d t_1 "für alle" x_1, ..., x_n in bb(R)
 $
 Für $B_1, ..., B_n in bb(R)$ gilt dann
 $ P(X_1 in B_1, ..., X_n in B_n) = integral_(B_1)... integral_(B_n) f (t_1, ..., t_n) thin d t_n... thin d t_1 $
 Für $B in bb(R)^n$ ist
-$ P({ X_1, ..., X_n } in B) = integral dots.h integral_B f (t_1, ..., t_n) thin d t_n... thin d t_1 $
+$ P({ X_1, ..., X_n } in B) = integral ... integral_B f (t_1, ..., t_n) thin d t_n... thin d t_1 $
 und die Randdichte ist
 $
   f_(X_i) = integral_(- oo)^oo... integral_(- oo)^oo f (x_1, ..., x_n) thin d x_1... thin d x_(i - 1) thin d x_(i + 1)... thin d x_n
@@ -220,9 +220,9 @@ $
   & P(X = 1) +\
   & P(X = 2) + P(X = 2) +\
   & P(X = 3) + P(X = 3) + P(X = 3) +\
-  & dots.h\
-  & P(X = n) + P(X = n) + P(X = n) + dots.h\
-  & = P(X > 0) + P(X > 1) + P(X > 2) + dots.h + P(X > n)
+  & ...\
+  & P(X = n) + P(X = n) + P(X = n) + ...\
+  & = P(X > 0) + P(X > 1) + P(X > 2) + ... + P(X > n)
 $ Hat $X$
 eine Dichte $f$, so ist
 $ E [g (X)] = integral_(- oo)^oo g (x) f (x) thin d x $ Für jede nichtnegative Zufallsvariable $X$ gilt
@@ -269,7 +269,7 @@ Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
 + $"Cov"[X_i, X_j] = 0$ für alle $i != j ==> V a r [X_1, ..., X_n] = sum_(i = 1)^n V a r [X_i]$
 
 + $h_1 (X_1, ..., X_(n_1)), h_2 (X_(n_1 + 1), ... X_(n_2)), ..., h_n (X_(n_(k - 1) + 1), ... X_(n_k))$
-  sind unabhängige Zufallsvariablen, wobei $0 = n_0 < n_1 <... < n_k <= n$ und $h_i : bb(R)^(n_i - n_(i - 1)) -> bb(R)$.
+  sind unabhängige Zufallsvariablen, wobei $0 = n_0 < n_1 <... < n_k <= n$ und $h_i : bb(R)^(n_i - n_(i - 1)) -> bb(R)
 
   ${ (X_1, ..., X_(n_1)) in B_1 }, { (X_(n_1 + 1), ..., X_(n_2)) in B_2 }, ..., { (X_(n_(k - 1) + 1), ..., X_(n_k)) in B_k }$ sind somit unabhängige Ereignisse für alle $B_1, ..., B_k$.
 
@@ -308,7 +308,7 @@ Für $A, B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A ge
 
 Für diskrete Zufallsvariablen $X$ und $Y$ ist die bedingte Wahrscheinlichkeitsfunktion $f_(X \| Y) (x \| y)$ ($X$,
 gegeben $Y = y$) definiert durch
-$ f_(X \| Y) = P(X = x \| Y = y), "falls" P(Y = y) > 0 $
+$ f_(X \| Y) = P(X = x \| Y = y), "falls" P(Y = y) > 0. $
 Nach dem Satz der totalen Wahrscheinlichkeit ist dann
 $ P(X = x) = sum_(Y : P(Y = y) > 0) f_(X \| Y) (x \| y) P(Y = y). $
 
@@ -419,7 +419,7 @@ $X_0 = i_0, ...$).
   Denn für alle $n >= 0$ und alle $i_0, ..., i_(n + 1) in bb(N)_0$
   mit $P(X_0 = i_0, ..., X_n = i_n) > 0$ gilt:
   $
-    P(X_(n + 1) = i_(n + 1) \| X_0 = i_0, ..., X_n = i_n) = P(X_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) = p_(i_n i_(n + 1))
+    P(X_(n + 1) = i_(n + 1)|X_0 = i_0, ..., X_n = i_n) = P(X_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) = p_(i_n i_(n + 1))
   $
   In Worten: Die Wahrscheinlichkeit von Zustand $i$ in Zustand $j$ zu gehen wird nur durch die Wahrscheinlichkeit in
   Zustand $j$ zu sein bestimmt, oder anders gesagt $X_(n + 1)$ und $X_n$ sind unabhängig.
@@ -427,33 +427,33 @@ $X_0 = i_0, ...$).
 ]
 #example(title: [Irrfahrt auf $bb(Z)$])[
 
-  Seien $Y_1, Y_2, dots.h$ unabhängige, identisch verteilte
+  Seien $Y_1, Y_2, ...$ unabhängige, identisch verteilte
   $bb(Z)$-wertige Zufallsvariablen mit $P(Y_1 = i)$, $i in bb(Z)$. Sei
-  $X_(0 i) := 0$ und $X_n := Y_1 + dots.h + Y_n$, $n in bb(N)$. In Worten:
+  $X_(0 i) := 0$ und $X_n := Y_1 + ... + Y_n$, $n in bb(N)$. In Worten:
   $X_n$ springt zufällig von
   $X_(n - 1) = i_(n - 1) = i_(n - 2) + Y_(n - 1)$ zu
   $i_n = i_(n - 1) + Y_n$ auf den ganzen Zahlen $bb(Z)$. Damit gilt offensichtlich für jedes $n >= 1$, dass
   $X_n = i_(n - 1) + Y_n <=> Y_n = i_n - i_(n - 1)$. \
-  Für alle $n >= 0$ und alle $i_0, dots.h, i_(n + 1) in bb(Z)$ mit
-  $P(X_0 = i_0, dots.h, X_n = i_n) > 0$ ist
+  Für alle $n >= 0$ und alle $i_0, ..., i_(n + 1) in bb(Z)$ mit
+  $P(X_0 = i_0, ..., X_n = i_n) > 0$ ist
   $
-    & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0, dots.h, X_n = i_n)\
-    = & P(X_n + Y_(n + 1) = i_(n + 1) \| X_0 = i_0, dots.h, X_n = i_n)\
-    = & P(i_n + Y_(n + 1) = i_(n + 1) \| X_0 = i_0, dots.h, X_n = i_n)\
-    = & P(Y_(n + 1) = i_(n + 1) - i_n \| X_0 = i_0, dots.h, X_n = i_n)\
-    = & P(Y_(n + 1) = i_(n + 1) - i_n \| Y_1 = i_1, Y_2 = i_2 - i_1, dots.h, Y_n = i_n - i_(n - 1))\
+    & P(X_(n + 1) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n)\
+    = & P(X_n + Y_(n + 1) = i_(n + 1) | X_0 = i_0, d..., X_n = i_n)\
+    = & P(i_n + Y_(n + 1) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n)\
+    = & P(Y_(n + 1) = i_(n + 1) - i_n | X_0 = i_0, ..., X_n = i_n)\
+    = & P(Y_(n + 1) = i_(n + 1) - i_n | Y_1 = i_1, Y_2 = i_2 - i_1, ..., Y_n = i_n - i_(n - 1))\
     = & P(Y_(n + 1) = i_(n + 1) - i_n) = a_(i_(n + 1) - i_n) .
   $
-  $=> { X_n : n in bb(N) }$ ist eine Markov-Kette mit Zustandsraum $bb(Z)$ und Übergangswahrscheinlichkeit
+  $==> { X_n : n in bb(N) }$ ist eine Markov-Kette mit Zustandsraum $bb(Z)$ und Übergangswahrscheinlichkeit
   $p_(i j) = a_(j - 1)$, $i, j in bb(Z)$.
   $
     (P_(i j)) = mat(
 
-      dots.h, a_(- 2), a_(- 1), a_0, a_1, a_2, dots.h;
-      dots.h, a_(- 3), a_(- 2), a_(- 1), a_0, a_1, dots.h;
-      dots.h, a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, dots.h;
-      dots.h, a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), dots.h;
-      dots.h, a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), dots.h;
+      ..., a_(- 2), a_(- 1), a_0, a_1, a_2, ...;
+      ..., a_(- 3), a_(- 2), a_(- 1), a_0, a_1, ...;
+      ..., a_(- 4), a_(- 3), a_(- 2), a_(- 1), a_0, ...;
+      ..., a_(- 5), a_(- 4), a_(- 3), a_(- 2), a_(- 1), ...;
+      ..., a_(- 6), a_(- 5), a_(- 4), a_(- 3), a_(- 2), ...;
       dots.up, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down
 
     )
@@ -474,12 +474,12 @@ $X_0 = i_0, ...$).
   Für alle $n >= 0$ und alle $i_0, ..., i_(n + 1) in bb(N)_0$ mit
   $P(X_0 = i_0, ..., X_n = i_n) > 0$ ist
   $
-    & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0, dots.h, X_n = i_n)\
-    & = P(max (Y_1, dots.h, Y_(n + 1)) = i_(n + 1) divides X_0 = i_0, dots.h, X_n = i_n)\
-    & = P(max (X_n, Y_(n + 1)) = i_(n + 1) divides X_0 = i_0, dots.h, X_n = i_n)\
-    & = P(max (i_n, Y_(n + 1)) = i_(n + 1) divides X_0 = i_0, dots.h, X_n = i_n)\
-    & = P(max (i_n, Y_(n + 1)) = i_(n + 1) divides Y_1 = i_1, max (Y_1, Y_2) = i_2, dots.h, max (Y_1, dots.h, Y_n) = i_n)\
-    & = P(max (i_n, Y_(n + 1)) = i_(n + 1))
+    & P(X_(n + 1) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n)\
+    = & P(max (Y_1, ..., Y_(n + 1)) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n)\
+    = & P(max (X_n, Y_(n + 1)) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n)\
+    = & P(max (i_n, Y_(n + 1)) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n)\
+    = & P(max (i_n, Y_(n + 1)) = i_(n + 1) | Y_1 = i_1, max (Y_1, Y_2) = i_2, ..., max (Y_1, ..., Y_n) = i_n)\
+    = & P(max (i_n, Y_(n + 1)) = i_(n + 1))
   $ Diese Wahrscheinlichkeit hängt nun vom Verhältnis von $i_n$ zu $i_(n + 1)$ ab. Per Konstruktion kann $i_(n + 1)$ nicht
   kleiner sein als $i_n$. Ist $i_(n + 1) < i_n$, dann ist $Y_(n + 1)$ das Maximum und folglich auch
   $P(max (i_n, Y_(n + 1)) = i_(n + 1)) = P(Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1))$. Für den Fall, dass $i_(n + 1) = i_n$ ist,
@@ -517,9 +517,9 @@ $X_0 = i_0, ...$).
   $n >= 1$ und $i_0, ..., i_(n + 1) in S$ mit
   $P(X_0 = i_0, ..., X_n = i_n) > 0$ gilt
   $
-    & P(X_(n + 1) = i_(n + 1) \| X_0 = i_0, ..., X_n = i_n)\
-    & = P(f (X_n, Y_(n + 1)) = i_(n + 1) \| X_0 = i_0, ..., X_n = i_n)\
-    & = P(f (i_n, Y_(n + 1)) = i_(n + 1) \| X_0 = i_0, ..., X_n = i_n)\
+    & P(X_(n + 1) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n)\
+    & = P(f (X_n, Y_(n + 1)) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n)\
+    & = P(f (i_n, Y_(n + 1)) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n)\
     & =^star P(f (i_n, Y_(n + 1)) = i_(n + 1))\
     & =^(star star) P(f (i_n, Y_1) = i_(n + 1))\
     & = p_(i_n i_(n + 1))
@@ -545,7 +545,7 @@ $
   & P(X_0 = i_0, X_1 = i_1, ..., X_n = i_n)\
   = & P(X_0 = i_0, ..., X_(n - 1) = i_(n - 1)) p_(i_(n - 1) i_n)\
   = & P(X_0 = i_0, ..., X_(n - 2) = i_(n - 2)) p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n)\
-  = & dots.h\
+  = & ...\
   = & P(X_0 = i_0) p_(i_0 i_1)... p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n)
 $
 
@@ -586,7 +586,7 @@ $
   Da es nicht möglich ist, dass $i_(n + 1) < i_n$, können wir auf 3 mögliche Pfade mit $X_1 = X_2 = 2$, $X_1 = X_2 = 3$ und $X_1 = X_2 = 4$
   schließen. $   & P(X_1 >= 2, X_2 <= X_1)\
     & = P(X_1 >= 2, X_1 = X_2)\
-    & = P(X_0 = 0, X_1 = 2, X_2 = 2) + P(X_0 = 0, X_1 = 3, X_2 = 3) + dots.h\
+    & = P(X_0 = 0, X_1 = 2, X_2 = 2) + P(X_0 = 0, X_1 = 3, X_2 = 3) + ...\
     & = 12 / 25 $
 
 ]
@@ -597,19 +597,19 @@ Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Ve
   Für alle $n, m >= 1$, $Z ⊂ S^m$, $V ⊂ S^n$, $i in S$ mit
   $P((X_0, ..., X_(n - 1)) in V, X_n = i) > 0$ gilt
   $
-    P((X_(n + 1), ..., X_(n + m)) in Z \| (X_0, ..., X_(n - 1)) in V, X_n = i) = \
+    P((X_(n + 1), ..., X_(n + m)) in Z | (X_0, ..., X_(n - 1)) in V, X_n = i) = \
     sum_(j_1, ..., j_m in Z) p_(i j_1) p_(j_1 j_2)... p_(j_(m - 1) j_m)
   $
   In Worten: Die Wahrscheinlichkeit, dass
   ${ X_n + 1 = i_(n + 1), ..., X_(n + m) = i_(n + m) } in Z$, hängt nur von $X_n = i$ und nicht von ${ X_0, ..., X_(n - 1) } in V$.
   Die Wahrscheinlichkeit
-  $P({ X_n + 1 = i_(n + 1), ..., X_(n + m) = i_(n + m) } in Z \| X_n = i)$
+  $P({ X_n + 1 = i_(n + 1), ..., X_(n + m) = i_(n + m) } in Z | X_n = i)$
   ist dann die Summe über alle (disjunkten) Pfad-Wahrscheinlichkeiten in
   $Z$ (mit Start in $X_n = i$ und daraus resultierender Anfangsverteilung
   $p_i$). \
   Sofern $P(X_0 = i) > 0$ können wir die aufgrund der Zeithomogenität der Markovkette auch folgen:
   $
-    P((X_(n + 1), ..., X_(n + 1)) in Z \| (X_0, ..., X_(n - 1)) in V, X_n = i) = \ P((X_1, ..., X_m) in Z \| X_0 = i)
+    P((X_(n + 1), ..., X_(n + 1)) in Z | (X_0, ..., X_(n - 1)) in V, X_n = i) = \ P((X_1, ..., X_m) in Z \| X_0 = i)
   $
 ] <thm:med_markov>
 #proof(title: [Beweis von @thm:med_markov])[
