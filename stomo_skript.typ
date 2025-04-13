@@ -269,7 +269,7 @@ Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
 + $"Cov"[X_i, X_j] = 0$ für alle $i != j ==> V a r [X_1, ..., X_n] = sum_(i = 1)^n V a r [X_i]$
 
 + $h_1 (X_1, ..., X_(n_1)), h_2 (X_(n_1 + 1), ... X_(n_2)), ..., h_n (X_(n_(k - 1) + 1), ... X_(n_k))$
-  sind unabhängige Zufallsvariablen, wobei $0 = n_0 < n_1 <... < n_k <= n$ und $h_i : bb(R)^(n_i - n_(i - 1)) -> bb(R)
+  sind unabhängige Zufallsvariablen, wobei $0 = n_0 < n_1 <... < n_k <= n$ und $h_i : bb(R)^(n_i - n_(i - 1)) -> bb(R)$
 
   ${ (X_1, ..., X_(n_1)) in B_1 }, { (X_(n_1 + 1), ..., X_(n_2)) in B_2 }, ..., { (X_(n_(k - 1) + 1), ..., X_(n_k)) in B_k }$ sind somit unabhängige Ereignisse für alle $B_1, ..., B_k$.
 
