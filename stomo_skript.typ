@@ -77,16 +77,17 @@
 
 == Wahrscheinlichkeitsmaße
 
+#axiom[
 
-Bezeichne $Omega$ die Menge aller möglichen Ergebnisse eines Zufallsexperiments und $A in Omega$ ein Ereignis. Ein
-Wahrscheinlichkeitsmaß ist eine Abbildung, die jedem $A$ eine Zahl
-$P(A) in [0, 1]$ zuordnet. Es gilt:
+  Bezeichne $Omega$ die Menge aller möglichen Ergebnisse eines Zufallsexperiments und $A in Omega$ ein Ereignis. Ein
+  Wahrscheinlichkeitsmaß ist eine Abbildung, die jedem $A$ eine Zahl
+  $P(A) in [0, 1]$ zuordnet. Es gilt:
 
-- $P(Omega) = 1$ (Normierung)
+  - $P(Omega) = 1$ (Normierung)
 
-- $P(A_1 ∪ A_2 ∪...) = P(A_1) + P(A_2) +...$ falls
-  $(A_i ∩ A_j) = nothing$ für alle $i != j$ ($sigma$-Additivität)
-
+  - $P(A_1 ∪ A_2 ∪...) = P(A_1) + P(A_2) +...$ falls
+    $(A_i ∩ A_j) = nothing$ für alle $i != j$ ($sigma$-Additivität)
+]
 Aus den Axiomen folgt
 
 - $P(A^C) = 1 - P(A)$
@@ -157,10 +158,19 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 ]
 == Zufallsvariablen
 
-Eine Zufallsvariable ist eine Abbildung $X : Omega -> RR$. Für
-$A ⊂ RR$ gilt
-$ { X in A } = { omega in Omega : X (omega) in A } $ und
-$ P(X in A) = P({ omega in Omega : X (omega) in A }) . $ Für
+#definition[
+
+  Eine Zufallsvariable ist eine Abbildung $X : Omega -> RR$. Für $A ⊂ RR$ gilt
+  $
+    { X in A } = { omega in Omega : X (omega) in A }
+  $
+  und
+  $
+    P(X in A) = P({ omega in Omega : X (omega) in A }).
+  $
+]
+
+Für
 $a in RR$ ist $ { X = a } = { omega in Omega : X (omega) = a } $ und
 $ P(X = a) = P({ omega in Omega : X (omega) = a }) . $ Die Verteilungsfunktion $F = F_X$ der Zufallsvariablen $X$ ist
 definiert durch $F (x) = P(X in x)$ mit $x in RR$ und
@@ -427,7 +437,7 @@ $X_0 = i_0, ...$).
   Denn für alle $n >= 0$ und alle $i_0, ..., i_(n + 1) in NN_0$
   mit $P(X_0 = i_0, ..., X_n = i_n) > 0$ gilt:
   $
-    P(X_(n + 1) = i_(n + 1)|X_0 = i_0, ..., X_n = i_n) = P(X_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) = p_(i_n i_(n + 1))
+    P(X_(n + 1) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n) = P(X_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) = p_(i_n i_(n + 1))
   $
   In Worten: Die Wahrscheinlichkeit von Zustand $i$ in Zustand $j$ zu gehen wird nur durch die Wahrscheinlichkeit in
   Zustand $j$ zu sein bestimmt, oder anders gesagt $X_(n + 1)$ und $X_n$ sind unabhängig.
@@ -697,10 +707,18 @@ und $ P_(i j)^1 = P(X_(m + 1) = j | X_m = i) = p_(i j) $
 
 Für einen Übergang von $i$ nach
 $j$ in $m + n$ Schritten muss die Markovkette in $m$ Schritten von $i$
-zu einem beliebigen Zustand $k$ gehen und dann von $k$ in $n$ Schritten zu $j$.\
-Die $n$-Schritt Übergangsmatrix ist definiert als
-$ Pi^((n)) : = (P_(i j))^((n)) $ mit
-$ Pi = Pi^((1)) : = (P_(i j))_(i, j in S)^((1)) = (P_(i j))_(i, j in S) $
+zu einem beliebigen Zustand $k$ gehen und dann von $k$ in $n$ Schritten zu $j$.
+
+#definition[
+  Die $n$-Schritt Übergangsmatrix ist definiert als
+  $
+    Pi^((n)) : = (P_(i j))^((n))
+  $
+  mit
+  $
+    Pi = Pi^((1)) : = (P_(i j))_(i, j in S)^((1)) = (P_(i j))_(i, j in S).
+  $
+]
 Die $n$-Schritt Übergangsmatrix $Pi^((n))$ ist die $n$-te Potenz der Übergangsmatrix $Pi^((1))$.\
 Somit besagt der Satz von Chapman-Kolmogorow, dass
 $ Pi^(m + n) = Pi^m Pi^n $ Alternativ kann auch für einen Start bei
@@ -758,10 +776,15 @@ Zeitpunkt zu berechnen:
 ]
 == Absorptionswahrscheinlichkeiten und -zeiten
 
-Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum S und Übergangsmatrix $(P_(i j))$.\
-Sei $A ⊂ S$, $A != nothing$. Setze
-$T_i = inf { n in NN_0 : X_n in A }$, wobei $inf nothing = oo$. $T$
-ist die Eintrittszeit in $A$, also der zufällige Zeitpunkt des ersten Besuchs der Menge $A$, falls es einen gibt.\
+#definition[
+
+  Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei $A ⊂ S$, $A != nothing$.
+
+  Setze
+  $T_i = inf { n in NN_0 : X_n in A }$, wobei $inf nothing = oo$. $T$
+  ist die Eintrittszeit in $A$, also der zufällige Zeitpunkt des ersten Besuchs der Menge $A$, falls es einen gibt.]
+
+
 Ziel: Berechne für jeden Anfangszustand $i$ die Wahrscheinlichkeit, dass
 $A$ in endlicher Zeit erreicht wird.
 $ P(T < oo | X_0 = i) = P(⋃_(n = 0)^oo { X_n in A } | X_0 = i) = p_i (T < oo) $
@@ -1083,7 +1106,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
 ]
 == Konvergenzsätze
 
-#theorem[
+#definition[
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. \
   Die stationäre Verteilung der Markovkette $(pi_i)$ mit
 
@@ -1094,8 +1117,8 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
   ist definiert durch $ pi_j = sum_(i in S) pi_i p_(i j) $ oder ausgedrückt in Matrix Schreibweise $       & pi = pi (P_(i j))\
   <=> & pi ((P_(i j)) - I) = 0 $
 
-] <thm:markov-stationär>
-#remark(title: [Bemerkung zu Satz 13])[
+] <thm:markov-station>
+#remark(title: [Bemerkung zu @thm:markov-station])[
 
   - Für jede Markovkette mit endlichem Zustandsraum existiert eine stationäre Verteilung (s. Aufgaben).
 
