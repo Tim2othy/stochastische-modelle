@@ -965,7 +965,7 @@ Folgender Satz gilt für beliebige $A$:\
 
 ]
 Für die folgenden Schritte werden folgende Rechenregeln für
-$RR^(‾) = RR ∪ { - oo, oo }$ benötigt:
+$overline(RR) = RR ∪ { - oo, oo }$ benötigt:
 
 - $- oo < a < oo quad forall a in RR$
 
@@ -973,13 +973,13 @@ $RR^(‾) = RR ∪ { - oo, oo }$ benötigt:
 
 - $a - oo = - oo + a = - oo quad forall a in RR ∪ { - oo }$
 
-- $a dot oo = oo dot a = oo quad forall a in RR^(‾)^(+)$
+- $a dot oo = oo dot a = oo quad forall a in overline(RR)^(+)$
 
-- $a dot oo = oo dot a = - oo quad forall a in RR^(‾)^(-)$
+- $a dot oo = oo dot a = - oo quad forall a in overline(RR)^(-)$
 
-- $a dot (- oo) = (- oo) dot a = - oo quad forall a in RR^(‾)^(+)$
+- $a dot (- oo) = (- oo) dot a = - oo quad forall a in overline(RR)^(+)$
 
-- $a dot (- oo) = (- oo) dot a = oo quad forall a in RR^(‾)^(-)$
+- $a dot (- oo) = (- oo) dot a = oo quad forall a in overline(RR)^(-)$
 
 - $0 dot oo = oo dot 0 = 0$ (spezielle Konnotation in diesem Kontext)
 
@@ -1041,7 +1041,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
     $
 ]
 #block[
-  Nun ist die erwartete Absorptionszeit $k_i = E_i [T]$ mit gesucht. \
+  Nun ist die erwartete Absorptionszeit $k_i = E_i [T]$ gesucht. \
   Offensichtlich ist $k_0 = 0$ und $k_M = 0$. Aus Satz 12 folgt hier
   $
     (star) quad k_i = 1 + (1 - p) k_(i - 1) + p k_(i + 1)
@@ -1143,7 +1143,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
   $exists quad 0 < epsilon < 1$, sodass
   $
     p_(i j) & >= epsilon pi_j quad forall quad i, j = 1, ..., S\
-    => sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & <= 2 (1 - epsilon)^n.
+    => sum_(j = 1)^S abs(p_(i j)^n - pi_j) & <= 2 (1 - epsilon)^n.
   $
 
 ] <thm:convergence_markov>
@@ -1172,7 +1172,7 @@ exponentiell zur stationären Verteilung konvergiert.\
   $
   Für jede Zeile $i = 1, ..., S$ folgt damit (unter Verwendung der Dreiecksungleichung):
   $
-    sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & = (1 - epsilon)^n sum_(j = 1)^S lr(|{ Q_(i j)^n } - pi_j|)\
+    sum_(j = 1)^S abs(p_(i j)^n - pi_j) & = (1 - epsilon)^n sum_(j = 1)^S abs({ Q_(i j)^n } - pi_j)\
     & <= (1 - epsilon)^n sum_(j = 1)^S ({ Q_(i j)^n } + pi_j) = 2 (1 - epsilon)^n
   $
 ]
@@ -1183,7 +1183,7 @@ exponentiell zur stationären Verteilung konvergiert.\
   Es existiere $k in NN$, $epsilon in (0, 1)$, sodass
   $
     p_(i j)^k & >= epsilon pi_j quad forall quad i, j = 1, ..., S\
-    => sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) <= 2 (1 - epsilon)^(⌊ n / k ⌋)
+    => sum_(j = 1)^S abs(p_(i j)^n - pi_j) <= 2 (1 - epsilon)^(⌊ n / k ⌋)
   $
 ] <thm:convergence_markov2>
 
@@ -1191,14 +1191,14 @@ exponentiell zur stationären Verteilung konvergiert.\
 
   Wende hier @thm:convergence_markov auf $Pi^k$ an.\
   $pi$ ist auch eine stationäre Verteilung für $Pi^k$ und
-  $ (Pi^k)^m = Pi^(k m) = (P_(i j)^(k m)) $ Damit liefer @thm:convergence_markov:
+  $ (Pi^k)^m = Pi^(k m) = (P_(i j)^(k m)) $ Damit liefert @thm:convergence_markov:
   $
-    sum_(j = 1)^S lr(|P_(i j)^(k m) - pi_j|) <= 2 (1 - epsilon)^m quad forall quad i = 1, ..., S "und" m = 1, 2, 3, ...
+    sum_(j = 1)^S abs(P_(i j)^(k m) - pi_j) <= 2 (1 - epsilon)^m quad forall quad i = 1, ..., S "und" m = 1, 2, 3, ...
   $
   Sei $n in NN_0$, $m = ⌊ n / k ⌋$, $r = n - k m >= 0$.
   $
-    => sum_(j = 1)^S lr(|p_(i j)^n - pi_j|) & = sum_(j = 1)^S lr(|sum_(l = 1)^S p_(i l)^r (p_(l j)^(k m) - pi_j)|)\
-    & <= sum_(l = 1)^S p_(i l)^r sum_(j = 1)^S lr(|p_(l j)^(k m) - pi_j|)\
+    => sum_(j = 1)^S abs(p_(i j)^n - pi_j) & = sum_(j = 1)^S abs(sum_(l = 1)^S p_(i l)^r (p_(l j)^(k m) - pi_j))\
+    & <= sum_(l = 1)^S p_(i l)^r sum_(j = 1)^S abs(p_(l j)^(k m) - pi_j)\
     & <= 2 (1 - epsilon)^m = 2 (1 - epsilon)^(⌊ n / k ⌋)
   $
 ]
@@ -1215,9 +1215,9 @@ $lim_(n -> oo) P_(i j)^n$
 Ist ${ X_n : n in NN_0 }$ eine Markovkette mit Übergangsmatrix
 $(P_(i j))$, dann
 $
-  sum_(j = 1)^S lr(|P(x_n = j) - pi_j|) & = sum_(j = 1)^S lr(|(sum_(i = 1)^S P(X_0) i) p_(i j)^n - pi_j|)\
-  & = sum_(j = 1)^S lr(|sum_(i = 1)^S P(X_0 = i) (p_(i j)^n - pi_j)|)\
-  & <= sum_(i = 1)^S P(X_0 = i) sum_(j = 1)^S lr(|p_(i j)^n - pi_j|)\
+  sum_(j = 1)^S abs(P(x_n = j) - pi_j) & = sum_(j = 1)^S abs(sum_(i = 1)^S P(X_0) i) p_(i j)^n - pi_j)\
+  & = sum_(j = 1)^S abs(sum_(i = 1)^S P(X_0 = i) (p_(i j)^n - pi_j))\
+  & <= sum_(i = 1)^S P(X_0 = i) sum_(j = 1)^S abs(p_(i j)^n - pi_j)\
   & <= 2 (1 - epsilon)^(⌊ n / k ⌋)\
   => lim_(n -> oo) P(X_n = j) & = pi_j
 $
@@ -1666,7 +1666,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist
   $n_1, ..., n_k in NN$ beliebig fest.
   $ => P(N (t_i) - N (t_(i - 1)) = n_i, i = 1, ..., k) = P((T_1, ..., T_(m + 1)) in B times (t_k, oo)), $
   wobei $m = n_1 +... + n_k$ und
-  $B = { (s_1, ..., s_m) in RR^m : 0 < s_1 <... < s_m, lr(|{ j : t_(i - 1) < s_j <= t_i }|) = n_i, i = 1, ..., k }$.
+  $B = { (s_1, ..., s_m) in RR^m : 0 < s_1 <... < s_m, abs({ j : t_(i - 1) < s_j <= t_i }) = n_i, i = 1, ..., k }$.
   $(T_1, ..., T_(m + 1))$ hat die Dichte
   $
     f (s_1, ..., s_(m + 1)) = cases(lambda^(m + 1) e^(- lambda s_(m + 1)) & "falls" 0 < s_1 <... < s_(m + 1), 0 & "sonst")
