@@ -14,6 +14,14 @@
   counter: none,
   render: render-fn.with(fill: olive.lighten(85%)),
 )
+
+#let (axiom-counter, axiom-box, axiom, show-axiom) = make-frame(
+  "axiom",
+  "Axioms",
+  counter: none,
+  render: render-fn.with(fill: orange.lighten(85%)),
+)
+
 #let (example-counter, example-box, example, show-example) = make-frame(
   "corollary",
   "Beispiel",
