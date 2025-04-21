@@ -1146,6 +1146,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
        & = sum_(i in S) lim_(n -> oo) P(X_n = i) p_(i j)\
        & = sum_(i in S) pi_i p_(i j) quad forall j in S $
 ]
+#theorem[Placeholder]
 #example[
   Gegeben sei eine Markovkette ${ X_n : n in NN_0 }$ mit Zustandsraum
   $S = { 1, 2 }$ und Übergangsmatrix
