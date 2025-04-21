@@ -50,7 +50,7 @@
   "proposition",
   "",
   counter: none,
-  render: render-fn.with(fill: yellow.lighten(85%)),
+  render: render-fn.with(fill: blue.lighten(85%)),
 )
 // Normal Settings
 #set text(font: "New Computer Modern", lang: "DE", size: 12pt)
@@ -991,7 +991,6 @@ Folgender Satz gilt für beliebige $A$:\
 
 #corollary(title: "Beispiel 10 (Fortsetzung)")[
 
-  hallo
   Im Fall von $p > 1 / 2$ wurde gezeigt, dass die nichtnegativen Lösungen des Gleichungssystems (wie in Satz 11)
   charakterisiert sind durch
   $ x_i = 1 + (x_1 - 1) frac(1 - Theta^i, 1 - Theta) $ mit
@@ -1076,7 +1075,8 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
       => x_i & >= sum_(k = 0)^oo P_i (T > k) = E_i [T] = k_i
     $
 ]
-#block[
+#corollary(title: "Beispiel 9 (Fortsetzung)")[
+
   Nun ist die erwartete Absorptionszeit $k_i = E_i [T]$ gesucht. \
   Offensichtlich ist $k_0 = 0$ und $k_M = 0$. Aus Satz 12 folgt hier
   $
@@ -1262,7 +1262,8 @@ Sind alle Einträge von $Pi^n$ positiv, dann ist die Voraussetzung
 $p_(i j^n) >= epsilon pi_j$ ($i, j = 1, ..., S$) mit
 $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
 
-#block[
+#corollary(title: "Beispiel 11 (Fortsetzung)")[
+
   Sei nun $a = b = 1$, also $ Pi = mat( 0, 1;1, 0) $ dann gilt
   $
     Pi^n = cases(
