@@ -1,6 +1,6 @@
 #import "@preview/theorion:0.3.3": *
 #import cosmos.clouds: *
-#import "settings.typ": make-frame
+#import "settings.typ": make-frame, make-frame2
 #show: show-theorion
 
 #let title = [Stochastische Modelle]
@@ -46,7 +46,12 @@
   counter: none,
   render: render-fn.with(fill: yellow.lighten(85%)),
 )
-
+#let (corollary-counter, corollary-box, corollary, show-corollary) = make-frame2(
+  "proposition",
+  "",
+  counter: none,
+  render: render-fn.with(fill: yellow.lighten(85%)),
+)
 // Normal Settings
 #set text(font: "New Computer Modern", lang: "DE", size: 12pt)
 #set heading(numbering: "1.1")
@@ -984,7 +989,9 @@ Folgender Satz gilt für beliebige $A$:\
   $
 ]
 
-#block[
+#corollary(title: "Beispiel 10 (Fortsetzung)")[
+
+  hallo
   Im Fall von $p > 1 / 2$ wurde gezeigt, dass die nichtnegativen Lösungen des Gleichungssystems (wie in Satz 11)
   charakterisiert sind durch
   $ x_i = 1 + (x_1 - 1) frac(1 - Theta^i, 1 - Theta) $ mit
