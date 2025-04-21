@@ -254,6 +254,8 @@ Die Varianz der Zufallsvariable $X$ ist
 $ V a r [X] = E [(X - E [X])^2] = E [X^2] - E [X]^2 $ Die Kovarianz von Zufallsvariablen X und Y ist
 $ C o v [X, Y] = E [(X - E [X]) (Y - E [Y])] = E [X Y] - E [X] E [Y] $
 Es gilt
+#set enum(numbering: "1.")
+
 
 + $V a r [a X + b] = a^2 V a r [X]$ für $a, b in RR$
 
@@ -280,7 +282,6 @@ $ F_(X_1, ..., X_n) (x_1, ..., x_n) = F_(X_1) (x_1) F_(X_2) (x_2)... F_(X_n) (x_
 Für eine unendliche Folge von Zufallsvariablen $X_1, X_2, ...$
 bedeutet Unabhängigkeit, dass für jedes $n$ $X_1, ..., X_n$
 unabhängig sind.
-#set enum(numbering: "1.")
 
 Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
 + ${ X_1 in B_1 }, ..., { X_n in B_n }$ sind unabhängige Ereignisse für alle $B_1, ..., B_n in RR$
