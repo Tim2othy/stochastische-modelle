@@ -14,14 +14,12 @@
   counter: none,
   render: render-fn.with(fill: olive.lighten(85%)),
 )
-
 #let (axiom-counter, axiom-box, axiom, show-axiom) = make-frame(
   "axiom",
   "Axioms",
   counter: none,
   render: render-fn.with(fill: orange.lighten(85%)),
 )
-
 #let (example-counter, example-box, example, show-example) = make-frame(
   "corollary",
   "Beispiel",
@@ -406,7 +404,7 @@ $ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) | Y = y] P(Y = y) . $
 
   Eine Folge ${ X_n : n in NN }$ von Zufallsvariablen mit Werten in $S$
   heißt Markovkette mit Zustandsraum $S$ und Übergangsmatrix
-  $(P_(i j))_(i, j in S) \)$, falls für alle $n >= 0$ und alle möglichen $i_0, i_1, ..., i_(n + 1) in S$ gilt
+  $(P_(i j))_(i, j in S)$, falls für alle $n >= 0$ und alle möglichen $i_0, i_1, ..., i_(n + 1) in S$ gilt
   $ (star) P(X_(n + 1) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n) = p_(i_n i_(n + 1)), $
   sofern $P(X_0 = i_o, ..., X_n = i_n) > 0$. Die Verteilung von $X_0$
   heißt Anfangsverteilung der Markov-Kette. \
