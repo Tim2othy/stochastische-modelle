@@ -7,10 +7,18 @@
   inherited-levels: 0,
   inherited-from: heading,
   numbering: get-theorion-numbering,
-  render: (prefix: none, title: "", full-title: "", body) => block[*#full-title*: #body],
+  render: (
+    prefix: none,
+    title: "",
+    full-title: "",
+    body,
+  ) => block[*#full-title*: #body],
 ) = {
-  let get-numbering = if type(numbering) != function { (..args) => numbering } else { numbering }
+  let get-numbering = if type(numbering) != function {
+    (..args) => numbering
+  } else { numbering }
   /// Counter for the frame.
+
   let frame-counter = if counter != none { counter } else {
     richer-counter(
       identifier: identifier,
@@ -22,6 +30,7 @@
   let display-number(get-loc: here, counter: frame-counter, ..args) = context {
     let loc = get-loc()
     // We need to add 1 to the counter value.
+
     let counter-value = if type(counter) == dictionary {
       (counter.at)(loc)
     } else {
@@ -30,11 +39,14 @@
     counter-value = counter-value.slice(0, -1) + (counter-value.at(-1) + 1,)
     std.numbering(get-numbering(get-loc()), ..counter-value)
   }
-
   /// Useful functions for the frame.
+
   let get-prefix(get-loc) = [#supplement-i18n #display-number(get-loc: get-loc)]
-  let get-full-title(get-loc, title) = [#get-prefix(get-loc)#{ if title != "" [, #title] }]
+  let get-full-title(get-loc, title) = [#get-prefix(get-loc)#{
+      if title != "" [, #title]
+    }]
   /// Frame with the counter.
+
   let frame(
     title: "",
     outlined: true,
@@ -73,12 +85,14 @@
         body,
       )
       // Update the counter.
+
       if numbering != none {
         (frame-counter.step)()
       }
     },
   )
   /// Frame without the counter.
+
   let frame-box = frame.with(
     numbering: none,
     outlined: false,
@@ -86,12 +100,14 @@
     get-full-title: (get-loc, title) => title,
   )
   /// Show rule for the frame.
+
   let show-frame(body) = {
     // skip the default figure style.
     show figure.where(kind: identifier): set align(start)
     show figure.where(kind: identifier): set block(breakable: true)
     show figure.where(kind: identifier): it => it.body
     // Custom outline for the theorem environment.
+
     show outline.where(target: figure.where(kind: identifier)): it => {
       show outline.entry: entry => {
         let el = entry.element
@@ -113,6 +129,7 @@
       it
     }
     // Custom reference for the theorem environment.
+
     show ref: it => {
       let el = it.element
       if el != none and el.func() == figure and el.kind == identifier {
@@ -133,7 +150,6 @@
   return (frame-counter, frame-box, frame, show-frame)
 }
 
-
 #let make-frame-named-example(
   identifier,
   supplement,
@@ -141,10 +157,18 @@
   inherited-levels: 0,
   inherited-from: heading,
   numbering: get-theorion-numbering,
-  render: (prefix: none, title: "", full-title: "", body) => block[*#full-title*: #body],
+  render: (
+    prefix: none,
+    title: "",
+    full-title: "",
+    body,
+  ) => block[*#full-title*: #body],
 ) = {
-  let get-numbering = if type(numbering) != function { (..args) => numbering } else { numbering }
+  let get-numbering = if type(numbering) != function {
+    (..args) => numbering
+  } else { numbering }
   /// Counter for the frame.
+
   let frame-counter = if counter != none { counter } else {
     richer-counter(
       identifier: identifier,
@@ -156,6 +180,7 @@
   let display-number(get-loc: here, counter: frame-counter, ..args) = context {
     let loc = get-loc()
     // We need to add 1 to the counter value.
+
     let counter-value = if type(counter) == dictionary {
       (counter.at)(loc)
     } else {
@@ -164,11 +189,12 @@
     counter-value = counter-value.slice(0, -1) + (counter-value.at(-1) + 1,)
     std.numbering(get-numbering(get-loc()), ..counter-value)
   }
-
   /// Useful functions for the frame.
+
   let get-prefix(get-loc) = [#supplement-i18n #display-number(get-loc: get-loc)]
   let get-full-title(get-loc, title) = [#{ [#title] }]
   /// Frame with the counter.
+
   let frame(
     title: "",
     outlined: true,
@@ -207,12 +233,14 @@
         body,
       )
       // Update the counter.
+
       if numbering != none {
         (frame-counter.step)()
       }
     },
   )
   /// Frame without the counter.
+
   let frame-box = frame.with(
     numbering: none,
     outlined: false,
@@ -220,12 +248,14 @@
     get-full-title: (get-loc, title) => title,
   )
   /// Show rule for the frame.
+
   let show-frame(body) = {
     // skip the default figure style.
     show figure.where(kind: identifier): set align(start)
     show figure.where(kind: identifier): set block(breakable: true)
     show figure.where(kind: identifier): it => it.body
     // Custom outline for the theorem environment.
+
     show outline.where(target: figure.where(kind: identifier)): it => {
       show outline.entry: entry => {
         let el = entry.element
@@ -247,6 +277,7 @@
       it
     }
     // Custom reference for the theorem environment.
+
     show ref: it => {
       let el = it.element
       if el != none and el.func() == figure and el.kind == identifier {
