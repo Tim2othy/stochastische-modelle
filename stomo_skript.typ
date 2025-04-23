@@ -43,9 +43,9 @@
   body,
 ) = context if get-result(here()) == "noanswer" { none } else {
   let qed-symbol = if qed == auto { get-qed-symbol(here()) } else { qed }
-  [#emph(strong(theorion-i18n(title)))#sym.space#body#box(
-      width: 0em,
-    )#h(1fr)#sym.wj#sym.space.nobreak$#qed-symbol$]
+  [
+    #emph(strong(theorion-i18n(title)))#sym.space#body#box(width: 0em)#h(1fr)#sym.wj#sym.space.nobreak$#qed-symbol$
+  ]
 }
 #let (lemma-counter, lemma-box, lemma, show-lemma) = make-frame(
   "lemma",
@@ -566,9 +566,7 @@ $X_0 = i_0, ...$).
   $
 
 ]
-#example(
-  title: [Rekursive Darstellung einer Markovkette mittels zufälliger Funktionen],
-)[
+#example(title: [Rekursive Darstellung einer Markovkette mittels zufälliger Funktionen])[
 
   Sei $X_0$ eine $S$-wertige Zufallsvariable
   und $S$ endlich oder abzählbar unendlich. Setze für $n >= 0$ rekursiv
@@ -940,9 +938,7 @@ Folgender Satz gilt für beliebige $A$:\
   $ => h_j = 1 - frac(1 - Theta^j, 1 - Theta^M) "für" j = 0, ..., M $
 
 ]
-#example(
-  title: [Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke],
-)[
+#example(title: [Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke])[
 
   Betrachte die Markovkette ${ X_n : n in NN_0 }$ mit Zustandsraum
   $S = NN_0$ und
