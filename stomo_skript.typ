@@ -59,18 +59,13 @@
 #set page(margin: (x: 2.5cm, y: 3cm), numbering: "1")
 #show outline.entry.where(level: 1): set block(above: 1.2em)
 
-#align(
-  center,
-  text(2em)[*#title*],
-)
-#align(
-  center,
-  text(1.6em)[\- #subtitle -],
-)
-#align(
-  center,
-  text(1.4em)[#semester],
-)
+#align(center)[
+  #text(2em)[*#title* ]
+
+  #text(1.6em)[\- #subtitle -]
+
+  #text(1.4em)[#semester]
+]
 
 #pagebreak()
 #outline()
