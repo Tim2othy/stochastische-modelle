@@ -1,6 +1,6 @@
 #import "@preview/theorion:0.3.3": *
 #import cosmos.clouds: *
-#import "settings.typ": make-frame, make-frame2
+#import "settings.typ": make-frame, make-frame-named-example
 #show: show-theorion
 
 #let title = [Stochastische Modelle]
@@ -46,7 +46,7 @@
   counter: none,
   render: render-fn.with(fill: yellow.lighten(85%)),
 )
-#let (corollary-counter, corollary-box, corollary, show-corollary) = make-frame2(
+#let (corollary-counter, corollary-box, corollary, show-corollary) = make-frame-named-example(
   "proposition",
   "",
   counter: none,

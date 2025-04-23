@@ -134,7 +134,7 @@
 }
 
 
-#let make-frame2(
+#let make-frame-named-example(
   identifier,
   supplement,
   counter: none,
