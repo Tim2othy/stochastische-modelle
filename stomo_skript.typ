@@ -2,6 +2,7 @@
 #import cosmos.clouds: *
 #import "settings.typ": make-frame, make-frame-named-example
 #show: show-theorion
+#show math.equation: set text(font: "Cambria Math")
 
 #let title = [Stochastische Modelle]
 #let subtitle = [Vorlesung]
