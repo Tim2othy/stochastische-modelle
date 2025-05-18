@@ -1331,7 +1331,6 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
   $
   $lim_(n -> oo) P_(i j)^n$ existiert also nicht! \
   Die Markovkette zeigt periodisches Verhalten.
-
 ]
 
 #definition[
@@ -1352,7 +1351,6 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
 
   - Für die einfache Irrfahrt auf $ZZ$ mit $p in (0, 1)$ gilt
     $ d_i = 2 quad forall quad i in ZZ $
-
 ]
 #theorem[
 
