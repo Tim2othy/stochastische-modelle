@@ -247,13 +247,16 @@ und $ f_Y (y) = integral_(- oo)^oo f (x, y) d x . $
 
 == Erwartungswert und Varianz
 
-Ist $X$ eine diskrete Zufallsvariable und $g : RR -> RR$, so ist $ E [g (X)] = sum_X g (x) P(X = x) $ wobei die
+Ist $X$ eine diskrete Zufallsvariable und $g : RR -> RR$, so ist
+$
+  EE [g (X)] = sum_X g (x) P(X = x)
+$ wobei die
 Summe über alle $X$
 mit $P(X = x) > 0$ läuft.\
 Nimmt X nur Werte in ${ 0, 1, 2, ... }$ an, dann gilt
-$ E [X] = sum_(n = 0)^oo P(X > n), $ denn
+$ EE [X] = sum_(n = 0)^oo P(X > n), $ denn
 $
-  E [X] & = sum_(n = 0)^oo n P(X = n) =\
+  EE [X] & = sum_(n = 0)^oo n P(X = n) =\
   & P(X = 1) +\
   & P(X = 2) + P(X = 2) +\
   & P(X = 3) + P(X = 3) + P(X = 3) +\
@@ -263,16 +266,16 @@ $
 $ Hat $X$
 eine Dichte $f$, so ist
 $
-  E [g (X)] = integral_(- oo)^oo g (x) f (x) thin d x
+  EE [g (X)] = integral_(- oo)^oo g (x) f (x) thin d x
 $ Für jede nichtnegative Zufallsvariable $X$ gilt
-$ E [X] = integral_0^oo P(X > x) thin d x = integral_0^oo P(X >= x) thin d x $
+$ EE [X] = integral_0^oo P(X > x) thin d x = integral_0^oo P(X >= x) thin d x $
 Allgemein gilt
-$ E [a X + b Y] = a E [X] + b E [Y] "für" a, b in RR $
+$ EE [a X + b Y] = a EE [X] + b EE [Y] "für" a, b in RR $
 Die Varianz der Zufallsvariable $X$ ist
 $
-  V a r [X] = E [(X - E [X])^2] = E [X^2] - E [X]^2
+  V a r [X] = EE [(X - EE [X])^2] = EE [X^2] - EE [X]^2
 $ Die Kovarianz von Zufallsvariablen X und Y ist
-$ C o v [X, Y] = E [(X - E [X]) (Y - E [Y])] = E [X Y] - E [X] E [Y] $
+$ C o v [X, Y] = EE [(X - EE [X]) (Y - EE [Y])] = EE [X Y] - EE [X] EE [Y] $
 Es gilt
 #set enum(numbering: "1.")
 
@@ -308,7 +311,7 @@ unabhängig sind.
 Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
 + ${ X_1 in B_1 }, ..., { X_n in B_n }$ sind unabhängige Ereignisse für alle $B_1, ..., B_n in RR$
 
-+ $E [product_(i = 1)^n X_i] = product_(i = 1)^n E [X_i]$
++ $EE [product_(i = 1)^n X_i] = product_(i = 1)^n EE [X_i]$
 
 + $"Cov"[X_i, X_j] = 0$ für alle $i != j ==> V a r [X_1, ..., X_n] = sum_(i = 1)^n V a r [X_i]$
 
@@ -390,25 +393,25 @@ $
 Seien $X$ und $Y$ diskrete Zufallsvariablen und gilt
 $g : RR -> RR$. Der bedingte Erwartungswert von $g (X)$
 gegeben $Y = y$ ist
-$ E [g (X) | Y = y] = sum_X g (x) f_(X | Y) (x | y), "falls" P(Y = y) > 0 $
+$ EE [g (X) | Y = y] = sum_X g (x) f_(X | Y) (x | y), "falls" P(Y = y) > 0 $
 Zudem gilt
-$ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) | Y = y] P(Y = y), "denn" $
+$ EE [g (X)] = sum_(Y : P(Y = y) > 0) EE [g (X) | Y = y] P(Y = y), "denn" $
 $
-  E [g (X)] = sum_X g (x) P(X = x) = sum_X g (x) sum_Y f_(X | Y) (x | y) P(Y = y)
+  EE [g (X)] = sum_X g (x) P(X = x) = sum_X g (x) sum_Y f_(X | Y) (x | y) P(Y = y)
 $
 $
   = sum_Y P(Y = y) sum_X g (x) f_(X | Y) (x | y)
 $ Im Falle diskreter Zufallsvariablen $X, X_1, X_2, Y$ und $y in RR$ gelten
 folgende Rechenregeln für bedingte Erwartungswerte:
 
-+ $E [a X_1 + b X_2 | Y = y] = a E [X_1 | Y = y] + b E [X_2 | Y = y]$
++ $EE [a X_1 + b X_2 | Y = y] = a EE [X_1 | Y = y] + b EE [X_2 | Y = y]$
 
-+ $E [h (X, Y) | Y = y] = E [h (X, y) | Y = y]$ für
++ $EE [h (X, Y) | Y = y] = EE [h (X, y) | Y = y]$ für
   $h : RR^2 -> RR$
 
-+ $E [g (X) | Y = y] = E [g (X)]$ falls $X tack.t Y$
++ $EE [g (X) | Y = y] = EE [g (X)]$ falls $X tack.t Y$
 
-+ $E [g (X) h (Y) | Y = y] = h (y) E [g (X) | Y = y]$ für
++ $EE [g (X) h (Y) | Y = y] = h (y) EE [g (X) | Y = y]$ für
   $h : RR -> RR$
 
 Ist Y diskret und X stetig mit bedingter Dichte $f_(X | Y) (x | y)$, also
@@ -420,10 +423,10 @@ $
   f_X (x) = sum_(Y : P(Y = y) > 0) f_(X | Y) (x | y) P(Y = y)
 $ und für $g : RR -> RR$
 $
-  E [g (X) | Y = y] := integral g (x) f_(X | Y) (x | y) thin d x "falls" P(Y = y) > 0
+  EE [g (X) | Y = y] := integral g (x) f_(X | Y) (x | y) thin d x "falls" P(Y = y) > 0
 $
 Die Rechenregeln für bedingte Erwartungswerte gelten wie im diskreten Fall, wie zum Beispiel
-$ E [g (X)] = sum_(Y : P(Y = y) > 0) E [g (X) | Y = y] P(Y = y) . $
+$ EE [g (X)] = sum_(Y : P(Y = y) > 0) EE [g (X) | Y = y] P(Y = y) . $
 
 = Markovketten
 
@@ -691,7 +694,7 @@ Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Ve
 Oft werden für eine Markovkette ${ X_n }$ bei fester Übergangsmatrix
 $(P_(i j))$ verschiedene Anfangszustände betrachtet. Bezeichne mit
 $p_i (dot.op)$ die bedingte Verteilung $P(X_n = j | X_0 = i)$ und mit
-$E_i (dot.op)$ den Erwartungswert für den Anfangszustand $i$, das heißt
+$EE_i (dot.op)$ den Erwartungswert für den Anfangszustand $i$, das heißt
 $P_i (X_0 = i) = 1$. Dann gilt
 $
   & P((X_(n + 1), ..., X_(n + m)) in Z | (X_0, ..., X_(n - 1)) in V, X_n = i)\
@@ -699,9 +702,9 @@ $
   & = P_i ((X_1, ..., X_m) in Z)
 $ und für $f : f^m -> RR$
 $
-  & E [f (X_(n + 1, ..., X_(n + m))) | (X_0, ..., X_(n - 1)) in V, X_n = i]\
-  & = E [f (X_(n + 1), ..., X_(n + m)) | X_0 = i]\
-  & = E_i [f (X_1, ..., X_m)] .
+  & EE [f (X_(n + 1, ..., X_(n + m))) | (X_0, ..., X_(n - 1)) in V, X_n = i]\
+  & = EE [f (X_(n + 1), ..., X_(n + m)) | X_0 = i]\
+  & = EE_i [f (X_1, ..., X_m)] .
 $ Beide Größen hängen vom gegenwärtigen Zustand $i$ ab und weder von $V$ noch von $n$.\
 Die Aussagen lassen sich mit einem unendlichen Zeithorizont erweitern:\
 Für die Menge $Z ⊂ S^oo$ und $f : S^oo -> RR$ gilt
@@ -710,7 +713,7 @@ $
 $
 und
 $
-  E [f (X_(n + 1), X_(n + 2), ...) | (X_0, ..., X_(n - 1) in V, X_n = i)] = E_i [f (X_(n + 1), X_(n + 2), ...)] .
+  EE [f (X_(n + 1), X_(n + 2), ...) | (X_0, ..., X_(n - 1) in V, X_n = i)] = E_i [f (X_(n + 1), X_(n + 2), ...)] .
 $
 
 Die $n$-Schritt Übergangswahrscheinlichkeit ist
@@ -1071,16 +1074,16 @@ $overline(RR) = RR ∪ { - oo, oo }$ benötigt:
 
 - Nicht definiert sind: $oo - oo$ und $- oo + oo$.
 
-Ist $X$ eine Zufallsvariable mit Werten in $NN_0 ∪ { oo }$, dann ist $ E [X] & = sum_(n = 0)^oo n P(X = n)\
+Ist $X$ eine Zufallsvariable mit Werten in $NN_0 ∪ { oo }$, dann ist $ EE [X] & = sum_(n = 0)^oo n P(X = n)\
 & = sum_(n = 0)^oo P(X > n)\
 & = sum_(n = 1)^n P(X >= n) $ Insbesondere ist also falls
-$P(X = oo) > 0$ auch $E [X] = oo$.
+$P(X = oo) > 0$ auch $EE [X] = oo$.
 
 #theorem[
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei $A in S$ und $A != nothing$.
   Für
   $i in S$ sei $ T & := inf { n in NN_0 : X_n in A }\
-  k_i & := E [T | X_0 = i] $ $(k_i)_(i in S)$ ist die
+  k_i & := EE [T | X_0 = i] $ $(k_i)_(i in S)$ ist die
   #strong[komponentenweise kleinste nichtnegative Lösung] des Gleichungssystems $(star)$
 
   $
@@ -1098,8 +1101,8 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
   - Für $(k_i)_(i in S)$ gilt $ & k_i in [0, oo] quad forall i in S\
     & k_i = 0 quad forall i in A $ Für $i in S without A$ gilt
     $
-      k_i & = sum_(j in S) E [T | X_0 = i, X_1 = j] p_(i j)\
-      & = sum_(j in S) (1 + E [T | Y_0 = j]) p_(i j) "(siehe Aufgaben)"\
+      k_i & = sum_(j in S) EE [T | X_0 = i, X_1 = j] p_(i j)\
+      & = sum_(j in S) (1 + EE [T | Y_0 = j]) p_(i j) "(siehe Aufgaben)"\
       & = 1 + sum_(j in S without A) p_(i j) k_j
     $ $=> (k_i)$
     löst $(star)$.
@@ -1125,12 +1128,12 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
       <=> x_i & >= P_i (T > 0) + P_i (X_1 in A^c) + sum_(k = 2)^n P - i (X_1 in A^c, X_2 in A^c, ..., X_k in A^c)\
       <=> x_i & >= P_i (T > 0) + P_i (T > 1) + sum_(k = 2)^n P_i (T > k)\
       <=> x_i & >= sum_(k = 0)^n P_i (T > k)\
-      => x_i & >= sum_(k = 0)^oo P_i (T > k) = E_i [T] = k_i
+      => x_i & >= sum_(k = 0)^oo P_i (T > k) = EE_i [T] = k_i
     $
 ]
 #corollary(title: "Beispiel 9 (Fortsetzung)")[
 
-  Nun ist die erwartete Absorptionszeit $k_i = E_i [T]$ gesucht. \
+  Nun ist die erwartete Absorptionszeit $k_i = EE_i [T]$ gesucht. \
   Offensichtlich ist $k_0 = 0$ und $k_M = 0$. Aus Satz 12 folgt hier
   $
     (star) quad k_i = 1 + (1 - p) k_(i - 1) + p k_(i + 1)
@@ -1149,7 +1152,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
 
   Wegen $k_M = 0$ folgt aus dieser Gleichung (durch einsetzen)
   $k_1 = M - 1$ und somit
-  $ E [T | X_0 = j] = k_j = j (M - j), j = 0, ..., M $
+  $ EE [T | X_0 = j] = k_j = j (M - j), j = 0, ..., M $
 
   Sei nun $p != 1 / 2$. \
   In diesem Fall lässt sich zeigen, dass $k_i$ als Lösung von $(star)$
@@ -1161,7 +1164,7 @@ $P(X = oo) > 0$ auch $E [X] = oo$.
   folgt $ 0 & = alpha + beta\
   0 & = frac(M, 1 - 2 p) + alpha + beta dot (frac(1 - p, p))^M\
   => alpha & = - beta = frac(- frac(M, 1 - 2 p), 1 - (frac(1 - p, p))^M)\
-  => E [T | X_0 = i] & = frac(i, 1 - 2 p) - frac(M, 1 - 2 p) dot frac(1 - (frac(1 - p, p))^i, 1 - (frac(1 - p, p))^M), i = 0, ..., M $
+  => EE [T | X_0 = i] & = frac(i, 1 - 2 p) - frac(M, 1 - 2 p) dot frac(1 - (frac(1 - p, p))^i, 1 - (frac(1 - p, p))^M), i = 0, ..., M $
 
 ]
 == Konvergenzsätze
@@ -1465,8 +1468,8 @@ $ 1 / n sum_(k = 0)^(n - 1) a_k = a, $ also hier
 $ lim_(n -> oo) 1 / n sum_(k = 0)^(n - 1) P_(i j)^k = pi_j $ und dahier ist
 $
   1 / n sum_(k = 0)^(n - 1) P_(i j)^k & = 1 / n sum_(k = 0)^(n - 1) P(X_k = j | X_0 = i)\
-  & = 1 / n sum_(k = 0)^(n - 1) E [bold("1")_({ X_k = j }) | X_0 = i]\
-  & = E [1 / n sum_(k = 0)^(n - 1) bold("1")_({ X_k = j }) | X_0 = i]
+  & = 1 / n sum_(k = 0)^(n - 1) EE [bold("1")_({ X_k = j }) | X_0 = i]\
+  & = EE [1 / n sum_(k = 0)^(n - 1) bold("1")_({ X_k = j }) | X_0 = i]
 $
 
 Das heißt $pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovkette in Zustand j verbringt.
@@ -1515,11 +1518,11 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   - Ist $j$ rekurrent, dann gilt für alle $i in S$
     $ P(N_j = oo | X_0 = i) = f_(i j), P(N_j = 0 | X_0 = i) = 1 - f_(i j) $
     und insbesondere
-    $ P(N_j = oo | X_0 = j) = f_(j j) = 1 "und" E [N_j | X_0 = j] = oo $
+    $ P(N_j = oo | X_0 = j) = f_(j j) = 1 "und" EE [N_j | X_0 = j] = oo $
 
   - Ist $j$ transient, dann gilt für alle $i in S$
     $
-      P(N_j < oo | X_0 = i) = 1 "und" E [N_j | X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo
+      P(N_j < oo | X_0 = i) = 1 "und" EE [N_j | X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo
     $
 ] <thm:recurrence_transience>
 #proof(title: [Beweis @thm:recurrence_transience])[
@@ -1535,8 +1538,8 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   $
     P(1 <= sigma_j < oo | X_0 = i) & = sum_(n = 1)^oo P(sigma_j = n | X_0 = i)\
     & = (1 - f j j) sum_(n = 1)^oo P_(i j)^n\
-    & = (1 - f_(j j)) sum_(n = 1)^oo E [bold("1")_(X_n = j) | X_0 = i]\
-    & = (1 - f_(j j)) E [N_j | X_0 = i]
+    & = (1 - f_(j j)) sum_(n = 1)^oo EE [bold("1")_(X_n = j) | X_0 = i]\
+    & = (1 - f_(j j)) EE [N_j | X_0 = i]
   $
 
   - Sei $j$ rekurrent, also $f_(j j) = 1$.\
@@ -1547,20 +1550,20 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
     $P(N_j = oo | X_0 = i) = f_(i j)$.
 
   - Sei $j$ transient, also $f_(j j) < 1$.
-    $ (1 - f_(j j)) E [N_j | X_0 = i] = P(1 <= sigma_j < oo | X_0 = i) <= 1 $
-    $=> E [N_j | X_0 = i] < oo$ und daher ist
+    $ (1 - f_(j j)) EE [N_j | X_0 = i] = P(1 <= sigma_j < oo | X_0 = i) <= 1 $
+    $=> EE [N_j | X_0 = i] < oo$ und daher ist
     $P(N_j < oo | X_0 = i) = 1$.
     $
       => P(1 <= sigma_j < oo | X_0 = i) & = P(1 <= sigma_j)\
       & = P(tau_j < oo | X_0 = i)\
       & = f_(i j)
     $
-    $=> E [N_j | X_0 = i] = frac(f_(i j), 1 - f_j j)$.
+    $=> EE [N_j | X_0 = i] = frac(f_(i j), 1 - f_j j)$.
 ]
 
 #remark(title: [Bemerkung zu @thm:recurrence_transience])[
 
-  - Wegen $E [N_j | X_0 = j] = sum_(n = 1)^oo P_(j j)^n$ liefert der Satz ein einfacheres Rekurrenzkriterium
+  - Wegen $EE [N_j | X_0 = j] = sum_(n = 1)^oo P_(j j)^n$ liefert der Satz ein einfacheres Rekurrenzkriterium
     $ j "ist rekurrent" <=> sum_(n = 1)^oo P_(j j)^n = oo $
 
   - Im Allgemeinen kann eine Markovkette sowohl rekurrente als auch transiente Zustände haben.\
@@ -1575,7 +1578,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   - Ist $j$ transient, dann gilt
     $lim_(n -> oo) P_(i j)^n = 0 quad forall quad i in S$, denn
     $
-      sum_(n = 1)^oo P_(i j)^n = E [N_j | X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo
+      sum_(n = 1)^oo P_(i j)^n = EE [N_j | X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo
     $
 
   - Jede Markovkette mit endlichem Zustandsraum $S = { 1, ..., s }$ hat mindestens einen rekurrenten Zustand, denn sonst
@@ -1584,7 +1587,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
       1 = lim_(n -> oo) sum_(j = 1)^s P_(i j)^n = sum_(j = 1)^s lim_(n -> oo) P_(i j)^n = 0 "Widerspruch!"
     $
 
-  - Jede irreduzible Markovkette mit endlichem Zustandsraum ist rekurrent. Außerdem gilt für solche Markovketten $ E [tau_j | X_0 = i] < oo $
+  - Jede irreduzible Markovkette mit endlichem Zustandsraum ist rekurrent. Außerdem gilt für solche Markovketten $ EE [tau_j | X_0 = i] < oo $
     und daher ist
     $ P(N_j = oo | X_0 = i) = f_(i j) = 1 quad forall quad i, j in S $
 ]
@@ -1613,7 +1616,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   $=>$ für $p = 1 / 2$ ist die einfache Irrfahrt rekurrent.
 
 ]
-Ein Zustand $j$ heißt positiv rekurrent, falls $E_j [T_j] < oo$ und er heißt nullrekurrent, falls $E_j [T_j] = oo$. Ist
+Ein Zustand $j$ heißt positiv rekurrent, falls $EE_j [T_j] < oo$ und er heißt nullrekurrent, falls $E_j [T_j] = oo$. Ist
 der Zustandsraum der Markovkette endlich, folgt aus Irreduzibilität bereits positive Rekurrenz und die Existenz einer
 eindeutigen stationären Verteilung. Die Konvergenz zu einer eindeutigen stationären Verteilung (unabhängig von der
 Anfangsverteilung) hingegen basiert (s. @thm:stationary_markov ) darauf, dass mindestens ein Zustand aperiodisch ist.
@@ -1623,7 +1626,7 @@ Anfangsverteilung) hingegen basiert (s. @thm:stationary_markov ) darauf, dass mi
 #definition[
   Eine Erneuerung ist ein Ereignis, das zu zufälligen Zeitpunkten auftritt. Ein Erneuerungsprozess ist ein stochastischer
   Prozess, der die Anzahl der Erneuerungen bis zu einem Zeitpunkt $t$ beschreibt. Seien
-  $Y_1, Y_2, ...$ i.i.d die Wartezeiten, also die Zeiten zwischen aufeinanderfolgenden Erneuerungen, mit $E [Y_i] = mu quad in (0, oo)$
+  $Y_1, Y_2, ...$ i.i.d die Wartezeiten, also die Zeiten zwischen aufeinanderfolgenden Erneuerungen, mit $EE [Y_i] = mu quad in (0, oo)$
   und $V a r [Y_i] = sigma^2$. Die Zeitpunkte der Erneuerungen seien definiert als $ T_n = Y_1 + Y_2 +... + Y_n $ Sei $N (t)$ die
   Anzahl der Erneuerungen bis zu einem Zeitpunkt $t$:
   $ N (t) = m a x { n in NN_0 : T_n <= t } $
@@ -1645,11 +1648,11 @@ $N (t^(\*)) = M$.Das wiederum impliziert
 $T_(M + 1) > t quad forall t > t^(\*)$. Das wiederum impliziert
 $ T_(M + 1) = overbrace(Y_1 + Y_2 + Y_M, = t^(\*) < oo) + Y_(M + 1) = oo $
 und damit $Y_(M + 1) = oo$. Das wäre ein Widerspruch, da dies
-$P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist.
+$P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall ist.
 
 #theorem[
 
-  Sei $0 < mu = E [Y_1] < oo$. Mit Wahrscheinlichkeit 1 gilt
+  Sei $0 < mu = EE [Y_1] < oo$. Mit Wahrscheinlichkeit 1 gilt
   $ lim_(t -> oo) frac(N (t), t) = 1 / mu $
 ] <thm:renewal_mean>
 #proof(title: [Beweis @thm:renewal_mean])[
@@ -1688,21 +1691,21 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist
   $ mu approx t / "Anzahl Meldungen bis Zeit t" $ berechnet werden. \
   Nun erhalte die Versicherung zu den Zeiten $T_1, T_2, ...$
   Schadensforderungen in Höhe von $X_1, X_2, ...$ i.i.d mit
-  $E X_i < oo .$. Über die Gesamte Zeit häufen sich also
+  $EE X_i < oo .$. Über die Gesamte Zeit häufen sich also
   $ X (t) = sum_(i = 1)^(N (t)) X_i $ an. Berechne
   $lim_(t -> oo) frac(X (t), t)$. \
-  Da gilt $ lim_(t -> oo) frac(N (t), t) = frac(1, E [Y_1]) $ und
-  $ lim_(n -> oo) 1 / n sum_(i = 1)^n X_i = E [X_i] $ folgt mit
+  Da gilt $ lim_(t -> oo) frac(N (t), t) = frac(1, EE [Y_1]) $ und
+  $ lim_(n -> oo) 1 / n sum_(i = 1)^n X_i = EE [X_i] $ folgt mit
   $lim_(t -> oo) N (t) = oo$
-  $ => lim_(n -> oo) frac(1, N (t)) sum_(i = 1)^(N (t)) X_i = E [X_i] $
+  $ => lim_(n -> oo) frac(1, N (t)) sum_(i = 1)^(N (t)) X_i = EE [X_i] $
   Mittels @thm:renewal_mean erhalten wir
   $
-    lim_(t -> oo) frac(X (t), t) = lim_(t -> oo) (frac(1, N (t)) sum_(i = 1)^(N (t))) frac(N (t), t) = frac(E [X_1], E [Y_1])
+    lim_(t -> oo) frac(X (t), t) = lim_(t -> oo) (frac(1, N (t)) sum_(i = 1)^(N (t))) frac(N (t), t) = frac(EE [X_1], EE [Y_1])
   $
 
 ]
 #theorem[
-  Sei $mu := E [Y_1]$, $sigma^2 := V a r [Y_1]$ mit $0 < mu < oo$ und
+  Sei $mu := EE [Y_1]$, $sigma^2 := V a r [Y_1]$ mit $0 < mu < oo$ und
   $0 < sigma < oo$. \
   $=>$ Für $t -> oo$ ist $N (t)$ asymptotisch normalverteilt mit Parametern
   $ t / mu "und" frac(t sigma^2, mu^3), $ das heißt
@@ -1744,7 +1747,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $E [Y] < oo$ nicht der Fall ist
 #definition[
 
   Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
-  $lambda > 0$ ($X tilde.op E X P(lambda)$), falls $X$ die Dichte
+  $lambda > 0$ ($X tilde.op EE X P(lambda)$), falls $X$ die Dichte
   $ f (x) = cases(lambda e^(- lambda x) & "falls" x > 0, 0 & "sonst") $
   hat.]
 
