@@ -80,6 +80,12 @@
   #text(1.4em)[#semester]
 ]
 
+#set par(
+  justify: true,
+  leading: 0.5em,
+)
+
+
 #pagebreak()
 #outline()
 #pagebreak()
