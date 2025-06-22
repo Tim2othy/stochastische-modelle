@@ -1,0 +1,54 @@
+on: push
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        file: [ stomo_skript ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: fontist/setup-fontist@v2
+      - run: |
+          fontist install "Fira Sans"
+          fontist install "Libertinus"
+          fontist install "Fira Code"
+          fontist install "Cambria Math"
+      - uses: typst-community/setup-typst@v4
+        with:
+          typst-version: ^0.13.1
+
+      - name: Compile ${{ matrix.file }}.typ
+        run: |
+          typst compile "${{ matrix.file }}.typ" "${{ matrix.file }}.pdf" \
+            --font-path ~/.fontist/fonts
+
+      - name: Upload ${{ matrix.file }}.pdf
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.file }}
+          path: "${{ matrix.file }}.pdf"
+
+  release:
+    needs: render
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all PDFs
+        uses: actions/download-artifact@v4
+        with:
+          path: "pdf"
+          merge-multiple: true  # Otherwise, we'd get multiple dirs under the current path
+      - name: Get timestamp
+        id: timestamp
+        run: echo "timestamp=$(date +'%Y-%m-%d-%H.%M')" >> $GITHUB_OUTPUT
+      - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ steps.timestamp.outputs.timestamp }}"
+          gh release create "v$VERSION" \
+            --title "PDFs rendered on $VERSION" \
+            --notes "Rendered on $(date +'%Y-%m-%d %H:%M:%S') via [github-actions](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})." \
+            pdf/*.pdf
