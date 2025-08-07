@@ -207,9 +207,13 @@ $
 $
 Die Verteilungsfunktion $F = F_X$ der Zufallsvariablen $X$ ist
 definiert durch $F (x) = P(X in x)$ mit $x in RR$ und
-$ P ( X in (a, b ]) = P(a < X <= b) = F (b) - F (a) "für alle" a < b . $
+$
+  P ( X in (a, b ]) = P(a < X <= b) = F (b) - F (a) "für alle" a < b.
+$
 Zudem gilt
-$ P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon -> 0) F (a - epsilon) . $
+$
+  P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon -> 0) F (a - epsilon).
+$
 Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $epsilon_1 ⊃ epsilon_2 ⊃ ... ⊃ 0$ und $lim_(n -> oo) epsilon_n = 0$,
 dann gilt für die Ereignisse
 $A_n := { a - epsilon_n < X < a }$ $A_1 ⊃ A_2 ⊃ ...$ und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemäß @lma:lim-sets (b)
@@ -227,7 +231,9 @@ Eine Zufallsvariable heißt diskret, falls ...
 - ... für $A in RR$ $P(X in A) = sum_(X in A) f (x)$ gilt.
 
 Eine Zufallsvariable heißt stetig, falls es eine nicht negative Funktion $f$ gibt, sodass
-$ P(a <= X <= b) = integral_a^b f (x) thin d x "für alle" a < b $
+$
+  P(a <= X <= b) = integral_a^b f (x) thin d x "für alle" a < b
+$
 $f$ heißt Dichte von $X$. Die Verteilungsfunktion ist dann
 $
   F (x) = integral_(- oo)^x f (t) thin d t
@@ -238,9 +244,13 @@ $
   F (x_1, ..., x_n) = P(X_1 <= x_1, ..., X_n <= x_n) "für alle" x_1, ..., x_n in RR
 $
 Für die Randverteilungsfunktion $F_(X_1), ..., F_(X_n)$ gilt
-$ F_(X_i) (x_i) = lim_(x_j -> oo) F (x_1, ..., x_n) "für" i != j $
+$
+  F_(X_i) (x_i) = lim_(x_j -> oo) F (x_1, ..., x_n) "für" i != j
+$
 Sind $X_1, ..., X_n$ diskrete Zufallsvariablen, so ist ihre gemeinsame Wahrscheinlichkeitsfunktion gegeben durch
-$ f (x_1, ..., x_n) = P(X_1 = x_1, ..., X_n = x_n) . $
+$
+  f (x_1, ..., x_n) = P(X_1 = x_1, ..., X_n = x_n).
+$
 $X_1, ..., X_n$ sind gemeinsam stetig verteilt, falls es eine gemeinsame Dichte $f (x_1, ..., x_n) >= 0$ gibt, sodass
 $
   F (x_1, ..., x_n) = integral_(- oo)^(x_1) ... integral_(- oo)^(x_n) f (t_1, ..., t_n) thin d t_n ... thin d t_1 "für alle" x_1, ..., x_n in RR
@@ -258,7 +268,9 @@ $
   f_(X_i) = integral_(- oo)^oo... integral_(- oo)^oo f (x_1, ..., x_n) thin d x_1... thin d x_(i - 1) thin d x_(i + 1)... thin d x_n
 $
 Ist zum Beispiel $f$ eine gemeinsame Dichte von $X$ und $Y$, dann gilt
-$ P(X < Y) = integral_(- oo)^oo integral_x^oo f (x, y) thin d y thin d x $
+$
+  P(X < Y) = integral_(- oo)^oo integral_x^oo f (x, y) thin d y thin d x
+$
 und
 $
   f_Y (y) = integral_(- oo)^oo f (x, y) d x .
@@ -330,7 +342,9 @@ Es gilt
 == Unabhängigkeit
 
 Ereignisse $A_1, A_2, ...$ heißen unabhängig, falls für jede endliche Auswahl von verschiedenen Indizes $i_1, ..., i_n$ gilt
-$ P(A_(i_1) ∩... ∩ A_(i_n)) = P(A_(i_1)... P(A_(i_n))) $
+$
+  P(A_(i_1) ∩... ∩ A_(i_n)) = P(A_(i_1)... P(A_(i_n)))
+$
 Sind $A_1, A_2, ...$ unabhängige Ereignisse und ist für jedes i
 $B_i = A_i$ oder $B_i = A_i^C$, dann sind auch $B_1, B_2, ...$
 unabhängig. \
@@ -406,9 +420,13 @@ $
 
 Für diskrete Zufallsvariablen $X$ und $Y$ ist die bedingte Wahrscheinlichkeitsfunktion $f_(X | Y) (x | y)$ ($X$,
 gegeben $Y = y$) definiert durch
-$ f_(X | Y) = P(X = x | Y = y), "falls" P(Y = y) > 0. $
+$
+  f_(X | Y) = P(X = x | Y = y), "falls" P(Y = y) > 0.
+$
 Nach dem Satz der totalen Wahrscheinlichkeit ist dann
-$ P(X = x) = sum_(Y : P(Y = y) > 0) f_(X | Y) (x | y) P(Y = y). $
+$
+  P(X = x) = sum_(Y : P(Y = y) > 0) f_(X | Y) (x | y) P(Y = y).
+$
 
 #example[
   $X$ und $Y$ seien diskrete Zufallsvariablen mit Wahrscheinlichkeitsfunktionen $f_X$ und $f_Y$. Für die
@@ -428,7 +446,9 @@ Diese Funktion heißt Faltung von $f_X$ und $f_Y$. \
 Analog ist für unabhängige stetige Zufallsvariablen $X$ und $Y$ mit zugehörigen Dichten $f_X (x)$ und $f_Y (y)$ die
 Dichte von $X + Y$
 gegeben durch die Faltung
-$ f_(X + Y) (z) = integral_(- oo)^oo f_X (z - y) f_Y (y) thin d y, $
+$
+  f_(X + Y) (z) = integral_(- oo)^oo f_X (z - y) f_Y (y) thin d y,
+$
 denn für alle $t in RR$ ist
 $
   P(X + Y + t) = integral_(- oo)^oo integral_(- y)^(t - y) f_X (x) f_Y (y) thin d x thin d y =
@@ -439,7 +459,9 @@ $
 Seien $X$ und $Y$ diskrete Zufallsvariablen und gilt
 $g : RR -> RR$. Der bedingte Erwartungswert von $g (X)$
 gegeben $Y = y$ ist
-$ EE [g (X) | Y = y] = sum_X g (x) f_(X | Y) (x | y), "falls" P(Y = y) > 0 $
+$
+  EE [g (X) | Y = y] = sum_X g (x) f_(X | Y) (x | y), "falls" P(Y = y) > 0
+$
 Zudem gilt
 $
   EE [g (X)] = sum_(Y : P(Y = y) > 0) EE [g (X) | Y = y] P(Y = y),
@@ -861,7 +883,9 @@ zu einem beliebigen Zustand $k$ gehen und dann von $k$ in $n$ Schritten zu $j$.
 ]
 Die $n$-Schritt Übergangsmatrix $Pi^((n))$ ist die $n$-te Potenz der Übergangsmatrix $Pi^((1))$. \
 Somit besagt der Satz von Chapman-Kolmogorow, dass
-$ Pi^(m + n) = Pi^m Pi^n $
+$
+  Pi^(m + n) = Pi^m Pi^n
+$
 Alternativ kann auch für einen Start bei
 $X_n = i$ mit korrespondierender Verteilung, welche dem Zeilenvektor
 $
@@ -943,7 +967,9 @@ Zeitpunkt zu berechnen:
 
 Ziel: Berechne für jeden Anfangszustand $i$ die Wahrscheinlichkeit, dass
 $A$ in endlicher Zeit erreicht wird.
-$ P(T < oo | X_0 = i) = P(⋃_(n = 0)^oo { X_n in A } | X_0 = i) = p_i (T < oo) $
+$
+  P(T < oo | X_0 = i) = P(⋃_(n = 0)^oo { X_n in A } | X_0 = i) = p_i (T < oo)
+$
 Ein Zustand $z in S$ heißt absorbierend, falls $p_(z z) = 1$. In dem Spezialfall, dass $A$ nur aus absorbierenden
 Zuständen besteht, heißt
 $p_i (T < oo)$ Absorptionswahrscheinlichkeit bei Start in $i in S$ und
@@ -1670,7 +1696,9 @@ mit $p_(i j)^n > 0$.
 Positivität: \
 Es existiert ein $i_0 in S$ mit $pi_(i_0) > 0$. Für jedes $j in S$
 existiert $n in NN_0$ mit $P_(i_0 j)^n$ und daher
-$ pi_j = sum_(i in S) pi_i p_(i j)^n >= pi_(i_0) p_(i_0 j)^n > 0 $
+$
+  pi_j = sum_(i in S) pi_i p_(i j)^n >= pi_(i_0) p_(i_0 j)^n > 0
+$
 Eindeutigkeit: \
 Sei $(tilde(pi)_i)_(i in S)$ eine weitere stationäre Verteilung. Sei
 $k in S$ so, dass$ tilde(pi)_k / pi_k <= tilde(pi)_i / pi_i quad forall i in S $
@@ -1683,10 +1711,14 @@ $
 $
 Wähle $n$
 mit $P_(i k)^n > 0$
-$ => tilde(pi)_i = tilde(pi)_k / pi_k pi_i, $
+$
+  => tilde(pi)_i = tilde(pi)_k / pi_k pi_i,
+$
 d.h. $(tilde(pi)_i)$ ist proportional zu $(pi_i)$. Und da
 $sum tilde(pi)_i = sum pi_i$
-$ => tilde(pi)_i = pi_i quad forall quad i in S $
+$
+  => tilde(pi)_i = pi_i quad forall quad i in S
+$
 
 #theorem[
 
@@ -1724,7 +1756,9 @@ $ => tilde(pi)_i = pi_i quad forall quad i in S $
 
 #strong[Interpretation der Grenzverteilung] \
 Es gelte
-$ pi_j = lim_(n -> oo) P_(i j)^n = lim_(n -> oo) P(X_n = j | X_0 = i) $
+$
+  pi_j = lim_(n -> oo) P_(i j)^n = lim_(n -> oo) P(X_n = j | X_0 = i)
+$
 Ist $(a_n)_(n = 1)^oo$ eine Folge reeller Zahlen mit
 $lim_(n -> oo) a_n = a$, dann gilt auch
 $
@@ -1947,7 +1981,9 @@ In Worten: $N (t)$ ist die maximale Anzahl an Erneuerungen, deren
 Gesamtdauer $T_n$ nicht über
 $t$ hinausgeht. \
 Für jeden Zeitpunkt $t$ gilt
-$ T_(N (t)) <= t < T_(N (t) + 1) quad (star) $
+$
+  T_(N (t)) <= t < T_(N (t) + 1) quad (star)
+$
 
 Nach dem starken Gesetz der großen Zahlen gilt mit Wahrscheinlichkeit 1, dass
 $
@@ -1961,7 +1997,9 @@ $
 Um zu zeigen, dass dies gilt, sei anzunehmen, dass $N (t) <= M quad forall t$ mit
 $N (t^*) = M$.Das wiederum impliziert
 $T_(M + 1) > t quad forall t > t^*$. Das wiederum impliziert
-$ T_(M + 1) = overbrace(Y_1 + Y_2 + Y_M, = t^* < oo) + Y_(M + 1) = oo $
+$
+  T_(M + 1) = overbrace(Y_1 + Y_2 + Y_M, = t^* < oo) + Y_(M + 1) = oo
+$
 und damit $Y_(M + 1) = oo$. Das wäre ein Widerspruch, da dies
 $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall ist.
 
