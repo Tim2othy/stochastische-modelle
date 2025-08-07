@@ -2,7 +2,6 @@
 #import cosmos.clouds: *
 #import "settings.typ": make-frame, make-frame-named-example
 #show: show-theorion
-//#show math.equation: set text(font: "Cambria Math")
 
 #let title = [Stochastische Modelle]
 #let subtitle = [Vorlesung]
@@ -66,7 +65,8 @@
   render: render-fn.with(fill: blue.lighten(85%)),
 )
 // Normal Settings
-#set text(font: "New Computer Modern", lang: "DE", size: 12pt)
+#set text(font: "ETbookOT", lang: "DE", size: 12pt)
+#show math.equation: set text(font: "Cambria Math")
 #set heading(numbering: "1.1")
 #set enum(numbering: "(a)")
 #set page(margin: (x: 2.5cm, y: 3cm), numbering: "1")
