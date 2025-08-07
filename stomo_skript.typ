@@ -146,8 +146,8 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 
     Mit der $sigma$-Additivität ist dann
     $
-      P(A) &= P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n -> oo) sum_(i = 1)^n P(B_k) = lim_(n -> oo) P(⋃_(k = 1)^n B_k) \
-      &= lim_(n -> oo) P(A_n).
+      P(A) & = P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n -> oo) sum_(i = 1)^n P(B_k) = lim_(n -> oo) P(⋃_(k = 1)^n B_k) \
+      & = lim_(n -> oo) P(A_n).
     $
 
   + lässt sich folgendermaßen zeigen: \
@@ -163,16 +163,16 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 
     Mit der $sigma$-Additivität ist dann
     $
-      P(⋃_(n = 1)^oo A_n^C) &= P(A^C) = P(⋃_(k = 1)^oo B_k) \
-      &= sum_(k = 1)^oo P(B_k) \
-      &= lim_(n -> oo) sum_(i = 1)^n P(B_k) lim_(n -> oo) P(⋃_(k = 1)^n B_k) \
-      &= lim_(n -> oo) P(A_n^C)
+      P(⋃_(n = 1)^oo A_n^C) & = P(A^C) = P(⋃_(k = 1)^oo B_k) \
+      & = sum_(k = 1)^oo P(B_k) \
+      & = lim_(n -> oo) sum_(i = 1)^n P(B_k) lim_(n -> oo) P(⋃_(k = 1)^n B_k) \
+      & = lim_(n -> oo) P(A_n^C)
     $
     und folglich
     $
-      lim_(n -> oo) P(A_n) &= 1 - lim_(n -> oo) P(A_n^C) \
-      &= 1 - P(⋃ n = 1^oo A_n^C) \
-      &= 1 - P([⋂_(n = 1)^oo A_n]^C) = P(⋂_(n = 1)^oo A_n) = P(A)
+      lim_(n -> oo) P(A_n) & = 1 - lim_(n -> oo) P(A_n^C) \
+      & = 1 - P(⋃ n = 1^oo A_n^C) \
+      & = 1 - P([⋂_(n = 1)^oo A_n]^C) = P(⋂_(n = 1)^oo A_n) = P(A)
     $
 ]
 == Zufallsvariablen
@@ -202,9 +202,9 @@ Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $epsilon_1 ⊃ epsilon_2 
 dann gilt für die Ereignisse
 $A_n := { a - epsilon_n < X < a }$ $A_1 ⊃ A_2 ⊃ ...$ und $⋂_(n = 1)^oo A_n = { X = a } = A$ gemäß @lma:lim-sets (b)
 $
-  P(Y = a) &= P(⋂_(n = 1)^oo A_n) = P(A) = lim_(n -> oo) P(A_n) \
-  &= lim_(n -> oo) P(a - epsilon_n < X <= a) \
-  &= F (a) - lim_(n -> oo) F (a - epsilon_n).
+  P(Y = a) & = P(⋂_(n = 1)^oo A_n) = P(A) = lim_(n -> oo) P(A_n) \
+  & = lim_(n -> oo) P(a - epsilon_n < X <= a) \
+  & = F (a) - lim_(n -> oo) F (a - epsilon_n).
 $
 Eine Zufallsvariable heißt diskret, falls ...
 
@@ -356,8 +356,8 @@ Für $A, B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A ge
   $A_i ∩ A_j = nothing$ für alle $i != j$ und
   $⋃_i A_i = Omega$, dann gilt für jedes $A in Omega$
   $
-    P(A) &= sum_i P(A ∩ A_i) \
-    &= sum_(i : P(A_i) > 0) P(A | A_i) P(A_i) "(Satz der totalen Wahrscheinlichkeit)"
+    P(A) & = sum_i P(A ∩ A_i) \
+    & = sum_(i : P(A_i) > 0) P(A | A_i) P(A_i) "(Satz der totalen Wahrscheinlichkeit)"
   $
 
 - Für beliebige Ereignisse $A_1, ... A_n$ gilt
@@ -624,6 +624,7 @@ $
 $
 
 #theorem[
+
   Für jede Folge von Zuständen $i_0, ..., i_n in S$ gilt:
   $ P(X_0 = i_0, ..., X_n = i_n) = p_(i_0 i_1)... p_(i_(n - 1) i_n) $
   Insbesondere ist für jedes $n$ die Verteilung von $X_0, ..., X_n$
