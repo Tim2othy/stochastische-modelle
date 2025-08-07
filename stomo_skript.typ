@@ -391,7 +391,7 @@ $X_1, ..., X_n$.
 
 Für $A, B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A gegeben B
 $
-  P(A | B) = frac(P(A ∩ B), P(B))
+  P(A | B) = P(A ∩ B) / P(B)
 $
 
 - Bei festem $B in Omega$ mit $P(B) > 0$ ist $P(A| B)$ ein Wahrscheinlichkeitsmaß: $P(Omega | B) = 1$ und für
@@ -774,11 +774,9 @@ Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Ve
   mit $P(X_0 = i_0, ..., X_(n - 1) = i_(n - 1), X_n = i) > 0$ gilt
   $
       & P((X_(n + 1), ..., X_(n + m)) = (j_1, ..., j_m) | (X_0, ..., X_(n - 1)) = (i_0, ..., i_(n - 1)), X_n = i) \
-    = & frac(
-          P((X_(n + 1), ..., X_(n + m)) = (j_1, ..., j_m), (X_0, ..., X_(n - 1)) = (i_0, ..., i_(n - 1)), X_n = i),
-          P((X_0, ..., X_(n - 1)) = (i_0, ..., i_(n - 1)), X_n = i),
-        ) \
-    = & frac(p_(i_0) p_(i_0 i_1)... p_(i_(n - 1) i) p_(i j_1)... p_(j_(m - 1) j_m), p_(i_0) p_(i_0 i_1)... p_(i_(n - 1) i)) \
+    = & P((X_(n + 1), ..., X_(n + m)) = (j_1, ..., j_m), (X_0, ..., X_(n - 1)) = (i_0, ..., i_(n - 1)), X_n = i) /
+        (P((X_0, ..., X_(n - 1)) = (i_0, ..., i_(n - 1)), X_n = i) ) \
+    = & (p_(i_0) p_(i_0 i_1)... p_(i_(n - 1) i) p_(i j_1)... p_(j_(m - 1) j_m)) / (p_(i_0) p_(i_0 i_1)... p_(i_(n - 1) i)) \
     = & p_(i j_1) p_(j_1 j_2)... p_(j_(m - 1) j_m)
   $
 ]
@@ -859,9 +857,9 @@ $
   $
   Für $m, n >= 1$ und $P(X_0 = 1) > 0$ ist
   $
-    & p_(i j)^(m + n) = P(X_(m + n) = j | X_0 = i) \
+      & p_(i j)^(m + n) = P(X_(m + n) = j | X_0 = i) \
     = & sum_(k in S) P(X_(m + n) = j, X_m = k | X_0 = i) \
-    = & sum_(k in S) frac(P(X_(m + n) = j, X_m = k, X_0 = i), P(X_0 = i)) dot frac(P(X_m = k, X_0 = i), P(X_m = k, X_0 = i)) \
+    = & sum_(k in S) (P(X_(m + n) = j, X_m = k, X_0 = i) )/( P(X_0 = i)) dot (P(X_m = k, X_0 = i) )/( P(X_m = k, X_0 = i)) \
     = & sum_(k in S) P(X_(m + n) = j | X_m = k, X_0 = i) P(X_m = k | X_0 = i) \
     = & sum_(k in S) P(X_m = k | X_0 = i) P(X_(m + n) = j | X_m = k) \
     = & sum_(k in S) p_(i k)^m p_(k j)^n
@@ -1046,7 +1044,7 @@ Folgender Satz gilt für beliebige $A$: \
   einer Aufwärtsbewegung (also ab $i + 1$) und einer Abwärtsbewegung (also ab $i - 1$).
   $
                     h_i & = p h_(i + 1) + (1 - p) h_(i - 1) "für" i = 1, ..., M - 1 \
-    <=> h_(i + 1) - h_i & = frac(1 - p, p) (h_i - h_(i - 1))
+    <=> h_(i + 1) - h_i & = (1 - p)/ p (h_i - h_(i - 1))
   $
   Falls es sich um ein faires Spiel handelt, also $p = 1 / 2$, dann ist
   $h_(i + 1) - h_i = h_i - h_(i - 1)$ für $i = 1, ..., M - 1$. Die Änderung in der Ruinwahrscheinlichkeit ist also
@@ -1070,7 +1068,7 @@ Folgender Satz gilt für beliebige $A$: \
     h_i = 1 - i / M
   $
   Sei nun
-  $p != 1 / 2$ und setze $Theta = frac(1 - p, p)$. Durch rekursives Einsetzen erhält man
+  $p != 1 / 2$ und setze $Theta = (1 - p)/ p$. Durch rekursives Einsetzen erhält man
   $
           h_2 - h_1 & = Theta (h_1 - h_0) = Theta (h_1 - 1) \
           h_3 - h_2 & = Theta (h_2 - h_1) = Theta^2 (h_1 - 1) \
@@ -1084,18 +1082,18 @@ Folgender Satz gilt für beliebige $A$: \
     <=> sum_(i = 0)^(j - 1) h_i - h_(i + 1) & = sum_(i = 0)^(j - 1) Theta^i (1 - h_1) \
                               <=> h_0 - h_j & = sum_(i = 0)^(j - 1) Theta^i (1 - h_1) \
                                 <=> 1 - h_j & = (1 - h_1) sum_(i = 0)^(j - 1) Theta^i \
-                                <=> 1 - h_j & = (1 - h_1) frac(1 - Theta^j, 1 - Theta) \
-                                    <=> h_j & = (h_1 - 1) frac(1 - Theta^j, 1 - Theta) + 1 "für" j = 1, ..., M
+                                <=> 1 - h_j & = (1 - h_1) (1 - Theta^j )/( 1 - Theta) \
+                                    <=> h_j & = (h_1 - 1) (1 - Theta^j )/( 1 - Theta) + 1 "für" j = 1, ..., M
   $
   Da diese Gleichung für alle $j$ gilt, gilt sie auch für $j = M$ und da
   $h_M = 0$ ist, ist
   $
-              0 & = (h_1 - 1) frac(1 - Theta^M, 1 - Theta) + 1 \
-    <=> 1 - h_1 & = frac(1 - Theta, 1 - Theta^M)
+              0 & = (h_1 - 1) (1 - Theta^M )/( 1 - Theta) + 1 \
+    <=> 1 - h_1 & = (1 - Theta)/( 1 - Theta^M)
   $
   Damit ist
   $
-    1 - h_j = frac(1 - Theta, 1 - Theta^M) dot frac(1 - Theta^j, 1 - Theta)
+    1 - h_j = (1 - Theta)/( 1 - Theta^M) dot (1 - Theta^j )/( 1 - Theta)
   $
   und folglich
   $
@@ -1122,7 +1120,7 @@ Folgender Satz gilt für beliebige $A$: \
   $
     h_i = p h_(i + 1) + (1 - p) h_(i - 1) "für" i = 1, 2, ...
   $
-  Mit $Theta = frac(1 - p, p)$ gilt somit (siehe Bsp. 9)
+  Mit $Theta = (1 - p)/ p$ gilt somit (siehe Bsp. 9)
   $
     h_(i + 1) - h_i = Theta (h_i - h_(i - 1)) "für" i = 1, 2, ...
   $
@@ -1234,7 +1232,7 @@ Folgender Satz gilt für beliebige $A$: \
   $x_1 in [Theta, 1]$. \
   Aus Satz 11 lässt sich nun folgern, dass die Komponentenweise kleinste Lösung gegeben ist bei $x_1 = Theta$ und damit
   $
-    h_i = 1 + (Theta - 1) frac(1 - Theta^i, 1 - Theta) = Theta^i = (frac(1 - p, p))^i
+    h_i = 1 + (Theta - 1) frac(1 - Theta^i, 1 - Theta) = Theta^i = ((1 - p)/ p)^i
   $
 
 ]
@@ -1371,15 +1369,15 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
   In diesem Fall lässt sich zeigen, dass $k_i$ als Lösung von $(star)$
   die Form
   $
-    k_i = frac(i, 1 - 2 p) + alpha + beta dot (frac(1 - p, p))^i "für" i = 0, ..., M
+    k_i = i /( 1 - 2 p) + alpha + beta dot ((1 - p)/ p)^i "für" i = 0, ..., M
   $
   haben muss für gewisse $alpha, beta in RR$. Mit $k_0 = k_m = 0$
   folgt
   $
-    0 & = alpha + beta \
-    0 & = frac(M, 1 - 2 p) + alpha + beta dot (frac(1 - p, p))^M \
-    => alpha & = - beta = frac(- frac(M, 1 - 2 p), 1 - (frac(1 - p, p))^M) \
-    => EE [T | X_0 = i] & = frac(i, 1 - 2 p) - frac(M, 1 - 2 p) dot frac(1 - (frac(1 - p, p))^i, 1 - (frac(1 - p, p))^M), i = 0, ..., M
+                      0 & = alpha + beta \
+                      0 & = frac(M, 1 - 2 p) + alpha + beta dot ((1-p)/p)^M \
+               => alpha & = - beta = frac(- frac(M, 1 - 2 p), 1 - ((1-p)/p)^M) \
+    => EE [T | X_0 = i] & = frac(i, 1 - 2 p) - M/ (1 - 2 p) frac(1 - ((1-p)/p)^i, 1 - ((1-p)/p)^M) , i = 0, ..., M
   $
 
 ]
@@ -1441,32 +1439,32 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
   $S = { 1, 2 }$ und Übergangsmatrix
   $Pi = mat((1 - a), a; b, (1 - b))$ ($a, b in (0, 1)$) Es gilt
   $
-    Pi^((n)) = frac(1, a + b) mat(b + (1 - a - b)^n a, a - (1 - a - b)^n a; b - (1 - a - b)^n b, b + (1 - a - b)^n b)
+    Pi^((n)) = 1 /( a + b) mat(b + (1 - a - b)^n a, a - (1 - a - b)^n a; b - (1 - a - b)^n b, b + (1 - a - b)^n b)
   $
   und da $lim_(n -> oo) (1 - a - b)^n = 0$ folgt
   $
-    lim_(n -> oo) Pi^((n)) = frac(1, a + b) mat(b, a; b, a)
+    lim_(n -> oo) Pi^((n)) = 1 /( a + b) mat(b, a; b, a)
   $
   Damit ist für $i in S$
   $
-    lim_(n -> oo) P_(i 1)^((n)) = frac(b, a + b)
+    lim_(n -> oo) P_(i 1)^((n)) = b/( a + b)
   $
   und
   $
-    lim_(n -> oo) P_(i 2)^((n)) = frac(a, a + b)
+    lim_(n -> oo) P_(i 2)^((n)) = a/( a + b)
   $
   Für jede Anfangsverteilung
   $mat(p_1, p_2) = (P(X_0 = 1), P(X_0 = 2))$ gilt
   $
     lim_(n -> oo) (P(X_n = 1), P(X_n = 2)) & = lim_(n -> oo) mat(p_1, p_2) Pi^n \
                                            & = frac(1, a + b) mat(p_1, 1 - p_1) mat(b, a; b, a) \
-                                           & = mat(f r a c b a + b, frac(a, a + b)) //TODO correct this
+                                           & = mat(b/ (a + b), a/ (a + b))
   $
   Die Grenzverteilung ist also unabhängig von der Anfangsverteilung. \
   Ist die Anfangsverteilung gleich der Grenzverteilung, also
-  $p_1 = frac(b, a + b)$ und $p_2 = frac(a, a + b)$, dann gilt
+  $p_1 = b /( a + b)$ und $p_2 = a / (a + b)$, dann gilt
   $
-    mat(p_1, p_2) Pi = frac(1, a + b) mat(b, a) mat(1 - a, a; b, 1 - b) = frac(1, a + b) mat(b, a) = mat(p_1, p_2)
+    mat(p_1, p_2) Pi = 1/(a + b) mat(b, a) mat(1 - a, a; b, 1 - b) = 1/(a + b) mat(b, a) = mat(p_1, p_2)
   $
   und daher $mat(p_1, p_2) Pi^n = mat(p_1, p_2)$.
 
@@ -1489,7 +1487,7 @@ exponentiell zur stationären Verteilung konvergiert. \
 #proof(title: [Beweis von @thm:convergence_markov])[
 
   Setze $M = vec(pi, dots.v, p i) in RR^(S times S)$ und
-  $Q : = frac(1, 1 - epsilon) (pi - epsilon M)$. $M$ und $Q$ sind positive stochastische Matrizen und
+  $Q : = 1 / (1 - epsilon) (pi - epsilon M)$. $M$ und $Q$ sind positive stochastische Matrizen und
   $
     pi = (1 - epsilon) Q + epsilon M
   $
@@ -2007,21 +2005,21 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
 
   Sei $0 < mu = EE [Y_1] < oo$. Mit Wahrscheinlichkeit 1 gilt
   $
-    lim_(t -> oo) frac(N (t), t) = 1 / mu
+    lim_(t -> oo) N(t)/ t) = 1 / mu
   $
 ] <thm:renewal_mean>
 #proof(title: [Beweis @thm:renewal_mean])[
 
   Mit $(star)$ und $(star star)$ folgt
   $
-    => frac(T_(N (t)), N (t)) <= frac(t, N (t)) < frac(T_(N (t) + 1), N (t) + 1) frac(N (t) + 1, N (t))
+    => frac(T_(N (t)), N (t)) <= t/N(t) < frac(T_(N (t) + 1), N (t) + 1) frac(N (t) + 1, N (t))
   $
   und
   $
-    => & lim_(t -> oo) frac(T_(N (t)), N (t)) = mu \
-       & lim_(t -> oo) frac(T_(N (t) + 1), N (t) + 1) = mu \
-       & lim_(t -> oo) frac(N (t) + 1, N (t)) = 1 \
-    => & lim_(t -> oo) frac(t, N (t)) = mu
+    => & lim_(t -> oo) T_(N (t)) / N(t) = mu \
+       & lim_(t -> oo) T_(N (t) + 1) / (N(t) + 1) = mu \
+       & lim_(t -> oo) (N (t) + 1) / N(t) = 1 \
+    => & lim_(t -> oo) t / N(t) = mu
   $
 ]
 #example[
@@ -2059,10 +2057,10 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
     X (t) = sum_(i = 1)^(N (t)) X_i
   $
   an. Berechne
-  $lim_(t -> oo) frac(X (t), t)$. \
+  $lim_(t -> oo) X(t)/t$. \
   Da gilt
   $
-    lim_(t -> oo) frac(N (t), t) = frac(1, EE [Y_1])
+    lim_(t -> oo) N(t)/t = 1/EE[Y_1]
   $
   und
   $
@@ -2075,7 +2073,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $
   Mittels @thm:renewal_mean erhalten wir
   $
-    lim_(t -> oo) frac(X (t), t) = lim_(t -> oo) (frac(1, N (t)) sum_(i = 1)^(N (t))) frac(N (t), t) = frac(EE [X_1], EE [Y_1])
+    lim_(t -> oo) frac(X (t), t) = lim_(t -> oo) (frac(1, N (t)) sum_(i = 1)^(N (t))) frac(N (t), t) = EE[X_1] / EE[Y_1]
   $
 
 ]
@@ -2163,7 +2161,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $=> { N (t) : t >= 0 }$ hat unabhängige Zuwächse und für
   $0 <= s < t$ gilt
   $
-    N (t) - N (s) tilde.op P O I (lambda (t - s)),
+    N (t) - N (s) tilde.op "POI"(lambda (t - s)),
   $
   $
     P(N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) "für") n = 0, 1, ...
@@ -2212,7 +2210,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $lambda > 0$. Berechne $P(N (1) = 1, N (3) = 5)$.
   $
     P(N (1) = 1, N (3) = 5) & = P(N (1) = 1, N (3) - N (1) = 4) \
-    & = P(overbrace(N (1) = 1, tilde.op P O I (lambda))) P(overbrace(N (3) - N (1) = 4, tilde.op P O I (2 lambda))) \
+    & = P(overbrace(N (1) = 1, tilde.op "POI"(lambda))) P(overbrace(N (3) - N (1) = 4, tilde.op "POI"(2 lambda))) \
     & = frac(e^(- lambda) lambda, 1 !) frac(e^(- 2 lambda) (2 lambda)^4, 4 !) \
     & = 2 / 3 e^(- 3 lambda) lambda^5
   $
