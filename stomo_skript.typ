@@ -651,8 +651,7 @@ $
   Was wäre die Wahrscheinlichkeit, dass $X_0 = 0$, $X_1 = 2$ und
   $X_3 = 4$? $ & P(X_0 = 0, X_1 = 2, X_2 = 2, X_3 = 4)\
   & = p_0 p_02 p_22 p_24\
-  & = 1 dot.op 1 / 5 dot.op 3 / 5 dot.op 1 / 5 = 3 / 125 $ Was wäre die Wahrscheinlichkeit, dass $X_1 >= 2$ und $X_2 <= X_1$?
-  \
+  & = 1 dot.op 1 / 5 dot.op 3 / 5 dot.op 1 / 5 = 3 / 125 $ Was wäre die Wahrscheinlichkeit, dass $X_1 >= 2$ und $X_2 <= X_1$? \
   Da es nicht möglich ist, dass $i_(n + 1) < i_n$, können wir auf 3 mögliche Pfade mit $X_1 = X_2 = 2$, $X_1 = X_2 = 3$ und $X_1 = X_2 = 4$
   schließen. $ & P(X_1 >= 2, X_2 <= X_1)\
   & = P(X_1 >= 2, X_1 = X_2)\
@@ -804,8 +803,7 @@ Zeitpunkt zu berechnen:
       0, 2, 1;
       1, 1, 1
     )
-  $ und Anfangsverteilung $p^((0)) = P(X_0 = i) = (1 / 4, 1 / 2, 1 / 4)$.
-  \
+  $ und Anfangsverteilung $p^((0)) = P(X_0 = i) = (1 / 4, 1 / 2, 1 / 4)$. \
   Berechne die bedingte Verteilung von $X_2$ gegeben $X_0 = 3$.
   $
     Pi^2 = Pi Pi = 1 / 9 mat(
@@ -981,8 +979,7 @@ Folgender Satz gilt für beliebige $A$:\
   Also muss $h_1 = 1$ sein.
   $ =>^((star)) h_(i + 1) - h_i = 0 "für" i = 0, 1, ... $
   $ => h_i = 1 "für alle" i = 0, 1, ..., "falls" p <= 1 / 2 $
-  Insbesondere ist auch bei einem fairen Spiel ($p = 1 / 2$) die Ruinwahrscheinlichkeit $h_i = 1$ für jedes Anfangskapital $i$.
-  \
+  Insbesondere ist auch bei einem fairen Spiel ($p = 1 / 2$) die Ruinwahrscheinlichkeit $h_i = 1$ für jedes Anfangskapital $i$. \
   Sei nun $p > 1 / 2$ (nicht-faires Spiel mit höherer Wahrscheinlichkeit Geld zu verlieren), also $Theta < 1$. Aus $(star)$ folgt
   durch Summation (wie in Bsp. 9)
   $
