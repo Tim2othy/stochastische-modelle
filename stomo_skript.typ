@@ -306,26 +306,26 @@ $
 $
 Die Varianz der Zufallsvariable $X$ ist
 $
-  V a r [X] = EE [(X - EE [X])^2] = EE [X^2] - EE [X]^2
+  "Var" [X] = EE [(X - EE [X])^2] = EE [X^2] - EE [X]^2
 $
 Die Kovarianz von Zufallsvariablen X und Y ist
 $
-  C o v [X, Y] = EE [(X - EE [X]) (Y - EE [Y])] = EE [X Y] - EE [X] EE [Y]
+  "Cov" [X, Y] = EE [(X - EE [X]) (Y - EE [Y])] = EE [X Y] - EE [X] EE [Y]
 $
 Es gilt
 #set enum(numbering: "1.")
 
 
-+ $V a r [a X + b] = a^2 V a r [X]$ für $a, b in RR$
++ $"Var" [a X + b] = a^2 "Var" [X]$ für $a, b in RR$
 
-+ $V a r [a X + b Y] = a^2 V a r [X] + b^2 V a r [Y] + 2 a b C o v [X, Y]$
++ $"Var" [a X + b Y] = a^2 "Var" [X] + b^2 "Var" [Y] + 2 a b "Cov" [X, Y]$
   oder allgemein
-  $V a r [sum X_i] = sum V a r [X_i] + 2 sum_(i < j) C o v [X_i, X_j]$
+  $"Var" [sum X_i] = sum "Var" [X_i] + 2 sum_(i < j) "Cov" [X_i, X_j]$
 
-+ $C o v [a X + b, c Y + d] = a c C o v [X, Y]$ für
++ $"Cov" [a X + b, c Y + d] = a c "Cov" [X, Y]$ für
   $a, b, c, d in RR$
 
-+ $C o v [sum_(i = 1)^n X_i, sum_(j = 1)^m Y_j] = sum_(i = 1)^n sum_(j = 1)^m C o v [X_i, Y_j]$
++ $"Cov" [sum_(i = 1)^n X_i, sum_(j = 1)^m Y_j] = sum_(i = 1)^n sum_(j = 1)^m "Cov" [X_i, Y_j]$
 
 == Unabhängigkeit
 
@@ -350,7 +350,7 @@ Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
 
 + $EE [product_(i = 1)^n X_i] = product_(i = 1)^n EE [X_i]$
 
-+ $"Cov"[X_i, X_j] = 0$ für alle $i != j ==> V a r [X_1, ..., X_n] = sum_(i = 1)^n V a r [X_i]$
++ $"Cov"[X_i, X_j] = 0$ für alle $i != j ==> "Var" [X_1, ..., X_n] = sum_(i = 1)^n "Var" [X_i]$
 
 + $h_1 (X_1, ..., X_(n_1)), h_2 (X_(n_1 + 1), ... X_(n_2)), ..., h_n (X_(n_(k - 1) + 1), ... X_(n_k))$
   sind unabhängige Zufallsvariablen, wobei $0 = n_0 < n_1 <... < n_k <= n$ und $h_i : RR^(n_i - n_(i - 1)) -> RR$
@@ -1925,7 +1925,7 @@ Anfangsverteilung) hingegen basiert (s. @thm:stationary_markov ) darauf, dass mi
   Eine Erneuerung ist ein Ereignis, das zu zufälligen Zeitpunkten auftritt. Ein Erneuerungsprozess ist ein stochastischer
   Prozess, der die Anzahl der Erneuerungen bis zu einem Zeitpunkt $t$ beschreibt. Seien
   $Y_1, Y_2, ...$ i.i.d die Wartezeiten, also die Zeiten zwischen aufeinanderfolgenden Erneuerungen, mit $EE [Y_i] = mu quad in (0, oo)$
-  und $V a r [Y_i] = sigma^2$. Die Zeitpunkte der Erneuerungen seien definiert als
+  und $"Var" [Y_i] = sigma^2$. Die Zeitpunkte der Erneuerungen seien definiert als
   $
     T_n = Y_1 + Y_2 +... + Y_n
   $
@@ -2035,7 +2035,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
 
 ]
 #theorem[
-  Sei $mu := EE [Y_1]$, $sigma^2 := V a r [Y_1]$ mit $0 < mu < oo$ und
+  Sei $mu := EE [Y_1]$, $sigma^2 := "Var" [Y_1]$ mit $0 < mu < oo$ und
   $0 < sigma < oo$. \
   $=>$ Für $t -> oo$ ist $N (t)$ asymptotisch normalverteilt mit Parametern
   $
