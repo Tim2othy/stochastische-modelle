@@ -605,21 +605,25 @@ $X_0 = i_0, ...$).
   kleiner sein als $i_n$. Ist $i_(n + 1) < i_n$, dann ist $Y_(n + 1)$ das Maximum und folglich auch
   $P(max (i_n, Y_(n + 1)) = i_(n + 1)) = P(Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1))$. Für den Fall, dass $i_(n + 1) = i_n$ ist,
   betrachten wir sowohl die Fälle, für die $Y_(n + 1) < i_n$ ist als auch den Fall
-  $Y_(n + 1) = i_n$. Daraus folgt
+  $Y_(n + 1) = i_n$.
+
+  Daraus folgt:
   $P(max (i_n, Y_(n + 1)) = i_(n + 1)) = P(Y_(n + 1) <= i_n) = sum_(k = 0)^n a_k$.
   $
-    P(max (i_n, Y_(n + 1)) = i_(n + 1)) = cases(
-      P(Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) & text(", falls ") i_(n + 1) > i_n,
-      P(Y_(n + 1) <= i_n) = sum_(k = o)^n a_k & text(", falls ") i_(n + 1) = i_n,
-      0 & text(", falls ") i_(n + 1) < i_n,
+    P(max (i_n, Y_(n + 1)) = i_(n + 1)) =
+    cases(
+      P(Y_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) & "falls" i_(n + 1) > i_n,
+      P(Y_(n + 1) <= i_n) = sum_(k = o)^n a_k & "falls" i_(n + 1) = i_n,
+      0 & "falls" i_(n + 1) < i_n,
     )
   $
   $=> { X_n : n in N_0 }$ ist eine Markovkette mit Zustandsraum $NN_0$ und Übergangsmatrix
   $
-    p_(i j) = cases(
-      a_j & text(", falls ") j > i,
-      sum_(k = 0)^i a_k & text(", falls ") j = i,
-      0 & text(", falls ") j < i,
+    p_(i j) =
+    cases(
+      a_j & "falls" j > i,
+      sum_(k = 0)^i a_k & "falls" j = i,
+      0 & "falls" j < i,
     )
   $
 ]
@@ -793,7 +797,7 @@ $n >= 0$, $P(X_m = i) > 0$. Diese Wahrscheinlichkeit hängt nicht von
 $m$ ab (Zeithomogenität). \
 Es gilt
 $
-  p_(i j)^0 = P(X_m = j | X_m = i) = , 1 & ", falls" i = j, 0 & ", falls" i != j)
+  p_(i j)^0 = P(X_m = j | X_m = i) = , 1 & "falls" i = j, 0 & "falls" i != j)
 $
 und
 $
@@ -826,7 +830,10 @@ $
 
   $
     p_(i j)^0 = sum_(k in S) p_(i k)^0 p_(k j)^0 =
-    cases(1 & ", falls" i = j, 0 & ", falls" i != j)
+    cases(
+      1 & "falls" i = j,
+      0 & "falls" i != j
+    )
   $
   Für $m, n >= 1$ und $P(X_0 = 1) > 0$ ist
   $
@@ -1545,8 +1552,8 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
   dann gilt
   $
     Pi^n = cases(
-      mat(1, 0; 0, 1) & "für" n "gerade",
-      mat(0, 1; 1, 0) & "für" n "ungerade",
+      mat(1, 0; 0, 1) & "falls" n "gerade",
+      mat(0, 1; 1, 0) & "falls" n "ungerade",
     )
   $
   $lim_(n -> oo) P_(i j)^n$ existiert also nicht! \
@@ -2136,7 +2143,11 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $B = { (s_1, ..., s_m) in RR^m : 0 < s_1 <... < s_m, abs({ j : t_(i - 1) < s_j <= t_i }) = n_i, i = 1, ..., k }$.
   $(T_1, ..., T_(m + 1))$ hat die Dichte
   $
-    f (s_1, ..., s_(m + 1)) = cases(lambda^(m + 1) e^(- lambda s_(m + 1)) & "falls" 0 < s_1 <... < s_(m + 1), 0 & "sonst")
+    f (s_1, ..., s_(m + 1)) =
+    cases(
+      lambda^(m + 1) e^(- lambda s_(m + 1)) & "falls" 0 < s_1 <... < s_(m + 1),
+      0 & "sonst"
+    )
   $
   $
     P(N (t_i) - N (t_(i - 1)) = n_i, i = 1, ..., k) & = integral_(B times (t_k, oo)) f (s_1, ..., s_(m + 1)) thin d (s_1, ..., S_(m + 1)) \
