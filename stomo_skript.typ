@@ -146,7 +146,8 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 
     Mit der $sigma$-Additivität ist dann
     $
-      P(A) &= P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n -> oo) sum_(i = 1)^n P(B_k) = lim_(n -> oo) P(⋃_(k = 1)^n B_k) \ &= lim_(n -> oo) P(A_n).
+      P(A) &= P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n -> oo) sum_(i = 1)^n P(B_k) = lim_(n -> oo) P(⋃_(k = 1)^n B_k) \
+      &= lim_(n -> oo) P(A_n).
     $
 
   + lässt sich folgendermaßen zeigen: \
@@ -169,7 +170,8 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
     $
     und folglich
     $
-      lim_(n -> oo) P(A_n) &= 1 - lim_(n -> oo) P(A_n^C) \ &= 1 - P(⋃ n = 1^oo A_n^C) \
+      lim_(n -> oo) P(A_n) &= 1 - lim_(n -> oo) P(A_n^C) \
+      &= 1 - P(⋃ n = 1^oo A_n^C) \
       &= 1 - P([⋂_(n = 1)^oo A_n]^C) = P(⋂_(n = 1)^oo A_n) = P(A)
     $
 ]
@@ -193,7 +195,7 @@ $
   P(X = a) = P({ omega in Omega : X (omega) = a }) .
 $ Die Verteilungsfunktion $F = F_X$ der Zufallsvariablen $X$ ist
 definiert durch $F (x) = P(X in x)$ mit $x in RR$ und
-$ P \( X in (a, b \]) = P(a < X <= b) = F (b) - F (a) "für alle" a < b . $
+$ P ( X in (a, b ]) = P(a < X <= b) = F (b) - F (a) "für alle" a < b . $
 Zudem gilt
 $ P(Y = a) = F (a) - F (b_(-)) = F (a) - lim_(epsilon -> 0) F (a - epsilon) . $
 Ist ${ epsilon_n }_(n = 1)^oo$ eine fallende Folge mit $epsilon_1 ⊃ epsilon_2 ⊃ ... ⊃ 0$ und $lim_(n -> oo) epsilon_n = 0$,
@@ -328,7 +330,8 @@ Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
 
 Für den Spezialfall diskreter Zufallsvariablen $X_1, ..., X_n$ gilt
 $
-  X_1, ..., X_n "unabhängig" <==> P(X_1 = x_1, ..., X_n = x_n) = P(X_1 = x_1)... P(X_n = x_n) \ "für alle" x_1, ..., x_n in RR.
+  X_1, ..., X_n "unabhängig" <==> P(X_1 = x_1, ..., X_n = x_n) = P(X_1 = x_1)... P(X_n = x_n) \
+  "für alle" x_1, ..., x_n in RR.
 $
 Sind $X_1, ..., X_n$ stetige Zufallsvariablen mit gemeinsamer Dichte f und
 $
@@ -442,7 +445,7 @@ $ EE [g (X)] = sum_(Y : P(Y = y) > 0) EE [g (X) | Y = y] P(Y = y) . $
 
   Ein stochastischer Prozess ist eine Familie von Zufallsvariablen $X_t$, wobei der Parameter $t$ eine Indexmenge $T$ durchläuft.
   Oft ist
-  $T in \[ o, oo \)$ oder $T = { 0, 1, 2, ... }$ und $t in T$ wird als Zeitpunkt interpretiert. \
+  $T in [ o, oo )$ oder $T = { 0, 1, 2, ... }$ und $t in T$ wird als Zeitpunkt interpretiert. \
   Der Zustandsraum eines stochastischen Prozesses ${ X_t : t in T }$ ist die Menge aller möglichen Werte der $X_t$. Man
   sagt der Prozess ist zur Zeit $t$ in Zustand $x$, falls $X_t = x$.
 ]
@@ -678,7 +681,8 @@ Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Ve
   $p_i$). \
   Sofern $P(X_0 = i) > 0$ können wir die aufgrund der Zeithomogenität der Markovkette auch folgen:
   $
-    P((X_(n + 1), ..., X_(n + 1)) in Z | (X_0, ..., X_(n - 1)) in V, X_n = i) = \ P((X_1, ..., X_m) in Z | X_0 = i)
+    P((X_(n + 1), ..., X_(n + 1)) in Z | (X_0, ..., X_(n - 1)) in V, X_n = i) = \
+    P((X_1, ..., X_m) in Z | X_0 = i)
   $
 ] <thm:med_markov>
 #proof(title: [Beweis von @thm:med_markov])[
@@ -1647,9 +1651,9 @@ $
 $
 
 Es gilt zudem $ lim_(t -> oo) N (t) = oo $ Um zu zeigen, dass dies gilt, sei anzunehmen, dass $N (t) <= M quad forall t$ mit
-$N (t^( \*)) = M$.Das wiederum impliziert
-$T_(M + 1) > t quad forall t > t^( \*)$. Das wiederum impliziert
-$ T_(M + 1) = overbrace(Y_1 + Y_2 + Y_M, = t^( \*) < oo) + Y_(M + 1) = oo $
+$N (t^*) = M$.Das wiederum impliziert
+$T_(M + 1) > t quad forall t > t^*$. Das wiederum impliziert
+$ T_(M + 1) = overbrace(Y_1 + Y_2 + Y_M, = t^* < oo) + Y_(M + 1) = oo $
 und damit $Y_(M + 1) = oo$. Das wäre ein Widerspruch, da dies
 $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall ist.
 
