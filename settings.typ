@@ -32,6 +32,8 @@
   body
 }
 
+
+// Remember: the only thing these giant functions do is removing brackets in the titles of some theorems
 #let make-frame(
   identifier,
   supplement,
