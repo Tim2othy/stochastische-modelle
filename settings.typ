@@ -1,8 +1,34 @@
 #import "@preview/theorion:0.3.3": *
 
-#let title = [Stochastische Modelle]
-#let subtitle = [Vorlesung]
-#let semester = [Wintersemester 2024/25]
+#let project(
+  title: "",
+  subtitle: "",
+  semester: "",
+  body,
+) = {
+  // Set the document's basic properties.
+  set text(
+    font: "ETbookOT",
+    size: 12pt,
+    lang: "de",
+  )
+  show math.equation: set text(font: "Cambria Math")
+
+  // Title row.
+  align(center)[
+    #text(2em)[*#title*]
+
+    #text(1.6em)[\- #subtitle -]
+
+    #text(1.4em)[#semester]
+  ]
+
+  pagebreak()
+  outline()
+  pagebreak()
+
+  body
+}
 
 #let make-frame(
   identifier,

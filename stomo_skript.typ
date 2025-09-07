@@ -1,6 +1,6 @@
 #import "@preview/theorion:0.3.3": *
 #import cosmos.clouds: *
-#import "settings.typ": make-frame, make-frame-named-example, semester, subtitle, title
+#import "settings.typ": make-frame, make-frame-named-example, project
 #show: show-theorion
 
 // Theorion Settings
@@ -61,30 +61,17 @@
   render: render-fn.with(fill: blue.lighten(85%)),
 )
 // Normal Settings
-#set text(font: "ETbookOT", lang: "DE", size: 12pt)
-#show math.equation: set text(font: "Cambria Math")
+#show: project.with(title: "Stochastische Modelle", subtitle: "Vorlesung", semester: "Wintersemester 2024/25")
+
 #set heading(numbering: "1.1")
 #set enum(numbering: "(a)")
 #set page(margin: (x: 2.5cm, y: 3cm), numbering: "1")
 #show outline.entry.where(level: 1): set block(above: 1.2em)
 
-#align(center)[
-  #text(2em)[*#title* ]
-
-  #text(1.6em)[ \ - #subtitle -]
-
-  #text(1.4em)[#semester]
-]
-
 #set par(
   justify: true,
   leading: 0.5em,
 )
-
-
-#pagebreak()
-#outline()
-#pagebreak()
 
 = Wahrscheinlichkeitstheorie
 
