@@ -63,16 +63,6 @@
 // Normal Settings
 #show: project.with(title: "Stochastische Modelle", subtitle: "Vorlesung", semester: "Wintersemester 2024/25")
 
-#set heading(numbering: "1.1")
-#set enum(numbering: "(a)")
-#set page(margin: (x: 2.5cm, y: 3cm), numbering: "1")
-#show outline.entry.where(level: 1): set block(above: 1.2em)
-
-#set par(
-  justify: true,
-  leading: 0.5em,
-)
-
 = Wahrscheinlichkeitstheorie
 
 == Wahrscheinlichkeitsmaße
