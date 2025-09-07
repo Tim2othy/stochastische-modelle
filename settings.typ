@@ -1,5 +1,9 @@
 #import "@preview/theorion:0.3.3": *
 
+#let title = [Stochastische Modelle]
+#let subtitle = [Vorlesung]
+#let semester = [Wintersemester 2024/25]
+
 #let make-frame(
   identifier,
   supplement,

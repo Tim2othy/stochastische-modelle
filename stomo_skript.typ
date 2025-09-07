@@ -1,11 +1,7 @@
 #import "@preview/theorion:0.3.3": *
 #import cosmos.clouds: *
-#import "settings.typ": make-frame, make-frame-named-example
+#import "settings.typ": make-frame, make-frame-named-example, semester, subtitle, title
 #show: show-theorion
-
-#let title = [Stochastische Modelle]
-#let subtitle = [Vorlesung]
-#let semester = [Wintersemester 2024/25]
 
 // Theorion Settings
 #let (theorem-counter, theorem-box, theorem, show-theorem) = make-frame(
