@@ -8,11 +8,7 @@
 ) = {
   // Set the document's basic properties.
   set page(margin: (x: 2cm, y: 3cm), numbering: "1")
-  set text(
-    font: "ETbookOT",
-    size: 12pt,
-    lang: "de",
-  )
+  set text(font: "ETbookOT", size: 12pt, lang: "de")
   show math.equation: set text(font: "Cambria Math")
   set par(justify: true)
   set enum(numbering: "(a)", spacing: 4em, indent: 1em)
@@ -99,20 +95,20 @@
     numbering: numbering,
     {
       [#metadata((
-          identifier: identifier,
-          supplement: supplement,
-          supplement-i18n: supplement-i18n,
-          kind: identifier,
-          counter: frame-counter,
-          title: title,
-          numbering: numbering,
-          outlined: outlined,
-          get-prefix: get-prefix,
-          get-full-title: get-full-title,
-          render: render,
-          args: args,
-          body: body,
-        )) <theorion-frame-metadata>]
+        identifier: identifier,
+        supplement: supplement,
+        supplement-i18n: supplement-i18n,
+        kind: identifier,
+        counter: frame-counter,
+        title: title,
+        numbering: numbering,
+        outlined: outlined,
+        get-prefix: get-prefix,
+        get-full-title: get-full-title,
+        render: render,
+        args: args,
+        body: body,
+      )) <theorion-frame-metadata>]
       render(
         prefix: get-prefix(here),
         title: title,
@@ -247,20 +243,20 @@
     numbering: numbering,
     {
       [#metadata((
-          identifier: identifier,
-          supplement: supplement,
-          supplement-i18n: supplement-i18n,
-          kind: identifier,
-          counter: frame-counter,
-          title: title,
-          numbering: numbering,
-          outlined: outlined,
-          get-prefix: get-prefix,
-          get-full-title: get-full-title,
-          render: render,
-          args: args,
-          body: body,
-        )) <theorion-frame-metadata>]
+        identifier: identifier,
+        supplement: supplement,
+        supplement-i18n: supplement-i18n,
+        kind: identifier,
+        counter: frame-counter,
+        title: title,
+        numbering: numbering,
+        outlined: outlined,
+        get-prefix: get-prefix,
+        get-full-title: get-full-title,
+        render: render,
+        args: args,
+        body: body,
+      )) <theorion-frame-metadata>]
       render(
         prefix: get-prefix(here),
         title: title,
