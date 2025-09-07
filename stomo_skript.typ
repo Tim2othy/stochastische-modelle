@@ -8,7 +8,7 @@
   "theorem",
   "Satz",
   counter: none,
-  render: render-fn.with(fill: olive.lighten(85%)),
+  render: render-fn.with(fill: green.lighten(65%)),
 )
 #let (axiom-counter, axiom-box, axiom, show-axiom) = make-frame(
   "axiom",
