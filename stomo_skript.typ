@@ -12,7 +12,7 @@
 )
 #let (axiom-counter, axiom-box, axiom, show-axiom) = make-frame(
   "axiom",
-  "Axioms",
+  "Axiome",
   counter: none,
   render: render-fn.with(fill: orange.lighten(85%)),
 )
