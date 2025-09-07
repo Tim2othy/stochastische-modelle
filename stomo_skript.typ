@@ -1,66 +1,10 @@
 #import "@preview/theorion:0.3.3": *
 #import cosmos.clouds: *
-#import "settings.typ": make-frame, make-frame-named-example, project
+#import "settings.typ": (
+  axiom, corollary, definition, example, lemma, make-frame, make-frame-named-example, project, proof, theorem,
+)
 #show: show-theorion
 
-// Theorion Settings
-#let (theorem-counter, theorem-box, theorem, show-theorem) = make-frame(
-  "theorem",
-  "Satz",
-  counter: none,
-  render: render-fn.with(fill: green.lighten(65%)),
-)
-#let (axiom-counter, axiom-box, axiom, show-axiom) = make-frame(
-  "axiom",
-  "Axiome",
-  counter: none,
-  render: render-fn.with(fill: orange.lighten(85%)),
-)
-#let (example-counter, example-box, example, show-example) = make-frame(
-  "corollary",
-  "Beispiel",
-  counter: none,
-  render: render-fn.with(fill: blue.lighten(85%)),
-)
-#let (
-  definition-counter,
-  definition-box,
-  definition,
-  show-definition,
-) = make-frame(
-  "definition",
-  "Definition",
-  counter: none,
-  render: render-fn.with(fill: red.lighten(85%)),
-)
-#let proof(
-  title: theorion-i18n-map.at("proof"),
-  qed: auto,
-  body,
-) = context if get-result(here()) == "noanswer" { none } else {
-  let qed-symbol = if qed == auto { get-qed-symbol(here()) } else { qed }
-  [
-    #emph(strong(theorion-i18n(title)))#sym.space#body#box(width: 0em)#h(1fr)#sym.wj#sym.space.nobreak$#qed-symbol$
-  ]
-}
-#let (lemma-counter, lemma-box, lemma, show-lemma) = make-frame(
-  "lemma",
-  "Lemma",
-  counter: none,
-  render: render-fn.with(fill: yellow.lighten(85%)),
-)
-#let (
-  corollary-counter,
-  corollary-box,
-  corollary,
-  show-corollary,
-) = make-frame-named-example(
-  "proposition",
-  "",
-  counter: none,
-  render: render-fn.with(fill: blue.lighten(85%)),
-)
-// Normal Settings
 #show: project.with(title: "Stochastische Modelle", subtitle: "Vorlesung", semester: "Wintersemester 2024/25")
 
 = Wahrscheinlichkeitstheorie
