@@ -260,7 +260,7 @@ Es gilt
 
 Ereignisse $A_1, A_2, ...$ heißen unabhängig, falls für jede endliche Auswahl von verschiedenen Indizes $i_1, ..., i_n$ gilt
 $
-  P(A_(i_1) ∩... ∩ A_(i_n)) = P(A_(i_1)... P(A_(i_n)))
+  P(A_(i_1) ∩... ∩ A_(i_n)) = P(A_(i_1) ) dot ... dot P(A_(i_n))
 $
 Sind $A_1, A_2, ...$ unabhängige Ereignisse und ist für jedes i
 $B_i = A_i$ oder $B_i = A_i^C$, dann sind auch $B_1, B_2, ...$
