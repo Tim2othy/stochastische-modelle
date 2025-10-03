@@ -1,4 +1,7 @@
+A script for the 2024/25 Stochastische Modelle course from the University of Bonn Economics Bachelor.
 
-[`stomo_skript.pdf`](stomo_skript.pdf) is the script for the Wintersemester 2024/25 BSc. Economics Stochastische Modelle Kurs at Bonn University. A different [student](https://github.com/niklastrockel) created [this](old_stomo_skript.pdf) script with LaTeX, I created a version using Typst. The Typst source file can be found at [`stomo_skript.typ`](stomo_skript.typ).
+View the script as a PDF [here](https://github.com/Tim2othy/stochastische-modelle/releases).
 
-I make no claim to the correctness of the script. Nor was the making or publishing of the script endorsed or sanctioned by the Professor of the course or anyone affiliated with the university of Bonn.
+I created this version in Typst. It is based on the LaTeX scrip a different [student](https://github.com/niklastrockel) created, which can be found [here](old_stomo_skript.pdf).
+
+I make no claim as to the correctness of the script, all errors are mine. The making and publishing of this script was done in a private manner with no connection to the university of Bonn.
