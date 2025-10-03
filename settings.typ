@@ -10,7 +10,6 @@
   // Set the document's basic properties.
   set page(margin: (x: 2cm, y: 3cm), numbering: "1")
   set text(font: "ETbookOT", size: 12pt, lang: "de")
-  show math.equation: set text(font: "fira Math")
   set par(justify: true)
   set enum(numbering: "(a)", spacing: 3em, indent: 1em)
   set heading(numbering: "1.1")
