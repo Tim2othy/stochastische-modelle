@@ -1,8 +1,17 @@
 #import "@preview/theorion:0.3.3": proof
-#import "settings.typ": project
+#import "settings.typ": *
 #import "boxes.typ": axiom, definition, example, lemma, remark, theorem
 
-#show: project.with(title: "Stochastische Modelle", subtitle: "Vorlesung", semester: "Wintersemester 2024/25")
+#show: project.with(
+  title: [Stochastische Modelle],
+  subtitle: [Vorlesung Wintersemester 2024/25],
+  report-style: true,
+)
+
+#v(1fr)
+#toc
+#v(1fr)
+#pagebreak()
 
 = Wahrscheinlichkeitstheorie
 
