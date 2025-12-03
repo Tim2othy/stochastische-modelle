@@ -1085,7 +1085,7 @@ Folgender Satz gilt für beliebige $A$: \
 ]
 #theorem[Satz 12][
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei zudem $A ⊂ S$ mit
-  $A != nothing$. Seo $T_i = inf { n in N : X_n in A }$ und
+  $A != nothing$. Sei $T_i = inf { n in N : X_n in A }$ und
   $h_i = P(T_i < oo | X_0 = i)$. Dann ist $(h_i)_(i in S)$ die
   #strong[komponentenweise kleinste nicht-negative Lösung] des Gleichungssystems
   $
