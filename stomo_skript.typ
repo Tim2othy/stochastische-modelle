@@ -1,9 +1,6 @@
-#import "@preview/theorion:0.3.3": *
-#import cosmos.clouds: *
-#import "settings.typ": (
-  axiom, corollary, definition, example, lemma, make-frame, make-frame-named-example, project, proof, theorem,
-)
-#show: show-theorion
+#import "@preview/theorion:0.3.3": proof
+#import "settings.typ": project
+#import "boxes.typ": axiom, definition, example, lemma, remark, theorem
 
 #show: project.with(title: "Stochastische Modelle", subtitle: "Vorlesung", semester: "Wintersemester 2024/25")
 

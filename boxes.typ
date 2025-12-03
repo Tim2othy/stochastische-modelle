@@ -263,3 +263,10 @@
     [#titlize_dot(title, subtitle) #content]
   }),
 )
+
+#let theorem = blue_box
+#let lemma = blue_box
+#let example = brown_box
+#let definition = plain_box
+#let axiom = plain_box
+#let remark = green_note
