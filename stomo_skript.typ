@@ -33,7 +33,7 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 
 - $P(A) subset.eq P(B)$
 
-#lemma[
+#lemma[Lemma 1][
 
   Für Ereignisse $A_1, ..., A_n$ gilt
   $
@@ -342,7 +342,7 @@ $
   P(X = x) = sum_(Y : P(Y = y) > 0) f_(X | Y) (x | y) P(Y = y).
 $
 
-#example[
+#example[Beispiel 1][
   $X$ und $Y$ seien diskrete Zufallsvariablen mit Wahrscheinlichkeitsfunktionen $f_X$ und $f_Y$. Für die
   Wahrscheinlichkeitsfunktion $f_(X + Y)$ von $X + Y$ gilt
   $
@@ -440,7 +440,7 @@ $
   $p_(i j) >= 0$ für alle $i, j in S$ und $sum_(j in S) p_(i j) = 1$
   für alle $i in S$. \
 ]
-#theorem[
+#theorem[Satz 5][
 
   Eine Folge ${ X_n : n in NN }$ von Zufallsvariablen mit Werten in $S$
   heißt Markovkette mit Zustandsraum $S$ und Übergangsmatrix
@@ -462,7 +462,7 @@ $(star)$ beinhaltet zwei Aussagen:
 Die $i$-te Zeile der Übergangsmatrix beschreibt die bedingte Verteilung des nächsten Zustands $X_(n + 1)$ gegeben $X_n = i$ (und
 $X_0 = i_0, ...$).
 
-#example[
+#example[Beispiel 2][
 
   Seien $X_0, X_1, ...$ unabhängige und identisch verteilte
   $NN_0$-wertige Zufallsvariablen mit $P(X_0 = i) = a_i$,
@@ -483,7 +483,7 @@ $X_0 = i_0, ...$).
   Zustand $j$ zu sein bestimmt, oder anders gesagt $X_(n + 1)$ und $X_n$ sind unabhängig.
 
 ]
-#example(title: [Irrfahrt auf $ZZ$])[
+#example([Beispiel 3], subtitle: [Irrfahrt auf $ZZ$])[
 
   Seien $Y_1, Y_2, ...$ unabhängige, identisch verteilte
   $ZZ$-wertige Zufallsvariablen mit $P(Y_1 = i)$, $i in ZZ$. Sei
@@ -520,7 +520,7 @@ $X_0 = i_0, ...$).
   und springt zu jedem Zeitpunkt $1, 2, ...$ zufällig eine Einheit nach links oder rechts.
 
 ]
-#example(title: [Sukzessive Maxima])[
+#example([Beispiel 4], subtitle: [Sukzessive Maxima])[
 
   Seien $Y_1, Y_2, ...$ unabhängig und identisch verteilte
   $NN_0$-wertige Zufallsvariablen mit $P(Y_1 = c) = a_i$, $i in N_0$,
@@ -563,7 +563,7 @@ $X_0 = i_0, ...$).
     )
   $
 ]
-#example(title: [Rekursive Darstellung einer Markovkette mittels zufälliger Funktionen])[
+#example([Beispiel 5], subtitle: [Rekursive Darstellung einer Markovkette mittels zufälliger Funktionen])[
 
   Sei $X_0$ eine $S$-wertige Zufallsvariable
   und $S$ endlich oder abzählbar unendlich. Setze für $n >= 0$ rekursiv
@@ -591,7 +591,7 @@ $X_0 = i_0, ...$).
   $star star$ Hinweis: $Y_1, Y_2, ...$ i.i.d
 ]
 
-#example[Placeholder so numbering matches up]
+#example[Beispiel 6][Placeholder so numbering matches up]
 
 Bemerkung zum Beispiel: In Beispiel 3 war $f (x, y) = x + y$ und in Beispiel 4 war $f (x, y) = m a x (x, y)$.
 
@@ -610,7 +610,7 @@ $
   = & P(X_0 = i_0) p_(i_0 i_1)... p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n)
 $
 
-#theorem[
+#theorem[Satz 6][
 
   Für jede Folge von Zuständen $i_0, ..., i_n in S$ gilt:
   $
@@ -621,7 +621,7 @@ $
   $(P_(i j))_(i, j in S)$ eindeutig festgelegt.
 
 ]<thm:markov-trans>
-#example[
+#example[Beispiel 7][
 
   Betrachte eine Markovkette ${ X_n : n in NN_0 }$ mit Zustandsraum
   $S = { 0, 1, 2, 3, 4 }$, $X_0 : = 0$, also $p_0 = P(X_0 = 0) = 1$. \
@@ -661,7 +661,7 @@ $
 ]
 Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Vergangenheit erweitern: \
 
-#theorem[
+#theorem[Satz 7][
 
   Für alle $n, m >= 1$, $Z ⊂ S^m$, $V ⊂ S^n$, $i in S$ mit
   $P((X_0, ..., X_(n - 1)) in V, X_n = i) > 0$ gilt
@@ -738,7 +738,7 @@ $
   P_(i j)^1 = P(X_(m + 1) = j | X_m = i) = p_(i j)
 $
 
-#theorem(title: [Satz von Chapman-Kolmogorow])[
+#theorem([Satz 9], subtitle: [Satz von Chapman-Kolmogorow])[
 
   Für alle $i, j in S$ und
   $m, n in NN_0$ ist die Wahrscheinlichkeit, von Zustand $i$ in
@@ -817,7 +817,7 @@ $
 Letzteres kann genutzt werden, um die Verteilung $X_n$ zu jeden
 Zeitpunkt zu berechnen:
 
-#theorem[
+#theorem[Satz 10][
 
   Die Verteilung von $X_n$ zu einem beliebigen Zeitpunkt $n >= 0$
   ergibt sich aus dem Produkt der Anfangsverteilung und der $n$-ten Potenz der Übergangsmatrix.
@@ -825,7 +825,7 @@ Zeitpunkt zu berechnen:
     p^((n)) = p^((0)) Pi^n
   $
 ]<thm:markov-trans-matrix>
-#example[
+#example[Beispiel 8][
 
   Betrachte eine Markovkette $X_n : n in NN_0$ mit $S = { 1, 2, 3 }$, Übergangsmatrix
 
@@ -888,7 +888,7 @@ $p_i (T < oo)$ Absorptionswahrscheinlichkeit bei Start in $i in S$ und
 $T$ heißt Absorptionszeit. \
 Folgender Satz gilt für beliebige $A$: \
 
-#theorem[
+#theorem[Satz 11][
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei $A ⊂ S$, $A != nothing$ und
   $
     T_i = inf { n in NN_0 : X_n in A } \
@@ -928,7 +928,7 @@ Folgender Satz gilt für beliebige $A$: \
     h_i = sum_(j in S) p_(i j) h_j
   $
 ]
-#example(title: [Ruinproblem])[
+#example([Beispiel 9], subtitle: [Ruinproblem])[
 
   In jeder Runde eines Spiels gewinnt eine Spieler 1€ mit Wahrscheinlichkeit $p in (0, 1)$ und verliert 1€ mit
   Wahrscheinlichkeit
@@ -1015,7 +1015,10 @@ Folgender Satz gilt für beliebige $A$: \
   $
 
 ]
-#example(title: [Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke])[
+#example(
+  [Beispiel 10],
+  subtitle: [Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke],
+)[
 
   Betrachte die Markovkette ${ X_n : n in NN_0 }$ mit Zustandsraum
   $S = NN_0$ und
@@ -1086,7 +1089,7 @@ Folgender Satz gilt für beliebige $A$: \
   Hinweis: Hier gibt es keine zweite Randbedingung, wie in Bsp. 9!
 
 ]
-#theorem[
+#theorem[Satz 12][
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei zudem $A ⊂ S$ mit
   $A != nothing$. Seo $T_i = inf { n in N : X_n in A }$ und
   $h_i = P(T_i < oo | X_0 = i)$. Dann ist $(h_i)_(i in S)$ die
@@ -1134,7 +1137,7 @@ Folgender Satz gilt für beliebige $A$: \
   $
 ]
 
-#corollary(title: "Beispiel 10 (Fortsetzung)")[
+#example[Beispiel 10 (Fortsetzung)][
 
   Im Fall von $p > 1 / 2$ wurde gezeigt, dass die nichtnegativen Lösungen des Gleichungssystems (wie in Satz 11)
   charakterisiert sind durch
@@ -1180,7 +1183,7 @@ $
 Insbesondere ist also falls
 $P(X = oo) > 0$ auch $EE [X] = oo$.
 
-#theorem[
+#theorem[Satz 13][
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei $A in S$ und $A != nothing$.
   Für
   $i in S$ sei
@@ -1246,7 +1249,7 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
      => x_i & >= sum_(k = 0)^oo P_i (T > k) = EE_i [T] = k_i
   $
 ]
-#corollary(title: "Beispiel 9 (Fortsetzung)")[
+#example[Beispiel 9 (Fortsetzung)][
 
   Nun ist die erwartete Absorptionszeit $k_i = EE_i [T]$ gesucht. \
   Offensichtlich ist $k_0 = 0$ und $k_M = 0$. Aus Satz 12 folgt hier
@@ -1316,7 +1319,7 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
   $
 
 ] <thm:markov-station>
-#remark(title: [Bemerkung zu @thm:markov-station])[
+#remark[Bemerkung zu @thm:markov-station][
 
   - Für jede Markovkette mit endlichem Zustandsraum existiert eine stationäre Verteilung (s. Aufgaben).
 
@@ -1348,7 +1351,7 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
   $
 ]
 #theorem[Placeholder]
-#example[
+#example[Beispiel 11][
   Gegeben sei eine Markovkette ${ X_n : n in NN_0 }$ mit Zustandsraum
   $S = { 1, 2 }$ und Übergangsmatrix
   $Pi = mat((1 - a), a; b, (1 - b))$ ($a, b in (0, 1)$) Es gilt
@@ -1383,7 +1386,7 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
   und daher $mat(p_1, p_2) Pi^n = mat(p_1, p_2)$.
 
 ]
-#theorem[
+#theorem[Satz 14][
 
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette
   ${ X_n : n in NN_0 }$ mit stationäre Verteilung
@@ -1428,7 +1431,7 @@ exponentiell zur stationären Verteilung konvergiert. \
                                         & <= (1 - epsilon)^n sum_(j = 1)^S ({ Q_(i j)^n } + pi_j) = 2 (1 - epsilon)^n
   $
 ]
-#theorem[
+#theorem[Satz 15][
 
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette mit Zustandsraum ${ 1, ..., S }$ und stationärer Verteilung
   $pi = mat(pi_1, ..., pi_S)$. \
@@ -1481,7 +1484,7 @@ Sind alle Einträge von $Pi^n$ positiv, dann ist die Voraussetzung
 $p_(i j^n) >= epsilon pi_j$ ($i, j = 1, ..., S$) mit
 $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
 
-#corollary(title: "Beispiel 11 (Fortsetzung)")[
+#example[Beispiel 11 (Fortsetzung)][
 
   Sei nun $a = b = 1$, also
   $
@@ -1508,7 +1511,7 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
   Ein Zustandsraum mit Periode 1 heißt #strong[aperiodisch];. Die Markovkette heißt aperiodisch, falls alle ihre Zustände
   aperiodisch sind.]
 
-#example[
+#example[Beispiel 12][
   - Für $S = { 1, 2 }$ und $Pi = mat(0, 1; 1, 0)$ gilt
     $
       & d_1 = g g t ({ 2, 4, 6, ... }) = 2 \
@@ -1522,7 +1525,7 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
     d_i = 2 quad forall quad i in ZZ
   $
 ]
-#theorem[
+#theorem[Satz 16][
 
   Für jeden aperiodischen Zustand $i$ existiert $n_0 (i) in NN$, sodass
   $
@@ -1530,7 +1533,7 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
   $
 
 ] <thm:periodic_markov>
-#example[
+#example[Beispiel 13][
   Sei
   $
     Pi = mat(0, 1, 0; 0, 0, 1; 1 / 2, 0, 1 / 2)
@@ -1546,7 +1549,7 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
 
   Zunächst ist für den Beweis folgendes Lemma notwendig:
 
-  #lemma()[
+  #lemma[Lemma 2][
     Ist $N ⊂ NN$, $N != nothing$ abgeschlossen unter Addition, d.h. $n + m in N quad forall quad n, m in N$ und ist $g g T (N) = 1$,
     dann existiert $n_0 in NN$, sodass $n in N quad forall n >= n_0$. \
   ]Um auch dies zu beweisen, muss zunächst gezeigt werden, dass $N$ zwei aufeinander folgende Zahlen $n_1$, $n_1 + 1$ enthält.
@@ -1632,7 +1635,7 @@ $
   => tilde(pi)_i = pi_i quad forall quad i in S
 $
 
-#theorem[
+#theorem[Satz 17][
 
   Sei $(P_(i j))$ die Übergangsmatrix einer irreduziblen Markovkette mit Zustandsraum $S = { 1, ..., s }$ und mindestens
   einem aperiodischen Zustand. \
@@ -1715,7 +1718,7 @@ die Wahrscheinlichkeit einer Rückkehr. \
 Ein Zustand $j in S$ heißt #strong[rekurrent];, falls $f_(j j) = 1$. Er heißt #strong[transient];, falls $f_(j j) < 1$.
 Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette rekurrent oder transient.
 
-#example[
+#example[Beispiel 15][
   Sei $S = { 1, 2, 3 }$ und
   $
     (P_(i j)) = mat(
@@ -1737,7 +1740,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   3 ist also transient und somit die Markovkette weder transient noch rekurrent.
 
 ]
-#theorem[
+#theorem[Satz 18][
 
   Für $j in S$ sei
   $
@@ -1798,7 +1801,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   $=> EE [N_j | X_0 = i] = frac(f_(i j), 1 - f_j j)$.
 ]
 
-#remark(title: [Bemerkung zu @thm:recurrence_transience])[
+#remark[Bemerkung zu @thm:recurrence_transience][
 
   - Wegen $EE [N_j | X_0 = j] = sum_(n = 1)^oo P_(j j)^n$ liefert der Satz ein einfacheres Rekurrenzkriterium
   $
@@ -1835,7 +1838,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
     P(N_j = oo | X_0 = i) = f_(i j) = 1 quad forall quad i, j in S
   $
 ]
-#example[
+#example[Beispiel 16][
   Wie betrachten wieder die einfache Irrfahrt auf $ZZ$. \
   Da eine Rückkehr zum Zustand $i$ immer nur in 2 Schritten möglich ist, ist die Periode $d_i = 2$. \
   $
@@ -1915,7 +1918,7 @@ $
 und damit $Y_(M + 1) = oo$. Das wäre ein Widerspruch, da dies
 $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall ist.
 
-#theorem[
+#theorem[Satz 19][
 
   Sei $0 < mu = EE [Y_1] < oo$. Mit Wahrscheinlichkeit 1 gilt
   $
@@ -1936,7 +1939,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
     => & lim_(t -> oo) t / N(t) = mu
   $
 ]
-#example[
+#example[Beispiel 17][
 
   Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in NN_0 }$, bei dem $Y_1, Y_2, ...$ i.i.d die Wartezeit bis
   zum Ausfall einer Glühbirne in einer Lampe mit einer Glühbirne beschreibt. Folglich ist
@@ -1956,7 +1959,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   Also ist $mu approx 1000 / 7 = 143$
 
 ]
-#example[
+#example[Beispiel 18][
   Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in NN_0 }$, bei dem $Y_1, Y_2, ...$ i.i.d. die Zeitabstände
   zwischen Schadensfällen ist. Folglich ist $T_n$ die Zeit, bis die n-te Schadensmeldung eingegangen ist. \
   Wenn die Frage nach dem erwarteten Zeitabends zwischen zwei Meldungen ist, könnte nach @thm:renewal_mean wieder
@@ -1991,7 +1994,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $
 
 ]
-#theorem[
+#theorem[Satz 20][
   Sei $mu := EE [Y_1]$, $sigma^2 := "Var" [Y_1]$ mit $0 < mu < oo$ und
   $0 < sigma < oo$. \
   $=>$ Für $t -> oo$ ist $N (t)$ asymptotisch normalverteilt mit Parametern
@@ -2069,7 +2072,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $
   unabhängig sind. \
 ]
-#theorem[
+#theorem[Satz 21][
   Sei ${ N (t) : t >= 0 }$ ein Poisson-Prozess mit Intensität
   $lambda > 0$. \
   $=> { N (t) : t >= 0 }$ hat unabhängige Zuwächse und für
@@ -2119,7 +2122,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $
 ]
 
-#example[
+#example[Beispiel 19][
   Sei ${ N (t) : t >= 0 }$ ein Poisson-Prozess mit Intensität
   $lambda > 0$. Berechne $P(N (1) = 1, N (3) = 5)$.
   $
@@ -2130,7 +2133,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $
 
 ]
-#example[
+#example[Beispiel 20][
   Ab 09:00 erfolgen Anrufe gemäß eines Poisson-Prozesses. Gegeben, dass bis 09:30 genau ein Anruf eingeht, wie groß ist
   die bedingte Wahrscheinlichkeit, dass er vor 09:20 eingeht, wenn $t$ in Stunden gemessen wird?
   $
