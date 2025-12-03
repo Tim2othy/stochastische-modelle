@@ -8,10 +8,6 @@
   report-style: true,
 )
 
-#v(1fr)
-#toc
-#v(1fr)
-#pagebreak()
 
 = Wahrscheinlichkeitstheorie
 
