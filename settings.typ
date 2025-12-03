@@ -14,6 +14,12 @@
   show outline.entry.where(level: 1): set block(above: 1.5em)
   show outline.entry.where(level: 2): set block(above: 0.8em)
 
+  show ref: it => {
+    let el = it.element
+    if el == none or el.func() != block { return it }
+    link(el.location(), "irgendeinem Satz (todo: fix this)")
+  }
+
   // Title row.
   align(center)[
     #text(2em)[*#title*]
