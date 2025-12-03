@@ -190,11 +190,6 @@ $
   f_Y (y) = integral_(- oo)^oo f (x, y) d x .
 $
 
-#theorem[Placeholder]
-#theorem[Placeholder]
-#theorem[Placeholder]
-#theorem[Placeholder]
-
 == Erwartungswert und Varianz
 
 Ist $X$ eine diskrete Zufallsvariable und $g : RR -> RR$, so ist
@@ -591,7 +586,6 @@ $X_0 = i_0, ...$).
   $star star$ Hinweis: $Y_1, Y_2, ...$ i.i.d
 ]
 
-#example[Beispiel 6][Placeholder so numbering matches up]
 
 Bemerkung zum Beispiel: In Beispiel 3 war $f (x, y) = x + y$ und in Beispiel 4 war $f (x, y) = m a x (x, y)$.
 
@@ -1350,7 +1344,6 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
          & = sum_(i in S) pi_i p_(i j) quad forall j in S
   $
 ]
-#theorem[Placeholder]
 #example[Beispiel 11][
   Gegeben sei eine Markovkette ${ X_n : n in NN_0 }$ mit Zustandsraum
   $S = { 1, 2 }$ und Übergangsmatrix
@@ -1692,9 +1685,7 @@ $
 
 Das heißt $pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovkette in Zustand j verbringt.
 
-#example[
-  HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29
-]
+#example[][HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29]
 == Rekurrenz und Transienz
 #definition[
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum S.
