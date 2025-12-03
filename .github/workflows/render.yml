@@ -7,7 +7,7 @@ jobs:
         file: [ stomo_skript ]
     steps:
       - uses: actions/checkout@v4
-      - uses: fontist/setup-fontist@v2
+      - uses: fontist/setup-fontist@v1
       - run: |
           fontist install "Fira Sans"
           fontist install "Libertinus"
