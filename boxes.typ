@@ -30,7 +30,7 @@
   content,
 ) = [
   #set text(
-    font: ("New Computer Modern", "Hakgyoansim Bareonbatang"),
+    font: "New Computer Modern",
     size: 11pt,
   )
   #show math.equation: set text(font: "New Computer Modern Math", features: (
@@ -159,7 +159,7 @@
     y: 1em,
   ),
   latexize[
-    #text(fill: rgb("008000"), font: "Latin Modern Sans")[#titlize(
+    #text(fill: rgb("008000"))[#titlize(
         title,
         subtitle,
       ) #sym.dash.em]
@@ -218,7 +218,7 @@
   radius: 0.5em,
   inset: 1em,
   latexize[
-    #text(fill: rgb("006896"), font: "Latin Modern Sans", titlize(
+    #text(fill: rgb("006896"), titlize(
       title,
       subtitle,
     ))
