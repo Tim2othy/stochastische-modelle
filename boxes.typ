@@ -30,10 +30,9 @@
   content,
 ) = [
   #set text(
-    font: "New Computer Modern",
     size: 11pt,
   )
-  #show math.equation: set text(font: "New Computer Modern Math", features: (
+  #show math.equation: set text(features: (
     "cv01",
   ))
   #set par(spacing: 0.8em, justify: true)
