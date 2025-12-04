@@ -19,7 +19,6 @@
 == Wahrscheinlichkeitsmaße
 
 #axiom[
-
   Bezeichne $Omega$ die Menge aller möglichen Ergebnisse eines Zufallsexperiments und $A in Omega$ ein Ereignis. Ein
   Wahrscheinlichkeitsmaß ist eine Abbildung, die jedem $A$ eine Zahl
   $P(A) in [0, 1]$ zuordnet. Es gilt:
@@ -44,12 +43,10 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 - $P(A) subset.eq P(B)$
 
 #lemma[Lemma 1][
-
   Für Ereignisse $A_1, ..., A_n$ gilt
   $
     P(⋃_(i = 1)^n A_i) <= sum_(i = 1)^n P(A_i).
   $
-
   + Sind $A, A_1, A_2, ... ⊃ Omega$ eine Folge von nicht disjunkten Ereignissen mit $A_1 ⊂ A_2 ⊂... ⊂ A$ //TODO Maybe the last A should be A_n
     und $⋃_(n = 1)^oo A_n = A$, dann ist
     $
@@ -63,35 +60,23 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
     $
 ] <lma:lim-sets>
 #proof(title: [Beweis von @lma:lim-sets])[
-
   + lässt sich folgendermaßen zeigen: \
     Seien
-
     - $B_1 := A_1$
-
     - $B_2 := A_2 without A_1$
-
     - …
-
     - $B_n := A_n without A_(n - 1)$
-
     Mit der $sigma$-Additivität ist dann
     $
       P(A) & = P(⋃_(k = 1)^oo B_k) = sum_(k = 1)^oo P(B_k) = lim_(n -> oo) sum_(i = 1)^n P(B_k) = lim_(n -> oo) P(⋃_(k = 1)^n B_k) \
       & = lim_(n -> oo) P(A_n).
     $
-
   + lässt sich folgendermaßen zeigen: \
     Aus $A_1 ⊃ A_2 ⊃ ... ⊃ A_n$ folgt $A_1^C ⊂ A_2^C ⊂... ⊂ A_n^C$. Sei nun
-
     - $B_1 := A_1^C$
-
     - $B_2 := A_2^C without A_1^C$
-
     - …
-
     - $A_n^C without A_(n - 1)^C$
-
     Mit der $sigma$-Additivität ist dann
     $
       P(⋃_(n = 1)^oo A_n^C) & = P(A^C) = P(⋃_(k = 1)^oo B_k) \
@@ -110,7 +95,6 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
 == Zufallsvariablen
 
 #definition[
-
   Eine Zufallsvariable ist eine Abbildung $X : Omega -> RR$. Für $A ⊂ RR$ gilt
   $
     { X in A } = { omega in Omega : X (omega) in A }
@@ -148,11 +132,8 @@ $
            & = F (a) - lim_(n -> oo) F (a - epsilon_n).
 $
 Eine Zufallsvariable heißt diskret, falls ...
-
 - ... sie (un)endlich viele abzählbare Werte hat.
-
 - ... $f (x) = P(X = x)$ gilt (Wahrscheinlichkeitsfunktion).
-
 - ... für $A in RR$ $P(X in A) = sum_(X in A) f (x)$ gilt.
 
 Eine Zufallsvariable heißt stetig, falls es eine nicht negative Funktion $f$ gibt, sodass
@@ -303,10 +284,8 @@ $
 - Bei festem $B in Omega$ mit $P(B) > 0$ ist $P(A| B)$ ein Wahrscheinlichkeitsmaß: $P(Omega | B) = 1$ und für
   disjunkte Ereignisse $A_1, A_2, ...$ ist
   $P(A_1 ∪ A_2 ∪... | B) = sum_i P(A_i | B)$
-
 - Sind A und B unabhängig, dann ist $P(A | B) = P(A)$ (falls
   $P(B) > 0$)
-
 - Bilden $A_1, A_2, ...$ eine Zerlegung von $Omega$, also
   $A_i ∩ A_j = nothing$ für alle $i != j$ und
   $⋃_i A_i = Omega$, dann gilt für jedes $A in Omega$
@@ -314,7 +293,6 @@ $
     P(A) & = sum_i P(A ∩ A_i) \
          & = sum_(i : P(A_i) > 0) P(A | A_i) P(A_i) "(Satz der totalen Wahrscheinlichkeit)"
   $
-
 - Für beliebige Ereignisse $A_1, ... A_n$ gilt
   $
     P(A_1 ∩ A_2 ∩...) = P(A_1) P(A_2 | A_1) P(A_3 | A_1 ∩ A_2)... P(A_n | A_1 ∩... ∩ A_(n - 1)),
@@ -341,7 +319,6 @@ $
     f_(X + Y) (z) = P(X + Y = z) = & sum_(Y : f_Y (y) > 0) P(X + Y = z | Y = y) f_Y (y) \
                                  = & sum_Y f_(X | Y) (z - y | y) f_Y (y)
   $
-
 ]
 Seien $X$ und $Y$ unabhängige diskrete Zufallsvariablen, dann gilt
 $f_(X | Y) (x | y) = f_X (x)$ und
@@ -406,7 +383,6 @@ $
 == Markov-Eigenschaft
 
 #definition(title: "Stochastischer Prozess")[
-
   Ein stochastischer Prozess ist eine Familie von Zufallsvariablen $X_t$, wobei der Parameter $t$ eine Indexmenge $T$ durchläuft.
   Oft ist
   $T in [ o, oo )$ oder $T = { 0, 1, 2, ... }$ und $t in T$ wird als Zeitpunkt interpretiert. \
@@ -415,7 +391,6 @@ $
 ]
 
 #definition(title: "Markov-Kette")[
-
   Eine diskrete Markov-Kette ist ein stochastischer Prozess mit diskreter Zeit und diskretem Zustandsraum, sodass zu
   jeder Zeit die Verteilung des nächsten Zustands nur vom aktuellen Zustand abhängt aber nicht von den vorherigen. Formal
   bedeutet dies: \
@@ -425,7 +400,6 @@ $
   für alle $i in S$. \
 ]
 #theorem[Satz 5][
-
   Eine Folge ${ X_n : n in NN }$ von Zufallsvariablen mit Werten in $S$
   heißt Markovkette mit Zustandsraum $S$ und Übergangsmatrix
   $(P_(i j))_(i, j in S)$, falls für alle $n >= 0$ und alle möglichen $i_0, i_1, ..., i_(n + 1) in S$ gilt
@@ -459,7 +433,6 @@ $X_0 = i_0, ...$).
 
 ]
 #example([Beispiel 3], subtitle: [Irrfahrt auf $ZZ$])[
-
   Seien $Y_1, Y_2, ...$ unabhängige, identisch verteilte
   $ZZ$-wertige Zufallsvariablen mit $P(Y_1 = i)$, $i in ZZ$. Sei
   $X_(0 i) := 0$ und $X_n := Y_1 + ... + Y_n$, $n in NN$. In Worten:
@@ -495,7 +468,6 @@ $X_0 = i_0, ...$).
 
 ]
 #example([Beispiel 4], subtitle: [Sukzessive Maxima])[
-
   Seien $Y_1, Y_2, ...$ unabhängig und identisch verteilte
   $NN_0$-wertige Zufallsvariablen mit $P(Y_1 = c) = a_i$, $i in N_0$,
   $X_0 : = 0$ und $X_n : = m a x (Y_1, ..., Y_n)$. In Worten: Die Kette nimmt zu jeden Zeitpunkt $n$ den größten
@@ -538,7 +510,6 @@ $X_0 = i_0, ...$).
   $
 ]
 #example([Beispiel 5], subtitle: [Rekursive Darstellung einer Markovkette mittels zufälliger Funktionen])[
-
   Sei $X_0$ eine $S$-wertige Zufallsvariable
   und $S$ endlich oder abzählbar unendlich. Setze für $n >= 0$ rekursiv
   $
@@ -565,7 +536,6 @@ $X_0 = i_0, ...$).
   $star star$ Hinweis: $Y_1, Y_2, ...$ i.i.d
 ]
 
-
 Bemerkung zum Beispiel: In Beispiel 3 war $f (x, y) = x + y$ und in Beispiel 4 war $f (x, y) = m a x (x, y)$.
 
 == Mehrschritt-Übergangswahrscheinlichkeiten
@@ -584,7 +554,6 @@ $
 $
 
 #theorem[Satz 6][
-
   Für jede Folge von Zuständen $i_0, ..., i_n in S$ gilt:
   $
     P(X_0 = i_0, ..., X_n = i_n) = p_(i_0 i_1)... p_(i_(n - 1) i_n)
@@ -595,7 +564,6 @@ $
 
 ]<thm:markov-trans>
 #example[Beispiel 7][
-
   Betrachte eine Markovkette ${ X_n : n in NN_0 }$ mit Zustandsraum
   $S = { 0, 1, 2, 3, 4 }$, $X_0 : = 0$, also $p_0 = P(X_0 = 0) = 1$. \
   Sei $X_n = m a x (Y_1, ..., Y_n)$, $n in NN$, wobei
@@ -635,7 +603,6 @@ $
 Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Vergangenheit erweitern: \
 
 #theorem[Satz 7][
-
   Für alle $n, m >= 1$, $Z ⊂ S^m$, $V ⊂ S^n$, $i in S$ mit
   $P((X_0, ..., X_(n - 1)) in V, X_n = i) > 0$ gilt
   $
@@ -656,7 +623,6 @@ Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Ve
   $
 ] <thm:med_markov>
 #proof(title: [Beweis von @thm:med_markov])[
-
   Für alle $(j_1, ..., j_m) in Z$ und $(i_0, ..., i_(n - 1)) in V$
   mit $P(X_0 = i_0, ..., X_(n - 1) = i_(n - 1), X_n = i) > 0$ gilt
   $
@@ -712,7 +678,6 @@ $
 $
 
 #theorem([Satz 9], subtitle: [Satz von Chapman-Kolmogorow])[
-
   Für alle $i, j in S$ und
   $m, n in NN_0$ ist die Wahrscheinlichkeit, von Zustand $i$ in
   $m + n$ Schritten zu Zustand $j$ zu gelangen gegeben durch:
@@ -722,14 +687,12 @@ $
 
 ]<thm:chapman-kolmogorow>
 #proof(title: [Beweis von Satz 8:])[
-
   Die Behauptung ist für $m = 0$, $n = 0$ oder
   $n = m = 0$ klar, da
 
   $
     p_(i j)^((n)) = sum_(k in S) p_(i k)^0 p_(k j)^((n)) = p_(i j)^((n))
   $
-
 
   $
     p_(i j)^((m)) = sum_(k in S) p_(i k)^((m)) p_(k j)^0 = p_(i j)^((m))
@@ -791,7 +754,6 @@ Letzteres kann genutzt werden, um die Verteilung $X_n$ zu jeden
 Zeitpunkt zu berechnen:
 
 #theorem[Satz 10][
-
   Die Verteilung von $X_n$ zu einem beliebigen Zeitpunkt $n >= 0$
   ergibt sich aus dem Produkt der Anfangsverteilung und der $n$-ten Potenz der Übergangsmatrix.
   $
@@ -799,9 +761,7 @@ Zeitpunkt zu berechnen:
   $
 ]<thm:markov-trans-matrix>
 #example[Beispiel 8][
-
   Betrachte eine Markovkette $X_n : n in NN_0$ mit $S = { 1, 2, 3 }$, Übergangsmatrix
-
   $
     Pi = 1 / 3 mat(
       1, 0, 2;
@@ -828,22 +788,18 @@ Zeitpunkt zu berechnen:
   $
 
   - $P(X_2 = 1 | X_0 = 3) = p_31^((2)) = 2 / 9$
-
   - $P(X_2 = 2 | X_0 = 3) = p_32^((2)) = 1 / 3$
-
   - $P(X_2 = 3 | X_0 = 3) = p_33^((2)) = 4 / 9$
 
   Berechne zudem die Verteilung von $X_4$.
   $
     p^((4)) = p^((0)) Pi^((4)) = (P(X_4 = 1), P(X_4 = 2), P(X_4 = 3)) = (16 / 81, 131 / 324, 43 / 108)
   $
-
 ]
 
 == Absorptionswahrscheinlichkeiten und -zeiten
 
 #definition[
-
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei $A ⊂ S$, $A != nothing$.
 
   Setze $T_i = inf { n in NN_0 : X_n in A }$, wobei $inf nothing = oo$.
@@ -869,10 +825,8 @@ Folgender Satz gilt für beliebige $A$: \
     \
     => h_i = 1 "für alle" i in A "und" h_i = sum_(j in S) p_(i j) h_j "für alle" i in S without A
   $
-
 ]<thm:markov-absorption>
 #proof(title: [Beweis Satz 10])[
-
   Für $i in A$ gilt $P(T = 0 | X_0 = i) = 1$, also $h_1 = 0$. \
   Sei nun $i in S without A$. Der Beweisansatz ist die Einschritt-Analyse: Zerlege die gesuchte Wahrscheinlichkeit $h_i$ mit
   dem Satz der totalen Wahrscheinlichkeit danach, was im ersten Schritt der Markov-Kette passiert ist.
@@ -886,7 +840,6 @@ Folgender Satz gilt für beliebige $A$: \
     P(T < oo | X_1 = j, X_0 = i) = 1,
   $
   und für $j in S without A$
-
   $
     P(T < oo | X_1 = j, X_0 = i) = & P(⋃_(n = 2)^oo { X_n in A } | X_1 = j, X_0 = i) \
                                  = & lim_(N -> oo) P(⋃_(n = 2)^N { X_n in A } | X_1 = j, X_0 = i) \
@@ -901,7 +854,6 @@ Folgender Satz gilt für beliebige $A$: \
   $
 ]
 #example([Beispiel 9], subtitle: [Ruinproblem])[
-
   In jeder Runde eines Spiels gewinnt eine Spieler 1€ mit Wahrscheinlichkeit $p in (0, 1)$ und verliert 1€ mit
   Wahrscheinlichkeit
   $(1 - p)$. Sein Anfangskapital sei i€. Er spielt so lange, bis er M€ hat
@@ -919,7 +871,6 @@ Folgender Satz gilt für beliebige $A$: \
     )
   $
   Gesucht sind die Absorptionswahrscheinlichkeiten
-
   $
     h_i = P(T < oo | X_0 = i)
   $
@@ -985,13 +936,11 @@ Folgender Satz gilt für beliebige $A$: \
   $
     => h_j = 1 - frac(1 - Theta^j, 1 - Theta^M) "für" j = 0, ..., M
   $
-
 ]
 #example(
   [Beispiel 10],
   subtitle: [Ruinproblem bei unendlich reichem Gegner/Einfache Irrfahrt mit absorbierender Schranke],
 )[
-
   Betrachte die Markovkette ${ X_n : n in NN_0 }$ mit Zustandsraum
   $S = NN_0$ und
   $
@@ -1030,7 +979,6 @@ Folgender Satz gilt für beliebige $A$: \
   $h_(i + 1) - h_i <= 0$ und damit wäre
   $lim_(i -> oo) h_i = - oo$. Dies wäre offensichtlich ein Widerspruch! \
   Also muss $h_1 = 1$ sein.
-
   $
     =>^((star)) h_(i + 1) - h_i = 0 "für" i = 0, 1, ... \
     \
@@ -1056,10 +1004,8 @@ Folgender Satz gilt für beliebige $A$: \
     Theta - 1 & <= h_1 - 1 \
           h_1 & >= Theta
   $
-
   Welches $h_1 in [Theta, 1]$ liefert die gesuchten Wahrscheinlichkeiten? \
   Hinweis: Hier gibt es keine zweite Randbedingung, wie in Bsp. 9!
-
 ]
 #theorem[Satz 12][
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei zudem $A ⊂ S$ mit
@@ -1076,14 +1022,10 @@ Folgender Satz gilt für beliebige $A$: \
 
   + Für jede Lösung $(x_i)$ mit $x_i >= 0$, $i in S$ gilt
     $h_i <= x_i$.
-
 ] <thm:solution_markov>
 #proof(title: [Beweis von @thm:solution_markov])[
-
   Die Behauptung ist klar, wenn $A = S$. Deswegen sei $A != S$:
-
   + $(h_i)$ ist eine nichtnegative Lösung nach Satz 10.
-
   + Sei $(x_i)$ eine Lösung mit $X_i >= 0$, $i in S$.
 
     $
@@ -1099,7 +1041,6 @@ Folgender Satz gilt für beliebige $A$: \
       & dots.v \
     x & = r + sum_(k = 1)^n Q^k r + Q^(n + 1) x, n >= 1
   $
-
   Daraus folgt also für alle $i in A^c$, $j in A$ und $n >= 1$ durch Einsetzen, wobei $Q^k r = p_(i j_k)^k p_(j_k j)$ und $Q^(n + 1) x$ als
   strikt positiver Wert für die untere Schranke ausgelassen werden kann, folgendes:
   $
@@ -1111,10 +1052,8 @@ Folgender Satz gilt für beliebige $A$: \
 ]
 
 #example[Beispiel 10 (Fortsetzung)][
-
   Im Fall von $p > 1 / 2$ wurde gezeigt, dass die nichtnegativen Lösungen des Gleichungssystems (wie in Satz 11)
   charakterisiert sind durch
-
   $
     x_i = 1 + (x_1 - 1) frac(1 - Theta^i, 1 - Theta)
   $
@@ -1124,28 +1063,18 @@ Folgender Satz gilt für beliebige $A$: \
   $
     h_i = 1 + (Theta - 1) frac(1 - Theta^i, 1 - Theta) = Theta^i = ((1 - p)/ p)^i
   $
-
 ]
 
 Für die folgenden Schritte werden folgende Rechenregeln für
 $overline(RR) = RR ∪ { - oo, oo }$ benötigt:
-
 - $- oo < a < oo quad forall a in RR$
-
 - $a + oo = oo + a = oo quad forall a in RR ∪ { oo }$
-
 - $a - oo = - oo + a = - oo quad forall a in RR ∪ { - oo }$
-
 - $a dot oo = oo dot a = oo quad forall a in overline(RR)^(+)$
-
 - $a dot oo = oo dot a = - oo quad forall a in overline(RR)^(-)$
-
 - $a dot (- oo) = (- oo) dot a = - oo quad forall a in overline(RR)^(+)$
-
 - $a dot (- oo) = (- oo) dot a = oo quad forall a in overline(RR)^(-)$
-
 - $0 dot oo = oo dot 0 = 0$ (spezielle Konnotation in diesem Kontext)
-
 - Nicht definiert sind: $oo - oo$ und $- oo + oo$.
 
 Ist $X$ eine Zufallsvariable mit Werten in $NN_0 ∪ { oo }$, dann ist
@@ -1167,14 +1096,11 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
   $
   $(k_i)_(i in S)$ ist die
   #strong[komponentenweise kleinste nichtnegative Lösung] des Gleichungssystems $(star)$
-
   $
     k_i & = 0, i in A \
     k_i & = 1 + sum_(j in S without A) p_(i j) k_j, "für alle" i in S without A
   $
-
   mit $k_i in [0, oo]$.
-
 ] <thm:solution_markov2>
 #proof(title: [Beweis von @thm:solution_markov2])[
   Die Behauptung ist klar für $A = S$.
@@ -1218,7 +1144,6 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
     $
 ]
 #example[Beispiel 9 (Fortsetzung)][
-
   Nun ist die erwartete Absorptionszeit $k_i = EE_i [T]$ gesucht. \
   Offensichtlich ist $k_0 = 0$ und $k_M = 0$. Aus Satz 12 folgt hier
   $
@@ -1229,9 +1154,7 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
                     k_i & = 1 + k_(i - 1) / 2 + k_(i + 1) / 2 \
     <=> k_(i + 1) - k_i & = k_i - k_(i - 1) - 2
   $
-
   Für steigende i fällt das das Wachstun von $k_i$ um den Faktor 2.
-
   $
     => k_(i + 1) - k_i = k_1 - k_0 - 2 i = k_1 - 2 i quad i = 0, ..., M - 1
   $
@@ -1242,14 +1165,11 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
                     & = j k_1 - 2 sum_(i = 0)^(j - 1) i \
                     & = j k_1 - (j - 1) j
   $
-
   Wegen $k_M = 0$ folgt aus dieser Gleichung (durch einsetzen)
   $k_1 = M - 1$ und somit
-
   $
     EE [T | X_0 = j] = k_j = j (M - j), j = 0, ..., M
   $
-
   Sei nun $p != 1 / 2$. \
   In diesem Fall lässt sich zeigen, dass $k_i$ als Lösung von $(star)$
   die Form
@@ -1264,16 +1184,13 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
                => alpha & = - beta = frac(- frac(M, 1 - 2 p), 1 - ((1-p)/p)^M) \
     => EE [T | X_0 = i] & = frac(i, 1 - 2 p) - M/ (1 - 2 p) frac(1 - ((1-p)/p)^i, 1 - ((1-p)/p)^M) , i = 0, ..., M
   $
-
 ]
 == Konvergenzsätze
 
 #definition[
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. \
   Die stationäre Verteilung der Markovkette $(pi_i)$ mit
-
   - $pi_i >= 0 quad forall i in S$
-
   - $sum_(i in S) pi_i = 1$
 
   ist definiert durch
@@ -1285,12 +1202,9 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
         & pi = pi (P_(i j)) \
     <=> & pi ((P_(i j)) - I) = 0
   $
-
 ] <thm:markov-station>
 #remark[Bemerkung zu @thm:markov-station][
-
   - Für jede Markovkette mit endlichem Zustandsraum existiert eine stationäre Verteilung (s. Aufgaben).
-
   - Bezeichnet $p^((n)) = (P_i^((n)))_(i in S)$, $P_i^((n)) = P(X_n = i)$
     die Anfangsverteilung von $X_n$ und ist die Anfangsverteilung stationär, dann gilt
     $
@@ -1347,10 +1261,8 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
     mat(p_1, p_2) Pi = 1/(a + b) mat(b, a) mat(1 - a, a; b, 1 - b) = 1/(a + b) mat(b, a) = mat(p_1, p_2)
   $
   und daher $mat(p_1, p_2) Pi^n = mat(p_1, p_2)$.
-
 ]
 #theorem[Satz 14][
-
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette
   ${ X_n : n in NN_0 }$ mit stationäre Verteilung
   $pi = mat(pi_1, ..., pi_S)$. \
@@ -1359,13 +1271,11 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
                                    p_(i j) & >= epsilon pi_j quad forall quad i, j = 1, ..., S \
     => sum_(j = 1)^S abs(p_(i j)^n - pi_j) & <= 2 (1 - epsilon)^n.
   $
-
 ] <thm:convergence_markov>
 Aus dem Satz folgt also, dass eine Markovkette für steigende $n$
 exponentiell zur stationären Verteilung konvergiert. \
 
 #proof(title: [Beweis von @thm:convergence_markov])[
-
   Setze $M = vec(pi, dots.v, p i) in RR^(S times S)$ und
   $Q : = 1 / (1 - epsilon) (pi - epsilon M)$. $M$ und $Q$ sind positive stochastische Matrizen und
   $
@@ -1395,7 +1305,6 @@ exponentiell zur stationären Verteilung konvergiert. \
   $
 ]
 #theorem[Satz 15][
-
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette mit Zustandsraum ${ 1, ..., S }$ und stationärer Verteilung
   $pi = mat(pi_1, ..., pi_S)$. \
   Es existiere $k in NN$, $epsilon in (0, 1)$, sodass
@@ -1404,9 +1313,7 @@ exponentiell zur stationären Verteilung konvergiert. \
     => sum_(j = 1)^S abs(p_(i j)^n - pi_j) <= 2 (1 - epsilon)^(⌊ n / k ⌋)
   $
 ] <thm:convergence_markov2>
-
 #proof(title: [Beweis von @thm:convergence_markov2])[
-
   Wende hier @thm:convergence_markov auf $Pi^k$ an. \
   $pi$ ist auch eine stationäre Verteilung für $Pi^k$ und
   $
@@ -1426,11 +1333,8 @@ exponentiell zur stationären Verteilung konvergiert. \
 
 Unter den Voraussetzungen von Satz 15 gilt: \
 $lim_(n -> oo) P_(i j)^n$
-
 - existiert für alle $i, j in S$,
-
 - ist unabhängig von $i$,
-
 - und ist gegeben durch die stationäre Verteilung.
 
 Ist ${ X_n : n in NN_0 }$ eine Markovkette mit Übergangsmatrix
@@ -1448,7 +1352,6 @@ $p_(i j^n) >= epsilon pi_j$ ($i, j = 1, ..., S$) mit
 $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
 
 #example[Beispiel 11 (Fortsetzung)][
-
   Sei nun $a = b = 1$, also
   $
     Pi = mat(0, 1; 1, 0)
@@ -1481,21 +1384,17 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
       & d_1 = g g t ({ 2, 4, 6, ... }) = 2 \
       & d_2 = 2
     $
-
   - Jeder Zustand $i$ mit $p_(i i) > 0$ ist aperiodisch.
-
   - Für die einfache Irrfahrt auf $ZZ$ mit $p in (0, 1)$ gilt
   $
     d_i = 2 quad forall quad i in ZZ
   $
 ]
 #theorem[Satz 16][
-
   Für jeden aperiodischen Zustand $i$ existiert $n_0 (i) in NN$, sodass
   $
     p_(i i)^n > 0 quad forall quad n >= n_o (i)
   $
-
 ] <thm:periodic_markov>
 #example[Beispiel 13][
   Sei
@@ -1510,7 +1409,6 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
   $P_11^n > 0$ für alle $n in NN$, aber für $n >= 3 = n_0 (1)$.
 ]
 #proof(title: [Beweis von @thm:periodic_markov])[
-
   Zunächst ist für den Beweis folgendes Lemma notwendig:
 
   #lemma[Lemma 2][
@@ -1600,20 +1498,16 @@ $
 $
 
 #theorem[Satz 17][
-
   Sei $(P_(i j))$ die Übergangsmatrix einer irreduziblen Markovkette mit Zustandsraum $S = { 1, ..., s }$ und mindestens
   einem aperiodischen Zustand. \
   $=>$ Es existiert eine eindeutige stationäre Verteilung
   $(pi_i)_(i in S)$ und
-
   $
     lim_(n -> oo) P_(i j)^n = pi_j > 0 quad forall quad i, j in S
   $
 ] <thm:stationary_markov>
 #proof(title: [Beweis @thm:stationary_markov])[
-
   Zeige: Es gibt ein $N in NN$ (unabhängig von $i, j$), sodass
-
   $
     P_(i j)^N > ß quad forall quad i, j in S
   $
@@ -1629,7 +1523,6 @@ $
   $
     => p_(i j)^N >= p_(i i_0)^(n_(i i_0)) p_(i_0 i_0)^(overbrace(N - n_(i i_0) - n_(i_0 j)^(>= n_0))) p_(i_0 j)^(n_(i_0 j)) > 0 quad forall quad i, j in S
   $
-
   Bemerkung: Unter den Voraussetzungen von @thm:stationary_markov gibt es für jeden Zustand $i$ ein $n_0 (i) in NN$, sodass
   $P_(i i)^n > 0 quad forall quad n >= n_0 (i)$. Daher ist dann jeder Zustand aperiodisch.
 ]
@@ -1661,7 +1554,6 @@ $
 
 #definition[
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum S.
-
   Für jedes $j in S$ sei
   $
     tau_j := inf { n >= 1 : X_N = j } quad (inf nothing = oo).
@@ -1701,10 +1593,8 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
     f_33 = P(tau < oo | X_0 = 3) = P(X_1 = 3 | X_0 = 3) = 1 / 3 < 1
   $
   3 ist also transient und somit die Markovkette weder transient noch rekurrent.
-
 ]
 #theorem[Satz 18][
-
   Für $j in S$ sei
   $
     N_j = sum_(n = 1)^oo bold("1")_({ X_n = j })
@@ -1748,7 +1638,6 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
     $P(N_j in { 0, oo } | X_0 = i) = 1$. \
     Es ist $P(N_j = 0 | X_0 = i) = 1 - f_(i j)$ und es folgt
     $P(N_j = oo | X_0 = i) = f_(i j)$.
-
   - Sei $j$ transient, also $f_(j j) < 1$.
     $
       (1 - f_(j j)) EE [N_j | X_0 = i] = P(1 <= sigma_j < oo | X_0 = i) <= 1
@@ -1764,7 +1653,6 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
 ]
 
 #remark[Bemerkung zu @thm:recurrence_transience][
-
   - Wegen $EE [N_j | X_0 = j] = sum_(n = 1)^oo P_(j j)^n$ liefert der Satz ein einfacheres Rekurrenzkriterium
     $
       j "ist rekurrent" <=> sum_(n = 1)^oo P_(j j)^n = oo
@@ -1777,19 +1665,16 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
       sum_(n = 1)^oo P_(i i)^n >= sum_(n = 1)^oo P_(i j)^(n_1) P_(j j)^n P_(j i)^(n_2) = overbrace(P_(i j)^(n_1) P_(j i)^(n_2), > 0) sum_(n =)^oo P_(j j)^n = oo
     $
     $=> quad i$ ist ebenfalls rekurrent.
-
   - Ist $j$ transient, dann gilt
     $lim_(n -> oo) P_(i j)^n = 0 quad forall quad i in S$, denn
     $
       sum_(n = 1)^oo P_(i j)^n = EE [N_j | X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo
     $
-
   - Jede Markovkette mit endlichem Zustandsraum $S = { 1, ..., s }$ hat mindestens einen rekurrenten Zustand, denn sonst
     wäre
     $
       1 = lim_(n -> oo) sum_(j = 1)^s P_(i j)^n = sum_(j = 1)^s lim_(n -> oo) P_(i j)^n = 0 "Widerspruch!"
     $
-
   - Jede irreduzible Markovkette mit endlichem Zustandsraum ist rekurrent. Außerdem gilt für solche Markovketten
     $
       EE [tau_j | X_0 = i] < oo
@@ -1805,9 +1690,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   $
     P_(i i)^(2 n) = vec(2 n, n) p^n (1 - p)^(2 n - n)
   $
-
   Wegen
-
   $
     (vec(2 (n + 1), n + 1)) / (2 n) = ((2n + 2)(2n +1)) / ((n+1)^2 ) <= 4
   $
@@ -1835,10 +1718,6 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   Ein Zustand $j$ heißt *positiv rekurrent*, falls $EE_j [T_j] < oo$ und er heißt *nullrekurrent*, falls $E_j [T_j] = oo$.
   Ist der Zustandsraum der Markovkette endlich, folgt aus Irreduzibilität bereits positive Rekurrenz und die Existenz einer eindeutigen stationären Verteilung. Die Konvergenz zu einer eindeutigen stationären Verteilung (unabhängig von der Anfangsverteilung) hingegen basiert (s. @thm:stationary_markov ) darauf, dass mindestens ein Zustand aperiodisch ist.
 ]
-Ein Zustand $j$ heißt positiv rekurrent, falls $EE_j [T_j] < oo$ und er heißt nullrekurrent, falls $E_j [T_j] = oo$. Ist
-der Zustandsraum der Markovkette endlich, folgt aus Irreduzibilität bereits positive Rekurrenz und die Existenz einer
-eindeutigen stationären Verteilung. Die Konvergenz zu einer eindeutigen stationären Verteilung (unabhängig von der
-Anfangsverteilung) hingegen basiert (s. @thm:stationary_markov ) darauf, dass mindestens ein Zustand aperiodisch ist.
 
 = Erneuerungsprozesse
 
@@ -1884,14 +1763,12 @@ und damit $Y_(M + 1) = oo$. Das wäre ein Widerspruch, da dies
 $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall ist.
 
 #theorem[Satz 19][
-
   Sei $0 < mu = EE [Y_1] < oo$. Mit Wahrscheinlichkeit 1 gilt
   $
     lim_(t -> oo) N(t)/ t) = 1 / mu
   $
 ] <thm:renewal_mean>
 #proof(title: [Beweis @thm:renewal_mean])[
-
   Mit $(star)$ und $(star star)$ folgt
   $
     => frac(T_(N (t)), N (t)) <= t/N(t) < frac(T_(N (t) + 1), N (t) + 1) frac(N (t) + 1, N (t))
@@ -1905,7 +1782,6 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $
 ]
 #example[Beispiel 17][
-
   Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in NN_0 }$, bei dem $Y_1, Y_2, ...$ i.i.d die Wartezeit bis
   zum Ausfall einer Glühbirne in einer Lampe mit einer Glühbirne beschreibt. Folglich ist
   $T_n$ die Zeit, bis die n-te Glühbirne ausgefallen ist, bzw. ausgetauscht werden musste. \
@@ -1922,7 +1798,6 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
     & -> 1 / "Erwartete Lebensdauer einer Glühbirne"
   $
   Also ist $mu approx 1000 / 7 = 143$
-
 ]
 #example[Beispiel 18][
   Zu betrachten sei ein Erneuerungsprozess ${ N (t) : t in NN_0 }$, bei dem $Y_1, Y_2, ...$ i.i.d. die Zeitabstände
@@ -1957,7 +1832,6 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $
     lim_(t -> oo) frac(X (t), t) = lim_(t -> oo) (frac(1, N (t)) sum_(i = 1)^(N (t))) frac(N (t), t) = EE[X_1] / EE[Y_1]
   $
-
 ]
 #theorem[Satz 20][
   Sei $mu := EE [Y_1]$, $sigma^2 := "Var" [Y_1]$ mit $0 < mu < oo$ und
@@ -1970,11 +1844,9 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $
     lim_(t -> oo) P(frac(N (t) - t / mu, sqrt(frac(t sigma^2, mu^3))) < y) = Phi (y) quad forall y in RR
   $
-
 ] <thm:renewal_distribution>
 
 #proof(title: [Beweis @thm:renewal_distribution])[
-
   Der Beweis nutzt $P(N (t) < n) = P(T_n > t)$, den zentralen Grenzwertsatz und folgendes Lemma: Seien $X_1, X_2, ...$
   ZUfallsvariablen, sodass
   $l i m_(n -> oo) P(X_n > x) = G (x) quad forall x in RR$, wobei
@@ -2043,7 +1915,6 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
 = Poisson-Prozesse
 
 #definition[
-
   Eine Zufallsvariable X heißt exponentialverteilt mit Parameter
   $lambda > 0$ ($X tilde.op EE X P(lambda)$), falls $X$ die Dichte
   $
@@ -2084,7 +1955,6 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
     P(N (t) - N (s) = n) = e^(- lambda (t - s)) frac([lambda (t - s)]^n, n !) "für") n = 0, 1, ...
   $
 ] <thm:mean_poisson>
-
 #proof(title: [Beweis @thm:mean_poisson])[
   Seien $Y_i$, $T_n$, $N (t)$ wie in der Definition eines Poisson-Prozesses. \
   Sei $k >= 2$, $0 = t_0 < t_1 <..., t_k$,
@@ -2131,7 +2001,6 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
     & = frac(e^(- lambda) lambda, 1 !) frac(e^(- 2 lambda) (2 lambda)^4, 4 !) \
     & = 2 / 3 e^(- 3 lambda) lambda^5
   $
-
 ]
 #example[Beispiel 20][
   Ab 09:00 erfolgen Anrufe gemäß eines Poisson-Prozesses. Gegeben, dass bis 09:30 genau ein Anruf eingeht, wie groß ist
