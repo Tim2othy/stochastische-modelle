@@ -106,6 +106,7 @@ Ist $A$ eine echte Teilmenge von $B$ ($A ⊂ B$) gilt
                            & = 1 - P([⋂_(n = 1)^oo A_n]^C) = P(⋂_(n = 1)^oo A_n) = P(A)
     $
 ]
+
 == Zufallsvariablen
 
 #definition[
@@ -244,19 +245,10 @@ $
   "Cov" [X, Y] = EE [(X - EE [X]) (Y - EE [Y])] = EE [X Y] - EE [X] EE [Y]
 $
 Es gilt
-#set enum(numbering: "1.")
-
-
-+ $"Var" [a X + b] = a^2 "Var" [X]$ für $a, b in RR$
-
-+ $"Var" [a X + b Y] = a^2 "Var" [X] + b^2 "Var" [Y] + 2 a b "Cov" [X, Y]$
-  oder allgemein
-  $"Var" [sum X_i] = sum "Var" [X_i] + 2 sum_(i < j) "Cov" [X_i, X_j]$
-
-+ $"Cov" [a X + b, c Y + d] = a c "Cov" [X, Y]$ für
-  $a, b, c, d in RR$
-
-+ $"Cov" [sum_(i = 1)^n X_i, sum_(j = 1)^m Y_j] = sum_(i = 1)^n sum_(j = 1)^m "Cov" [X_i, Y_j]$
+1. $"Var" [a X + b] = a^2 "Var" [X]$ für $a, b in RR$
+2. $"Var" [a X + b Y] = a^2 "Var" [X] + b^2 "Var" [Y] + 2 a b "Cov" [X, Y]$ oder allgemein $"Var" [sum X_i] = sum "Var" [X_i] + 2 sum_(i < j) "Cov" [X_i, X_j]$
+3. $"Cov" [a X + b, c Y + d] = a c "Cov" [X, Y]$ für $a, b, c, d in RR$
+4. $"Cov" [sum_(i = 1)^n X_i, sum_(j = 1)^m Y_j] = sum_(i = 1)^n sum_(j = 1)^m "Cov" [X_i, Y_j]$
 
 == Unabhängigkeit
 
@@ -280,15 +272,11 @@ unabhängig sind.
 
 Für unabhängige Zufallsvariablen $X_1, ..., X_n$ gilt
 + ${ X_1 in B_1 }, ..., { X_n in B_n }$ sind unabhängige Ereignisse für alle $B_1, ..., B_n in RR$
-
 + $EE [product_(i = 1)^n X_i] = product_(i = 1)^n EE [X_i]$
-
 + $"Cov"[X_i, X_j] = 0$ für alle $i != j ==> "Var" [X_1, ..., X_n] = sum_(i = 1)^n "Var" [X_i]$
++ $h_1 (X_1, ..., X_(n_1)), h_2 (X_(n_1 + 1), ... X_(n_2)), ..., h_n (X_(n_(k - 1) + 1), ... X_(n_k))$ sind unabhängige Zufallsvariablen, wobei $0 = n_0 < n_1 <... < n_k <= n$ und $h_i : RR^(n_i - n_(i - 1)) -> RR$
 
-+ $h_1 (X_1, ..., X_(n_1)), h_2 (X_(n_1 + 1), ... X_(n_2)), ..., h_n (X_(n_(k - 1) + 1), ... X_(n_k))$
-  sind unabhängige Zufallsvariablen, wobei $0 = n_0 < n_1 <... < n_k <= n$ und $h_i : RR^(n_i - n_(i - 1)) -> RR$
-
-  ${ (X_1, ..., X_(n_1)) in B_1 }, { (X_(n_1 + 1), ..., X_(n_2)) in B_2 }, ..., { (X_(n_(k - 1) + 1), ..., X_(n_k)) in B_k }$ sind somit unabhängige Ereignisse für alle $B_1, ..., B_k$.
+${ (X_1, ..., X_(n_1)) in B_1 }, { (X_(n_1 + 1), ..., X_(n_2)) in B_2 }, ..., { (X_(n_(k - 1) + 1), ..., X_(n_k)) in B_k }$ sind somit unabhängige Ereignisse für alle $B_1, ..., B_k$.
 
 Für den Spezialfall diskreter Zufallsvariablen $X_1, ..., X_n$ gilt
 $
@@ -303,8 +291,7 @@ dann sind $X_1, ..., X_n$ unabhängig. In diesem Fall ist
 $
   f_(X_1) (x_1)... f_(X_n) (x_n)
 $
-eine gemeinsame Dichte von
-$X_1, ..., X_n$.
+eine gemeinsame Dichte von $X_1, ..., X_n$.
 
 == Bedingte Wahrscheinlichkeiten und Erwartungswerte
 
@@ -361,19 +348,16 @@ $f_(X | Y) (x | y) = f_X (x)$ und
 $
   f_(X + Y) (z) = sum_Y f_X (z - y) f_Y (y) .
 $
-Diese Funktion heißt Faltung von $f_X$ und $f_Y$. \
-Analog ist für unabhängige stetige Zufallsvariablen $X$ und $Y$ mit zugehörigen Dichten $f_X (x)$ und $f_Y (y)$ die
-Dichte von $X + Y$
-gegeben durch die Faltung
+Diese Funktion heißt Faltung von $f_X$ und $f_Y$.
+Analog ist für unabhängige stetige Zufallsvariablen $X$ und $Y$ mit zugehörigen Dichten $f_X (x)$ und $f_Y (y)$ die Dichte von $X + Y$ gegeben durch die Faltung
 $
   f_(X + Y) (z) = integral_(- oo)^oo f_X (z - y) f_Y (y) thin d y,
 $
 denn für alle $t in RR$ ist
 $
-  P(X + Y + t) = integral_(- oo)^oo integral_(- y)^(t - y) f_X (x) f_Y (y) thin d x thin d y =
-$
-$
-  integral_(- oo)^oo integral_(- oo)^t f_X (z - y) f_Y (y) thin d z thin d y = integral_(- oo)^t integral_(- oo)^oo f_X (z - y) f_Y (y) thin d y thin d z
+  P(X + Y + t) & = integral_(- oo)^oo integral_(- y)^(t - y) f_X (x) f_Y (y) thin d x thin d y \
+               & = integral_(- oo)^oo integral_(- oo)^t f_X (z - y) f_Y (y) thin d z thin d y \
+               & = integral_(- oo)^t integral_(- oo)^oo f_X (z - y) f_Y (y) thin d y thin d z \
 $
 Seien $X$ und $Y$ diskrete Zufallsvariablen und gilt
 $g : RR -> RR$. Der bedingte Erwartungswert von $g (X)$
@@ -394,14 +378,9 @@ $
 
 Im Falle diskreter Zufallsvariablen $X, X_1, X_2, Y$ und $y in RR$ gelten
 folgende Rechenregeln für bedingte Erwartungswerte:
-
 + $EE [a X_1 + b X_2 | Y = y] = a EE [X_1 | Y = y] + b EE [X_2 | Y = y]$
-
-+ $EE [h (X, Y) | Y = y] = EE [h (X, y) | Y = y]$ für
-  $h : RR^2 -> RR$
-
++ $EE [h (X, Y) | Y = y] = EE [h (X, y) | Y = y]$ für $h : RR^2 -> RR$
 + $EE [g (X) | Y = y] = EE [g (X)]$ falls $X tack.t Y$
-
 + $EE [g (X) h (Y) | Y = y] = h (y) EE [g (X) | Y = y]$ für
   $h : RR -> RR$
 
@@ -458,22 +437,14 @@ $
 
 ]<thm:markov-kette>
 $(star)$ beinhaltet zwei Aussagen:
-
-+ Die Bedingte Verteilung von $X_(n + 1)$ für eine gegebene Vorgeschichte $i_0, i_1, ..., i_n$ hängt nur von der
-  Gegenwart ab, aber nicht von der Vergangenheit. Dies ist die Markov-Eigenschaft.
-
++ Die Bedingte Verteilung von $X_(n + 1)$ für eine gegebene Vorgeschichte $i_0, i_1, ..., i_n$ hängt nur von der Gegenwart ab, aber nicht von der Vergangenheit. Dies ist die Markov-Eigenschaft.
 + Die bedingte Verteilung hängt nicht vom Zeitpunkt $n$ ab. Die Übergangswahrscheinlichkeiten sind stationär.
 
 Die $i$-te Zeile der Übergangsmatrix beschreibt die bedingte Verteilung des nächsten Zustands $X_(n + 1)$ gegeben $X_n = i$ (und
 $X_0 = i_0, ...$).
 
 #example[Beispiel 2][
-
-  Seien $X_0, X_1, ...$ unabhängige und identisch verteilte
-  $NN_0$-wertige Zufallsvariablen mit $P(X_0 = i) = a_i$,
-  $i = 0, 1, ...$. Dann ist ${ X_n : n in NN }$ eine Markov-Kette mit Zustandsraum $NN_0$ und Übergangsmatrix
-  $(P_(i j))_(i, j in NN_0)$ mit $p_(i j) = a_j$ für alle
-  $i, j in NN_0$.
+  Seien $X_0, X_1, ...$ unabhängige und identisch verteilte $NN_0$-wertige Zufallsvariablen mit $P(X_0 = i) = a_i$, $i = 0, 1, ...$. Dann ist ${ X_n : n in NN }$ eine Markov-Kette mit Zustandsraum $NN_0$ und Übergangsmatrix $(P_(i j))_(i, j in NN_0)$ mit $p_(i j) = a_j$ für alle $i, j in NN_0$.
   $
     (P_(i j))_(i, j = 0)^a = mat(
       a_0, a_1, a_2, dots.h.c; a_0, a_1, a_2, dots.h.c; a_0, a_1, a_2, dots.h.c; dots.v, dots.v, dots.v, dots.down
@@ -484,8 +455,7 @@ $X_0 = i_0, ...$).
   $
     P(X_(n + 1) = i_(n + 1) | X_0 = i_0, ..., X_n = i_n) = P(X_(n + 1) = i_(n + 1)) = a_(i_(n + 1)) = p_(i_n i_(n + 1))
   $
-  In Worten: Die Wahrscheinlichkeit von Zustand $i$ in Zustand $j$ zu gehen wird nur durch die Wahrscheinlichkeit in
-  Zustand $j$ zu sein bestimmt, oder anders gesagt $X_(n + 1)$ und $X_n$ sind unabhängig.
+  In Worten: Die Wahrscheinlichkeit von Zustand $i$ in Zustand $j$ zu gehen wird nur durch die Wahrscheinlichkeit in Zustand $j$ zu sein bestimmt, oder anders gesagt $X_(n + 1)$ und $X_n$ sind unabhängig.
 
 ]
 #example([Beispiel 3], subtitle: [Irrfahrt auf $ZZ$])[
@@ -507,8 +477,7 @@ $X_0 = i_0, ...$).
     = & P(Y_(n + 1) = i_(n + 1) - i_n | Y_1 = i_1, Y_2 = i_2 - i_1, ..., Y_n = i_n - i_(n - 1)) \
     = & P(Y_(n + 1) = i_(n + 1) - i_n) = a_(i_(n + 1) - i_n) .
   $
-  $==> { X_n : n in NN }$ ist eine Markov-Kette mit Zustandsraum $ZZ$ und Übergangswahrscheinlichkeit
-  $p_(i j) = a_(j - 1)$, $i, j in ZZ$.
+  $==> { X_n : n in NN }$ ist eine Markov-Kette mit Zustandsraum $ZZ$ und Übergangswahrscheinlichkeit $p_(i j) = a_(j - 1)$, $i, j in ZZ$.
   $
     (P_(i j)) = mat(
       ..., a_(- 2), a_(- 1), a_0, a_1, a_2, ...;
@@ -519,9 +488,9 @@ $X_0 = i_0, ...$).
       dots.up, dots.v, dots.v, dots.v, dots.v, dots.v, dots.down
     )
   $
-  Ein Spezialfall wäre die einfache Irrfahrt auf $ZZ$ bei der
-  $P(Y_n = 1) = p$ und $P(Y_n = - 1) = 1 - p$ für alle $n in NN$. Interpretation: Die Markov-Kette beschreibt die
-  Position eines Teilchens, das sich auf $ZZ$ bewegt. Es startet im Ursprung $X_0 = 0$
+  Ein Spezialfall wäre die einfache Irrfahrt auf $ZZ$ bei der $P(Y_n = 1) = p$ und $P(Y_n = - 1) = 1 - p$ für alle $n in NN$.
+  Interpretation: Die Markov-Kette beschreibt die Position eines Teilchens, das sich auf $ZZ$ bewegt.
+  Es startet im Ursprung $X_0 = 0$
   und springt zu jedem Zeitpunkt $1, 2, ...$ zufällig eine Einheit nach links oder rechts.
 
 ]
@@ -870,6 +839,7 @@ Zeitpunkt zu berechnen:
   $
 
 ]
+
 == Absorptionswahrscheinlichkeiten und -zeiten
 
 #definition[
@@ -880,8 +850,7 @@ Zeitpunkt zu berechnen:
   $T$ ist die Eintrittszeit in $A$, also der zufällige Zeitpunkt des ersten Besuchs der Menge $A$, falls es einen gibt.
 ]
 
-Ziel: Berechne für jeden Anfangszustand $i$ die Wahrscheinlichkeit, dass
-$A$ in endlicher Zeit erreicht wird.
+Ziel: Berechne für jeden Anfangszustand $i$ die Wahrscheinlichkeit, dass $A$ in endlicher Zeit erreicht wird.
 $
   P(T < oo | X_0 = i) = P(⋃_(n = 0)^oo { X_n in A } | X_0 = i) = p_i (T < oo)
 $
@@ -1116,6 +1085,7 @@ Folgender Satz gilt für beliebige $A$: \
   + $(h_i)$ ist eine nichtnegative Lösung nach Satz 10.
 
   + Sei $(x_i)$ eine Lösung mit $X_i >= 0$, $i in S$.
+
     $
       => x_i = overbrace(sum_(j in A) p_(i j), := r_i) dot 1 + overbrace(sum_(j in A^c) p_(i j), := Q) x_j, i in A^c
     $
@@ -1156,6 +1126,7 @@ Folgender Satz gilt für beliebige $A$: \
   $
 
 ]
+
 Für die folgenden Schritte werden folgende Rechenregeln für
 $overline(RR) = RR ∪ { - oo, oo }$ benötigt:
 
@@ -1501,7 +1472,8 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
     d_i = oo, "falls" P_(i i)^n = 0 quad forall quad n in NN
   $
   Ein Zustandsraum mit Periode 1 heißt #strong[aperiodisch];. Die Markovkette heißt aperiodisch, falls alle ihre Zustände
-  aperiodisch sind.]
+  aperiodisch sind.
+]
 
 #example[Beispiel 12][
   - Für $S = { 1, 2 }$ und $Pi = mat(0, 1; 1, 0)$ gilt
@@ -1593,16 +1565,12 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
   $=>$ Es gibt $n_0 (i)$ mit $P_(i i)^n > 0$
   $forall n >= n_0 (i)$.
 ]
-
-Eine Markovkette und ihre Übergangsmatrix heißen #strong[irreduzibel];, falls es für alle $i, j in S$ ein $n >= 0$ gibt
-mit $p_(i j)^n > 0$.
-
-- $(P_(i j))$ ist genau dann irreduzibel, wenn es für alle $i, j in S$
-  mit $i != j$ eine Folge von Zuständen $i_0, ..., i_n in S$
-  gibt, mit $i_0 = i, ..., i_n = j$ und
-  $p_(i_0 i_1) > 0, ..., p_(i_(n - 1) i_n) > 0$.
-
-- Jede irreduzibel Markovkette mit endlichem Zustandsraum $S$ hat eine eindeutige stationäre Verteilung $(pi_i)_(i in S)$.
+#definition[
+  Eine Markovkette und ihre Übergangsmatrix heißen #strong[irreduzibel];, falls es für alle $i, j in S$ ein $n >= 0$ gibt
+  mit $p_(i j)^n > 0$.
+  - $(P_(i j))$ ist genau dann irreduzibel, wenn es für alle $i, j in S$ mit $i != j$ eine Folge von Zuständen $i_0, ..., i_n in S$ gibt, mit $i_0 = i, ..., i_n = j$ und $p_(i_0 i_1) > 0, ..., p_(i_(n - 1) i_n) > 0$.
+  - Jede irreduzibel Markovkette mit endlichem Zustandsraum $S$ hat eine eindeutige stationäre Verteilung $(pi_i)_(i in S)$.
+]
 
 Positivität: \
 Es existiert ein $i_0 in S$ mit $pi_(i_0) > 0$. Für jedes $j in S$
@@ -1688,7 +1656,9 @@ $
   Das heißt $pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovkette in Zustand j verbringt.
 ]
 #example[][HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29]
+
 == Rekurrenz und Transienz
+
 #definition[
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum S.
 
@@ -1821,13 +1791,13 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
     $
 
   - Jede irreduzible Markovkette mit endlichem Zustandsraum ist rekurrent. Außerdem gilt für solche Markovketten
-  $
-    EE [tau_j | X_0 = i] < oo
-  $
-  und daher ist
-  $
-    P(N_j = oo | X_0 = i) = f_(i j) = 1 quad forall quad i, j in S
-  $
+    $
+      EE [tau_j | X_0 = i] < oo
+    $
+    und daher ist
+    $
+      P(N_j = oo | X_0 = i) = f_(i j) = 1 quad forall quad i, j in S
+    $
 ]
 #example[Beispiel 16][
   Wie betrachten wieder die einfache Irrfahrt auf $ZZ$. \
@@ -1859,6 +1829,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
     sum_(n = 1)^oo P_(i i)^n = sum_(n = 1)^oo vec(2 n, n) [P(1 - p)]^n >= sum_(n = 1)^oo frac(4^n, 2 sqrt(n)) (1 / 4)^n = 1 / 2 sum_(n = 1)^oo 1 / sqrt(n) = oo
   $
   $=>$ für $p = 1 / 2$ ist die einfache Irrfahrt rekurrent.
+]
 
 #definition[
   Ein Zustand $j$ heißt *positiv rekurrent*, falls $EE_j [T_j] < oo$ und er heißt *nullrekurrent*, falls $E_j [T_j] = oo$.
@@ -2078,8 +2049,8 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $
     f (x) = cases(lambda e^(- lambda x) & "falls" x > 0, 0 & "sonst")
   $
-  hat.]
-
+  hat.
+]
 #definition[
   Sei $lambda$ eine Konstante $> 0$. Seien $Y_1, Y_2, ...$ i.i.d. exponentialverteilte Zufallsvariablen für alle $n = 1, 2, ...$. \
   Setze
