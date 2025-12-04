@@ -115,8 +115,8 @@
   }
 
   // Indent lists
-  set enum(numbering: "(a)", spacing: 3em, indent: 1em)
-  set list(indent: 1em)
+  set enum(numbering: "(a)", spacing: 1.2em, indent: 1.4em)
+  set list(spacing: 1.2em, indent: 1.4em)
 
   // Section headers
   set heading(numbering: "1.1")
