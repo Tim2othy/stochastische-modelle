@@ -1,12 +1,17 @@
-#import "@preview/theorion:0.3.3": proof
 #import "settings.typ": *
-#import "boxes.typ": axiom, definition, example, lemma, remark, theorem
 
 #show: project.with(
   title: [Stochastische Modelle],
   subtitle: [Vorlesung Wintersemester 2024/25],
   report-style: true,
 )
+
+#let theorem = blue_box
+#let lemma = blue_box
+#let example = brown_box
+#let definition = plain_box
+#let axiom = plain_box
+#let remark = green_note
 
 
 = Wahrscheinlichkeitstheorie

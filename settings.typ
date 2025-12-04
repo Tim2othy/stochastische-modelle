@@ -1,4 +1,5 @@
 #import "@preview/gentle-clues:1.2.0": *
+#import "boxes.typ": *
 
 #let fonts = (
   text: "Libertinus Serif",
@@ -13,6 +14,7 @@
   hyperlink: blue,
   strong: rgb("#000055"),
 )
+
 #let toc = {
   show outline.entry.where(level: 1): it => {
     v(1.6em)
@@ -20,7 +22,7 @@
   }
   show outline.entry.where(level: 2): it => {
     v(0.9em, weak: true)
-    text(font: fonts.sans, it)
+    text(size: 0.9em, font: fonts.sans, it)
   }
   text(fill: colors.title, size: 1.4em, font: fonts.sans, [Inhaltsverzeichnis])
   v(0.1em)
@@ -100,7 +102,7 @@
   show strong: set text(font: fonts.sans, size: 0.9em)
 
   // Theorem environments
-  //show: thm-rules.with(qed-symbol: $square$)
+  show: thm-rules.with(qed-symbol: $square$)
 
   // Change quote display
   set quote(block: true)
@@ -183,3 +185,142 @@
 
   body
 }
+
+#let eqn(s) = {
+  set math.equation(numbering: "(1)")
+  s
+}
+#let pageref(label) = context {
+  let loc = locate(label)
+  let nums = counter(page).at(loc)
+  link(loc, "page " + numbering(loc.page-numbering(), ..nums))
+}
+
+// Define clue environments
+#let definition(..args) = clue(
+  accent-color: _get-accent-color-for("abstract"),
+  icon: _get-icon-for("abstract"),
+  title: "Definition",
+  ..args,
+)
+#let problem(..args) = clue(
+  accent-color: _get-accent-color-for("experiment"),
+  icon: _get-icon-for("experiment"),
+  title: "Problem",
+  ..args,
+)
+#let exercise(..args) = clue(
+  accent-color: _get-accent-color-for("experiment"),
+  icon: _get-icon-for("experiment"),
+  title: "Exercise",
+  ..args,
+)
+#let sample(..args) = clue(
+  accent-color: _get-accent-color-for("success"),
+  icon: _get-icon-for("experiment"),
+  title: "Sample Question",
+  ..args,
+)
+#let solution(..args) = clue(
+  accent-color: _get-accent-color-for("conclusion"),
+  icon: _get-icon-for("conclusion"),
+  title: "Solution",
+  ..args,
+)
+#let remark(..args) = clue(
+  accent-color: _get-accent-color-for("info"),
+  icon: _get-icon-for("info"),
+  title: "Remark",
+  ..args,
+)
+#let recipe(..args) = clue(
+  accent-color: _get-accent-color-for("task"),
+  icon: _get-icon-for("task"),
+  title: "Recipe",
+  ..args,
+)
+#let typesig(..args) = clue(
+  accent-color: _get-accent-color-for("code"),
+  icon: _get-icon-for("code"),
+  title: "Type signature",
+  ..args,
+)
+#let digression(..args) = clue(
+  accent-color: rgb("#bbbbbb"),
+  icon: _get-icon-for("quote"),
+  title: "Digression",
+  ..args,
+)
+
+// Theorem environments
+#let thm-args = (padding: (x: 0.5em, y: 0.6em), outset: 0.9em, counter: "thm", base-level: 1)
+#let thm = thm-plain("Theorem", fill: rgb("#eeeeff"), ..thm-args)
+#let lem = thm-plain("Lemma", fill: rgb("#eeeeff"), ..thm-args)
+#let prop = thm-plain("Proposition", fill: rgb("#eeeeff"), ..thm-args)
+#let cor = thm-plain("Corollary", fill: rgb("#eeeeff"), ..thm-args)
+#let conj = thm-plain("Conjecture", fill: rgb("#eeeeff"), ..thm-args)
+#let ex = thm-def("Example", fill: rgb("#ffeeee"), ..thm-args)
+#let algo = thm-def("Algorithm", fill: rgb("#ddffdd"), ..thm-args)
+#let claim = thm-def("Claim", fill: rgb("#ddffdd"), ..thm-args)
+#let rmk = thm-def("Remark", fill: rgb("#eeeeee"), ..thm-args)
+#let defn = thm-def("Definition", fill: rgb("#ffffdd"), ..thm-args)
+#let prob = thm-def("Problem", fill: rgb("#eeeeee"), ..thm-args)
+#let exer = thm-def("Exercise", fill: rgb("#eeeeee"), ..thm-args)
+#let exerstar = thm-def("Exercise", fill: rgb("#eeeeee"), title-fmt: x => { strong(x + " (*)") }, ..thm-args)
+#let ques = thm-def("Question", fill: rgb("#eeeeee"), ..thm-args)
+#let fact = thm-def("Fact", fill: rgb("#eeeeee"), ..thm-args)
+
+#let todo = thm-plain("TODO", fill: rgb("#ddaa77"), padding: (x: 0.2em, y: 0.2em), outset: 0.4em).with(numbering: none)
+#let proof = thm-proof("Proof")
+#let soln = thm-proof("Solution")
+
+// i have no idea how this works but it seems to work ¯\_(ツ)_/¯
+#let recall-thm(target-label) = {
+  context {
+    let el = query(target-label).first()
+    let loc = el.location()
+    let thms = query(selector(<meta:thm-env-counter>).after(loc))
+    let thmloc = thms.first().location()
+    let thm = thm-stored.at(thmloc).last()
+    (thm.fmt)(
+      thm.name,
+      link(target-label, str(thm.number)),
+      thm.body,
+      ..thm.args.named(),
+    )
+  }
+}
+
+#let pmod(x) = $space (mod #x)$
+#let bf(x) = $bold(upright(#x))$
+#let boxed(x) = rect(stroke: rgb("#003300") + 1.5pt, fill: rgb("#eeffee"), inset: 5pt, text(fill: rgb("#000000"), x))
+
+// Some shorthands
+#let pm = sym.plus.minus
+#let mp = sym.minus.plus
+#let int = sym.integral
+#let oint = sym.integral.cont
+#let iint = sym.integral.double
+#let oiint = sym.integral.surf
+#let iiint = sym.integral.triple
+#let oiiint = sym.integral.vol
+#let detmat(..args) = math.mat(delim: "|", ..args)
+#let ee = $bold(upright(e))$
+#let dang = sym.angle.arc
+
+#let url(s) = {
+  link(s, text(font: fonts.mono, s))
+}
+
+// Ersatz part command (similar to Koma-Script part in scrartcl)
+#let part(s) = {
+  heading(numbering: none, text(size: 1.4em, fill: colors.partfill, s))
+}
+
+// Unnumbered heading commands
+#let h1(..args) = heading(level: 1, outlined: false, numbering: none, ..args)
+#let h2(..args) = heading(level: 2, outlined: false, numbering: none, ..args)
+#let h3(..args) = heading(level: 3, outlined: false, numbering: none, ..args)
+#let h4(..args) = heading(level: 4, outlined: false, numbering: none, ..args)
+#let h5(..args) = heading(level: 5, outlined: false, numbering: none, ..args)
+#let h6(..args) = heading(level: 6, outlined: false, numbering: none, ..args)
