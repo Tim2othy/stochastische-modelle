@@ -1,5 +1,4 @@
 #import "@preview/gentle-clues:1.2.0": *
-#import "theorems.typ": *
 
 #let fonts = (
   text: "Libertinus Serif",
@@ -101,7 +100,7 @@
   show strong: set text(font: fonts.sans, size: 0.9em)
 
   // Theorem environments
-  show: thm-rules.with(qed-symbol: $square$)
+  //show: thm-rules.with(qed-symbol: $square$)
 
   // Change quote display
   set quote(block: true)
