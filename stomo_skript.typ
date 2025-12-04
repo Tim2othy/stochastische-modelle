@@ -876,10 +876,9 @@ Zeitpunkt zu berechnen:
 
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei $A ⊂ S$, $A != nothing$.
 
-  Setze
-  $T_i = inf { n in NN_0 : X_n in A }$, wobei $inf nothing = oo$. $T$
-  ist die Eintrittszeit in $A$, also der zufällige Zeitpunkt des ersten Besuchs der Menge $A$, falls es einen gibt.]
-
+  Setze $T_i = inf { n in NN_0 : X_n in A }$, wobei $inf nothing = oo$.
+  $T$ ist die Eintrittszeit in $A$, also der zufällige Zeitpunkt des ersten Besuchs der Menge $A$, falls es einen gibt.
+]
 
 Ziel: Berechne für jeden Anfangszustand $i$ die Wahrscheinlichkeit, dass
 $A$ in endlicher Zeit erreicht wird.
@@ -1207,51 +1206,45 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
 
 ] <thm:solution_markov2>
 #proof(title: [Beweis von @thm:solution_markov2])[
-
-  Die Behauptung ist klar für $A = S$. Sei also $A != S$.
-
+  Die Behauptung ist klar für $A = S$.
+  Sei also $A != S$.
   - Für $(k_i)_(i in S)$ gilt
-  $
-    & k_i in [0, oo] quad forall i in S \
-    & k_i = 0 quad forall i in A
-  $
-  Für $i in S without A$ gilt
-  $
-    k_i & = sum_(j in S) EE [T | X_0 = i, X_1 = j] p_(i j) \
-        & = sum_(j in S) (1 + EE [T | Y_0 = j]) p_(i j) "(siehe Aufgaben)" \
-        & = 1 + sum_(j in S without A) p_(i j) k_j
-  $
-  $=> (k_i)$
-  löst $(star)$.
-
-  - Sie nun $(x_i)_(i in S)$ eine Lösung von $(star)$ mit
-    $x_i in [0, oo]$. Zu zeigen ist, dass $x_i >= k_i quad forall i$. Für $i in A$ gilt $x_i = k_i = 0$. Für die
-    Spaltenvektoren
-
-  $
-    x = (x_i)_(i in A^c) "und" e = vec(1, dots.v, 1)
-  $
-  und
-  $
-    Q = (p_(i j))_(i, j in A^c)
-  $
-  gilt (siehe auch Beweis @thm:solution_markov)
-  $
-    x & = e + Q x \
-      & dots.v \
-      & = e + sum_(k = 1)^n Q^k e + Q^(n + 1) x, "für" n >= 1
-  $
-
-  und somit für alle $i in A^c$ und $n >= 2$, wobei ... und
-  $Q^(n + 1) x$ als strikt positiver Wert für die untere Schranke ausgelassen werden kann,
-
-  $
-        x_i & >= 1 + sum_(j in A^c) p_(i j) + sum_(k = 2)^n sum_(j_1, ..., j_k in A^c) p_(i j_1)... p_(j_(k - 1) j_k) \
-    <=> x_i & >= P_i (T > 0) + P_i (X_1 in A^c) + sum_(k = 2)^n P - i (X_1 in A^c, X_2 in A^c, ..., X_k in A^c) \
-    <=> x_i & >= P_i (T > 0) + P_i (T > 1) + sum_(k = 2)^n P_i (T > k) \
-    <=> x_i & >= sum_(k = 0)^n P_i (T > k) \
-     => x_i & >= sum_(k = 0)^oo P_i (T > k) = EE_i [T] = k_i
-  $
+    $
+      & k_i in [0, oo] quad forall i in S \
+      & k_i = 0 quad forall i in A
+    $
+    Für $i in S without A$ gilt
+    $
+      k_i & = sum_(j in S) EE [T | X_0 = i, X_1 = j] p_(i j) \
+          & = sum_(j in S) (1 + EE [T | Y_0 = j]) p_(i j) "(siehe Aufgaben)" \
+          & = 1 + sum_(j in S without A) p_(i j) k_j
+    $
+    $=> (k_i)$
+    löst $(star)$.
+  - Sie nun $(x_i)_(i in S)$ eine Lösung von $(star)$ mit $x_i in [0, oo]$. Zu zeigen ist, dass $x_i >= k_i quad forall i$.
+    Für $i in A$ gilt $x_i = k_i = 0$.
+    Für die Spaltenvektoren
+    $
+      x = (x_i)_(i in A^c) "und" e = vec(1, dots.v, 1)
+    $
+    und
+    $
+      Q = (p_(i j))_(i, j in A^c)
+    $
+    gilt (siehe auch Beweis @thm:solution_markov)
+    $
+      x & = e + Q x \
+        & dots.v \
+        & = e + sum_(k = 1)^n Q^k e + Q^(n + 1) x, "für" n >= 1
+    $
+    und somit für alle $i in A^c$ und $n >= 2$, wobei ... und $Q^(n + 1) x$ als strikt positiver Wert für die untere Schranke ausgelassen werden kann,
+    $
+          x_i & >= 1 + sum_(j in A^c) p_(i j) + sum_(k = 2)^n sum_(j_1, ..., j_k in A^c) p_(i j_1)... p_(j_(k - 1) j_k) \
+      <=> x_i & >= P_i (T > 0) + P_i (X_1 in A^c) + sum_(k = 2)^n P - i (X_1 in A^c, X_2 in A^c, ..., X_k in A^c) \
+      <=> x_i & >= P_i (T > 0) + P_i (T > 1) + sum_(k = 2)^n P_i (T > k) \
+      <=> x_i & >= sum_(k = 0)^n P_i (T > k) \
+       => x_i & >= sum_(k = 0)^oo P_i (T > k) = EE_i [T] = k_i
+    $
 ]
 #example[Beispiel 9 (Fortsetzung)][
 
@@ -1329,35 +1322,31 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
 
   - Bezeichnet $p^((n)) = (P_i^((n)))_(i in S)$, $P_i^((n)) = P(X_n = i)$
     die Anfangsverteilung von $X_n$ und ist die Anfangsverteilung stationär, dann gilt
-  $
-    P^((n)) = P^((0)) Pi^n = p^((0)) Pi Pi^(n - 1) =... = P^((0)),
-  $
-  d.h.
-  $P(X_n = i) = P(X_0 = i) quad forall n >= 0 "und" i in S$.
-
+    $
+      P^((n)) = P^((0)) Pi^n = p^((0)) Pi Pi^(n - 1) =... = P^((0)),
+    $
+    d.h.
+    $P(X_n = i) = P(X_0 = i) quad forall n >= 0 "und" i in S$.
   - Ist der Zustandsraum endlich und existiert für jedes $j in S$ der Grenzwert
-  $
-    pi_j = lim_(n -> oo) P(X_n = j),
-  $
-  dann
-  muss
-  $(pi_i)$ eine stationäre Verteilung sein, denn
-  $
-    & pi_i >= 0 quad forall i in S \
-    & sum_(i in S) pi_i = lim_(n -> oo) sum_(i in S) P(X_n = i) = 1
-  $
-  und
-  $
-    pi_j & = lim_(n -> oo) P(X_(n + 1) = j) \
-         & = lim_(n -> oo) sum_(i in S) P(X_n = i) p_(i j) \
-         & = sum_(i in S) lim_(n -> oo) P(X_n = i) p_(i j) \
-         & = sum_(i in S) pi_i p_(i j) quad forall j in S
-  $
+    $
+      pi_j = lim_(n -> oo) P(X_n = j),
+    $
+    dannmuss $(pi_i)$ eine stationäre Verteilung sein, denn
+    $
+      & pi_i >= 0 quad forall i in S \
+      & sum_(i in S) pi_i = lim_(n -> oo) sum_(i in S) P(X_n = i) = 1
+    $
+    und
+    $
+      pi_j & = lim_(n -> oo) P(X_(n + 1) = j) \
+           & = lim_(n -> oo) sum_(i in S) P(X_n = i) p_(i j) \
+           & = sum_(i in S) lim_(n -> oo) P(X_n = i) p_(i j) \
+           & = sum_(i in S) pi_i p_(i j) quad forall j in S
+    $
 ]
 #example[Beispiel 11][
-  Gegeben sei eine Markovkette ${ X_n : n in NN_0 }$ mit Zustandsraum
-  $S = { 1, 2 }$ und Übergangsmatrix
-  $Pi = mat((1 - a), a; b, (1 - b))$ ($a, b in (0, 1)$) Es gilt
+  Gegeben sei eine Markovkette ${ X_n : n in NN_0 }$ mit Zustandsraum $S = { 1, 2 }$ und Übergangsmatrix $Pi = mat((1 - a), a; b, (1 - b))$ ($a, b in (0, 1)$).
+  Es gilt
   $
     Pi^((n)) = 1 /( a + b) mat(b + (1 - a - b)^n a, a - (1 - a - b)^n a; b - (1 - a - b)^n b, b + (1 - a - b)^n b)
   $
@@ -1555,38 +1544,42 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
   #lemma[Lemma 2][
     Ist $N ⊂ NN$, $N != nothing$ abgeschlossen unter Addition, d.h. $n + m in N quad forall quad n, m in N$ und ist $g g T (N) = 1$,
     dann existiert $n_0 in NN$, sodass $n in N quad forall n >= n_0$. \
-  ]Um auch dies zu beweisen, muss zunächst gezeigt werden, dass $N$ zwei aufeinander folgende Zahlen $n_1$, $n_1 + 1$ enthält.
-  Setze dazu
-  $
-    M : = { n - n' : n, n' in N, n' < n }, \
-    m := m i n (M)
-  $
-  und sei
-  $n_1, n_2 in N$, sodass $m = n_2 - n_1$. Zeige $m = 1$. Nehme dafür zunächst an, dass $m != 1$. \
-  $=> m > 1$ und somit $m > g g t (N)$. $m$ teilt nicht alle Elemente von $N$. \
-  $=>$ Es gibt $n in N$ und $k in NN_0$ mit
-  $
-    k m < n < (k + 1) m,
-  $
-  also
-  $
-    0 < n - k m < m
-  $
-  und
-  $
-    n - k m & = n - k (n_2 - n_1) \
-            & = overbrace(n + k n_1 + n_2, in N) - overbrace((k + 1) m_2, in N) quad in M
-  $
-  Widerspruch zur Definition von $m$! Also muss $m = 1$ und
-  $n_1, n_1 + 1 in N$. \
-  Jede natürliche Zahl $n in NN$ lässt sich schreiben als
-  $
-       n & = q n_1 + r "mit" q in NN_0 "und" r < n_1 \
-    => n & = q n_1 + r (n_1 + 1 - n_1) \
-         & = r (n_1 + 1) + (q - r) n_1
-  $
-  Für $m >= n_1^2$ ist $q >= n_1$, also $q - r > 0$ und es folgt $n in N$. Es folgt also die Behauptung mit
-  $n_0 = n_1^2$. \
+  ] <lma-two>
+  #proof(title: [Beweis von @lma-two])[
+    Um auch dies zu beweisen, muss zunächst gezeigt werden, dass $N$ zwei aufeinander folgende Zahlen $n_1$, $n_1 + 1$ enthält.
+    Setze dazu
+    $
+      M : = { n - n' : n, n' in N, n' < n }, \
+      m := m i n (M)
+    $
+    und sei
+    $n_1, n_2 in N$, sodass $m = n_2 - n_1$. Zeige $m = 1$. Nehme dafür zunächst an, dass $m != 1$. \
+    $=> m > 1$ und somit $m > g g t (N)$. $m$ teilt nicht alle Elemente von $N$. \
+    $=>$ Es gibt $n in N$ und $k in NN_0$ mit
+    $
+      k m < n < (k + 1) m,
+    $
+    also
+    $
+      0 < n - k m < m
+    $
+    und
+    $
+      n - k m & = n - k (n_2 - n_1) \
+              & = overbrace(n + k n_1 + n_2, in N) - overbrace((k + 1) m_2, in N) quad in M
+    $
+    Widerspruch zur Definition von $m$! Also muss $m = 1$ und
+    $n_1, n_1 + 1 in N$. \
+    Jede natürliche Zahl $n in NN$ lässt sich schreiben als
+    $
+         n & = q n_1 + r "mit" q in NN_0 "und" r < n_1 \
+      => n & = q n_1 + r (n_1 + 1 - n_1) \
+           & = r (n_1 + 1) + (q - r) n_1
+    $
+    Für $m >= n_1^2$ ist $q >= n_1$, also $q - r > 0$ und es folgt $n in N$. Es folgt also die Behauptung mit
+    $n_0 = n_1^2$.
+  ]
+
   Nun zum Beweis von @thm:periodic_markov: Sei $i$ ein aperiodischer Zustand, für
   $
     N_i : = { n in NN : P_(i i)^n > 0 }
@@ -1670,31 +1663,30 @@ $
   $
 
   Bemerkung: Unter den Voraussetzungen von @thm:stationary_markov gibt es für jeden Zustand $i$ ein $n_0 (i) in NN$, sodass
-  $P_(i i)^n > 0 quad forall quad n >= n_0 (i)$. Daher ist dann jeder Zustand aperiodisch.]
-
-#strong[Interpretation der Grenzverteilung] \
-Es gelte
-$
-  pi_j = lim_(n -> oo) P_(i j)^n = lim_(n -> oo) P(X_n = j | X_0 = i)
-$
-Ist $(a_n)_(n = 1)^oo$ eine Folge reeller Zahlen mit
-$lim_(n -> oo) a_n = a$, dann gilt auch
-$
-  1 / n sum_(k = 0)^(n - 1) a_k = a,
-$
-also hier
-$
-  lim_(n -> oo) 1 / n sum_(k = 0)^(n - 1) P_(i j)^k = pi_j
-$
-und dahier ist
-$
-  1 / n sum_(k = 0)^(n - 1) P_(i j)^k & = 1 / n sum_(k = 0)^(n - 1) P(X_k = j | X_0 = i) \
-                                      & = 1 / n sum_(k = 0)^(n - 1) EE [bold("1")_({ X_k = j }) | X_0 = i] \
-                                      & = EE [1 / n sum_(k = 0)^(n - 1) bold("1")_({ X_k = j }) | X_0 = i]
-$
-
-Das heißt $pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovkette in Zustand j verbringt.
-
+  $P_(i i)^n > 0 quad forall quad n >= n_0 (i)$. Daher ist dann jeder Zustand aperiodisch.
+]
+#remark[Interpretation der Grenzverteilung][
+  Es gelte
+  $
+    pi_j = lim_(n -> oo) P_(i j)^n = lim_(n -> oo) P(X_n = j | X_0 = i)
+  $
+  Ist $(a_n)_(n = 1)^oo$ eine Folge reeller Zahlen mit
+  $lim_(n -> oo) a_n = a$, dann gilt auch
+  $
+    1 / n sum_(k = 0)^(n - 1) a_k = a,
+  $
+  also hier
+  $
+    lim_(n -> oo) 1 / n sum_(k = 0)^(n - 1) P_(i j)^k = pi_j
+  $
+  und dahier ist
+  $
+    1 / n sum_(k = 0)^(n - 1) P_(i j)^k & = 1 / n sum_(k = 0)^(n - 1) P(X_k = j | X_0 = i) \
+                                        & = 1 / n sum_(k = 0)^(n - 1) EE [bold("1")_({ X_k = j }) | X_0 = i] \
+                                        & = EE [1 / n sum_(k = 0)^(n - 1) bold("1")_({ X_k = j }) | X_0 = i]
+  $
+  Das heißt $pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovkette in Zustand j verbringt.
+]
 #example[][HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29]
 == Rekurrenz und Transienz
 #definition[
@@ -1751,14 +1743,13 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   wird. \
 
   - Ist $j$ rekurrent, dann gilt für alle $i in S$
-  $
-    P(N_j = oo | X_0 = i) = f_(i j), P(N_j = 0 | X_0 = i) = 1 - f_(i j)
-  $
-  und insbesondere
-  $
-    P(N_j = oo | X_0 = j) = f_(j j) = 1 "und" EE [N_j | X_0 = j] = oo
-  $
-
+    $
+      P(N_j = oo | X_0 = i) = f_(i j), P(N_j = 0 | X_0 = i) = 1 - f_(i j)
+    $
+    und insbesondere
+    $
+      P(N_j = oo | X_0 = j) = f_(j j) = 1 "und" EE [N_j | X_0 = j] = oo
+    $
   - Ist $j$ transient, dann gilt für alle $i in S$
     $
       P(N_j < oo | X_0 = i) = 1 "und" EE [N_j | X_0 = i] = frac(f_(i j), 1 - f_(j j)) < oo
@@ -1789,26 +1780,25 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
     $P(N_j = oo | X_0 = i) = f_(i j)$.
 
   - Sei $j$ transient, also $f_(j j) < 1$.
-  $
-    (1 - f_(j j)) EE [N_j | X_0 = i] = P(1 <= sigma_j < oo | X_0 = i) <= 1
-  $
-  $=> EE [N_j | X_0 = i] < oo$ und daher ist
-  $P(N_j < oo | X_0 = i) = 1$.
-  $
-    => P(1 <= sigma_j < oo | X_0 = i) & = P(1 <= sigma_j) \
-                                      & = P(tau_j < oo | X_0 = i) \
-                                      & = f_(i j)
-  $
-  $=> EE [N_j | X_0 = i] = frac(f_(i j), 1 - f_j j)$.
+    $
+      (1 - f_(j j)) EE [N_j | X_0 = i] = P(1 <= sigma_j < oo | X_0 = i) <= 1
+    $
+    $=> EE [N_j | X_0 = i] < oo$ und daher ist
+    $P(N_j < oo | X_0 = i) = 1$.
+    $
+      => P(1 <= sigma_j < oo | X_0 = i) & = P(1 <= sigma_j) \
+                                        & = P(tau_j < oo | X_0 = i) \
+                                        & = f_(i j)
+    $
+    $=> EE [N_j | X_0 = i] = frac(f_(i j), 1 - f_j j)$.
 ]
 
 #remark[Bemerkung zu @thm:recurrence_transience][
 
   - Wegen $EE [N_j | X_0 = j] = sum_(n = 1)^oo P_(j j)^n$ liefert der Satz ein einfacheres Rekurrenzkriterium
-  $
-    j "ist rekurrent" <=> sum_(n = 1)^oo P_(j j)^n = oo
-  $
-
+    $
+      j "ist rekurrent" <=> sum_(n = 1)^oo P_(j j)^n = oo
+    $
   - Im Allgemeinen kann eine Markovkette sowohl rekurrente als auch transiente Zustände haben. \
     Ist ${ X_n }$ irreduzibel, dann isn entweder alle Zustände rekurrent oder alle sind transient. \
     Denn: Falls es einen rekurrenten zustand $j$ gibt, dann gibt es für jedes $i in S$ $n_1, n_2 >= 0$ mit $P_(i j)^(n_1) < 0$,
@@ -1870,6 +1860,9 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   $
   $=>$ für $p = 1 / 2$ ist die einfache Irrfahrt rekurrent.
 
+#definition[
+  Ein Zustand $j$ heißt *positiv rekurrent*, falls $EE_j [T_j] < oo$ und er heißt *nullrekurrent*, falls $E_j [T_j] = oo$.
+  Ist der Zustandsraum der Markovkette endlich, folgt aus Irreduzibilität bereits positive Rekurrenz und die Existenz einer eindeutigen stationären Verteilung. Die Konvergenz zu einer eindeutigen stationären Verteilung (unabhängig von der Anfangsverteilung) hingegen basiert (s. @thm:stationary_markov ) darauf, dass mindestens ein Zustand aperiodisch ist.
 ]
 Ein Zustand $j$ heißt positiv rekurrent, falls $EE_j [T_j] < oo$ und er heißt nullrekurrent, falls $E_j [T_j] = oo$. Ist
 der Zustandsraum der Markovkette endlich, folgt aus Irreduzibilität bereits positive Rekurrenz und die Existenz einer
