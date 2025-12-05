@@ -1206,10 +1206,47 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
 
 #ex28
 #ex29
+
+Für den nächsten Satz (@thm:existance-station) brauchen wir zuerst folgende definitionen und Resultate aus der Topologie:
+
+#definition[
+  Wenn in einem Raum *jede Folge* eine konvergente Teilfolge besitzt nennen wir ihn _kompakt_.
+]
+#example([Beispiel 10.5], subtitle: "Kompakte und nicht kompakte Räume")[
+  + Der Raum $RR$ ist nicht  kompakt:
+    nimm die  Folge $1,2,3,4, dots$, jede Teilfolge explodiert, daher kann $RR$ nicht kompakt sein.
+  + Das offene Intervall $(0,1)$ ist beschränkt, aber nicht kompakt:
+    Betrachten Sie die Folge $1/2, 1/3, 1/4, dots$ . Keine ihrer Teilfolgen wird in $(0,1)$ konvergieren, da die Folge "gegen 0 konvergiert", 0 aber nicht in $(0,1)$ ist.
+  + Jede endliche Menge ist kompat (Schubfachprinzip).
+]
+#theorem[Satz von Bolzano-Weierstraß][
+  Eine Teilmenge von $RR^s$ ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist.
+]<thm:bolzano-weierstrass>
+
+Ich werde nur beweisen, dass das abgeschlossene Intervall $[0,1]$ kompakt ist, daraus lässt sich der allgemeine Fall leicht ableiten.
+
+#proof(title: "Beweis")[
+  Teile $[0,1]$ in
+  $[0, 1/2] ∪ [1/2, 1]$.
+  Mit dem Schubfachprinzip wissen wir es unendlich viele Terme in einer der Hälften
+  (sagen wir der linken); lassen wir  $x_1$ den ersten Term der Folge sein und behalten nur die Terme in der linken Hälfte nach $x_1$.
+  Nun teilen wir $[0, 1/2]$ in $[0, 1/4] ∪ [1/4, 1/2]$.
+  Wieder mit dem Schubfachprinzip wissen wir, dass unendlich viele Terme in einer der Hälften liegen; nennen wir einen Term davon $x_2$.
+  Wir wiederholen diesen Prozess unendlich oft.
+  So generieren wir eine Folge $x_1, x_2, ...$ welche Cauchy ist, was impliziert, dass sie konvergiert, da $[0,1]$ vollständig ist.
+]
+#green_note[Nützliche Folgerung][
+  Da man jede beschränkte Folge als Folge in einem abgeschlossenen und beschränkten Intervall betrachten kann, folgt aus dem @thm:bolzano-weierstrass, dass jede beschränkte Folge in $RR^s$ eine konvergente Teilfolge hat.
+]
+Nun kommen wir zu unserem eigentlichen  Satz:
+
+#theorem[Satz zur Existenz stationärer Verteilungen][
+  Für jede Markovkette ${ X_n : n in bb(N)_0 }$ mit endlichem Zustandsraum ${ 1 , dots , s}$ existiert eine stationäre Verteilung.
+]<thm:existance-station>
+
 #ex30
 
 #remark[Bemerkung zu @def:markov-station][
-  - Für jede Markovkette mit endlichem Zustandsraum existiert eine stationäre Verteilung (s. Aufgaben).
   - Bezeichnet $p^((n)) = (P_i^((n)))_(i in S)$, $P_i^((n)) = P(X_n = i)$
     die Anfangsverteilung von $X_n$ und ist die Anfangsverteilung stationär, dann gilt
     $
