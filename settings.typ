@@ -151,7 +151,7 @@
 
   show ref: it => {
     let el = it.element
-    if el != none and el.func() == block { return link(el.location(), "irgendeinem Satz (todo: fix this)") }
+    if el != none and el.func() == block { return link(el.location(), "(todo: fix this)") }
     if el != none and el.func() == heading and el.level == 1 and it.supplement == auto and report-style {
       ref(it.target, supplement: "Chapter")
     } else {
@@ -265,7 +265,7 @@
 #let rmk = thm-def("Remark", fill: rgb("#eeeeee"), ..thm-args)
 #let defn = thm-def("Definition", fill: rgb("#ffffdd"), ..thm-args)
 #let prob = thm-def("Problem", fill: rgb("#eeeeee"), ..thm-args)
-#let exer = thm-def("Exercise", fill: rgb("#eeeeee"), ..thm-args)
+#let exer = thm-def(none, fill: rgb("#eeeeee"), ..thm-args)
 #let exerstar = thm-def("Exercise", fill: rgb("#eeeeee"), title-fmt: x => { strong(x + " (*)") }, ..thm-args)
 #let ques = thm-def("Question", fill: rgb("#eeeeee"), ..thm-args)
 #let fact = thm-def("Fact", fill: rgb("#eeeeee"), ..thm-args)

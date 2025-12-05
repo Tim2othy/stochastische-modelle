@@ -896,10 +896,10 @@
   head,
   counter: auto,
   ..args,
-  numbering: "1.1",
+  numbering: none,
   supplement: auto,
   padding: (y: 0.1em),
-  name-fmt: x => [(#x)],
+  name-fmt: x => strong(x),
   title-fmt: x => x,
   body-fmt: x => x,
   separator: [.#h(0.2em)],
@@ -1011,7 +1011,7 @@
 /// )
 #let thm-def = thm-box.with(
   title-fmt: strong,
-  separator: [*.* \ ],
+  separator: [ \ ],
 )
 
 /// Creates a theorem environment, suitable for remarks.
