@@ -1,4 +1,89 @@
 #import "settings.typ": *
+#import "@preview/lovelace:0.3.0": *
+
+
+
+//AB 1
+
+#let ex02 = exer[Aufgabe 2][
+  Eine Urne sei zum Zeitpunkt $t = 0$ leer.
+  Zu jedem Zeitpunkt $t ∈ N$ werden zwei Kugeln in die Urne gelegt, eine mit der Nummer $2t - 1$ eine mit der Nummer $2t$.
+  Jeweils unmittelbar danach wird eine der $t+1$ Kugeln in der Urne zufällig ausgewählt und entnommen. Es bezeichne $X$ die Anzahl der Kugeln, die für immer in der Urne verbleiben.
+  Bestimmen Sie die Verteilung von $X$.
+
+  Hinweis.
+  Bestimmen Sie zunächst für jedes $n ∈ N$ die Wahrscheinlichkeit, dass die Kugel mit der Nummer $n$ nie entfernt wird.
+]
+
+//AB 2
+
+#let ex07 = exer[Aufgabe 7][
+  Es seien $N, X_1, X_2, dots$ unabhängige diskrete Zufallsvariablen mit
+  $
+    P(N ∈ NN_0) = 1, wide E(N) = ν, wide "Var"(N) = τ^2
+  $
+  und
+  $
+    E(X_i) = μ, wide "Var"(X_i) = σ^2 wide "für alle" i = 1, 2, dots
+  $
+  Es sei $S_0 := 0$ und $S_n := X_1 + dots + X_n$ für $n = 1, 2, dots$
+  + Drücken Sie $"E"(S_N )$ durch $μ$ und $ν$ aus.
+  + Drücken Sie $"Var"(S_N)$ durch $μ$, $ν$, $σ^2$ und $τ^2$ aus.
+]
+
+#let context-ex08 = plain_box[
+  Der folgende Pseudocode beschreibt die Verwerfungsmethode (acceptance-rejection method) zur Erzeugung von Pseudozufallszahlen fur eine Verteilung mit einer gegebenen Dichte $f$, also von Realisierungen von Zufallsvariablen mit Dichte $f$.
+  Dabei wird angenommen, dass Pseudozufallszahlen fur eine Verteilung mit einer Dichte $g$ erzeugt werdenkonnen und dass es eine Konstante $c$ gibt, so dass $f(x) >= c g(x)$ für alle $x in RR$.
+  Auerdem wird angenommen, dass Pseudozufallszahlen fur eine Gleichverteilung auf dem Intervall $(0,1)$ erzeugt werden konnen.
+  Die verwendeten Pseudozufallszahlen werden als Realisierungen unabhangiger Zufallsvariablen aufgefasst.
+
+  #pseudocode-list[
+    - *repeat* \
+      - generate $x ~ g$ \
+      - generate $u ~ "uniform distribution on" (0,1)$ \
+    - *until* $c u g(x) < f(x)$ \
+    - *return* $x$ \
+  ]
+  Die erzeugten Werte fur $x$ werden also verworfen, solange $c u g(x) >= f(x)$ gilt.
+  Sobald das erste Mal $c u g(x) < f(x)$ gilt, wird der aktuelle Wert $x$ akzeptiert und ausgegeben.
+  Die folgende Aufgabe begründet dieses Vorgehen.
+]
+#let ex08 = exer[Aufgabe 8][
+  Es seien $f, g : RR ->RR$ Wahrscheinlichkeitsdichten und es sei $c in (0 oo)$ so dass $f(x) <= c g(x)$ für alle $x in R$.
+  Es seien $X_1, U_1, X_2, U_2, dots$ unabhängige Zufalls variablen, wobei jedes $X_i$ stetig verteilt ist mit Dichte $g$ und jedes $U_i$ auf dem Intervall $(0,1)$ gleichverteilt ist.
+  Sei
+  $
+    N := "inf" {n in N : c U_n g(X_n) < f(X_n)}.
+  $
+  Dabei ist $"inf" emptyset = oo$ und $"inf" A = "min" A$  für jede nichtleere Menge $A subset N$.
+  + Bestimmen Sie die Verteilung von $N$.
+  + Zeigen Sie, dass $X_N$ die Dichte $f$ hat.
+]
+
+//AB 3
+
+#let ex10 = exer[Aufgabe 10][
+  Geben Sie ein Beispiel für eine Markov-Kette ${X_n : n in N_0}$ mit Zustands raum ${0,1}$ an, so dass es eine Menge $G subset {0,1}$ gibt mit
+  $
+    P(X_1 in G, X_0 =1)>0
+  $
+  und
+  $
+    P(X_2 = 1| X_1 in G, X_0 = 1) != P(X_2 =1 | X_1 in G).
+  $
+]
+
+//AB 6
+
+#let ex26 = exer[Aufgabe 26.][
+  Es seien $X_1, X_2, dots$ Zufallsvariablen mit Werten in $NN_0 ∪{∞}$.
+  Zeigen Sie:
+  + Für jedes $k ∈NN_0$ gilt:
+    $
+      P( sum_(n=1)^oo X_n > k) = lim_(n→oo) P(X_1 + dots + X_n > k).
+    $
+  + $E( sum_(n=1)^oo X_n) = sum_(n=1)^oo + E(X_n) =$
+]
 
 
 //AB 7
@@ -36,6 +121,52 @@
   Betrachten Sie für eine stationäre Verteilung $( pi_i )_(i in bb(Z))$ den kleinsten und den größten Zustand $j$ mit $pi_j = max_(i in bb(Z)) pi_i$.
 ]
 
+//Ab 09
+
+#let ex36 = exer[Aufgabe 36][
+  Ein Spieler kann bei einem zweiarmigen Banditen in jeder Runde Arm $A$ oder Arm $B$ wählen.
+  Wählt er Arm $A$, gewinnt er 1 Euro mit Wahrscheinlichkeit $alpha in (0,1)$ und verliert 1 Euro mit Wahrscheinlichkeit $1-alpha$.
+  Wählt er Arm $B$, gewinnt er 1 Euro mit Wahrscheinlichkeit $beta in (0,1)$ und verliert 1 Euro mit Wahrscheinlichkeit $1-beta$.
+  Dabei sind $alpha$ und $beta$ unbekannt.
+  Wurde der Spieler Arm $A$ bzw. $B$ jeweils mit Wahrscheinlichkeit $1/2$ wahlen, ergabe sich also in jeder Runde die Gewinnwahrscheinlichkeit $1/2( alpha +beta )$.
+  Er wählt aber nur in der ersten Runde den Arm zufallig aus.
+  Danach geht er wie folgt vor.
+  Gewinnt er in Runde $n$, wahlt er in Runde $n+1$ denselben Arm wie in Runde $n$.
+  Andernfalls wahlt er den anderen Arm.
+  + Berechnen Sie den Grenzwert für $n -> oo$ der Wahrscheinlichkeit, dass der Spieler in Runde $n$ gewinnt.
+  + Unter welcher Bedingung an $alpha$ und $beta$ ist dieser Grenzwert größer als $1/2(alpha + beta)$?
+]
+
+
+#let ex37 = exer[Aufgabe 37][
+  Im Lauf der Zeit bilden sich $n$ Personen ihre Meinungen, jeweils ausgedrückt durch eine Zahl im Intervall $[0,1]$.
+  Beispielsweise kann diese Zahl den Grad der Zustimmung zu einer Aussage ausdrücken.
+  Zum Zeitpunkt $t = 0$ hat Person $i$ die Meinung $x_i(0), i = 1, dots, n$.
+  Zu den Zeitpunkten $t = 1,2,dots$ aktualisiert jede Person ihre Meinung, indem sie zu einem gewichteten Mittel der bisherigen Meinungen übergeht:
+  $
+    x_i(t) = sum_(j=1)^n a_(i j) x_j (t_1), wide i = 1, dots, n.
+  $
+  Person $i$ misst also der Meinung von Person $j$ das Gewicht $a_(i,j)$ bei.
+  Die Gewichte sind zeitlich konstant und nichtnegativ und es gilt $sum_(j=1)^n a_(i j)= 1$ für alle $i = 1, dots, n$.
+  + Formulieren Sie geeignete Bedingungen an die Gewichte, die sicherstellen, dass ein Konsens erreicht wird in dem Sinn, dass die Grenzwerte $lim_(t ->oo) x_i(t)$ für $i = 1, dots, n$ existieren und ubereinstimmen.
+  + Zeigen Sie, dass die Grenzwerte gleich dem arithmetischen Mittel von $x_1 (0), dots, x_n (0)$ sind, falls (zusatzlich zu den Bedingungen aus (a)) $a_(i j) = a_(j i)$ gilt für alle $i = j$.
+]
+
+// AB 10
+
+#let ex39 = exer[Aufgabe 39(Googles PageRank)][
+  Gegeben seien Webseiten $1,dots, m$.
+  Für jede Seite sei bekannt, auf welche Seiten sie durch Links verweist.
+  Ein "random surfer" beginnt mit einer zufällig gewählten Seite $X_0$.
+  Ist er zum Zeitpunkt $n$ auf Seite $X_n$, wählt er die nächste Seite $X_(n+1)$,   unabhängig von den zuvor besuchten Seiten, wie folgt aus.
+  Enthält die aktuelle Seite keine Links, wählt er von allen $m$ Seiten eine zufällig aus.
+  Andernfalls folgt er mit Wahrscheinlichkeit $(0,1)$ einem zufällig gewählten Link auf der aktuellen Seite und mit Wahrscheinlichkeit 1 wählt er von allen $m$ Seiten eine zufällig aus.
+  Eine zufällige Auswahl bedeutet hier, dass jede der betrachteten möglichkeiten mit derselben Wahrscheinlichkeit gewählt wird.
+  Der Rang von Seite $j$ sei $r_j := lim_(n-> oo) P(X_n = j)$.
+  Geben Sie ein lineares Gleichungssystem fur die Seitenrange an.
+  Zeigen Sie, dass das Gleichungssystem eine eindeutige Losung hat.
+]
+
 // AB11
 
 #let ex42 = exer[Aufgabe 42][
@@ -65,4 +196,11 @@
   Zeigen Sie:
   + Für alle $t >= 0$ gilt: $P(X <= t) <= P(Y_1 <= t).$
   + Für alle $k > 0$ gilt: $E(X^k) <= E(Y_1^k).$
+]
+
+// AB 12
+
+#let ex47 = exer[Aufgabe 47][
+  Es sei ${N(t) : t_0}$ ein Erneuerungsprozess mit auf dem Intervall $[0,10]$ gleichverteilten Zwischenankunftszeiten.
+  Bestimmen Sie näherungsweise eine Lösung der Gleichung $P(N(1440) > alpha) = 0.05$.
 ]

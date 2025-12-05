@@ -275,6 +275,8 @@ $
 $
 eine gemeinsame Dichte von $X_1, ..., X_n$.
 
+#ex02
+
 == Bedingte Wahrscheinlichkeiten und Erwartungswerte
 
 Für $A, B in Omega$ mit $P(B) > 0$ ist die bedingte Wahrscheinlichkeit von A gegeben B
@@ -378,6 +380,8 @@ Die Rechenregeln für bedingte Erwartungswerte gelten wie im diskreten Fall, wie
 $
   EE [g (X)] = sum_(Y : P(Y = y) > 0) EE [g (X) | Y = y] P(Y = y).
 $
+
+#ex07
 
 = Markovketten
 
@@ -538,6 +542,10 @@ $X_0 = i_0, ...$).
 ]
 
 Bemerkung zum Beispiel: In Beispiel 3 war $f (x, y) = x + y$ und in Beispiel 4 war $f (x, y) = m a x (x, y)$.
+
+#context-ex08
+#ex08
+#ex10
 
 == Mehrschritt-Übergangswahrscheinlichkeiten
 
@@ -854,6 +862,9 @@ Folgender Satz gilt für beliebige $A$: \
     h_i = sum_(j in S) p_(i j) h_j
   $
 ]
+
+#ex26
+
 #example([Beispiel 9], subtitle: [Ruinproblem])[
   In jeder Runde eines Spiels gewinnt eine Spieler 1€ mit Wahrscheinlichkeit $p in (0, 1)$ und verliert 1€ mit
   Wahrscheinlichkeit
@@ -1594,6 +1605,10 @@ $
 ]
 #example[][HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29]
 
+#ex36
+#ex37
+#ex39
+
 == Rekurrenz und Transienz
 
 #definition[
@@ -1923,6 +1938,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
 ]
 #ex42
 #ex43
+#ex47
 
 = Poisson-Prozesse
 
