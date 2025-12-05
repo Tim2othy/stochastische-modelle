@@ -1,5 +1,5 @@
 #import "settings.typ": *
-#import "abs.typ": *
+#import "exercises.typ": *
 
 #show: project.with(
   title: [Stochastische Modelle],
