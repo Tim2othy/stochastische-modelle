@@ -1011,7 +1011,7 @@
 /// )
 #let thm-def = thm-box.with(
   title-fmt: strong,
-  separator: [*.*#h(0.2em)],
+  separator: [*.* \ ],
 )
 
 /// Creates a theorem environment, suitable for remarks.
