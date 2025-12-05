@@ -1782,10 +1782,9 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
 = Erneuerungsprozesse
 
 #definition[
-  Eine Erneuerung ist ein Ereignis, das zu zufälligen Zeitpunkten auftritt. Ein Erneuerungsprozess ist ein stochastischer
-  Prozess, der die Anzahl der Erneuerungen bis zu einem Zeitpunkt $t$ beschreibt. Seien
-  $Y_1, Y_2, ...$ i.i.d die Wartezeiten, also die Zeiten zwischen aufeinanderfolgenden Erneuerungen, mit $EE [Y_i] = mu quad in (0, oo)$
-  und $"Var" [Y_i] = sigma^2$. Die Zeitpunkte der Erneuerungen seien definiert als
+  Eine _Erneuerung_ ist ein Ereignis, das zu zufälligen Zeitpunkten auftritt.
+  Ein _Erneuerungsprozess_ ist ein stochastischer Prozess, der die Anzahl der Erneuerungen bis zu einem Zeitpunkt $t$ beschreibt.
+  Seien $Y_1, Y_2, ...$ i.i.d die Wartezeiten, also die Zeiten zwischen aufeinanderfolgenden Erneuerungen, mit $EE [Y_i] = mu quad in (0, oo)$ und $"Var" [Y_i] = sigma^2$. Die Zeitpunkte der Erneuerungen seien definiert als
   $
     T_n = Y_1 + Y_2 +... + Y_n
   $
@@ -1794,7 +1793,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   $
     N (t) = m a x { n in NN_0 : T_n <= t }
   $
-]
+]<def:erneuerungsprozes>
 
 In Worten: $N (t)$ ist die maximale Anzahl an Erneuerungen, deren
 Gesamtdauer $T_n$ nicht über

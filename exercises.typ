@@ -189,7 +189,7 @@
   $
 ]
 #let ex43 = exer[Aufgabe 43][
-  Seien $(Y_n)_(n=1)^infinity$, $(T_n)_(n=0)^infinity$ und ${N(t): t >= 0}$ wie in Definition 3.1. (FIX TODO)
+  Seien $(Y_n)_(n=1)^infinity$, $(T_n)_(n=0)^infinity$ und ${N(t): t >= 0}$ wie in @def:erneuerungsprozes
   Es sei $t^* > 0$ ein fester Zeitpunkt und es sei$X := Y_(N(t^*) + 1).$
   Interpretiert man die $Y_n$ als Lebensdauern von nacheinander verwendeten Bauteilen, dann ist $X$ die Lebensdauer des zur Zeit $t^*$ verwendeten Bauteils.
 
