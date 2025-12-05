@@ -551,8 +551,9 @@ Bemerkung zum Beispiel: In Beispiel 3 war $f (x, y) = x + y$ und in Beispiel 4 w
 
 Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum S, Übergangsmatrix $(P_(i j))_(i, j in S)$ und
 Anfangsverteilung
-$p_i = P(X_0 = i)$ ($i in S$). Bestimme die gemeinsame Verteilung von
-$X_0, ..., X_n$: \
+$p_i = P(X_0 = i)$ ($i in S$).
+Bestimme die gemeinsame Verteilung von $X_0, ..., X_n$:
+
 Für $n >= 1$ und $i_0, ..., i_n in S$ gilt
 $
     & P(X_0 = i_0, X_1 = i_1, ..., X_n = i_n) \
