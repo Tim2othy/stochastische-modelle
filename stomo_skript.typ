@@ -1204,6 +1204,11 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
     <=> & pi ((P_(i j)) - I) = 0
   $
 ] <thm:markov-station>
+
+#ex28
+#ex29
+#ex30
+
 #remark[Bemerkung zu @thm:markov-station][
   - Für jede Markovkette mit endlichem Zustandsraum existiert eine stationäre Verteilung (s. Aufgaben).
   - Bezeichnet $p^((n)) = (P_i^((n)))_(i in S)$, $P_i^((n)) = P(X_n = i)$
@@ -1263,6 +1268,8 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
   $
   und daher $mat(p_1, p_2) Pi^n = mat(p_1, p_2)$.
 ]
+#ex31
+
 #theorem[Satz 14][
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette
   ${ X_n : n in NN_0 }$ mit stationäre Verteilung
