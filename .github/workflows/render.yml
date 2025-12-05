@@ -7,9 +7,20 @@ jobs:
         file: [ stomo_skript ]
     steps:
       - uses: actions/checkout@v4
+      - uses: fontist/setup-fontist@v2
+        with:
+          fontist-version: '1.x'
+      - run: |
+          fontist install "Fira Sans"
+          fontist install "Libertinus"
+          fontist install "Libertinus Math"
+          fontist install "Fira Code"
+          fontist install "Libertinus Serif"
+          fontist install "Noto Sans"
+          fontist install "Inconsolata"
       - uses: typst-community/setup-typst@v4
         with:
-          typst-version: ^0.13.1
+          typst-version: 0.14.0
 
       - name: Compile ${{ matrix.file }}.typ
         run: |
