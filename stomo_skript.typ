@@ -1200,16 +1200,15 @@ $P(X = oo) > 0$ auch $EE [X] = oo$.
   $
   oder ausgedrückt in Matrix Schreibweise
   $
-        & pi = pi (P_(i j)) \
-    <=> & pi ((P_(i j)) - I) = 0
+    & pi = pi (P_(i j)) wide <=> wide & pi ((P_(i j)) - I) = 0
   $
-] <thm:markov-station>
+] <def:markov-station>
 
 #ex28
 #ex29
 #ex30
 
-#remark[Bemerkung zu @thm:markov-station][
+#remark[Bemerkung zu @def:markov-station][
   - Für jede Markovkette mit endlichem Zustandsraum existiert eine stationäre Verteilung (s. Aufgaben).
   - Bezeichnet $p^((n)) = (P_i^((n)))_(i in S)$, $P_i^((n)) = P(X_n = i)$
     die Anfangsverteilung von $X_n$ und ist die Anfangsverteilung stationär, dann gilt
