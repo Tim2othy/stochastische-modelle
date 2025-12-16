@@ -1604,7 +1604,7 @@ $
   $
   Das heißt $pi_j$ ist der Grenzwert der erwarteten Zeitanteile, die die Markovkette in Zustand j verbringt.
 ]
-#example[][HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29]
+#example[][HIER FEHLT EINE ERGÄNZUNG ZU AUFGABE 29 todo fix this]
 
 #ex36
 #ex37
