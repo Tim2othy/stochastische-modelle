@@ -1,6 +1,5 @@
 #import "settings.typ": *
 #import "exercises.typ": *
-#show: thmrules.with(qed-symbol: $square$)
 
 #show: project.with(
   title: [Stochastische Modelle],
@@ -1236,7 +1235,7 @@ Für den nächsten Satz (@thm:existance-station) brauchen wir zuerst folgende de
     Betrachten Sie die Folge $1/2, 1/3, 1/4, dots$ . Keine ihrer Teilfolgen wird in $(0,1)$ konvergieren, da die Folge "gegen 0 konvergiert", 0 aber nicht in $(0,1)$ ist.
   + Jede endliche Menge ist kompat (Schubfachprinzip).
 ]
-#theorem[Satz von Bolzano-Weierstraß][
+#t-no-num[Satz von Bolzano-Weierstraß][
   Eine Teilmenge von $RR^s$ ist genau dann kompakt, wenn sie abgeschlossen und beschränkt ist.
 ]<thm:bolzano-weierstrass>
 
@@ -1257,7 +1256,7 @@ Ich werde nur beweisen, dass das abgeschlossene Intervall $[0,1]$ kompakt ist, d
 ]
 Nun kommen wir zu unserem eigentlichen  Satz:
 
-#theorem[Satz zur Existenz stationärer Verteilungen][
+#t-no-num[Satz zur Existenz stationärer Verteilungen][
   Für jede Markovkette ${ X_n : n in bb(N)_0 }$ mit endlichem Zustandsraum ${ 1 , dots , s}$ existiert eine stationäre Verteilung.
 ]<thm:existance-station>
 

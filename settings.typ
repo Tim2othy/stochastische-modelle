@@ -159,6 +159,35 @@
       it
     }
   }
+  show: thmrules.with(qed-symbol: $square$)
+  show ref: it => {
+    if it.element == none {
+      return it
+    }
+    if it.element.func() != figure {
+      return it
+    }
+    if it.element.kind != "thmenv" {
+      return it
+    }
+
+    let supplement = it.element.supplement
+    if it.citation.supplement != none {
+      supplement = it.citation.supplement
+    }
+
+    let loc = it.element.location()
+    let thms = query(selector(<meta:thmenvcounter>).after(loc))
+    let number = thmcounters.at(thms.first().location()).at("latest")
+    if it.element.numbering != none {
+      return link(
+        it.target,
+        [#supplement~#numbering(it.element.numbering, ..number)],
+      )
+    } else {
+      return link(it.target, [#it.element.caption.body])
+    }
+  }
 
   // Title page, if maketitle is true
   if maketitle {
@@ -336,3 +365,13 @@
   namefmt: x => text(fill: rgb("006896"))[(#x)],
   titlefmt: x => strong(text(fill: rgb("006896"), x)),
 )
+// Theorem without numbering
+#let t-no-num = thmbox(
+  "theorem",
+  "",
+  fill: rgb("f3fbfb"),
+  stroke: 1pt + rgb("0000ff"),
+  breakable: true,
+  base_level: 0,
+  namefmt: x => strong(text(fill: rgb("006896"), x)),
+).with(numbering: none)
