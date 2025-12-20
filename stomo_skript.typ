@@ -1,5 +1,6 @@
 #import "settings.typ": *
 #import "exercises.typ": *
+#show: thmrules.with(qed-symbol: $square$)
 
 #show: project.with(
   title: [Stochastische Modelle],
@@ -7,7 +8,6 @@
   report-style: true,
 )
 
-#let theorem = blue_box
 #let lemma = blue_box
 #let example = brown_box
 #let definition = plain_box
@@ -404,7 +404,11 @@ $
   $p_(i j) >= 0$ für alle $i, j in S$ und $sum_(j in S) p_(i j) = 1$
   für alle $i in S$. \
 ]
-#theorem[Satz 5][
+#theorem[Placeholder]
+#theorem[Placeholder]
+#theorem[Placeholder]
+#theorem[Placeholder]
+#theorem[
   Eine Folge ${ X_n : n in NN }$ von Zufallsvariablen mit Werten in $S$
   heißt Markovkette mit Zustandsraum $S$ und Übergangsmatrix
   $(P_(i j))_(i, j in S)$, falls für alle $n >= 0$ und alle möglichen $i_0, i_1, ..., i_(n + 1) in S$ gilt
@@ -563,7 +567,7 @@ $
   = & P(X_0 = i_0) p_(i_0 i_1)... p_(i_(n - 2) i_(n - 1)) p_(i_(n - 1) i_n)
 $
 
-#theorem[Satz 6][
+#theorem[
   Für jede Folge von Zuständen $i_0, ..., i_n in S$ gilt:
   $
     P(X_0 = i_0, ..., X_n = i_n) = p_(i_0 i_1)... p_(i_(n - 1) i_n)
@@ -612,7 +616,7 @@ $
 ]
 Die Markov-Eigenschaft lässt sich auf allgemeinere Ereignisse in Zukunft und Vergangenheit erweitern: \
 
-#theorem[Satz 7][
+#theorem[
   Für alle $n, m >= 1$, $Z ⊂ S^m$, $V ⊂ S^n$, $i in S$ mit
   $P((X_0, ..., X_(n - 1)) in V, X_n = i) > 0$ gilt
   $
@@ -687,7 +691,7 @@ $
   P_(i j)^1 = P(X_(m + 1) = j | X_m = i) = p_(i j)
 $
 
-#theorem([Satz 9], subtitle: [Satz von Chapman-Kolmogorow])[
+#theorem[Satz von Chapman-Kolmogorow][
   Für alle $i, j in S$ und
   $m, n in NN_0$ ist die Wahrscheinlichkeit, von Zustand $i$ in
   $m + n$ Schritten zu Zustand $j$ zu gelangen gegeben durch:
@@ -763,7 +767,8 @@ $
 Letzteres kann genutzt werden, um die Verteilung $X_n$ zu jeden
 Zeitpunkt zu berechnen:
 
-#theorem[Satz 10][
+#theorem[Placeholder.]
+#theorem[
   Die Verteilung von $X_n$ zu einem beliebigen Zeitpunkt $n >= 0$
   ergibt sich aus dem Produkt der Anfangsverteilung und der $n$-ten Potenz der Übergangsmatrix.
   $
@@ -826,7 +831,7 @@ $p_i (T < oo)$ Absorptionswahrscheinlichkeit bei Start in $i in S$ und
 $T$ heißt Absorptionszeit. \
 Folgender Satz gilt für beliebige $A$: \
 
-#theorem[Satz 11][
+#theorem[
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei $A ⊂ S$, $A != nothing$ und
   $
     T_i = inf { n in NN_0 : X_n in A } \
@@ -1020,7 +1025,7 @@ Folgender Satz gilt für beliebige $A$: \
   Welches $h_1 in [Theta, 1]$ liefert die gesuchten Wahrscheinlichkeiten? \
   Hinweis: Hier gibt es keine zweite Randbedingung, wie in Bsp. 9!
 ]
-#theorem[Satz 12][
+#theorem[
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei zudem $A ⊂ S$ mit
   $A != nothing$. Sei $T_i = inf { n in N : X_n in A }$ und
   $h_i = P(T_i < oo | X_0 = i)$. Dann ist $(h_i)_(i in S)$ die
@@ -1099,7 +1104,7 @@ $
 Insbesondere ist also falls
 $P(X = oo) > 0$ auch $EE [X] = oo$.
 
-#theorem[Satz 13][
+#theorem[
   Sei ${ X_n : n in NN_0 }$ eine Markovkette mit Zustandsraum $S$ und Übergangsmatrix $(P_(i j))$. Sei $A in S$ und $A != nothing$.
   Für
   $i in S$ sei
@@ -1318,7 +1323,7 @@ Nun kommen wir zu unserem eigentlichen  Satz:
 ]
 #ex31
 
-#theorem[Satz 14][
+#theorem[
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette
   ${ X_n : n in NN_0 }$ mit stationäre Verteilung
   $pi = mat(pi_1, ..., pi_S)$. \
@@ -1360,7 +1365,7 @@ exponentiell zur stationären Verteilung konvergiert. \
                                         & <= (1 - epsilon)^n sum_(j = 1)^S ({ Q_(i j)^n } + pi_j) = 2 (1 - epsilon)^n
   $
 ]
-#theorem[Satz 15][
+#theorem[
   Sei $Pi = (P_(i j))$ die Übergangsmatrix einer Markovkette mit Zustandsraum ${ 1, ..., S }$ und stationärer Verteilung
   $pi = mat(pi_1, ..., pi_S)$. \
   Es existiere $k in NN$, $epsilon in (0, 1)$, sodass
@@ -1446,7 +1451,7 @@ $epsilon : = m i n_(i, j) quad p_(i j)^n$ erfüllt.
     d_i = 2 quad forall quad i in ZZ
   $
 ]
-#theorem[Satz 16][
+#theorem[
   Für jeden aperiodischen Zustand $i$ existiert $n_0 (i) in NN$, sodass
   $
     p_(i i)^n > 0 quad forall quad n >= n_o (i)
@@ -1553,7 +1558,7 @@ $
   => tilde(pi)_i = pi_i quad forall quad i in S
 $
 
-#theorem[Satz 17][
+#theorem[
   Sei $(P_(i j))$ die Übergangsmatrix einer irreduziblen Markovkette mit Zustandsraum $S = { 1, ..., s }$ und mindestens
   einem aperiodischen Zustand. \
   $=>$ Es existiert eine eindeutige stationäre Verteilung
@@ -1654,7 +1659,7 @@ Sind alle Zustände rekurrent oder transient, dann heißt auch die Markovkette r
   $
   3 ist also transient und somit die Markovkette weder transient noch rekurrent.
 ]
-#theorem[Satz 18][
+#theorem[
   Für $j in S$ sei
   $
     N_j = sum_(n = 1)^oo bold("1")_({ X_n = j })
@@ -1821,7 +1826,7 @@ $
 und damit $Y_(M + 1) = oo$. Das wäre ein Widerspruch, da dies
 $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall ist.
 
-#theorem[Satz 19][
+#theorem[
   Sei $0 < mu = EE [Y_1] < oo$. Mit Wahrscheinlichkeit 1 gilt
   $
     lim_(t -> oo) N(t)/ t) = 1 / mu
@@ -1892,7 +1897,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
     lim_(t -> oo) frac(X (t), t) = lim_(t -> oo) (frac(1, N (t)) sum_(i = 1)^(N (t))) frac(N (t), t) = EE[X_1] / EE[Y_1]
   $
 ]
-#theorem[Satz 20][
+#theorem[
   Sei $mu := EE [Y_1]$, $sigma^2 := "Var" [Y_1]$ mit $0 < mu < oo$ und
   $0 < sigma < oo$. \
   $=>$ Für $t -> oo$ ist $N (t)$ asymptotisch normalverteilt mit Parametern
@@ -1971,7 +1976,7 @@ $P(Y = oo) > 0$ voraussetzen würde, was gemäß $EE [Y] < oo$ nicht der Fall is
   $
   unabhängig sind. \
 ]
-#theorem[Satz 21][
+#theorem[
   Sei ${ N (t) : t >= 0 }$ ein Poisson-Prozess mit Intensität
   $lambda > 0$. \
   $=> { N (t) : t >= 0 }$ hat unabhängige Zuwächse und für

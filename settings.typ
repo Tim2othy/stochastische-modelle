@@ -1,5 +1,6 @@
 #import "@preview/gentle-clues:1.2.0": *
 #import "boxes.typ": *
+#import "@preview/ctheorems:1.1.3": *;
 
 #let fonts = (
   text: "Libertinus Serif",
@@ -324,3 +325,14 @@
 #let h4(..args) = heading(level: 4, outlined: false, numbering: none, ..args)
 #let h5(..args) = heading(level: 5, outlined: false, numbering: none, ..args)
 #let h6(..args) = heading(level: 6, outlined: false, numbering: none, ..args)
+
+#let theorem = thmbox(
+  "theorem",
+  "Satz",
+  fill: rgb("f3fbfb"),
+  stroke: 1pt + rgb("0000ff"),
+  breakable: true,
+  base_level: 0,
+  namefmt: x => text(fill: rgb("006896"))[(#x)],
+  titlefmt: x => strong(text(fill: rgb("006896"), x)),
+)
