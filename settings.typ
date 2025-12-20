@@ -11,7 +11,7 @@
   title: eastern,
   headers: maroon,
   partfill: rgb("#002299"),
-  label: red,
+  theorem: rgb("006896"),
   hyperlink: blue,
   strong: rgb("#000055"),
 )
@@ -142,7 +142,7 @@
 
   // Hyperlinks should be pretty
   show link: it => {
-    set text(fill: if (type(it.dest) == label) { colors.label } else { colors.hyperlink })
+    set text(fill: if (type(it.dest) == label) { colors.theorem } else { colors.hyperlink })
     it
   }
   show ref: it => {
@@ -362,8 +362,8 @@
   stroke: 1pt + rgb("0000ff"),
   breakable: true,
   base_level: 0,
-  namefmt: x => text(fill: rgb("006896"))[(#x)],
-  titlefmt: x => strong(text(fill: rgb("006896"), x)),
+  namefmt: x => text(fill: colors.theorem)[(#x)],
+  titlefmt: x => strong(text(fill: colors.theorem, x)),
 )
 // Theorem without numbering
 #let t-no-num = thmbox(
@@ -373,5 +373,5 @@
   stroke: 1pt + rgb("0000ff"),
   breakable: true,
   base_level: 0,
-  namefmt: x => strong(text(fill: rgb("006896"), x)),
+  namefmt: x => strong(text(fill: colors.theorem, x)),
 ).with(numbering: none)
