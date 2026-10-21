@@ -1,7 +1,7 @@
-#import "settings.typ": *
+#import "@local/preamble:0.1.0": *
 #import "exercises.typ": *
 
-#show: project.with(
+#show: skript.with(
   title: [Stochastische Modelle],
   subtitle: [Vorlesung Wintersemester 2024/25],
   report-style: true,

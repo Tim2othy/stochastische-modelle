@@ -1,11 +1,11 @@
-#import "settings.typ": *
+#import "@local/preamble:0.1.0": *
 #import "@preview/lovelace:0.3.0": *
 
 
 
 //AB 1
 
-#let ex02 = exer[Aufgabe 2][
+#let ex02 = exercise[Aufgabe 2][
   Eine Urne sei zum Zeitpunkt $t = 0$ leer.
   Zu jedem Zeitpunkt $t ∈ N$ werden zwei Kugeln in die Urne gelegt, eine mit der Nummer $2t - 1$ eine mit der Nummer $2t$.
   Jeweils unmittelbar danach wird eine der $t+1$ Kugeln in der Urne zufällig ausgewählt und entnommen. Es bezeichne $X$ die Anzahl der Kugeln, die für immer in der Urne verbleiben.
@@ -17,7 +17,7 @@
 
 //AB 2
 
-#let ex07 = exer[Aufgabe 7][
+#let ex07 = exercise[Aufgabe 7][
   Es seien $N, X_1, X_2, dots$ unabhängige diskrete Zufallsvariablen mit
   $
     P(N ∈ NN_0) = 1, wide E(N) = ν, wide "Var"(N) = τ^2
@@ -48,7 +48,7 @@
   Sobald das erste Mal $c u g(x) < f(x)$ gilt, wird der aktuelle Wert $x$ akzeptiert und ausgegeben.
   Die folgende Aufgabe begründet dieses Vorgehen.
 ]
-#let ex08 = exer[Aufgabe 8][
+#let ex08 = exercise[Aufgabe 8][
   Es seien $f, g : RR ->RR$ Wahrscheinlichkeitsdichten und es sei $c in (0 oo)$ so dass $f(x) <= c g(x)$ für alle $x in R$.
   Es seien $X_1, U_1, X_2, U_2, dots$ unabhängige Zufalls variablen, wobei jedes $X_i$ stetig verteilt ist mit Dichte $g$ und jedes $U_i$ auf dem Intervall $(0,1)$ gleichverteilt ist.
   Sei
@@ -62,7 +62,7 @@
 
 //AB 3
 
-#let ex10 = exer[Aufgabe 10][
+#let ex10 = exercise[Aufgabe 10][
   Geben Sie ein Beispiel für eine Markov-Kette ${X_n : n in N_0}$ mit Zustands raum ${0,1}$ an, so dass es eine Menge $G subset {0,1}$ gibt mit
   $
     P(X_1 in G, X_0 =1)>0
@@ -75,7 +75,7 @@
 
 //AB 6
 
-#let ex26 = exer[Aufgabe 26.][
+#let ex26 = exercise[Aufgabe 26.][
   Es seien $X_1, X_2, dots$ Zufallsvariablen mit Werten in $NN_0 ∪{∞}$.
   Zeigen Sie:
   + Für jedes $k ∈NN_0$ gilt:
@@ -88,11 +88,11 @@
 
 //AB 7
 
-#let ex28 = exer[Aufgabe 28.][
+#let ex28 = exercise[Aufgabe 28.][
   Eine stochastische Matrix $( p_(i j) )_(i , j in S)$ heißt _doppelt-stochastisch_, falls $sum_(i in S) p_(i j) = 1$ für alle $j in S$.
   Zeigen Sie, dass für jede Markov-Kette mit endlichem Zustandsraum $S$ und doppelt-stochastischer Übergangsmatrix die Gleichverteilung auf $S$ eine stationäre Verteilung ist.
 ]
-#let ex29 = exer[Aufgabe 29.][
+#let ex29 = exercise[Aufgabe 29.][
   Diese Aufgabe behandelt das Mischen von Spielkarten.
   Gegeben sei ein Stapel von $n gt.eq 2$ Karten mit Nummern $1 , dots.h , n$.
   Es bezeichne $S_n$ die Menge der Permutationen der Menge ${ 1 , dots , n }$, also der Bijektionen $pi : { 1 , dots, n } arrow { 1 , dots , n }$.
@@ -104,7 +104,7 @@
   + Bestimmen Sie eine stationäre Verteilung der Markov-Kette.
 ]
 
-#let ex30 = exer[Aufgabe 30.][
+#let ex30 = exercise[Aufgabe 30.][
   Beweisen Sie diesen Satz.
   Betrachten Sie dazu die Mittel
   $
@@ -114,7 +114,7 @@
   Benutzen Sie hier den @thm:bolzano-weierstrass beziehungsweise die Folgerung.
 ]
 
-#let ex31 = exer[Aufgabe 31.][
+#let ex31 = exercise[Aufgabe 31.][
   Für welche Verteilungen $( a_i )_(i in bb(Z))$ hat die Irrfahrt auf $bb(Z)$ mit Übergangswahrscheinlichkeiten $p_(i j) = a_(j - i)$ eine stationäre Verteilung?
 
   Hinweis.
@@ -123,7 +123,7 @@
 
 //Ab 09
 
-#let ex36 = exer[Aufgabe 36][
+#let ex36 = exercise[Aufgabe 36][
   Ein Spieler kann bei einem zweiarmigen Banditen in jeder Runde Arm $A$ oder Arm $B$ wählen.
   Wählt er Arm $A$, gewinnt er 1 Euro mit Wahrscheinlichkeit $alpha in (0,1)$ und verliert 1 Euro mit Wahrscheinlichkeit $1-alpha$.
   Wählt er Arm $B$, gewinnt er 1 Euro mit Wahrscheinlichkeit $beta in (0,1)$ und verliert 1 Euro mit Wahrscheinlichkeit $1-beta$.
@@ -138,7 +138,7 @@
 ]
 
 
-#let ex37 = exer[Aufgabe 37][
+#let ex37 = exercise[Aufgabe 37][
   Im Lauf der Zeit bilden sich $n$ Personen ihre Meinungen, jeweils ausgedrückt durch eine Zahl im Intervall $[0,1]$.
   Beispielsweise kann diese Zahl den Grad der Zustimmung zu einer Aussage ausdrücken.
   Zum Zeitpunkt $t = 0$ hat Person $i$ die Meinung $x_i(0), i = 1, dots, n$.
@@ -154,7 +154,7 @@
 
 // AB 10
 
-#let ex39 = exer[Aufgabe 39(Googles PageRank)][
+#let ex39 = exercise[Aufgabe 39(Googles PageRank)][
   Gegeben seien Webseiten $1,dots, m$.
   Für jede Seite sei bekannt, auf welche Seiten sie durch Links verweist.
   Ein "random surfer" beginnt mit einer zufällig gewählten Seite $X_0$.
@@ -169,7 +169,7 @@
 
 // AB11
 
-#let ex42 = exer[Aufgabe 42][
+#let ex42 = exercise[Aufgabe 42][
   Es seien $U$ und $V$ unabhängige Zufallsvariablen.
   Für die Mengen $A subset RR$ und $B subset RR^2$ gelte die folgende Implikation:
   $
@@ -188,7 +188,7 @@
     1_A (u) med 1_B (u, v) med 1_(A^c) (w) <= 1_A (u) med 1_B (w, v) med 1_(A^c) (w).
   $
 ]
-#let ex43 = exer[Aufgabe 43][
+#let ex43 = exercise[Aufgabe 43][
   Seien $(Y_n)_(n=1)^infinity$, $(T_n)_(n=0)^infinity$ und ${N(t): t >= 0}$ wie in @def:erneuerungsprozes
   Es sei $t^* > 0$ ein fester Zeitpunkt und es sei$X := Y_(N(t^*) + 1).$
   Interpretiert man die $Y_n$ als Lebensdauern von nacheinander verwendeten Bauteilen, dann ist $X$ die Lebensdauer des zur Zeit $t^*$ verwendeten Bauteils.
@@ -200,7 +200,7 @@
 
 // AB 12
 
-#let ex47 = exer[Aufgabe 47][
+#let ex47 = exercise[Aufgabe 47][
   Es sei ${N(t) : t_0}$ ein Erneuerungsprozess mit auf dem Intervall $[0,10]$ gleichverteilten Zwischenankunftszeiten.
   Bestimmen Sie näherungsweise eine Lösung der Gleichung $P(N(1440) > alpha) = 0.05$.
 ]
