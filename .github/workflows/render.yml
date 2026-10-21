@@ -22,6 +22,19 @@ jobs:
         with:
           typst-version: 0.14.0
 
+      # If the preamble repo is private, add `token: ${{ secrets.PREAMBLE_TOKEN }}`
+      # (a fine-grained token with read access to it) to this step.
+      - uses: actions/checkout@v4
+        with:
+          repository: Tim2othy/preamble
+          path: preamble
+
+      - name: Install local preamble package
+        run: |
+          VERSION=$(grep -Po '^version = "\K[^"]+' preamble/typst.toml)
+          mkdir -p ~/.local/share/typst/packages/local/preamble
+          cp -r preamble ~/.local/share/typst/packages/local/preamble/$VERSION
+
       - name: Compile ${{ matrix.file }}.typ
         run: |
           typst compile "${{ matrix.file }}.typ" "${{ matrix.file }}.pdf" \
